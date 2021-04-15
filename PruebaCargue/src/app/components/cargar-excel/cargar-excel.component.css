@@ -1,0 +1,130 @@
+
+#pagina{
+    background-color: #f3f9fb ;
+}
+#nombrearchivo{
+    margin-left: 20px;
+}
+#im{
+    width: 30px;
+    height: 30px;
+    margin-left: 50px;
+}
+#select{
+    margin-left: 10px;
+}
+#img{
+    width: 30px;
+    height: 30px;
+    margin-left: 70px;
+}
+#ima{
+    width: 30px;
+    height: 30px;
+    
+}
+#ims{
+    width: 30px;
+    height: 30px;
+    margin-left: 120px; 
+}
+#Noreporto{
+    background-color: Red;
+    width: 70%;
+}
+
+.boton_1{
+    text-decoration: none;
+    padding: 3px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-family: helvetica;
+    font-weight: 200;
+    font-size: 15px;
+    font-style: italic;
+    color: floralwhite;
+    background-color: #00af91;
+    border-radius: 15px;
+    width: 100%;
+    margin-top: 300px;
+   
+  }
+  .boton_2{
+    text-decoration: none;
+    padding: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: helvetica;
+    font-weight: 200;
+    font-size: 15px;
+    font-style: italic;
+    color: floralwhite;
+    background-color: #f8dc81;
+    border-radius: 15px;
+    width: 70%;
+  
+  }
+  .boton_3{
+    text-decoration: none;
+    padding: 3px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-family: helvetica;
+    font-weight: 200;
+    font-size: 15px;
+    font-style: italic;
+    color: floralwhite;
+    background-color: #c05555 ;
+    border-radius: 15px;
+    width: 50%;
+    
+   
+  }
+
+  .boton_5{
+    text-decoration: none;
+    padding: 3px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family: helvetica;
+    font-weight: 200;
+    font-size: 15px;
+    font-style: italic;
+    color: floralwhite;
+    background-color: #EBF5FB ;
+    border-radius: 15px;
+    width: 100%;
+    margin-top: 300px;
+    border: 1px solid #1F618D;
+   
+  }
+
+  .boton_4{
+    text-decoration: none;
+    padding: 3px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family: helvetica;
+    font-weight: 200;
+    font-size: 15px;
+    font-style: italic;
+    color: black;
+    background-color: #EBF5FB;
+    border-radius: 15px;
+    width: 100%;
+    margin-top: 300px;
+    border: 1px solid #1F618D;
+   
+  }
+  #resumen{
+      justify-content: center;
+  }
+
+  #re{
+        float: center;
+        justify-content: center;
+        text-align: center;
+        margin-left: 100px;
+        margin-top: 100px;
+      
+  }

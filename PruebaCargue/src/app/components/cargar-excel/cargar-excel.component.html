@@ -1,0 +1,68 @@
+<div id="pagina">
+<div class="row">
+	<div class="col-md-2" id="nombrearchivo">
+		<div>
+			<strong>Nombre archivo</strong>
+			<input type="text" class="form-control" readonly="true">
+			<br>
+			<input type="file" (change)="onFileChange($event)" multiple="false" id="inputFileServer" class="d-none"
+				#photoInput>
+			<img [src]="'assets/img/text.png'" class="ing-fluid" alt="no image" (click)="photoInput.click()" id="im">
+			<img [src]="'assets/img/upload.png'" class="ing-fluid" alt="no image" id="img"  (click)="cargarexcel()">
+
+			<br>
+			<label for="">Seleccionar archivo</label>
+			<label for="" id="select">Cargar</label>
+		</div>
+	</div>
+	<div class="col-md-2">
+		<div>
+			<strong>Progreso</strong>
+			<input type="text" class="form-control" readonly="true">
+			<br>
+			<img [src]="'assets/img/loading.png'" class="ing-fluid" alt="no image" (click)="photoInput.click()"
+				id="ima">
+			<img [src]="'assets/img/trash.png'" class="ing-fluid" alt="no image" (click)="photoInput.click()" id="ims">
+			<br>
+			<label for="" id="">Consultar proceso</label>
+			<label for="" id="select">Cancelar</label>
+		</div>
+	</div>
+	<div class="col-md-2">
+		<div>
+			<strong>Radicado</strong>
+			<input type="text" class="form-control" readonly="true">
+		</div>
+	</div>
+
+	<div class="col-md-1">
+		
+	</div>
+
+	<div class="col-md-3">
+	   <br>
+		<a href="" class="boton_1">Exitoso</a>
+		<a href="" class="boton_2">Con errores</a>
+		<a href="" class="boton_3">No reporto</a>
+		
+		<br>
+		<strong id="re">Resumen de reporte </strong>
+		<br>
+		
+		<a href="" class="boton_4">Enero</a>
+		<a href="" class="boton_4">Febrero</a>
+		<a href="" class="boton_4">Marzo</a>
+		<a href="" class="boton_4">Abril</a>
+		<br>
+		<a href="" class="boton_4">Mayo</a>
+		<a href="" class="boton_4">Junio</a>
+		<a href="" class="boton_4">Julio</a>
+		<a href="" class="boton_4">Agosto</a>
+		<br>
+		<a href="" class="boton_4">Septiembre</a>
+		<a href="" class="boton_4">Obtubre</a>
+		<a href="" class="boton_4">Noviembre</a>
+		<a href="" class="boton_4">Diciembre</a>
+		
+</div>
+</div>
