@@ -2,7 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import keys from '../../../keys'
 import { Observable } from 'rxjs/internal/Observable';
+import { isNullOrUndefined } from 'util'
 import {Usuario} from '../../models/login'
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +12,7 @@ import {Usuario} from '../../models/login'
 export class LoginService {
   API_URI = keys.api.API_URI + '/login';
   headers: HttpHeaders = new HttpHeaders({ "Content-Type": "application/json" });
-  constructor(private httpClient:HttpClient) { }
+  constructor(private httpClient:HttpClient,private router: Router) { }
 
   loginUser(PKUsuario: string, Contraseña: string): Observable<any> {
     return this.httpClient.post(`${this.API_URI}`, { PKUsuario, Contraseña });
@@ -21,4 +23,23 @@ export class LoginService {
     localStorage.setItem("access_token", token);
     localStorage.setItem("currentUser", user);
   };
+
+  
+  public logoutUser() {
+    localStorage.removeItem('currentUser')
+    localStorage.removeItem('accestoken')
+    localStorage.removeItem('access_token');
+    this.router.navigateByUrl('/Login');
+  }
+
+
+  public get isloggedIn(): boolean {
+    let logued = localStorage.getItem('access_token')
+    if (!isNullOrUndefined(logued)) {
+      return true
+    } else {
+      return false;
+    }
+  }
+
 }

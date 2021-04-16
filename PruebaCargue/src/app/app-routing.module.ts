@@ -4,13 +4,14 @@ import {CargarExcelComponent} from './components/cargar-excel/cargar-excel.compo
 import {LoginComponent} from './components/login/login.component'
 
 const routes: Routes = [
-  {path: '',redirectTo:'/Login',pathMatch:'full'},
+  {path: '',redirectTo:'/cargar',pathMatch:'full'},
   {path:  'cargar',component:CargarExcelComponent},
-  {path:  'Login',component:LoginComponent}
+  {path:  'Login',component:LoginComponent},
+  { path: '**', redirectTo: '/welcome', pathMatch: 'full' },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
