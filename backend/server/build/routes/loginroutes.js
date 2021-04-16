@@ -9,6 +9,7 @@ class LoginRoutes {
     }
     config() {
         this.router.post('/', login_1.logincontrollers.Login);
+        this.router.post('/create', login_1.logincontrollers.crearusuario);
     }
 }
 const loginRoutes = new LoginRoutes();

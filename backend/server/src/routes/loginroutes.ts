@@ -11,6 +11,7 @@ class LoginRoutes{
 
     config():void{
         this.router.post('/',logincontrollers.Login)
+        this.router.post('/create',logincontrollers.crearusuario)
 
     }
     
