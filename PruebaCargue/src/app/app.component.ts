@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {LoginService} from './services/login/login.service'
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'PruebaCargue';
+
+  constructor(public loginService: LoginService) {    
+  }
+  
+  ngOnInit(){
+  }
+  
+  
+  
 }
+
