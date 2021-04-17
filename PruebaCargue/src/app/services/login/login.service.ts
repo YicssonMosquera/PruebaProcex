@@ -14,8 +14,8 @@ export class LoginService {
   headers: HttpHeaders = new HttpHeaders({ "Content-Type": "application/json" });
   constructor(private httpClient:HttpClient,private router: Router) { }
 
-  loginUser(PKUsuario: string, Contraseña: string): Observable<any> {
-    return this.httpClient.post(`${this.API_URI}`, { PKUsuario, Contraseña });
+  loginUser(PKUsuario: string, password: any): Observable<any> {
+    return this.httpClient.post(`${this.API_URI}`, { PKUsuario, password });
   };
 
   setUser(user:string, token:string) {
