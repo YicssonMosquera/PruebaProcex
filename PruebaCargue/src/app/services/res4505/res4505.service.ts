@@ -17,4 +17,7 @@ export class Res4505Service {
   Guardarexcel(excel:excel){
     return this.http.post(`${this.API_URI}/prueba`, excel)
   }
+  CargarDatos(){
+    return this.http.get(`${this.API_URI}`)
+  }
 }

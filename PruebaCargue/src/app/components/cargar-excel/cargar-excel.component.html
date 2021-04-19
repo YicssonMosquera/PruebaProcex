@@ -1,68 +1,121 @@
 <div id="pagina">
-<div class="row">
-	<div class="col-md-2" id="nombrearchivo">
-		<div>
-			<strong>Nombre archivo</strong>
-			<input type="text" class="form-control" readonly="true">
-			<br>
-			<input type="file" (change)="onFileChange($event)" multiple="false" id="inputFileServer" class="d-none"
-				#photoInput>
-			<img [src]="'assets/img/text.png'" class="ing-fluid" alt="no image" (click)="photoInput.click()" id="im">
-			<img [src]="'assets/img/upload.png'" class="ing-fluid" alt="no image" id="img"  (click)="cargarexcel()">
+  <div class="row">
+    <div class="col-md-2" id="nombrearchivo">
+      <div>
+        <strong>Nombre archivo</strong>
+        <input type="text" class="form-control" readonly="true">
+        <br>
+        <input type="file" (change)="onFileChange($event)" multiple="false" id="inputFileServer" class="d-none"
+          #photoInput>
+        <img [src]="'assets/img/text.png'" class="ing-fluid" alt="no image" (click)="photoInput.click()" id="im">
+        <img [src]="'assets/img/upload.png'" class="ing-fluid" alt="no image" id="img" (click)="cargarexcel()">
 
-			<br>
-			<label for="">Seleccionar archivo</label>
-			<label for="" id="select">Cargar</label>
-		</div>
-	</div>
-	<div class="col-md-2">
-		<div>
-			<strong>Progreso</strong>
-			<input type="text" class="form-control" readonly="true">
-			<br>
-			<img [src]="'assets/img/loading.png'" class="ing-fluid" alt="no image" (click)="photoInput.click()"
-				id="ima">
-			<img [src]="'assets/img/trash.png'" class="ing-fluid" alt="no image" (click)="photoInput.click()" id="ims">
-			<br>
-			<label for="" id="">Consultar proceso</label>
-			<label for="" id="select">Cancelar</label>
-		</div>
-	</div>
-	<div class="col-md-2">
-		<div>
-			<strong>Radicado</strong>
-			<input type="text" class="form-control" readonly="true">
-		</div>
-	</div>
+        <br>
+        <label for="">Seleccionar archivo</label>
+        <label for="" id="select">Cargar</label>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div>
+        <strong>Progreso</strong>
+        <input type="text" class="form-control" readonly="true">
+        <br>
+        <img [src]="'assets/img/loading.png'" class="ing-fluid" alt="no image" (click)="photoInput.click()" id="ima">
+        <img [src]="'assets/img/trash.png'" class="ing-fluid" alt="no image" (click)="photoInput.click()" id="ims">
+        <br>
+        <label for="" id="">Consultar proceso</label>
+        <label for="" id="select">Cancelar</label>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div>
+        <strong>Radicado</strong>
+        <input type="text" class="form-control" readonly="true">
+      </div>
+    </div>
 
-	<div class="col-md-1">
-		
-	</div>
+    <div class="col-md-1">
 
-	<div class="col-md-3">
-	   <br>
-		<a href="" class="boton_1">Exitoso</a>
-		<a href="" class="boton_2">Con errores</a>
-		<a href="" class="boton_3">No reporto</a>
-		
-		<br>
-		<strong id="re">Resumen de reporte </strong>
-		<br>
-		
-		<a href="" class="boton_4">Enero</a>
-		<a href="" class="boton_4">Febrero</a>
-		<a href="" class="boton_4">Marzo</a>
-		<a href="" class="boton_4">Abril</a>
-		<br>
-		<a href="" class="boton_4">Mayo</a>
-		<a href="" class="boton_4">Junio</a>
-		<a href="" class="boton_4">Julio</a>
-		<a href="" class="boton_4">Agosto</a>
-		<br>
-		<a href="" class="boton_4">Septiembre</a>
-		<a href="" class="boton_4">Obtubre</a>
-		<a href="" class="boton_4">Noviembre</a>
-		<a href="" class="boton_4">Diciembre</a>
-		
-</div>
-</div>
+    </div>
+
+    <div class="col-md-3">
+      <br>
+      <a href="" class="boton_1">Exitoso</a>
+      <a href="" class="boton_2">Con errores</a>
+      <a href="" class="boton_3">No reporto</a>
+
+      <br>
+      <strong id="re">Resumen de reporte </strong>
+      <br>
+
+      <a href="" class="boton_4">Enero</a>
+      <a href="" class="boton_4">Febrero</a>
+      <a href="" class="boton_4">Marzo</a>
+      <a href="" class="boton_4">Abril</a>
+      <br>
+      <a href="" class="boton_4">Mayo</a>
+      <a href="" class="boton_4">Junio</a>
+      <a href="" class="boton_4">Julio</a>
+      <a href="" class="boton_4">Agosto</a>
+      <br>
+      <a href="" class="boton_4">Septiembre</a>
+      <a href="" class="boton_4">Obtubre</a>
+      <a href="" class="boton_4">Noviembre</a>
+      <a href="" class="boton_4">Diciembre</a>
+
+    </div>
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      MatCheckboxModule
+      <!-- Checkbox Column -->
+      <ng-container matColumnDef="select">
+        <th mat-header-cell *matHeaderCellDef>
+          <mat-checkbox (change)="$event ? masterToggle() : null" [checked]="selection.hasValue() && isAllSelected()"
+            [indeterminate]="selection.hasValue() && !isAllSelected()" [aria-label]="checkboxLabel()">
+          </mat-checkbox>
+        </th>
+        <td mat-cell *matCellDef="let row">
+          <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null"
+            [checked]="selection.isSelected(row)" [aria-label]="checkboxLabel(row)">
+          </mat-checkbox>
+        </td>
+      </ng-container>
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="PKId">
+        <th mat-header-cell *matHeaderCellDef> Radicado. </th>
+        <td mat-cell *matCellDef="let element"> {{element.PKId}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="Dato1">
+        <th mat-header-cell *matHeaderCellDef> Nombre ips </th>
+        <td mat-cell *matCellDef="let element"> {{element.Dato1}} </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="Dato2">
+        <th mat-header-cell *matHeaderCellDef> Periodo </th>
+        <td mat-cell *matCellDef="let element"> {{element.Dato2}} </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="Dato3">
+        <th mat-header-cell *matHeaderCellDef> Fecha cargue </th>
+        <td mat-cell *matCellDef="let element"> {{element.Dato3}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Dato4">
+        <th mat-header-cell *matHeaderCellDef> Procesados </th>
+        <td mat-cell *matCellDef="let element"> {{element.Dato4}} </td>
+      </ng-container>
+
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)">
+      </tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+  </div>
