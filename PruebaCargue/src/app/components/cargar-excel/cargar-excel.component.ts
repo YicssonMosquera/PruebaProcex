@@ -62,6 +62,7 @@ export class CargarExcelComponent implements OnInit {
   constructor(private res4505service: Res4505Service,) { }
 
   ngOnInit(): void {
+    this.cargardatos();
   }
   onFileChange(evt: any) {
     const target: DataTransfer = <DataTransfer>(evt.target)
