@@ -31,6 +31,16 @@ export class LoginService {
     localStorage.removeItem('access_token');
     this.router.navigateByUrl('/Login');
   }
+  getCurrentUser() {
+    let user_string = localStorage.getItem('currentUser');
+    if (!isNullOrUndefined(user_string)) {
+      let user = JSON.parse(user_string);
+      return user;
+    } else {
+      return null
+    }
+
+  }
 
 
   public get isloggedIn(): boolean {

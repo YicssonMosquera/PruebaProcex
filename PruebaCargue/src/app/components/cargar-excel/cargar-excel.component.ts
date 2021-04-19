@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import * as XLSX from 'xlsx';
 import { Res4505Service } from '../../services/res4505/res4505.service'
-import { Res4505 } from '../../models/Res4505'
 import { excel } from '../../models/datos'
 import Swal from 'sweetalert2';
 import { MatTableDataSource } from '@angular/material/table';
 import { SelectionModel } from '@angular/cdk/collections';
+import {MatPaginator} from '@angular/material/paginator';
+import {MatSort} from '@angular/material/sort';
 interface HtmlInputEvent extends Event {
   target: HTMLInputElement & EventTarget;
 }
@@ -36,6 +37,7 @@ export class CargarExcelComponent implements OnInit {
       this.selection.clear() :
       this.dataSource.data.forEach(row => this.selection.select(row));
   }
+  
 
   /** The label for the checkbox on the passed row */
   checkboxLabel(row?: PeriodicElement): string {
@@ -44,8 +46,18 @@ export class CargarExcelComponent implements OnInit {
     }
     return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.position + 1}`;
   }
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
 
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+  }
 
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
 
   excel: excel = {
     PKId: 0,
@@ -64,6 +76,8 @@ export class CargarExcelComponent implements OnInit {
   ngOnInit(): void {
     this.cargardatos();
   }
+
+
   onFileChange(evt: any) {
     const target: DataTransfer = <DataTransfer>(evt.target)
     if (target.files.length !== 1) throw new Error("no puede usar multiples archivos")
@@ -128,9 +142,9 @@ export class CargarExcelComponent implements OnInit {
 
   }
 
-  cargardatos(){
-    let array:any
-    this.res4505service.CargarDatos().subscribe(res=>{
+  cargardatos() {
+    let array: any
+    this.res4505service.CargarDatos().subscribe(res => {
       array = res;
       console.log(array);
       this.dataSource.data = array;

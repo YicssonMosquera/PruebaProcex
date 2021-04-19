@@ -64,62 +64,65 @@
       <a href="" class="boton_4">Diciembre</a>
 
     </div>
-    <br>
-    <br>
-    <br>
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-      MatCheckboxModule
-      <!-- Checkbox Column -->
-      <ng-container matColumnDef="select">
-        <th mat-header-cell *matHeaderCellDef>
-          <mat-checkbox (change)="$event ? masterToggle() : null" [checked]="selection.hasValue() && isAllSelected()"
-            [indeterminate]="selection.hasValue() && !isAllSelected()" [aria-label]="checkboxLabel()">
-          </mat-checkbox>
-        </th>
-        <td mat-cell *matCellDef="let row">
-          <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null"
-            [checked]="selection.isSelected(row)" [aria-label]="checkboxLabel(row)">
-          </mat-checkbox>
-        </td>
-      </ng-container>
 
-      <!-- Position Column -->
-      <ng-container matColumnDef="PKId">
-        <th mat-header-cell *matHeaderCellDef> Radicado. </th>
-        <td mat-cell *matCellDef="let element"> {{element.PKId}} </td>
-      </ng-container>
-
-      <!-- Name Column -->
-      <ng-container matColumnDef="Dato1">
-        <th mat-header-cell *matHeaderCellDef> Nombre ips </th>
-        <td mat-cell *matCellDef="let element"> {{element.Dato1}} </td>
-      </ng-container>
-
-      <!-- Weight Column -->
-      <ng-container matColumnDef="Dato2">
-        <th mat-header-cell *matHeaderCellDef> Periodo </th>
-        <td mat-cell *matCellDef="let element"> {{element.Dato2}} </td>
-      </ng-container>
-
-      <!-- Symbol Column -->
-      <ng-container matColumnDef="Dato3">
-        <th mat-header-cell *matHeaderCellDef> Fecha cargue </th>
-        <td mat-cell *matCellDef="let element"> {{element.Dato3}} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="Dato4">
-        <th mat-header-cell *matHeaderCellDef> Procesados </th>
-        <td mat-cell *matCellDef="let element"> {{element.Dato4}} </td>
-      </ng-container>
-
-
-
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)">
-      </tr>
-    </table>
-    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
 
 
   </div>
+  <br>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+    MatCheckboxModule
+    <!-- Checkbox Column -->
+    <ng-container matColumnDef="select">
+      <th mat-header-cell *matHeaderCellDef>
+        <mat-checkbox (change)="$event ? masterToggle() : null" [checked]="selection.hasValue() && isAllSelected()"
+          [indeterminate]="selection.hasValue() && !isAllSelected()" [aria-label]="checkboxLabel()">
+        </mat-checkbox>
+      </th>
+      <td mat-cell *matCellDef="let row">
+        <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null"
+          [checked]="selection.isSelected(row)" [aria-label]="checkboxLabel(row)">
+        </mat-checkbox>
+      </td>
+    </ng-container>
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="PKId">
+      <th mat-header-cell *matHeaderCellDef  mat-sort-header> Radicado. </th>
+      <td mat-cell *matCellDef="let element"> {{element.PKId}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="Dato1">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre ips </th>
+      <td mat-cell *matCellDef="let element"> {{element.Dato1}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="Dato2">
+      <th mat-header-cell *matHeaderCellDef> Periodo </th>
+      <td mat-cell *matCellDef="let element"> {{element.Dato2}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="Dato3">
+      <th mat-header-cell *matHeaderCellDef  mat-sort-header> Fecha cargue </th>
+      <td mat-cell *matCellDef="let element"> {{element.Dato3}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Dato4">
+      <th mat-header-cell *matHeaderCellDef  mat-sort-header> Procesados </th>
+      <td mat-cell *matCellDef="let element"> {{element.Dato4}} </td>
+    </ng-container>
+
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)">
+    </tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
 </div>
+
+
+
