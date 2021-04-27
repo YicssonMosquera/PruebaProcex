@@ -23,13 +23,17 @@ import { AppComponent } from './app.component';
 import { CargarExcelComponent } from './components/cargar-excel/cargar-excel.component';
 import { LoginComponent } from './components/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HemofiliaListarComponent } from './components/hemofilia-listar/hemofilia-listar.component';
+import { HemofiliaFormularioComponent } from './components/hemofilia-formulario/hemofilia-formulario.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CargarExcelComponent,
     NavigationComponent,
-    LoginComponent
+    LoginComponent,
+    HemofiliaListarComponent,
+    HemofiliaFormularioComponent
   ],
   imports: [
     BrowserModule,

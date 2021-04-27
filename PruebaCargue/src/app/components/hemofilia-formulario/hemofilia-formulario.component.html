@@ -1,0 +1,102 @@
+<br>
+<div class="row justify-content-center align-items-center">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header align-items-center justify-content-between">
+                    <strong>Datos basicos del usuario</strong>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="input-group mb-3">
+                            <div class="col-xs-4">
+                                <strong>5.Tipo de Identificación del usuario:</strong>
+                                <select name="" class="form-control" id="tipo"></select>
+                            </div>
+                            <div class="col-xs-4">
+                                <strong id="documento">6.Número de Identificación del usuario:</strong>
+                                <input type="number" class="form-control" id="documento">
+                            </div>
+                            <div class="col-xs-4">
+                                <strong id="pnombre">1.Primer nombre del usuario:</strong>
+                                <input type="text" class="form-control" id="pnombre">
+                            </div>
+                            <div class="col-xs-4">
+                                <strong id="snombre">2.Segundo nombre del usuario:</strong>
+                                <input type="text" class="form-control" id="snombre">
+                            </div>
+
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="col-xs-4">
+                                <strong >1.Primer apellido del usuario:</strong>
+                                <input type="text" class="form-control" id="papellido">
+                            </div>
+                            <div class="col-xs-4">
+                                <strong id="snombre">2.Segundo apellido del usuario:</strong>
+                                <input type="text" class="form-control" id="snombre">
+                            </div>
+                            <div class="col-xs-2">
+                                <strong id="fechan">7.Fecha de nacimiento:</strong>
+                                <div class="input-group" id="fechan">
+                                    <input class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker formControlName="checkDate" readonly
+                                      #d="ngbDatepicker" id="fechan2">
+                                    <div class="input-group-append">
+                                      <button class="btn btn-outline-secondary calendar" id="fechan3"   (click)="d.toggle()" type="button"><i class="far fa-calendar-alt fa-2x"></i></button>
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="col-xs-1">
+                                <strong id="edad2">Edad actual:</strong>
+                                <input type="number" class="form-control" id="edad">
+                            </div>
+                            <div class="col-xs-1">
+                                <strong id="edadc">Edad corte:</strong>
+                                <input type="number" class="form-control" id="edadc2">
+                            </div>
+                            <div class="col-xs-2">
+                                <strong id="sexo">8.Sexo:</strong>
+                                <select name="" class="form-control" id="sexo"></select>
+                            </div>
+                            <div class="col-xs-2">
+                                <strong id="sexo">65.Código BDUA:</strong>
+                                <input type="number" class="form-control"  id="sexo">
+                               
+                            </div>
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="col-xs-4">
+                                <strong>9.Ocupación:</strong>
+                                <select name="" class="form-control" id="tipo"></select>
+                            </div>
+                            <div class="col-xs-4">
+                                <strong id="documento">10.Régimen de afiliación al SGSSS:</strong>
+                                <select name="" class="form-control" id="documento"></select>
+                            </div>
+                            <div class="col-xs-4">
+                                <strong id="documento">11.Código de la EAPB o de la entidad territorial:</strong>
+                                <input type="text" class="form-control" id="pnombre">
+                            </div>
+                            <div class="col-xs-4">
+                                <strong id="documento">12.Código pertenencia étnica:</strong>
+                                <select name="" class="form-control" id="documento"></select>
+                            </div>
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="col-xs-4">
+                                <strong>13.Grupo poblacional:</strong>
+                                <select name="" class="form-control" id="tipo"></select>
+                            </div>
+                            <div class="col-xs-4">
+                                <strong id="documento">14.Municipio de residencia:</strong>
+                                <select name="" class="form-control" id="documento"></select>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
