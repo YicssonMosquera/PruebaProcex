@@ -1,0 +1,767 @@
+<br>
+<div class="row justify-content-center align-items-center" id="pagina">
+  <div class="row">
+    <div class="col-12">
+      <div id="accordion">
+        <div class="card">
+          <div class="card-header align-items-center justify-content-between" id="header">
+            <label>Datos basicos del usuario</label>
+
+            <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon"
+              data-toggle="collapse" data-target="#collapseOne" id="menu" data-toggle="collapse"
+              data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              <mat-icon>menu</mat-icon>
+            </button>
+
+          </div>
+          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body" id="pagina">
+              <form>
+                <div class="input-group mb-3">
+                  <div class="col-xs-4">
+                    <label id="tipo">5.Tipo de Identificación del usuario:</label>
+                    <select name="" class="form-control" id="tipo"></select>
+                  </div>
+                  <div class="col-xs-4">
+                    <label id="documento">6.Número de Identificación del usuario:</label>
+                    <input type="number" class="form-control" id="documento">
+                  </div>
+                  <div class="col-xs-4">
+                    <label id="pnombre">1.Primer nombre del usuario:</label>
+                    <input type="text" class="form-control" id="pnombre">
+                  </div>
+                  <div class="col-xs-4">
+                    <label id="snombre">2.Segundo nombre del usuario:</label>
+                    <input type="text" class="form-control" id="snombre">
+                  </div>
+
+                </div>
+                <div class="input-group mb-3">
+                  <div class="col-xs-4">
+                    <label id="tipo">3.Primer apellido del usuario:</label>
+                    <input type="text" class="form-control" id="papellido">
+                  </div>
+                  <div class="col-xs-4">
+                    <label id="snombre">4.Segundo apellido del usuario: </label>
+                    <input type="text" class="form-control" id="snombre">
+                  </div>
+                  <div class="col-xs-2">
+                    <label id="fechan">7.Fecha de nacimiento:</label>
+                    <div class="input-group" id="fechan">
+                      <input class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker readonly
+                        #d="ngbDatepicker" id="fechan2">
+                      <div class="input-group-append">
+                        <button class="btn btn-outline-secondary calendar" id="fechan3" (click)="d.toggle()"
+                          type="button"><i class="far fa-calendar-alt fa-2x"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-1">
+                    <label id="edad2">Edad actual:</label>
+                    <input type="number" class="form-control" id="edad">
+                  </div>
+                  <div class="col-xs-1">
+                    <label id="edadc">Edad corte:</label>
+                    <input type="number" class="form-control" id="edadc2">
+                  </div>
+                  <div class="col-xs-2">
+                    <label id="sexo">8.Sexo:</label>
+                    <select name="" class="form-control" id="sexo"></select>
+                  </div>
+                  <div class="col-xs-2">
+                    <label id="sexo">65.Código BDUA:</label>
+                    <input type="number" class="form-control" id="sexo">
+
+                  </div>
+                </div>
+                <div class="input-group mb-3">
+                  <div class="col-xs-4">
+                    <label id="tipo">9.Ocupación:</label>
+                    <select name="" class="form-control" id="tipo"></select>
+                  </div>
+                  <div class="col-xs-4">
+                    <label id="documento">10.Régimen de afiliación al SGSSS:</label>
+                    <select name="" class="form-control" id="documento"></select>
+                  </div>
+                  <div class="col-xs-4">
+                    <label id="documento">11.Código de la EAPB o de la entidad territorial:</label>
+                    <input type="text" class="form-control" id="pnombre">
+                  </div>
+                  <div class="col-xs-4">
+                    <label id="documento">12.Código pertenencia étnica:</label>
+                    <select name="" class="form-control" id="documento"></select>
+                  </div>
+                </div>
+                <div class="input-group mb-3">
+                  <div class="col-xs-4">
+                    <label id="tipo">13.Grupo poblacional:</label>
+                    <select name="" class="form-control" id="GrupoP"></select>
+                  </div>
+                  <div class="col-xs-4">
+                    <label id="documento">14.Municipio de residencia:</label>
+                    <select type="text" class="form-control" id="Mresidencia"></select>
+                  </div>
+                  <div class="col-xs-4">
+                    <label id="numeropaciente1">15.Número telefónico del paciente (incluyendo a familiares y
+                      cuidadores):</label>
+                    <input type="number" class="form-control" id="numeropaciente">
+                  </div>
+                  <div class="col-xs-1">
+                    <label id="fechaCor1">16.Fecha de afiliación a la EPS:</label>
+                    <div class="input-group" id="fechac">
+                      <input class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker readonly
+                        #d1="ngbDatepicker" id="fechaCor">
+                      <div class="input-group-append">
+                        <button class="btn btn-outline-secondary calendar" id="fechaCor2" (click)="d1.toggle()"
+                          type="button"><i class="far fa-calendar-alt fa-2x"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-1">
+                    <label id="fechaCor1">66. Fecha de corte:</label>
+                    <div class="input-group" id="fechac">
+                      <input class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker readonly
+                        #d2="ngbDatepicker" id="fechaCor">
+                      <div class="input-group-append">
+                        <button class="btn btn-outline-secondary calendar" id="fechaCor2" (click)="d2.toggle()"
+                          type="button"><i class="far fa-calendar-alt fa-2x"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </form>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+      <br>
+
+      <div class="card">
+
+        <div class="card-header align-items-center justify-content-between" id="header">
+          <label>Planificacion</label>
+          <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon"
+            data-toggle="collapse" data-target="#collapseOne1" id="menu" data-toggle="collapse"
+            data-target="#collapseOne1" aria-expanded="true" aria-controls="collapseOne1">
+            <mat-icon>menu</mat-icon>
+          </button>
+        </div>
+
+        <div id="collapseOne1" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+          <div class="card-body" id="pagina">
+            <form>
+              <div class="input-group mb-3">
+                <div class="col-xs-4">
+                  <label id="Estadog">17.Estado de gestación a la fecha de corte:</label>
+                  <select name="" class="form-control" id="Estadog"></select>
+                </div>
+                <div class="col-xs-4">
+                  <label id="documento">18.Usuario en programa de planificación o consejería genética:</label>
+                  <select name="" class="form-control" id="documento"></select>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="card">
+        <div class="card-header align-items-center justify-content-between" id="header">
+          <label>Diagnóstico Usuario</label>
+          <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon"
+            data-toggle="collapse" data-target="#collapseOne2" id="menu" data-toggle="collapse"
+            data-target="#collapseOne2" aria-expanded="true" aria-controls="collapseOne2">
+            <mat-icon>menu</mat-icon>
+          </button>
+        </div>
+
+        <div id="collapseOne2" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+          <div class="card-body" id="pagina">
+            <form>
+              <div class="input-group mb-3">
+                <div class="col-xs-4">
+                  <label id="fechaD3">21.Fecha de diagnóstico: </label>
+                  <div class="input-group" id="fechanD">
+                    <input class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker readonly
+                      #d4="ngbDatepicker" id="fechanD1">
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-secondary calendar" id="fechanD2" (click)="d4.toggle()"
+                        type="button"><i class="far fa-calendar-alt fa-2x"></i></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-4">
+                  <label id="MDiagnostico">19.Edad del usuario en el momento del diagnóstico :</label>
+                  <input type="number" class="form-control" id="MDiagnostico">
+                </div>
+                <div class="col-xs-4">
+                  <label id="MDiagnostico">20.Motivo de la prueba de diagnóstico: </label>
+                  <select name="" class="form-control" id="MDiagnostico"></select>
+                </div>
+                <div class="col-xs-4">
+                  <label id="CodigoV">22.Código válido de habilitación de la IPS donde se realiza la confirmación
+                    diagnóstica (IPS donde se realiza el diagnóstico por parte de el médico):</label>
+                  <select name="" class="form-control" id="CodigoV2"></select>
+                </div>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <br>
+
+
+      <div class="card">
+        <div class="card-header align-items-center justify-content-between" id="header">
+          <label>Antecedentes del diagnóstico</label>
+
+          <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon"
+            data-toggle="collapse" data-target="#collapseOne3" id="menu" data-toggle="collapse"
+            data-target="#collapseOne3" aria-expanded="true" aria-controls="collapseOne3">
+            <mat-icon>menu</mat-icon>
+          </button>
+        </div>
+
+        <div id="collapseOne3" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+          <div class="card-body" id="pagina">
+            <form>
+              <div class="input-group mb-3">
+                <div class="col-xs-4">
+                  <label id="tipo">23. Tipo de deficiencia diagnosticada:</label>
+                  <select name="" class="form-control" id="tipo"></select>
+                </div>
+                <div class="col-xs-4">
+                  <label id="documento">24.Clasificación de severidad según nivel de factor:</label>
+                  <select name="" class="form-control" id="documento"></select>
+                </div>
+                <div class="col-xs-4">
+                  <label id="documento">25.Actividad coagulante del factor:</label>
+                  <input type="number" class="form-control" id="documento">
+                </div>
+                <div class="col-xs-4">
+                  <label id="documento">26.Antecedentes familiares asociados a hemofilia:</label>
+                  <select name="" class="form-control" id="documento"></select>
+                </div>
+              </div>
+              <div class="input-group mb-3">
+                <div class="col-xs-4">
+                  <label id="tipo">27.Factor recibido: </label>
+                  <select name="" class="form-control" id="tipo"></select>
+                </div>
+                <div class="col-xs-4">
+                  <label id="documento">28.Esquema:</label>
+                  <select name="" class="form-control" id="documento"></select>
+                </div>
+                <div div class="col-xs-4">
+                  <label id="documento">29.Fecha de inicio del primer tratamiento:</label>
+                  <div class="input-group" id="fechanD">
+                    <input class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker readonly
+                      #d5="ngbDatepicker" id="FechaIN">
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-secondary calendar" id="fechan3" (click)="d5.toggle()"
+                        type="button"><i class="far fa-calendar-alt fa-2x"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+      <br>
+
+
+      <div class="card">
+        <div class="card-header align-items-center justify-content-between" id="header">
+          <label>Tratamiento Actual</label>
+          <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon"
+            data-toggle="collapse" data-target="#collapseOne4" id="menu" data-toggle="collapse"
+            data-target="#collapseOne4" aria-expanded="true" aria-controls="collapseOne4">
+            <mat-icon>menu</mat-icon>
+          </button>
+
+        </div>
+
+        <div id="collapseOne4" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+          <div class="card-body" id="pagina">
+            <form>
+              <div class="input-group mb-3">
+                <div class="col-xs-4">
+                  <label id="tipo">30.Factor recibido:</label>
+                  <select name="" class="form-control" id="tipo"></select>
+                </div>
+                <div class="col-xs-4">
+                  <label id="documento">31.Esquema: </label>
+                  <select name="" class="form-control" id="documento"></select>
+                </div>
+                <div class="col-xs-4">
+                  <label id="documento">32.Peso (kg): </label>
+                  <input type="number" class="form-control" id="documento">
+                </div>
+                <div class="col-xs-4">
+                  <label id="documento">Dosis profilaxis: </label>
+                  <input type="text" class="form-control" id="documento">
+                </div>
+              </div>
+              <div class="input-group mb-3">
+                <div class="col-xs-4">
+                  <label id="tipo">32.1.Dosis: UI/dosis (profilaxis) (última dosis calculada para el periodo):</label>
+                  <input type="text" class="form-control" id="papellido">
+                </div>
+                <div class="col-xs-4">
+                  <label id="FrecuenciaS">32.2.Frecuencia por semana (profilaxis):</label>
+                  <select name="" class="form-control" id="FrecuenciaS"></select>
+                </div>
+                <div class="col-xs-4">
+                  <label id="documento"> 32.3. Número de unidades totales en el periodo UI/dl (demanda): </label>
+                  <input type="number" class="form-control" id="documento">
+                </div>
+                <div class="col-xs-4">
+                  <label id="documento">32.4.Numero de aplicaciones del factor en el periodo (demanda):</label>
+                  <select name="" class="form-control" id="documento"></select>
+                </div>
+              </div>
+              <div class="input-group mb-3">
+                <div class="col-xs-4">
+                  <label id="tipo">37.Código CUM del otro factor/medicamento que recibe el paciente a la fecha de corte
+                    (relacionado con la coagulopatía reportada): </label>
+                  <select name="" class="form-control" id="tipo"></select>
+                </div>
+                <div class="col-xs-4">
+                  <label id="documento">38. Código CUM del otro factor/medicamento que recibe el paciente a la fecha de
+                    corte (relacionado con la coagulopatía reportada):</label>
+                  <select name="" class="form-control" id="documento"></select>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <br>
+
+
+      <div class="card">
+        <div class="card-header align-items-center justify-content-between" id="header">
+          <label>Consultas</label>
+          <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon"
+            data-toggle="collapse" data-target="#collapseOne5" id="menu" data-toggle="collapse"
+            data-target="#collapseOne5" aria-expanded="true" aria-controls="collapseOne5">
+            <mat-icon>menu</mat-icon>
+          </button>
+
+        </div>
+
+        <div id="collapseOne5" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+          <div class="card-body" id="pagina">
+            <form>
+              <div class="input-group mb-3">
+                <div class="col-xs-4">
+                  <label id="tipo">39.Código válido de habilitación de la IPS donde se realiza el seguimiento actual:
+                  </label>
+                  <select name="" class="form-control" id="tipo"></select>
+                </div>
+                <div class="col-xs-4">
+                  <label id="documento">57.Seleccionar el profesional que lidera la atención del paciente :</label>
+                  <select name="" class="form-control" id="documento"></select>
+                </div>
+                <div class="col-xs-4">
+                  <label id="FrecuenciaS">57.1.Consultas presenciales con Hematólogo :</label>
+                  <input type="number" class="form-control" id="FrecuenciaS">
+                </div>
+                <div class="col-xs-4">
+                  <label id="FrecuenciaS">57.2.Consultas presenciales con Ortopedista : </label>
+                  <input type="number" class="form-control" id="FrecuenciaS">
+                </div>
+              </div>
+              <div class="input-group mb-3">
+                <div class="col-xs-4">
+                  <label id="tipo">57.3.Intervención por parte del profesional de enfermería:</label>
+                  <input type="number" class="form-control" id="papellido">
+                </div>
+                <div class="col-xs-4">
+                  <label id="FrecuenciaS">57.4. Consultas con Odontólogo : : </label>
+                  <input type="number" class="form-control" id="FrecuenciaS">
+                </div>
+                <div class="col-xs-4">
+                  <label id="FrecuenciaS">57.5. Consultas con Nutricionista: </label>
+                  <input type="number" class="form-control" id="FrecuenciaS">
+                </div>
+                <div class="col-xs-4">
+                  <label id="FrecuenciaS">57.6. Intervención por parte de Trabajo Social : </label>
+                  <input type="number" class="form-control" id="FrecuenciaS">
+                </div>
+              </div>
+              <div class="input-group mb-3">
+                <div class="col-xs-4">
+                  <label id="tipo">57.7.Consultas con Fisiatría :</label>
+                  <input type="number" class="form-control" id="papellido">
+                </div>
+                <div class="col-xs-4">
+                  <label id="documento">57.8. Consultas con Psicología : : </label>
+                  <input type="number" class="form-control" id="documento">
+                </div>
+                <div class="col-xs-4">
+                  <label id="documento">57.9. Intervención por parte de Químico farmacéutico : </label>
+                  <input type="number" class="form-control" id="documento">
+                </div>
+                <div class="col-xs-4">
+                  <label id="documento">57.10. Intervención por parte de Fisioterapia:</label>
+                  <input type="number" class="form-control" id="documento">
+                </div>
+              </div>
+              <div class="input-group mb-3">
+                <div class="col-xs-4">
+                  <label id="tipo">57.11.Primer nombre del médico tratante principal::</label>
+                  <input type="text" class="form-control" id="papellido">
+                </div>
+                <div class="col-xs-4">
+                  <label id="documento">57.12. Segundo nombre del médico tratante principal:</label>
+                  <input type="text" class="form-control" id="documento">
+                </div>
+                <div class="col-xs-4">
+                  <label id="documento">57.13. Primer apellido del médico tratante principal:</label>
+                  <input type="text" class="form-control" id="documento">
+                </div>
+                <div class="col-xs-4">
+                  <label id="documento">57.14. Segundo Apellido del médico tratante principal:</label>
+                  <input type="text" class="form-control" id="documento">
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <br>
+
+
+
+      <div class="card">
+        <div class="card-header align-items-center justify-content-between" id="header">
+          <label>Sangrados</label>
+
+          <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon"
+            data-toggle="collapse" data-target="#collapseOne6" id="menu" data-toggle="collapse"
+            data-target="#collapseOne6" aria-expanded="true" aria-controls="collapseOne6">
+            <mat-icon>menu</mat-icon>
+          </button>
+
+        </div>
+        <div id="collapseOne6" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+          <div class="card-body" id="pagina">
+            <form>
+              <div class="input-group mb-3">
+                <div class="col-xs-4">
+                  <label id="Estadog">40.Hemartrosis:</label>
+                  <select name="" class="form-control" id="Estadog"></select>
+                </div>
+                <div class="col-xs-4">
+                  <label id="documento">40.1.Numero de hemartrosis espontaneas durante los últimos doce meses:</label>
+                  <input type="number" class="form-control" id="documento">
+                </div>
+                <div class="col-xs-4">
+                  <label id="pnombre">40.2.Numero de hemartrosis traumáticas durante los últimos doce meses:</label>
+                  <input type="number" class="form-control" id="pnombre">
+                </div>
+                <div class="col-xs-4">
+                  <label id="FrecuenciaS">41.Hemorragia del ilio-psoas:</label>
+                  <input type="number" class="form-control" id="FrecuenciaS">
+                </div>
+              </div>
+              <div class="input-group mb-3">
+                <div class="col-xs-4">
+                  <label id="tipo">42.Hemorragia de otros muscular/tejidos blandos: </label>
+                  <input type="number" class="form-control" id="papellido">
+                </div>
+                <div class="col-xs-4">
+                  <label id="documento">43.Hemorragia intracraneal:</label>
+                  <input type="number" class="form-control" id="documento">
+                </div>
+                <div class="col-xs-4">
+                  <label id="documento">44.Hemorragia en cuello o garganta:</label>
+                  <input type="number" class="form-control" id="documento">
+                </div>
+                <div class="col-xs-4">
+                  <label id="documento">45.Hemorragia oral:</label>
+                  <input type="number" class="form-control" id="documento">
+                </div>
+              </div>
+              <div class="input-group mb-3">
+                <div class="col-xs-4">
+                  <label id="HemorrageaL1">46.Hemorragias en otras localizaciones:</label>
+                  <input type="number" class="form-control" id="HemorrageaL">
+                </div>
+                <div class="col-xs-4">
+                  <label id="documento">47.1.Numero de otras hemorragias espontaneas diferentes a hemartrosis durante
+                    los
+                    últimos doce meses:</label>
+                  <input type="number" class="form-control" id="documento">
+                </div>
+                <div class="col-xs-4">
+                  <label id="documento">47.2.Numero de otras hemorragias traumáticas diferentes a hemartrosis durante
+                    los
+                    últimos doce meses:</label>
+                  <input type="number" class="form-control" id="documento">
+                </div>
+                <div class="col-xs-4">
+                  <label id="documento">47.3. Numero de otras hemorragias asociadas a procedimiento diferentes a
+                    hemartrosis durante los últimos doce meses:</label>
+                  <input type="number" class="form-control" id="documento">
+                </div>
+              </div>
+              <div class="input-group mb-3">
+                <div class="col-xs-4">
+                  <label id="tipo">58.Número de atenciones en el servicio de urgencias que requieren tratamiento para la
+                    condición de hemofilia:</label>
+                  <input type="number" class="form-control" id="papellido">
+                </div>
+                <div class="col-xs-4">
+                  <label id="documento">59. Numero de eventos hospitalarios por causa de la hemofilia incluye eventos
+                    programados y no programados):</label>
+                  <input type="number" class="form-control" id="documento">
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <br>
+
+
+
+      <div class="card">
+        <div class="card-header align-items-center justify-content-between" id="header">
+          <label>Laboratorios</label>
+
+          <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon"
+            data-toggle="collapse" data-target="#collapseOne7" id="menu" data-toggle="collapse"
+            data-target="#collapseOne7" aria-expanded="true" aria-controls="collapseOne7">
+            <mat-icon>menu</mat-icon>
+          </button>
+        </div>
+
+        <div id="collapseOne7" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+          <div class="card-body" id="pagina">
+            <form>
+              <div class="input-group mb-3">
+                <div class="col-xs-4">
+                  <label id="PresenciaI">48.Presencia de inhibidor a la fecha de corte:</label>
+                  <select name="" class="form-control" id="PresenciaI"></select>
+                </div>
+                <div div class="col-xs-4">
+                  <label id="fechat">48.1.Fecha de determinación de títulos del inhibidor (Esta fecha debe encontrarse
+                    dentro del periodo de reporte, reportar la última más cercana a la fecha de corte):</label>
+                  <div class="input-group" id="fechanD">
+                    <input class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker readonly
+                      #d6="ngbDatepicker" id="fechat">
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-secondary calendar" id="fechat1" (click)="d6.toggle()"
+                        type="button"><i class="far fa-calendar-alt fa-2x"></i></button>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="col-xs-4">
+                  <label id="documento">48.2.¿Ha recibido el paciente ITI (Inducción a la Tolerancia Inmune) en algún
+                    momento de su vida? (tiene un antecedente de inhibidores y de la exposición a tratamientos):</label>
+                  <select name="" class="form-control" id="documento"></select>
+                </div>
+                <div class="col-xs-4">
+                  <label id="Recibió">48.3.¿Recibió ITI (Inmunotolerancia) durante el periodo?:</label>
+                  <select name="" class="form-control" id="Recibió"></select>
+                </div>
+              </div>
+              <div class="input-group mb-3">
+                <div class="col-xs-4">
+                  <label id="tipo">48.4. Tiempo que lleva el paciente en ITI (días):</label>
+                  <input type="number" class="form-control" id="papellido">
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <br>
+
+
+
+      <div class="card" id="pagina">
+        <div class="card-header align-items-center justify-content-between" id="header">
+          <label>Compromiso Articular</label>
+          <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon"
+            data-toggle="collapse" data-target="#collapseOne8" id="menu" data-toggle="collapse"
+            data-target="#collapseOne8" aria-expanded="true" aria-controls="collapseOne8">
+            <mat-icon>menu</mat-icon>
+          </button>
+
+        </div>
+        <div id="collapseOne8" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+          <div class="card-body">
+            <form>
+              <div class="input-group mb-3">
+                <div class="col-xs-4">
+                  <label id="tipo"> 49. Artropatía hemofílica crónica: </label>
+                  <select name="" class="form-control" id="tipo"></select>
+                </div>
+                <div class="col-xs-4">
+                  <label id="documento">49.1. Numero de articulaciones comprometidas: </label>
+                  <input type="number" class="form-control" id="documento">
+                </div>
+                <div class="col-xs-4">
+                  <label id="documento">56.Reemplazos articulares: </label>
+                  <input type="number" class="form-control" id="documento">
+                </div>
+                <div class="col-xs-4">
+                  <label id="documento">56.1.Reemplazos articulares en el periodo de corte:</label>
+                  <input type="number" class="form-control" id="documento">
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <br>
+
+
+      <div class="card">
+        <div class="card-header align-items-center justify-content-between" id="header">
+          <label>Infecciosas</label>
+          <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon"
+            data-toggle="collapse" data-target="#collapseOne9" id="menu" data-toggle="collapse"
+            data-target="#collapseOne9" aria-expanded="true" aria-controls="collapseOne9">
+            <mat-icon>menu</mat-icon>
+          </button>
+
+        </div>
+        <div id="collapseOne9" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+
+          <div class="card-body" id="pagina">
+            <form>
+              <div class="input-group mb-3">
+                <div class="col-xs-4">
+                  <label id="tipo">50.Usuario infectado por VHC:</label>
+                  <select name="" class="form-control" id="tipo"></select>
+                </div>
+                <div class="col-xs-4">
+                  <label id="documento">51.Usuario infectado por VHB: </label>
+                  <select name="" class="form-control" id="documento"></select>
+                </div>
+                <div class="col-xs-4">
+                  <label id="documento">52.Usuario infectado por VIH:</label>
+                  <select name="" class="form-control" id="documento"></select>
+                </div>
+                <div class="col-xs-4">
+                  <label id="documento">53.Pseudotumores: </label>
+                  <select name="" class="form-control" id="documento"></select>
+                </div>
+              </div>
+              <div class="input-group mb-3">
+                <div class="col-xs-4">
+                  <label id="tipo">54. Fracturas (osteopenia/ osteoporosis):</label>
+                  <select name="" class="form-control" id="tipo"></select>
+                </div>
+                <div class="col-xs-4">
+                  <label id="documento">55.Anafilaxis: </label>
+                  <select name="" class="form-control" id="documento"></select>
+                </div>
+                <div class="col-xs-">
+                  <label id="factor">55.1. A que factor se le atribuye la reacción anafiláctica?: </label>
+                  <select name="" class="form-control" id="factor"></select>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <br>
+
+
+      <div class="card">
+        <div class="card-header align-items-center justify-content-between" id="header">
+          <label>Costos Tratamiento</label>
+
+          <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon"
+            data-toggle="collapse" data-target="#collapseOne10" id="menu" data-toggle="collapse"
+            data-target="#collapseOne10" aria-expanded="true" aria-controls="collapseOne10">
+            <mat-icon>menu</mat-icon>
+          </button>
+        </div>
+
+        <div id="collapseOne10" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+          <div class="card-body" id="pagina">
+            <form>
+              <div class="input-group mb-3">
+                <div class="col-xs-4">
+                  <label id="tipo">60. Costo del total de unidades de factor (VIII o IX en personas con hemofilia, o el
+                    factor que correspondiente según la coagulopatía, en cualquier presentación que incluya como
+                    principio activo factor) administradas al paciente durante el periodo: </label>
+                  <input type="number" class="form-control" id="papellido">
+                </div>
+                <div class="col-xs-4">
+                  <label id="Costototal">61. Costo total de los agentes de puente (FrVIIa o CCPa) administrados al
+                    paciente durante el periodo:</label>
+                  <input type="number" class="form-control" id="Costototal">
+                </div>
+                <div class="col-xs-4">
+                  <label id="Costototal2">62. Costo total del manejo asociado a la coagulopatia:</label>
+                  <input type="number" class="form-control" id="Costototal3">
+                </div>
+                <div class="col-xs-4">
+                  <label id="Costototal">63. Costo Incapacidades laborales relacionadas con la coagulopatia: </label>
+                  <input type="number" class="form-control" id="Costototal">
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <br>
+
+
+      <div class="card">
+        <div class="card-header align-items-center justify-content-between" id="header">
+          <label>Novedades Administrativas</label>
+          <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon"
+          data-toggle="collapse" data-target="#collapseOne11" id="menu" data-toggle="collapse"
+          data-target="#collapseOne11" aria-expanded="true" aria-controls="collapseOne11">
+          <mat-icon>menu</mat-icon>
+        </button>
+
+        </div>
+        <div id="collapseOne11" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+
+        <div class="card-body" id="pagina">
+          <form>
+            <div class="input-group mb-3">
+              <div class="col-xs-4">
+                <label id="tipo">64. Novedades:</label>
+                <select name="" class="form-control" id="tipo"></select>
+              </div>
+              <div class="col-xs-4">
+                <label id="documento">64.1. Causa de muerte:</label>
+                <select name="" class="form-control" id="documento"></select>
+              </div>
+              <div div class="col-xs-4">
+                <label id="documento">64.2. Fecha de muerte: </label>
+                <div class="input-group" id="fechanD">
+                  <input class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker readonly
+                    #d7="ngbDatepicker" id="FechaIN">
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-secondary calendar" id="fechan3" (click)="d7.toggle()"
+                      type="button"><i class="far fa-calendar-alt fa-2x"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,284 @@
+#pagina{
+  background-color: #f3f9fb ;
+}
+#header{
+  height: 35px;
+}
+
+#tipo{
+    width: 300px;
+    font-size: 12px;
+    color: #000000;
+}
+#documento{
+    width: 300px;
+    margin-left: 20px;
+    font-size: 12px;
+    color: #000000;
+}
+#pnombre{
+    width: 300px;
+    margin-left: 20px;
+    font-size: 12px;
+    color: #000000;
+}
+#snombre{
+    width: 300px;
+    margin-left: 20px;
+    font-size: 12px;
+    color: #000000;
+}
+#papellido{
+    width: 300px;
+    font-size: 12px;
+    color: #000000;
+}
+#Agendar{
+    margin-left: 20px;
+    font-size: 12px;
+}
+#agenda{
+    width: 28%;
+    font-size: 12px;
+}
+button.calendar, button.calendar:active {
+    width: 2.75rem;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAcCAYAAAAEN20fAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAEUSURBVEiJ7ZQxToVAEIY/YCHGxN6XGOIpnpaEsBSeQC9ArZbm9TZ6ADyBNzAhQGGl8Riv4BLAWAgmkpBYkH1b8FWT2WK/zJ8ZJ4qiI6XUI3ANnGKWBnht2/ZBDRK3hgVGNsCd7/ui+JkEIrKtqurLpEWaphd933+IyI3LEIdpCYCiKD6HcuOa/nwOa0ScJEnk0BJg0UTUWJRl6RxCYEzEmomsIlPU3IPW+grIAbquy+q6fluy/28RIBeRMwDXdXMgXLj/B2uimRXpui4D9sBeRLKl+1N+L+t6RwbWrZliTTTr1oxYtzVWiTQAcRxvTX+eJMnlUDaO1vpZRO5NS0x48sIwfPc87xg4B04MCzQi8hIEwe4bl1DnFMCN2zsAAAAASUVORK5CYII=') !important;
+    background-repeat: no-repeat;
+    background-size: 23px;
+    background-position: center;
+  }
+  #fechan{
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 12px;
+    color: #000000;
+  }
+  #fechan2{
+      width: 100px;
+      font-size: 12px;
+  }
+  #fechan3{
+    margin-right: 10px;
+    font-size: 12px;
+  }
+  #edad{
+    width: 80px;
+    margin-left: 20px;
+    font-size: 12px;
+    color: #000000;
+}
+#edad2{
+    margin-left: 20px;
+    font-size: 12px;
+    color: #000000;
+}
+#edadc{
+    margin-left: 8px;
+    font-size: 12px;
+    color: #000000;
+}
+#edadc2{
+    margin-left: 8px;
+    width: 80px;
+    font-size: 12px;
+    color: #000000;
+}
+#sexo{
+    margin-left: 10px;
+    width: 120px;
+    font-size: 12px;
+    color: #000000;
+}
+#numeropaciente{
+  width: 300px;
+  margin-left: 20px;
+  font-size: 12px;
+  justify-content: center;
+  color: #000000;
+}
+#numeropaciente1{
+  width: 300px;
+  margin-left: 20px;
+  font-size: 12px;
+  box-sizing: inherit;
+  color: #000000;
+  margin-top: -15px;
+}
+#GrupoP{
+  width: 300px;
+  font-size: 12px;
+  color: #000000;
+  margin-top: 5px;
+}
+#Mresidencia{
+  width: 300px;
+  margin-left: 20px;
+  font-size: 12px;
+  color: #000000;
+  margin-top: 5px;
+}
+#fechaCor1{
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 12px;
+  color: #000000;
+  box-sizing: inherit;
+}
+#fechaCor{
+  width: 4px;
+  font-size: 12px;
+  margin-top: 5px;
+}
+#fechaCor2{
+  margin-right: 10px;
+  font-size: 12px;
+  margin-top: 5px;
+}
+#fechac{
+  margin-left: 10px;
+
+}
+#Estadog{
+  width: 300px;
+  font-size: 12px;
+  color: #000000;
+  margin-top: 10px;
+}
+#CodigoV{
+  width: 300px;
+  margin-left: 20px;
+  font-size: 12px;
+  color: #000000;
+  margin-top: -15px;
+}
+#CodigoV2{
+  width: 300px;
+  margin-left: 20px;
+  font-size: 12px;
+  color: #000000;
+
+}
+
+#fechanD1{
+  width: 100px;
+  font-size: 12px;
+  margin-top: 8px;
+  margin-top: 12px;
+}
+#fechanD2{
+  margin-right: 10px;
+  font-size: 12px;
+  margin-top: 12px;
+}
+#fechaD3{
+  width: 300px;
+  font-size: 12px;
+  color: #000000;
+  margin-top: 12px;
+}
+#MDiagnostico{
+  width: 300px;
+  margin-left: 20px;
+  font-size: 12px;
+  color: #000000;
+  margin-top: 12px;
+}
+#FechaIN{
+  width: 260px;
+  margin-left: 20px;
+  font-size: 12px;
+  color: #000000;
+}
+#FrecuenciaS{
+  width: 300px;
+  margin-left: 20px;
+  font-size: 12px;
+  color: #000000;
+  margin-top: 10px;
+}
+#HemorrageaL{
+  width: 300px;
+  font-size: 12px;
+  color: #000000;
+  margin-top: 23px;
+}
+#HemorrageaL1{
+  width: 300px;
+  font-size: 12px;
+  color: #000000;
+  margin-top: 18px;
+}
+#FechaDet{
+  width: 300px;
+  font-size: 12px;
+  color: #000000;
+}
+
+#FechaDet2{
+  margin-right: 10px;
+  font-size: 12px;
+  margin-top: 5px;
+}
+#FechaDet3{
+  margin-right: 10px;
+  font-size: 12px;
+}
+#fechat{
+  width: 260px;
+  margin-left: 20px;
+  font-size: 12px;
+  color: #000000;
+  margin-top: -10;
+}
+#fechat1{
+  margin-top: -10;
+  font-size: 12px;
+}
+#PresenciaI{
+  width: 300px;
+    font-size: 12px;
+    color: #000000;
+    margin-top: 29px;
+}
+#Recibió{
+  width: 300px;
+  margin-left: 20px;
+  font-size: 12px;
+  color: #000000;
+  margin-top: 20px;
+}
+#factor{
+  width: 300px;
+    margin-left: 20px;
+    font-size: 12px;
+    color: #000000;
+    margin-top: -10px;
+}
+#Costototal{
+  width: 300px;
+  margin-left: 20px;
+  font-size: 12px;
+  color: #000000;
+  margin-top: 30px;
+}
+
+#Costototal2{
+  width: 300px;
+  margin-left: 20px;
+  font-size: 12px;
+  color: #000000;
+  margin-top: 30px;
+}
+#Costototal3{
+  width: 300px;
+  margin-left: 20px;
+  font-size: 12px;
+  color: #000000;
+  margin-top: 50px;
+}
+#menu{
+  float: right;
+  color: #000000;
+  margin-top: -15px;
+}
