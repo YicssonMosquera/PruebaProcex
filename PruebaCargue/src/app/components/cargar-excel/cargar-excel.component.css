@@ -21,12 +21,12 @@
 #ima{
     width: 30px;
     height: 30px;
-    
+
 }
 #ims{
     width: 30px;
     height: 30px;
-    margin-left: 120px; 
+    margin-left: 120px;
 }
 #Noreporto{
     background-color: Red;
@@ -47,7 +47,7 @@
     border-radius: 15px;
     width: 100%;
     margin-top: 300px;
-   
+
   }
   .boton_2{
     text-decoration: none;
@@ -62,7 +62,7 @@
     background-color: #f8dc81;
     border-radius: 15px;
     width: 70%;
-  
+
   }
   .boton_3{
     text-decoration: none;
@@ -77,8 +77,8 @@
     background-color: #c05555 ;
     border-radius: 15px;
     width: 50%;
-    
-   
+
+
   }
 
   .boton_5{
@@ -96,7 +96,7 @@
     width: 100%;
     margin-top: 300px;
     border: 1px solid #1F618D;
-   
+
   }
 
   .boton_4{
@@ -114,7 +114,7 @@
     width: 100%;
     margin-top: 300px;
     border: 1px solid #1F618D;
-   
+
   }
   #resumen{
       justify-content: center;
@@ -126,5 +126,12 @@
         text-align: center;
         margin-left: 100px;
         margin-top: 100px;
-      
+
+  }
+  table {
+    width: 100%;
+  }
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
   }
