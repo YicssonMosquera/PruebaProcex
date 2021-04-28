@@ -10,6 +10,9 @@ import { MatTableModule} from '@angular/material/table';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort'
+import { MatInputModule } from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import { MatIconModule } from "@angular/material/icon"; // <----- Here
 
 
 import {AuthGuard} from '../app/rutasprotegidas/guards/auth.guard'
@@ -51,7 +54,10 @@ import { HemofiliaFormularioComponent } from './components/hemofilia-formulario/
     MatCheckboxModule,
     MatPaginatorModule,
     MatSortModule,
-    
+    MatInputModule,
+    MatButtonModule,
+    MatIconModule
+
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]
