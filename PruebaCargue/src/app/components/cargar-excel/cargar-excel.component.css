@@ -1,6 +1,6 @@
 
 #pagina{
-    background-color: #f3f9fb ;
+  background-image: linear-gradient(to right, rgb(255, 255, 255),white)
 }
 #nombrearchivo{
     margin-left: 20px;
