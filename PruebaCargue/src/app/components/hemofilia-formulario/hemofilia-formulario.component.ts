@@ -51,6 +51,9 @@ export class HemofiliaFormularioComponent implements OnInit {
   Anasifilis:any;
   Novedad:any;
   Causademuerte:any;
+  municipioresidencia:any;
+  codigohabilitacionIps:any;
+  codigocups:any;
 
   hemofilia:Hemofilia ={
     CAMPO_1:'',
@@ -193,6 +196,9 @@ export class HemofiliaFormularioComponent implements OnInit {
     this.CargarAnafilaxis();
     this.CargarNovedad();
     this.Cargarcausademuerte();
+    this.CargarMunicipioresidencia();
+    this.Codigovalidohabilitacionips();
+    this.CodigoCUM35363738();
   }
 
   Cargartipodocumento(){
@@ -365,9 +371,23 @@ export class HemofiliaFormularioComponent implements OnInit {
       this.Causademuerte = res;
     })
   }
+  CargarMunicipioresidencia(){
+    this.hemofiliaservice.CargarMunicipioresidencia().subscribe(res=>{
+      this.municipioresidencia = res;
+    })
+  }
+  Codigovalidohabilitacionips(){
+    this.hemofiliaservice.Codigovalidohabilitacionips().subscribe(res=>{
+      this.codigohabilitacionIps = res;
+    })
+  }
+  CodigoCUM35363738(){
+    this.hemofiliaservice.CodigoCUM35363738().subscribe(res=>{
+      this.codigocups = res;
+    })
+  }
 
   GuargarDatos(){
-
     this.hemofilia.CAMPO_7 = this.fechanacimiento.year + "-" + this.fechanacimiento.month + "-" + this.fechanacimiento.day;
     this.hemofilia.CAMPO_16 = this.fechaafiliacioneps.year + "-" + this.fechaafiliacioneps.month + "-" + this.fechaafiliacioneps.day;
     this.hemofilia.CAMPO_66 = this.fechacorte.year + "-" + this.fechacorte.month + "-" + this.fechacorte.day;
@@ -375,7 +395,39 @@ export class HemofiliaFormularioComponent implements OnInit {
     this.hemofilia.CAMPO_29 = this.FIPtratamiento.year + "-" + this.FIPtratamiento.month + "-" + this.FIPtratamiento.day;
     this.hemofilia.CAMPO_48_1 = this.fechadt.year + "-" + this.fechadt.month + "-" + this.fechadt.day
     this.hemofilia.CAMPO_64_2 = this.fechamuerte.year + "-" + this.fechamuerte.month + "-" + this.fechamuerte.day;
-    console.log(this.hemofilia);
+
+   for (let i = 0; i < this.municipioresidencia.length; i++) {
+      if (this.municipioresidencia[i].CODIGO_CIUDAD + "."+ this.municipioresidencia[i].NOMBRE_CIUDAD  === this.hemofilia.CAMPO_14 ) {
+        this.hemofilia.CAMPO_14 = this.municipioresidencia[i].CODIGO_CIUDAD;
+      }
+    }
+
+    for (let i = 0; i < this.codigohabilitacionIps.length; i++) {
+      if (this.codigohabilitacionIps[i].CODIGO_IPS + "."+ this.codigohabilitacionIps[i].NOMBRE_IPS  === this.hemofilia.CAMPO_22) {
+        this.hemofilia.CAMPO_22 = this.codigohabilitacionIps[i].CODIGO_IPS;
+        console.log(this.hemofilia.CAMPO_22)
+      }
+      if (this.codigohabilitacionIps[i].CODIGO_IPS + "."+ this.codigohabilitacionIps[i].NOMBRE_IPS  === this.hemofilia.CAMPO_39) {
+        this.hemofilia.CAMPO_39 = this.codigohabilitacionIps[i].CODIGO_IPS;
+        console.log(this.hemofilia.CAMPO_39)
+      }
+    }
+
+    for (let i = 0; i < this.codigocups.length; i++) {
+      if (this.codigocups[i].CODIGO_CUP + "."+ this.codigocups[i].DESCRIPCION  === this.hemofilia.CAMPO_35) {
+        this.hemofilia.CAMPO_35 = this.codigocups[i].CODIGO_CUP;
+      }
+      if (this.codigocups[i].CODIGO_CUP + "."+ this.codigocups[i].DESCRIPCION  === this.hemofilia.CAMPO_36) {
+        this.hemofilia.CAMPO_36 = this.codigocups[i].CODIGO_CUP;
+      }
+      if (this.codigocups[i].CODIGO_CUP + "."+ this.codigocups[i].DESCRIPCION  === this.hemofilia.CAMPO_37) {
+        this.hemofilia.CAMPO_37 = this.codigocups[i].CODIGO_CUP;
+      }
+      if (this.codigocups[i].CODIGO_CUP + "."+ this.codigocups[i].DESCRIPCION  === this.hemofilia.CAMPO_38) {
+        this.hemofilia.CAMPO_38 = this.codigocups[i].CODIGO_CUP;
+      }
+    }
+
     this.hemofiliaservice.Guardarhemofilia(this.hemofilia).subscribe(res=>{
       Swal.fire({
         title: 'Almacenado!',
@@ -390,5 +442,6 @@ export class HemofiliaFormularioComponent implements OnInit {
         }
       })
     })
+
   }
 }

@@ -111,14 +111,14 @@ export class HemofiliaService {
   Cargarcausademuerte(){
     return this.http.get(`${this.API_URI}/causanuerte`)
   }
-  CargarMunicipioresidencia(NOMBRE_CIUDAD:string){
-    return this.http.get(`${this.API_URI} ${NOMBRE_CIUDAD}`,)
+  CargarMunicipioresidencia(){
+    return this.http.get(`${this.API_URI}/ciudad`,)
   }
-  Codigovalidohabilitacionips(NOMBRE_IPS:string){
-    return this.http.get(`${this.API_URI}/codigovalidoips/${NOMBRE_IPS}`)
+  Codigovalidohabilitacionips(){
+    return this.http.get(`${this.API_URI}/codigovalidoips`)
   }
-  CodigoCUM35363738(CODIGO_CUP:string){
-    return this.http.get(`${this.API_URI}/cum/${CODIGO_CUP}`)
+  CodigoCUM35363738(){
+    return this.http.get(`${this.API_URI}/cum`)
   }
 
   Guardarhemofilia(Hemofilia:Hemofilia){

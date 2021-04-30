@@ -20,7 +20,8 @@
                 <div class="input-group mb-3">
                   <div class="col-xs-4">
                     <label id="tipo">5.Tipo de Identificación del usuario:</label>
-                    <select name="" class="form-control" id="tipo"  name="hemofilia.CAMPO_5" [(ngModel)]="hemofilia.CAMPO_5">
+                    <select name="" class="form-control" id="tipo" name="hemofilia.CAMPO_5"
+                      [(ngModel)]="hemofilia.CAMPO_5">
                       <option value=""></option>
                       <option *ngFor='let tipodocumento of tipodocumento' [ngValue]="tipodocumento.NOMBRE_OPCION"
                         [ngValue]="tipodocumento.CODIGO_OPCION">
@@ -35,22 +36,26 @@
                   </div>
                   <div class="col-xs-4">
                     <label id="pnombre">1.Primer nombre del usuario:</label>
-                    <input type="text" class="form-control" id="pnombre" name="hemofilia.CAMPO_1" [(ngModel)]="hemofilia.CAMPO_1">
+                    <input type="text" class="form-control" id="pnombre" name="hemofilia.CAMPO_1"
+                      [(ngModel)]="hemofilia.CAMPO_1">
                   </div>
                   <div class="col-xs-4">
                     <label id="snombre">2.Segundo nombre del usuario:</label>
-                    <input type="text" class="form-control" id="snombre" name="hemofilia.CAMPO_2" [(ngModel)]="hemofilia.CAMPO_2">
+                    <input type="text" class="form-control" id="snombre" name="hemofilia.CAMPO_2"
+                      [(ngModel)]="hemofilia.CAMPO_2">
                   </div>
 
                 </div>
                 <div class="input-group mb-3">
                   <div class="col-xs-4">
                     <label id="tipo">3.Primer apellido del usuario:</label>
-                    <input type="text" class="form-control" id="papellido" name="hemofilia.CAMPO_3" [(ngModel)]="hemofilia.CAMPO_3">
+                    <input type="text" class="form-control" id="papellido" name="hemofilia.CAMPO_3"
+                      [(ngModel)]="hemofilia.CAMPO_3">
                   </div>
                   <div class="col-xs-4">
                     <label id="snombre">4.Segundo apellido del usuario: </label>
-                    <input type="text" class="form-control" id="snombre" name="hemofilia.CAMPO_4" [(ngModel)]="hemofilia.CAMPO_4">
+                    <input type="text" class="form-control" id="snombre" name="hemofilia.CAMPO_4"
+                      [(ngModel)]="hemofilia.CAMPO_4">
                   </div>
                   <div class="col-xs-2">
                     <label id="fechan">7.Fecha de nacimiento:</label>
@@ -65,15 +70,18 @@
                   </div>
                   <div class="col-xs-1">
                     <label id="edad2">Edad actual:</label>
-                    <input type="number" class="form-control" id="edad" name="hemofilia.EDAD_ACTUAL" [(ngModel)]="hemofilia.EDAD_ACTUAL">
+                    <input type="number" class="form-control" id="edad" name="hemofilia.EDAD_ACTUAL"
+                      [(ngModel)]="hemofilia.EDAD_ACTUAL">
                   </div>
                   <div class="col-xs-1">
                     <label id="edadc">Edad corte:</label>
-                    <input type="number" class="form-control" id="edadc2" name="hemofilia.EDAD_CORTE" [(ngModel)]="hemofilia.EDAD_CORTE">
+                    <input type="number" class="form-control" id="edadc2" name="hemofilia.EDAD_CORTE"
+                      [(ngModel)]="hemofilia.EDAD_CORTE">
                   </div>
                   <div class="col-xs-2">
                     <label id="sexo">8.Sexo:</label>
-                    <select name="" class="form-control" id="sexo" name="hemofilia.CAMPO_8" [(ngModel)]="hemofilia.CAMPO_8">
+                    <select name="" class="form-control" id="sexo" name="hemofilia.CAMPO_8"
+                      [(ngModel)]="hemofilia.CAMPO_8">
                       <option *ngFor='let Sexo of Sexo' [ngValue]="Sexo.NOMBRE_OPCION" [ngValue]="Sexo.CODIGO_OPCION">
                         {{Sexo.CODIGO_OPCION}}.{{Sexo.NOMBRE_OPCION}}
                       </option>
@@ -81,20 +89,23 @@
                   </div>
                   <div class="col-xs-2">
                     <label id="sexo">65.Código BDUA:</label>
-                    <input type="number" class="form-control" id="sexo" name="hemofilia.CAMPO_65" [(ngModel)]="hemofilia.CAMPO_65">
+                    <input type="number" class="form-control" id="sexo" name="hemofilia.CAMPO_65"
+                      [(ngModel)]="hemofilia.CAMPO_65">
 
                   </div>
                 </div>
                 <div class="input-group mb-3">
                   <div class="col-xs-4">
                     <label id="tipo">9.Ocupación:</label>
-                    <select name="" class="form-control" id="tipo" name="hemofilia.CAMPO_9" [(ngModel)]="hemofilia.CAMPO_9">
+                    <select name="" class="form-control" id="tipo" name="hemofilia.CAMPO_9"
+                      [(ngModel)]="hemofilia.CAMPO_9">
 
                     </select>
                   </div>
                   <div class="col-xs-4">
                     <label id="documento">10.Régimen de afiliación al SGSSS:</label>
-                    <select name="" class="form-control" id="documento" name="hemofilia.CAMPO_10" [(ngModel)]="hemofilia.CAMPO_10">
+                    <select name="" class="form-control" id="documento" name="hemofilia.CAMPO_10"
+                      [(ngModel)]="hemofilia.CAMPO_10">
                       <option value=""></option>
                       <option *ngFor='let RegimenAF of RegimenAF' [ngValue]="RegimenAF.NOMBRE_OPCION"
                         [ngValue]="RegimenAF.CODIGO_OPCION">
@@ -104,11 +115,13 @@
                   </div>
                   <div class="col-xs-4">
                     <label id="documento">11.Código de la EAPB o de la entidad territorial:</label>
-                    <input type="text" class="form-control" id="pnombre" name="hemofilia.CAMPO_11" [(ngModel)]="hemofilia.CAMPO_11">
+                    <input type="text" class="form-control" id="pnombre" name="hemofilia.CAMPO_11"
+                      [(ngModel)]="hemofilia.CAMPO_11">
                   </div>
                   <div class="col-xs-4">
                     <label id="documento">12.Código pertenencia étnica:</label>
-                    <select name="" class="form-control" id="documento" name="hemofilia.CAMPO_12" [(ngModel)]="hemofilia.CAMPO_12">
+                    <select name="" class="form-control" id="documento" name="hemofilia.CAMPO_12"
+                      [(ngModel)]="hemofilia.CAMPO_12">
                       <option value=""></option>
                       <option *ngFor='let CEtnica of CEtnica' [ngValue]="CEtnica.NOMBRE_OPCION"
                         [ngValue]="CEtnica.CODIGO_OPCION">
@@ -120,7 +133,8 @@
                 <div class="input-group mb-3">
                   <div class="col-xs-4">
                     <label id="tipo">13.Grupo poblacional:</label>
-                    <select name="" class="form-control" id="GrupoP" name="hemofilia.CAMPO_13" [(ngModel)]="hemofilia.CAMPO_13">
+                    <select name="" class="form-control" id="GrupoP" name="hemofilia.CAMPO_13"
+                      [(ngModel)]="hemofilia.CAMPO_13">
                       <option value=""></option>
                       <option *ngFor='let GProblacional of GProblacional' [ngValue]="GProblacional.NOMBRE_OPCION"
                         [ngValue]="GProblacional.CODIGO_OPCION">
@@ -130,20 +144,26 @@
                   </div>
                   <div class="col-xs-4">
                     <label id="documento">14.Municipio de residencia:</label>
-                    <select type="text" class="form-control" id="Mresidencia" name="hemofilia.CAMPO_14" [(ngModel)]="hemofilia.CAMPO_14">
-
-                    </select>
+                    <input type="text" list="municipio" value="5" id="Mresidencia"  class="form-control" name="hemofilia.CAMPO_14"
+                      [(ngModel)]="hemofilia.CAMPO_14">
+                    <datalist id="municipio">
+                      <option *ngFor='let municipioresidencia of municipioresidencia'
+                        [ngValue]="tipodocumento.NOMBRE_CIUDAD" [ngValue]="municipioresidencia.CODIGO_CIUDAD">
+                        {{municipioresidencia.CODIGO_CIUDAD}}.{{municipioresidencia.NOMBRE_CIUDAD}}
+                      </option>
+                    </datalist>
                   </div>
                   <div class="col-xs-4">
                     <label id="numeropaciente1">15.Número telefónico del paciente (incluyendo a familiares y
                       cuidadores):</label>
-                    <input type="number" class="form-control" id="numeropaciente" name="hemofilia.CAMPO_15" [(ngModel)]="hemofilia.CAMPO_15">
+                    <input type="number" class="form-control" id="numeropaciente" name="hemofilia.CAMPO_15"
+                      [(ngModel)]="hemofilia.CAMPO_15">
                   </div>
                   <div class="col-xs-1">
                     <label id="fechaCor1">16.Fecha de afiliación a la EPS:</label>
                     <div class="input-group" id="fechac">
-                      <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="fechaafiliacioneps" ngbDatepicker readonly
-                        #d1="ngbDatepicker" id="fechaCor">
+                      <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="fechaafiliacioneps"
+                        ngbDatepicker readonly #d1="ngbDatepicker" id="fechaCor">
                       <div class="input-group-append">
                         <button class="btn btn-outline-secondary calendar" id="fechaCor2" (click)="d1.toggle()"
                           type="button"><i class="far fa-calendar-alt fa-2x"></i></button>
@@ -189,7 +209,8 @@
               <div class="input-group mb-3">
                 <div class="col-xs-4">
                   <label id="Estadog">17.Estado de gestación a la fecha de corte:</label>
-                  <select name="" class="form-control" id="Estadog" name="hemofilia.CAMPO_17" [(ngModel)]="hemofilia.CAMPO_17">
+                  <select name="" class="form-control" id="Estadog" name="hemofilia.CAMPO_17"
+                    [(ngModel)]="hemofilia.CAMPO_17">
                     <option value=""></option>
                     <option *ngFor='let EstagFechacorte of EstagFechacorte' [ngValue]="EstagFechacorte.NOMBRE_OPCION"
                       [ngValue]="EstagFechacorte.CODIGO_OPCION">
@@ -199,7 +220,8 @@
                 </div>
                 <div class="col-xs-4">
                   <label id="documento">18.Usuario en programa de planificación o consejería genética:</label>
-                  <select name="" class="form-control" id="documento" name="hemofilia.CAMPO_18" [(ngModel)]="hemofilia.CAMPO_18">
+                  <select name="" class="form-control" id="documento" name="hemofilia.CAMPO_18"
+                    [(ngModel)]="hemofilia.CAMPO_18">
                     <option value=""></option>
                     <option *ngFor='let Programaconsejeria of Programaconsejeria'
                       [ngValue]="Programaconsejeria.NOMBRE_OPCION" [ngValue]="Programaconsejeria.CODIGO_OPCION">
@@ -240,11 +262,13 @@
                 </div>
                 <div class="col-xs-4">
                   <label id="MDiagnostico">19.Edad del usuario en el momento del diagnóstico :</label>
-                  <input type="number" class="form-control" id="MDiagnostico" name="hemofilia.CAMPO_19" [(ngModel)]="hemofilia.CAMPO_19">
+                  <input type="number" class="form-control" id="MDiagnostico" name="hemofilia.CAMPO_19"
+                    [(ngModel)]="hemofilia.CAMPO_19">
                 </div>
                 <div class="col-xs-4">
                   <label id="MDiagnostico">20.Motivo de la prueba de diagnóstico: </label>
-                  <select name="" class="form-control" id="MDiagnostico" name="hemofilia.CAMPO_20" [(ngModel)]="hemofilia.CAMPO_20">
+                  <select name="" class="form-control" id="MDiagnostico" name="hemofilia.CAMPO_20"
+                    [(ngModel)]="hemofilia.CAMPO_20">
                     <option value=""></option>
                     <option *ngFor='let MPDiagnostico of MPDiagnostico' [ngValue]="MPDiagnostico.NOMBRE_OPCION"
                       [ngValue]="MPDiagnostico.CODIGO_OPCION">
@@ -255,9 +279,15 @@
                 <div class="col-xs-4">
                   <label id="CodigoV">22.Código válido de habilitación de la IPS donde se realiza la confirmación
                     diagnóstica (IPS donde se realiza el diagnóstico por parte de el médico):</label>
-                  <select name="" class="form-control" id="CodigoV2" name="hemofilia.CAMPO_22" [(ngModel)]="hemofilia.CAMPO_22">
 
-                  </select>
+                  <input type="text" list="codigovalido" id="CodigoV2" class="form-control" name="hemofilia.CAMPO_22"
+                    [(ngModel)]="hemofilia.CAMPO_22">
+                  <datalist id="codigovalido">
+                    <option *ngFor='let codigohabilitacionIps of codigohabilitacionIps'
+                      [ngValue]="codigohabilitacionIps.NOMBRE_IPS" [ngValue]="codigohabilitacionIps.CODIGO_IPS">
+                      {{codigohabilitacionIps.CODIGO_IPS}}.{{codigohabilitacionIps.NOMBRE_IPS}}
+                    </option>
+                  </datalist>
                 </div>
               </div>
 
@@ -286,7 +316,8 @@
               <div class="input-group mb-3">
                 <div class="col-xs-4">
                   <label id="tipo">23. Tipo de deficiencia diagnosticada:</label>
-                  <select name="" class="form-control" id="tipo" name="hemofilia.CAMPO_23" [(ngModel)]="hemofilia.CAMPO_23">
+                  <select name="" class="form-control" id="tipo" name="hemofilia.CAMPO_23"
+                    [(ngModel)]="hemofilia.CAMPO_23">
                     <option value=""></option>
                     <option *ngFor='let TPDiagnostico of TPDiagnostico' [ngValue]="TPDiagnostico.NOMBRE_OPCION"
                       [ngValue]="TPDiagnostico.CODIGO_OPCION">
@@ -296,7 +327,8 @@
                 </div>
                 <div class="col-xs-4">
                   <label id="documento">24.Clasificación de severidad según nivel de factor:</label>
-                  <select name="" class="form-control" id="documento" name="hemofilia.CAMPO_24" [(ngModel)]="hemofilia.CAMPO_24">
+                  <select name="" class="form-control" id="documento" name="hemofilia.CAMPO_24"
+                    [(ngModel)]="hemofilia.CAMPO_24">
                     <option value=""></option>
                     <option *ngFor='let CLSeveridad of CLSeveridad' [ngValue]="CLSeveridad.NOMBRE_OPCION"
                       [ngValue]="CLSeveridad.CODIGO_OPCION">
@@ -306,11 +338,13 @@
                 </div>
                 <div class="col-xs-4">
                   <label id="documento">25.Actividad coagulante del factor:</label>
-                  <input type="number" class="form-control" id="documento" name="hemofilia.CAMPO_25" [(ngModel)]="hemofilia.CAMPO_25">
+                  <input type="number" class="form-control" id="documento" name="hemofilia.CAMPO_25"
+                    [(ngModel)]="hemofilia.CAMPO_25">
                 </div>
                 <div class="col-xs-4">
                   <label id="documento">26.Antecedentes familiares asociados a hemofilia:</label>
-                  <select name="" class="form-control" id="documento" name="hemofilia.CAMPO_26" [(ngModel)]="hemofilia.CAMPO_26">
+                  <select name="" class="form-control" id="documento" name="hemofilia.CAMPO_26"
+                    [(ngModel)]="hemofilia.CAMPO_26">
                     <option value=""></option>
                     <option *ngFor='let ASHemofilia of ASHemofilia' [ngValue]="ASHemofilia.NOMBRE_OPCION"
                       [ngValue]="ASHemofilia.CODIGO_OPCION">
@@ -322,7 +356,8 @@
               <div class="input-group mb-3">
                 <div class="col-xs-4">
                   <label id="tipo">27.Factor recibido: </label>
-                  <select name="" class="form-control" id="tipo" name="hemofilia.CAMPO_27" [(ngModel)]="hemofilia.CAMPO_27">
+                  <select name="" class="form-control" id="tipo" name="hemofilia.CAMPO_27"
+                    [(ngModel)]="hemofilia.CAMPO_27">
                     <option value=""></option>
                     <option *ngFor='let FactorR of FactorR' [ngValue]="FactorR.NOMBRE_OPCION"
                       [ngValue]="FactorR.CODIGO_OPCION">
@@ -332,7 +367,8 @@
                 </div>
                 <div class="col-xs-4">
                   <label id="documento">28.Esquema:</label>
-                  <select name="" class="form-control" id="documento" name="hemofilia.CAMPO_28" [(ngModel)]="hemofilia.CAMPO_28">
+                  <select name="" class="form-control" id="documento" name="hemofilia.CAMPO_28"
+                    [(ngModel)]="hemofilia.CAMPO_28">
                     <option value=""></option>
                     <option *ngFor='let Esquema1 of Esquema1' [ngValue]="Esquema1.NOMBRE_OPCION"
                       [ngValue]="Esquema1.CODIGO_OPCION">
@@ -343,8 +379,8 @@
                 <div div class="col-xs-4">
                   <label id="documento">29.Fecha de inicio del primer tratamiento:</label>
                   <div class="input-group" id="fechanD">
-                    <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="FIPtratamiento" ngbDatepicker readonly
-                      #d5="ngbDatepicker" id="FechaIN">
+                    <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="FIPtratamiento"
+                      ngbDatepicker readonly #d5="ngbDatepicker" id="FechaIN">
                     <div class="input-group-append">
                       <button class="btn btn-outline-secondary calendar" id="fechan3" (click)="d5.toggle()"
                         type="button"><i class="far fa-calendar-alt fa-2x"></i></button>
@@ -377,7 +413,8 @@
               <div class="input-group mb-3">
                 <div class="col-xs-4">
                   <label id="tipo">30.Factor recibido:</label>
-                  <select name="" class="form-control" id="tipo" name="hemofilia.CAMPO_30" [(ngModel)]="hemofilia.CAMPO_30">
+                  <select name="" class="form-control" id="tipo" name="hemofilia.CAMPO_30"
+                    [(ngModel)]="hemofilia.CAMPO_30">
                     <option value=""></option>
                     <option *ngFor='let FactorrecibidoTA of FactorrecibidoTA' [ngValue]="FactorrecibidoTA.NOMBRE_OPCION"
                       [ngValue]="FactorrecibidoTA.CODIGO_OPCION">
@@ -388,7 +425,8 @@
                 </div>
                 <div class="col-xs-4">
                   <label id="documento">31.Esquema: </label>
-                  <select name="" class="form-control" id="documento" name="hemofilia.CAMPO_31" [(ngModel)]="hemofilia.CAMPO_31">
+                  <select name="" class="form-control" id="documento" name="hemofilia.CAMPO_31"
+                    [(ngModel)]="hemofilia.CAMPO_31">
                     <option value=""></option>
                     <option *ngFor='let EsquemaTA of EsquemaTA' [ngValue]="EsquemaTA. NOMBRE_OPCION"
                       [ngValue]="EsquemaTA.CODIGO_OPCION">
@@ -399,21 +437,25 @@
                 </div>
                 <div class="col-xs-4">
                   <label id="documento">32.Peso (kg): </label>
-                  <input type="number" class="form-control" id="documento" name="hemofilia.CAMPO_32" [(ngModel)]="hemofilia.CAMPO_32">
+                  <input type="number" class="form-control" id="documento" name="hemofilia.CAMPO_32"
+                    [(ngModel)]="hemofilia.CAMPO_32">
                 </div>
                 <div class="col-xs-4">
                   <label id="documento">Dosis profilaxis: </label>
-                  <input type="text" class="form-control" id="documento" name="hemofilia.DOSIS_PROFILAXIS" [(ngModel)]="hemofilia.DOSIS_PROFILAXIS">
+                  <input type="text" class="form-control" id="documento" name="hemofilia.DOSIS_PROFILAXIS"
+                    [(ngModel)]="hemofilia.DOSIS_PROFILAXIS">
                 </div>
               </div>
               <div class="input-group mb-3">
                 <div class="col-xs-4">
                   <label id="tipo">32.1.Dosis: UI/dosis (profilaxis) (última dosis calculada para el periodo):</label>
-                  <input type="text" class="form-control" id="papellido" name="hemofilia.CAMPO_32_1" [(ngModel)]="hemofilia.CAMPO_32_1">
+                  <input type="text" class="form-control" id="papellido" name="hemofilia.CAMPO_32_1"
+                    [(ngModel)]="hemofilia.CAMPO_32_1">
                 </div>
                 <div class="col-xs-4">
                   <label id="FrecuenciaS">32.2.Frecuencia por semana (profilaxis):</label>
-                  <select name="" class="form-control" id="FrecuenciaS" name="hemofilia.CAMPO_32_2" [(ngModel)]="hemofilia.CAMPO_32_2">
+                  <select name="" class="form-control" id="FrecuenciaS" name="hemofilia.CAMPO_32_2"
+                    [(ngModel)]="hemofilia.CAMPO_32_2">
                     <option value=""></option>
                     <option *ngFor='let Frecuenciasemana of Frecuenciasemana' [ngValue]="Frecuenciasemana.NOMBRE_OPCION"
                       [ngValue]="Frecuenciasemana.CODIGO_OPCION">
@@ -423,17 +465,20 @@
                 </div>
                 <div class="col-xs-4">
                   <label id="documento"> 32.3. Número de unidades totales en el periodo UI/dl (demanda): </label>
-                  <input type="number" class="form-control" id="documento" name="hemofilia.CAMPO_32_3" [(ngModel)]="hemofilia.CAMPO_32_3">
+                  <input type="number" class="form-control" id="documento" name="hemofilia.CAMPO_32_3"
+                    [(ngModel)]="hemofilia.CAMPO_32_3">
                 </div>
                 <div class="col-xs-4">
                   <label id="documento">32.4.Numero de aplicaciones del factor en el periodo (demanda):</label>
-                  <input name="" class="form-control" id="documento" name="hemofilia.CAMPO_32_4" [(ngModel)]="hemofilia.CAMPO_32_4">
+                  <input name="" class="form-control" id="documento" name="hemofilia.CAMPO_32_4"
+                    [(ngModel)]="hemofilia.CAMPO_32_4">
                 </div>
               </div>
               <div class="input-group mb-3">
                 <div class="col-xs-4">
                   <label id="Modalidad">33.Modalidad de aplicación tratamiento:</label>
-                  <select name="" class="form-control" id="Modalidad" name="hemofilia.CAMPO_33" [(ngModel)]="hemofilia.CAMPO_33">
+                  <select name="" class="form-control" id="Modalidad" name="hemofilia.CAMPO_33"
+                    [(ngModel)]="hemofilia.CAMPO_33">
                     <option value=""></option>
                     <option *ngFor='let Modalidadtratamiento of Modalidadtratamiento'
                       [ngValue]="Modalidadtratamiento.NOMBRE_OPCION" [ngValue]="Modalidadtratamiento.CODIGO_OPCION">
@@ -445,7 +490,8 @@
 
                 <div class="col-xs-4">
                   <label id="administracion">34.Vía de administración:</label>
-                  <select name="" class="form-control" id="administracion" name="hemofilia.CAMPO_34" [(ngModel)]="hemofilia.CAMPO_34">
+                  <select name="" class="form-control" id="administracion" name="hemofilia.CAMPO_34"
+                    [(ngModel)]="hemofilia.CAMPO_34">
                     <option value=""></option>
                     <option *ngFor='let Viaadministracion of Viaadministracion'
                       [ngValue]="Viaadministracion. NOMBRE_OPCION" [ngValue]="Viaadministracion.CODIGO_OPCION">
@@ -458,32 +504,56 @@
                 <div class="col-xs-4">
                   <label id="documento">35.Código CUM del factor/medicamento que recibe el paciente a la fecha de corte
                     (relacionado con la coagulopatía reportada):</label>
-                  <select name="" class="form-control" id="documento" name="hemofilia.CAMPO_35" [(ngModel)]="hemofilia.CAMPO_35">
+                  <input type="text" list="cups35" id="documento" class="form-control" name="hemofilia.CAMPO_35"
+                    [(ngModel)]="hemofilia.CAMPO_35">
+                  <datalist id="cups35">
+                    <option *ngFor='let codigocups of codigocups' [ngValue]="codigocups.DESCRIPCION"
+                      [ngValue]="codigocups.CODIGO_CUP">
+                      {{codigocups.CODIGO_CUP}}.{{codigocups.DESCRIPCION}}
+                    </option>
+                  </datalist>
 
-                  </select>
                 </div>
                 <div class="col-xs-4">
                   <label id="documento">36.Código CUM del otro factor/medicamento que recibe el paciente a la fecha de
                     corte (relacionado con la coagulopatía reportada):</label>
-                  <select name="" class="form-control" id="documento" name="hemofilia.CAMPO_36" [(ngModel)]="hemofilia.CAMPO_36">
 
-                  </select>
+                  <input type="text" list="cups36" id="documento" class="form-control" name="hemofilia.CAMPO_36"
+                    [(ngModel)]="hemofilia.CAMPO_36">
+                  <datalist id="cups36">
+                    <option *ngFor='let codigocups of codigocups' [ngValue]="codigocups.DESCRIPCION"
+                      [ngValue]="codigocups.CODIGO_CUP">
+                      {{codigocups.CODIGO_CUP}}.{{codigocups.DESCRIPCION}}
+                    </option>
+                  </datalist>
                 </div>
               </div>
               <div class="input-group mb-3">
                 <div class="col-xs-4">
                   <label id="tipo">37.Código CUM del otro factor/medicamento que recibe el paciente a la fecha de corte
                     (relacionado con la coagulopatía reportada): </label>
-                  <select name="" class="form-control" id="tipo" name="hemofilia.CAMPO_37" [(ngModel)]="hemofilia.CAMPO_37">
 
-                  </select>
+                  <input type="text" list="cups37" id="tipo" class="form-control" name="hemofilia.CAMPO_37"
+                    [(ngModel)]="hemofilia.CAMPO_37">
+                  <datalist id="cups37">
+                    <option *ngFor='let codigocups of codigocups' [ngValue]="codigocups.DESCRIPCION"
+                      [ngValue]="codigocups.CODIGO_CUP">
+                      {{codigocups.CODIGO_CUP}}.{{codigocups.DESCRIPCION}}
+                    </option>
+                  </datalist>
+
                 </div>
                 <div class="col-xs-4">
                   <label id="documento">38. Código CUM del otro factor/medicamento que recibe el paciente a la fecha de
                     corte (relacionado con la coagulopatía reportada):</label>
-                  <select name="" class="form-control" id="documento" name="hemofilia.CAMPO_38" [(ngModel)]="hemofilia.CAMPO_38">
-
-                  </select>
+                    <input type="text" list="cups38" id="documento" class="form-control" name="hemofilia.CAMPO_38"
+                    [(ngModel)]="hemofilia.CAMPO_38">
+                  <datalist id="cups38">
+                    <option *ngFor='let codigocups of codigocups' [ngValue]="codigocups.DESCRIPCION"
+                      [ngValue]="codigocups.CODIGO_CUP">
+                      {{codigocups.CODIGO_CUP}}.{{codigocups.DESCRIPCION}}
+                    </option>
+                  </datalist>
                 </div>
               </div>
             </form>
@@ -511,13 +581,19 @@
                 <div class="col-xs-4">
                   <label id="tipo">39.Código válido de habilitación de la IPS donde se realiza el seguimiento actual:
                   </label>
-                  <select name="" class="form-control" id="tipo" name="hemofilia.CAMPO_39" [(ngModel)]="hemofilia.CAMPO_39">
-
-                  </select>
+                  <input type="text" list="codigovalido39" id="tipo" class="form-control" name="hemofilia.CAMPO_39"
+                  [(ngModel)]="hemofilia.CAMPO_39">
+                  <datalist id="codigovalido39">
+                    <option *ngFor='let codigohabilitacionIps of codigohabilitacionIps'
+                      [ngValue]="codigohabilitacionIps.NOMBRE_IPS" [ngValue]="codigohabilitacionIps.CODIGO_IPS">
+                      {{codigohabilitacionIps.CODIGO_IPS}}.{{codigohabilitacionIps.NOMBRE_IPS}}
+                    </option>
+                  </datalist>
                 </div>
                 <div class="col-xs-4">
                   <label id="documento">57.Seleccionar el profesional que lidera la atención del paciente :</label>
-                  <select name="" class="form-control" id="documento" name="hemofilia.CAMPO_57" [(ngModel)]="hemofilia.CAMPO_57">
+                  <select name="" class="form-control" id="documento" name="hemofilia.CAMPO_57"
+                    [(ngModel)]="hemofilia.CAMPO_57">
                     <option value=""></option>
                     <option *ngFor='let ProfesionalSP of ProfesionalSP' [ngValue]="ProfesionalSP. NOMBRE_OPCION"
                       [ngValue]="ProfesionalSP.CODIGO_OPCION">
@@ -528,65 +604,79 @@
                 </div>
                 <div class="col-xs-4">
                   <label id="FrecuenciaS">57.1.Consultas presenciales con Hematólogo :</label>
-                  <input type="number" class="form-control" id="FrecuenciaS" name="hemofilia.CAMPO_57_1" [(ngModel)]="hemofilia.CAMPO_57_1">
+                  <input type="number" class="form-control" id="FrecuenciaS" name="hemofilia.CAMPO_57_1"
+                    [(ngModel)]="hemofilia.CAMPO_57_1">
                 </div>
                 <div class="col-xs-4">
                   <label id="FrecuenciaS">57.2.Consultas presenciales con Ortopedista : </label>
-                  <input type="number" class="form-control" id="FrecuenciaS" name="hemofilia.CAMPO_57_2" [(ngModel)]="hemofilia.CAMPO_57_2">
+                  <input type="number" class="form-control" id="FrecuenciaS" name="hemofilia.CAMPO_57_2"
+                    [(ngModel)]="hemofilia.CAMPO_57_2">
                 </div>
               </div>
               <div class="input-group mb-3">
                 <div class="col-xs-4">
                   <label id="tipo">57.3.Intervención por parte del profesional de enfermería:</label>
-                  <input type="number" class="form-control" id="papellido" name="hemofilia.CAMPO_57_3" [(ngModel)]="hemofilia.CAMPO_57_3">
+                  <input type="number" class="form-control" id="papellido" name="hemofilia.CAMPO_57_3"
+                    [(ngModel)]="hemofilia.CAMPO_57_3">
                 </div>
                 <div class="col-xs-4">
                   <label id="FrecuenciaS">57.4. Consultas con Odontólogo :</label>
-                  <input type="number" class="form-control" id="FrecuenciaS" name="hemofilia.CAMPO_57_4" [(ngModel)]="hemofilia.CAMPO_57_4">
+                  <input type="number" class="form-control" id="FrecuenciaS" name="hemofilia.CAMPO_57_4"
+                    [(ngModel)]="hemofilia.CAMPO_57_4">
                 </div>
                 <div class="col-xs-4">
                   <label id="FrecuenciaS">57.5. Consultas con Nutricionista: </label>
-                  <input type="number" class="form-control" id="FrecuenciaS" name="hemofilia.CAMPO_57_5" [(ngModel)]="hemofilia.CAMPO_57_5">
+                  <input type="number" class="form-control" id="FrecuenciaS" name="hemofilia.CAMPO_57_5"
+                    [(ngModel)]="hemofilia.CAMPO_57_5">
                 </div>
                 <div class="col-xs-4">
                   <label id="FrecuenciaS">57.6. Intervención por parte de Trabajo Social : </label>
-                  <input type="number" class="form-control" id="FrecuenciaS" name="hemofilia.CAMPO_57_6" [(ngModel)]="hemofilia.CAMPO_57_6">
+                  <input type="number" class="form-control" id="FrecuenciaS" name="hemofilia.CAMPO_57_6"
+                    [(ngModel)]="hemofilia.CAMPO_57_6">
                 </div>
               </div>
               <div class="input-group mb-3">
                 <div class="col-xs-4">
                   <label id="tipo">57.7.Consultas con Fisiatría :</label>
-                  <input type="number" class="form-control" id="papellido" name="hemofilia.CAMPO_57_7" [(ngModel)]="hemofilia.CAMPO_57_7">
+                  <input type="number" class="form-control" id="papellido" name="hemofilia.CAMPO_57_7"
+                    [(ngModel)]="hemofilia.CAMPO_57_7">
                 </div>
                 <div class="col-xs-4">
                   <label id="documento">57.8. Consultas con Psicología:</label>
-                  <input type="number" class="form-control" id="documento" name="hemofilia.CAMPO_57_8" [(ngModel)]="hemofilia.CAMPO_57_8">
+                  <input type="number" class="form-control" id="documento" name="hemofilia.CAMPO_57_8"
+                    [(ngModel)]="hemofilia.CAMPO_57_8">
                 </div>
                 <div class="col-xs-4">
                   <label id="documento">57.9. Intervención por parte de Químico farmacéutico:</label>
-                  <input type="number" class="form-control" id="documento" name="hemofilia.CAMPO_57_9" [(ngModel)]="hemofilia.CAMPO_57_9">
+                  <input type="number" class="form-control" id="documento" name="hemofilia.CAMPO_57_9"
+                    [(ngModel)]="hemofilia.CAMPO_57_9">
                 </div>
                 <div class="col-xs-4">
                   <label id="documento">57.10. Intervención por parte de Fisioterapia:</label>
-                  <input type="number" class="form-control" id="documento" name="hemofilia.CAMPO_57_10" [(ngModel)]="hemofilia.CAMPO_57_10">
+                  <input type="number" class="form-control" id="documento" name="hemofilia.CAMPO_57_10"
+                    [(ngModel)]="hemofilia.CAMPO_57_10">
                 </div>
               </div>
               <div class="input-group mb-3">
                 <div class="col-xs-4">
                   <label id="tipo">57.11.Primer nombre del médico tratante principal::</label>
-                  <input type="text" class="form-control" id="papellido" name="hemofilia.CAMPO_57_11" [(ngModel)]="hemofilia.CAMPO_57_11">
+                  <input type="text" class="form-control" id="papellido" name="hemofilia.CAMPO_57_11"
+                    [(ngModel)]="hemofilia.CAMPO_57_11">
                 </div>
                 <div class="col-xs-4">
                   <label id="documento">57.12. Segundo nombre del médico tratante principal:</label>
-                  <input type="text" class="form-control" id="documento" name="hemofilia.CAMPO_57_12" [(ngModel)]="hemofilia.CAMPO_57_12">
+                  <input type="text" class="form-control" id="documento" name="hemofilia.CAMPO_57_12"
+                    [(ngModel)]="hemofilia.CAMPO_57_12">
                 </div>
                 <div class="col-xs-4">
                   <label id="documento">57.13. Primer apellido del médico tratante principal:</label>
-                  <input type="text" class="form-control" id="documento" name="hemofilia.CAMPO_57_13" [(ngModel)]="hemofilia.CAMPO_57_13">
+                  <input type="text" class="form-control" id="documento" name="hemofilia.CAMPO_57_13"
+                    [(ngModel)]="hemofilia.CAMPO_57_13">
                 </div>
                 <div class="col-xs-4">
                   <label id="documento">57.14. Segundo Apellido del médico tratante principal:</label>
-                  <input type="text" class="form-control" id="documento" name="hemofilia.CAMPO_57_14" [(ngModel)]="hemofilia.CAMPO_57_14">
+                  <input type="text" class="form-control" id="documento" name="hemofilia.CAMPO_57_14"
+                    [(ngModel)]="hemofilia.CAMPO_57_14">
                 </div>
               </div>
             </form>
@@ -614,7 +704,8 @@
               <div class="input-group mb-3">
                 <div class="col-xs-4">
                   <label id="Estadog">40.Hemartrosis:</label>
-                  <select name="" class="form-control" id="Estadog" name="hemofilia.CAMPO_40" [(ngModel)]="hemofilia.CAMPO_40">
+                  <select name="" class="form-control" id="Estadog" name="hemofilia.CAMPO_40"
+                    [(ngModel)]="hemofilia.CAMPO_40">
                     <option value=""></option>
                     <option *ngFor='let Hermatosis of Hermatosis' [ngValue]="Hermatosis. NOMBRE_OPCION"
                       [ngValue]="Hermatosis.CODIGO_OPCION">
@@ -624,68 +715,81 @@
                 </div>
                 <div class="col-xs-4">
                   <label id="documento">40.1.Numero de hemartrosis espontaneas durante los últimos doce meses:</label>
-                  <input type="number" class="form-control" id="documento" name="hemofilia.CAMPO_40_1" [(ngModel)]="hemofilia.CAMPO_40_1">
+                  <input type="number" class="form-control" id="documento" name="hemofilia.CAMPO_40_1"
+                    [(ngModel)]="hemofilia.CAMPO_40_1">
                 </div>
                 <div class="col-xs-4">
                   <label id="pnombre">40.2.Numero de hemartrosis traumáticas durante los últimos doce meses:</label>
-                  <input type="number" class="form-control" id="pnombre" name="hemofilia.CAMPO_40_2" [(ngModel)]="hemofilia.CAMPO_40_2">
+                  <input type="number" class="form-control" id="pnombre" name="hemofilia.CAMPO_40_2"
+                    [(ngModel)]="hemofilia.CAMPO_40_2">
                 </div>
                 <div class="col-xs-4">
                   <label id="FrecuenciaS">41.Hemorragia del ilio-psoas:</label>
-                  <input type="number" class="form-control" id="FrecuenciaS" name="hemofilia.CAMPO_41" [(ngModel)]="hemofilia.CAMPO_41">
+                  <input type="number" class="form-control" id="FrecuenciaS" name="hemofilia.CAMPO_41"
+                    [(ngModel)]="hemofilia.CAMPO_41">
                 </div>
               </div>
               <div class="input-group mb-3">
                 <div class="col-xs-4">
                   <label id="tipo">42.Hemorragia de otros muscular/tejidos blandos: </label>
-                  <input type="number" class="form-control" id="papellido" name="hemofilia.CAMPO_42" [(ngModel)]="hemofilia.CAMPO_42">
+                  <input type="number" class="form-control" id="papellido" name="hemofilia.CAMPO_42"
+                    [(ngModel)]="hemofilia.CAMPO_42">
                 </div>
                 <div class="col-xs-4">
                   <label id="documento">43.Hemorragia intracraneal:</label>
-                  <input type="number" class="form-control" id="documento" name="hemofilia.CAMPO_43" [(ngModel)]="hemofilia.CAMPO_43">
+                  <input type="number" class="form-control" id="documento" name="hemofilia.CAMPO_43"
+                    [(ngModel)]="hemofilia.CAMPO_43">
                 </div>
                 <div class="col-xs-4">
                   <label id="documento">44.Hemorragia en cuello o garganta:</label>
-                  <input type="number" class="form-control" id="documento" name="hemofilia.CAMPO_44" [(ngModel)]="hemofilia.CAMPO_44">
+                  <input type="number" class="form-control" id="documento" name="hemofilia.CAMPO_44"
+                    [(ngModel)]="hemofilia.CAMPO_44">
                 </div>
                 <div class="col-xs-4">
                   <label id="documento">45.Hemorragia oral:</label>
-                  <input type="number" class="form-control" id="documento" name="hemofilia.CAMPO_45" [(ngModel)]="hemofilia.CAMPO_45">
+                  <input type="number" class="form-control" id="documento" name="hemofilia.CAMPO_45"
+                    [(ngModel)]="hemofilia.CAMPO_45">
                 </div>
               </div>
               <div class="input-group mb-3">
                 <div class="col-xs-4">
                   <label id="HemorrageaL1">46.Hemorragias en otras localizaciones:</label>
-                  <input type="number" class="form-control" id="HemorrageaL" name="hemofilia.CAMPO_46" [(ngModel)]="hemofilia.CAMPO_46">
+                  <input type="number" class="form-control" id="HemorrageaL" name="hemofilia.CAMPO_46"
+                    [(ngModel)]="hemofilia.CAMPO_46">
                 </div>
                 <div class="col-xs-4">
                   <label id="documento">47.1.Numero de otras hemorragias espontaneas diferentes a hemartrosis durante
                     los
                     últimos doce meses:</label>
-                  <input type="number" class="form-control" id="documento" name="hemofilia.CAMPO_47_1" [(ngModel)]="hemofilia.CAMPO_47_1">
+                  <input type="number" class="form-control" id="documento" name="hemofilia.CAMPO_47_1"
+                    [(ngModel)]="hemofilia.CAMPO_47_1">
                 </div>
                 <div class="col-xs-4">
                   <label id="documento">47.2.Numero de otras hemorragias traumáticas diferentes a hemartrosis durante
                     los
                     últimos doce meses:</label>
-                  <input type="number" class="form-control" id="documento" name="hemofilia.CAMPO_47_2" [(ngModel)]="hemofilia.CAMPO_47_2">
+                  <input type="number" class="form-control" id="documento" name="hemofilia.CAMPO_47_2"
+                    [(ngModel)]="hemofilia.CAMPO_47_2">
                 </div>
                 <div class="col-xs-4">
                   <label id="documento">47.3. Numero de otras hemorragias asociadas a procedimiento diferentes a
                     hemartrosis durante los últimos doce meses:</label>
-                  <input type="number" class="form-control" id="documento" name="hemofilia.CAMPO_47_3" [(ngModel)]="hemofilia.CAMPO_47_3">
+                  <input type="number" class="form-control" id="documento" name="hemofilia.CAMPO_47_3"
+                    [(ngModel)]="hemofilia.CAMPO_47_3">
                 </div>
               </div>
               <div class="input-group mb-3">
                 <div class="col-xs-4">
                   <label id="tipo">58.Número de atenciones en el servicio de urgencias que requieren tratamiento para la
                     condición de hemofilia:</label>
-                  <input type="number" class="form-control" id="papellido" name="hemofilia.CAMPO_58" [(ngModel)]="hemofilia.CAMPO_58">
+                  <input type="number" class="form-control" id="papellido" name="hemofilia.CAMPO_58"
+                    [(ngModel)]="hemofilia.CAMPO_58">
                 </div>
                 <div class="col-xs-4">
                   <label id="documento">59. Numero de eventos hospitalarios por causa de la hemofilia incluye eventos
                     programados y no programados):</label>
-                  <input type="number" class="form-control" id="documento" name="hemofilia.CAMPO_59" [(ngModel)]="hemofilia.CAMPO_59">
+                  <input type="number" class="form-control" id="documento" name="hemofilia.CAMPO_59"
+                    [(ngModel)]="hemofilia.CAMPO_59">
                 </div>
               </div>
             </form>
@@ -713,7 +817,8 @@
               <div class="input-group mb-3">
                 <div class="col-xs-4">
                   <label id="PresenciaI">48.Presencia de inhibidor a la fecha de corte:</label>
-                  <select name="" class="form-control" id="PresenciaI" name="hemofilia.CAMPO_48" [(ngModel)]="hemofilia.CAMPO_48">
+                  <select name="" class="form-control" id="PresenciaI" name="hemofilia.CAMPO_48"
+                    [(ngModel)]="hemofilia.CAMPO_48">
                     <option value=""></option>
                     <option *ngFor='let Ingiborfechacorte of Ingiborfechacorte'
                       [ngValue]="Ingiborfechacorte. NOMBRE_OPCION" [ngValue]="Ingiborfechacorte.CODIGO_OPCION">
@@ -725,8 +830,8 @@
                   <label id="fechat">48.1.Fecha de determinación de títulos del inhibidor (Esta fecha debe encontrarse
                     dentro del periodo de reporte, reportar la última más cercana a la fecha de corte):</label>
                   <div class="input-group" id="fechanD">
-                    <input class="form-control" placeholder="yyyy-mm-dd" name="dp"  [(ngModel)]="fechadt" ngbDatepicker readonly
-                      #d6="ngbDatepicker" id="fechat">
+                    <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="fechadt" ngbDatepicker
+                      readonly #d6="ngbDatepicker" id="fechat">
                     <div class="input-group-append">
                       <button class="btn btn-outline-secondary calendar" id="fechat1" (click)="d6.toggle()"
                         type="button"><i class="far fa-calendar-alt fa-2x"></i></button>
@@ -737,7 +842,8 @@
                 <div class="col-xs-4">
                   <label id="documento">48.2.¿Ha recibido el paciente ITI (Inducción a la Tolerancia Inmune) en algún
                     momento de su vida? (tiene un antecedente de inhibidores y de la exposición a tratamientos):</label>
-                  <select name="" class="form-control" id="documento" name="hemofilia.CAMPO_48_2" [(ngModel)]="hemofilia.CAMPO_48_2">
+                  <select name="" class="form-control" id="documento" name="hemofilia.CAMPO_48_2"
+                    [(ngModel)]="hemofilia.CAMPO_48_2">
                     <option value=""></option>
                     <option *ngFor='let PacienteITI of PacienteITI' [ngValue]="PacienteITI. NOMBRE_OPCION"
                       [ngValue]="PacienteITI.CODIGO_OPCION">
@@ -747,7 +853,8 @@
                 </div>
                 <div class="col-xs-4">
                   <label id="Recibió">48.3.¿Recibió ITI (Inmunotolerancia) durante el periodo?:</label>
-                  <select name="" class="form-control" id="Recibió" name="hemofilia.CAMPO_48_3" [(ngModel)]="hemofilia.CAMPO_48_3">
+                  <select name="" class="form-control" id="Recibió" name="hemofilia.CAMPO_48_3"
+                    [(ngModel)]="hemofilia.CAMPO_48_3">
                     <option value=""></option>
                     <option *ngFor='let RecibioITI of RecibioITI' [ngValue]="RecibioITI. NOMBRE_OPCION"
                       [ngValue]="RecibioITI.CODIGO_OPCION">
@@ -759,7 +866,8 @@
               <div class="input-group mb-3">
                 <div class="col-xs-4">
                   <label id="tipo">48.4. Tiempo que lleva el paciente en ITI (días):</label>
-                  <input type="number" class="form-control" id="papellido" name="hemofilia.CAMPO_48_4" [(ngModel)]="hemofilia.CAMPO_48_4">
+                  <input type="number" class="form-control" id="papellido" name="hemofilia.CAMPO_48_4"
+                    [(ngModel)]="hemofilia.CAMPO_48_4">
                 </div>
               </div>
             </form>
@@ -786,7 +894,8 @@
               <div class="input-group mb-3">
                 <div class="col-xs-4">
                   <label id="tipo"> 49. Artropatía hemofílica crónica: </label>
-                  <select name="" class="form-control" id="tipo" name="hemofilia.CAMPO_49" [(ngModel)]="hemofilia.CAMPO_49">
+                  <select name="" class="form-control" id="tipo" name="hemofilia.CAMPO_49"
+                    [(ngModel)]="hemofilia.CAMPO_49">
                     <option value=""></option>
                     <option *ngFor='let hermofiliacronica of hermofiliacronica'
                       [ngValue]="hermofiliacronica. NOMBRE_OPCION" [ngValue]="hermofiliacronica.CODIGO_OPCION">
@@ -796,15 +905,18 @@
                 </div>
                 <div class="col-xs-4">
                   <label id="documento">49.1. Numero de articulaciones comprometidas: </label>
-                  <input type="number" class="form-control" id="documento" name="hemofilia.CAMPO_49_1" [(ngModel)]="hemofilia.CAMPO_49_1">
+                  <input type="number" class="form-control" id="documento" name="hemofilia.CAMPO_49_1"
+                    [(ngModel)]="hemofilia.CAMPO_49_1">
                 </div>
                 <div class="col-xs-4">
                   <label id="documento">56.Reemplazos articulares: </label>
-                  <input type="number" class="form-control" id="documento" name="hemofilia.CAMPO_56" [(ngModel)]="hemofilia.CAMPO_56">
+                  <input type="number" class="form-control" id="documento" name="hemofilia.CAMPO_56"
+                    [(ngModel)]="hemofilia.CAMPO_56">
                 </div>
                 <div class="col-xs-4">
                   <label id="documento">56.1.Reemplazos articulares en el periodo de corte:</label>
-                  <input type="number" class="form-control" id="documento" name="hemofilia.CAMPO_56_1" [(ngModel)]="hemofilia.CAMPO_56_1">
+                  <input type="number" class="form-control" id="documento" name="hemofilia.CAMPO_56_1"
+                    [(ngModel)]="hemofilia.CAMPO_56_1">
                 </div>
               </div>
             </form>
@@ -831,7 +943,8 @@
               <div class="input-group mb-3">
                 <div class="col-xs-4">
                   <label id="tipo">50.Usuario infectado por VHC:</label>
-                  <select name="" class="form-control" id="tipo" name="hemofilia.CAMPO_50" [(ngModel)]="hemofilia.CAMPO_50">
+                  <select name="" class="form-control" id="tipo" name="hemofilia.CAMPO_50"
+                    [(ngModel)]="hemofilia.CAMPO_50">
                     <option value=""></option>
                     <option *ngFor='let VHC of VHC' [ngValue]="VHC. NOMBRE_OPCION" [ngValue]="VHC.CODIGO_OPCION">
                       {{VHC.CODIGO_OPCION}}.{{VHC.NOMBRE_OPCION}}
@@ -840,7 +953,8 @@
                 </div>
                 <div class="col-xs-4">
                   <label id="documento">51.Usuario infectado por VHB: </label>
-                  <select name="" class="form-control" id="documento" name="hemofilia.CAMPO_51" [(ngModel)]="hemofilia.CAMPO_51">
+                  <select name="" class="form-control" id="documento" name="hemofilia.CAMPO_51"
+                    [(ngModel)]="hemofilia.CAMPO_51">
                     <option value=""></option>
                     <option *ngFor='let VHB of VHB' [ngValue]="VHB. NOMBRE_OPCION" [ngValue]="VHB.CODIGO_OPCION">
                       {{VHB.CODIGO_OPCION}}.{{VHB.NOMBRE_OPCION}}
@@ -849,7 +963,8 @@
                 </div>
                 <div class="col-xs-4">
                   <label id="documento">52.Usuario infectado por VIH:</label>
-                  <select name="" class="form-control" id="documento" name="hemofilia.CAMPO_52" [(ngModel)]="hemofilia.CAMPO_52">
+                  <select name="" class="form-control" id="documento" name="hemofilia.CAMPO_52"
+                    [(ngModel)]="hemofilia.CAMPO_52">
                     <option value=""></option>
                     <option *ngFor='let VIH of VIH' [ngValue]="VIH. NOMBRE_OPCION" [ngValue]="VIH.CODIGO_OPCION">
                       {{VIH.CODIGO_OPCION}}.{{VIH.NOMBRE_OPCION}}
@@ -858,7 +973,8 @@
                 </div>
                 <div class="col-xs-4">
                   <label id="documento">53.Pseudotumores: </label>
-                  <select name="" class="form-control" id="documento" name="hemofilia.CAMPO_53" [(ngModel)]="hemofilia.CAMPO_53">
+                  <select name="" class="form-control" id="documento" name="hemofilia.CAMPO_53"
+                    [(ngModel)]="hemofilia.CAMPO_53">
                     <option value=""></option>
                     <option *ngFor='let Pseudotumor of Pseudotumor' [ngValue]="Pseudotumor. NOMBRE_OPCION"
                       [ngValue]="Pseudotumor.CODIGO_OPCION">
@@ -870,7 +986,8 @@
               <div class="input-group mb-3">
                 <div class="col-xs-4">
                   <label id="tipo">54. Fracturas (osteopenia/ osteoporosis):</label>
-                  <select name="" class="form-control" id="tipo" name="hemofilia.CAMPO_54" [(ngModel)]="hemofilia.CAMPO_54">
+                  <select name="" class="form-control" id="tipo" name="hemofilia.CAMPO_54"
+                    [(ngModel)]="hemofilia.CAMPO_54">
                     <option value=""></option>
                     <option *ngFor='let Fractura of Fractura' [ngValue]="Fractura. NOMBRE_OPCION"
                       [ngValue]="Fractura.CODIGO_OPCION">
@@ -880,7 +997,8 @@
                 </div>
                 <div class="col-xs-4">
                   <label id="documento">55.Anafilaxis: </label>
-                  <select name="" class="form-control" id="documento" name="hemofilia.CAMPO_55" [(ngModel)]="hemofilia.CAMPO_55">
+                  <select name="" class="form-control" id="documento" name="hemofilia.CAMPO_55"
+                    [(ngModel)]="hemofilia.CAMPO_55">
                     <option value=""></option>
                     <option *ngFor='let Anasifilis of Anasifilis' [ngValue]="Anasifilis. NOMBRE_OPCION"
                       [ngValue]="Anasifilis.CODIGO_OPCION">
@@ -890,7 +1008,8 @@
                 </div>
                 <div class="col-xs-">
                   <label id="factor">55.1. A que factor se le atribuye la reacción anafiláctica?: </label>
-                  <select name="" class="form-control" id="factor" name="hemofilia.CAMPO_55_1" [(ngModel)]="hemofilia.CAMPO_55_1">
+                  <select name="" class="form-control" id="factor" name="hemofilia.CAMPO_55_1"
+                    [(ngModel)]="hemofilia.CAMPO_55_1">
 
                   </select>
                 </div>
@@ -921,20 +1040,24 @@
                   <label id="tipo">60. Costo del total de unidades de factor (VIII o IX en personas con hemofilia, o el
                     factor que correspondiente según la coagulopatía, en cualquier presentación que incluya como
                     principio activo factor) administradas al paciente durante el periodo: </label>
-                  <input type="number" class="form-control" id="papellido" name="hemofilia.CAMPO_60" [(ngModel)]="hemofilia.CAMPO_60">
+                  <input type="number" class="form-control" id="papellido" name="hemofilia.CAMPO_60"
+                    [(ngModel)]="hemofilia.CAMPO_60">
                 </div>
                 <div class="col-xs-4">
                   <label id="Costototal">61. Costo total de los agentes de puente (FrVIIa o CCPa) administrados al
                     paciente durante el periodo:</label>
-                  <input type="number" class="form-control" id="Costototal" name="hemofilia.CAMPO_61" [(ngModel)]="hemofilia.CAMPO_61">
+                  <input type="number" class="form-control" id="Costototal" name="hemofilia.CAMPO_61"
+                    [(ngModel)]="hemofilia.CAMPO_61">
                 </div>
                 <div class="col-xs-4">
                   <label id="Costototal2">62. Costo total del manejo asociado a la coagulopatia:</label>
-                  <input type="number" class="form-control" id="Costototal3" name="hemofilia.CAMPO_62" [(ngModel)]="hemofilia.CAMPO_62">
+                  <input type="number" class="form-control" id="Costototal3" name="hemofilia.CAMPO_62"
+                    [(ngModel)]="hemofilia.CAMPO_62">
                 </div>
                 <div class="col-xs-4">
                   <label id="Costototal">63. Costo Incapacidades laborales relacionadas con la coagulopatia: </label>
-                  <input type="number" class="form-control" id="Costototal" name="hemofilia.CAMPO_63" [(ngModel)]="hemofilia.CAMPO_63">
+                  <input type="number" class="form-control" id="Costototal" name="hemofilia.CAMPO_63"
+                    [(ngModel)]="hemofilia.CAMPO_63">
                 </div>
               </div>
             </form>
@@ -961,7 +1084,8 @@
               <div class="input-group mb-3">
                 <div class="col-xs-4">
                   <label id="tipo">64. Novedades:</label>
-                  <select name="" class="form-control" id="tipo" name="hemofilia.CAMPO_64" [(ngModel)]="hemofilia.CAMPO_64">
+                  <select name="" class="form-control" id="tipo" name="hemofilia.CAMPO_64"
+                    [(ngModel)]="hemofilia.CAMPO_64">
                     <option value=""></option>
                     <option *ngFor='let Novedad of Novedad' [ngValue]="Novedad. NOMBRE_OPCION"
                       [ngValue]="Novedad.CODIGO_OPCION">
@@ -971,7 +1095,8 @@
                 </div>
                 <div class="col-xs-4">
                   <label id="documento">64.1. Causa de muerte:</label>
-                  <select name="" class="form-control" id="documento" name="hemofilia.CAMPO_64_1" [(ngModel)]="hemofilia.CAMPO_64_1">
+                  <select name="" class="form-control" id="documento" name="hemofilia.CAMPO_64_1"
+                    [(ngModel)]="hemofilia.CAMPO_64_1">
                     <option value=""></option>
                     <option *ngFor='let Causademuerte of Causademuerte' [ngValue]="Causademuerte. NOMBRE_OPCION"
                       [ngValue]="Causademuerte.CODIGO_OPCION">
@@ -982,11 +1107,13 @@
                 <div div class="col-xs-4">
                   <label id="documento">64.2. Fecha de muerte: </label>
                   <div class="input-group" id="fechanD">
-                    <input class="form-control" placeholder="yyyy-mm-dd" name="dp" name="hemofilia.CAMPO_5" [(ngModel)]="fechamuerte" ngbDatepicker readonly
-                      #d7="ngbDatepicker" id="FechaIN">
+                    <input class="form-control" placeholder="yyyy-mm-dd" name="dp" name="hemofilia.CAMPO_5"
+                      [(ngModel)]="fechamuerte" ngbDatepicker readonly #d7="ngbDatepicker" id="FechaIN">
                     <div class="input-group-append">
                       <button class="btn btn-outline-secondary calendar" id="fechan3" (click)="d7.toggle()"
                         type="button"><i class="far fa-calendar-alt fa-2x"></i></button>
+
+
                     </div>
                   </div>
                 </div>
@@ -997,7 +1124,7 @@
       </div>
       <br>
       <div class="card">
-        <div class="card-header align-items-center justify-content-between" id="header">
+        <div class="card-header align-items-center justify-content-between" >
           <button type="button" class="btn btn-secondary" (click)="GuargarDatos()">Secondary</button>
         </div>
       </div>
