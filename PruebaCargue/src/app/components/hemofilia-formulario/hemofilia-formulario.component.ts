@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import {HemofiliaService} from '../../services/hemofilia/hemofilia.service'
 import {Hemofilia} from '../../models/hemofilia'
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-hemofilia-formulario',
   templateUrl: './hemofilia-formulario.component.html',
@@ -9,7 +10,13 @@ import {Hemofilia} from '../../models/hemofilia'
 })
 export class HemofiliaFormularioComponent implements OnInit {
 
-  model: NgbDateStruct
+  fechanacimiento: NgbDateStruct
+  fechaafiliacioneps:NgbDateStruct
+  fechacorte:NgbDateStruct
+  fechadiagnostico:NgbDateStruct
+  FIPtratamiento:NgbDateStruct
+  fechadt:NgbDateStruct
+  fechamuerte:NgbDateStruct
   horas:any
   minutos:any
   tipodocumento:any
@@ -45,7 +52,7 @@ export class HemofiliaFormularioComponent implements OnInit {
   Novedad:any;
   Causademuerte:any;
 
-  hemofili:Hemofilia ={
+  hemofilia:Hemofilia ={
     CAMPO_1:'',
     CAMPO_2:'',
     CAMPO_3:'',
@@ -95,7 +102,7 @@ export class HemofiliaFormularioComponent implements OnInit {
     CAMPO_41:'',
     CAMPO_42:'',
     CAMPO_43:'',
-    CAMPO44:'',
+    CAMPO_44:'',
     CAMPO_45:'',
     CAMPO_46:'',
     CAMPO_47_1:'',
@@ -356,6 +363,32 @@ export class HemofiliaFormularioComponent implements OnInit {
   Cargarcausademuerte(){
     this.hemofiliaservice.Cargarcausademuerte().subscribe(res=>{
       this.Causademuerte = res;
+    })
+  }
+
+  GuargarDatos(){
+
+    this.hemofilia.CAMPO_7 = this.fechanacimiento.year + "-" + this.fechanacimiento.month + "-" + this.fechanacimiento.day;
+    this.hemofilia.CAMPO_16 = this.fechaafiliacioneps.year + "-" + this.fechaafiliacioneps.month + "-" + this.fechaafiliacioneps.day;
+    this.hemofilia.CAMPO_66 = this.fechacorte.year + "-" + this.fechacorte.month + "-" + this.fechacorte.day;
+    this.hemofilia.CAMPO_21 = this.fechadiagnostico.year + "-" + this.fechadiagnostico.month + "-" + this.fechadiagnostico.day;
+    this.hemofilia.CAMPO_29 = this.FIPtratamiento.year + "-" + this.FIPtratamiento.month + "-" + this.FIPtratamiento.day;
+    this.hemofilia.CAMPO_48_1 = this.fechadt.year + "-" + this.fechadt.month + "-" + this.fechadt.day
+    this.hemofilia.CAMPO_64_2 = this.fechamuerte.year + "-" + this.fechamuerte.month + "-" + this.fechamuerte.day;
+    console.log(this.hemofilia);
+    this.hemofiliaservice.Guardarhemofilia(this.hemofilia).subscribe(res=>{
+      Swal.fire({
+        title: 'Almacenado!',
+        text: 'Datos almacenados con exito.',
+        icon: 'success',
+        allowOutsideClick: false
+      }
+
+      ).then((result) => {
+        if (result.value) {
+
+        }
+      })
     })
   }
 }
