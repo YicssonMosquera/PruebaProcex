@@ -20,11 +20,18 @@
                 <div class="input-group mb-3">
                   <div class="col-xs-4">
                     <label id="tipo">5.Tipo de Identificación del usuario:</label>
-                    <select name="" class="form-control" id="tipo"></select>
+                    <select name="" class="form-control" id="tipo">
+                      <option value=""></option>
+                      <option *ngFor='let tipodocumento of tipodocumento' [ngValue]="tipodocumento.NOMBRE_OPCION"
+                        [ngValue]="tipodocumento.CODIGO_OPCION">
+                        {{tipodocumento.CODIGO_OPCION}}.{{tipodocumento.NOMBRE_OPCION}}
+                      </option>
+                    </select>
                   </div>
                   <div class="col-xs-4">
                     <label id="documento">6.Número de Identificación del usuario:</label>
-                    <input type="number" class="form-control" id="documento">
+                    <input type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57'
+                      class="form-control" id="documento">
                   </div>
                   <div class="col-xs-4">
                     <label id="pnombre">1.Primer nombre del usuario:</label>
@@ -66,7 +73,11 @@
                   </div>
                   <div class="col-xs-2">
                     <label id="sexo">8.Sexo:</label>
-                    <select name="" class="form-control" id="sexo"></select>
+                    <select name="" class="form-control" id="sexo">
+                      <option *ngFor='let Sexo of Sexo' [ngValue]="Sexo.NOMBRE_OPCION" [ngValue]="Sexo.CODIGO_OPCION">
+                        {{Sexo.CODIGO_OPCION}}.{{Sexo.NOMBRE_OPCION}}
+                      </option>
+                    </select>
                   </div>
                   <div class="col-xs-2">
                     <label id="sexo">65.Código BDUA:</label>
@@ -81,7 +92,13 @@
                   </div>
                   <div class="col-xs-4">
                     <label id="documento">10.Régimen de afiliación al SGSSS:</label>
-                    <select name="" class="form-control" id="documento"></select>
+                    <select name="" class="form-control" id="documento">
+                      <option value=""></option>
+                      <option *ngFor='let RegimenAF of RegimenAF' [ngValue]="RegimenAF.NOMBRE_OPCION"
+                        [ngValue]="RegimenAF.CODIGO_OPCION">
+                        {{RegimenAF.CODIGO_OPCION}}.{{RegimenAF.NOMBRE_OPCION}}
+                      </option>
+                    </select>
                   </div>
                   <div class="col-xs-4">
                     <label id="documento">11.Código de la EAPB o de la entidad territorial:</label>
@@ -89,17 +106,31 @@
                   </div>
                   <div class="col-xs-4">
                     <label id="documento">12.Código pertenencia étnica:</label>
-                    <select name="" class="form-control" id="documento"></select>
+                    <select name="" class="form-control" id="documento">
+                      <option value=""></option>
+                      <option *ngFor='let CEtnica of CEtnica' [ngValue]="CEtnica.NOMBRE_OPCION"
+                        [ngValue]="CEtnica.CODIGO_OPCION">
+                        {{CEtnica.CODIGO_OPCION}}.{{CEtnica.NOMBRE_OPCION}}
+                      </option>
+                    </select>
                   </div>
                 </div>
                 <div class="input-group mb-3">
                   <div class="col-xs-4">
                     <label id="tipo">13.Grupo poblacional:</label>
-                    <select name="" class="form-control" id="GrupoP"></select>
+                    <select name="" class="form-control" id="GrupoP">
+                      <option value=""></option>
+                      <option *ngFor='let GProblacional of GProblacional' [ngValue]="GProblacional.NOMBRE_OPCION"
+                        [ngValue]="GProblacional.CODIGO_OPCION">
+                        {{GProblacional.CODIGO_OPCION}}.{{GProblacional.NOMBRE_OPCION}}
+                      </option>
+                    </select>
                   </div>
                   <div class="col-xs-4">
                     <label id="documento">14.Municipio de residencia:</label>
-                    <select type="text" class="form-control" id="Mresidencia"></select>
+                    <select type="text" class="form-control" id="Mresidencia">
+
+                    </select>
                   </div>
                   <div class="col-xs-4">
                     <label id="numeropaciente1">15.Número telefónico del paciente (incluyendo a familiares y
@@ -156,11 +187,23 @@
               <div class="input-group mb-3">
                 <div class="col-xs-4">
                   <label id="Estadog">17.Estado de gestación a la fecha de corte:</label>
-                  <select name="" class="form-control" id="Estadog"></select>
+                  <select name="" class="form-control" id="Estadog">
+                    <option value=""></option>
+                    <option *ngFor='let EstagFechacorte of EstagFechacorte' [ngValue]="EstagFechacorte.NOMBRE_OPCION"
+                      [ngValue]="EstagFechacorte.CODIGO_OPCION">
+                      {{EstagFechacorte.CODIGO_OPCION}}.{{EstagFechacorte.NOMBRE_OPCION}}
+                    </option>
+                  </select>
                 </div>
                 <div class="col-xs-4">
                   <label id="documento">18.Usuario en programa de planificación o consejería genética:</label>
-                  <select name="" class="form-control" id="documento"></select>
+                  <select name="" class="form-control" id="documento">
+                    <option value=""></option>
+                    <option *ngFor='let Programaconsejeria of Programaconsejeria'
+                      [ngValue]="Programaconsejeria.NOMBRE_OPCION" [ngValue]="Programaconsejeria.CODIGO_OPCION">
+                      {{Programaconsejeria.CODIGO_OPCION}}.{{Programaconsejeria.NOMBRE_OPCION}}
+                    </option>
+                  </select>
                 </div>
               </div>
             </form>
@@ -199,7 +242,13 @@
                 </div>
                 <div class="col-xs-4">
                   <label id="MDiagnostico">20.Motivo de la prueba de diagnóstico: </label>
-                  <select name="" class="form-control" id="MDiagnostico"></select>
+                  <select name="" class="form-control" id="MDiagnostico">
+                    <option value=""></option>
+                    <option *ngFor='let MPDiagnostico of MPDiagnostico' [ngValue]="MPDiagnostico.NOMBRE_OPCION"
+                      [ngValue]="MPDiagnostico.CODIGO_OPCION">
+                      {{MPDiagnostico.CODIGO_OPCION}}.{{MPDiagnostico.NOMBRE_OPCION}}
+                    </option>
+                  </select>
                 </div>
                 <div class="col-xs-4">
                   <label id="CodigoV">22.Código válido de habilitación de la IPS donde se realiza la confirmación
@@ -233,11 +282,23 @@
               <div class="input-group mb-3">
                 <div class="col-xs-4">
                   <label id="tipo">23. Tipo de deficiencia diagnosticada:</label>
-                  <select name="" class="form-control" id="tipo"></select>
+                  <select name="" class="form-control" id="tipo">
+                    <option value=""></option>
+                    <option *ngFor='let TPDiagnostico of TPDiagnostico' [ngValue]="TPDiagnostico.NOMBRE_OPCION"
+                      [ngValue]="TPDiagnostico.CODIGO_OPCION">
+                      {{TPDiagnostico.CODIGO_OPCION}}.{{TPDiagnostico.NOMBRE_OPCION}}
+                    </option>
+                  </select>
                 </div>
                 <div class="col-xs-4">
                   <label id="documento">24.Clasificación de severidad según nivel de factor:</label>
-                  <select name="" class="form-control" id="documento"></select>
+                  <select name="" class="form-control" id="documento">
+                    <option value=""></option>
+                    <option *ngFor='let CLSeveridad of CLSeveridad' [ngValue]="CLSeveridad.NOMBRE_OPCION"
+                      [ngValue]="CLSeveridad.CODIGO_OPCION">
+                      {{CLSeveridad.CODIGO_OPCION}}.{{CLSeveridad.NOMBRE_OPCION}}
+                    </option>
+                  </select>
                 </div>
                 <div class="col-xs-4">
                   <label id="documento">25.Actividad coagulante del factor:</label>
@@ -245,17 +306,35 @@
                 </div>
                 <div class="col-xs-4">
                   <label id="documento">26.Antecedentes familiares asociados a hemofilia:</label>
-                  <select name="" class="form-control" id="documento"></select>
+                  <select name="" class="form-control" id="documento">
+                    <option value=""></option>
+                    <option *ngFor='let ASHemofilia of ASHemofilia' [ngValue]="ASHemofilia.NOMBRE_OPCION"
+                      [ngValue]="ASHemofilia.CODIGO_OPCION">
+                      {{ASHemofilia.CODIGO_OPCION}}.{{ASHemofilia.NOMBRE_OPCION}}
+                    </option>
+                  </select>
                 </div>
               </div>
               <div class="input-group mb-3">
                 <div class="col-xs-4">
                   <label id="tipo">27.Factor recibido: </label>
-                  <select name="" class="form-control" id="tipo"></select>
+                  <select name="" class="form-control" id="tipo">
+                    <option value=""></option>
+                    <option *ngFor='let FactorR of FactorR' [ngValue]="FactorR.NOMBRE_OPCION"
+                      [ngValue]="FactorR.CODIGO_OPCION">
+                      {{FactorR.CODIGO_OPCION}}.{{FactorR.NOMBRE_OPCION}}
+                    </option>
+                  </select>
                 </div>
                 <div class="col-xs-4">
                   <label id="documento">28.Esquema:</label>
-                  <select name="" class="form-control" id="documento"></select>
+                  <select name="" class="form-control" id="documento">
+                    <option value=""></option>
+                    <option *ngFor='let Esquema1 of Esquema1' [ngValue]="Esquema1.NOMBRE_OPCION"
+                      [ngValue]="Esquema1.CODIGO_OPCION">
+                      {{Esquema1.CODIGO_OPCION}}.{{Esquema1.NOMBRE_OPCION}}
+                    </option>
+                  </select>
                 </div>
                 <div div class="col-xs-4">
                   <label id="documento">29.Fecha de inicio del primer tratamiento:</label>
@@ -294,11 +373,25 @@
               <div class="input-group mb-3">
                 <div class="col-xs-4">
                   <label id="tipo">30.Factor recibido:</label>
-                  <select name="" class="form-control" id="tipo"></select>
+                  <select name="" class="form-control" id="tipo">
+                    <option value=""></option>
+                    <option *ngFor='let FactorrecibidoTA of FactorrecibidoTA' [ngValue]="FactorrecibidoTA.NOMBRE_OPCION"
+                      [ngValue]="FactorrecibidoTA.CODIGO_OPCION">
+                      {{FactorrecibidoTA.CODIGO_OPCION}}.{{FactorrecibidoTA.NOMBRE_OPCION}}
+                    </option>
+
+                  </select>
                 </div>
                 <div class="col-xs-4">
                   <label id="documento">31.Esquema: </label>
-                  <select name="" class="form-control" id="documento"></select>
+                  <select name="" class="form-control" id="documento">
+                    <option value=""></option>
+                    <option *ngFor='let EsquemaTA of EsquemaTA' [ngValue]="EsquemaTA. NOMBRE_OPCION"
+                      [ngValue]="EsquemaTA.CODIGO_OPCION">
+                      {{EsquemaTA.CODIGO_OPCION}}.{{EsquemaTA.NOMBRE_OPCION}}
+                    </option>
+
+                  </select>
                 </div>
                 <div class="col-xs-4">
                   <label id="documento">32.Peso (kg): </label>
@@ -316,7 +409,13 @@
                 </div>
                 <div class="col-xs-4">
                   <label id="FrecuenciaS">32.2.Frecuencia por semana (profilaxis):</label>
-                  <select name="" class="form-control" id="FrecuenciaS"></select>
+                  <select name="" class="form-control" id="FrecuenciaS">
+                    <option value=""></option>
+                    <option *ngFor='let Frecuenciasemana of Frecuenciasemana' [ngValue]="Frecuenciasemana.NOMBRE_OPCION"
+                      [ngValue]="Frecuenciasemana.CODIGO_OPCION">
+                      {{Frecuenciasemana.CODIGO_OPCION}}.{{Frecuenciasemana.NOMBRE_OPCION}}
+                    </option>
+                  </select>
                 </div>
                 <div class="col-xs-4">
                   <label id="documento"> 32.3. Número de unidades totales en el periodo UI/dl (demanda): </label>
@@ -325,6 +424,46 @@
                 <div class="col-xs-4">
                   <label id="documento">32.4.Numero de aplicaciones del factor en el periodo (demanda):</label>
                   <select name="" class="form-control" id="documento"></select>
+                </div>
+              </div>
+              <div class="input-group mb-3">
+                <div class="col-xs-4">
+                  <label id="Modalidad">33.Modalidad de aplicación tratamiento:</label>
+                  <select name="" class="form-control" id="Modalidad">
+                    <option value=""></option>
+                    <option *ngFor='let Modalidadtratamiento of Modalidadtratamiento'
+                      [ngValue]="Modalidadtratamiento.NOMBRE_OPCION" [ngValue]="Modalidadtratamiento.CODIGO_OPCION">
+                      {{Modalidadtratamiento.CODIGO_OPCION}}.{{Modalidadtratamiento.NOMBRE_OPCION}}
+                    </option>
+
+                  </select>
+                </div>
+
+                <div class="col-xs-4">
+                  <label id="administracion">34.Vía de administración:</label>
+                  <select name="" class="form-control" id="administracion">
+                    <option value=""></option>
+                    <option *ngFor='let Viaadministracion of Viaadministracion'
+                      [ngValue]="Viaadministracion. NOMBRE_OPCION" [ngValue]="Viaadministracion.CODIGO_OPCION">
+                      {{Viaadministracion.CODIGO_OPCION}}.{{Viaadministracion.NOMBRE_OPCION}}
+                    </option>
+
+                  </select>
+                </div>
+
+                <div class="col-xs-4">
+                  <label id="documento">35.Código CUM del factor/medicamento que recibe el paciente a la fecha de corte
+                    (relacionado con la coagulopatía reportada):</label>
+                  <select name="" class="form-control" id="documento">
+
+                  </select>
+                </div>
+                <div class="col-xs-4">
+                  <label id="documento">36.Código CUM del otro factor/medicamento que recibe el paciente a la fecha de
+                    corte (relacionado con la coagulopatía reportada):</label>
+                  <select name="" class="form-control" id="documento">
+
+                  </select>
                 </div>
               </div>
               <div class="input-group mb-3">
@@ -368,7 +507,14 @@
                 </div>
                 <div class="col-xs-4">
                   <label id="documento">57.Seleccionar el profesional que lidera la atención del paciente :</label>
-                  <select name="" class="form-control" id="documento"></select>
+                  <select name="" class="form-control" id="documento">
+                    <option value=""></option>
+                    <option *ngFor='let ProfesionalSP of ProfesionalSP' [ngValue]="ProfesionalSP. NOMBRE_OPCION"
+                      [ngValue]="ProfesionalSP.CODIGO_OPCION">
+                      {{ProfesionalSP.CODIGO_OPCION}}.{{ProfesionalSP.NOMBRE_OPCION}}
+                    </option>
+
+                  </select>
                 </div>
                 <div class="col-xs-4">
                   <label id="FrecuenciaS">57.1.Consultas presenciales con Hematólogo :</label>
@@ -458,7 +604,13 @@
               <div class="input-group mb-3">
                 <div class="col-xs-4">
                   <label id="Estadog">40.Hemartrosis:</label>
-                  <select name="" class="form-control" id="Estadog"></select>
+                  <select name="" class="form-control" id="Estadog">
+                    <option value=""></option>
+                    <option *ngFor='let Hermatosis of Hermatosis' [ngValue]="Hermatosis. NOMBRE_OPCION"
+                      [ngValue]="Hermatosis.CODIGO_OPCION">
+                      {{Hermatosis.CODIGO_OPCION}}.{{Hermatosis.NOMBRE_OPCION}}
+                    </option>
+                  </select>
                 </div>
                 <div class="col-xs-4">
                   <label id="documento">40.1.Numero de hemartrosis espontaneas durante los últimos doce meses:</label>
@@ -551,7 +703,13 @@
               <div class="input-group mb-3">
                 <div class="col-xs-4">
                   <label id="PresenciaI">48.Presencia de inhibidor a la fecha de corte:</label>
-                  <select name="" class="form-control" id="PresenciaI"></select>
+                  <select name="" class="form-control" id="PresenciaI">
+                    <option value=""></option>
+                    <option *ngFor='let Ingiborfechacorte of Ingiborfechacorte'
+                      [ngValue]="Ingiborfechacorte. NOMBRE_OPCION" [ngValue]="Ingiborfechacorte.CODIGO_OPCION">
+                      {{Ingiborfechacorte.CODIGO_OPCION}}.{{Ingiborfechacorte.NOMBRE_OPCION}}
+                    </option>
+                  </select>
                 </div>
                 <div div class="col-xs-4">
                   <label id="fechat">48.1.Fecha de determinación de títulos del inhibidor (Esta fecha debe encontrarse
@@ -569,11 +727,23 @@
                 <div class="col-xs-4">
                   <label id="documento">48.2.¿Ha recibido el paciente ITI (Inducción a la Tolerancia Inmune) en algún
                     momento de su vida? (tiene un antecedente de inhibidores y de la exposición a tratamientos):</label>
-                  <select name="" class="form-control" id="documento"></select>
+                  <select name="" class="form-control" id="documento">
+                    <option value=""></option>
+                    <option *ngFor='let PacienteITI of PacienteITI' [ngValue]="PacienteITI. NOMBRE_OPCION"
+                      [ngValue]="PacienteITI.CODIGO_OPCION">
+                      {{PacienteITI.CODIGO_OPCION}}.{{PacienteITI.NOMBRE_OPCION}}
+                    </option>
+                  </select>
                 </div>
                 <div class="col-xs-4">
                   <label id="Recibió">48.3.¿Recibió ITI (Inmunotolerancia) durante el periodo?:</label>
-                  <select name="" class="form-control" id="Recibió"></select>
+                  <select name="" class="form-control" id="Recibió">
+                    <option value=""></option>
+                    <option *ngFor='let RecibioITI of RecibioITI' [ngValue]="RecibioITI. NOMBRE_OPCION"
+                      [ngValue]="RecibioITI.CODIGO_OPCION">
+                      {{RecibioITI.CODIGO_OPCION}}.{{RecibioITI.NOMBRE_OPCION}}
+                    </option>
+                  </select>
                 </div>
               </div>
               <div class="input-group mb-3">
@@ -590,8 +760,8 @@
 
 
 
-      <div class="card" >
-        <div class="card-header align-items-center justify-content-between"  id="header">
+      <div class="card">
+        <div class="card-header align-items-center justify-content-between" id="header">
           <label>Compromiso Articular</label>
           <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon"
             data-toggle="collapse" data-target="#collapseOne8" id="menu" data-toggle="collapse"
@@ -606,7 +776,13 @@
               <div class="input-group mb-3">
                 <div class="col-xs-4">
                   <label id="tipo"> 49. Artropatía hemofílica crónica: </label>
-                  <select name="" class="form-control" id="tipo"></select>
+                  <select name="" class="form-control" id="tipo">
+                    <option value=""></option>
+                    <option *ngFor='let hermofiliacronica of hermofiliacronica'
+                      [ngValue]="hermofiliacronica. NOMBRE_OPCION" [ngValue]="hermofiliacronica.CODIGO_OPCION">
+                      {{hermofiliacronica.CODIGO_OPCION}}.{{hermofiliacronica.NOMBRE_OPCION}}
+                    </option>
+                  </select>
                 </div>
                 <div class="col-xs-4">
                   <label id="documento">49.1. Numero de articulaciones comprometidas: </label>
@@ -645,29 +821,62 @@
               <div class="input-group mb-3">
                 <div class="col-xs-4">
                   <label id="tipo">50.Usuario infectado por VHC:</label>
-                  <select name="" class="form-control" id="tipo"></select>
+                  <select name="" class="form-control" id="tipo">
+                    <option value=""></option>
+                    <option *ngFor='let VHC of VHC' [ngValue]="VHC. NOMBRE_OPCION" [ngValue]="VHC.CODIGO_OPCION">
+                      {{VHC.CODIGO_OPCION}}.{{VHC.NOMBRE_OPCION}}
+                    </option>
+                  </select>
                 </div>
                 <div class="col-xs-4">
                   <label id="documento">51.Usuario infectado por VHB: </label>
-                  <select name="" class="form-control" id="documento"></select>
+                  <select name="" class="form-control" id="documento">
+                    <option value=""></option>
+                    <option *ngFor='let VHB of VHB' [ngValue]="VHB. NOMBRE_OPCION" [ngValue]="VHB.CODIGO_OPCION">
+                      {{VHB.CODIGO_OPCION}}.{{VHB.NOMBRE_OPCION}}
+                    </option>
+                  </select>
                 </div>
                 <div class="col-xs-4">
                   <label id="documento">52.Usuario infectado por VIH:</label>
-                  <select name="" class="form-control" id="documento"></select>
+                  <select name="" class="form-control" id="documento">
+                    <option value=""></option>
+                    <option *ngFor='let VIH of VIH' [ngValue]="VIH. NOMBRE_OPCION" [ngValue]="VIH.CODIGO_OPCION">
+                      {{VIH.CODIGO_OPCION}}.{{VIH.NOMBRE_OPCION}}
+                    </option>
+                  </select>
                 </div>
                 <div class="col-xs-4">
                   <label id="documento">53.Pseudotumores: </label>
-                  <select name="" class="form-control" id="documento"></select>
+                  <select name="" class="form-control" id="documento">
+                    <option value=""></option>
+                    <option *ngFor='let Pseudotumor of Pseudotumor' [ngValue]="Pseudotumor. NOMBRE_OPCION"
+                      [ngValue]="Pseudotumor.CODIGO_OPCION">
+                      {{Pseudotumor.CODIGO_OPCION}}.{{Pseudotumor.NOMBRE_OPCION}}
+                    </option>
+                  </select>
                 </div>
               </div>
               <div class="input-group mb-3">
                 <div class="col-xs-4">
                   <label id="tipo">54. Fracturas (osteopenia/ osteoporosis):</label>
-                  <select name="" class="form-control" id="tipo"></select>
+                  <select name="" class="form-control" id="tipo">
+                    <option value=""></option>
+                    <option *ngFor='let Fractura of Fractura' [ngValue]="Fractura. NOMBRE_OPCION"
+                      [ngValue]="Fractura.CODIGO_OPCION">
+                      {{Fractura.CODIGO_OPCION}}.{{Fractura.NOMBRE_OPCION}}
+                    </option>
+                  </select>
                 </div>
                 <div class="col-xs-4">
                   <label id="documento">55.Anafilaxis: </label>
-                  <select name="" class="form-control" id="documento"></select>
+                  <select name="" class="form-control" id="documento">
+                    <option value=""></option>
+                    <option *ngFor='let Anasifilis of Anasifilis' [ngValue]="Anasifilis. NOMBRE_OPCION"
+                      [ngValue]="Anasifilis.CODIGO_OPCION">
+                      {{Anasifilis.CODIGO_OPCION}}.{{Anasifilis.NOMBRE_OPCION}}
+                    </option>
+                  </select>
                 </div>
                 <div class="col-xs-">
                   <label id="factor">55.1. A que factor se le atribuye la reacción anafiláctica?: </label>
@@ -727,41 +936,59 @@
         <div class="card-header align-items-center justify-content-between" id="header">
           <label>Novedades Administrativas</label>
           <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon"
-          data-toggle="collapse" data-target="#collapseOne11" id="menu" data-toggle="collapse"
-          data-target="#collapseOne11" aria-expanded="true" aria-controls="collapseOne11">
-          <mat-icon>menu</mat-icon>
-        </button>
+            data-toggle="collapse" data-target="#collapseOne11" id="menu" data-toggle="collapse"
+            data-target="#collapseOne11" aria-expanded="true" aria-controls="collapseOne11">
+            <mat-icon>menu</mat-icon>
+          </button>
 
         </div>
         <div id="collapseOne11" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
 
-        <div class="card-body" id="pagina">
-          <form>
-            <div class="input-group mb-3">
-              <div class="col-xs-4">
-                <label id="tipo">64. Novedades:</label>
-                <select name="" class="form-control" id="tipo"></select>
-              </div>
-              <div class="col-xs-4">
-                <label id="documento">64.1. Causa de muerte:</label>
-                <select name="" class="form-control" id="documento"></select>
-              </div>
-              <div div class="col-xs-4">
-                <label id="documento">64.2. Fecha de muerte: </label>
-                <div class="input-group" id="fechanD">
-                  <input class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker readonly
-                    #d7="ngbDatepicker" id="FechaIN">
-                  <div class="input-group-append">
-                    <button class="btn btn-outline-secondary calendar" id="fechan3" (click)="d7.toggle()"
-                      type="button"><i class="far fa-calendar-alt fa-2x"></i></button>
+          <div class="card-body" id="pagina">
+            <form>
+              <div class="input-group mb-3">
+                <div class="col-xs-4">
+                  <label id="tipo">64. Novedades:</label>
+                  <select name="" class="form-control" id="tipo">
+                    <option value=""></option>
+                    <option *ngFor='let Novedad of Novedad' [ngValue]="Novedad. NOMBRE_OPCION"
+                      [ngValue]="Novedad.CODIGO_OPCION">
+                      {{Novedad.CODIGO_OPCION}}.{{Novedad.NOMBRE_OPCION}}
+                    </option>
+                  </select>
+                </div>
+                <div class="col-xs-4">
+                  <label id="documento">64.1. Causa de muerte:</label>
+                  <select name="" class="form-control" id="documento">
+                    <option value=""></option>
+                    <option *ngFor='let Causademuerte of Causademuerte' [ngValue]="Causademuerte. NOMBRE_OPCION"
+                      [ngValue]="Causademuerte.CODIGO_OPCION">
+                      {{Causademuerte.CODIGO_OPCION}}.{{Causademuerte.NOMBRE_OPCION}}
+                    </option>
+                  </select>
+                </div>
+                <div div class="col-xs-4">
+                  <label id="documento">64.2. Fecha de muerte: </label>
+                  <div class="input-group" id="fechanD">
+                    <input class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker readonly
+                      #d7="ngbDatepicker" id="FechaIN">
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-secondary calendar" id="fechan3" (click)="d7.toggle()"
+                        type="button"><i class="far fa-calendar-alt fa-2x"></i></button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
+      <br>
+      <div class="card">
+        <div class="card-header align-items-center justify-content-between" id="header">
+        </div>
       </div>
+
     </div>
   </div>
 </div>

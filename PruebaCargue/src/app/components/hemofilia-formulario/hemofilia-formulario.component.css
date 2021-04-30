@@ -1,5 +1,5 @@
 #pagina{
-  background-image: linear-gradient(to right, rgb(255, 255, 255),white)
+  background-image: linear-gradient(to right, rgb(252, 255, 255),white)
 }
 #header{
   height: 35px;
@@ -279,6 +279,20 @@ button.calendar, button.calendar:active {
 }
 #menu{
   float: right;
-  color: #000000;
+  color:   #666666 ;
   margin-top: -15px;
 }
+#Modalidad{
+  width: 300px;
+    font-size: 12px;
+    color: #000000;
+    margin-top: 20px;
+}
+#administracion{
+  width: 300px;
+    font-size: 12px;
+    margin-left: 20px;
+    color: #000000;
+    margin-top: 20px;
+}
+
