@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
-import {HemofiliaService} from '../../services/hemofilia/hemofilia.service'
-import {Hemofilia} from '../../models/hemofilia'
+import { HemofiliaService } from '../../services/hemofilia/hemofilia.service'
+import { Hemofilia } from '../../models/hemofilia'
 import Swal from 'sweetalert2';
 @Component({
   selector: 'app-hemofilia-formulario',
@@ -11,51 +11,52 @@ import Swal from 'sweetalert2';
 export class HemofiliaFormularioComponent implements OnInit {
 
   fechanacimiento: NgbDateStruct
-  fechaafiliacioneps:NgbDateStruct
-  fechacorte:NgbDateStruct
-  fechadiagnostico:NgbDateStruct
-  FIPtratamiento:NgbDateStruct
-  fechadt:NgbDateStruct
-  fechamuerte:NgbDateStruct
-  horas:any
-  minutos:any
-  tipodocumento:any
-  Sexo:any
-  RegimenAF:any
-  CEtnica:any
-  GProblacional:any
-  EstagFechacorte:any
-  Programaconsejeria:any
-  MPDiagnostico:any
-  TPDiagnostico:any
-  CLSeveridad:any
-  ASHemofilia:any
-  FactorR:any
-  Esquema1:any
-  FactorrecibidoTA:any
-  EsquemaTA:any
-  Frecuenciasemana:any;
-  Modalidadtratamiento:any
-  Viaadministracion:any;
-  ProfesionalSP:any;
-  Hermatosis:any
-  PacienteITI:any;
-  RecibioITI:any;
-  Ingiborfechacorte:any;
-  hermofiliacronica:any;
-  VHC:any;
-  VHB:any;
-  VIH:any;
-  Pseudotumor:any;
-  Fractura:any;
-  Anasifilis:any;
-  Novedad:any;
-  Causademuerte:any;
-  municipioresidencia:any;
-  codigohabilitacionIps:any;
-  codigocups:any;
+  fechaafiliacioneps: NgbDateStruct
+  fechacorte: NgbDateStruct
+  fechadiagnostico: NgbDateStruct
+  FIPtratamiento: NgbDateStruct
+  fechadt: NgbDateStruct
+  fechamuerte: NgbDateStruct
+  horas: any
+  minutos: any
+  tipodocumento: any
+  Sexo: any
+  RegimenAF: any
+  CEtnica: any
+  GProblacional: any
+  EstagFechacorte: any
+  Programaconsejeria: any
+  MPDiagnostico: any
+  TPDiagnostico: any
+  CLSeveridad: any
+  ASHemofilia: any
+  FactorR: any
+  Esquema1: any
+  FactorrecibidoTA: any
+  EsquemaTA: any
+  Frecuenciasemana: any;
+  Modalidadtratamiento: any
+  Viaadministracion: any;
+  ProfesionalSP: any;
+  Hermatosis: any
+  PacienteITI: any;
+  RecibioITI: any;
+  Ingiborfechacorte: any;
+  hermofiliacronica: any;
+  VHC: any;
+  VHB: any;
+  VIH: any;
+  Pseudotumor: any;
+  Fractura: any;
+  Anasifilis: any;
+  Novedad: any;
+  Causademuerte: any;
+  municipioresidencia: any;
+  codigohabilitacionIps: any;
+  codigocups: any;
+  Ocupacion: any;
 
-  hemofilia:Hemofilia ={
+  hemofilia: Hemofilia = {
     CAMPO_1:'',
     CAMPO_2:'',
     CAMPO_3:'',
@@ -157,13 +158,13 @@ export class HemofiliaFormularioComponent implements OnInit {
     EDAD_ACTUAL:'',
     DOSIS_PROFILAXIS:'',
   }
-  constructor(private hemofiliaservice:HemofiliaService) { }
+  constructor(private hemofiliaservice: HemofiliaService) { }
 
   ngOnInit(): void {
-   this.Funcionesdecarga();
+    this.Funcionesdecarga();
   }
 
-  Funcionesdecarga(){
+  Funcionesdecarga() {
     this.Cargartipodocumento();
     this.CargarSexo();
     this.CargarRegimenafiliacion();
@@ -199,236 +200,283 @@ export class HemofiliaFormularioComponent implements OnInit {
     this.CargarMunicipioresidencia();
     this.Codigovalidohabilitacionips();
     this.CodigoCUM35363738();
+    this.CargarOcupacion();
   }
 
-  Cargartipodocumento(){
-    this.hemofiliaservice.CargarTipodocumento().subscribe(res=>{
+  Cargartipodocumento() {
+    this.hemofiliaservice.CargarTipodocumento().subscribe(res => {
       this.tipodocumento = res;
     })
   }
 
-  CargarSexo(){
-    this.hemofiliaservice.CargarSexo().subscribe(res=>{
+  CargarSexo() {
+    this.hemofiliaservice.CargarSexo().subscribe(res => {
       this.Sexo = res;
     })
   }
 
-  CargarRegimenafiliacion(){
-    this.hemofiliaservice.CargarRegimenAfiliacion().subscribe(res=>{
+  CargarRegimenafiliacion() {
+    this.hemofiliaservice.CargarRegimenAfiliacion().subscribe(res => {
       this.RegimenAF = res;
     })
   }
 
-  CargarcodigoPertenenciaetnica(){
-    this.hemofiliaservice.CargarcodigoPertenenciaetnica().subscribe(res=>{
+  CargarcodigoPertenenciaetnica() {
+    this.hemofiliaservice.CargarcodigoPertenenciaetnica().subscribe(res => {
       this.CEtnica = res;
     })
   }
-  Cargargrupopoblacional(){
-    this.hemofiliaservice.Cargargrupopoblacional().subscribe(res=>{
+  Cargargrupopoblacional() {
+    this.hemofiliaservice.Cargargrupopoblacional().subscribe(res => {
       this.GProblacional = res;
     })
   }
 
-  CargarEstadogestionfechacorte(){
-    this.hemofiliaservice.CargarEstadogestionfechacorte().subscribe(res=>{
+  CargarEstadogestionfechacorte() {
+    this.hemofiliaservice.CargarEstadogestionfechacorte().subscribe(res => {
       this.EstagFechacorte = res;
     })
   }
 
-  CargarUsarioProgramaconsegeria(){
-    this.hemofiliaservice.CargarUsarioProgramaconsegeria().subscribe(res=>{
+  CargarUsarioProgramaconsegeria() {
+    this.hemofiliaservice.CargarUsarioProgramaconsegeria().subscribe(res => {
       this.Programaconsejeria = res;
     })
   }
-  Cargarmotivopruebadiagnostico(){
-    this.hemofiliaservice.Cargarmotivopruebadiagnostico().subscribe(res=>{
+  Cargarmotivopruebadiagnostico() {
+    this.hemofiliaservice.Cargarmotivopruebadiagnostico().subscribe(res => {
       this.MPDiagnostico = res;
     })
   }
-  CarTipofrecuenciaDiagnostico(){
-    this.hemofiliaservice.CarTipofrecuenciaDiagnostico().subscribe(res=>{
+  CarTipofrecuenciaDiagnostico() {
+    this.hemofiliaservice.CarTipofrecuenciaDiagnostico().subscribe(res => {
       this.TPDiagnostico = res;
     })
   }
 
-  CargarClasificacionSeveridadNF(){
-    this.hemofiliaservice.CargarClasificacionSeveridadNF().subscribe(res=>{
+  CargarClasificacionSeveridadNF() {
+    this.hemofiliaservice.CargarClasificacionSeveridadNF().subscribe(res => {
       this.CLSeveridad = res;
     })
   }
 
-  CargarAFAsociadohemofilia(){
-    this.hemofiliaservice.CargarAFAsociadohemofilia().subscribe(res=>{
+  CargarAFAsociadohemofilia() {
+    this.hemofiliaservice.CargarAFAsociadohemofilia().subscribe(res => {
       this.ASHemofilia = res;
     })
   }
 
-  CargarFactorrecibido(){
-    this.hemofiliaservice.CargarFactorrecibido().subscribe(res=>{
+  CargarFactorrecibido() {
+    this.hemofiliaservice.CargarFactorrecibido().subscribe(res => {
       this.FactorR = res;
     })
   }
 
-  CargarEsquema(){
-    this.hemofiliaservice.CargarEsquema().subscribe(res=>{
+  CargarEsquema() {
+    this.hemofiliaservice.CargarEsquema().subscribe(res => {
       this.Esquema1 = res;
     })
   }
-  CargarFacorRecibidoTA(){
-    this.hemofiliaservice.CargarFacorRecibidoTA().subscribe(res=>{
+  CargarFacorRecibidoTA() {
+    this.hemofiliaservice.CargarFacorRecibidoTA().subscribe(res => {
       this.FactorrecibidoTA = res;
     })
   }
-  CargarEsquemaTA(){
-    this.hemofiliaservice.CargarEsquemaTA().subscribe(res=>{
+  CargarEsquemaTA() {
+    this.hemofiliaservice.CargarEsquemaTA().subscribe(res => {
       this.EsquemaTA = res;
     })
   }
-  CargarFrecuenciaSemana(){
-    this.hemofiliaservice.CargarFrecuenciaSemana().subscribe(res=>{
+  CargarFrecuenciaSemana() {
+    this.hemofiliaservice.CargarFrecuenciaSemana().subscribe(res => {
       this.Frecuenciasemana = res;
     })
   }
-  CargarModalidadapltratamiento(){
-    this.hemofiliaservice.CargarModalidadapltratamiento().subscribe(res=>{
+  CargarModalidadapltratamiento() {
+    this.hemofiliaservice.CargarModalidadapltratamiento().subscribe(res => {
       this.Modalidadtratamiento = res;
     })
   }
-  CargarviaAdministración(){
-    this.hemofiliaservice.CargarviaAdministración().subscribe(res=>{
+  CargarviaAdministración() {
+    this.hemofiliaservice.CargarviaAdministración().subscribe(res => {
       this.Viaadministracion = res;
     })
   }
-  CargarProfesionallieratenciondelpaciente(){
-    this.hemofiliaservice.CargarProfesionallieratenciondelpaciente().subscribe(res=>{
+  CargarProfesionallieratenciondelpaciente() {
+    this.hemofiliaservice.CargarProfesionallieratenciondelpaciente().subscribe(res => {
       this.ProfesionalSP = res;
     })
   }
-  Cargarhermatosis(){
-    this.hemofiliaservice.Cargarhermatosis().subscribe(res=>{
+  Cargarhermatosis() {
+    this.hemofiliaservice.Cargarhermatosis().subscribe(res => {
       this.Hermatosis = res;
     })
   }
-  CargarPresenciainhibidorfechacorte(){
-    this.hemofiliaservice.CargarPresenciainhibidorfechacorte().subscribe(res=>{
+  CargarPresenciainhibidorfechacorte() {
+    this.hemofiliaservice.CargarPresenciainhibidorfechacorte().subscribe(res => {
       this.Ingiborfechacorte = res;
     })
   }
-  CargarPacienteITI(){
-    this.hemofiliaservice.CargarPacienteITI().subscribe(res=>{
+  CargarPacienteITI() {
+    this.hemofiliaservice.CargarPacienteITI().subscribe(res => {
       this.PacienteITI = res;
     })
   }
-  recibioiti(){
-    this.hemofiliaservice.recibioiti().subscribe(res=>{
+  recibioiti() {
+    this.hemofiliaservice.recibioiti().subscribe(res => {
       this.RecibioITI = res;
     })
   }
-  CargarArtropiahermofilicacronica(){
-    this.hemofiliaservice.CargarArtropiahermofilicacronica().subscribe(res=>{
+  CargarArtropiahermofilicacronica() {
+    this.hemofiliaservice.CargarArtropiahermofilicacronica().subscribe(res => {
       this.hermofiliacronica = res;
     })
   }
-  CargarInfectadoporVHC(){
-    this.hemofiliaservice.CargarInfectadoporVHC().subscribe(res=>{
+  CargarInfectadoporVHC() {
+    this.hemofiliaservice.CargarInfectadoporVHC().subscribe(res => {
       this.VHC = res;
     })
   }
-  CargarInfectadoporVHB(){
-    this.hemofiliaservice.CargarInfectadoporVHB().subscribe(res=>{
+  CargarInfectadoporVHB() {
+    this.hemofiliaservice.CargarInfectadoporVHB().subscribe(res => {
       this.VHB = res
     })
   }
-  CargarInfectadoporVIH(){
-    this.hemofiliaservice.CargarInfectadoporVIH().subscribe(res=>{
+  CargarInfectadoporVIH() {
+    this.hemofiliaservice.CargarInfectadoporVIH().subscribe(res => {
       this.VIH = res;
     })
 
   }
-  CargarPseudotumores(){
-    this.hemofiliaservice.CargarPseudotumores().subscribe(res=>{
+  CargarPseudotumores() {
+    this.hemofiliaservice.CargarPseudotumores().subscribe(res => {
       this.Pseudotumor = res;
     })
   }
-  CargarFracturas(){
-    this.hemofiliaservice.CargarFracturas().subscribe(res=>{
+  CargarFracturas() {
+    this.hemofiliaservice.CargarFracturas().subscribe(res => {
       this.Fractura = res;
     })
   }
-  CargarAnafilaxis(){
-    this.hemofiliaservice.CargarAnafilaxis().subscribe(res=>{
+  CargarAnafilaxis() {
+    this.hemofiliaservice.CargarAnafilaxis().subscribe(res => {
       this.Anasifilis = res;
     })
   }
-  CargarNovedad(){
-    this.hemofiliaservice.CargarNovedad().subscribe(res=>{
+  CargarNovedad() {
+    this.hemofiliaservice.CargarNovedad().subscribe(res => {
       this.Novedad = res;
     })
   }
-  Cargarcausademuerte(){
-    this.hemofiliaservice.Cargarcausademuerte().subscribe(res=>{
+  Cargarcausademuerte() {
+    this.hemofiliaservice.Cargarcausademuerte().subscribe(res => {
       this.Causademuerte = res;
     })
   }
-  CargarMunicipioresidencia(){
-    this.hemofiliaservice.CargarMunicipioresidencia().subscribe(res=>{
+  CargarMunicipioresidencia() {
+    this.hemofiliaservice.CargarMunicipioresidencia().subscribe(res => {
       this.municipioresidencia = res;
     })
   }
-  Codigovalidohabilitacionips(){
-    this.hemofiliaservice.Codigovalidohabilitacionips().subscribe(res=>{
+  Codigovalidohabilitacionips() {
+    this.hemofiliaservice.Codigovalidohabilitacionips().subscribe(res => {
       this.codigohabilitacionIps = res;
     })
   }
-  CodigoCUM35363738(){
-    this.hemofiliaservice.CodigoCUM35363738().subscribe(res=>{
+  CodigoCUM35363738() {
+    this.hemofiliaservice.CodigoCUM35363738().subscribe(res => {
       this.codigocups = res;
     })
   }
 
-  GuargarDatos(){
-    this.hemofilia.CAMPO_7 = this.fechanacimiento.year + "-" + this.fechanacimiento.month + "-" + this.fechanacimiento.day;
-    this.hemofilia.CAMPO_16 = this.fechaafiliacioneps.year + "-" + this.fechaafiliacioneps.month + "-" + this.fechaafiliacioneps.day;
-    this.hemofilia.CAMPO_66 = this.fechacorte.year + "-" + this.fechacorte.month + "-" + this.fechacorte.day;
-    this.hemofilia.CAMPO_21 = this.fechadiagnostico.year + "-" + this.fechadiagnostico.month + "-" + this.fechadiagnostico.day;
-    this.hemofilia.CAMPO_29 = this.FIPtratamiento.year + "-" + this.FIPtratamiento.month + "-" + this.FIPtratamiento.day;
-    this.hemofilia.CAMPO_48_1 = this.fechadt.year + "-" + this.fechadt.month + "-" + this.fechadt.day
-    this.hemofilia.CAMPO_64_2 = this.fechamuerte.year + "-" + this.fechamuerte.month + "-" + this.fechamuerte.day;
+  CargarOcupacion() {
+    this.hemofiliaservice.CargarOcupacion().subscribe(res => {
+      this.Ocupacion = res;
+    })
+  }
 
-   for (let i = 0; i < this.municipioresidencia.length; i++) {
-      if (this.municipioresidencia[i].CODIGO_CIUDAD + "."+ this.municipioresidencia[i].NOMBRE_CIUDAD  === this.hemofilia.CAMPO_14 ) {
+
+  GuargarDatos() {
+    if (this.fechanacimiento === undefined) {
+      this.hemofilia.CAMPO_7 = '';
+    } else {
+      this.hemofilia.CAMPO_7 = this.fechanacimiento.year + "-" + this.fechanacimiento.month + "-" + this.fechanacimiento.day;
+    }
+    if (this.fechaafiliacioneps === undefined) {
+      this.hemofilia.CAMPO_16 = '';
+    } else {
+      this.hemofilia.CAMPO_16 = this.fechaafiliacioneps.year + "-" + this.fechaafiliacioneps.month + "-" + this.fechaafiliacioneps.day;
+    }
+    if (this.fechacorte === undefined) {
+      this.hemofilia.CAMPO_66 = '';
+    } else {
+      this.hemofilia.CAMPO_66 = this.fechacorte.year + "-" + this.fechacorte.month + "-" + this.fechacorte.day;
+    }
+
+    if (this.fechadiagnostico === undefined) {
+      this.hemofilia.CAMPO_21 = '';
+    } else {
+      this.hemofilia.CAMPO_21 = this.fechadiagnostico.year + "-" + this.fechadiagnostico.month + "-" + this.fechadiagnostico.day;
+    }
+    if (this.FIPtratamiento === undefined) {
+      this.hemofilia.CAMPO_29 = '';
+    } else {
+      this.hemofilia.CAMPO_29 = this.FIPtratamiento.year + "-" + this.FIPtratamiento.month + "-" + this.FIPtratamiento.day;
+    }
+    if (this.fechadt === undefined) {
+      this.hemofilia.CAMPO_48_1 = '';
+    } else {
+      this.hemofilia.CAMPO_48_1 = this.fechadt.year + "-" + this.fechadt.month + "-" + this.fechadt.day
+    }
+
+    if (this.fechamuerte === undefined) {
+      this.hemofilia.CAMPO_64_2 = '';
+    } else {
+      this.hemofilia.CAMPO_64_2 = this.fechamuerte.year + "-" + this.fechamuerte.month + "-" + this.fechamuerte.day;
+    }
+
+    for (let i = 0; i < this.Ocupacion.length; i++) {
+      if (this.Ocupacion[i].CODIGO_Ocupacion + "." + this.Ocupacion[i].DESCRIPCION === this.hemofilia.CAMPO_9) {
+        this.hemofilia.CAMPO_9 = this.Ocupacion[i].CODIGO_Ocupacion;
+      }
+    }
+
+    for (let i = 0; i < this.municipioresidencia.length; i++) {
+      if (this.municipioresidencia[i].CODIGO_CIUDAD + "." + this.municipioresidencia[i].NOMBRE_CIUDAD === this.hemofilia.CAMPO_14) {
         this.hemofilia.CAMPO_14 = this.municipioresidencia[i].CODIGO_CIUDAD;
       }
     }
 
+
     for (let i = 0; i < this.codigohabilitacionIps.length; i++) {
-      if (this.codigohabilitacionIps[i].CODIGO_IPS + "."+ this.codigohabilitacionIps[i].NOMBRE_IPS  === this.hemofilia.CAMPO_22) {
+      if (this.codigohabilitacionIps[i].CODIGO_IPS + "." + this.codigohabilitacionIps[i].NOMBRE_IPS === this.hemofilia.CAMPO_22) {
         this.hemofilia.CAMPO_22 = this.codigohabilitacionIps[i].CODIGO_IPS;
         console.log(this.hemofilia.CAMPO_22)
       }
-      if (this.codigohabilitacionIps[i].CODIGO_IPS + "."+ this.codigohabilitacionIps[i].NOMBRE_IPS  === this.hemofilia.CAMPO_39) {
+    }
+    for (let i = 0; i < this.codigohabilitacionIps.length; i++) {
+      if (this.codigohabilitacionIps[i].CODIGO_IPS + "." + this.codigohabilitacionIps[i].NOMBRE_IPS === this.hemofilia.CAMPO_39) {
         this.hemofilia.CAMPO_39 = this.codigohabilitacionIps[i].CODIGO_IPS;
         console.log(this.hemofilia.CAMPO_39)
       }
     }
 
     for (let i = 0; i < this.codigocups.length; i++) {
-      if (this.codigocups[i].CODIGO_CUP + "."+ this.codigocups[i].DESCRIPCION  === this.hemofilia.CAMPO_35) {
+      if (this.codigocups[i].CODIGO_CUP + "." + this.codigocups[i].DESCRIPCION === this.hemofilia.CAMPO_35) {
         this.hemofilia.CAMPO_35 = this.codigocups[i].CODIGO_CUP;
       }
-      if (this.codigocups[i].CODIGO_CUP + "."+ this.codigocups[i].DESCRIPCION  === this.hemofilia.CAMPO_36) {
+      if (this.codigocups[i].CODIGO_CUP + "." + this.codigocups[i].DESCRIPCION === this.hemofilia.CAMPO_36) {
         this.hemofilia.CAMPO_36 = this.codigocups[i].CODIGO_CUP;
       }
-      if (this.codigocups[i].CODIGO_CUP + "."+ this.codigocups[i].DESCRIPCION  === this.hemofilia.CAMPO_37) {
+      if (this.codigocups[i].CODIGO_CUP + "." + this.codigocups[i].DESCRIPCION === this.hemofilia.CAMPO_37) {
         this.hemofilia.CAMPO_37 = this.codigocups[i].CODIGO_CUP;
       }
-      if (this.codigocups[i].CODIGO_CUP + "."+ this.codigocups[i].DESCRIPCION  === this.hemofilia.CAMPO_38) {
+      if (this.codigocups[i].CODIGO_CUP + "." + this.codigocups[i].DESCRIPCION === this.hemofilia.CAMPO_38) {
         this.hemofilia.CAMPO_38 = this.codigocups[i].CODIGO_CUP;
       }
     }
 
-    this.hemofiliaservice.Guardarhemofilia(this.hemofilia).subscribe(res=>{
+    this.hemofiliaservice.Guardarhemofilia(this.hemofilia).subscribe(res => {
       Swal.fire({
         title: 'Almacenado!',
         text: 'Datos almacenados con exito.',
