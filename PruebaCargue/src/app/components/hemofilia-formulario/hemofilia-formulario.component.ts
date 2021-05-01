@@ -483,14 +483,20 @@ export class HemofiliaFormularioComponent implements OnInit {
            this.hemofilia.CAMPO_38 = this.codigocups[i].CODIGO_CUP;
 
       }
+      
     }
   }
 
 
+<<<<<<< Updated upstream
 
    this.hemofiliaservice.Guardarhemofilia(this.hemofilia).subscribe(res => {
      console.log(res)
      Swal.fire({
+=======
+    this.hemofiliaservice.Guardarhemofilia(this.hemofilia).subscribe(res => {
+      Swal.fire({
+>>>>>>> Stashed changes
         title: 'Almacenado!',
         text: 'Datos almacenados con exito.',
         icon: 'success',

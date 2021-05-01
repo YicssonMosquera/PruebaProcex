@@ -9,6 +9,7 @@ const cors_1 = __importDefault(require("cors"));
 const indexRoutes_1 = __importDefault(require("./routes/indexRoutes"));
 const agregar4505routes_1 = __importDefault(require("./routes/agregar4505routes"));
 const loginroutes_1 = __importDefault(require("./routes/loginroutes"));
+const Cargaropcioneshemofiliaroutes_1 = __importDefault(require("./routes/Cargaropcioneshemofiliaroutes"));
 class Server {
     constructor() {
         this.app = express_1.default();
@@ -26,6 +27,7 @@ class Server {
         this.app.use(indexRoutes_1.default);
         this.app.use('/api/4505', agregar4505routes_1.default);
         this.app.use('/api/login', loginroutes_1.default);
+        this.app.use('/api/hemofilia', Cargaropcioneshemofiliaroutes_1.default);
     }
     start() {
         this.app.listen(this.app.get('port'), () => {
