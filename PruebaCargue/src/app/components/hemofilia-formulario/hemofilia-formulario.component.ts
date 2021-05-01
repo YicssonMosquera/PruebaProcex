@@ -447,7 +447,6 @@ export class HemofiliaFormularioComponent implements OnInit {
       }
     }
 
-
     for (let i = 0; i < this.codigohabilitacionIps.length; i++) {
       if (this.codigohabilitacionIps[i].CODIGO_IPS + "." + this.codigohabilitacionIps[i].NOMBRE_IPS == this.hemofilia.CAMPO_22) {
         this.hemofilia.CAMPO_22 = this.codigohabilitacionIps[i].CODIGO_IPS;
@@ -461,10 +460,6 @@ export class HemofiliaFormularioComponent implements OnInit {
       }
     }
 
-    for (let i = 0; i < this.codigocups.length; i++) {
-      if (this.codigocups[i].CODIGO_CUP + "." + this.codigocups[i].DESCRIPCION == this.hemofilia.CAMPO_35) {
-        this.hemofilia.CAMPO_35 = this.codigocups[i].CODIGO_CUP;
-      }
       for (let i = 0; i < this.codigocups.length; i++) {
         if (this.codigocups[i].CODIGO_CUP + "." + this.codigocups[i].DESCRIPCION == this.hemofilia.CAMPO_35) {
           this.hemofilia.CAMPO_35 = this.codigocups[i].CODIGO_CUP;
@@ -481,22 +476,13 @@ export class HemofiliaFormularioComponent implements OnInit {
          }
          if (this.codigocups[i].CODIGO_CUP + "." + this.codigocups[i].DESCRIPCION == this.hemofilia.CAMPO_38) {
            this.hemofilia.CAMPO_38 = this.codigocups[i].CODIGO_CUP;
-
       }
       
     }
-  }
 
 
-<<<<<<< Updated upstream
-
-   this.hemofiliaservice.Guardarhemofilia(this.hemofilia).subscribe(res => {
-     console.log(res)
-     Swal.fire({
-=======
     this.hemofiliaservice.Guardarhemofilia(this.hemofilia).subscribe(res => {
       Swal.fire({
->>>>>>> Stashed changes
         title: 'Almacenado!',
         text: 'Datos almacenados con exito.',
         icon: 'success',
