@@ -460,18 +460,23 @@ export class HemofiliaFormularioComponent implements OnInit {
       }
     }
 
+    for (let i = 0; i < this.codigocups.length; i++) {
+      if (this.codigocups[i].CODIGO_CUP + "." + this.codigocups[i].DESCRIPCION == this.hemofilia.CAMPO_35) {
+        this.hemofilia.CAMPO_35 = this.codigocups[i].CODIGO_CUP;
+      }
+    }
+    for (let i = 0; i < this.codigocups.length; i++) {
+      if (this.codigocups[i].CODIGO_CUP + "." + this.codigocups[i].DESCRIPCION == this.hemofilia.CAMPO_36) {
+        this.hemofilia.CAMPO_36 = this.codigocups[i].CODIGO_CUP;
+      }
+    }
+
       for (let i = 0; i < this.codigocups.length; i++) {
-        if (this.codigocups[i].CODIGO_CUP + "." + this.codigocups[i].DESCRIPCION == this.hemofilia.CAMPO_35) {
-          this.hemofilia.CAMPO_35 = this.codigocups[i].CODIGO_CUP;
-          if (this.codigocups[i].CODIGO_CUP + "." + this.codigocups[i].DESCRIPCION == this.hemofilia.CAMPO_36) {
-            this.hemofilia.CAMPO_36 = this.codigocups[i].CODIGO_CUP;
-          }
-        }
+        if (this.codigocups[i].CODIGO_CUP + "." + this.codigocups[i].DESCRIPCION == this.hemofilia.CAMPO_37) {
+          this.hemofilia.CAMPO_37 = this.codigocups[i].CODIGO_CUP;
+           }
       }
         for (let i = 0; i < this.codigocups.length; i++) {
-        if (this.codigocups[i].CODIGO_CUP + "." + this.codigocups[i].DESCRIPCION == this.hemofilia.CAMPO_37) {
-        this.hemofilia.CAMPO_37 = this.codigocups[i].CODIGO_CUP;
-         }
         if (this.codigocups[i].CODIGO_CUP + "." + this.codigocups[i].DESCRIPCION == this.hemofilia.CAMPO_38) {
          this.hemofilia.CAMPO_38 = this.codigocups[i].CODIGO_CUP;
           }
