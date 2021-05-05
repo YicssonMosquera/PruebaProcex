@@ -1,1 +1,51 @@
-<p>hemofilia-listar works!</p>
+<br>
+<div class="container" >
+
+<form class="example-form">
+    <mat-form-field class="example-full-width"  id="filtros">
+      <mat-label>Buscar</mat-label>
+      <input matInput placeholder="Digite texto para buscar" id="filtros">
+    </mat-form-field>
+</form>
+</div>
+
+<div class="row pt-2">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <table class="table table-striped table-bordered" cellspacing="0" style="width:100%" id="table" datatable [dtOptions]="dtOptions"
+                    [dtTrigger]="dtTrigger">
+                    <thead>
+                        <tr>
+                            <th scope="col">Primer nombre</th>
+                            <th scope="col">Segundo nombre </th>
+                            <th scope="col">Primer apellido </th>
+                            <th scope="col">Segundo apellido </th>
+                            <th scope="col">Tipo de Identificación</th>
+                            <th scope="col">Número de Identificación</th>
+                            <th scope="col">Fecha de nacimiento</th>
+                            <th scope="col">Sexo</th>
+                            <th scope="col">Validación registro</th>
+                            <th scope="col">Validación soportes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let hemofilia of Hemofilia ">
+                            <td>{{hemofilia.CAMPO_1}}</td>
+                            <td>{{hemofilia.CAMPO_2}}</td>
+                            <td>{{hemofilia.CAMPO_3}}</td>
+                            <td>{{hemofilia.CAMPO_4}}</td>
+                            <td>{{hemofilia.CAMPO_5}}</td>
+                            <td>{{hemofilia.CAMPO_6}}</td>
+                            <td>{{hemofilia.CAMPO_7}}</td>
+                            <td>{{hemofilia.CAMPO_8}}</td>
+                            <td>{{hemofilia.VALIDACION_REGISTRO}}</td>
+                            <td>{{hemofilia.VALIDACION_SOPORTE}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>

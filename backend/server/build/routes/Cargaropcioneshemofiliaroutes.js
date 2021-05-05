@@ -45,6 +45,8 @@ class CargaropcioneshemofiliaRoutes {
         this.router.get('/cum', CargaropcioneshemofiliaControllers_1.cargarOpcioneshemofiliaController.CodigoCUM35363738);
         this.router.get('/ocupacion', CargaropcioneshemofiliaControllers_1.cargarOpcioneshemofiliaController.CargarOcupacion9);
         this.router.post('/', CargaropcioneshemofiliaControllers_1.cargarOpcioneshemofiliaController.Guardarhemofilia);
+        this.router.post('/cargarhemofilia', CargaropcioneshemofiliaControllers_1.cargarOpcioneshemofiliaController.CargarRegistrohermofilia);
+        this.router.get('/cargarregistrohemofilia', CargaropcioneshemofiliaControllers_1.cargarOpcioneshemofiliaController.CargarRegistrohermofilia2);
     }
 }
 const cargaropcioneshemofiliaRoutes = new CargaropcioneshemofiliaRoutes();

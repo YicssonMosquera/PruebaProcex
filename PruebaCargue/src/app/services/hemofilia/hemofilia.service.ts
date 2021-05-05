@@ -125,9 +125,14 @@ export class HemofiliaService {
     return this.http.get(`${this.API_URI}/ocupacion`)
   }
 
+  CargarRegistrohemofilia(){
+    return this.http.get(`${this.API_URI}/cargarregistrohemofilia`)
+  }
+
   Guardarhemofilia(Hemofilia:Hemofilia){
     return this.http.post(`${this.API_URI}/`, Hemofilia)
   }
+  
 
 
 

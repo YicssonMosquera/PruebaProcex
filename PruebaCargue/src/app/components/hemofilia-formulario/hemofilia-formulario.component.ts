@@ -434,58 +434,33 @@ export class HemofiliaFormularioComponent implements OnInit {
     } else {
       this.hemofilia.CAMPO_64_2 = this.fechamuerte.year + "-" + this.fechamuerte.month + "-" + this.fechamuerte.day;
     }
+    let hemofilia_9 = this.hemofilia.CAMPO_9?.split('.')[0];
+    this.hemofilia.CAMPO_9 = hemofilia_9;
 
-    for (let i = 0; i < this.Ocupacion.length; i++) {
-      if (this.Ocupacion[i].CODIGO_Ocupacion + "." + this.Ocupacion[i].DESCRIPCION == this.hemofilia.CAMPO_9) {
-        this.hemofilia.CAMPO_9 = this.Ocupacion[i].CODIGO_Ocupacion;
-      }
-    }
+    let hemofilia_14 = this.hemofilia.CAMPO_14?.split('.')[0];
+    this.hemofilia.CAMPO_14 = hemofilia_14;
 
-    for (let i = 0; i < this.municipioresidencia.length; i++) {
-      if (this.municipioresidencia[i].CODIGO_CIUDAD + "." + this.municipioresidencia[i].NOMBRE_CIUDAD == this.hemofilia.CAMPO_14) {
-        this.hemofilia.CAMPO_14 = this.municipioresidencia[i].CODIGO_CIUDAD;
-      }
-    }
+    let hemofilia_22 = this.hemofilia.CAMPO_22?.split('.')[0];
+    this.hemofilia.CAMPO_22 = hemofilia_22;
 
-    for (let i = 0; i < this.codigohabilitacionIps.length; i++) {
-      if (this.codigohabilitacionIps[i].CODIGO_IPS + "." + this.codigohabilitacionIps[i].NOMBRE_IPS == this.hemofilia.CAMPO_22) {
-        this.hemofilia.CAMPO_22 = this.codigohabilitacionIps[i].CODIGO_IPS;
-        console.log(this.hemofilia.CAMPO_22)
-      }
-    }
-    for (let i = 0; i < this.codigohabilitacionIps.length; i++) {
-      if (this.codigohabilitacionIps[i].CODIGO_IPS + "." + this.codigohabilitacionIps[i].NOMBRE_IPS == this.hemofilia.CAMPO_39) {
-        this.hemofilia.CAMPO_39 = this.codigohabilitacionIps[i].CODIGO_IPS;
-        console.log(this.hemofilia.CAMPO_39)
-      }
-    }
+    
+    let hemofilia_39 = this.hemofilia.CAMPO_39?.split('.')[0];
+    this.hemofilia.CAMPO_39 = hemofilia_39;
 
-    for (let i = 0; i < this.codigocups.length; i++) {
-      if (this.codigocups[i].CODIGO_CUP + "." + this.codigocups[i].DESCRIPCION == this.hemofilia.CAMPO_35) {
-        this.hemofilia.CAMPO_35 = this.codigocups[i].CODIGO_CUP;
-      }
-    }
-    for (let i = 0; i < this.codigocups.length; i++) {
-      if (this.codigocups[i].CODIGO_CUP + "." + this.codigocups[i].DESCRIPCION == this.hemofilia.CAMPO_36) {
-        this.hemofilia.CAMPO_36 = this.codigocups[i].CODIGO_CUP;
-      }
-    }
+    let hemofilia_35 = this.hemofilia.CAMPO_35?.split('.')[0];
+    this.hemofilia.CAMPO_35 = hemofilia_35;
 
-      for (let i = 0; i < this.codigocups.length; i++) {
-        if (this.codigocups[i].CODIGO_CUP + "." + this.codigocups[i].DESCRIPCION == this.hemofilia.CAMPO_37) {
-          this.hemofilia.CAMPO_37 = this.codigocups[i].CODIGO_CUP;
-           }
-      }
-        for (let i = 0; i < this.codigocups.length; i++) {
-        if (this.codigocups[i].CODIGO_CUP + "." + this.codigocups[i].DESCRIPCION == this.hemofilia.CAMPO_38) {
-         this.hemofilia.CAMPO_38 = this.codigocups[i].CODIGO_CUP;
-          }
-        }
+    let hemofilia_36 = this.hemofilia.CAMPO_36?.split('.')[0];
+    this.hemofilia.CAMPO_36 = hemofilia_36;
 
+    let hemofilia_37 = this.hemofilia.CAMPO_37?.split('.')[0];
+    this.hemofilia.CAMPO_37 = hemofilia_37;
 
+    let hemofilia_38 = this.hemofilia.CAMPO_38?.split('.')[0];
+    this.hemofilia.CAMPO_38 = hemofilia_38;
+  console.log(this.hemofilia);
 
-
-    this.hemofiliaservice.Guardarhemofilia(this.hemofilia).subscribe(res => {
+   this.hemofiliaservice.Guardarhemofilia(this.hemofilia).subscribe(res => {
       Swal.fire({
         title: 'Almacenado!',
         text: 'Datos almacenados con exito.',
