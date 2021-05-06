@@ -3,24 +3,14 @@ import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import { HemofiliaService } from '../../services/hemofilia/hemofilia.service'
 import { Hemofilia } from '../../models/hemofilia'
 import { ActivatedRoute } from '@angular/router';
-import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-
 import Swal from 'sweetalert2';
 @Component({
-  selector: 'app-hemofilia-formulario',
-  templateUrl: './hemofilia-formulario.component.html',
-  styleUrls: ['./hemofilia-formulario.component.css'],
-  providers: [NgbModalConfig, NgbModal]
+  selector: 'app-hemofilia-edit',
+  templateUrl: './hemofilia-edit.component.html',
+  styleUrls: ['./hemofilia-edit.component.css']
 })
-export class HemofiliaFormularioComponent implements OnInit {
+export class HemofiliaEditComponent implements OnInit {
 
-  fechanacimiento: NgbDateStruct
-  fechaafiliacioneps: NgbDateStruct
-  fechacorte: NgbDateStruct
-  fechadiagnostico: NgbDateStruct
-  FIPtratamiento: NgbDateStruct
-  fechadt: NgbDateStruct
-  fechamuerte: NgbDateStruct
   horas: any
   minutos: any
   tipodocumento: any
@@ -59,6 +49,7 @@ export class HemofiliaFormularioComponent implements OnInit {
   codigohabilitacionIps: any;
   codigocups: any;
   Ocupacion: any;
+  private CC;
   hemofilia1:any
   isReadonly = true;
   hemofilia: Hemofilia = {
@@ -163,15 +154,15 @@ export class HemofiliaFormularioComponent implements OnInit {
     EDAD_ACTUAL:'',
     DOSIS_PROFILAXIS:'',
   }
-  constructor(private hemofiliaservice: HemofiliaService,activateRoute: ActivatedRoute,
-    config: NgbModalConfig, private modalService: NgbModal) {config.backdrop = 'static';
-    config.keyboard = false;}
+
+
+  constructor(private hemofiliaservice: HemofiliaService,activateRoute: ActivatedRoute,) { this.CC = activateRoute.snapshot.params['cc'];  }
 
   ngOnInit(): void {
     this.Funcionesdecarga();
   }
-
   Funcionesdecarga() {
+    this. Cargarregistrohemofilia();
     this.Cargartipodocumento();
     this.CargarSexo();
     this.CargarRegimenafiliacion();
@@ -210,6 +201,13 @@ export class HemofiliaFormularioComponent implements OnInit {
     this.CargarOcupacion();
 
   }
+  Cargarregistrohemofilia(){
+    this.hemofiliaservice.CargarRegistrohemofilia3(this.CC ).subscribe(res=>{
+      this.hemofilia1 = res;
+      console.log(res);
+    })
+  }
+
   Cargartipodocumento() {
     this.hemofiliaservice.CargarTipodocumento().subscribe(res => {
       this.tipodocumento = res;
@@ -402,51 +400,130 @@ export class HemofiliaFormularioComponent implements OnInit {
     })
   }
 
+  GuargarDatos(){
+    for (let i = 0; i < this.hemofilia1.length; i++) {
+      console.log( this.hemofilia1[i].CAMPO_5)
+      this.hemofilia.CAMPO_1 = this.hemofilia1[i].CAMPO_1
+      this.hemofilia.CAMPO_2 = this.hemofilia1[i].CAMPO_2
+      this.hemofilia.CAMPO_3 = this.hemofilia1[i].CAMPO_3
+      this.hemofilia.CAMPO_4 = this.hemofilia1[i].CAMPO_4
+      this.hemofilia.CAMPO_5 = this.hemofilia1[i].CAMPO_5
+      this.hemofilia.CAMPO_6 = this.hemofilia1[i].CAMPO_6
+      this.hemofilia.CAMPO_7 = this.hemofilia1[i].CAMPO_7
+      this.hemofilia.CAMPO_8 = this.hemofilia1[i].CAMPO_8
+      this.hemofilia.CAMPO_9 = this.hemofilia1[i].CAMPO_9
+      this.hemofilia.CAMPO_10 = this.hemofilia1[i].CAMPO_10
+      this.hemofilia.CAMPO_11 = this.hemofilia1[i].CAMPO_11
+      this.hemofilia.CAMPO_12 = this.hemofilia1[i].CAMPO_12
+      this.hemofilia.CAMPO_13 = this.hemofilia1[i].CAMPO_13
+      this.hemofilia.CAMPO_14 = this.hemofilia1[i].CAMPO_14
+      this.hemofilia.CAMPO_15 = this.hemofilia1[i].CAMPO_15
+      this.hemofilia.CAMPO_16 = this.hemofilia1[i].CAMPO_16
+      this.hemofilia.CAMPO_17 = this.hemofilia1[i].CAMPO_17
+      this.hemofilia.CAMPO_18 = this.hemofilia1[i].CAMPO_18
+      this.hemofilia.CAMPO_19 = this.hemofilia1[i].CAMPO_19
+      this.hemofilia.CAMPO_20 = this.hemofilia1[i].CAMPO_20
+      this.hemofilia.CAMPO_21 = this.hemofilia1[i].CAMPO_21
+      this.hemofilia.CAMPO_22 = this.hemofilia1[i].CAMPO_22
+      this.hemofilia.CAMPO_23 = this.hemofilia1[i].CAMPO_23
+      this.hemofilia.CAMPO_24 = this.hemofilia1[i].CAMPO_24
+      this.hemofilia.CAMPO_25 = this.hemofilia1[i].CAMPO_25
+      this.hemofilia.CAMPO_26 = this.hemofilia1[i].CAMPO_26
+      this.hemofilia.CAMPO_27 = this.hemofilia1[i].CAMPO_27
+      this.hemofilia.CAMPO_28 = this.hemofilia1[i].CAMPO_28
+      this.hemofilia.CAMPO_29 = this.hemofilia1[i].CAMPO_29
+      this.hemofilia.CAMPO_30 = this.hemofilia1[i].CAMPO_30
+      this.hemofilia.CAMPO_31 = this.hemofilia1[i].CAMPO_31
+      this.hemofilia.CAMPO_32 = this.hemofilia1[i].CAMPO_32
+      this.hemofilia.CAMPO_32_1 = this.hemofilia1[i].CAMPO_32_1
+      this.hemofilia.CAMPO_32_2 = this.hemofilia1[i].CAMPO_32_2
+      this.hemofilia.CAMPO_32_3 = this.hemofilia1[i].CAMPO_32_3
+      this.hemofilia.CAMPO_32_4 = this.hemofilia1[i].CAMPO_32_4
+      this.hemofilia.CAMPO_33 = this.hemofilia1[i].CAMPO_33
+      this.hemofilia.CAMPO_34 = this.hemofilia1[i].CAMPO_34
+      this.hemofilia.CAMPO_35 = this.hemofilia1[i].CAMPO_35
+      this.hemofilia.CAMPO_36 = this.hemofilia1[i].CAMPO_36
+      this.hemofilia.CAMPO_37 = this.hemofilia1[i].CAMPO_37
+      this.hemofilia.CAMPO_38 = this.hemofilia1[i].CAMPO_38
+      this.hemofilia.CAMPO_39 = this.hemofilia1[i].CAMPO_39
+      this.hemofilia.CAMPO_40 = this.hemofilia1[i].CAMPO_40
+      this.hemofilia.CAMPO_40_1 = this.hemofilia1[i].CAMPO_40_1
+      this.hemofilia.CAMPO_40_2 = this.hemofilia1[i].CAMPO_40_2
+      this.hemofilia.CAMPO_41 = this.hemofilia1[i].CAMPO_41
+      this.hemofilia.CAMPO_42 = this.hemofilia1[i].CAMPO_42
+      this.hemofilia.CAMPO_43 = this.hemofilia1[i].CAMPO_43
+      this.hemofilia.CAMPO_44 = this.hemofilia1[i].CAMPO_44
+      this.hemofilia.CAMPO_45 = this.hemofilia1[i].CAMPO_45
+      this.hemofilia.CAMPO_46 = this.hemofilia1[i].CAMPO_46
+      this.hemofilia.CAMPO_47_1 = this.hemofilia1[i].CAMPO_47_1
+      this.hemofilia.CAMPO_47_2 = this.hemofilia1[i].CAMPO_47_2
+      this.hemofilia.CAMPO_47_3 = this.hemofilia1[i].CAMPO_47_3
+      this.hemofilia.CAMPO_48 = this.hemofilia1[i].CAMPO_48
+      this.hemofilia.CAMPO_48_1 = this.hemofilia1[i].CAMPO_48_1
+      this.hemofilia.CAMPO_48_2 = this.hemofilia1[i].CAMPO_48_2
+      this.hemofilia.CAMPO_48_3 = this.hemofilia1[i].CAMPO_48_3
+      this.hemofilia.CAMPO_48_4 = this.hemofilia1[i].CAMPO_48_4
+      this.hemofilia.CAMPO_49 = this.hemofilia1[i].CAMPO_49
+      this.hemofilia.CAMPO_49_1 = this.hemofilia1[i].CAMPO_49_1
+      this.hemofilia.CAMPO_50 = this.hemofilia1[i].CAMPO_50
+      this.hemofilia.CAMPO_51 = this.hemofilia1[i].CAMPO_51
+      this.hemofilia.CAMPO_52 = this.hemofilia1[i].CAMPO_52
+      this.hemofilia.CAMPO_53 = this.hemofilia1[i].CAMPO_53
+      this.hemofilia.CAMPO_54 = this.hemofilia1[i].CAMPO_54
+      this.hemofilia.CAMPO_55 = this.hemofilia1[i].CAMPO_55
+      this.hemofilia.CAMPO_55_1 = this.hemofilia1[i].CAMPO_55_1
+      this.hemofilia.CAMPO_56 = this.hemofilia1[i].CAMPO_56
+      this.hemofilia.CAMPO_56_1 = this.hemofilia1[i].CAMPO_56_1
+      this.hemofilia.CAMPO_57 = this.hemofilia1[i].CAMPO_57
+      this.hemofilia.CAMPO_57_1 = this.hemofilia1[i].CAMPO_57_1
+      this.hemofilia.CAMPO_57_2 = this.hemofilia1[i].CAMPO_57_2
+      this.hemofilia.CAMPO_57_3 = this.hemofilia1[i].CAMPO_57_3
+      this.hemofilia.CAMPO_57_4 = this.hemofilia1[i].CAMPO_57_4
+      this.hemofilia.CAMPO_57_5 = this.hemofilia1[i].CAMPO_57_5
+      this.hemofilia.CAMPO_57_6 = this.hemofilia1[i].CAMPO_57_6
+      this.hemofilia.CAMPO_57_7 = this.hemofilia1[i].CAMPO_57_7
+      this.hemofilia.CAMPO_57_8 = this.hemofilia1[i].CAMPO_57_8
+      this.hemofilia.CAMPO_57_9 = this.hemofilia1[i].CAMPO_57_9
+      this.hemofilia.CAMPO_57_10 = this.hemofilia1[i].CAMPO_57_10
+      this.hemofilia.CAMPO_57_11 = this.hemofilia1[i].CAMPO_57_11
+      this.hemofilia.CAMPO_57_12 = this.hemofilia1[i].CAMPO_57_12
+      this.hemofilia.CAMPO_57_13 = this.hemofilia1[i].CAMPO_57_13
+      this.hemofilia.CAMPO_57_14 = this.hemofilia1[i].CAMPO_57_14
+      this.hemofilia.CAMPO_58 = this.hemofilia1[i].CAMPO_58
+      this.hemofilia.CAMPO_59 = this.hemofilia1[i].CAMPO_59
+      this.hemofilia.CAMPO_60 = this.hemofilia1[i].CAMPO_60
+      this.hemofilia.CAMPO_61 = this.hemofilia1[i].CAMPO_61
+      this.hemofilia.CAMPO_62 = this.hemofilia1[i].CAMPO_62
+      this.hemofilia.CAMPO_63 = this.hemofilia1[i].CAMPO_63
+      this.hemofilia.CAMPO_64 = this.hemofilia1[i].CAMPO_64
+      this.hemofilia.CAMPO_64_1 = this.hemofilia1[i].CAMPO_64_1
+      this.hemofilia.CAMPO_64_2 = this.hemofilia1[i].CAMPO_64_2
+      this.hemofilia.CAMPO_65 = this.hemofilia1[i].CAMPO_65
+      this.hemofilia.CAMPO_66 = this.hemofilia1[i].CAMPO_66
+      this.hemofilia.EDAD_ACTUAL = this.hemofilia1[i].EDAD_ACTUAL
+      this.hemofilia.EDAD_CORTE = this.hemofilia1[i].EDAD_CORTE
+      this.hemofilia.DOSIS_PROFILAXIS = this.hemofilia1[i].DOSIS_PROFILAXIS
 
-
-  GuargarDatos() {
-    let hemofilia_9 = this.hemofilia.CAMPO_9?.split('.')[0];
-    this.hemofilia.CAMPO_9 = hemofilia_9;
-
-    let hemofilia_14 = this.hemofilia.CAMPO_14?.split('.')[0];
-    this.hemofilia.CAMPO_14 = hemofilia_14;
-
-    let hemofilia_22 = this.hemofilia.CAMPO_22?.split('.')[0];
-    this.hemofilia.CAMPO_22 = hemofilia_22;
-
-    let hemofilia_39 = this.hemofilia.CAMPO_39?.split('.')[0];
-    this.hemofilia.CAMPO_39 = hemofilia_39;
-
-    let hemofilia_35 = this.hemofilia.CAMPO_35?.split('.')[0];
-    this.hemofilia.CAMPO_35 = hemofilia_35;
-
-    let hemofilia_36 = this.hemofilia.CAMPO_36?.split('.')[0];
-    this.hemofilia.CAMPO_36 = hemofilia_36;
-
-    let hemofilia_37 = this.hemofilia.CAMPO_37?.split('.')[0];
-     this.hemofilia.CAMPO_37 = hemofilia_37;
-
-    let hemofilia_38 = this.hemofilia.CAMPO_38?.split('.')[0];
-    this.hemofilia.CAMPO_38 = hemofilia_38;
-       console.log(this.hemofilia);
-
-       this.hemofiliaservice.Guardarhemofilia(this.hemofilia).subscribe(res => {
-           Swal.fire({
-             title: 'Almacenado!',
-             text: 'Datos almacenados con exito.',
-             icon: 'success',
-             allowOutsideClick: false
-           }
-
-           ).then((result) => {
-             if (result.value) {
-
-             }
-           })
-         })
     }
-    open(content:any) {
-      this.modalService.open(content,{ size: 'lg' });
-    }
+    console.log(this.hemofilia1);
+    this.hemofiliaservice.ActualizarRegistro(this.CC,this.hemofilia).subscribe(res =>{
+      console.log(res)
+      Swal.fire({
+        title: 'Almacenado!',
+        text: 'Datos almacenados con exito.',
+        icon: 'success',
+        allowOutsideClick: false
+      }
+
+      ).then((result) => {
+        if (result.value) {
+
+        }
+      })
+    })
+
+  }
+
+
 
 }

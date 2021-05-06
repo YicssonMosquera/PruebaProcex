@@ -128,11 +128,18 @@ export class HemofiliaService {
   CargarRegistrohemofilia(){
     return this.http.get(`${this.API_URI}/cargarregistrohemofilia`)
   }
+  CargarRegistrohemofilia3(Campo_6:Hemofilia){
+    return this.http.get(`${this.API_URI}/${Campo_6}`)
+  }
 
   Guardarhemofilia(Hemofilia:Hemofilia){
     return this.http.post(`${this.API_URI}/`, Hemofilia)
   }
-  
+
+  ActualizarRegistro(Campo_6:Hemofilia, Hemofilia:Hemofilia){
+    return this.http.put(`${this.API_URI}/update/${Campo_6}`, Hemofilia)
+  }
+
 
 
 
