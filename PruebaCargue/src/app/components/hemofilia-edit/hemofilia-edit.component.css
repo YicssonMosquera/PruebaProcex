@@ -64,14 +64,14 @@ button.calendar, button.calendar:active {
   }
   #edad{
     width: 80px;
-    margin-left: 20px;
+    margin-left: 12px;
     font-size: 10px;
     color: #000000;
 }
 #edad2{
-    margin-left: 20px;
-    font-size: 10px;
-    color: #000000;
+  margin-left: 20px;
+  font-size: 10px;
+  color: #000000;
 }
 #edadc{
     margin-left: 8px;
@@ -91,7 +91,7 @@ button.calendar, button.calendar:active {
     color: #000000;
 }
 #numeropaciente{
-  width: 300px;
+  width: 260px;
   margin-left: 20px;
   font-size: 10px;
   justify-content: center;
@@ -109,18 +109,25 @@ button.calendar, button.calendar:active {
   width: 300px;
   font-size: 10px;
   color: #000000;
-  margin-top: 5px;
+  margin-top: 3px;
 }
 #Mresidencia{
   width: 300px;
   margin-left: 20px;
   font-size: 10px;
   color: #000000;
-  margin-top: 5px;
+  margin-top: 3px;
 }
 #fechaCor1{
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: -10px;
+  margin-right: 10px;
+  font-size: 10px;
+  color: #000000;
+  box-sizing: inherit;
+}
+#fechaCor12{
+  margin-left: 8px;
+  margin-right: 10px;
   font-size: 10px;
   color: #000000;
   box-sizing: inherit;
@@ -374,36 +381,45 @@ button.calendar, button.calendar:active {
 }
 
 #nuevo3{
-  width: 100px;
+  width: 125px;
   font-size: 10px;
   color: #000000;
 
+
 }
 #nuevo4{
-  margin-left: 10px;
-  width: 150px;
+  margin-left: -20px;
+  width: 168px;
   margin-top: 3px;
   font-size: 10px;
   color: #000000;
  }
 
  #nuevo5{
-  width: 150px;
+  width: 168px;
   margin-top: 3px;
   font-size: 10px;
   color: #000000;
+  margin-left: 5px;
  }
 
  #nuevo6{
-  width: 120px;
+  width: 135px;
   font-size: 10px;
   color: #000000;
  }
 
  #nuevo7{
   margin-left: 20px;
-  width: 165px;
+  width: 180px;
   font-size: 10px;
   color: #000000;
  }
+ #nuevo8{
+  width: 125px;
+  font-size: 10px;
+  color: #000000;
+
+}
+
 
