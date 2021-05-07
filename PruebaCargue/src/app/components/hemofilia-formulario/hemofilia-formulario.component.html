@@ -1209,18 +1209,33 @@
   </div>
 </div>
 
-<ng-template #content let-c="close" let-d="dismiss">
-  <div class="modal-header">
+<ng-template #content let-c="close" let-d="dismiss" id="pagina">
+  <div class="modal-header" id="soporte">
     <h4 class="modal-title" id="modal-basic-title">Soportes </h4>
-    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+    <button type="button" id="cerrar" class="close" aria-label="Close" (click)="d('Cross click')">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
   <div class="modal-body">
-    <p>Hello, World!</p>
-    <input type="text" class="form-control">
+    <div class="row">
+      <div class="col-md-6">
+        <input type="text" class="form-control">
+      </div>
+      <div class="col-md-6">
+        <input type="file" class="form-control">
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-6">
+        <input type="text" class="form-control">
+      </div>
+      <div class="col-md-6">
+        <input type="file" class="form-control">
+      </div>
+    </div>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button>
+    <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Guardar</button>
   </div>
 </ng-template>
