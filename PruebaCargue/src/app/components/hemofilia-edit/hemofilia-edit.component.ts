@@ -208,7 +208,7 @@ export class HemofiliaEditComponent implements OnInit {
   Cargarregistrohemofilia(){
     this.hemofiliaservice.CargarRegistrohemofilia3(this.CC ).subscribe(res=>{
       this.hemofilia1 = res;
-      console.log(res);
+      
     })
   }
 

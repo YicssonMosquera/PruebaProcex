@@ -49,6 +49,8 @@ class CargaropcioneshemofiliaRoutes{
        this.router.post('/',cargarOpcioneshemofiliaController.Guardarhemofilia)
        this.router.post('/cargarhemofilia',cargarOpcioneshemofiliaController.CargarRegistrohermofilia)
        this.router.get('/cargarregistrohemofilia',cargarOpcioneshemofiliaController.CargarRegistrohermofilia2)
+       this.router.get('/:Campo_6',cargarOpcioneshemofiliaController.CargarRegistrohermofilia3)
+       this.router.put('/update/:Campo_6',cargarOpcioneshemofiliaController.Actualizarhemofilia)
     }
 }
 

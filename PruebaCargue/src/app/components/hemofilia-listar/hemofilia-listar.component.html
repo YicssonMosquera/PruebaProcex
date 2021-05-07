@@ -1,20 +1,30 @@
 <br>
 <div class="container" >
-
-<form class="example-form">
-    <mat-form-field class="example-full-width"  id="filtros">
-      <mat-label>Buscar</mat-label>
-      <input matInput placeholder="Digite texto para buscar" id="filtros" name="hemofiliafiltro"  [(ngModel)]="hemofiliafiltro">
-    </mat-form-field>
-</form>
+<div class="row">
+<div class="col-md-6">
+    <form class="example-form">
+        <mat-form-field class="example-full-width"  id="filtros">
+          <mat-label>Buscar</mat-label>
+          <input matInput placeholder="Digite texto para buscar" id="filtros" name="hemofiliafiltro"  [(ngModel)]="hemofiliafiltro">
+        </mat-form-field>
+    </form>
 </div>
+<div class="col-md-6">
+    <button type="button"  id="button" class="btn btn-secondary"  [routerLink]="['/Hemofilia-frm']"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-plus-fill" viewBox="0 0 16 16">
+        <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM8.5 7v1.5H10a.5.5 0 0 1 0 1H8.5V11a.5.5 0 0 1-1 0V9.5H6a.5.5 0 0 1 0-1h1.5V7a.5.5 0 0 1 1 0z"/>
+      </svg>Nuevo</button>
+    </div>
+</div>
+</div>
+
+
 
 <div class="row pt-2">
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
-                <table class="table table-striped table-bordered" cellspacing="0" style="width:100%" id="table" datatable [dtOptions]="dtOptions"
-                    [dtTrigger]="dtTrigger">
+                <table class="table table-striped table-bordered" cellspacing="0" style="width:100%"  datatable [dtOptions]="dtOptions"
+                    [dtTrigger]="dtTrigger"  >
                     <thead>
                         <tr>
                             <th scope="col">Primer nombre</th>
@@ -30,7 +40,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let hemofilia of Hemofilia | hemofilia:hemofiliafiltro">
+                        <tr *ngFor="let hemofilia of Hemofilia | hemofilia:hemofiliafiltro" >
                             <td>{{hemofilia.CAMPO_1}}</td>
                             <td>{{hemofilia.CAMPO_2}}</td>
                             <td>{{hemofilia.CAMPO_3}}</td>

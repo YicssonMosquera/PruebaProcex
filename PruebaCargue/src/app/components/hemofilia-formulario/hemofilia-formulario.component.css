@@ -344,7 +344,7 @@ button.calendar, button.calendar:active {
 #foother{
   position: fixed;
   left: 0;
-  top: 540px;
+  top: 555px;
   right:0;
 }
 
@@ -424,8 +424,9 @@ button.calendar, button.calendar:active {
 }
 
 #soporte{
-  background-color: #1F618D ;
+  background-color: #337ab7;
   color: white;
+  height: 40px;
 }
 #cerrar{
   color: white;

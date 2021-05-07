@@ -128,7 +128,7 @@ export class HemofiliaService {
   CargarRegistrohemofilia(){
     return this.http.get(`${this.API_URI}/cargarregistrohemofilia`)
   }
-  CargarRegistrohemofilia3(Campo_6:Hemofilia){
+  CargarRegistrohemofilia3(Campo_6:any){
     return this.http.get(`${this.API_URI}/${Campo_6}`)
   }
 

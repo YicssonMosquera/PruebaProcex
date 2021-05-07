@@ -47,6 +47,8 @@ class CargaropcioneshemofiliaRoutes {
         this.router.post('/', CargaropcioneshemofiliaControllers_1.cargarOpcioneshemofiliaController.Guardarhemofilia);
         this.router.post('/cargarhemofilia', CargaropcioneshemofiliaControllers_1.cargarOpcioneshemofiliaController.CargarRegistrohermofilia);
         this.router.get('/cargarregistrohemofilia', CargaropcioneshemofiliaControllers_1.cargarOpcioneshemofiliaController.CargarRegistrohermofilia2);
+        this.router.get('/:Campo_6', CargaropcioneshemofiliaControllers_1.cargarOpcioneshemofiliaController.CargarRegistrohermofilia3);
+        this.router.put('/update/:Campo_6', CargaropcioneshemofiliaControllers_1.cargarOpcioneshemofiliaController.Actualizarhemofilia);
     }
 }
 const cargaropcioneshemofiliaRoutes = new CargaropcioneshemofiliaRoutes();
