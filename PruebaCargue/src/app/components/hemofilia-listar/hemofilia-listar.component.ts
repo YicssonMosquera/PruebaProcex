@@ -69,6 +69,7 @@ export class HemofiliaListarComponent implements OnInit, OnDestroy {
       if (this.Hemofilia[i].CAMPO_6 == data[5]) {
         this.hemofiliaservice.CargarRegistrohemofilia3(data[5]).subscribe(res=>{
           this.opcion = res;
+          console.log(this.opcion)
           if(this.opcion.length > 0 ){
            this.ngxSpinnerService.stop();
             this.Router.navigate(['Hemofilia-frm/', data[5]]);

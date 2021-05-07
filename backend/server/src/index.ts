@@ -5,6 +5,8 @@ import indexRoutes from './routes/indexRoutes'
 import agregar4505Routes from './routes/agregar4505routes'
 import loginRoutes from './routes/loginroutes'
 import cargaropcioneshemofiliaRoutes from './routes/Cargaropcioneshemofiliaroutes'
+import soportesRoutes from './routes/SoportesRoutes';
+import paht from 'path'
 class Server {
 
     public app:Application;
@@ -28,6 +30,8 @@ class Server {
         this.app.use('/api/4505',agregar4505Routes)
         this.app.use('/api/login',loginRoutes)
         this.app.use('/api/hemofilia',cargaropcioneshemofiliaRoutes)
+        this.app.use('/api/soportes', soportesRoutes)
+        this.app.use('/soportes',express.static(paht.resolve('soportes')));
     }
 
     start():void{
