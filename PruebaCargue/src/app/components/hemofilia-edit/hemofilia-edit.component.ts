@@ -3,11 +3,13 @@ import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import { HemofiliaService } from '../../services/hemofilia/hemofilia.service'
 import { Hemofilia } from '../../models/hemofilia'
 import { ActivatedRoute } from '@angular/router';
+import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import Swal from 'sweetalert2';
 @Component({
   selector: 'app-hemofilia-edit',
   templateUrl: './hemofilia-edit.component.html',
-  styleUrls: ['./hemofilia-edit.component.css']
+  styleUrls: ['./hemofilia-edit.component.css'],
+  providers: [NgbModalConfig, NgbModal]
 })
 export class HemofiliaEditComponent implements OnInit {
 
@@ -156,7 +158,9 @@ export class HemofiliaEditComponent implements OnInit {
   }
 
 
-  constructor(private hemofiliaservice: HemofiliaService,activateRoute: ActivatedRoute,) { this.CC = activateRoute.snapshot.params['cc'];  }
+  constructor(private hemofiliaservice: HemofiliaService,activateRoute: ActivatedRoute,
+    config: NgbModalConfig, private modalService: NgbModal) { this.CC = activateRoute.snapshot.params['cc'];config.backdrop = 'static';
+    config.keyboard = false;  }
 
   ngOnInit(): void {
     this.Funcionesdecarga();
@@ -523,6 +527,10 @@ export class HemofiliaEditComponent implements OnInit {
     })
 
   }
+  open(content:any) {
+    this.modalService.open(content,{ size: 'lg' });
+  }
+
 
 
 
