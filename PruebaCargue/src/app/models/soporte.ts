@@ -8,4 +8,5 @@ export interface Soportes{
     Observaciones_anulacion?:string;
     Entregable?:string;
     Tipo_archivo?:string
+    soporte?:File
 }

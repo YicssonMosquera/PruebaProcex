@@ -63,20 +63,22 @@
         </button>
     </div>
     <div class="modal-body">
+      <form>
         <div class="row">
             <div class="col-md-6">
-              <select name="" id="" class="form-control">
-              <option value="2">Imagen</option>
-              <option value="2">Pdf</option>
+              <select name="Tipoarchivo" id="" class="form-control"  [(ngModel)]="Tipoarchivo">
+              <option value="Imagen">Imagen</option>
+              <option value="PDF">Pdf</option>
             </select>
             </div>
             <div class="col-md-6">
-                <input type="file" class="form-control">
+                <input type="file"  class="form-control" accept="image/gif, image/png, image/jpeg, application/pdf" (change)="onphotoselected($event)">
+
             </div>
         </div>
-
+      </form>
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Guardar</button>
+        <button type="button" class="btn btn-outline-dark" (click)="(Guargarsoporte())" (click)="c('Save click')">Guardar</button>
     </div>
 </ng-template>

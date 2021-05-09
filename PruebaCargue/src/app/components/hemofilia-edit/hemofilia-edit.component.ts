@@ -4,6 +4,7 @@ import { HemofiliaService } from '../../services/hemofilia/hemofilia.service'
 import { Hemofilia } from '../../models/hemofilia'
 import { ActivatedRoute } from '@angular/router';
 import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import {Router} from '@angular/router'
 import Swal from 'sweetalert2';
 @Component({
   selector: 'app-hemofilia-edit',
@@ -159,7 +160,7 @@ export class HemofiliaEditComponent implements OnInit {
 
 
   constructor(private hemofiliaservice: HemofiliaService,activateRoute: ActivatedRoute,
-    config: NgbModalConfig, private modalService: NgbModal) { this.CC = activateRoute.snapshot.params['cc'];config.backdrop = 'static';
+    config: NgbModalConfig, private modalService: NgbModal, private Router:Router ) { this.CC = activateRoute.snapshot.params['cc'];config.backdrop = 'static';
     config.keyboard = false;  }
 
   ngOnInit(): void {
@@ -208,7 +209,7 @@ export class HemofiliaEditComponent implements OnInit {
   Cargarregistrohemofilia(){
     this.hemofiliaservice.CargarRegistrohemofilia3(this.CC ).subscribe(res=>{
       this.hemofilia1 = res;
-      
+
     })
   }
 
@@ -529,6 +530,13 @@ export class HemofiliaEditComponent implements OnInit {
   }
   open(content:any) {
     this.modalService.open(content,{ size: 'lg' });
+  }
+
+  editar(){
+    for (let i = 0; i < this.hemofilia1.length; i++) {
+      this.Router.navigate(['Hemofilia-soporte/', this.hemofilia1[i].CAMPO_6]);
+    }
+
   }
 
 

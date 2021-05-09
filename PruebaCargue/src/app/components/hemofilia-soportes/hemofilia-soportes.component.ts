@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { DataTableDirective } from 'angular-datatables';
 import { Subject } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import {LoginService} from '../../services/login/login.service'
+import {SoportesService} from '../../services/soportes/soportes.service'
 @Component({
   selector: 'app-hemofilia-soportes',
   templateUrl: './hemofilia-soportes.component.html',
@@ -14,12 +17,18 @@ export class HemofiliaSoportesComponent implements OnInit {
   dtTrigger = new Subject();
   dtElement: DataTableDirective;
   Hemofilia: any
-
-  constructor( config: NgbModalConfig, private modalService: NgbModal) {config.backdrop = 'static';
-  config.keyboard = false; }
+  usuario:string
+  file:File;
+  nombrearchivo:string
+  Tipoarchivo = '';
+  private CC;
+  constructor( config: NgbModalConfig, private modalService: NgbModal,
+  private loginservice:LoginService,private soporteservice:SoportesService,activateRoute: ActivatedRoute,) {config.backdrop = 'static';
+  config.keyboard = false;  this.usuario = this.loginservice.getCurrentUser(); this.CC = activateRoute.snapshot.params['cc'] }
 
   ngOnInit(): void {
     this.dtoptiontables();
+    console.log(this.usuario)
   }
   dtoptiontables() {
     this.dtOptions = {
@@ -44,7 +53,21 @@ export class HemofiliaSoportesComponent implements OnInit {
 
   }
   open(content:any) {
-    this.modalService.open(content,{ size: 'lg' });
+    this.modalService.open(content);
+  }
+
+
+  onphotoselected(event:any):void{
+    this.file = event.target.files[0]
+    this.nombrearchivo = event.target.files[0].name
+  }
+
+  Guargarsoporte(){
+    console.log(this.Tipoarchivo)
+   console.log(this.file)
+  this.soporteservice.Guardarsoporte(this.nombrearchivo,this.usuario,this.Tipoarchivo,this.CC,this.file).subscribe(res=>{
+    console.log(res)
+  })
   }
 
 
