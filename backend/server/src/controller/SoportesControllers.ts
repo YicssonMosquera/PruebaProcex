@@ -9,7 +9,7 @@ class SoportesControllers{
     public async  GuardarSoporte(req: Request, res: Response){
         try {
 
-            const { Nombre_Archivo, Usuariocargue, Anulado, Fecha_anulacion, Usuario_anulacion,Observaciones_anulacion, Entregable } = req.body;
+            const { Nombre_Archivo, Usuariocargue, Anulado, Fecha_anulacion, Usuario_anulacion,Observaciones_anulacion, Entregable,Documento_hemofilia,Tipo_archivo } = req.body;
             const newsoporte = {
                 Nombre_Archivo: Nombre_Archivo,
                 Usuariocargue: Usuariocargue,
@@ -18,6 +18,8 @@ class SoportesControllers{
                 Usuario_anulacion:Usuario_anulacion,
                 Observaciones_anulacion:Observaciones_anulacion,
                 Entregable:Entregable,
+                Documento_hemofilia:Documento_hemofilia,
+                Tipo_archivo:Tipo_archivo,
                 Ruta_soporte: req.file.path
             };
             console.log(newsoporte);
@@ -30,6 +32,20 @@ class SoportesControllers{
             res.status(404).json({ error: 'No se pudieron almacenar datos' });
         };
    
+    }
+
+    public async Cargarsoporteporusuario(req: Request, res: Response) {
+        const {Documento_hemofilia} = req.params
+        try {
+            const Clientes = await pool.query("select * from soportes where soportes.Documento_hemofilia = ? " ,[Documento_hemofilia] , function (err, result, fields) {
+                if (err) throw err;
+                res.json(result);
+                console.log(result)
+            });
+        }
+        catch (error) {
+            res.status(404).json({ error: 'No se puedieron Datos' });
+        };
     }
 }
 

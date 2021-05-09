@@ -11,6 +11,7 @@ class SoportesRoutes{
       
       config():void{
         this.router.post('/',multer.single('soporte'),soportesControllers.GuardarSoporte) 
+        this.router.get('/:Documento_hemofilia',soportesControllers.Cargarsoporteporusuario)
     }
 
 }

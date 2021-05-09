@@ -27,5 +27,9 @@ export class SoportesService {
 
    }
 
+   Cargarsoportes(Documento_hemofilia:string){
+    return this.http.get(`${this.API_URI}/${Documento_hemofilia}`)
+   }
+
 
 }

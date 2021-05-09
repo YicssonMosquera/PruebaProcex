@@ -39,12 +39,21 @@
                             <th scope="col">Usuario Anulación</th>
                             <th scope="col">Observaciones Anulación</th>
                             <th scope="col">Entregable</th>
-                            <th scope="col">Acciones</th>
+                            <th scope="col">Descargar</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-
+                        <tr *ngFor="let soporte of soporte">
+                            <td>{{soporte.Tipo_archivo}}</td>
+                            <td>{{soporte.Nombre_Archivo}}</td>
+                            <td>{{soporte.Fecha_cargue}}</td>
+                            <td>{{soporte.Usuariocargue}}</td>
+                            <td>{{soporte.Anulado}}</td>
+                            <td>{{soporte.Fecha_anulacion}}</td>
+                            <td>{{soporte.Usuario_anulacion}}</td>
+                            <td>{{soporte.Observaciones_anulacion}}</td>
+                            <td>{{soporte.Entregable}}</td>
+                            <td><img [src]="'assets/img/descarga.png'" class="ing-fluid" alt="no image" (click)="(Descargarsoporte(soporte.PKId))" id="img"></td>
                         </tr>
                     </tbody>
                 </table>

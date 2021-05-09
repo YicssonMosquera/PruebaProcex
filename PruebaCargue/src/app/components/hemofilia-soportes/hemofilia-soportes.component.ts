@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import {LoginService} from '../../services/login/login.service'
 import {SoportesService} from '../../services/soportes/soportes.service'
+import {saveAs} from 'file-saver'
 @Component({
   selector: 'app-hemofilia-soportes',
   templateUrl: './hemofilia-soportes.component.html',
@@ -20,6 +21,7 @@ export class HemofiliaSoportesComponent implements OnInit {
   usuario:string
   file:File;
   nombrearchivo:string
+  soporte:any
   Tipoarchivo = '';
   private CC;
   constructor( config: NgbModalConfig, private modalService: NgbModal,
@@ -28,7 +30,7 @@ export class HemofiliaSoportesComponent implements OnInit {
 
   ngOnInit(): void {
     this.dtoptiontables();
-    console.log(this.usuario)
+    this.cargarsoporte();
   }
   dtoptiontables() {
     this.dtOptions = {
@@ -52,6 +54,14 @@ export class HemofiliaSoportesComponent implements OnInit {
     }
 
   }
+
+  cargarsoporte(){
+    this.soporteservice.Cargarsoportes(this.CC).subscribe(res=>{
+      this.soporte = res;
+      console.log(this.soporte)
+    })
+  }
+
   open(content:any) {
     this.modalService.open(content);
   }
@@ -67,8 +77,21 @@ export class HemofiliaSoportesComponent implements OnInit {
    console.log(this.file)
   this.soporteservice.Guardarsoporte(this.nombrearchivo,this.usuario,this.Tipoarchivo,this.CC,this.file).subscribe(res=>{
     console.log(res)
+    window.location.reload();
   })
   }
+
+  Descargarsoporte(PKId:string){
+    for (let i = 0; i < this.soporte.length; i++) {
+      if(PKId == this.soporte[i].PKId){
+        const ruta = 'http://localhost:3000/' + this.soporte[i].Ruta_soporte
+        console.log(ruta)
+        saveAs(ruta)
+      }
+    }
+   
+  }
+
 
 
 }
