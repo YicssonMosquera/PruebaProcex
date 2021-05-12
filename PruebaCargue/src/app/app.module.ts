@@ -31,6 +31,7 @@ import { HemofiliaFormularioComponent } from './components/hemofilia-formulario/
 import { HemofiliaPipe } from './pipes/hemofilia/hemofilia.pipe';
 import { HemofiliaEditComponent } from './components/hemofilia-edit/hemofilia-edit.component';
 import { HemofiliaSoportesComponent } from './components/hemofilia-soportes/hemofilia-soportes.component';
+import { CargarHemofiliaComponent } from './components/cargar-hemofilia/cargar-hemofilia.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { HemofiliaSoportesComponent } from './components/hemofilia-soportes/hemo
     HemofiliaFormularioComponent,
     HemofiliaPipe,
     HemofiliaEditComponent,
-    HemofiliaSoportesComponent
+    HemofiliaSoportesComponent,
+    CargarHemofiliaComponent
   ],
   imports: [
     BrowserModule,

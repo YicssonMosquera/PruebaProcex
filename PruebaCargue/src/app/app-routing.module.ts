@@ -7,6 +7,7 @@ import {HemofiliaFormularioComponent} from './components/hemofilia-formulario/he
 import {HemofiliaEditComponent} from './components/hemofilia-edit/hemofilia-edit.component'
 import {AuthGuard} from './rutasprotegidas/guards/auth.guard'
 import { HemofiliaSoportesComponent } from './components/hemofilia-soportes/hemofilia-soportes.component';
+import { CargarHemofiliaComponent } from './components/cargar-hemofilia/cargar-hemofilia.component';
 
 const routes: Routes = [
 
@@ -16,8 +17,8 @@ const routes: Routes = [
   {path:  'Hemofilia-frm',component:HemofiliaFormularioComponent,canActivate:[AuthGuard]},
   {path:  'Hemofilia-frm/:cc',component:HemofiliaEditComponent,canActivate:[AuthGuard]},
   {path:  'Hemofilia-soporte/:cc',component:HemofiliaSoportesComponent,canActivate:[AuthGuard]},
+  {path:  'Hemofilia-cargar',component:CargarHemofiliaComponent,canActivate:[AuthGuard]},
   {path:  'Login',component:LoginComponent},
-  { path: '**', redirectTo: '/welcome', pathMatch: 'full' },
 ];
 
 @NgModule({

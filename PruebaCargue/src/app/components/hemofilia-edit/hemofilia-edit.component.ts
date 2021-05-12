@@ -534,7 +534,7 @@ export class HemofiliaEditComponent implements OnInit {
 
   editar(){
     for (let i = 0; i < this.hemofilia1.length; i++) {
-      this.Router.navigate(['Hemofilia-soporte/', this.hemofilia1[i].CAMPO_6]);
+      this.Router.navigate(['Hemofilia-soporte/', this.hemofilia1[i].ID_CUENTA_HEMOFILIA]);
     }
 
   }
