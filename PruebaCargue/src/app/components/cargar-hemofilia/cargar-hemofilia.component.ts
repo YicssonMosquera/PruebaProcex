@@ -37,8 +37,8 @@ export class CargarHemofiliaComponent implements OnInit {
 
   leertxt(prueba:any){
   for (const line of prueba.split(/[\r\n]+/)){
-     var nombre = line.split('|');
-      console.log(line.split('|'));
+     var nombre = line.split(',')[0];
+      console.log(nombre);
 } 
   }
 
