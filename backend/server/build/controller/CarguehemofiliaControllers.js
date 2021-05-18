@@ -598,7 +598,7 @@ class Carguehemofiliacontrollers {
                                 }
                             }
                         }
-                        if (arraycamposbuenos.length == 96) {
+                        if (arraycamposbuenos.length == 97) {
                             console.log(newDatos);
                             yield database_1.default.query('insert into  bd_proceso_carguehemofilia set ?', [newDatos]);
                             console.log(req.body);

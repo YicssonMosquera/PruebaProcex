@@ -540,7 +540,7 @@ class Carguehemofiliacontrollers {
                   
                 }
              
-              if(arraycamposbuenos.length == 96){
+              if(arraycamposbuenos.length == 97){
                  
                 console.log(newDatos);
                 await pool.query('insert into  bd_proceso_carguehemofilia set ?', [newDatos])
