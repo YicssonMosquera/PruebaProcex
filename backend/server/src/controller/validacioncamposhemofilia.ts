@@ -58,6 +58,15 @@ class Validacionhemofila {
         return false
     }
 
+    validacioncampo30(valores:any,campo:any){
+        let validacion = valores.split(',');
+        let validacion2 = valores.split('-');
+        if(campo >= validacion2[0]  && campo <= validacion2[1] ||campo >= validacion2[2]  && campo <= validacion2[3]  || validacion.includes(campo)){
+            return true
+        }
+        return false
+    }
+
 }
 
 export const  validacionhemofila = new Validacionhemofila();

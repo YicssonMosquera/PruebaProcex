@@ -54,5 +54,13 @@ class Validacionhemofila {
         }
         return false;
     }
+    validacioncampo30(valores, campo) {
+        let validacion = valores.split(',');
+        let validacion2 = valores.split('-');
+        if (campo >= validacion2[0] && campo <= validacion2[1] || campo >= validacion2[2] && campo <= validacion2[3] || validacion.includes(campo)) {
+            return true;
+        }
+        return false;
+    }
 }
 exports.validacionhemofila = new Validacionhemofila();

@@ -9,6 +9,7 @@ import {Hemofilia} from '../../models/hemofilia'
 export class HemofiliaService {
 
   API_URI = keys.api.API_URI + '/hemofilia';
+  API_URI2 = keys.api.API_URI + '/carguehemofilia';
   constructor(private http:HttpClient) { }
 
   CargarTipodocumento(){
@@ -140,6 +141,9 @@ export class HemofiliaService {
     return this.http.put(`${this.API_URI}/update/${Campo_6}`, Hemofilia)
   }
 
+  cargamasivahemofilia(Hemofilia:Hemofilia){
+    return this.http.post(`${this.API_URI2}/`, Hemofilia)
+  }
 
 
 
