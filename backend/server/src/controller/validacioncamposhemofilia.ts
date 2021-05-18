@@ -25,16 +25,39 @@ class Validacionhemofila {
     
     isMaxMin(campo:any, min:any, max:any,){
         if(campo.trim().length < min || campo.trim().length > max ){
-            return false
+            return true
         }
-        return true
+        return false
     }
     ismax(campo:any,max:any){
         if(campo.trim().length > max){
-            return false
-        }
             return true
+        }
+            return false
     }
+    isRango(valores:any,campo:any){
+        let validacion = valores.split('-');
+        if(campo >= validacion[0]  && campo <= validacion[1]){
+            return true
+        }
+        return false
+    }
+    isCohincidencia(valores:any,campo:any){
+        let validacion = valores.split(',');
+        if(validacion.includes(campo)){
+            return true
+        }
+        return false
+    }
+    isRangocohincidencia(valores:any,campo:any){
+        let validacion = valores.split(',');
+        let validacion2 = valores.split('-');
+        if(campo >= validacion2[0]  && campo <= validacion2[1] || validacion.includes(campo)){
+            return true
+        }
+        return false
+    }
+
 }
 
 export const  validacionhemofila = new Validacionhemofila();

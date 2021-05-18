@@ -22,15 +22,37 @@ class Validacionhemofila {
     }
     isMaxMin(campo, min, max) {
         if (campo.trim().length < min || campo.trim().length > max) {
-            return false;
+            return true;
         }
-        return true;
+        return false;
     }
     ismax(campo, max) {
         if (campo.trim().length > max) {
-            return false;
+            return true;
         }
-        return true;
+        return false;
+    }
+    isRango(valores, campo) {
+        let validacion = valores.split('-');
+        if (campo >= validacion[0] && campo <= validacion[1]) {
+            return true;
+        }
+        return false;
+    }
+    isCohincidencia(valores, campo) {
+        let validacion = valores.split(',');
+        if (validacion.includes(campo)) {
+            return true;
+        }
+        return false;
+    }
+    isRangocohincidencia(valores, campo) {
+        let validacion = valores.split(',');
+        let validacion2 = valores.split('-');
+        if (campo >= validacion2[0] && campo <= validacion2[1] || validacion.includes(campo)) {
+            return true;
+        }
+        return false;
     }
 }
 exports.validacionhemofila = new Validacionhemofila();
