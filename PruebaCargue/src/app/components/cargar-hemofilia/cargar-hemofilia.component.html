@@ -1,1 +1,35 @@
-<input type="file" class="form-control"  (change)="Seleccionarzip($event)"> <button (click)="cargarhemofilia()">cargar</button>
+<div class="y-card" style="height: 100%; width: 100%;">
+    <div class="y-card-header" style="height: 200px; padding: 10px;">
+
+        <div class="y-card" style="height: 100%; border: 1px solid lightskyblue;border-radius: 10px; background: #f3f9ff;">
+            
+            <div class="y-card-header" style="padding: 5px;background: #d9e2ea;font-weight: 600; border-radius: 10px 10px 0px 0px;" >
+                Carga Hemofilia
+            </div>
+            
+            <div class="y-card-body" >
+                <div class="row" style="width: 100%;">
+                    <div class="col-md-3">
+                        <img [src]="'assets/img/carga.svg'" class="ing-fluid" alt="no image"  id="ima">
+                    </div>
+                    <div class="col-md-5">
+
+                        <button type="submit" class="btn btn-outline-primary"><i class="fas fa-search" (click)="photoInput.click()"></i> Seleccionar archivo</button>
+                        <input type="file" (change)="Seleccionarzip($event)" multiple="false" id="inputFileServer" class="d-none" #photoInput>
+                       
+                    </div>
+                </div>
+                
+            </div>
+
+        </div>
+<!--         
+        <input type="file" class="form-control" (change)="Seleccionarzip($event)"> <button
+    (click)="cargarhemofilia()">cargar</button>
+    </div> -->
+    <div class="y-card-body">
+
+    </div>
+</div>
+
+

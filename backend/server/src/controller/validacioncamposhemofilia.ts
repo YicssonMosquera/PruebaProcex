@@ -1,3 +1,6 @@
+import { Request, Response, json, request } from 'express'
+import pool from '../database'
+
 class Validacionhemofila {
 
     isObligatorio(validacion:any){
@@ -66,6 +69,7 @@ class Validacionhemofila {
         }
         return false
     }
+
 
 }
 

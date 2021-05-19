@@ -47,6 +47,7 @@ class SoportesControllers{
             res.status(404).json({ error: 'No se puedieron Datos' });
         };
     }
+
 }
 
 export const  soportesControllers = new SoportesControllers();

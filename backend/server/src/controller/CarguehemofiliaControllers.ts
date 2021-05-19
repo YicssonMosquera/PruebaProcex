@@ -24,8 +24,11 @@ class Carguehemofiliacontrollers {
         const { CAMPO_1, CAMPO_2, CAMPO_3, CAMPO_4, CAMPO_5, CAMPO_6, CAMPO_7, CAMPO_8, CAMPO_9, CAMPO_10, CAMPO_11, CAMPO_12, CAMPO_13, CAMPO_14, CAMPO_15, CAMPO_16, CAMPO_17, CAMPO_18, CAMPO_19, CAMPO_20, CAMPO_21, CAMPO_22, CAMPO_23, CAMPO_24, CAMPO_25, CAMPO_26, CAMPO_27, CAMPO_28, CAMPO_29, CAMPO_30, CAMPO_31, CAMPO_32, CAMPO_32_1, CAMPO_32_2, CAMPO_32_3, CAMPO_32_4, CAMPO_33, CAMPO_34, CAMPO_35, CAMPO_36, CAMPO_37, CAMPO_38, CAMPO_39, CAMPO_40, CAMPO_40_1, CAMPO_40_2, CAMPO_41, CAMPO_42, CAMPO_43, CAMPO_44, CAMPO_45, CAMPO_46, CAMPO_47_1, CAMPO_47_2, CAMPO_47_3, CAMPO_48, CAMPO_48_1, CAMPO_48_2, CAMPO_48_3, CAMPO_48_4, CAMPO_49, CAMPO_49_1, CAMPO_50, CAMPO_51, CAMPO_52, CAMPO_53, CAMPO_54, CAMPO_55, CAMPO_55_1, CAMPO_56, CAMPO_56_1, CAMPO_57, CAMPO_57_1, CAMPO_57_2, CAMPO_57_3, CAMPO_57_4, CAMPO_57_5, CAMPO_57_6, CAMPO_57_7, CAMPO_57_8, CAMPO_57_9, CAMPO_57_10, CAMPO_57_11, CAMPO_57_12, CAMPO_57_13, CAMPO_57_14, CAMPO_58, CAMPO_59, CAMPO_60, CAMPO_61, CAMPO_62, CAMPO_63, CAMPO_64, CAMPO_64_1, CAMPO_64_2, CAMPO_65, CAMPO_66 } = req.body;
         const newDatos = { CAMPO_1, CAMPO_2, CAMPO_3, CAMPO_4, CAMPO_5, CAMPO_6, CAMPO_7, CAMPO_8, CAMPO_9, CAMPO_10, CAMPO_11, CAMPO_12, CAMPO_13, CAMPO_14, CAMPO_15, CAMPO_16, CAMPO_17, CAMPO_18, CAMPO_19, CAMPO_20, CAMPO_21, CAMPO_22, CAMPO_23, CAMPO_24, CAMPO_25, CAMPO_26, CAMPO_27, CAMPO_28, CAMPO_29, CAMPO_30, CAMPO_31, CAMPO_32, CAMPO_32_1, CAMPO_32_2, CAMPO_32_3, CAMPO_32_4, CAMPO_33, CAMPO_34, CAMPO_35, CAMPO_36, CAMPO_37, CAMPO_38, CAMPO_39, CAMPO_40, CAMPO_40_1, CAMPO_40_2, CAMPO_41, CAMPO_42, CAMPO_43, CAMPO_44, CAMPO_45, CAMPO_46, CAMPO_47_1, CAMPO_47_2, CAMPO_47_3, CAMPO_48, CAMPO_48_1, CAMPO_48_2, CAMPO_48_3, CAMPO_48_4, CAMPO_49, CAMPO_49_1, CAMPO_50, CAMPO_51, CAMPO_52, CAMPO_53, CAMPO_54, CAMPO_55, CAMPO_55_1, CAMPO_56, CAMPO_56_1, CAMPO_57, CAMPO_57_1, CAMPO_57_2, CAMPO_57_3, CAMPO_57_4, CAMPO_57_5, CAMPO_57_6, CAMPO_57_7, CAMPO_57_8, CAMPO_57_9, CAMPO_57_10, CAMPO_57_11, CAMPO_57_12, CAMPO_57_13, CAMPO_57_14, CAMPO_58, CAMPO_59, CAMPO_60, CAMPO_61, CAMPO_62, CAMPO_63, CAMPO_64, CAMPO_64_1, CAMPO_64_2, CAMPO_65, CAMPO_66 };
         let data = new Map();
+
         try {
-            const hemofilia = await pool.query("select * from bd_estructura_archivo_campo", async function (err, result, fields) {
+            var arraycamposbuenos = [];
+            var arraycamposmalos = [];
+            const hemofilia = await pool.query("select * from bd_estructura_archivo_campo", function (err, result, fields) {
                 if (err) throw err;
                 res.json(result);
 
@@ -35,8 +38,6 @@ class Carguehemofiliacontrollers {
                     data.set(objeto.NOMBRE_CAMPO, objeto);
                 }
 
-                var arraycamposbuenos = [];
-                var arraycamposmalos = [];
 
                 /////////////////////tomando valores del req.body
                 for (const key in req.body) {
@@ -296,7 +297,7 @@ class Carguehemofiliacontrollers {
                             }
                         }
                     }
-                    if (nombrecampo == "CAMPO_24" || nombrecampo == "CAMPO_27" || nombrecampo == "CAMPO_28" || nombrecampo == "CAMPO_31" || nombrecampo == "CAMPO_32_1" || nombrecampo == "CAMPO_32_2" || nombrecampo == "CAMPO_32_3" || nombrecampo == "CAMPO_40" || nombrecampo == "CAMPO_40_1" || nombrecampo == "CAMPO_40_2" || nombrecampo == "CAMPO_41" || nombrecampo == "CAMPO_48_4" || nombrecampo == "CAMPO_64_1"  || nombrecampo == "CAMPO_57_1") {
+                    if (nombrecampo == "CAMPO_24" || nombrecampo == "CAMPO_27" || nombrecampo == "CAMPO_28" || nombrecampo == "CAMPO_31" || nombrecampo == "CAMPO_32_1" || nombrecampo == "CAMPO_32_2" || nombrecampo == "CAMPO_32_3" || nombrecampo == "CAMPO_40" || nombrecampo == "CAMPO_40_1" || nombrecampo == "CAMPO_40_2" || nombrecampo == "CAMPO_41" || nombrecampo == "CAMPO_48_4" || nombrecampo == "CAMPO_64_1" || nombrecampo == "CAMPO_57_1") {
                         if (validacion.isObligatorio(validacioncampo.VIGENTE)) {
                             if (validacion.isMaxMin(valorcampo, validacioncampo.LONGITUD_MINIMA, validacioncampo.LONGITUD_MAXIMA)) {
                                 console.log('Longitud no corresponde campo')
@@ -537,28 +538,27 @@ class Carguehemofiliacontrollers {
                             }
                         }
                     }
-                  
+
                 }
-             
-              if(arraycamposbuenos.length == 97){
-                 
-                console.log(newDatos);
-                await pool.query('insert into  bd_proceso_carguehemofilia set ?', [newDatos])
-                    console.log(req.body)
-                    res.json({ message: 'Datos guardado con exito' });
-              }else{
                 console.log(arraycamposbuenos.length)
-                  console.log('esto no guarda')
-              }
+                if (arraycamposbuenos.length == result.length) {
+                    console.log(newDatos);
+                    return pool.query('insert into  bd_proceso_carguehemofilia set ?', [newDatos])
+                    
+                } else {
+                    console.log(arraycamposbuenos.length)
+                    console.log('esto no guarda')
+                }
+                
             });
+
             
+
         }
         catch (error) {
             res.status(404).json({ error: 'No se puedieron Datos' });
         };
     }
-
-
 }
 
 
