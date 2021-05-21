@@ -12,11 +12,13 @@
                     <div class="col-md-3">
                         <img [src]="'assets/img/carga.svg'" class="ing-fluid" alt="no image"  id="ima">
                     </div>
-                    <div class="col-md-5">
-
-                        <button type="submit" class="btn btn-outline-primary"><i class="fas fa-search" (click)="photoInput.click()"></i> Seleccionar archivo</button>
+                    <div class="col-md-7">
+                        <button type="submit" class="btn btn-outline-primary" id="button" (click)="photoInput.click()"><i class="fas fa-search" ></i> Seleccionar archivo</button>
                         <input type="file" (change)="Seleccionarzip($event)" multiple="false" id="inputFileServer" class="d-none" #photoInput>
-                       
+                        <button type="button" (click)="cargarhemofilia()"  id="button" class="btn btn-outline-success" ><i class="fas fa-upload"></i> Cargar</button>
+                        <button type="button"  id="button" class="btn btn-outline-secondary"><i class="fas fa-spinner"></i> Consultar progreso</button>
+                        <button type="button" id="button" class="btn btn-outline-danger"> <i class="far fa-window-close"></i> Cancelar</button>
+                        <button type="button"  id="button" class="btn btn-outline-secondary"><i class="fas fa-tasks"></i> Reporte sin actividades</button>
                     </div>
                 </div>
                 
@@ -28,7 +30,7 @@
     (click)="cargarhemofilia()">cargar</button>
     </div> -->
     <div class="y-card-body">
-
+        
     </div>
 </div>
 

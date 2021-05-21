@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark " id="navbar">
+<!-- <nav class="navbar navbar-expand-lg navbar-dark " id="navbar">
     <div class="container-fluid">
         <a class="navbar-brand" [routerLink]="['/Hemofilia-cargar']">Proyecto</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -9,16 +9,206 @@
             <ul class="navbar-nav ml-auto">
 
                 <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/Hemofilia-listar']" >Hemofilia</a>
+                    <a class="nav-link" [routerLink]="['/Hemofilia-listar']">Hemofilia</a>
                 </li>
-                <li class="nav-item" >
-                    <a class="nav-link"  (click)="logout()" >Salir</a>
+                <li class="nav-item">
+                    <a class="nav-link" (click)="logout()">Salir</a>
                 </li>
             </ul>
         </div>
     </div>
+</nav> -->
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-md navbar-dark "  id="navbar">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>Menú
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav mr-auto nav">
+
+            <li class="nav-item">
+                <a class="nav-link  active"><i class="fas fa-home"></i> Inicio</a>
+            </li>
+
+            <!-- <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" onmouseout="menu" href="#" id="menu" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">carga de archivos</a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li name2="hemofilia_c" name="hemofilia" onclick="crearTab(this)">
+                        <a class="dropdown-item" href="#">hemofilia</a>
+                    </li>
+                </ul>
+            </li> -->
+
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle active" href="#"  role="button" id="menu" href="#" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Carga de archivos
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li name2="hemofilia_c" name="hemofilia" onclick="crearTab(this)">
+                        <a class="dropdown-item"  [routerLink]="['/Hemofilia-cargar']" >Hemofilia</a></li>
+                    
+                </ul>
+
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle active" href="#" id="menu" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Cuentas CAC
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li name2="hemofilia_cac" name="hemofilia" onclick="crearTab(this)">
+                        <a class="dropdown-item"  [routerLink]="['/Hemofilia-listar']" >Hemofilia</a></li>
+                    
+                </ul>
+
+            </li>
+
+
+
+            <li class="nav-item  pr-1">
+                <a class="nav-link  active " (click)="logout()" tabindex="-1" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Salir
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
 </nav>
 
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item active " role="presentation" idTab="home1a">
+        <a class="nav-link btn-custom" id="home1-tab" data-bs-toggle="tab" data-bs-target="#home1" type="button"
+            role="tab" aria-controls="home1" aria-selected="true">
+            inicio
+            <span idTab="home1a" onclick="eliminar()" class="close">x</span>
+        </a>
 
 
-  
+
+    </li>
+</ul>
+
+<div class="tab-content" id="myTabContent">
+    <div idTab="home1a" class="tab-pane fade active " id="home1" role="tabpanel" idTab="home1a">qqqqqq</div>
+</div>
+
+
+
+
+<!-- <div class="container-fluid">
+    <nav class="navbar navbar-expand lg navbar-dark" id="nav">
+
+
+        <ul class="nav  navbar-expand-md navbar-dark">
+            <li class="nav-item" name2="inicio" name="inicio" onclick="crearTab(this)">
+                <a id="menu" class="nav-link" href="#"><i class="fas fa-home"></i> inicio</a>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" onmouseout="menu" href="#" id="menu" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">carga de archivos</a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li name2="hemofilia_c" name="hemofilia" onclick="crearTab(this)">
+                        <a class="dropdown-item" href="#">hemofilia</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="menu" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">cuentas CAC</a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li name2="hemofilia_cac" name="hemofilia" onclick="crearTab(this)">
+                        <a class="dropdown-item" href="#">hemofilia</a>
+                    </li>
+                </ul>
+            </li>
+
+        </ul>
+    </nav>
+</div>
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item active " role="presentation" idTab="home1a">
+        <a class="nav-link btn-custom" id="home1-tab" data-bs-toggle="tab" data-bs-target="#home1" type="button"
+            role="tab" aria-controls="home1" aria-selected="true">
+            inicio
+            <span idTab="home1a" onclick="eliminar()" class="close">x</span>
+        </a>
+
+
+
+    </li>
+</ul>
+
+<div class="tab-content" id="myTabContent">
+    <div idTab="home1a" class="tab-pane fade active " id="home1" role="tabpanel" idTab="home1a">qqqqqq</div>
+</div>
+
+<div> -->
+<!-- <button type="button" id="boton" class="btn btn-outline-primary"> <i class="fas fa-filter"></i> Filtros</button>
+<label class="mr-sm-2" for="inlineFormCustomSelect">Tipo Error:</label>
+<select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+    <option selected>nombre</option>
+    <option value="1">CE</option>
+    <option value="2">CD</option>
+    <option value="3">CA</option>
+</select>
+<button type="button" id="boton" class="btn btn-outline-secondary"> <i class="far fa-file-alt"></i> Logs</button>
+<button type="button" id="boton" class="btn btn-outline-success"> <i class="far fa-file-excel"></i> Logs</button>
+<button type="button" id="boton" class="btn btn-outline-danger"> <i class="far fa-file-pdf"></i>
+    Certificado</button>
+<button type="button" id="boton" class="btn btn-outline-secondary"> <i class="far fa-file-alt"></i> Archivo
+    cargado</button>
+<button type="button" id="boton" class="btn btn-outline-secondary"> <i class="fas fa-list-ul"></i> Consultar
+    resumen</button>
+<button type="button" id="boton" class="btn btn-outline-secondary"> <i class="fas fa-user-friends"></i> Verificación
+    afiliados</button>
+</div> -->
+
+
+
+
+
+
+
+
+<!-- 
+<nav class="navbar navbar-expand-lg navbar-dark " id="navbar">
+    
+        <a class="navbar-brand" [routerLink]="['/Hemofilia-cargar']">Proyecto</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/Hemofilia-listar']">Hemofilia</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" (click)="logout()">Salir</a>
+                </li>
+            </ul>
+        </div>
+    
+</nav> -->

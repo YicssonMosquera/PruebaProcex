@@ -10,7 +10,8 @@ import { HemofiliaService } from '../../services/hemofilia/hemofilia.service'
 })
 export class CargarHemofiliaComponent implements OnInit {
   file: File;
-  nombrearchivo: string
+  nombrearchivo: string;
+  pesoarchivo:string;
   cargahemofilia: any
   hemofilia: Hemofilia = {
     CAMPO_1: '',
@@ -119,6 +120,8 @@ export class CargarHemofiliaComponent implements OnInit {
   Seleccionarzip(event: any): void {
     this.file = event.target.files[0]
     this.nombrearchivo = event.target.files[0].name
+    this.pesoarchivo = event.target.files[0].size
+    console.log(this.pesoarchivo)
     const reader: FileReader = new FileReader();
     reader.onload = (e: any) => {
       const bstr: string = e.target.result;
@@ -141,7 +144,6 @@ export class CargarHemofiliaComponent implements OnInit {
     this.cargahemofilia = prueba;
     for (const line of prueba.split(/[\r\n]+/)) {
       var nombre = line.split(',')[0];
-      console.log(nombre);
     }
   }
 
