@@ -9,7 +9,8 @@ class CargahemofiliaRoutes {
     }
     config() {
         // this.router.post('/',multer2.single('hemofilia'),carguehemofiliacontrollers.GuardarSoporte) 
-        this.router.post('/', CarguehemofiliaControllers_1.carguehemofiliacontrollers.guardarcargahemofilia);
+        //this.router.post('/',carguehemofiliacontrollers.guardarcargahemofilia)
+        this.router.post('/guardar', CarguehemofiliaControllers_1.carguehemofiliacontrollers.guardarHemofilia);
     }
 }
 const cargahemofiliaRoutes = new CargahemofiliaRoutes();

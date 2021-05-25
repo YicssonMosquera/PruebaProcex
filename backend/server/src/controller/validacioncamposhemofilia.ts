@@ -69,8 +69,6 @@ class Validacionhemofila {
         }
         return false
     }
-
-
 }
 
 export const  validacionhemofila = new Validacionhemofila();
