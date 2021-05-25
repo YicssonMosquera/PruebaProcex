@@ -34,6 +34,7 @@ class DBProcesohemofilia{
             pool.query('select * from bd_proceso_hemofilia where ID_PROCESO_HEMOFILIA = ? ', [id], function(err, result, fields) {
                 if (err) throw err;
                 cb(result);
+               
             });
         }
         catch (error) {

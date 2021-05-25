@@ -40,16 +40,18 @@ class LogicaDBProcesohemofilia{
 
             //Acualizar cabeza
             DBProcesohemofilia.buscarPorId(idCabeza,function(result) {
-                // console.log(result + ' ......................'+ idCabeza)
-
-                // //Llenar los campos faltantes para actualizar
-                // result.REGISTROS_PROCESADOS = arrayCamposBuenos.length + arrayCamposMalos.length;
+             
+                 var resultx = result[0];
                
-               
-                // //Actualizar cabeza
-                // DBProcesohemofilia.actualizar(result, idCabeza,function(result) {
 
-                // });
+                //Llenar los campos faltantes para actualizar
+                resultx.REGISTROS_PROCESADOS = arrayCamposBuenos.length + arrayCamposMalos.length;
+                console.log(resultx)
+               
+                //Actualizar cabeza
+                DBProcesohemofilia.actualizar(resultx, idCabeza,function(result) {
+
+                });
             });
 
            
