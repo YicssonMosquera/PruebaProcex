@@ -3,7 +3,6 @@ import BDProcesohemofiliaDetalle from "../dao/BdProcesoHemofiliaDetalle";
 import DBProcesohemofilia from "../dao/DbProcesoHemofilia";
 import {procesohemofilia} from "../models/procesohemofilia"
 import ValidacionCamposPH from "./ValidacionCamposPH";
-
 class LogicaDBProcesohemofilia{ 
    
     public static guardar(oCampos) {
@@ -11,9 +10,13 @@ class LogicaDBProcesohemofilia{
 
         //Guardar proceso hemofilia encabezado
         var procesohemofilia:procesohemofilia ={
-            USUARIO_CREACION : 'Yicsson',
-            USUARIO_MODIFICACION : 'Yicsson'
+            USUARIO_CREACION : oCampos.Usuariocreacion,
+            USUARIO_MODIFICACION :  oCampos.Usuariocreacion,
+            NOMBRE_ARCHIVO: oCampos.NombreArchivo,
+            LONGITUD_ARCHIVO: oCampos.LongitudAchivo,
+           
         }
+       
 
         DBProcesohemofilia.guardar(procesohemofilia, function (result) {
 
@@ -28,9 +31,7 @@ class LogicaDBProcesohemofilia{
         ValidacionCamposPH.validar(oCampos).then(function (arrayCampos){
             var arrayCamposBuenos = arrayCampos[0];
             var arrayCamposMalos = arrayCampos[1];
-            console.log(arrayCamposBuenos.length)
             if(arrayCamposBuenos.length > 0){
-                console.log('guardar detalle ------------------------------------------------')
                 _this.guardarCamposBuenos(idCabeza,oCampos);
             }
             else{
@@ -46,7 +47,7 @@ class LogicaDBProcesohemofilia{
 
                 //Llenar los campos faltantes para actualizar
                 resultx.REGISTROS_PROCESADOS = arrayCamposBuenos.length + arrayCamposMalos.length;
-                console.log(resultx)
+                resultx.NUMERO_ERRORES =  arrayCamposMalos.length;
                
                 //Actualizar cabeza
                 DBProcesohemofilia.actualizar(resultx, idCabeza,function(result) {

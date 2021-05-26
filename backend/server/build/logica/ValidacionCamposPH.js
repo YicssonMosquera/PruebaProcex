@@ -7,6 +7,8 @@ const DbEstructuraArchivoCampo_1 = __importDefault(require("../dao/DbEstructuraA
 const validacioncamposhemofilia_1 = require("../controller/validacioncamposhemofilia");
 class ValidacionCamposPH {
     static validar(reqBody) {
+        console.log('req body --------------------------------------');
+        console.log(reqBody);
         //traer registros archivo campo DB
         return new Promise(function (resolev, reject) {
             DbEstructuraArchivoCampo_1.default.buscarTodos(function (result) {

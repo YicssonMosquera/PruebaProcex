@@ -10,7 +10,9 @@ import BDProcesohemofiliaDetalle from '../dao/BdProcesoHemofiliaDetalle';
 class ValidacionCamposPH {
 
     public static validar(reqBody) {
-
+        console.log('req body --------------------------------------')
+        console.log(reqBody)
+        
         //traer registros archivo campo DB
         return new Promise(function(resolev, reject){
 
@@ -143,6 +145,7 @@ class ValidacionCamposPH {
                                         VALOR_NUEVO: '',
                                         TIPO_RIPS: ''
                                     }
+                                   
                                     arraycamposmalos.push(hemofilia)
                                 }
                             } else if (validacion.isnoObligatorio(validacioncampo.VIGENTE)) {
@@ -911,7 +914,6 @@ class ValidacionCamposPH {
                         }
 
                     }
-                 
                     if( arraycamposbuenos.length == result.length ){
                         console.log('resultado ---------------------------')
                         console.log(arraycamposbuenos.length)

@@ -12,8 +12,10 @@ class LogicaDBProcesohemofilia {
         var _this = this;
         //Guardar proceso hemofilia encabezado
         var procesohemofilia = {
-            USUARIO_CREACION: 'Yicsson',
-            USUARIO_MODIFICACION: 'Yicsson'
+            USUARIO_CREACION: oCampos.Usuariocreacion,
+            USUARIO_MODIFICACION: oCampos.Usuariocreacion,
+            NOMBRE_ARCHIVO: oCampos.NombreArchivo,
+            LONGITUD_ARCHIVO: oCampos.LongitudAchivo,
         };
         DbProcesoHemofilia_1.default.guardar(procesohemofilia, function (result) {
             //Guardar Dbprocesohemofilia detalle
@@ -25,9 +27,7 @@ class LogicaDBProcesohemofilia {
         ValidacionCamposPH_1.default.validar(oCampos).then(function (arrayCampos) {
             var arrayCamposBuenos = arrayCampos[0];
             var arrayCamposMalos = arrayCampos[1];
-            console.log(arrayCamposBuenos.length);
             if (arrayCamposBuenos.length > 0) {
-                console.log('guardar detalle ------------------------------------------------');
                 _this.guardarCamposBuenos(idCabeza, oCampos);
             }
             else {
@@ -38,7 +38,7 @@ class LogicaDBProcesohemofilia {
                 var resultx = result[0];
                 //Llenar los campos faltantes para actualizar
                 resultx.REGISTROS_PROCESADOS = arrayCamposBuenos.length + arrayCamposMalos.length;
-                console.log(resultx);
+                resultx.NUMERO_ERRORES = arrayCamposMalos.length;
                 //Actualizar cabeza
                 DbProcesoHemofilia_1.default.actualizar(resultx, idCabeza, function (result) {
                 });

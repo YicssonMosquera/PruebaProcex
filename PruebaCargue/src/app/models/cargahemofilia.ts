@@ -29,7 +29,7 @@ export interface Hemofilia {
       CAMPO_27?:string;
       CAMPO_28?:string;
       CAMPO_29?:string;
-     CAMPO_30?:string;
+      CAMPO_30?:string;
       CAMPO_31?:string;
       CAMPO_32?:string;
       CAMPO_32_1?:string;

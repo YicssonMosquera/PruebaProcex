@@ -8,6 +8,12 @@ const LogicaDbProcesoHemofilia_1 = __importDefault(require("../logica/LogicaDbPr
 class Carguehemofiliacontrollers {
     guardarHemofilia(req, res) {
         LogicaDbProcesoHemofilia_1.default.guardar(req.body);
+        res.json({ message: 'Datos guardado con exito' });
+    }
+    guardarHemofiliaFile(req, res) {
+        console.log(req.body);
+        console.log("------------------------------------------------------");
+        console.log(req.file);
     }
 }
 exports.carguehemofiliacontrollers = new Carguehemofiliacontrollers();
