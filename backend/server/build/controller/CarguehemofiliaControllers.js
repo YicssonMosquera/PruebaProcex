@@ -11,9 +11,17 @@ class Carguehemofiliacontrollers {
         res.json({ message: 'Datos guardado con exito' });
     }
     guardarHemofiliaFile(req, res) {
-        console.log(req.body);
-        console.log("------------------------------------------------------");
-        console.log(req.file);
+        // console.log(req.body);
+        // console.log("------------------------------------------------------");
+        // console.log(req.file);
+        // const jszip = new JSZip();
+        // jszip.loadAsync(req.file).then((zip) => {
+        //     Object.keys(zip.files).forEach((filename) => {
+        //         zip.files[filename].async('string').then((fileData) => {
+        //             this.leertxt(fileData)
+        //         })
+        //     })
+        // });
     }
 }
 exports.carguehemofiliacontrollers = new Carguehemofiliacontrollers();
