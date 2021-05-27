@@ -915,14 +915,17 @@ class ValidacionCamposPH {
 
                     }
                     if( arraycamposbuenos.length == result.length ){
-                        console.log('resultado ---------------------------')
-                        console.log(arraycamposbuenos.length)
-                        arrayRetorno[0] = arraycamposbuenos;
+                        var arraybuenos =[];
+                        arraybuenos.push(arraycamposbuenos);
+                        arrayRetorno[0] = arraybuenos;
                     }
-                    else{
-                        arrayRetorno[1] = arraycamposmalos;
+                    else {
+                        var arrayMalos =[];
+                        arrayMalos.push(arraycamposmalos)
+                        arrayRetorno[1] = arrayMalos;
+                        arrayRetorno[2] = arraycamposmalos;
+                     
                     }
-                    
                     resolev(arrayRetorno);
                 }
                 catch (error) {

@@ -1,36 +1,21 @@
 import { Request, Response, json, request } from 'express'
 import LogicaDBProcesohemofilia from '../logica/LogicaDbProcesoHemofilia';
-import JSZip from 'jszip';
-
+import FileZipUtil from '../utils/FileZipUtil';
+var AdmZip = require('adm-zip');
 
 class Carguehemofiliacontrollers {
     public guardarHemofilia(req: Request, res: Response) {
-        LogicaDBProcesohemofilia.guardar(req.body);
+        LogicaDBProcesohemofilia.guardar();
         res.json({ message: 'Datos guardado con exito' });
     }
 
-    public guardarHemofiliaFile(req: Request, res: Response) {
-        // console.log(req.body);
-        // console.log("------------------------------------------------------");
-        // console.log(req.file);
-        // const jszip = new JSZip();
-        // jszip.loadAsync(req.file).then((zip) => {
-        //     Object.keys(zip.files).forEach((filename) => {
-        //         zip.files[filename].async('string').then((fileData) => {
-        //             this.leertxt(fileData)
-        //         })
-        //     })
-        // });
-        
+    public guardarHemofiliaFile(req: Request) {
+        FileZipUtil.getFileTxt(req.file, req.body, function (txt, longitud , ruta, nombre, body ) {
+            LogicaDBProcesohemofilia.cargarHemofilia(txt, longitud, ruta, nombre, body );
+        });
 
     }
-    // leertxt(prueba: any) {
-    //     cargahemofilia = prueba;
-    //     for (const line of prueba.split(/[\r\n]+/)) {
-    //       var nombre = line.split(',')[0];
-    //     }
-    //   }
-    
+
 
 }
 

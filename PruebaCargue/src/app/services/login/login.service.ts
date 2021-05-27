@@ -31,6 +31,18 @@ export class LoginService {
     localStorage.removeItem('access_token');
     this.router.navigateByUrl('/Login');
   }
+
+  getCurrentperfil() {
+    let perfil_string = localStorage.getItem('perfil');
+    if (!isNullOrUndefined(perfil_string)) {
+      let user = JSON.parse(perfil_string);
+      return user;
+    } else {
+      return null
+    }
+
+  }
+
   getCurrentUser() {
     let user_string = localStorage.getItem('currentUser');
     if (!isNullOrUndefined(user_string)) {

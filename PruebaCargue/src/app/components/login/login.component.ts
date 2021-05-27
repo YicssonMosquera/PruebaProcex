@@ -29,6 +29,9 @@ export class LoginComponent implements OnInit {
     this.loginserve.loginUser(this.usuario.PKUsuario,this.usuario.password).subscribe(res=>{
       console.log(res)
       this.usuario = res.signedUser
+      console.log(this.usuario);
+      
+      localStorage.setItem("perfil", JSON.stringify(this.usuario.Perfil) );
       this.loginserve.setUser(this.usuario.PKUsuario, res.token)
       this.ngxSpinnerService.stop();
       this.router.navigateByUrl('/cargar');
