@@ -141,11 +141,11 @@ export class HemofiliaService {
     return this.http.put(`${this.API_URI}/update/${Campo_6}`, Hemofilia)
   }
 
-  cargamasivahemofilia(file: File, User: string,) {
+  cargamasivahemofilia(file: File, User: string, perfil:string) {
     const fd = new FormData();
     fd.append('file', file);
     fd.append('User', User);
+    fd.append('perfil', perfil);
     return this.http.post(`${this.API_URI2}/guardarHMFile`, fd)
   }
-
 }

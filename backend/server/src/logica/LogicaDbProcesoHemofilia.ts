@@ -1,25 +1,31 @@
 import DBProcesohemofiliaerror from "../dao/BbProcesoHemofiliaError";
 import BDProcesohemofiliaDetalle from "../dao/BdProcesoHemofiliaDetalle";
 import DBProcesohemofilia from "../dao/DbProcesoHemofilia";
-import {procesohemofilia} from "../models/procesohemofilia"
+import { procesohemofilia } from "../models/procesohemofilia"
 import ValidacionCamposPH from "./ValidacionCamposPH";
 import { Hemofilia } from "../models/hemofiliadetalle"
-class LogicaDBProcesohemofilia{ 
-   
+import DBParametroAplicacion from "../dao/BdParametroAplicacion";
+import DbEstructuraArchivoCampo from "../dao/DbEstructuraArchivoCampo";
+class LogicaDBProcesohemofilia {
+
     public static Londitud
     public static Ruta
     public static Nombre
     public static User
     public static registrosProcesados;
     public static Campos = [];
+    public static Perfil;
+    public static radicado
+    public static cont = 0;
 
-    public static cargarHemofilia(txt, longitud, ruta, nombre, body) {
+    public static cargarHemofilia(txt, longitud, ruta, nombre, body, perfil) {
         var _this = this;
         this.Londitud = longitud;
         this.Ruta = ruta;
         this.Nombre = nombre;
         this.User = body
         var araryCH = [];
+        this.Perfil = perfil;
         var registros = txt.split(/[\r\n]+/).length;
         this.registrosProcesados = registros;
         for (const line of txt.split(/[\r\n]+/)) {
@@ -129,18 +135,17 @@ class LogicaDBProcesohemofilia{
         }
         for (let index = 0; index < araryCH.length; index++) {
             const element = araryCH[index];
-           // this.Campos = element;
-            
+            // this.Campos = element;
+
         }
         this.guardar();
 
     }
 
-
     public static guardar() {
         var _this = this;
         var campos = this.Campos;
-       
+
         //Guardar proceso hemofilia encabezado
         var procesohemofilia: procesohemofilia = {
             USUARIO_CREACION: this.User,
@@ -149,86 +154,90 @@ class LogicaDBProcesohemofilia{
             LONGITUD_ARCHIVO: this.Londitud,
             RUTA_ARCHIVO: this.Ruta,
             ESTADO_PROCESO: '1',
-            VIGENTE : 'S',
-            PROCESADO : 'N'
-
+            VIGENTE: 'S',
+            PROCESADO: 'N'
         }
         DBProcesohemofilia.guardar(procesohemofilia, function (result) {
-
             //Guardar Dbprocesohemofilia detalle
-            for (let index = 0; index <campos.length; index++) {
-                const element =campos[index];
-                console.log(element)
-                _this.guardarProcesoHemofiliaDetalle(result.insertId, element);
-
-            }
-
+            _this.guardarProcesoHemofiliaDetalle(result.insertId, campos);
+            _this.Radicado();
         });
     }
 
 
-    public static guardarProcesoHemofiliaDetalle(idCabeza, oCampos) {
+    public static Radicado() {
+        var _this = this
+        DBParametroAplicacion.buscarPorId(function (result) {
+            var resultado = result[0]
+            var radicado = parseInt(resultado.VALOR_PARAMETRO) + 1
+            resultado.VALOR_PARAMETRO = radicado;
+            _this.radicado = radicado;
+            DBParametroAplicacion.actualizar(resultado, function (result) {
+            })
+        })
+    }
+
+    public static async guardarProcesoHemofiliaDetalle(idCabeza, arrayCampos) {
         var _this = this;
 
-        ValidacionCamposPH.validar(oCampos).then(function (arrayCampos) {
-            var arrayCamposB = arrayCampos[0];
-            var arrayCamposMalos = arrayCampos[1];
-            var numeroErrores = arrayCampos[2]
-            console.log('campos buenos -----------------------------')
-            console.log(arrayCamposMalos)
-           // var arraytotal = arrayCampos[2];
-            if (arrayCamposB.length > 0) {
-                _this.guardarCamposBuenos(idCabeza, oCampos);
-            }
-            else {
-                
-                _this.guardarCamposMalos(idCabeza, numeroErrores);
-            }
-            //Acualizar cabeza
-            DBProcesohemofilia.buscarPorId(idCabeza, function (result) {
-                var resultx = result[0];
-                //Llenar los campos faltantes para actualizar
-                resultx.REGISTROS_PROCESADOS = _this.registrosProcesados
-                resultx.NUMERO_ERRORES = 0;
-                resultx.NUMERO_CORRECCIONES = 0;
-                resultx.ERRORES_CA = 0;
-                resultx.ERRORES_CE = arrayCamposMalos.length;
-                resultx.ERRORES_CD = 0;
-                resultx.REGISTROS_VALIDOS = 0;
-                resultx.REGISTROS_NO_VALIDOS = arrayCamposMalos.length;
-                resultx.TIPO_PROCESO = 1;
-                if(arrayCamposB.length > 0){
-                    resultx.ESTADO_PROCESO = 2;
-                }else{
-                    resultx.ESTADO_PROCESO = 4;
-                }
+        //buscar dbEstructuraArchivocampo
+        var resultEstructuraCampo = await DbEstructuraArchivoCampo.buscarTodos();
 
-                //Actualizar cabeza
-                DBProcesohemofilia.actualizar(resultx, idCabeza, function (result) {
+        //validarCampos
+        const oValidacionCamposPH = new ValidacionCamposPH();
+        oValidacionCamposPH.validar(arrayCampos, resultEstructuraCampo);
+        this.guardarCamposBuenos(idCabeza, oValidacionCamposPH.filas_buenas);
+        this.guardarCamposMalos(idCabeza, oValidacionCamposPH.filas_malas);
 
-                });
+
+        //Acualizar cabeza
+        DBProcesohemofilia.buscarPorId(idCabeza, function (result) {
+            var resultx = result[0];
+
+            //Llenar los campos faltantes para actualizar
+            resultx.REGISTROS_PROCESADOS = _this.registrosProcesados
+            resultx.NUMERO_ERRORES = oValidacionCamposPH.getTotalCamposMalos();
+            resultx.NUMERO_CORRECCIONES = 0;
+            resultx.NUMERO_RADICACION = _this.radicado;
+            resultx.ERRORES_CA = 0;
+            resultx.ERRORES_CE = oValidacionCamposPH.numeroErroresCampo;
+            resultx.ERRORES_CD = 0;
+            resultx.REGISTROS_VALIDOS = oValidacionCamposPH.getFilasBuenas();
+            resultx.REGISTROS_NO_VALIDOS = oValidacionCamposPH.getFilasMalas();
+            resultx.TIPO_PROCESO = 1;
+            resultx.TIPO_USUARIO = _this.Perfil;
+            if (oValidacionCamposPH.getArchivoBueno()) {
+                resultx.ESTADO_PROCESO = 2;
+            } else {
+                resultx.ESTADO_PROCESO = 4;
+            }
+            //Actualizar cabeza
+            DBProcesohemofilia.actualizar(resultx, idCabeza, function (result) {
             });
-
-
-
         });
+
     }
 
-
-    public static guardarCamposBuenos(idCabeza, oCampos) {
+    public static guardarCamposBuenos(idCabeza, oFilas) {
         //Guardar los detalles, campos buenos
-        oCampos.ID_PROCESO_HEMOFILIA = idCabeza;
-        BDProcesohemofiliaDetalle.guardar(oCampos);
+        for (const key in oFilas) {
+            var oCamposfila = oFilas[key];
+            oCamposfila.ID_PROCESO_HEMOFILIA = idCabeza;
+            BDProcesohemofiliaDetalle.guardar(oCamposfila);
+        }
     }
 
-    public static guardarCamposMalos(idCabeza, arrayCamposMalos) {
+    public static guardarCamposMalos(idCabeza, oFilas) {
         //Guardar detalles campos malos
-        for (var i = 0; i < arrayCamposMalos.length; i++) {
-            var campoMalo = arrayCamposMalos[i];
-            campoMalo.ID_PROCESO_HEMOFILIA = idCabeza;
-            campoMalo.USUARIO_CREACION = this.User;
-            campoMalo.USUARIO_MODIFICACION = this.User;
-            DBProcesohemofiliaerror.guardar(campoMalo);
+        for (const key in oFilas) {
+            var arrayFilasMalas = oFilas[key];
+            for (let index = 0; index < arrayFilasMalas.length; index++) {
+                const campoMalo = arrayFilasMalas[index];
+                campoMalo.ID_PROCESO_HEMOFILIA = idCabeza;
+                campoMalo.USUARIO_CREACION = this.User;
+                campoMalo.USUARIO_MODIFICACION = this.User;
+                DBProcesohemofiliaerror.guardar(campoMalo);
+            }
         }
     }
 }

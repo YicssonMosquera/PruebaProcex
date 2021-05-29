@@ -1,4 +1,13 @@
 "use strict";
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
@@ -7,14 +16,17 @@ const BbProcesoHemofiliaError_1 = __importDefault(require("../dao/BbProcesoHemof
 const BdProcesoHemofiliaDetalle_1 = __importDefault(require("../dao/BdProcesoHemofiliaDetalle"));
 const DbProcesoHemofilia_1 = __importDefault(require("../dao/DbProcesoHemofilia"));
 const ValidacionCamposPH_1 = __importDefault(require("./ValidacionCamposPH"));
+const BdParametroAplicacion_1 = __importDefault(require("../dao/BdParametroAplicacion"));
+const DbEstructuraArchivoCampo_1 = __importDefault(require("../dao/DbEstructuraArchivoCampo"));
 class LogicaDBProcesohemofilia {
-    static cargarHemofilia(txt, longitud, ruta, nombre, body) {
+    static cargarHemofilia(txt, longitud, ruta, nombre, body, perfil) {
         var _this = this;
         this.Londitud = longitud;
         this.Ruta = ruta;
         this.Nombre = nombre;
         this.User = body;
         var araryCH = [];
+        this.Perfil = perfil;
         var registros = txt.split(/[\r\n]+/).length;
         this.registrosProcesados = registros;
         for (const line of txt.split(/[\r\n]+/)) {
@@ -144,42 +156,47 @@ class LogicaDBProcesohemofilia {
         };
         DbProcesoHemofilia_1.default.guardar(procesohemofilia, function (result) {
             //Guardar Dbprocesohemofilia detalle
-            for (let index = 0; index < campos.length; index++) {
-                const element = campos[index];
-                console.log(element);
-                _this.guardarProcesoHemofiliaDetalle(result.insertId, element);
-            }
+            _this.guardarProcesoHemofiliaDetalle(result.insertId, campos);
+            _this.Radicado();
         });
     }
-    static guardarProcesoHemofiliaDetalle(idCabeza, oCampos) {
+    static Radicado() {
         var _this = this;
-        ValidacionCamposPH_1.default.validar(oCampos).then(function (arrayCampos) {
-            var arrayCamposB = arrayCampos[0];
-            var arrayCamposMalos = arrayCampos[1];
-            var numeroErrores = arrayCampos[2];
-            console.log('campos buenos -----------------------------');
-            console.log(arrayCamposMalos);
-            // var arraytotal = arrayCampos[2];
-            if (arrayCamposB.length > 0) {
-                _this.guardarCamposBuenos(idCabeza, oCampos);
-            }
-            else {
-                _this.guardarCamposMalos(idCabeza, numeroErrores);
-            }
+        BdParametroAplicacion_1.default.buscarPorId(function (result) {
+            var resultado = result[0];
+            var radicado = parseInt(resultado.VALOR_PARAMETRO) + 1;
+            resultado.VALOR_PARAMETRO = radicado;
+            _this.radicado = radicado;
+            BdParametroAplicacion_1.default.actualizar(resultado, function (result) {
+            });
+        });
+    }
+    static guardarProcesoHemofiliaDetalle(idCabeza, arrayCampos) {
+        return __awaiter(this, void 0, void 0, function* () {
+            var _this = this;
+            //buscar dbEstructuraArchivocampo
+            var resultEstructuraCampo = yield DbEstructuraArchivoCampo_1.default.buscarTodos();
+            //validarCampos
+            const oValidacionCamposPH = new ValidacionCamposPH_1.default();
+            oValidacionCamposPH.validar(arrayCampos, resultEstructuraCampo);
+            this.guardarCamposBuenos(idCabeza, oValidacionCamposPH.filas_buenas);
+            this.guardarCamposMalos(idCabeza, oValidacionCamposPH.filas_malas);
             //Acualizar cabeza
             DbProcesoHemofilia_1.default.buscarPorId(idCabeza, function (result) {
                 var resultx = result[0];
                 //Llenar los campos faltantes para actualizar
                 resultx.REGISTROS_PROCESADOS = _this.registrosProcesados;
-                resultx.NUMERO_ERRORES = 0;
+                resultx.NUMERO_ERRORES = oValidacionCamposPH.getTotalCamposMalos();
                 resultx.NUMERO_CORRECCIONES = 0;
+                resultx.NUMERO_RADICACION = _this.radicado;
                 resultx.ERRORES_CA = 0;
-                resultx.ERRORES_CE = arrayCamposMalos.length;
+                resultx.ERRORES_CE = oValidacionCamposPH.numeroErroresCampo;
                 resultx.ERRORES_CD = 0;
-                resultx.REGISTROS_VALIDOS = 0;
-                resultx.REGISTROS_NO_VALIDOS = arrayCamposMalos.length;
+                resultx.REGISTROS_VALIDOS = oValidacionCamposPH.getFilasBuenas();
+                resultx.REGISTROS_NO_VALIDOS = oValidacionCamposPH.getFilasMalas();
                 resultx.TIPO_PROCESO = 1;
-                if (arrayCamposB.length > 0) {
+                resultx.TIPO_USUARIO = _this.Perfil;
+                if (oValidacionCamposPH.getArchivoBueno()) {
                     resultx.ESTADO_PROCESO = 2;
                 }
                 else {
@@ -191,21 +208,28 @@ class LogicaDBProcesohemofilia {
             });
         });
     }
-    static guardarCamposBuenos(idCabeza, oCampos) {
+    static guardarCamposBuenos(idCabeza, oFilas) {
         //Guardar los detalles, campos buenos
-        oCampos.ID_PROCESO_HEMOFILIA = idCabeza;
-        BdProcesoHemofiliaDetalle_1.default.guardar(oCampos);
+        for (const key in oFilas) {
+            var oCamposfila = oFilas[key];
+            oCamposfila.ID_PROCESO_HEMOFILIA = idCabeza;
+            BdProcesoHemofiliaDetalle_1.default.guardar(oCamposfila);
+        }
     }
-    static guardarCamposMalos(idCabeza, arrayCamposMalos) {
+    static guardarCamposMalos(idCabeza, oFilas) {
         //Guardar detalles campos malos
-        for (var i = 0; i < arrayCamposMalos.length; i++) {
-            var campoMalo = arrayCamposMalos[i];
-            campoMalo.ID_PROCESO_HEMOFILIA = idCabeza;
-            campoMalo.USUARIO_CREACION = this.User;
-            campoMalo.USUARIO_MODIFICACION = this.User;
-            BbProcesoHemofiliaError_1.default.guardar(campoMalo);
+        for (const key in oFilas) {
+            var arrayFilasMalas = oFilas[key];
+            for (let index = 0; index < arrayFilasMalas.length; index++) {
+                const campoMalo = arrayFilasMalas[index];
+                campoMalo.ID_PROCESO_HEMOFILIA = idCabeza;
+                campoMalo.USUARIO_CREACION = this.User;
+                campoMalo.USUARIO_MODIFICACION = this.User;
+                BbProcesoHemofiliaError_1.default.guardar(campoMalo);
+            }
         }
     }
 }
 LogicaDBProcesohemofilia.Campos = [];
+LogicaDBProcesohemofilia.cont = 0;
 exports.default = LogicaDBProcesohemofilia;

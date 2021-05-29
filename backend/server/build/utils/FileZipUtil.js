@@ -5,12 +5,13 @@ class FileZipUtil {
     static getFileTxt(fileZip, body, cb) {
         var longitud = fileZip.size;
         var ruta = fileZip.path;
-        var body = body.User;
+        var body1 = body.User;
+        var perfil = body.perfil;
         var nombre = fileZip.originalname;
         var zip = new AdmZip(fileZip.path);
         var zipEntries = zip.getEntries();
         zipEntries.forEach(function (zipEntry) {
-            cb(zipEntry.getData().toString('utf8'), longitud, ruta, nombre, body);
+            cb(zipEntry.getData().toString('utf8'), longitud, ruta, nombre, body1, perfil);
         });
     }
     static getEntries(fileZip) {

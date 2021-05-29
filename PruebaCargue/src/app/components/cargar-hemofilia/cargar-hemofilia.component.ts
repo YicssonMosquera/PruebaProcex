@@ -61,7 +61,7 @@ export class CargarHemofiliaComponent implements OnInit {
 
 
   cargarhemofilia() {
-    this.hemofiliaservice.cargamasivahemofilia(this.file,this.User).subscribe(res => {
+    this.hemofiliaservice.cargamasivahemofilia(this.file,this.User,this.perfil).subscribe(res => {
       console.log(res)
     })
   }
