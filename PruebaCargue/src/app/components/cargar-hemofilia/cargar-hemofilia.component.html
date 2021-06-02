@@ -1,37 +1,90 @@
 <div class="y-card" style="height: 100%; width: 100%;">
-    <div class="y-card-header" style="height: 200px; padding: 10px;">
+  <div class="y-card-header" style="height: 200px; padding: 10px;">
 
-        <div class="y-card" style="height: 100%; border: 1px solid lightskyblue;border-radius: 10px; background: #f3f9ff;">
-            
-            <div class="y-card-header" style="padding: 5px;background: #d9e2ea;font-weight: 600; border-radius: 10px 10px 0px 0px;" >
-                Carga Hemofilia
-            </div>
-            
-            <div class="y-card-body" >
-                <div class="row" style="width: 100%;">
-                    <div class="col-md-3">
-                        <img [src]="'assets/img/carga.svg'" class="ing-fluid" alt="no image"  id="ima">
-                    </div>
-                    <div class="col-md-7">
-                        <button type="submit" class="btn btn-outline-primary" id="button" (click)="photoInput.click()"><i class="fas fa-search" ></i> Seleccionar archivo</button>
-                        <input type="file" (change)="Seleccionarzip($event)" multiple="false" id="inputFileServer" class="d-none" #photoInput>
-                        <button type="button" (click)="cargarhemofilia()"  id="button" class="btn btn-outline-success" ><i class="fas fa-upload"></i> Cargar</button>
-                        <button type="button"  id="button" class="btn btn-outline-secondary"><i class="fas fa-spinner"></i> Consultar progreso</button>
-                        <button type="button" id="button" class="btn btn-outline-danger"> <i class="far fa-window-close"></i> Cancelar</button>
-                        <button type="button"  id="button" class="btn btn-outline-secondary"><i class="fas fa-tasks"></i> Reporte sin actividades</button>
-                    </div>
-                </div>
-                
-            </div>
+    <div class="y-card" style="height: 100%; border: 1px solid lightskyblue;border-radius: 10px; background: #f3f9ff;">
 
+      <div class="y-card-header"
+        style="padding: 5px;background: #d9e2ea;font-weight: 600; border-radius: 10px 10px 0px 0px;">
+        Carga Hemofilia
+      </div>
+
+      <div class="y-card-body">
+        <div class="row" style="width: 100%;">
+          <div class="col-md-3">
+            <img [src]="'assets/img/carga.svg'" class="ing-fluid" alt="no image" id="ima">
+          </div>
+          <div class="col-md-7">
+            <button type="submit" class="btn btn-outline-primary" id="button" (click)="photoInput.click()"><i
+                class="fas fa-search"></i> Seleccionar archivo</button>
+            <input type="file" (change)="Seleccionarzip($event)" multiple="false" id="inputFileServer" class="d-none"
+              #photoInput>
+            <button type="button" (click)="cargarhemofilia()" id="button" class="btn btn-outline-success"><i
+                class="fas fa-upload"></i> Cargar</button>
+            <button type="button" id="button" class="btn btn-outline-secondary"><i class="fas fa-spinner"></i> Consultar
+              progreso</button>
+            <button type="button" id="button" class="btn btn-outline-danger"> <i class="far fa-window-close"></i>
+              Cancelar</button>
+            <button type="button" id="button" class="btn btn-outline-secondary"><i class="fas fa-tasks"></i> Reporte sin
+              actividades</button>
+          </div>
+          <div class="col-md-2">
+            <table class="fTextoTabla2">
+              <tbody>
+                <tr>
+                  <td>
+
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
-<!--         
-        <input type="file" class="form-control" (change)="Seleccionarzip($event)"> <button
-    (click)="cargarhemofilia()">cargar</button>
-    </div> -->
-    <div class="y-card-body">
-        
+
+      </div>
+
     </div>
+  </div>
+  
+  <div class="y-card-body" style="overflow: hidden;">
+    <p-table [value]="hemofilia" styleClass="p-datatable-sm " [scrollable]="true" scrollHeight="600px" tableStyleClass="prime-table">
+      <ng-template pTemplate="header">
+        <tr  tableStyleClass="header" >
+          <th>Radicado</th>
+          <th>Nombre archivo</th>
+          <th>Fecha cargue</th>
+          <th>R.Procesados</th>
+          <th>R.Cargados</th>
+          <th>%</th>
+          <th>E.CA</th>
+          <th>E.CE</th>
+          <th>E.CD</th>
+          <th>Estado</th>
+          <th>Vigente</th>
+          <th>Usuario</th>
+          <th>Login</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-data>
+        <tr>
+          <td>{{ data.NUMERO_RADICACION}}</td>
+          <td>{{ data.NOMBRE_ARCHIVO}}</td>
+          <td>{{ data.FECHA_CREACION | date:"mediumDate"}}</td>
+          <td>{{ data.REGISTROS_PROCESADOS}}</td>
+          <td>{{ data.REGISTROS_VALIDOS}}</td>
+          <td>{{ data.Porcentaje}}%</td>
+          <td>{{ data.ERRORES_CA}}</td>
+          <td>{{ data.ERRORES_CE}}</td>
+          <td>{{ data.ERRORES_CD}}</td>
+          <td>{{ data.Estado}}</td>
+          <td>{{ data.VIGENTE}}</td>
+          <td>{{ data.TIPO_USUARIO}}</td>
+          <td>{{data.Login}}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+
+  <div class="y-card-footer" style="padding: 0px;">
+    <p-paginator [rows]="rows" [totalRecords]="totalRecords"  (onPageChange)="paginador($event)" [rowsPerPageOptions]="[5,10,20,30,50]"></p-paginator>
+  </div>
 </div>
-
-

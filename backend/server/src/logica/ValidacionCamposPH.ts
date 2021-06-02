@@ -56,7 +56,7 @@ class ValidacionCamposPH {
                 objeto.NUM_CAMPO = parseInt(objeto.NOMBRE_CAMPO.replace("CAMPO_", ""));
                 _this.data.set(objeto.NOMBRE_CAMPO, objeto);
             }
-
+           
             //recorrer el array campos que son las filas del file txt
             for (let index = 0; index < arrayCampos.length; index++) {
 

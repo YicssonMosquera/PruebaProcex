@@ -11,6 +11,7 @@ class CargahemofiliaRoutes{
 
       config():void{
        this.router.post('/guardarHMFile',multer2.single('file'),carguehemofiliacontrollers.guardarHemofiliaFile)
+       this.router.post('/',carguehemofiliacontrollers.consultarCargue);
     }
 }
 

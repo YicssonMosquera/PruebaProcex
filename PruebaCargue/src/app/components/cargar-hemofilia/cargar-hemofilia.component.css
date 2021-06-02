@@ -1,6 +1,5 @@
 #ima{
-    width: 80%;
-    height: 80%;
+   height: 143px;
 }
 #seleccionar{
     width: 200px;
@@ -11,5 +10,13 @@
     FONT-SIZE: 12PX;
     margin-left: 2px;
 }
+#thead{
+    background-color: blue;
+}
+.table{
+    font-size: 10px;
+}
 
-        
+body {
+    font-size: 12px;
+   }

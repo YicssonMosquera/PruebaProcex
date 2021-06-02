@@ -24,4 +24,10 @@ body { overflow: hidden; margin: 0; font-family: Roboto, "Helvetica Neue", sans-
     background-color: rgb(233, 232, 232);
     
   }
-  
+  .prime-table{
+    text-align: center;
+    font-size: 11px;
+  }
+  .header{
+    color: red;
+  }

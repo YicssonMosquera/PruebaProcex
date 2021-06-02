@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import keys from '../../../keys'
 import { Observable } from 'rxjs/internal/Observable';
-import { isNullOrUndefined } from 'util'
-import {Usuario} from '../../models/login'
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -34,7 +32,7 @@ export class LoginService {
 
   getCurrentperfil() {
     let perfil_string = localStorage.getItem('perfil');
-    if (!isNullOrUndefined(perfil_string)) {
+    if (perfil_string) {
       let user = JSON.parse(perfil_string);
       return user;
     } else {
@@ -45,7 +43,7 @@ export class LoginService {
 
   getCurrentUser() {
     let user_string = localStorage.getItem('currentUser');
-    if (!isNullOrUndefined(user_string)) {
+    if (user_string) {
       let user = JSON.parse(user_string);
       return user;
     } else {
@@ -57,7 +55,7 @@ export class LoginService {
 
   public get isloggedIn(): boolean {
     let logued = localStorage.getItem('access_token')
-    if (!isNullOrUndefined(logued)) {
+    if (logued) {
       return true
     } else {
       return false;

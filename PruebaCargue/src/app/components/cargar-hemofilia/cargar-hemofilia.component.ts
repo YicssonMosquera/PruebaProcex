@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import * as JSZip from 'jszip';
-import { Hemofilia } from '../../models/cargahemofilia'
-import { HemofiliaService } from '../../services/hemofilia/hemofilia.service'
-import { LoginService } from '../../services/login/login.service'
-import { isNullOrUndefined } from 'util';
+import { HemofiliaService } from '../../services/hemofilia/hemofilia.service';
+import { LoginService } from '../../services/login/login.service';
+
 
 @Component({
   selector: 'app-cargar-hemofilia',
@@ -11,6 +10,13 @@ import { isNullOrUndefined } from 'util';
   styleUrls: ['./cargar-hemofilia.component.css']
 })
 export class CargarHemofiliaComponent implements OnInit {
+  hemofilia
+  resultado
+  
+  rows = 10;
+  page = 0;
+  totalRecords: 0;
+
   file: File;
   nombrearchivo: string;
   pesoarchivo: string;
@@ -21,13 +27,30 @@ export class CargarHemofiliaComponent implements OnInit {
   constructor(private hemofiliaservice: HemofiliaService, private loginservice: LoginService) {
     this.User = this.loginservice.getCurrentUser();
     this.perfil = this.loginservice.getCurrentperfil();
-    if (!isNullOrUndefined(this.User)) {
+    if (this.User) {
     }
   }
 
   ngOnInit(): void {
-
+    this.ConsultarCargue();
   }
+
+  ConsultarCargue() {
+    this.hemofiliaservice.consultarCargue(this.page, this.rows).subscribe(res => {
+      this.resultado = res;
+      this.hemofilia = this.resultado.hemofilia;
+      this.totalRecords =  this.resultado.numero_registro;
+    })
+  }
+
+  paginador(event){
+    console.log(event);
+    this.rows = event.rows;
+    this.page = event.page;
+    this.ConsultarCargue();
+  }
+
+
 
   Seleccionarzip(event: any): void {
     this.file = event.target.files[0]
@@ -61,7 +84,7 @@ export class CargarHemofiliaComponent implements OnInit {
 
 
   cargarhemofilia() {
-    this.hemofiliaservice.cargamasivahemofilia(this.file,this.User,this.perfil).subscribe(res => {
+    this.hemofiliaservice.cargamasivahemofilia(this.file, this.User, this.perfil).subscribe(res => {
       console.log(res)
     })
   }

@@ -1,4 +1,6 @@
 import { NgModule } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import en from '@angular/common/locales/en';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from "@angular/common";
 import {HttpClientModule} from '@angular/common/http'
@@ -13,6 +15,17 @@ import {MatSortModule} from '@angular/material/sort'
 import { MatInputModule } from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import { MatIconModule } from "@angular/material/icon"; // <----- Here
+
+
+//PRIMENG
+import {TableModule} from 'primeng/table';
+import {ToastModule} from 'primeng/toast';
+import {ButtonModule} from 'primeng/button';
+import {CheckboxModule} from 'primeng/checkbox';
+
+import {PaginatorModule} from 'primeng/paginator';
+
+
 
 
 import {AuthGuard} from '../app/rutasprotegidas/guards/auth.guard'
@@ -64,7 +77,12 @@ import { CargarHemofiliaComponent } from './components/cargar-hemofilia/cargar-h
     MatSortModule,
     MatInputModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    TableModule,
+    ButtonModule,
+    ToastModule,
+    PaginatorModule,
+    CheckboxModule
 
   ],
   providers: [AuthGuard],

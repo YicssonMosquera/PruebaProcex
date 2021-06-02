@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import keys from '../../../keys'
 import { Hemofilia } from '../../models/cargahemofilia'
+import {Paginator} from '../../models/paginator'
 
 @Injectable({
   providedIn: 'root'
@@ -148,4 +149,10 @@ export class HemofiliaService {
     fd.append('perfil', perfil);
     return this.http.post(`${this.API_URI2}/guardarHMFile`, fd)
   }
+
+  consultarCargue(page,row) {
+    const cargar = {page,row}
+    return this.http.post(`${this.API_URI2}/`, cargar)
+  }
+
 }

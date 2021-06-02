@@ -29,6 +29,7 @@ class LogicaDBProcesohemofilia {
         this.Perfil = perfil;
         var registros = txt.split(/[\r\n]+/).length;
         this.registrosProcesados = registros;
+        this.Campos = [];
         for (const line of txt.split(/[\r\n]+/)) {
             var nombre = line.split(',')[0];
             //LLena obj detalle para validar y guardar
@@ -174,6 +175,9 @@ class LogicaDBProcesohemofilia {
     static guardarProcesoHemofiliaDetalle(idCabeza, arrayCampos) {
         return __awaiter(this, void 0, void 0, function* () {
             var _this = this;
+            console.log('array campos LOGICA  .....................');
+            console.log(arrayCampos.length);
+            console.log(arrayCampos);
             //buscar dbEstructuraArchivocampo
             var resultEstructuraCampo = yield DbEstructuraArchivoCampo_1.default.buscarTodos();
             //validarCampos
