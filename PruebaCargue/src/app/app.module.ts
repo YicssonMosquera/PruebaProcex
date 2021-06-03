@@ -15,6 +15,7 @@ import {MatSortModule} from '@angular/material/sort'
 import { MatInputModule } from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import { MatIconModule } from "@angular/material/icon"; // <----- Here
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 
 //PRIMENG
@@ -82,7 +83,8 @@ import { CargarHemofiliaComponent } from './components/cargar-hemofilia/cargar-h
     ButtonModule,
     ToastModule,
     PaginatorModule,
-    CheckboxModule
+    CheckboxModule,
+    MatAutocompleteModule
 
   ],
   providers: [AuthGuard],

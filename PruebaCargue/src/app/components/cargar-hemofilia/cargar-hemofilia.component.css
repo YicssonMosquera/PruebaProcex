@@ -20,3 +20,15 @@
 body {
     font-size: 12px;
    }
+
+#btn{
+   color: green;
+    font-size: 18px;
+    margin-right: 8px;
+    cursor: pointer
+}
+#ims{
+ margin-top: -8px;
+ height:  18px;
+ cursor: pointer
+}

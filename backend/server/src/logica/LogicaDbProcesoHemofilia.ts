@@ -204,7 +204,7 @@ class LogicaDBProcesohemofilia {
             resultx.NUMERO_CORRECCIONES = 0;
             resultx.NUMERO_RADICACION = _this.radicado;
             resultx.ERRORES_CA = 0;
-            resultx.ERRORES_CE = oValidacionCamposPH.numeroErroresCampo;
+            resultx.ERRORES_CE = oValidacionCamposPH.getTotalCamposMalos();
             resultx.ERRORES_CD = 0;
             resultx.REGISTROS_VALIDOS = oValidacionCamposPH.getFilasBuenas();
             resultx.REGISTROS_NO_VALIDOS = oValidacionCamposPH.getFilasMalas();
