@@ -16,7 +16,6 @@ exports.carguehemofiliacontrollers = void 0;
 const DbProcesoHemofilia_1 = __importDefault(require("../dao/DbProcesoHemofilia"));
 const LogicaDbProcesoHemofilia_1 = __importDefault(require("../logica/LogicaDbProcesoHemofilia"));
 const FileZipUtil_1 = __importDefault(require("../utils/FileZipUtil"));
-var AdmZip = require('adm-zip');
 class Carguehemofiliacontrollers {
     guardarHemofilia(req, res) {
         LogicaDbProcesoHemofilia_1.default.guardar();
@@ -31,12 +30,13 @@ class Carguehemofiliacontrollers {
     consultarCargue(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const obHemofilia = new DbProcesoHemofilia_1.default();
-            const { page, row } = req.body;
+            const { page, row, radicado, nombreArchvio, vigente } = req.body;
             const pagina = row * page;
-            const hemofilia = yield obHemofilia.consultarCargue(pagina, row);
+            const hemofilia = yield obHemofilia.consultarCargue(pagina, row, radicado, nombreArchvio, vigente);
             const data = yield obHemofilia.getNumeroRegistro();
             const respuesta = { hemofilia: hemofilia, numero_registro: data[0].numero_registro };
             res.json(respuesta);
+            console.log(respuesta);
         });
     }
 }

@@ -44,13 +44,13 @@ class DBProcesohemofilia {
         }
         ;
     }
-    consultarCargue(page, row) {
+    consultarCargue(page, row, radicado, nombreArchivo, vigente) {
         return new Promise(function (resolev, reject) {
             try {
                 var query = "select P.NUMERO_RADICACION, P.NOMBRE_ARCHIVO, P.FECHA_CREACION, P.REGISTROS_PROCESADOS, P.REGISTROS_VALIDOS, P.ERRORES_CA, P.ERRORES_CE, P.ERRORES_CD, ";
                 query += "CASE WHEN P.ESTADO_PROCESO = 1 then 'En proceso' WHEN P.ESTADO_PROCESO = 2 then 'Exitoso'  WHEN P.ESTADO_PROCESO = 3 then 'Rechazado'  WHEN P.ESTADO_PROCESO = 4 then 'Con errores' end as Estado, ";
                 query += "(P.REGISTROS_VALIDOS * 100) / P.REGISTROS_PROCESADOS AS Porcentaje, ";
-                query += "P.VIGENTE, P.TIPO_USUARIO, P.USUARIO_CREACION as Login, P.RUTA_ARCHIVO from bd_proceso_hemofilia P  order by P.NUMERO_RADICACION desc limit ?,? ";
+                query += "P.VIGENTE, P.TIPO_USUARIO, P.USUARIO_CREACION as Login, P.RUTA_ARCHIVO from bd_proceso_hemofilia P where P.NUMERO_RADICACION  LIKE '%" + radicado + "%' and P.NOMBRE_ARCHIVO LIKE '%" + nombreArchivo + "%'  and P.VIGENTE LIKE '%" + vigente + "%' order by P.NUMERO_RADICACION desc limit ?,? ";
                 database_1.default.query(query, [page, row], function (err, result, fields) {
                     if (err)
                         throw err;

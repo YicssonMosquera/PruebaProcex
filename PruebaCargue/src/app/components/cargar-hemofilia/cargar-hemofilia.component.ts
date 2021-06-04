@@ -19,7 +19,10 @@ export class CargarHemofiliaComponent implements OnInit {
   data
   page = 0;
   totalRecords: 0;
-
+  radicado = '';
+  nombreArchvio = '';
+  vigente = '';
+  filtro
   file: File;
   nombrearchivo: string;
   pesoarchivo: string;
@@ -49,10 +52,11 @@ export class CargarHemofiliaComponent implements OnInit {
   }
 
   ConsultarCargue() {
-    this.hemofiliaservice.consultarCargue(this.page, this.rows).subscribe(res => {
+    this.hemofiliaservice.consultarCargue(this.page, this.rows,this.radicado,this.nombreArchvio,this.vigente).subscribe(res => {
       this.resultado = res;
       this.hemofilia = this.resultado.hemofilia;
       this.totalRecords = this.resultado.numero_registro;
+      console.log(this.hemofilia );
     })
   }
 
@@ -110,9 +114,10 @@ export class CargarHemofiliaComponent implements OnInit {
   cargarhemofilia() {
     this.hemofiliaservice.cargamasivahemofilia(this.file, this.User, this.perfil).subscribe(res => {
       console.log(res)
+
         Swal.fire({
           title: 'Almacenado!',
-          text: 'Archivo cargado exitosamente',
+          text: 'Archivo cargado',
           icon: 'success',
           allowOutsideClick: false
         }
