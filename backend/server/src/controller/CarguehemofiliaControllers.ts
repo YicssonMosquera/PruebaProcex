@@ -19,16 +19,19 @@ class Carguehemofiliacontrollers {
 
     public async consultarCargue(req: Request, res: Response) {
         const obHemofilia = new DBProcesohemofilia()
-        const { page, row,radicado,nombreArchvio,vigente } = req.body
+        const { page, row,radicado,nombreArchvio,vigente,estado} = req.body
         const pagina = row * page
-        const hemofilia = await obHemofilia.consultarCargue(pagina, row, radicado,nombreArchvio,vigente);
+        const hemofilia = await obHemofilia.consultarCargue(pagina, row, radicado,nombreArchvio,vigente,estado);
         const data =  await obHemofilia.getNumeroRegistro();
         const respuesta = {hemofilia:hemofilia,numero_registro:data[0].numero_registro};
         res.json(respuesta);
-        console.log(respuesta)
     }
 
-
+    public async consultarNombreArchivo(req: Request, res: Response){
+        const obHemofilia = new DBProcesohemofilia()
+        const nombreArchivo = await obHemofilia.getNombreArchivo();
+        res.json(nombreArchivo);
+    }
 }
 
 export const carguehemofiliacontrollers = new Carguehemofiliacontrollers();

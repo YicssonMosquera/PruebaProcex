@@ -1,20 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
-import * as JSZip from 'jszip';
 import { HemofiliaService } from '../../services/hemofilia/hemofilia.service';
 import { LoginService } from '../../services/login/login.service';
 import { saveAs } from 'file-saver'
+import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-cargar-hemofilia',
   templateUrl: './cargar-hemofilia.component.html',
-  styleUrls: ['./cargar-hemofilia.component.css']
+  styleUrls: ['./cargar-hemofilia.component.css'],
+  providers: [NgbModalConfig, NgbModal]
 })
 export class CargarHemofiliaComponent implements OnInit {
   hemofilia
   resultado
   selectedProducts
+  nombreArchivo
   rows = 10;
   data
   page = 0;
@@ -22,15 +24,19 @@ export class CargarHemofiliaComponent implements OnInit {
   radicado = '';
   nombreArchvio = '';
   vigente = '';
+  estado = '';
   filtro
   file: File;
   nombrearchivo: string;
   pesoarchivo: string;
   cargahemofilia: any
   UserFullName: string;
+  dragAreaClass: string;
   private User
   private perfil
-  constructor(private hemofiliaservice: HemofiliaService, private loginservice: LoginService, private router: Router,) {
+  constructor(private hemofiliaservice: HemofiliaService, private loginservice: LoginService, private router: Router,
+    config: NgbModalConfig, private modalService: NgbModal,) {
+    config.keyboard = false;
     this.User = this.loginservice.getCurrentUser();
     this.perfil = this.loginservice.getCurrentperfil();
     if (this.User) {
@@ -49,14 +55,15 @@ export class CargarHemofiliaComponent implements OnInit {
 
   ngOnInit(): void {
     this.ConsultarCargue();
+    this.cosnultarNombreArchivo();
   }
 
   ConsultarCargue() {
-    this.hemofiliaservice.consultarCargue(this.page, this.rows,this.radicado,this.nombreArchvio,this.vigente).subscribe(res => {
+    this.hemofiliaservice.consultarCargue(this.page, this.rows, this.radicado, this.nombreArchvio, this.vigente,this.estado).subscribe(res => {
       this.resultado = res;
       this.hemofilia = this.resultado.hemofilia;
       this.totalRecords = this.resultado.numero_registro;
-      console.log(this.hemofilia );
+      console.log(this.hemofilia);
     })
   }
 
@@ -115,20 +122,27 @@ export class CargarHemofiliaComponent implements OnInit {
     this.hemofiliaservice.cargamasivahemofilia(this.file, this.User, this.perfil).subscribe(res => {
       console.log(res)
 
-        Swal.fire({
-          title: 'Almacenado!',
-          text: 'Archivo cargado',
-          icon: 'success',
-          allowOutsideClick: false
-        }
+      Swal.fire({
+        title: 'Almacenado!',
+        text: 'Archivo cargado',
+        icon: 'success',
+        allowOutsideClick: false
+      }
 
-        ).then((result) => {
-          if (result.value) {
-            this.ConsultarCargue();
-          }
-        })
+      ).then((result) => {
+        if (result.value) {
+          this.ConsultarCargue();
+        }
+      })
     })
 
+  }
+
+  cosnultarNombreArchivo(){
+    this.hemofiliaservice.consultarNombreArchivo().subscribe(res=>{
+      this.nombreArchivo = res;
+      console.log(this.nombreArchivo)
+    })
   }
   paginador(event) {
     console.log(event);
@@ -137,5 +151,23 @@ export class CargarHemofiliaComponent implements OnInit {
     this.ConsultarCargue();
   }
 
+  open(content: any) {
+    this.modalService.open(content, { size: 'sm', centered: true });
+  }
+  nombrearchiv(content2: any) {
+    this.modalService.open(content2, { size: 'sm', centered: true });
+  }
 
+  vigent(content3: any) {
+    this.modalService.open(content3, { size: 'sm', centered: true });
+  }
+
+
+  limpiarFiltros() {
+    this.radicado = '';
+    this.nombreArchvio = '';
+    this.vigente = '';
+    this.estado = '';
+    this.ConsultarCargue();
+  }
 }

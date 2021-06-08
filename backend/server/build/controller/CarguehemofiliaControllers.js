@@ -30,13 +30,19 @@ class Carguehemofiliacontrollers {
     consultarCargue(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const obHemofilia = new DbProcesoHemofilia_1.default();
-            const { page, row, radicado, nombreArchvio, vigente } = req.body;
+            const { page, row, radicado, nombreArchvio, vigente, estado } = req.body;
             const pagina = row * page;
-            const hemofilia = yield obHemofilia.consultarCargue(pagina, row, radicado, nombreArchvio, vigente);
+            const hemofilia = yield obHemofilia.consultarCargue(pagina, row, radicado, nombreArchvio, vigente, estado);
             const data = yield obHemofilia.getNumeroRegistro();
             const respuesta = { hemofilia: hemofilia, numero_registro: data[0].numero_registro };
             res.json(respuesta);
-            console.log(respuesta);
+        });
+    }
+    consultarNombreArchivo(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const obHemofilia = new DbProcesoHemofilia_1.default();
+            const nombreArchivo = yield obHemofilia.getNombreArchivo();
+            res.json(nombreArchivo);
         });
     }
 }

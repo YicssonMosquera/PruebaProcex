@@ -14,6 +14,7 @@ class CargahemofiliaRoutes {
     config() {
         this.router.post('/guardarHMFile', multer2_1.default.single('file'), CarguehemofiliaControllers_1.carguehemofiliacontrollers.guardarHemofiliaFile);
         this.router.post('/', CarguehemofiliaControllers_1.carguehemofiliacontrollers.consultarCargue);
+        this.router.get('/', CarguehemofiliaControllers_1.carguehemofiliacontrollers.consultarNombreArchivo);
     }
 }
 const cargahemofiliaRoutes = new CargahemofiliaRoutes();

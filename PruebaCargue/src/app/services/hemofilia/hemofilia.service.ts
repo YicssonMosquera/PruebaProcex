@@ -150,9 +150,13 @@ export class HemofiliaService {
     return this.http.post(`${this.API_URI2}/guardarHMFile`, fd)
   }
 
-  consultarCargue(page,row,radicado,nombreArchvio,vigente) {
-    const cargar = {page,row,radicado,nombreArchvio,vigente}
+  consultarCargue(page,row,radicado,nombreArchvio,vigente,estado) {
+    const cargar = {page,row,radicado,nombreArchvio,vigente,estado}
     return this.http.post(`${this.API_URI2}/`, cargar)
+  }
+
+  consultarNombreArchivo() {
+    return this.http.get(`${this.API_URI2}/`)
   }
 
 }
