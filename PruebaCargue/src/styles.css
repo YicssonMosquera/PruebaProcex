@@ -28,3 +28,54 @@ body { overflow: hidden; margin: 0; font-family: Roboto, "Helvetica Neue", sans-
     text-align: center;
     font-size: 10px;
   }
+  .componenty .p-fileupload-buttonbar{
+    padding: 5px !important;
+    border: none !important;
+    background: transparent !important;
+  }
+  
+  .componenty .p-fileupload-buttonbar .p-button{
+    /* width: 150px; */
+    padding: 5px !important;
+  }
+  
+  .componenty .p-fileupload-buttonbar .p-button .p-button-label{
+    font-size: 10px;
+  }
+  
+  .componenty .p-fileupload-buttonbar .p-button .p-button-icon{
+    font-size: 10px;
+  }
+  
+  .componenty .p-fileupload-content{
+    border: 2px dashed #4e92ce !important;
+    height: 30px;
+  }
+  .componenty .p-fileupload-content .ng-star-inserted .ng-star-inserted .ng-star-inserted{
+    background-color: lightgreen;
+    height: 100% !important;
+    width: 100%  !important ;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .componenty .p-fileupload-content .ng-star-inserted .ng-star-inserted .ng-star-inserted div:first-child{
+    display: none;
+  }
+
+  .componenty .p-fileupload-content .ng-star-inserted .ng-star-inserted .ng-star-inserted div{
+    font-size: 11px;
+  }
+  .componenty .p-fileupload-content .ng-star-inserted .ng-star-inserted .ng-star-inserted .p-button-icon-only{
+    background: #e04e4e;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    font-size: 12px;
+    border-color: #e04e4e;
+  }
+
+
+
+  

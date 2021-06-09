@@ -14,9 +14,11 @@ import Swal from 'sweetalert2';
 })
 export class CargarHemofiliaComponent implements OnInit {
   hemofilia
+  uploadedFiles: any[] = [];
   resultado
   selectedProducts
   nombreArchivo
+  existFile:boolean;
   rows = 10;
   data
   page = 0;
@@ -54,6 +56,7 @@ export class CargarHemofiliaComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.existFile=false;
     this.ConsultarCargue();
     this.cosnultarNombreArchivo();
   }
@@ -85,6 +88,33 @@ export class CargarHemofiliaComponent implements OnInit {
     }
 
   }
+
+  onBeforeUpload(){
+    alert("x");
+  }
+
+  onRemove(){
+    this.existFile = false;
+  }
+
+  onUpload(event) {
+    if(this.existFile){
+      alert("eixte un archivo");
+      return;
+    }
+    var files = event.currentFiles;
+    this.file = files[0];
+    this.nombrearchivo = files[0].name;
+    this.pesoarchivo = files[0].size;
+    this.existFile = true;
+    //this.cargarhemofilia();
+    const reader: FileReader = new FileReader();
+    reader.onload = (e: any) => {
+    }
+    reader.readAsText(this.file)
+}
+
+
 
   Seleccionarzip(event: any): void {
     this.file = event.target.files[0]

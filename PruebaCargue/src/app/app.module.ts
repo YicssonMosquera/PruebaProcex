@@ -24,8 +24,9 @@ import {TableModule} from 'primeng/table';
 import {ToastModule} from 'primeng/toast';
 import {ButtonModule} from 'primeng/button';
 import {CheckboxModule} from 'primeng/checkbox';
-
 import {PaginatorModule} from 'primeng/paginator';
+import {FileUploadModule} from 'primeng/fileupload';
+import {TabViewModule} from 'primeng/tabview';
 
 
 
@@ -86,7 +87,8 @@ import { CargarHemofiliaComponent } from './components/cargar-hemofilia/cargar-h
     PaginatorModule,
     CheckboxModule,
     MatAutocompleteModule,
-    MatMenuModule
+    MatMenuModule,
+    FileUploadModule,
 
   ],
   providers: [AuthGuard],

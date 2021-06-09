@@ -8,16 +8,30 @@
         Carga Hemofilia
       </div>
 
-      <div class="y-card-body"   draggable="true" ngClass="{{dragAreaClass}}">
+      <div class="y-card-body" draggable="true" ngClass="{{dragAreaClass}}">
         <div class="row" style="width: 100%;">
           <div class="col-md-3">
             <img [src]="'assets/img/carga.svg'" class="ing-fluid" alt="no image" id="ima">
           </div>
-          <div class="col-md-7">
-            <button type="submit" class="btn btn-outline-primary" id="button" (click)="photoInput.click()"><i
+          <div class="col-md-4">
+            <!-- <button type="submit" class="btn btn-outline-primary" id="button" (click)="photoInput.click()"><i
                 class="fas fa-search"></i> Seleccionar archivo</button>
             <input type="file" accept="application/zip" (change)="Seleccionarzip($event)" multiple="false"
-              id="inputFileServer" class="d-none" #photoInput>
+              id="inputFileServer" class="d-none" #photoInput> -->
+
+            <p-fileUpload name="demo[]" styleClass="componenty" (onRemove)="onRemove()" (onSelect)="onUpload($event)" [showCancelButton]="false"
+              [multiple]="false" [showUploadButton]="false" chooseLabel="Seleccionar archivo" chooseIcon="pi pi-search">
+              <ul *ngIf="uploadedFiles.length">
+                <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
+              </ul>
+              <ng-template pTemplate="content" let-files  >
+                <div class="cont-img-ca"> 
+                  <i class="fas fa-upload"></i>
+                  <strong>Arrastra archivo para cargar</strong>
+                </div>
+              </ng-template>
+            </p-fileUpload>
+
             <div class="col-md-2">
               <table class="fTextoTabla2">
                 <tbody>
@@ -53,9 +67,9 @@
           <th style="width:80px;background-color: #4e92ce; color: white;">E.CE</th>
           <th style="width:80px;background-color: #4e92ce; color: white;">E.CD</th>
           <th style="width:80px;background-color: #4e92ce; color: white;">Estado <i class="fas fa-filter"
-            (click)="open(content4)"  style="cursor: pointer;"></i></th>
+              (click)="open(content4)" style="cursor: pointer;"></i></th>
           <th style="width:70px;background-color: #4e92ce; color: white;">Vigente <i class="fas fa-filter"
-            (click)="vigent(content3)"  style="cursor: pointer;"></i></th>
+              (click)="vigent(content3)" style="cursor: pointer;"></i></th>
           <th style="width:80px;background-color: #4e92ce; color: white;">Perfil</th>
           <th style="width:80px;background-color: #4e92ce; color: white;">Usuario</th>
           <th style="width:60px;background-color: #4e92ce; color: white;">Logs</th>
@@ -64,18 +78,18 @@
       </ng-template>
       <ng-template pTemplate="body" let-data>
         <tr>
-          <td style="width:90px">{{ data.NUMERO_RADICACION}}</td>
-          <td style="width:150px">{{ data.NOMBRE_ARCHIVO}}</td>
-          <td style="width:110px">{{ data.FECHA_CREACION | date:"mediumDate"}}</td>
-          <td style="width:100px">{{ data.REGISTROS_PROCESADOS}}</td>
-          <td style="width:80px">{{ data.REGISTROS_VALIDOS}}</td>
-          <td style="width:60px">{{ data.Porcentaje}}%</td>
-          <td style="width:80px">{{ data.ERRORES_CA}}</td>
-          <td style="width:80px">{{ data.ERRORES_CE}}</td>
-          <td style="width:80px">{{ data.ERRORES_CD}}</td>
-          <td style="width:80px">{{ data.Estado}}</td>
-          <td style="width:70px">{{ data.VIGENTE}}</td>
-          <td style="width:80px">{{ data.TIPO_USUARIO}}</td>
+          <td style="width:90px">{{data.NUMERO_RADICACION}}</td>
+          <td style="width:150px">{{data.NOMBRE_ARCHIVO}}</td>
+          <td style="width:110px">{{data.FECHA_CREACION | date:"dd/MM/yyyy HH:mm:ss"}}</td>
+          <td style="width:100px">{{data.REGISTROS_PROCESADOS}}</td>
+          <td style="width:80px">{{data.REGISTROS_VALIDOS}}</td>
+          <td style="width:60px">{{data.Porcentaje}}%</td>
+          <td style="width:80px">{{data.ERRORES_CA}}</td>
+          <td style="width:80px">{{data.ERRORES_CE}}</td>
+          <td style="width:80px">{{data.ERRORES_CD}}</td>
+          <td style="width:80px">{{data.Estado}}</td>
+          <td style="width:70px">{{data.VIGENTE}}</td>
+          <td style="width:80px">{{data.TIPO_USUARIO}}</td>
           <td style="width:80px">{{data.Login}}</td>
           <td style="width:60px"><i id="btn" class="far fa-file-excel"
               (click)="descargarLogsExcel(data.NUMERO_RADICACION)"></i>
@@ -147,10 +161,10 @@
     <form>
       <div class="row">
         <div class="col-md-12">
-         <select name="" id="" class="form-control" name="vigente" [(ngModel)]="vigente">
-           <option value="S">S</option>
-           <option value="N">N</option>
-         </select>
+          <select name="" id="" class="form-control" name="vigente" [(ngModel)]="vigente">
+            <option value="S">S</option>
+            <option value="N">N</option>
+          </select>
         </div>
       </div>
     </form>
@@ -168,11 +182,11 @@
     <form>
       <div class="row">
         <div class="col-md-12">
-         <select name="" id="" class="form-control" name="estado" [(ngModel)]="estado">
-           <option value="2">Exitoso</option>
-           <option value="4">Con errores</option>
-           <option value="3">Rechazado</option>
-         </select>
+          <select name="" id="" class="form-control" name="estado" [(ngModel)]="estado">
+            <option value="2">Exitoso</option>
+            <option value="4">Con errores</option>
+            <option value="3">Rechazado</option>
+          </select>
         </div>
       </div>
     </form>
