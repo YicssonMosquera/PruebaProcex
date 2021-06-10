@@ -27,6 +27,7 @@ import {CheckboxModule} from 'primeng/checkbox';
 import {PaginatorModule} from 'primeng/paginator';
 import {FileUploadModule} from 'primeng/fileupload';
 import {TabViewModule} from 'primeng/tabview';
+import { KnobModule } from "primeng/knob";
 
 
 
@@ -89,6 +90,7 @@ import { CargarHemofiliaComponent } from './components/cargar-hemofilia/cargar-h
     MatAutocompleteModule,
     MatMenuModule,
     FileUploadModule,
+    KnobModule
 
   ],
   providers: [AuthGuard],

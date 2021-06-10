@@ -18,9 +18,10 @@ export class CargarHemofiliaComponent implements OnInit {
   resultado
   selectedProducts
   nombreArchivo
-  existFile:boolean;
+  existFile: boolean;
   rows = 10;
   data
+  value6: number = 60;
   page = 0;
   totalRecords: 0;
   radicado = '';
@@ -56,17 +57,16 @@ export class CargarHemofiliaComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.existFile=false;
+    this.existFile = false;
     this.ConsultarCargue();
     this.cosnultarNombreArchivo();
   }
 
   ConsultarCargue() {
-    this.hemofiliaservice.consultarCargue(this.page, this.rows, this.radicado, this.nombreArchvio, this.vigente,this.estado).subscribe(res => {
+    this.hemofiliaservice.consultarCargue(this.page, this.rows, this.radicado, this.nombreArchvio, this.vigente, this.estado).subscribe(res => {
       this.resultado = res;
       this.hemofilia = this.resultado.hemofilia;
       this.totalRecords = this.resultado.numero_registro;
-      console.log(this.hemofilia);
     })
   }
 
@@ -88,18 +88,19 @@ export class CargarHemofiliaComponent implements OnInit {
     }
 
   }
-
-  onBeforeUpload(){
-    alert("x");
-  }
-
-  onRemove(){
+  onRemove() {
     this.existFile = false;
   }
 
   onUpload(event) {
-    if(this.existFile){
-      alert("eixte un archivo");
+    if (this.existFile) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: "Ya existe un archivo cargado, por favor eliminar y volver a cargar",
+        showConfirmButton: true,
+        allowOutsideClick: false, // NO PERMITE QUE SE CIERRE AL DAR CLIC POR FUERA
+      })
       return;
     }
     var files = event.currentFiles;
@@ -107,12 +108,12 @@ export class CargarHemofiliaComponent implements OnInit {
     this.nombrearchivo = files[0].name;
     this.pesoarchivo = files[0].size;
     this.existFile = true;
-    //this.cargarhemofilia();
+    this.cargarhemofilia();
     const reader: FileReader = new FileReader();
     reader.onload = (e: any) => {
     }
     reader.readAsText(this.file)
-}
+  }
 
 
 
@@ -121,13 +122,11 @@ export class CargarHemofiliaComponent implements OnInit {
     this.nombrearchivo = event.target.files[0].name
     this.pesoarchivo = event.target.files[0].size
     this.cargarhemofilia();
-    console.log(this.pesoarchivo)
     const reader: FileReader = new FileReader();
     reader.onload = (e: any) => {
     }
     reader.readAsText(this.file)
   }
-
 
   // // descomprimirzip(prueba: any) {
   // //   const jszip = new JSZip();
@@ -151,25 +150,22 @@ export class CargarHemofiliaComponent implements OnInit {
   cargarhemofilia() {
     this.hemofiliaservice.cargamasivahemofilia(this.file, this.User, this.perfil).subscribe(res => {
       console.log(res)
-
       Swal.fire({
         title: 'Almacenado!',
         text: 'Archivo cargado',
         icon: 'success',
         allowOutsideClick: false
       }
-
       ).then((result) => {
         if (result.value) {
           this.ConsultarCargue();
         }
       })
     })
-
   }
 
-  cosnultarNombreArchivo(){
-    this.hemofiliaservice.consultarNombreArchivo().subscribe(res=>{
+  cosnultarNombreArchivo() {
+    this.hemofiliaservice.consultarNombreArchivo().subscribe(res => {
       this.nombreArchivo = res;
       console.log(this.nombreArchivo)
     })

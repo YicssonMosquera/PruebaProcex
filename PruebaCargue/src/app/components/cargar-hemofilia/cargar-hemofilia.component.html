@@ -19,28 +19,39 @@
             <input type="file" accept="application/zip" (change)="Seleccionarzip($event)" multiple="false"
               id="inputFileServer" class="d-none" #photoInput> -->
 
-            <p-fileUpload name="demo[]" styleClass="componenty" (onRemove)="onRemove()" (onSelect)="onUpload($event)" [showCancelButton]="false"
-              [multiple]="false" [showUploadButton]="false" chooseLabel="Seleccionar archivo" chooseIcon="pi pi-search">
+            <p-fileUpload name="demo[]" styleClass="componenty" (onRemove)="onRemove()" (onSelect)="onUpload($event)"
+              [showCancelButton]="false" [multiple]="false" [showUploadButton]="false" chooseLabel="Seleccionar archivo"
+              chooseIcon="pi pi-search">
               <ul *ngIf="uploadedFiles.length">
                 <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
               </ul>
-              <ng-template pTemplate="content" let-files  >
-                <div class="cont-img-ca"> 
+              <ng-template pTemplate="content" let-files>
+                <div class="cont-img-ca">
                   <i class="fas fa-upload"></i>
                   <strong>Arrastra archivo para cargar</strong>
                 </div>
               </ng-template>
             </p-fileUpload>
+          </div>
+          <div class="col-md-2">
+         
+          </div>
 
-            <div class="col-md-2">
-              <table class="fTextoTabla2">
-                <tbody>
-                  <tr>
-                    <td>
-
-                    </td>
-                  </tr>
-                </tbody>
+          <div class="col-md-3">
+            <div class="reporte">
+              <strong>Estado de Reporte</strong>
+              <table>
+                <tr>
+                  <td>
+                    <button style="background-image: linear-gradient(60deg, #96deda 0%, #50c9c3 100%); color: white; border: none;">Exitoso</button>
+                  </td>
+                  <td>
+                    <button style="border: none; background-image: linear-gradient(to top, #e6b980 0%, #eacda3 100%);  color: white;">Con errores</button>
+                  </td>
+                  <td>
+                    <button style="border: none; background-image: linear-gradient(to right, #ed6ea0 0%, #e994bb 100%); color: white;">Rechazado</button>
+                  </td>
+                </tr>
               </table>
             </div>
           </div>
