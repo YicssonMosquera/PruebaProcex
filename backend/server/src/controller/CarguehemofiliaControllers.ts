@@ -12,7 +12,8 @@ class Carguehemofiliacontrollers {
     public guardarHemofiliaFile(req: Request,res: Response) {
         FileZipUtil.getFileTxt(req.file, req.body, function (txt, longitud, ruta, nombre, body, perfil) {
             LogicaDBProcesohemofilia.cargarHemofilia(txt, longitud, ruta, nombre, body, perfil);
-            res.json({ message: 'Datos guardado con exito'});
+            var cont = LogicaDBProcesohemofilia.cont;
+            res.json(cont);
         });
 
     }

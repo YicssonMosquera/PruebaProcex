@@ -14,9 +14,11 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort'
 import { MatInputModule } from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
-import { MatIconModule } from "@angular/material/icon"; // <----- Here
+import {MatIconModule } from "@angular/material/icon"; // <----- Here
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatTabsModule} from '@angular/material/tabs';
+
 
 
 //PRIMENG
@@ -49,6 +51,8 @@ import { HemofiliaPipe } from './pipes/hemofilia/hemofilia.pipe';
 import { HemofiliaEditComponent } from './components/hemofilia-edit/hemofilia-edit.component';
 import { HemofiliaSoportesComponent } from './components/hemofilia-soportes/hemofilia-soportes.component';
 import { CargarHemofiliaComponent } from './components/cargar-hemofilia/cargar-hemofilia.component';
+import {BannerComponent}   from './components/banner/banner.component';
+import { MenuuComponent, } from './components/menuu/menuu.component'
 
 @NgModule({
   declarations: [
@@ -61,7 +65,9 @@ import { CargarHemofiliaComponent } from './components/cargar-hemofilia/cargar-h
     HemofiliaPipe,
     HemofiliaEditComponent,
     HemofiliaSoportesComponent,
-    CargarHemofiliaComponent
+    CargarHemofiliaComponent,
+    BannerComponent,
+    MenuuComponent
   ],
   imports: [
     BrowserModule,
@@ -90,7 +96,8 @@ import { CargarHemofiliaComponent } from './components/cargar-hemofilia/cargar-h
     MatAutocompleteModule,
     MatMenuModule,
     FileUploadModule,
-    KnobModule
+    KnobModule,
+    MatTabsModule
 
   ],
   providers: [AuthGuard],

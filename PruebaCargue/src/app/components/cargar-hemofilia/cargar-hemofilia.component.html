@@ -34,8 +34,9 @@
             </p-fileUpload>
           </div>
           <div class="col-md-2">
-         
-          </div>
+            
+              <p-knob styleClass="Porcentaje" [(ngModel)]="value6" valueTemplate="{value}%"></p-knob>
+            </div>
 
           <div class="col-md-3">
             <div class="reporte">
@@ -66,25 +67,25 @@
       tableStyleClass="prime-table">
       <ng-template pTemplate="header">
         <tr tableStyleClass="header">
-          <th style="width:90px;background-color: #4e92ce; color: white;">Radicado <i class="fas fa-filter"
+          <th style="width:90px;background-color: #02adb5; color: white;">Radicado <i class="fas fa-filter"
               (click)="open(content)" style="cursor: pointer;"></i> </th>
-          <th style="width:150px;background-color: #4e92ce; color: white;">Nombre archivo <i class="fas fa-filter"
+          <th style="width:150px;background-color: #02adb5; color: white;">Nombre archivo <i class="fas fa-filter"
               (click)="nombrearchiv(content2)" style="cursor: pointer;"></i> </th>
-          <th style="width:110px;background-color: #4e92ce; color: white;">Fecha cargue</th>
-          <th style="width:100px;background-color: #4e92ce; color: white;">R.Procesados</th>
-          <th style="width:80px;background-color: #4e92ce; color: white;">R.Cargados</th>
-          <th style="width:60px;background-color: #4e92ce; color: white;">%</th>
-          <th style="width:80px;background-color: #4e92ce; color: white;">E.CA</th>
-          <th style="width:80px;background-color: #4e92ce; color: white;">E.CE</th>
-          <th style="width:80px;background-color: #4e92ce; color: white;">E.CD</th>
-          <th style="width:80px;background-color: #4e92ce; color: white;">Estado <i class="fas fa-filter"
+          <th style="width:110px;background-color: #02adb5; color: white;">Fecha cargue</th>
+          <th style="width:100px;background-color: #02adb5; color: white;">R.Procesados</th>
+          <th style="width:80px;background-color: #02adb5; color: white;">R.Cargados</th>
+          <th style="width:60px;background-color: #02adb5; color: white;">%</th>
+          <th style="width:80px;background-color: #02adb5; color: white;">E.CA</th>
+          <th style="width:80px;background-color: #02adb5; color: white;">E.CE</th>
+          <th style="width:80px;background-color: #02adb5; color: white;">E.CD</th>
+          <th style="width:80px;background-color: #02adb5; color: white;">Estado <i class="fas fa-filter"
               (click)="open(content4)" style="cursor: pointer;"></i></th>
-          <th style="width:70px;background-color: #4e92ce; color: white;">Vigente <i class="fas fa-filter"
+          <th style="width:70px;background-color: #02adb5; color: white;">Vigente <i class="fas fa-filter"
               (click)="vigent(content3)" style="cursor: pointer;"></i></th>
-          <th style="width:80px;background-color: #4e92ce; color: white;">Perfil</th>
-          <th style="width:80px;background-color: #4e92ce; color: white;">Usuario</th>
-          <th style="width:60px;background-color: #4e92ce; color: white;">Logs</th>
-          <th style="width:90px;background-color: #4e92ce; color: white;">Archivo cargado</th>
+          <th style="width:80px;background-color: #02adb5; color: white;">Perfil</th>
+          <th style="width:80px;background-color: #02adb5; color: white;">Usuario</th>
+          <th style="width:60px;background-color: #02adb5; color: white;">Logs</th>
+          <th style="width:90px;background-color: #02adb5; color: white;">Archivo cargado</th>
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-data>

@@ -82,7 +82,7 @@ class DBProcesohemofilia {
     getNombreArchivo() {
         return new Promise(function (resolev, reject) {
             try {
-                var query = "select NOMBRE_ARCHIVO  from bd_proceso_hemofilia ";
+                var query = "select NOMBRE_ARCHIVO, USUARIO_CREACION  from bd_proceso_hemofilia where VIGENTE = 'S' ";
                 database_1.default.query(query, function (err, result, fields) {
                     if (err)
                         throw err;

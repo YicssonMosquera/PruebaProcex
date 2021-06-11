@@ -1,0 +1,81 @@
+<!-- contenedor del banner  -->
+<div id="container" style="display: flex;">
+    <!-- imagenes de fondo  -->
+    <div>
+        <img id="marco" src="../assets/img/marcoo.png" alt="">
+        <img id="fondo1" src="../assets/img/LOGO_PROCEX.png" alt="">
+    </div>
+    <img id="fondo2" src="../assets/img/ADN_verde.png" alt="">
+    <img id="imagena" src="../assets/img/hospital.png" alt="">
+    <!-- nombre de la pagina  -->
+    <div id="sigires">
+        <div style="font-size: 25px;line-height: 23px;"> futuro nombre</div>
+        <br>
+        <div style="font-size: 40px;position: relative; left: 38px;">SIGIRES</div>
+    </div>
+    <!-- contenedor de las funcionalidades -->
+    <div style="width: 83%;" id="botones_banner">
+        <div style="display: flex;align-items: center;justify-content: flex-end;" class="btn">
+            <!-- buscador -->
+            <div>
+                <form style="justify-content: flex-end;" class="d-flex">
+                    <input style="height: 25px;border-color: #02adb5;position: relative;width: 64%;"
+                        class="form-control me-2" placeholder="Buscar" aria-label="Search"><!-- type="search"-->
+                    <button style="height: 25px;color: darkblue;" class="btn btn-outline" type="submit"><i id="icono"
+                            style="top: -5px;
+                    position: relative;" class="fas fa-search"></i></button>
+                </form>
+            </div>
+
+            <div style="display: flex;">
+                <!-- Información -->
+                <button mat-icon-button (click)="desplegar()"> <i id="icono" class="fas fa-info"></i></button>
+
+                <!-- numeros de soporte     -->
+                <button mat-icon-button [matMenuTriggerFor]="menu"><i id="icono" class="fas fa-headset"></i></button>
+                <mat-menu #menu="matMenu">
+                    <a mat-menu-item class="appWhatsapp" target="_blank"
+                        href="https://api.whatsapp.com/send?phone=573006660504">3006660504</a>
+                    <a mat-menu-item class="appWhatsapp" target="_blank"
+                        href="https://api.whatsapp.com/send?phone=573016908595">3016908595</a>
+                    <a mat-menu-item class="appWhatsapp" target="_blank"
+                        href="https://api.whatsapp.com/send?phone=573502905319">3502905319</a>
+                    <a mat-menu-item class="appWhatsapp" target="_blank"
+                        href="https://api.whatsapp.com/send?phone=573042813839">3042813839</a>
+                </mat-menu>
+                <!-- Documentos -->
+                <button data-bs-toggle="modal" data-bs-target="#staticBackdrop" mat-icon-button><i id="icono"
+                        class="fas fa-folder-open"></i></button>
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">Documentos</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                ........................
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- correo -->
+                <a mat-icon-button href="mailto:mesadeayuda@procex.co">
+                    <i id="icono" class="fas fa-mail-bulk"></i></a>
+                <!-- cerrar sesion -->
+                <button mat-icon-button><i id="icono" class="fas fa-sign-out-alt"></i></button>
+            </div>
+        </div>
+        <!-- contenido del boton de Información -->
+        <div [style.display]="activo">
+            <div id="info">
+                <div><b>Usuario:</b>JUAN ESTEBAN PARADA CADAVID</div>
+                <div><b>Tipo Usuario:</b>EPS</div>
+                <div><b>Perfil:</b>NACIONAL</div>
+                <div><b>Correo Soporte:</b>mesadeayuda@procex.co </div>
+            </div>
+        </div>
+    </div>
+</div>

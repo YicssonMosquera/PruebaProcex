@@ -8,7 +8,8 @@
 
 <div class="y-card" style="height: 100%;">
   <div class="y-card-header">
-    <app-navigation *ngIf='loginService.isloggedIn'></app-navigation>
+    <banner *ngIf='loginService.isloggedIn'></banner>
+    <app-menuu *ngIf='loginService.isloggedIn'></app-menuu>
   </div>
     <div class="y-card-body">
       <router-outlet id="pagina"></router-outlet >

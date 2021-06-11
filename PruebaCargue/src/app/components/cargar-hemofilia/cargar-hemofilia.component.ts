@@ -21,7 +21,7 @@ export class CargarHemofiliaComponent implements OnInit {
   existFile: boolean;
   rows = 10;
   data
-  value6: number = 60;
+  value6
   page = 0;
   totalRecords: 0;
   radicado = '';
@@ -108,7 +108,28 @@ export class CargarHemofiliaComponent implements OnInit {
     this.nombrearchivo = files[0].name;
     this.pesoarchivo = files[0].size;
     this.existFile = true;
-    this.cargarhemofilia();
+    console.log(this.nombreArchivo)
+    for (let i = 0; i < this.nombreArchivo.length; i++) {
+       if(this.nombreArchivo[i].NOMBRE_ARCHIVO == this.nombrearchivo && this.nombreArchivo[i].USUARIO_CREACION == this.User  ){
+        Swal.fire({
+          title: 'Carga de archivo',
+          text: "Usted ya cuenta con un archivo cargado, desea remplazarlo?",
+          icon: 'warning',
+          showCancelButton: true,
+          cancelButtonText: 'No',
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Si'
+          
+        }).then((result) => {
+          if (result.isConfirmed) {
+            this.cargarhemofilia();
+          }
+        })
+
+      }else{console.log('esta entrando')}
+
+    }
     const reader: FileReader = new FileReader();
     reader.onload = (e: any) => {
     }
@@ -148,8 +169,10 @@ export class CargarHemofiliaComponent implements OnInit {
 
 
   cargarhemofilia() {
+    
     this.hemofiliaservice.cargamasivahemofilia(this.file, this.User, this.perfil).subscribe(res => {
-      console.log(res)
+      console.log(res);
+      this.value6 = res;
       Swal.fire({
         title: 'Almacenado!',
         text: 'Archivo cargado',

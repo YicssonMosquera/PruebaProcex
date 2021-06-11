@@ -1,0 +1,36 @@
+<div id="container">
+  <!-- menu principal -->
+  <nav mat-tab-nav-bar class="barra_menu">
+    <a mat-tab-link (click)="crearTab('Inicio','contenido')" class="menu"><i id="boton_home"
+        class="fas fa-home"></i>Inicio</a>
+    <a mat-tab-link [matMenuTriggerFor]="carga_de_archivos" class="menu" #carga_archivo="matMenuTrigger"
+      (mouseenter)="carga_archivo.openMenu()">Carga de archivos <i id="boton_home" class="fas fa-caret-down"></i></a>
+    <a mat-tab-link [matMenuTriggerFor]="cuentas_cac" class="menu" #cuentas_cac2="matMenuTrigger"
+      (mouseenter)="cuentas_cac2.openMenu()">Cuentas CAC <i id="boton_home" class="fas fa-caret-down"></i></a>
+  </nav>
+
+  <!-- submenus de carga de archivos  -->
+  <mat-menu #carga_de_archivos="matMenu">
+    <div (mouseleave)="carga_archivo.closeMenu()">
+      <a  [routerLink]="['/Hemofilia-cargar']" id="contenido"></a>
+      <a  [routerLink]="['/Hemofilia-cargar']" (click)="crearTab('Hemofilia','hemofilia_c')" mat-menu-item>Hemofilia</a>
+    </div>
+  </mat-menu>
+
+  <!-- submenus de Cuentas CAC -->
+  <mat-menu #cuentas_cac="matMenu">
+    <div (mouseleave)="cuentas_cac2.closeMenu()">
+      <a  [routerLink]="['/Hemofilia-listar']"  (click)="crearTab('Hemofilia','hemofilia_cac')" mat-menu-item>Hemofilia</a>
+    </div>
+  </mat-menu>
+
+  <!-- creacion de los tabs -->
+  <mat-tab-group>
+    <mat-tab *ngFor="let tab of tabs; let index = index" style="height: 30px;">
+      <ng-template mat-tab-label class="tabs">
+        {{tab.nombre_pantalla}} <button id="eliminar" (click)="removeTab(index)"><i class="fas fa-times"></i></button>
+      </ng-template>
+      {{tab.contenido}}
+    </mat-tab>
+  </mat-tab-group>
+</div>

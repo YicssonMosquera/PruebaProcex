@@ -16,7 +16,7 @@ class LogicaDBProcesohemofilia {
     public static Campos = [];
     public static Perfil;
     public static radicado
-    public static cont = 0;
+    public static cont = 0; 
 
     public static cargarHemofilia(txt, longitud, ruta, nombre, body, perfil) {
         var _this = this;
@@ -29,9 +29,11 @@ class LogicaDBProcesohemofilia {
         var registros = txt.split(/[\r\n]+/).length;
         this.registrosProcesados = registros;
         this.Campos = [];
+        _this.cont =0;
         for (const line of txt.split(/[\r\n]+/)) {
             var nombre = line.split(',')[0];
             //LLena obj detalle para validar y guardar
+            _this.cont = _this.cont + 1;
             var hemofiliaDetalle: Hemofilia = {
                 CAMPO_1: line.split(',')[0],
                 CAMPO_2: line.split(',')[1],
@@ -180,10 +182,6 @@ class LogicaDBProcesohemofilia {
 
     public static async guardarProcesoHemofiliaDetalle(idCabeza, arrayCampos) {
         var _this = this;
-        console.log('array campos LOGICA  .....................')
-        console.log(arrayCampos.length)
-        console.log(arrayCampos)
-
         //buscar dbEstructuraArchivocampo
         var resultEstructuraCampo = await DbEstructuraArchivoCampo.buscarTodos();
 

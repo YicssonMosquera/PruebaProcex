@@ -1,0 +1,14 @@
+/* barra de botones  */
+
+#eliminar{
+    margin-left: 5px;
+    border: none;
+    background: none;
+    font: menu
+}
+#boton_home{
+    margin: 5px;
+}
+.mat-menu-item {
+    background: white !important;
+}

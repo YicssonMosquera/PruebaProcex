@@ -30,9 +30,11 @@ class LogicaDBProcesohemofilia {
         var registros = txt.split(/[\r\n]+/).length;
         this.registrosProcesados = registros;
         this.Campos = [];
+        _this.cont = 0;
         for (const line of txt.split(/[\r\n]+/)) {
             var nombre = line.split(',')[0];
             //LLena obj detalle para validar y guardar
+            _this.cont = _this.cont + 1;
             var hemofiliaDetalle = {
                 CAMPO_1: line.split(',')[0],
                 CAMPO_2: line.split(',')[1],
@@ -175,9 +177,6 @@ class LogicaDBProcesohemofilia {
     static guardarProcesoHemofiliaDetalle(idCabeza, arrayCampos) {
         return __awaiter(this, void 0, void 0, function* () {
             var _this = this;
-            console.log('array campos LOGICA  .....................');
-            console.log(arrayCampos.length);
-            console.log(arrayCampos);
             //buscar dbEstructuraArchivocampo
             var resultEstructuraCampo = yield DbEstructuraArchivoCampo_1.default.buscarTodos();
             //validarCampos
