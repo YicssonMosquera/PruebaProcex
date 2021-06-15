@@ -90,6 +90,34 @@ class DBProcesohemofilia {
             };
         });
     }
+
+    
+    public getVigente(userName, nameFile) {
+        return new Promise(function (resolev, reject) {
+            try {
+                var query = "select ID_PROCESO_HEMOFILIA, NOMBRE_ARCHIVO, USUARIO_CREACION  from bd_proceso_hemofilia where VIGENTE = 'S' and NOMBRE_ARCHIVO = ? and USUARIO_CREACION = ?";
+                pool.query(query, [userName,nameFile], function (err, result, fields) {
+                    if (err) throw err;
+                    resolev(result);
+                });
+            }
+            catch (error) {
+                //res.status(404).json({ error: 'No se pudieron almacenar datos' });
+            };
+        });
+    }
+    
+    public static actualizarEstado(Estado,ID_PROCESO_HEMOFILIA ) {
+        try {
+            pool.query('update bd_proceso_hemofilia set VIGENTE = ? where ID_PROCESO_HEMOFILIA = ? ', [Estado,ID_PROCESO_HEMOFILIA], function (err, result, fields) {
+                if (err) throw err;
+            });
+        }
+        catch (error) {
+            //res.status(404).json({ error: 'No se pudieron almacenar datos' });
+        };
+    }
+
 }
 
 

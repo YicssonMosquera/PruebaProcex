@@ -3,8 +3,7 @@ import { Router } from '@angular/router'
 import { CargarHemofiliaComponent } from '../cargar-hemofilia/cargar-hemofilia.component';
 interface compTab {
   nombre_pantalla: string;
-  nombre: string;
-  contenido: any;
+  ruta:string
 }
 
 @Component({
@@ -24,10 +23,8 @@ export class MenuuComponent implements OnInit {
    
   }
 
-  crearTab(nombre_pantalla: string, nombre: string) {
-   var contenido = this.Router.navigate(['Hemofilia-cargar']);
-   this.tabp.contenido =  contenido
-    let tab: compTab ={nombre_pantalla, nombre, contenido};
+  crearTab(nombre_pantalla: string, ruta:string) {
+    let tab: compTab ={nombre_pantalla, ruta};
     this.tabs.push(tab);
     return this.tabs;
 

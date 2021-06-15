@@ -22,10 +22,16 @@ class Carguehemofiliacontrollers {
         res.json({ message: 'Datos guardado con exito' });
     }
     guardarHemofiliaFile(req, res) {
-        FileZipUtil_1.default.getFileTxt(req.file, req.body, function (txt, longitud, ruta, nombre, body, perfil) {
-            LogicaDbProcesoHemofilia_1.default.cargarHemofilia(txt, longitud, ruta, nombre, body, perfil);
-            var cont = LogicaDbProcesoHemofilia_1.default.cont;
-            res.json(cont);
+        FileZipUtil_1.default.getFileTxt(req.file, req.body, function (txt, longitud, ruta, nombreZip, nombreTxt, body, perfil) {
+            var isValid = LogicaDbProcesoHemofilia_1.default.validarNombresFile(nombreZip, nombreTxt);
+            if (isValid) {
+                LogicaDbProcesoHemofilia_1.default.cargarHemofilia(txt, longitud, ruta, nombreZip, body, perfil);
+                var cont = LogicaDbProcesoHemofilia_1.default.cont;
+                res.json(cont);
+            }
+            else {
+                res.json({ error: 'el nombre del txt no cohincide con el nombre del zip' });
+            }
         });
     }
     consultarCargue(req, res) {

@@ -19,9 +19,10 @@
             <input type="file" accept="application/zip" (change)="Seleccionarzip($event)" multiple="false"
               id="inputFileServer" class="d-none" #photoInput> -->
 
-            <p-fileUpload name="demo[]" accept="application/zip" styleClass="componenty" (onRemove)="onRemove()" (onSelect)="onUpload($event)"
-              [showCancelButton]="false" [multiple]="false" [showUploadButton]="false" chooseLabel="Seleccionar archivo"
+            <p-fileUpload #form name="demo[]" styleClass="componenty" (onRemove)="onRemove()" (onSelect)="onUpload($event,form)"
+              [showCancelButton]="false" [multiple]="false" [showUploadButton]="false" chooseLabel="Seleccionar archivo" [customUpload]="true"
               chooseIcon="pi pi-search">
+              <!-- <p-fileUpload #form name="myfile[]" [customUpload]="true" (uploadHandler)="myUploader($event, form)"> -->
               <ul *ngIf="uploadedFiles.length">
                 <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
               </ul>
@@ -63,7 +64,7 @@
     </div>
   </div>
   <div class="y-card-body" style="overflow: hidden; padding: 5px;">
-    <p-table [value]="hemofilia" styleClass="p-datatable-sm " [scrollable]="true" scrollHeight="308px"
+    <p-table [value]="hemofilia" styleClass="p-datatable-sm " [scrollable]="true" scrollHeight="261px"
       tableStyleClass="prime-table">
       <ng-template pTemplate="header">
         <tr tableStyleClass="header">

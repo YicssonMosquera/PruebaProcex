@@ -6,6 +6,7 @@ import ValidacionCamposPH from "./ValidacionCamposPH";
 import { Hemofilia } from "../models/hemofiliadetalle"
 import DBParametroAplicacion from "../dao/BdParametroAplicacion";
 import DbEstructuraArchivoCampo from "../dao/DbEstructuraArchivoCampo";
+import ValidacionContenidoPH from "./ValidacionContenidoPH";
 class LogicaDBProcesohemofilia {
 
     public static Londitud
@@ -16,9 +17,16 @@ class LogicaDBProcesohemofilia {
     public static Campos = [];
     public static Perfil;
     public static radicado
-    public static cont = 0; 
+    public static cont = 0;
 
-    public static cargarHemofilia(txt, longitud, ruta, nombre, body, perfil) {
+    public static async cargarHemofilia(txt, longitud, ruta, nombre, body, perfil) {
+
+        //////Actualiza el estado de los registros que son iguales al nombre del archivo y usuario
+        var archivoVigente = await this.getArchivo(nombre, body);
+        for (var index = 0; index < Object.keys(archivoVigente).length; index++) {
+            var ID_PROCESO_HEMOFILIA = archivoVigente[index].ID_PROCESO_HEMOFILIA;
+            DBProcesohemofilia.actualizarEstado('N', ID_PROCESO_HEMOFILIA);
+        }
         var _this = this;
         this.Londitud = longitud;
         this.Ruta = ruta;
@@ -29,7 +37,7 @@ class LogicaDBProcesohemofilia {
         var registros = txt.split(/[\r\n]+/).length;
         this.registrosProcesados = registros;
         this.Campos = [];
-        _this.cont =0;
+        _this.cont = 0;
         for (const line of txt.split(/[\r\n]+/)) {
             var nombre = line.split(',')[0];
             //LLena obj detalle para validar y guardar
@@ -180,6 +188,16 @@ class LogicaDBProcesohemofilia {
         })
     }
 
+    public static validarNombresFile(nameZip, nameTxt) {
+        var isIqual = false;
+        var nombreFileZip = nameZip.replace(/\.[^/.]+$/, "");
+        var nombreFileTxt = nameTxt.replace(/\.[^/.]+$/, "");
+        if (nombreFileZip == nombreFileTxt) {
+            isIqual = true;
+        }
+        return isIqual;
+    }
+
     public static async guardarProcesoHemofiliaDetalle(idCabeza, arrayCampos) {
         var _this = this;
         //buscar dbEstructuraArchivocampo
@@ -187,7 +205,9 @@ class LogicaDBProcesohemofilia {
 
         //validarCampos
         const oValidacionCamposPH = new ValidacionCamposPH();
+        const oValidacionContenidoPH = new ValidacionContenidoPH();
         oValidacionCamposPH.validar(arrayCampos, resultEstructuraCampo);
+        oValidacionContenidoPH.Validar(arrayCampos)
         this.guardarCamposBuenos(idCabeza, oValidacionCamposPH.filas_buenas);
         this.guardarCamposMalos(idCabeza, oValidacionCamposPH.filas_malas);
 
@@ -241,6 +261,11 @@ class LogicaDBProcesohemofilia {
                 DBProcesohemofiliaerror.guardar(campoMalo);
             }
         }
+    }
+    public static async getArchivo(nombreZip, body) {
+        const obHemofilia = new DBProcesohemofilia();
+        var archivoExistente = await obHemofilia.getVigente(nombreZip, body);
+        return archivoExistente;
     }
 }
 

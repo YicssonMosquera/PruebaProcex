@@ -11,7 +11,7 @@ class FileZipUtil {
         var zip = new AdmZip(fileZip.path);
         var zipEntries = zip.getEntries();
         zipEntries.forEach(function (zipEntry) {
-            cb(zipEntry.getData().toString('utf8'), longitud, ruta, nombre, body1, perfil);
+            cb(zipEntry.getData().toString('utf8'), longitud, ruta, nombre, zipEntry.entryName, body1, perfil);
         });
     }
     static getEntries(fileZip) {

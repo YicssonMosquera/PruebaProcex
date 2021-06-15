@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { HemofiliaService } from '../../services/hemofilia/hemofilia.service';
 import { LoginService } from '../../services/login/login.service';
@@ -37,6 +37,9 @@ export class CargarHemofiliaComponent implements OnInit {
   dragAreaClass: string;
   private User
   private perfil
+
+  @ViewChild('form') myform: ElementRef;
+
   constructor(private hemofiliaservice: HemofiliaService, private loginservice: LoginService, private router: Router,
     config: NgbModalConfig, private modalService: NgbModal,) {
     config.keyboard = false;
@@ -55,6 +58,14 @@ export class CargarHemofiliaComponent implements OnInit {
       });
 
   }
+
+
+  ngAfterViewInit() {
+    var prueba = this.myform
+  }
+
+
+
 
   ngOnInit(): void {
     this.existFile = false;
@@ -78,6 +89,8 @@ export class CargarHemofiliaComponent implements OnInit {
     console.log(data)
   }
 
+
+
   descargarArchivoCargado(NUMERO_RADICACION: string) {
     for (let i = 0; i < this.hemofilia.length; i++) {
       if (NUMERO_RADICACION == this.hemofilia[i].NUMERO_RADICACION) {
@@ -92,57 +105,69 @@ export class CargarHemofiliaComponent implements OnInit {
     this.existFile = false;
   }
 
-  onUpload(event) {
-    if (this.existFile) {
-      Swal.fire({
-        icon: 'error',
-        title: 'Error',
-        text: "Ya existe un archivo cargado, por favor eliminar y volver a cargar",
-        showConfirmButton: true,
-        allowOutsideClick: false, // NO PERMITE QUE SE CIERRE AL DAR CLIC POR FUERA
-      })
-      return;
-    }
+  onUpload(event, form) {
+    alert(event)
+    var vregexNaix = /^([A-Z]{9}\_)(0[1-9]|[1-2]\d|3[01])(0[1-9]|1[012])(\d{4}.zip)$/;
+    // if (this.existFile) {
+    //   Swal.fire({
+    //     icon: 'error',
+    //     title: 'Error',
+    //     text: "Ya existe un archivo cargado, por favor eliminar y volver a cargar",
+    //     showConfirmButton: true,
+    //     allowOutsideClick: false, // NO PERMITE QUE SE CIERRE AL DAR CLIC POR FUERA
+    //   })
+    //   return;
+    // }
     var files = event.currentFiles;
     this.file = files[0];
     this.nombrearchivo = files[0].name;
     this.pesoarchivo = files[0].size;
     this.existFile = true;
-    console.log(this.nombreArchivo)
-    for (let i = 0; i < this.nombreArchivo.length; i++) {
-       if(this.nombreArchivo[i].NOMBRE_ARCHIVO == this.nombrearchivo && this.nombreArchivo[i].USUARIO_CREACION == this.User  ){
-        Swal.fire({
-          title: 'Carga de archivo',
-          text: "Usted ya cuenta con un archivo cargado, desea remplazarlo?",
-          icon: 'warning',
-          showCancelButton: true,
-          cancelButtonText: 'No',
-          confirmButtonColor: '#3085d6',
-          cancelButtonColor: '#d33',
-          confirmButtonText: 'Si'
-          
-        }).then((result) => {
-          if (result.isConfirmed) {
-            this.cargarhemofilia();
-          }
-        })
-
-      }else{this.cargarhemofilia();}
+    if (!vregexNaix.test(this.nombrearchivo)) {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Error',
+        text: "el archivo debe contener el formato HEMOFILIA_DDMMYYYY, y debe ser .zip",
+        showConfirmButton: true,
+        allowOutsideClick: false, // NO PERMITE QUE SE CIERRE AL DAR CLIC POR FUERA
+      })
+      form.clear();
+      return;
 
     }
+    this.cargarhemofilia(form)
+    // for (let i = 0; i < this.nombreArchivo.length; i++) {
+    //   if (this.nombreArchivo[i].NOMBRE_ARCHIVO == this.nombrearchivo && this.nombreArchivo[i].USUARIO_CREACION == this.User) {
+    //     Swal.fire({
+    //       title: 'Carga de archivo',
+    //       text: "Usted ya cuenta con un archivo cargado, desea remplazarlo?",
+    //       icon: 'warning',
+    //       showCancelButton: true,
+    //       cancelButtonText: 'No',
+    //       confirmButtonColor: '#3085d6',
+    //       cancelButtonColor: '#d33',
+    //       confirmButtonText: 'Si'
+
+    //     }).then((result) => {
+    //       if (result.isConfirmed) {
+    //         this.cargarhemofilia(form);
+    //       }
+    //     })
+
+    //   } else { }
+
+    // }
     const reader: FileReader = new FileReader();
     reader.onload = (e: any) => {
     }
     reader.readAsText(this.file)
   }
 
-
-
   Seleccionarzip(event: any): void {
     this.file = event.target.files[0]
     this.nombrearchivo = event.target.files[0].name
     this.pesoarchivo = event.target.files[0].size
-    this.cargarhemofilia();
+    this.cargarhemofilia(null);
     const reader: FileReader = new FileReader();
     reader.onload = (e: any) => {
     }
@@ -167,11 +192,23 @@ export class CargarHemofiliaComponent implements OnInit {
   //   }
   // }
 
-
-  cargarhemofilia() {
-    
+  cargarhemofilia(form) {
     this.hemofiliaservice.cargamasivahemofilia(this.file, this.User, this.perfil).subscribe(res => {
+      var respuesta = res;
       console.log(res);
+
+      if (respuesta['error']) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: respuesta['error'],
+          showConfirmButton: true,
+          allowOutsideClick: false, // NO PERMITE QUE SE CIERRE AL DAR CLIC POR FUERA
+        })
+        form.clear();
+        return;
+      }
+
       this.value6 = res;
       Swal.fire({
         title: 'Almacenado!',
