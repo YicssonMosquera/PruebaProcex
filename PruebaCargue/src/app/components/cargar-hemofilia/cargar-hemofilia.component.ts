@@ -127,7 +127,7 @@ export class CargarHemofiliaComponent implements OnInit {
           }
         })
 
-      }else{console.log('esta entrando')}
+      }else{this.cargarhemofilia();}
 
     }
     const reader: FileReader = new FileReader();

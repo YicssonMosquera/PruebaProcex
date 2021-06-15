@@ -19,7 +19,7 @@
             <input type="file" accept="application/zip" (change)="Seleccionarzip($event)" multiple="false"
               id="inputFileServer" class="d-none" #photoInput> -->
 
-            <p-fileUpload name="demo[]" styleClass="componenty" (onRemove)="onRemove()" (onSelect)="onUpload($event)"
+            <p-fileUpload name="demo[]" accept="application/zip" styleClass="componenty" (onRemove)="onRemove()" (onSelect)="onUpload($event)"
               [showCancelButton]="false" [multiple]="false" [showUploadButton]="false" chooseLabel="Seleccionar archivo"
               chooseIcon="pi pi-search">
               <ul *ngIf="uploadedFiles.length">
