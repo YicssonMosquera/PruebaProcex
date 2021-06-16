@@ -1,6 +1,4 @@
 import { NgModule } from '@angular/core';
-import { registerLocaleData } from '@angular/common';
-import en from '@angular/common/locales/en';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from "@angular/common";
 import {HttpClientModule} from '@angular/common/http'
@@ -28,7 +26,6 @@ import {ButtonModule} from 'primeng/button';
 import {CheckboxModule} from 'primeng/checkbox';
 import {PaginatorModule} from 'primeng/paginator';
 import {FileUploadModule} from 'primeng/fileupload';
-import {TabViewModule} from 'primeng/tabview';
 import { KnobModule } from "primeng/knob";
 
 

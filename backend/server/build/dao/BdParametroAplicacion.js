@@ -31,5 +31,21 @@ class DBParametroAplicacion {
         }
         ;
     }
+    static fechaCorte() {
+        return new Promise(function (resolev, reject) {
+            try {
+                var query = "select VALOR_PARAMETRO from bd_parametro_aplicacion where ID_PARAMETRO_APLICACION = 559 ";
+                database_1.default.query(query, function (err, result, fields) {
+                    if (err)
+                        throw err;
+                    resolev(result);
+                });
+            }
+            catch (error) {
+                //res.status(404).json({ error: 'No se pudieron almacenar datos' });
+            }
+            ;
+        });
+    }
 }
 exports.default = DBParametroAplicacion;

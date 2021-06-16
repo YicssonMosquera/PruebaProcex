@@ -68,6 +68,7 @@ class Validacionhemofila {
             return true
         }
         return false
+    
     }
 }
 

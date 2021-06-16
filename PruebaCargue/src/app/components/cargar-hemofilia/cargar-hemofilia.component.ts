@@ -26,7 +26,7 @@ export class CargarHemofiliaComponent implements OnInit {
   totalRecords: 0;
   radicado = '';
   nombreArchvio = '';
-  vigente = '';
+  vigente = 'S';
   estado = '';
   filtro
   file: File;
@@ -106,7 +106,6 @@ export class CargarHemofiliaComponent implements OnInit {
   }
 
   onUpload(event, form) {
-    alert(event)
     var vregexNaix = /^([A-Z]{9}\_)(0[1-9]|[1-2]\d|3[01])(0[1-9]|1[012])(\d{4}.zip)$/;
     // if (this.existFile) {
     //   Swal.fire({
@@ -252,7 +251,7 @@ export class CargarHemofiliaComponent implements OnInit {
   limpiarFiltros() {
     this.radicado = '';
     this.nombreArchvio = '';
-    this.vigente = '';
+    this.vigente = 'S';
     this.estado = '';
     this.ConsultarCargue();
   }
