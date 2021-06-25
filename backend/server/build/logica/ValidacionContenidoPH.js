@@ -1646,8 +1646,77 @@ class ValidacionContenidoPH {
                         };
                     }
                 }
-                //validacion fila 81 hasta 86
+                //validacion fila 481 hasta 486
                 if (camposFila.CAMPO_31 == '8') {
+                    if (camposFila.CAMPO_23 == '3' && camposFila.CAMPO_32_1 < '90' && camposFila.CAMPO_32_2 >= '1' && camposFila.CAMPO_32_2 <= '6' && camposFila.CAMPO_32_3 == '999997' && camposFila.CAMPO_32_4 == '9997') {
+                        arrayCamposBuenos.push(camposFila);
+                    }
+                    else {
+                        var hemofilia = {
+                            //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                            TIPO_ERROR: 'CD',
+                            DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                            USUARIO_CREACION: '',
+                            USUARIO_MODIFICACION: '',
+                            VALOR_ANTERIOR: '',
+                            VALOR_NUEVO: '',
+                            NUMERO_REGISTRO: numFila
+                        };
+                    }
+                }
+                //validacion fila 487 hasta 489
+                if (camposFila.CAMPO_31 == '8') {
+                    if (camposFila.CAMPO_33 < '4' && camposFila.CAMPO_34 < '2' && camposFila.CAMPO_35 != '0') {
+                        arrayCamposBuenos.push(camposFila);
+                    }
+                    else {
+                        var hemofilia = {
+                            //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                            TIPO_ERROR: 'CD',
+                            DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                            USUARIO_CREACION: '',
+                            USUARIO_MODIFICACION: '',
+                            VALOR_ANTERIOR: '',
+                            VALOR_NUEVO: '',
+                            NUMERO_REGISTRO: numFila
+                        };
+                    }
+                }
+                //validacion fila 490 hasta 497 
+                if (camposFila.CAMPO_31 == '9996') {
+                    if (camposFila.CAMPO_30 == '9996' && camposFila.CAMPO_32_1 == '9996' && camposFila.CAMPO_32_2 == '9996' && camposFila.CAMPO_32_3 == '999996' && camposFila.CAMPO_32_4 == '9996' && camposFila.CAMPO_33 == '9996' && camposFila.CAMPO_34 == '9996' && camposFila.CAMPO_35 == '0') {
+                        arrayCamposBuenos.push(camposFila);
+                    }
+                    else {
+                        var hemofilia = {
+                            //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                            TIPO_ERROR: 'CD',
+                            DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                            USUARIO_CREACION: '',
+                            USUARIO_MODIFICACION: '',
+                            VALOR_ANTERIOR: '',
+                            VALOR_NUEVO: '',
+                            NUMERO_REGISTRO: numFila
+                        };
+                    }
+                }
+                //validacion fila 498 hasta 504
+                if (camposFila.CAMPO_31 == '9999') {
+                    if (camposFila.CAMPO_30.CAMPO_30 == '9999' && camposFila.CAMPO_32_1 == '9999' && camposFila.CAMPO_32_2 == '9999' && camposFila.CAMPO_32_3 == '999999' && camposFila.CAMPO_32_4 == '9999' && camposFila.CAMPO_33 == '9999' && camposFila.CAMPO_34 == '9999') {
+                        arrayCamposBuenos.push(camposFila);
+                    }
+                    else {
+                        var hemofilia = {
+                            //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                            TIPO_ERROR: 'CD',
+                            DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                            USUARIO_CREACION: '',
+                            USUARIO_MODIFICACION: '',
+                            VALOR_ANTERIOR: '',
+                            VALOR_NUEVO: '',
+                            NUMERO_REGISTRO: numFila
+                        };
+                    }
                 }
             }
         });
