@@ -1,16 +1,15 @@
 #container{
-    background: linear-gradient( to left , #3ccbba73,#ffff );
+    background: linear-gradient(to left, #3ccbba61,#ffffff36 );
     height: 130px;
     background-size: cover;
     justify-content: space-between;
 } 
 #fondo1 {
-    height: 75px;
-    margin-left: 4%;
-    margin-top: -159px;
     background-size: cover;
     position: relative;
-    width: 15%;
+    height: 107px;
+    left: 21px;
+    top: 8px;
 }
 #fondo2{
     height: 160px;
@@ -29,29 +28,29 @@
 }
 #sigires{
     display: flex;
-    color: #fff;
+    color: #1b7b6f;
     font-family: 'Hind Madurai', sans-serif;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: flex-start;
     position: absolute;
-    left: 16.5%;
-    margin-top: 25px;
-    height: 99px;
-    width: 41%;
+    left: 28%;
+    margin-top: 18px;
+    width: 31%;
+    height: 80px;
 }
-#info{
+#informacion{
     position: absolute;
-    top: 49px;
-    color: #1b7b6f;
+    top: 40px;
+    color: #16655b;
     font-size: 13px;
     right: 10px;
     line-height: 18px;
-    font-weight: 500;
+    margin-right: 15px;
 }
 b{
-    color: #176f64;
+    color: #16655b;
     font-family: auto;
-    font-size: 16px;
+    font-size: 18px;
     margin-right: 7px;
 }
 #soporte{
@@ -66,9 +65,39 @@ button.mat-focus-indicator.mat-button.mat-button-base.mat-primary {
     color: #1b7b6f;
     font-size: 16px;
 }
-#marco{
-    width: 86%;
-    position: relative;
-    height: 130px;
-    opacity: 0.8;
+#iconos{
+    margin-right: 5px;
 }
+#marco{
+    position: absolute;
+    height: 190px;
+    width: 32%;
+}
+.col-md-6{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.example-container .mat-form-field + .mat-form-field {
+    margin-left: 8px;
+  }
+  
+  .example-right-align {
+    text-align: right;
+  }
+  
+  input.example-right-align::-webkit-outer-spin-button,
+  input.example-right-align::-webkit-inner-spin-button {
+    display: none;
+  }
+  
+  input.example-right-align {
+    -moz-appearance: textfield;
+  }
+#rayas{
+    position: absolute;
+    height: 130px; 
+    left: 1px;   
+}
+ 
+         

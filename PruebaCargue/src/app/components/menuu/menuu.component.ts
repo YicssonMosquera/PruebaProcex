@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router'
+import { Router,ActivatedRoute,Params } from '@angular/router'
 import { CargarHemofiliaComponent } from '../cargar-hemofilia/cargar-hemofilia.component';
-interface compTab {
-  nombre_pantalla: string;
-  ruta:string
-}
+interface tab { nombre_pantalla: string; contenido: string }
 
 @Component({
   selector: 'app-menuu',
@@ -13,27 +10,50 @@ interface compTab {
 })
 
 export class MenuuComponent implements OnInit {
-
-  tabp:compTab;
-  tabs = [];
+  tab: tab;
   indice: number = -1;
-  activeLink = this.tabs[0];
+  inicio = { nombre_pantalla: 'Inicio', contenido: 'Hemofilia-cargar' };
+  constructor(private rutaActiva: ActivatedRoute, private Router: Router) {}
 
-  constructor(private Router: Router) {
-   
+
+
+  ngOnInit(): void {
+    this.tab = {
+      nombre_pantalla: this.rutaActiva.snapshot.params.nombre_pantalla,
+      contenido: this.rutaActiva.snapshot.params.contenido,
+    };
+    this.rutaActiva.params.subscribe(
+      (params: Params) => {
+        this.tab.nombre_pantalla = params.nombre_pantalla;
+        this.tab.contenido = params.contenido;
+      }
+    );
   }
 
-  crearTab(nombre_pantalla: string, ruta:string) {
-    let tab: compTab ={nombre_pantalla, ruta};
-    this.tabs.push(tab);
+  
+  tabs = [this.inicio];
+  indexx: number;
+  crearTab(nombre_pantalla: string, contenido: string) {
+    this.indexx = this.tabs.length;
+    this.tab = { nombre_pantalla: nombre_pantalla, contenido: contenido };
+    this.tabs.push(this.tab);
+    this.Router.navigateByUrl(this.tabs[this.tabs.length - 1].contenido);
+    this.indexx = this.tabs.length;
     return this.tabs;
-
   }
   removeTab(index: number) {
+    if (index == this.tabs.length - 1 && index != 0) {
+      this.Router.navigateByUrl(this.tabs[index - 1].contenido);
+      this.indexx = index - 1;
+    } else {
+      if (this.tabs.length > 0 && index < this.tabs.length - 1) {
+        this.Router.navigateByUrl(this.tabs[index + 1].contenido);
+        this.indexx = index;
+      }
+    }
     this.tabs.splice(index, 1);
   }
-  ngOnInit(): void {
-  }
+
 }
  
 

@@ -2,34 +2,185 @@
 <div id="container" style="display: flex;">
     <!-- imagenes de fondo  -->
     <div>
-        <img id="marco" src="../assets/img/marcoo.png" alt="">
         <img id="fondo1" src="../assets/img/LOGO_PROCEX.png" alt="">
+        <img src="../assets/img/marco5.png" alt="" id="rayas">
     </div>
     <img id="fondo2" src="../assets/img/ADN_verde.png" alt="">
     <img id="imagena" src="../assets/img/hospital.png" alt="">
     <!-- nombre de la pagina  -->
     <div id="sigires">
-        <div style="font-size: 25px;line-height: 23px;"> futuro nombre</div>
-        <br>
-        <div style="font-size: 40px;position: relative; left: 38px;">SIGIRES</div>
+        <div class="este" style="display: flex;flex-direction: column;">
+            <div style="font-size: 25px;line-height: 23px;"> futuro nombre del producto</div>
+            <br>
+            <div style="font-size: 40px;position: relative; left: 38px;">SIGLAS</div>
+        </div>
     </div>
     <!-- contenedor de las funcionalidades -->
     <div style="width: 83%;" id="botones_banner">
-        <div style="display: flex;align-items: center;justify-content: flex-end;" class="btn">
+        <div style="display: flex;align-items: center;justify-content: flex-end;margin-top:-7px;" class="btn">
             <!-- buscador -->
             <div>
                 <form style="justify-content: flex-end;" class="d-flex">
-                    <input style="height: 25px;border-color: #02adb5;position: relative;width: 64%;"
-                        class="form-control me-2" placeholder="Buscar" aria-label="Search"><!-- type="search"-->
+                    <input style="height: 25px;border-color: #02adb5;position: relative;width: 50%;"
+                        class="form-control me-2" placeholder="Buscar" aria-label="Search" type="search">
                     <button style="height: 25px;color: darkblue;" class="btn btn-outline" type="submit"><i id="icono"
                             style="top: -5px;
                     position: relative;" class="fas fa-search"></i></button>
                 </form>
             </div>
-
             <div style="display: flex;">
                 <!-- Información -->
-                <button mat-icon-button (click)="desplegar()"> <i id="icono" class="fas fa-info"></i></button>
+                <button data-bs-toggle="modal" href="#info" mat-icon-button><i id="icono"
+                        class="fas fa-info"></i></button>
+
+                <div class="modal fade" id="info" aria-hidden="true" aria-labelledby="infoLabel" tabindex="-1">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title" id="infoLabel" style="
+                                margin: 0px;">Datos de Usuario </h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                                    style="color: white;"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label for="">Tipo de Documento:</label>
+                                            <input type="text" class="form-control" readonly=true>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="">Número de Identificación:</label>
+                                            <input type="text" class="form-control" readonly=true>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="">Nombres:</label>
+                                            <input type="text" class="form-control" readonly=true>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="">Apellidos:</label>
+                                            <input type="text" class="form-control" readonly=true>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="">Sexo:</label>
+                                            <input type="text" class="form-control" readonly=true>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="">Tipo Usuario:</label>
+                                            <input type="text" class="form-control" readonly=true>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="">Perfil:</label>
+                                            <input type="text" class="form-control" readonly=true>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="">Dirección:</label>
+                                            <input type="search" class="form-control">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="">Teléfono:</label>
+                                            <input type="search" class="form-control">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="">Celular:</label>
+                                            <input type="search" class="form-control">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="">Email:</label>
+                                            <input type="search" class="form-control" readonly=true>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="">Fax:</label>
+                                            <input type="search" class="form-control">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="">Usuario:</label>
+                                            <input type="search" class="form-control" readonly=true>
+                                        </div>
+                                        <div class="col-md-5" style="margin-top: 31px;display: flex;">
+
+                                            <input style="margin-right: 8px;    height: 20px;
+                                                width: 20px;" type="checkbox">
+                                            <label for="">Autoriza SMS</label>
+
+                                        </div>
+                                        <div class="row" style="margin: 15px;">
+                                            <div class="col-md-4">
+                                                <button data-bs-toggle="collapse" href="#multiCollapseExample1"
+                                                    aria-expanded="false" aria-controls="multiCollapseExample1"
+                                                    mat-raised-button color="primary">Cambiar
+                                                    contraseña</button>
+                                            </div>
+                                            <div class="col-md-5">
+
+                                                <button mat-raised-button color="primary"><i
+                                                        class="fas fa-user-edit"></i> Guardar cambios </button>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="collapse multi-collapse" id="multiCollapseExample1">
+                                                <div class="card card-body">
+                                                    <h3 style="text-align: initial;">Por favor diligencie la información
+                                                        solicitada a continuación para el cambio de su contraseña:</h3>
+                                                    <div class="col-md-6">
+
+                                                        <label for="">Contraseña actual:</label>
+                                                        <input type="password" class="form-control">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label for="">Contraseña nueva:</label>
+                                                        <input type="password" class="form-control">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label for="">Confirmar contraseña nueva:</label>
+                                                        <input type="password" class="form-control">
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            <button mat-raised-button color="primary"
+                                                                style="margin-top: 15px;"><i id="iconos"
+                                                                    class="fas fa-save"></i> Cambiar
+                                                                contraseña</button>
+                                                        </div>
+                                                        <div class="col-md-5">
+                                                            <button mat-raised-button color="warn"
+                                                                style="margin-top: 15px;"><i id="iconos"
+                                                                    class="fas fa-times"></i> Cancelar</button>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button mat-raised-button color="primary" data-bs-target="#info2"
+                                        data-bs-toggle="modal" data-bs-dismiss="modal">IPS a cargo</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="info2" aria-hidden="true" aria-labelledby="infoLabel2" tabindex="-1">
+                    <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title" id="infoLabel2">IPS a cargo</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Hide this modal and show the first with the button below.
+                            </div>
+                            <div class="modal-footer">
+                                <button mat-raised-button color="primary" data-bs-target="#info" data-bs-toggle="modal"
+                                    data-bs-dismiss="modal">Datos de Usuario</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- numeros de soporte     -->
                 <button mat-icon-button [matMenuTriggerFor]="menu"><i id="icono" class="fas fa-headset"></i></button>
@@ -44,19 +195,19 @@
                         href="https://api.whatsapp.com/send?phone=573042813839">3042813839</a>
                 </mat-menu>
                 <!-- Documentos -->
-                <button data-bs-toggle="modal" data-bs-target="#staticBackdrop" mat-icon-button><i id="icono"
+                <button data-bs-toggle="modal" data-bs-target="#D" mat-icon-button><i id="icono"
                         class="fas fa-folder-open"></i></button>
-                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
-                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal fade" id="D" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                    aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="staticBackdropLabel">Documentos</h5>
+                                <h5 class="modal-title" id="D">Documentos</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                ........................
+                                <h1>zzzzzzzzzzzzzzzzzzzzzz</h1>
                             </div>
                         </div>
                     </div>
@@ -64,17 +215,25 @@
                 <!-- correo -->
                 <a mat-icon-button href="mailto:mesadeayuda@procex.co">
                     <i id="icono" class="fas fa-mail-bulk"></i></a>
-                <!-- cerrar sesion -->
-                <button mat-icon-button><i id="icono" class="fas fa-sign-out-alt"></i></button>
             </div>
         </div>
         <!-- contenido del boton de Información -->
-        <div [style.display]="activo">
-            <div id="info">
-                <div><b>Usuario:</b>JUAN ESTEBAN PARADA CADAVID</div>
-                <div><b>Tipo Usuario:</b>EPS</div>
-                <div><b>Perfil:</b>NACIONAL</div>
-                <div><b>Correo Soporte:</b>mesadeayuda@procex.co </div>
+        <div id="informacion">
+            <div style="display: flex;height: 17px; font-weight: 510;"><b>Usuario:</b>
+                <p style="font-size: 13px;    margin-top: 2px;">JUAN ESTEBAN PARADA CADAVID</p>
+            </div>
+            <div style="display: flex;height: 17px; font-weight: 510;"><b>Tipo Usuario:</b>
+                <p style="font-size: 13px;    margin-top: 2px;">EPS</p>
+            </div>
+            <div style="display: flex;height: 17px; font-weight: 510;"><b>Perfil:</b>
+                <p style="font-size: 13px;    margin-top: 2px;">NACIONAL</p>
+            </div>
+            <div style="display: flex;height: 17px; font-weight: 510;"><b>Correo Soporte:</b>
+                <p style="font-size: 13px;    margin-top: 2px;">mesadeayuda@procex.co </p>
+            </div>
+            <div style="display: flex;height: 17px; font-weight: 510;"><b>Fecha y Hora:</b>
+                <p style="font-size: 13px;    margin-top: 2px;"> {{today | date:'yyyy-MM-dd'}} - {{today |
+                    date:'h:mm '}}</p>
             </div>
         </div>
     </div>

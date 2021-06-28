@@ -1,14 +1,7 @@
 
-// Custom Theming for Angular Material
-// For more information: https://material.angular.io/guide/theming
 @use '~@angular/material' as mat;
-// Plus imports for other components in your app.
 
-// Include the common styles for Angular Material. We include this here so that you only
-// have to load a single css file for Angular Material in your app.
-// Be sure that you only ever include this mixin once!
 @include mat.core();
-
 
 $my-palette: mat.$blue-palette,900;
 // contenedor menu 
@@ -33,6 +26,7 @@ $my-palette: mat.$blue-palette,900;
     height: 100% !important;
     background: linear-gradient(#ffff,#02acb53b );
     opacity: 1.6 !important;
+    padding: 0 0px !important;
 }
 // tab activo 
 .mat-tab-label-active{
@@ -40,14 +34,17 @@ $my-palette: mat.$blue-palette,900;
 }
 // barras de desplazamiento de los tab 
 .mat-ripple.mat-tab-header-pagination.mat-tab-header-pagination-before.mat-elevation-z4 {
-  background: transparent;
+  background: white;
 }
 .mat-ripple.mat-tab-header-pagination.mat-tab-header-pagination-after.mat-elevation-z4 {
-  background:transparent;
+  background:white;
 }
 // barra de abajo
 .mat-ink-bar {
   background-color: #02adb5 !important;
+}
+nav.ng-star-inserted {
+  padding: 5px 50px;
 }
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
