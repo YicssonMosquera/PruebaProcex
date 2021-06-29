@@ -2130,6 +2130,857 @@ class ValidacionContenidoPH {
                         };
                     }
                 }
+                //validacio fila 620
+                if (camposFila.CAMPO_41 == '9999' && camposFila.CAMPO_23 > '3') {
+                    arrayCamposBuenos.push(camposFila);
+                }
+                else {
+                    var hemofilia = {
+                        //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                        TIPO_ERROR: 'CD',
+                        DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                        USUARIO_CREACION: '',
+                        USUARIO_MODIFICACION: '',
+                        VALOR_ANTERIOR: '',
+                        VALOR_NUEVO: '',
+                        NUMERO_REGISTRO: numFila
+                    };
+                }
+                //validaion fila 622 hasta 624
+                if (camposFila.CAMPO_40_2 >= '1') {
+                    if (camposFila.CAMPO_47_3 > '0' || camposFila.CAMPO_47_1 > '0' || camposFila.CAMPO_47_2 > '0') {
+                        arrayCamposBuenos.push(camposFila);
+                    }
+                    else {
+                        var hemofilia = {
+                            //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                            TIPO_ERROR: 'CD',
+                            DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                            USUARIO_CREACION: '',
+                            USUARIO_MODIFICACION: '',
+                            VALOR_ANTERIOR: '',
+                            VALOR_NUEVO: '',
+                            NUMERO_REGISTRO: numFila
+                        };
+                    }
+                }
+                //validacion fila 630
+                if (camposFila.CAMPO_42 == '9999' && camposFila.CAMPO_23 > '3') {
+                    arrayCamposBuenos.push(camposFila);
+                }
+                else {
+                    var hemofilia = {
+                        //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                        TIPO_ERROR: 'CD',
+                        DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                        USUARIO_CREACION: '',
+                        USUARIO_MODIFICACION: '',
+                        VALOR_ANTERIOR: '',
+                        VALOR_NUEVO: '',
+                        NUMERO_REGISTRO: numFila
+                    };
+                }
+                //validacion fila 632 hasta 634
+                if (camposFila.CAMPO_43 >= '1') {
+                    if (camposFila.CAMPO_47_3 > '0' || camposFila.CAMPO_47_1 > '0' || camposFila.CAMPO_47_2 > '0') {
+                        arrayCamposBuenos.push(camposFila);
+                    }
+                    else {
+                        var hemofilia = {
+                            //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                            TIPO_ERROR: 'CD',
+                            DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                            USUARIO_CREACION: '',
+                            USUARIO_MODIFICACION: '',
+                            VALOR_ANTERIOR: '',
+                            VALOR_NUEVO: '',
+                            NUMERO_REGISTRO: numFila
+                        };
+                    }
+                }
+                //validacion fila 640
+                if (camposFila.CAMPO_43 == '9999' && camposFila.CAMPO_23 > '3') {
+                    arrayCamposBuenos.push(camposFila);
+                }
+                else {
+                    var hemofilia = {
+                        //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                        TIPO_ERROR: 'CD',
+                        DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                        USUARIO_CREACION: '',
+                        USUARIO_MODIFICACION: '',
+                        VALOR_ANTERIOR: '',
+                        VALOR_NUEVO: '',
+                        NUMERO_REGISTRO: numFila
+                    };
+                }
+                //validacion fila 642 hasta 644
+                if (camposFila.CAMPO_44 >= '1') {
+                    if (camposFila.CAMPO_47_3 > '0' || camposFila.CAMPO_47_1 > '0' || camposFila.CAMPO_47_2 > '0') {
+                        arrayCamposBuenos.push(camposFila);
+                    }
+                    else {
+                        var hemofilia = {
+                            //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                            TIPO_ERROR: 'CD',
+                            DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                            USUARIO_CREACION: '',
+                            USUARIO_MODIFICACION: '',
+                            VALOR_ANTERIOR: '',
+                            VALOR_NUEVO: '',
+                            NUMERO_REGISTRO: numFila
+                        };
+                    }
+                }
+                //validacion fila 650
+                if (camposFila.CAMPO_44 == '9999' && camposFila.CAMPO_23 > '3') {
+                    arrayCamposBuenos.push(camposFila);
+                }
+                else {
+                    var hemofilia = {
+                        //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                        TIPO_ERROR: 'CD',
+                        DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                        USUARIO_CREACION: '',
+                        USUARIO_MODIFICACION: '',
+                        VALOR_ANTERIOR: '',
+                        VALOR_NUEVO: '',
+                        NUMERO_REGISTRO: numFila
+                    };
+                }
+                //vañidacion fila 652 hasta 654
+                if (camposFila.CAMPO_45 >= '1') {
+                    if (camposFila.CAMPO_47_1 > '0' || camposFila.CAMPO_47_2 > '0' || camposFila.CAMPO_47_3 > '0') {
+                        arrayCamposBuenos.push(camposFila);
+                    }
+                    else {
+                        var hemofilia = {
+                            //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                            TIPO_ERROR: 'CD',
+                            DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                            USUARIO_CREACION: '',
+                            USUARIO_MODIFICACION: '',
+                            VALOR_ANTERIOR: '',
+                            VALOR_NUEVO: '',
+                            NUMERO_REGISTRO: numFila
+                        };
+                    }
+                }
+                //validacion fila 660
+                if (camposFila.CAMPO_45 == '9999' && camposFila.CAMPO_23 > '3') {
+                    arrayCamposBuenos.push(camposFila);
+                }
+                else {
+                    var hemofilia = {
+                        //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                        TIPO_ERROR: 'CD',
+                        DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                        USUARIO_CREACION: '',
+                        USUARIO_MODIFICACION: '',
+                        VALOR_ANTERIOR: '',
+                        VALOR_NUEVO: '',
+                        NUMERO_REGISTRO: numFila
+                    };
+                }
+                //validacion fila 662 hasta 664
+                if (camposFila.CAMPO_46 >= '1') {
+                    if (camposFila.CAMPO_47_1 > '0' || camposFila.CAMPO_47_2 > '0' || camposFila.CAMPO_47_3 > '0') {
+                        arrayCamposBuenos.push(camposFila);
+                    }
+                    else {
+                        var hemofilia = {
+                            //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                            TIPO_ERROR: 'CD',
+                            DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                            USUARIO_CREACION: '',
+                            USUARIO_MODIFICACION: '',
+                            VALOR_ANTERIOR: '',
+                            VALOR_NUEVO: '',
+                            NUMERO_REGISTRO: numFila
+                        };
+                    }
+                }
+                //validacion fila 670 
+                if (camposFila.CAMPO_46 == '9999' && camposFila.CAMPO_23 > '3') {
+                    arrayCamposBuenos.push(camposFila);
+                }
+                else {
+                    var hemofilia = {
+                        //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                        TIPO_ERROR: 'CD',
+                        DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                        USUARIO_CREACION: '',
+                        USUARIO_MODIFICACION: '',
+                        VALOR_ANTERIOR: '',
+                        VALOR_NUEVO: '',
+                        NUMERO_REGISTRO: numFila
+                    };
+                }
+                //validacion fila 672
+                if (camposFila.CAMPO_47_1 <= '60' && camposFila.CAMPO_23 <= '3') {
+                    arrayCamposBuenos.push(camposFila);
+                }
+                else {
+                    var hemofilia = {
+                        //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                        TIPO_ERROR: 'CD',
+                        DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                        USUARIO_CREACION: '',
+                        USUARIO_MODIFICACION: '',
+                        VALOR_ANTERIOR: '',
+                        VALOR_NUEVO: '',
+                        NUMERO_REGISTRO: numFila
+                    };
+                }
+                //validacion fila 673 hasta 681
+                if (camposFila.CAMPO_47_1 == '9999') {
+                    if (camposFila.CAMPO_41 == '9999' && camposFila.CAMPO_42 == '9999' && camposFila.CAMPO_43 == '9999' && camposFila.CAMPO_44 == '9999' && camposFila.CAMPO_45 == '9999' && camposFila.CAMPO_46 == '9999' && camposFila.CAMPO_47_2 == '9999' && camposFila.CAMPO_47_3 == '9999' && camposFila.CAMPO_23 > '3') {
+                        arrayCamposBuenos.push(camposFila);
+                    }
+                    else {
+                        var hemofilia = {
+                            //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                            TIPO_ERROR: 'CD',
+                            DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                            USUARIO_CREACION: '',
+                            USUARIO_MODIFICACION: '',
+                            VALOR_ANTERIOR: '',
+                            VALOR_NUEVO: '',
+                            NUMERO_REGISTRO: numFila
+                        };
+                    }
+                }
+                //validacion fila 682 hasta 689
+                if (camposFila.CAMPO_47_1 == '5555') {
+                    if (camposFila.CAMPO_41 == '5555' && camposFila.CAMPO_42 == '5555' && camposFila.CAMPO_43 == '5555' && camposFila.CAMPO_44 == '5555' && camposFila.CAMPO_45 == '5555' && camposFila.CAMPO_46 == '5555' && camposFila.CAMPO_47_2 == '5555' && camposFila.CAMPO_47_3 == '5555') {
+                        arrayCamposBuenos.push(camposFila);
+                    }
+                    else {
+                        var hemofilia = {
+                            //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                            TIPO_ERROR: 'CD',
+                            DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                            USUARIO_CREACION: '',
+                            USUARIO_MODIFICACION: '',
+                            VALOR_ANTERIOR: '',
+                            VALOR_NUEVO: '',
+                            NUMERO_REGISTRO: numFila
+                        };
+                    }
+                }
+                //validacion fila 696 hasta 704
+                if (camposFila.CAMPO_47_2 == '9999') {
+                    if (camposFila.CAMPO_41 == '9999' && camposFila.CAMPO_42 == '9999' && camposFila.CAMPO_43 == '9999' && camposFila.CAMPO_44 == '9999' && camposFila.CAMPO_45 == '9999' && camposFila.CAMPO_46 == '9999' && camposFila.CAMPO_47_1 == '9999' && camposFila.CAMPO_47_3 == '9999' && camposFila.CAMPO_23 > '3') {
+                        arrayCamposBuenos.push(camposFila);
+                    }
+                    else {
+                        var hemofilia = {
+                            //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                            TIPO_ERROR: 'CD',
+                            DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                            USUARIO_CREACION: '',
+                            USUARIO_MODIFICACION: '',
+                            VALOR_ANTERIOR: '',
+                            VALOR_NUEVO: '',
+                            NUMERO_REGISTRO: numFila
+                        };
+                    }
+                }
+                //validacion fila 705
+                if (camposFila.CAMPO_47_2 <= '60' && camposFila.CAMPO_23 <= '3') {
+                    arrayCamposBuenos.push(camposFila);
+                }
+                else {
+                    var hemofilia = {
+                        //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                        TIPO_ERROR: 'CD',
+                        DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                        USUARIO_CREACION: '',
+                        USUARIO_MODIFICACION: '',
+                        VALOR_ANTERIOR: '',
+                        VALOR_NUEVO: '',
+                        NUMERO_REGISTRO: numFila
+                    };
+                }
+                //validacion fila 706 hasta 713
+                if (camposFila.CAMPO_47_2 == '5555') {
+                    if (camposFila.CAMPO_41 == '5555' && camposFila.CAMPO_42 == '5555' && camposFila.CAMPO_43 == '5555' && camposFila.CAMPO_44 == '5555' && camposFila.CAMPO_45 == '5555' && camposFila.CAMPO_46 == '5555' && camposFila.CAMPO_47_1 == '5555' && camposFila.CAMPO_47_3 == '5555') {
+                        arrayCamposBuenos.push(camposFila);
+                    }
+                    else {
+                        var hemofilia = {
+                            //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                            TIPO_ERROR: 'CD',
+                            DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                            USUARIO_CREACION: '',
+                            USUARIO_MODIFICACION: '',
+                            VALOR_ANTERIOR: '',
+                            VALOR_NUEVO: '',
+                            NUMERO_REGISTRO: numFila
+                        };
+                    }
+                }
+                //validacion fila 720 hasta 728
+                if (camposFila.CAMPO_47_3 == '9999') {
+                    if (camposFila.CAMPO_41 == '9999' && camposFila.CAMPO_42 == '9999' && camposFila.CAMPO_43 == '9999' && camposFila.CAMPO_44 == '9999' && camposFila.CAMPO_45 == '9999' && camposFila.CAMPO_46 == '9999' && camposFila.CAMPO_47_1 == '9999' && camposFila.CAMPO_47_2 == '9999' && camposFila.CAMPO_23 > '3') {
+                        arrayCamposBuenos.push(camposFila);
+                    }
+                    else {
+                        var hemofilia = {
+                            //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                            TIPO_ERROR: 'CD',
+                            DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                            USUARIO_CREACION: '',
+                            USUARIO_MODIFICACION: '',
+                            VALOR_ANTERIOR: '',
+                            VALOR_NUEVO: '',
+                            NUMERO_REGISTRO: numFila
+                        };
+                    }
+                }
+                //validacion fila 729
+                if (camposFila.CAMPO_47_3 <= '60' && camposFila.CAMPO_23 <= '3') {
+                    arrayCamposBuenos.push(camposFila);
+                }
+                else {
+                    var hemofilia = {
+                        //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                        TIPO_ERROR: 'CD',
+                        DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                        USUARIO_CREACION: '',
+                        USUARIO_MODIFICACION: '',
+                        VALOR_ANTERIOR: '',
+                        VALOR_NUEVO: '',
+                        NUMERO_REGISTRO: numFila
+                    };
+                }
+                //validacion fila 730 hasta 737
+                if (camposFila.CAMPO_47_3 == '5555') {
+                    if (camposFila.CAMPO_41 == '5555' && camposFila.CAMPO_42 == '5555' && camposFila.CAMPO_43 == '5555' && camposFila.CAMPO_44 == '5555' && camposFila.CAMPO_45 == '5555' && camposFila.CAMPO_46 == '5555' && camposFila.CAMPO_47_1 == '5555' && camposFila.CAMPO_47_2 == '5555') {
+                        arrayCamposBuenos.push(camposFila);
+                    }
+                    else {
+                        var hemofilia = {
+                            //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                            TIPO_ERROR: 'CD',
+                            DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                            USUARIO_CREACION: '',
+                            USUARIO_MODIFICACION: '',
+                            VALOR_ANTERIOR: '',
+                            VALOR_NUEVO: '',
+                            NUMERO_REGISTRO: numFila
+                        };
+                    }
+                }
+                //validacion fila 744 y 745
+                if (camposFila.CAMPO_48 == '5555') {
+                    if (validacioncamposhemofilia_1.validacionhemofila.formatofecha(camposFila.CAMPO_48_1) == validacioncamposhemofilia_1.validacionhemofila.formatofecha('1846-01-01') && camposFila.CAMPO_64 == '11') {
+                        arrayCamposBuenos.push(camposFila);
+                    }
+                    else {
+                        var hemofilia = {
+                            //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                            TIPO_ERROR: 'CD',
+                            DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                            USUARIO_CREACION: '',
+                            USUARIO_MODIFICACION: '',
+                            VALOR_ANTERIOR: '',
+                            VALOR_NUEVO: '',
+                            NUMERO_REGISTRO: numFila
+                        };
+                    }
+                }
+                //validacion fila 750 y 751 
+                if (camposFila.CAMPO_48 <= '2') {
+                    if (camposFila.CAMPO_23 <= '1' && validacioncamposhemofilia_1.validacionhemofila.formatofecha(camposFila.CAMPO_48_1) >= validacioncamposhemofilia_1.validacionhemofila.formatofecha('2019-02-01')) {
+                        arrayCamposBuenos.push(camposFila);
+                    }
+                    else {
+                        var hemofilia = {
+                            //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                            TIPO_ERROR: 'CD',
+                            DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                            USUARIO_CREACION: '',
+                            USUARIO_MODIFICACION: '',
+                            VALOR_ANTERIOR: '',
+                            VALOR_NUEVO: '',
+                            NUMERO_REGISTRO: numFila
+                        };
+                    }
+                }
+                //validacion fila 752 hasta 754 
+                if (camposFila.CAMPO_48 == '3') {
+                    if (camposFila.CAMPO_23 <= '1' || validacioncamposhemofilia_1.validacionhemofila.formatofecha(camposFila.CAMPO_48_1) == validacioncamposhemofilia_1.validacionhemofila.formatofecha('1845-01-01') && camposFila.CAMPO_23 == '3') {
+                        arrayCamposBuenos.push(camposFila);
+                    }
+                    else {
+                        var hemofilia = {
+                            //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                            TIPO_ERROR: 'CD',
+                            DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                            USUARIO_CREACION: '',
+                            USUARIO_MODIFICACION: '',
+                            VALOR_ANTERIOR: '',
+                            VALOR_NUEVO: '',
+                            NUMERO_REGISTRO: numFila
+                        };
+                    }
+                }
+                //validacion fila 755 hasta 757 
+                if (camposFila.CAMPO_48 == '4') {
+                    if (camposFila.CAMPO_23 <= '1' || camposFila.CAMPO_23 == '3' && validacioncamposhemofilia_1.validacionhemofila.formatofecha(camposFila.CAMPO_48_1) == validacioncamposhemofilia_1.validacionhemofila.formatofecha('1845-01-01')) {
+                        arrayCamposBuenos.push(camposFila);
+                    }
+                    else {
+                        var hemofilia = {
+                            //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                            TIPO_ERROR: 'CD',
+                            DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                            USUARIO_CREACION: '',
+                            USUARIO_MODIFICACION: '',
+                            VALOR_ANTERIOR: '',
+                            VALOR_NUEVO: '',
+                            NUMERO_REGISTRO: numFila
+                        };
+                    }
+                }
+                //validacion fila 758 y 759
+                if (camposFila.CAMPO_48 == '5') {
+                    if (camposFila.CAMPO_23 == '3' && validacioncamposhemofilia_1.validacionhemofila.formatofecha(camposFila.CAMPO_48_1) == validacioncamposhemofilia_1.validacionhemofila.formatofecha('2019-02-01')) {
+                        arrayCamposBuenos.push(camposFila);
+                    }
+                    else {
+                        var hemofilia = {
+                            //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                            TIPO_ERROR: 'CD',
+                            DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                            USUARIO_CREACION: '',
+                            USUARIO_MODIFICACION: '',
+                            VALOR_ANTERIOR: '',
+                            VALOR_NUEVO: '',
+                            NUMERO_REGISTRO: numFila
+                        };
+                    }
+                }
+                //validacion fila 760 y 761 
+                if (camposFila.CAMPO_48 == '9996') {
+                    if (camposFila.CAMPO_23 <= '3' && validacioncamposhemofilia_1.validacionhemofila.formatofecha(camposFila.CAMPO_48_1) == validacioncamposhemofilia_1.validacionhemofila.formatofecha('1845-01-01')) {
+                        arrayCamposBuenos.push(camposFila);
+                    }
+                    else {
+                        var hemofilia = {
+                            //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                            TIPO_ERROR: 'CD',
+                            DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                            USUARIO_CREACION: '',
+                            USUARIO_MODIFICACION: '',
+                            VALOR_ANTERIOR: '',
+                            VALOR_NUEVO: '',
+                            NUMERO_REGISTRO: numFila
+                        };
+                    }
+                }
+                //validacion fila 762 hasta 764
+                if (camposFila.CAMPO_48 == '9999') {
+                    if (camposFila.CAMPO_23 == '2' || camposFila.CAMPO_24 > '3' && validacioncamposhemofilia_1.validacionhemofila.formatofecha(camposFila.CAMPO_48_1) == validacioncamposhemofilia_1.validacionhemofila.formatofecha('1845-01-01')) {
+                        arrayCamposBuenos.push(camposFila);
+                    }
+                    else {
+                        var hemofilia = {
+                            //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                            TIPO_ERROR: 'CD',
+                            DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                            USUARIO_CREACION: '',
+                            USUARIO_MODIFICACION: '',
+                            VALOR_ANTERIOR: '',
+                            VALOR_NUEVO: '',
+                            NUMERO_REGISTRO: numFila
+                        };
+                    }
+                }
+                //validacion fila 765
+                if (camposFila.CAMPO_48 == '6' && camposFila.CAMPO_23 == '3') {
+                    arrayCamposBuenos.push(camposFila);
+                }
+                else {
+                    var hemofilia = {
+                        //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                        TIPO_ERROR: 'CD',
+                        DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                        USUARIO_CREACION: '',
+                        USUARIO_MODIFICACION: '',
+                        VALOR_ANTERIOR: '',
+                        VALOR_NUEVO: '',
+                        NUMERO_REGISTRO: numFila
+                    };
+                }
+                //validacion fila 767
+                if (validacioncamposhemofilia_1.validacionhemofila.formatofecha(camposFila.CAMPO_48_1) == validacioncamposhemofilia_1.validacionhemofila.formatofecha('1846-01-01') && camposFila.CAMPO_64 == '11') {
+                    arrayCamposBuenos.push(camposFila);
+                }
+                else {
+                    var hemofilia = {
+                        //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                        TIPO_ERROR: 'CD',
+                        DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                        USUARIO_CREACION: '',
+                        USUARIO_MODIFICACION: '',
+                        VALOR_ANTERIOR: '',
+                        VALOR_NUEVO: '',
+                        NUMERO_REGISTRO: numFila
+                    };
+                }
+                //validacion fila 776
+                if (camposFila.CAMPO_48_2 == '1' && camposFila.CAMPO_23 <= '1') {
+                    arrayCamposBuenos.push(camposFila);
+                }
+                else {
+                    var hemofilia = {
+                        //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                        TIPO_ERROR: 'CD',
+                        DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                        USUARIO_CREACION: '',
+                        USUARIO_MODIFICACION: '',
+                        VALOR_ANTERIOR: '',
+                        VALOR_NUEVO: '',
+                        NUMERO_REGISTRO: numFila
+                    };
+                }
+                //validacion fila 777
+                if (camposFila.CAMPO_48_2 == '9999' && camposFila.CAMPO_23 > '1') {
+                    arrayCamposBuenos.push(camposFila);
+                }
+                else {
+                    var hemofilia = {
+                        //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                        TIPO_ERROR: 'CD',
+                        DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                        USUARIO_CREACION: '',
+                        USUARIO_MODIFICACION: '',
+                        VALOR_ANTERIOR: '',
+                        VALOR_NUEVO: '',
+                        NUMERO_REGISTRO: numFila
+                    };
+                }
+                //validacion fila 779 hasta 781
+                if (camposFila.CAMPO_48_3 == '0') {
+                    if (camposFila.CAMPO_48_4 == '9998' && camposFila.CAMPO_31 < '3' || camposFila.CAMPO_31 > '5') {
+                        arrayCamposBuenos.push(camposFila);
+                    }
+                    else {
+                        var hemofilia = {
+                            //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                            TIPO_ERROR: 'CD',
+                            DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                            USUARIO_CREACION: '',
+                            USUARIO_MODIFICACION: '',
+                            VALOR_ANTERIOR: '',
+                            VALOR_NUEVO: '',
+                            NUMERO_REGISTRO: numFila
+                        };
+                    }
+                }
+                //validacion fila 782 
+                if (camposFila.CAMPO_48_3 == '1' && camposFila.CAMPO_48 <= '2') {
+                    arrayCamposBuenos.push(camposFila);
+                }
+                else {
+                    var hemofilia = {
+                        //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                        TIPO_ERROR: 'CD',
+                        DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                        USUARIO_CREACION: '',
+                        USUARIO_MODIFICACION: '',
+                        VALOR_ANTERIOR: '',
+                        VALOR_NUEVO: '',
+                        NUMERO_REGISTRO: numFila
+                    };
+                }
+                //validacion fila 783 y784
+                if (camposFila.CAMPO_48_3 == '1') {
+                    if (camposFila.CAMPO_48_4 >= '1' && camposFila.CAMPO_48_4 <= '365') {
+                        arrayCamposBuenos.push(camposFila);
+                    }
+                    else {
+                        var hemofilia = {
+                            //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                            TIPO_ERROR: 'CD',
+                            DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                            USUARIO_CREACION: '',
+                            USUARIO_MODIFICACION: '',
+                            VALOR_ANTERIOR: '',
+                            VALOR_NUEVO: '',
+                            NUMERO_REGISTRO: numFila
+                        };
+                    }
+                }
+                //validacion fila 785 hasta 788
+                if (camposFila.CAMPO_42 == '2') {
+                    if (camposFila.CAMPO_48_4 > '0' && camposFila.CAMPO_48_4 <= '365' && camposFila.CAMPO_31 >= '3' && camposFila.CAMPO_31 <= '5') {
+                        arrayCamposBuenos.push(camposFila);
+                    }
+                    else {
+                        var hemofilia = {
+                            //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                            TIPO_ERROR: 'CD',
+                            DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                            USUARIO_CREACION: '',
+                            USUARIO_MODIFICACION: '',
+                            VALOR_ANTERIOR: '',
+                            VALOR_NUEVO: '',
+                            NUMERO_REGISTRO: numFila
+                        };
+                    }
+                }
+                //validacion fila 789
+                if (camposFila.CAMPO_48_3 == '5555' && camposFila.CAMPO_64 == '11') {
+                    arrayCamposBuenos.push(camposFila);
+                }
+                else {
+                    var hemofilia = {
+                        //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                        TIPO_ERROR: 'CD',
+                        DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                        USUARIO_CREACION: '',
+                        USUARIO_MODIFICACION: '',
+                        VALOR_ANTERIOR: '',
+                        VALOR_NUEVO: '',
+                        NUMERO_REGISTRO: numFila
+                    };
+                }
+                if (camposFila.CAMPO_48_3 == '2') {
+                    if (camposFila.CAMPO_30 < '2' || camposFila.CAMPO_30 == '8' || camposFila.CAMPO_30 == '9' || camposFila.CAMPO_30 == '10' || camposFila.CAMPO_30 == '11') {
+                        arrayCamposBuenos.push(camposFila);
+                    }
+                    else {
+                        var hemofilia = {
+                            //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                            TIPO_ERROR: 'CD',
+                            DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                            USUARIO_CREACION: '',
+                            USUARIO_MODIFICACION: '',
+                            VALOR_ANTERIOR: '',
+                            VALOR_NUEVO: '',
+                            NUMERO_REGISTRO: numFila
+                        };
+                    }
+                }
+                //validacion fila 799
+                if (camposFila.CAMPO_48_3 == '3' && camposFila.CAMPO_30 == '18') {
+                    arrayCamposBuenos.push(camposFila);
+                }
+                else {
+                    var hemofilia = {
+                        //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                        TIPO_ERROR: 'CD',
+                        DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                        USUARIO_CREACION: '',
+                        USUARIO_MODIFICACION: '',
+                        VALOR_ANTERIOR: '',
+                        VALOR_NUEVO: '',
+                        NUMERO_REGISTRO: numFila
+                    };
+                }
+                //validacion fila 800 y 801
+                if (camposFila.CAMPO_48_3 == '9999') {
+                    if (camposFila.CAMPO_23 >= '2' && camposFila.CAMPO_48_4 == '9999') {
+                        arrayCamposBuenos.push(camposFila);
+                    }
+                    else {
+                        var hemofilia = {
+                            //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                            TIPO_ERROR: 'CD',
+                            DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                            USUARIO_CREACION: '',
+                            USUARIO_MODIFICACION: '',
+                            VALOR_ANTERIOR: '',
+                            VALOR_NUEVO: '',
+                            NUMERO_REGISTRO: numFila
+                        };
+                    }
+                }
+                //validacion fila 802
+                if (camposFila.CAMPO_48_3 == '9996' && camposFila.CAMPO_48_4 == '9996') {
+                    arrayCamposBuenos.push(camposFila);
+                }
+                else {
+                    var hemofilia = {
+                        //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                        TIPO_ERROR: 'CD',
+                        DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                        USUARIO_CREACION: '',
+                        USUARIO_MODIFICACION: '',
+                        VALOR_ANTERIOR: '',
+                        VALOR_NUEVO: '',
+                        NUMERO_REGISTRO: numFila
+                    };
+                }
+                //validaicon fila 804
+                if (camposFila.CAMPO_48_4 == '5555' && camposFila.CAMPO_64 == '11') {
+                    arrayCamposBuenos.push(camposFila);
+                }
+                else {
+                    var hemofilia = {
+                        //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                        TIPO_ERROR: 'CD',
+                        DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                        USUARIO_CREACION: '',
+                        USUARIO_MODIFICACION: '',
+                        VALOR_ANTERIOR: '',
+                        VALOR_NUEVO: '',
+                        NUMERO_REGISTRO: numFila
+                    };
+                }
+                //validacion fila 812
+                if (camposFila.CAMPO_49 == '0' && camposFila.CAMPO_49_1 == '0') {
+                    arrayCamposBuenos.push(camposFila);
+                }
+                else {
+                    var hemofilia = {
+                        //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                        TIPO_ERROR: 'CD',
+                        DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                        USUARIO_CREACION: '',
+                        USUARIO_MODIFICACION: '',
+                        VALOR_ANTERIOR: '',
+                        VALOR_NUEVO: '',
+                        NUMERO_REGISTRO: numFila
+                    };
+                }
+                //validacion fila 813 y 814
+                if (camposFila.CAMPO_49 == '1') {
+                    if (camposFila.CAMPO_49_1 > '0' && camposFila.CAMPO_49_1 < '30') {
+                        arrayCamposBuenos.push(camposFila);
+                    }
+                    else {
+                        var hemofilia = {
+                            //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                            TIPO_ERROR: 'CD',
+                            DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                            USUARIO_CREACION: '',
+                            USUARIO_MODIFICACION: '',
+                            VALOR_ANTERIOR: '',
+                            VALOR_NUEVO: '',
+                            NUMERO_REGISTRO: numFila
+                        };
+                    }
+                }
+                //validacion fila 815
+                if (camposFila.CAMPO_49_1 == '5555' && camposFila.CAMPO_64 == '11') {
+                    arrayCamposBuenos.push(camposFila);
+                }
+                else {
+                    var hemofilia = {
+                        //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                        TIPO_ERROR: 'CD',
+                        DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                        USUARIO_CREACION: '',
+                        USUARIO_MODIFICACION: '',
+                        VALOR_ANTERIOR: '',
+                        VALOR_NUEVO: '',
+                        NUMERO_REGISTRO: numFila
+                    };
+                }
+                //validacion fila 820
+                if (camposFila.CAMPO_49 == '1') {
+                    if (camposFila.CAMPO_23 < '2' && camposFila.CAMPO_23 == '3') {
+                        arrayCamposBuenos.push(camposFila);
+                    }
+                    else {
+                        var hemofilia = {
+                            //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                            TIPO_ERROR: 'CD',
+                            DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                            USUARIO_CREACION: '',
+                            USUARIO_MODIFICACION: '',
+                            VALOR_ANTERIOR: '',
+                            VALOR_NUEVO: '',
+                            NUMERO_REGISTRO: numFila
+                        };
+                    }
+                }
+                //validacion fila 822 hasta 824 
+                if (camposFila.CAMPO_49 == '9999') {
+                    if (camposFila.CAMPO_23 == '2' || camposFila.CAMPO_23 > '3' && camposFila.CAMPO_49_1 == '9999') {
+                        arrayCamposBuenos.push(camposFila);
+                    }
+                    else {
+                        var hemofilia = {
+                            //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                            TIPO_ERROR: 'CD',
+                            DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                            USUARIO_CREACION: '',
+                            USUARIO_MODIFICACION: '',
+                            VALOR_ANTERIOR: '',
+                            VALOR_NUEVO: '',
+                            NUMERO_REGISTRO: numFila
+                        };
+                    }
+                }
+                //validacion fila 832
+                if (camposFila.CAMPO_50 == '5555' && camposFila.CAMPO_64 == '11') {
+                    arrayCamposBuenos.push(camposFila);
+                }
+                else {
+                    var hemofilia = {
+                        //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                        TIPO_ERROR: 'CD',
+                        DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                        USUARIO_CREACION: '',
+                        USUARIO_MODIFICACION: '',
+                        VALOR_ANTERIOR: '',
+                        VALOR_NUEVO: '',
+                        NUMERO_REGISTRO: numFila
+                    };
+                }
+                //validacion fila 837
+                if (camposFila.CAMPO_50 == '9999' && camposFila.CAMPO_23 > '3') {
+                    arrayCamposBuenos.push(camposFila);
+                }
+                else {
+                    var hemofilia = {
+                        //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                        TIPO_ERROR: 'CD',
+                        DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                        USUARIO_CREACION: '',
+                        USUARIO_MODIFICACION: '',
+                        VALOR_ANTERIOR: '',
+                        VALOR_NUEVO: '',
+                        NUMERO_REGISTRO: numFila
+                    };
+                }
+                //validacion fila 839
+                if (camposFila.CAMPO_51 == '5555' && camposFila.CAMPO_64 == '11') {
+                    arrayCamposBuenos.push(camposFila);
+                }
+                else {
+                    var hemofilia = {
+                        //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                        TIPO_ERROR: 'CD',
+                        DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                        USUARIO_CREACION: '',
+                        USUARIO_MODIFICACION: '',
+                        VALOR_ANTERIOR: '',
+                        VALOR_NUEVO: '',
+                        NUMERO_REGISTRO: numFila
+                    };
+                }
+                //validacion fila 844
+                if (camposFila.CAMPO_51 == '9999' && camposFila.CAMPO_23 > '3') {
+                    arrayCamposBuenos.push(camposFila);
+                }
+                else {
+                    var hemofilia = {
+                        //  NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                        TIPO_ERROR: 'CD',
+                        DESCRIPCION_ERROR: 'Tipo de dato no valido',
+                        USUARIO_CREACION: '',
+                        USUARIO_MODIFICACION: '',
+                        VALOR_ANTERIOR: '',
+                        VALOR_NUEVO: '',
+                        NUMERO_REGISTRO: numFila
+                    };
+                }
             }
         });
     }
