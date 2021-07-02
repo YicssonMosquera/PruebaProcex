@@ -144,6 +144,18 @@ class Validacionhemofila {
         }
     }
 
+    async fechacorte(){
+        var fechaC
+        const fechaCorte = await DBParametroAplicacion.fechaCorte();
+        for (var index = 0; index < Object.keys(fechaCorte).length; index++) {
+            fechaC  = fechaCorte[index].VALOR_PARAMETRO;
+            fechaC = new Date(fechaC);
+            console.log(fechaC)
+        }
+        return fechaC;
+    
+    }
+
 
 }
 

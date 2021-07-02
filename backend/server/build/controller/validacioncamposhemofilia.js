@@ -155,5 +155,17 @@ class Validacionhemofila {
             }
         });
     }
+    fechacorte() {
+        return __awaiter(this, void 0, void 0, function* () {
+            var fechaC;
+            const fechaCorte = yield BdParametroAplicacion_1.default.fechaCorte();
+            for (var index = 0; index < Object.keys(fechaCorte).length; index++) {
+                fechaC = fechaCorte[index].VALOR_PARAMETRO;
+                fechaC = new Date(fechaC);
+                console.log(fechaC);
+            }
+            return fechaC;
+        });
+    }
 }
 exports.validacionhemofila = new Validacionhemofila();
