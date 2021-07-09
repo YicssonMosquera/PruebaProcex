@@ -223,12 +223,12 @@ class LogicaDBProcesohemofilia {
             resultx.NUMERO_RADICACION = _this.radicado;
             resultx.ERRORES_CA = 0;
             resultx.ERRORES_CE = oValidacionCamposPH.getTotalCamposMalos();
-            resultx.ERRORES_CD = 0;
+            resultx.ERRORES_CD = oValidacionContenidoPH.getTotalCamposMalos();
             resultx.REGISTROS_VALIDOS = oValidacionCamposPH.getFilasBuenas();
             resultx.REGISTROS_NO_VALIDOS = oValidacionCamposPH.getFilasMalas();
             resultx.TIPO_PROCESO = 1;
             resultx.TIPO_USUARIO = _this.Perfil;
-            if (oValidacionCamposPH.getArchivoBueno()) {
+            if (oValidacionCamposPH.getArchivoBueno() && oValidacionContenidoPH.getArchivoBueno()) {
                 resultx.ESTADO_PROCESO = 2;
             } else {
                 resultx.ESTADO_PROCESO = 4;

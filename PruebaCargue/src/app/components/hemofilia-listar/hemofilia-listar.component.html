@@ -1,4 +1,223 @@
-<br>
+<div class="y-card" style="height: 100%; width: 100%;">
+    <div class="y-card-header">
+
+    </div>
+    <div class="y-card-body" style="overflow: hidden; padding: 5px;">
+        
+        <p-table [value]="Hemofilia" styleClass="p-datatable-sm " [scrollable]="true" scrollHeight="261px"
+        tableStyleClass="prime-table" selectionMode="single"  dataKey="code"
+        (onRowSelect)="onRowSelect($event)" (onRowUnselect)="onRowUnselect($event)">
+        <ng-template pTemplate="header">
+          <tr tableStyleClass="header">
+            <th style="width:90px;background-color: #02adb5; color: white;">P. Nombre<i class="fas fa-filter"
+              style="cursor: pointer;"></i> </th>
+            <th style="width:150px;background-color: #02adb5; color: white;">S. Nombre<i class="fas fa-filter"
+               style="cursor: pointer;"></i> </th>
+            <th style="width:110px;background-color: #02adb5; color: white;">P. Apellido</th>
+            <th style="width:100px;background-color: #02adb5; color: white;">S. Apellido</th>
+            <th style="width:80px;background-color: #02adb5; color: white;">Tipo de Identificación</th>
+            <th style="width:60px;background-color: #02adb5; color: white;">Nro Identificación</th>
+            <th style="width:80px;background-color: #02adb5; color: white;">Fecha de nacimiento</th>
+            <th style="width:80px;background-color: #02adb5; color: white;">Sexo</th>
+            <th style="width:80px;background-color: #02adb5; color: white;">Validación registro</th>
+            <th style="width:80px;background-color: #02adb5; color: white;">Validación soportes<i class="fas fa-filter"
+                style="cursor: pointer;"></i></th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-data>
+          <tr [pSelectableRow]="data">
+            <td style="width:90px">{{data.CAMPO_1}}</td>
+            <td style="width:150px">{{data.CAMPO_2}}</td>
+            <td style="width:110px">{{data.CAMPO_3}}</td>
+            <td style="width:100px">{{data.CAMPO_4}}</td>
+            <td style="width:80px">{{data.CAMPO_5}}</td>
+            <td style="width:60px">{{data.CAMPO_6}}</td>
+            <td style="width:80px">{{data.CAMPO_7}}</td>
+            <td style="width:80px">{{data.CAMPO_8}}</td>
+            <td style="width:80px">{{data.VALIDACION_REGISTRO}}</td>
+            <td style="width:80px">{{data.VALIDACION_SOPORTE}}</td>
+          </tr>
+        </ng-template>
+      </p-table>
+
+
+
+
+
+
+
+
+
+        <!-- <p-table [value]="hemofilia" styleClass="p-datatable-sm " [scrollable]="true" scrollHeight="261px"
+            tableStyleClass="prime-table">
+            <ng-template pTemplate="header">
+                <tr tableStyleClass="header">
+                    <th style="width:90px;background-color: #02adb5; color: white;">Radicado <i class="fas fa-filter"
+                            (click)="open(content)" style="cursor: pointer;"></i> </th>
+                    <th style="width:150px;background-color: #02adb5; color: white;">Nombre archivo <i
+                            class="fas fa-filter" (click)="nombrearchiv(content2)" style="cursor: pointer;"></i> </th>
+                    <th style="width:110px;background-color: #02adb5; color: white;">Fecha cargue</th>
+                    <th style="width:100px;background-color: #02adb5; color: white;">R.Procesados</th>
+                    <th style="width:80px;background-color: #02adb5; color: white;">R.Cargados</th>
+                    <th style="width:60px;background-color: #02adb5; color: white;">%</th>
+                    <th style="width:80px;background-color: #02adb5; color: white;">E.CA</th>
+                    <th style="width:80px;background-color: #02adb5; color: white;">E.CE</th>
+                    <th style="width:80px;background-color: #02adb5; color: white;">E.CD</th>
+                    <th style="width:80px;background-color: #02adb5; color: white;">Estado <i class="fas fa-filter"
+                            (click)="open(content4)" style="cursor: pointer;"></i></th>
+                    <th style="width:70px;background-color: #02adb5; color: white;">Vigente <i class="fas fa-filter"
+                            (click)="vigent(content3)" style="cursor: pointer;"></i></th>
+                    <th style="width:80px;background-color: #02adb5; color: white;">Perfil</th>
+                    <th style="width:80px;background-color: #02adb5; color: white;">Usuario</th>
+                    <th style="width:60px;background-color: #02adb5; color: white;">Logs</th>
+                    <th style="width:90px;background-color: #02adb5; color: white;">Archivo cargado</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-data>
+                <tr>
+                    <td style="width:90px">{{data.NUMERO_RADICACION}}</td>
+                    <td style="width:150px">{{data.NOMBRE_ARCHIVO}}</td>
+                    <td style="width:110px">{{data.FECHA_CREACION | date:"dd/MM/yyyy HH:mm:ss"}}</td>
+                    <td style="width:100px">{{data.REGISTROS_PROCESADOS}}</td>
+                    <td style="width:80px">{{data.REGISTROS_VALIDOS}}</td>
+                    <td style="width:60px">{{data.Porcentaje}}%</td>
+                    <td style="width:80px">{{data.ERRORES_CA}}</td>
+                    <td style="width:80px">{{data.ERRORES_CE}}</td>
+                    <td style="width:80px">{{data.ERRORES_CD}}</td>
+                    <td style="width:80px">{{data.Estado}}</td>
+                    <td style="width:70px">{{data.VIGENTE}}</td>
+                    <td style="width:80px">{{data.TIPO_USUARIO}}</td>
+                    <td style="width:80px">{{data.Login}}</td>
+                    <td style="width:60px"><i id="btn" class="far fa-file-excel"
+                            (click)="descargarLogsExcel(data.NUMERO_RADICACION)"></i>
+                        <img [src]="'assets/img/txt.svg'" class="ing-fluid" alt="no image" id="ims"
+                            (click)="descargarLogsTxt(data.NUMERO_RADICACION)">
+                    </td>
+                    <td style="width:90px"> <img [src]="'assets/img/zip.svg'" class="ing-fluid" alt="no image" id="ims"
+                            (click)="descargarArchivoCargado(data.NUMERO_RADICACION)"> </td>
+                </tr>
+            </ng-template>
+        </p-table> -->
+    </div>
+
+    <div class="y-card-footer" style="padding: 0px;">
+        <!-- <p-paginator [rows]="rows" [totalRecords]="totalRecords" (onPageChange)="paginador($event)"
+            [rowsPerPageOptions]="[5,10,20,30,50]"></p-paginator> -->
+    </div>
+</div>
+
+
+
+<!-- <ng-template #content let-c="close" let-d="dismiss" id="pagina">
+    <div class="modal-body">
+        <form>
+            <div class="row">
+                <div class="col-md-12">
+                    <input type="number" class="form-control" type="text"
+                        onkeypress='return event.charCode >= 48 && event.charCode <= 57' name="radicado"
+                        [(ngModel)]="radicado" placeholder="Radicado">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button pButton pRipple type="button" icon="pi pi-check" class="p-button-rounded" (click)="ConsultarCargue()"
+            (click)="d('Cross click')" style="margin-right: 4px;"></button>
+        <button pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded p-button-danger"
+            (click)="limpiarFiltros()" (click)="d('Cross click')"></button>
+    </div>
+</ng-template> -->
+
+<!-- <ng-template #content2 let-c="close" let-d="dismiss" id="pagina">
+    <div class="modal-body">
+        <form>
+            <div class="row">
+                <div class="col-md-12">
+                    <input type="text" list="NombreArchivo" name="nombreArchvio" [(ngModel)]="nombreArchvio" id="tipo"
+                        class="form-control" placeholder="Nombre archivo">
+                    <datalist id="NombreArchivo">
+                        <option *ngFor='let nombreArchivo of nombreArchivo' [ngValue]="nombreArchivo.NOMBRE_ARCHIVO">
+                            {{nombreArchivo.NOMBRE_ARCHIVO}}
+                        </option>
+                    </datalist>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button pButton pRipple type="button" icon="pi pi-check" class="p-button-rounded" (click)="ConsultarCargue()"
+            (click)="d('Cross click')" style="margin-right: 4px;"></button>
+        <button pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded p-button-danger"
+            (click)="limpiarFiltros()" (click)="d('Cross click')"></button>
+    </div>
+</ng-template> -->
+
+<!-- 
+<ng-template #content3 let-c="close" let-d="dismiss" id="pagina">
+    <div class="modal-body">
+        <form>
+            <div class="row">
+                <div class="col-md-12">
+                    <select name="" id="" class="form-control" name="vigente" [(ngModel)]="vigente">
+                        <option value="S">S</option>
+                        <option value="N">N</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button pButton pRipple type="button" icon="pi pi-check" class="p-button-rounded" (click)="ConsultarCargue()"
+            (click)="d('Cross click')" style="margin-right: 4px;"></button>
+        <button pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded p-button-danger"
+            (click)="limpiarFiltros()" (click)="d('Cross click')"></button>
+    </div>
+</ng-template> -->
+<!-- 
+<ng-template #content4 let-c="close" let-d="dismiss" id="pagina">
+    <div class="modal-body">
+        <form>
+            <div class="row">
+                <div class="col-md-12">
+                    <select name="" id="" class="form-control" name="estado" [(ngModel)]="estado">
+                        <option value="2">Exitoso</option>
+                        <option value="4">Con errores</option>
+                        <option value="3">Rechazado</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button pButton pRipple type="button" icon="pi pi-check" class="p-button-rounded" (click)="ConsultarCargue()"
+            (click)="d('Cross click')" style="margin-right: 4px;"></button>
+        <button pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded p-button-danger"
+            (click)="limpiarFiltros()" (click)="d('Cross click')"></button>
+    </div>
+</ng-template> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <br>
 <div class="container" >
 <div class="row">
 <div class="col-md-6">
@@ -58,4 +277,4 @@
         </div>
     </div>
 </div>
-
+ -->

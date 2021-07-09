@@ -4,7 +4,7 @@ import { HemofiliaService } from '../../services/hemofilia/hemofilia.service'
 import { DataTableDirective } from 'angular-datatables';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { Subject } from 'rxjs';
-import {Router} from '@angular/router'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-hemofilia-listar',
@@ -18,9 +18,9 @@ export class HemofiliaListarComponent implements OnInit, OnDestroy {
   dtElement: DataTableDirective;
   Hemofilia: any
   hemofiliafiltro = ""
-  opcion:any;
+  opcion: any;
 
-  constructor(private hemofiliaservice: HemofiliaService, private Router:Router, private ngxSpinnerService: NgxUiLoaderService) { }
+  constructor(private hemofiliaservice: HemofiliaService, private Router: Router, private ngxSpinnerService: NgxUiLoaderService) { }
 
   ngOnInit(): void {
     this.dtoptiontables()
@@ -49,6 +49,39 @@ export class HemofiliaListarComponent implements OnInit, OnDestroy {
     }
 
   }
+  onRowSelect(event) {
+    const CC = event.data.CAMPO_6;
+    this.ngxSpinnerService.start();
+    this.hemofiliaservice.CargarRegistrohemofilia3(CC).subscribe(res => {
+      this.opcion = res;
+      console.log(this.opcion)
+      if (this.opcion.length > 0) {
+        this.ngxSpinnerService.stop();
+        this.Router.navigate(['Hemofilia-frm/', CC]);
+      } else {
+        this.ngxSpinnerService.stop();
+        this.Router.navigate(['Hemofilia-frm']);
+      }
+
+    })
+  }
+
+  onRowUnselect(event) {
+    const CC = event.data.CAMPO_6;
+    this.ngxSpinnerService.start();
+    this.hemofiliaservice.CargarRegistrohemofilia3(CC).subscribe(res => {
+      this.opcion = res;
+      console.log(this.opcion)
+      if (this.opcion.length > 0) {
+        this.ngxSpinnerService.stop();
+        this.Router.navigate(['Hemofilia-frm/', CC]);
+      } else {
+        this.ngxSpinnerService.stop();
+        this.Router.navigate(['Hemofilia-frm']);
+      }
+
+    })
+  }
 
   CargarRegistroshemofilia() {
     this.hemofiliaservice.CargarRegistrohemofilia().subscribe(res => {
@@ -63,17 +96,17 @@ export class HemofiliaListarComponent implements OnInit, OnDestroy {
   }
 
   Seleccionarusuario(data: any): void {
-    let prueba:any
+    let prueba: any
     this.ngxSpinnerService.start();
     for (let i = 0; i < this.Hemofilia.length; i++) {
       if (this.Hemofilia[i].CAMPO_6 == data[5]) {
-        this.hemofiliaservice.CargarRegistrohemofilia3(data[5]).subscribe(res=>{
+        this.hemofiliaservice.CargarRegistrohemofilia3(data[5]).subscribe(res => {
           this.opcion = res;
           console.log(this.opcion)
-          if(this.opcion.length > 0 ){
-           this.ngxSpinnerService.stop();
+          if (this.opcion.length > 0) {
+            this.ngxSpinnerService.stop();
             this.Router.navigate(['Hemofilia-frm/', data[5]]);
-          }else{
+          } else {
             this.ngxSpinnerService.stop();
             this.Router.navigate(['Hemofilia-frm']);
           }
