@@ -130,7 +130,7 @@ class Validacionhemofila {
             return fechaMaores9;
         }
     }
-    async calcularAfiliadosde70Años() {
+     async calcularAfiliadosde70Años() {
         var fechacorte;
         var fechaMayores70
         const fechaCorte = await DBParametroAplicacion.fechaCorte();

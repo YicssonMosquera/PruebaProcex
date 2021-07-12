@@ -31,9 +31,11 @@ class ValidacionCamposPH {
 
     getArchivoBueno(){
         var isBueno = false;
+
         if(this.getFilasBuenas() == this.archivoFilas){
             isBueno = true;
         }
+       
         return isBueno;
     }
 

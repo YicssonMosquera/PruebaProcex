@@ -202,9 +202,10 @@ class LogicaDBProcesohemofilia {
             const oValidacionCamposPH = new ValidacionCamposPH_1.default();
             const oValidacionContenidoPH = new ValidacionContenidoPH_1.default();
             oValidacionCamposPH.validar(arrayCampos, resultEstructuraCampo);
-            oValidacionContenidoPH.Validar(arrayCampos);
+            oValidacionContenidoPH.Validar(arrayCampos, resultEstructuraCampo);
             this.guardarCamposBuenos(idCabeza, oValidacionCamposPH.filas_buenas);
             this.guardarCamposMalos(idCabeza, oValidacionCamposPH.filas_malas);
+            this.guardarCamposMalosCd(idCabeza, oValidacionContenidoPH.filas_malas);
             //Acualizar cabeza
             DbProcesoHemofilia_1.default.buscarPorId(idCabeza, function (result) {
                 var resultx = result[0];
@@ -244,6 +245,20 @@ class LogicaDBProcesohemofilia {
         //Guardar detalles campos malos
         for (const key in oFilas) {
             var arrayFilasMalas = oFilas[key];
+            for (let index = 0; index < arrayFilasMalas.length; index++) {
+                const campoMalo = arrayFilasMalas[index];
+                campoMalo.ID_PROCESO_HEMOFILIA = idCabeza;
+                campoMalo.USUARIO_CREACION = this.User;
+                campoMalo.USUARIO_MODIFICACION = this.User;
+                BbProcesoHemofiliaError_1.default.guardar(campoMalo);
+            }
+        }
+    }
+    static guardarCamposMalosCd(idCabeza, oFilas) {
+        console.log(oFilas);
+        for (const key in oFilas) {
+            var arrayFilasMalas = oFilas[key];
+            console.log(arrayFilasMalas);
             for (let index = 0; index < arrayFilasMalas.length; index++) {
                 const campoMalo = arrayFilasMalas[index];
                 campoMalo.ID_PROCESO_HEMOFILIA = idCabeza;

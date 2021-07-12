@@ -205,11 +205,12 @@ class LogicaDBProcesohemofilia {
 
         //validarCampos
         const oValidacionCamposPH = new ValidacionCamposPH();
-        const oValidacionContenidoPH = new ValidacionContenidoPH();
+        const oValidacionContenidoPH =  new ValidacionContenidoPH();
         oValidacionCamposPH.validar(arrayCampos, resultEstructuraCampo);
-        oValidacionContenidoPH.Validar(arrayCampos)
+        oValidacionContenidoPH.Validar(arrayCampos, resultEstructuraCampo)
         this.guardarCamposBuenos(idCabeza, oValidacionCamposPH.filas_buenas);
         this.guardarCamposMalos(idCabeza, oValidacionCamposPH.filas_malas);
+        this.guardarCamposMalosCd(idCabeza, oValidacionContenidoPH.filas_malas)
 
 
         //Acualizar cabeza
@@ -232,6 +233,7 @@ class LogicaDBProcesohemofilia {
                 resultx.ESTADO_PROCESO = 2;
             } else {
                 resultx.ESTADO_PROCESO = 4;
+
             }
             //Actualizar cabeza
             DBProcesohemofilia.actualizar(resultx, idCabeza, function (result) {
@@ -253,6 +255,21 @@ class LogicaDBProcesohemofilia {
         //Guardar detalles campos malos
         for (const key in oFilas) {
             var arrayFilasMalas = oFilas[key];
+            for (let index = 0; index < arrayFilasMalas.length; index++) {
+                const campoMalo = arrayFilasMalas[index];
+                campoMalo.ID_PROCESO_HEMOFILIA = idCabeza;
+                campoMalo.USUARIO_CREACION = this.User;
+                campoMalo.USUARIO_MODIFICACION = this.User;
+                DBProcesohemofiliaerror.guardar(campoMalo);
+            }
+        }
+    }
+
+    public static guardarCamposMalosCd(idCabeza, oFilas) {
+        console.log(oFilas)
+        for (const key in oFilas) {
+            var arrayFilasMalas = oFilas[key];
+            console.log(arrayFilasMalas)
             for (let index = 0; index < arrayFilasMalas.length; index++) {
                 const campoMalo = arrayFilasMalas[index];
                 campoMalo.ID_PROCESO_HEMOFILIA = idCabeza;

@@ -31,12 +31,11 @@ class ValidacionContenidoPH {
         this.totalCamposMalos = 0;
         this.totalCamposBuenos = 0;
         this.archivoFilas = 0;
-
-
     }
 
     getArchivoBueno() {
         var isBueno = false;
+        console.log(isBueno)
         if (this.getFilasBuenas() == this.archivoFilas) {
             isBueno = true;
         }
@@ -49,28 +48,30 @@ class ValidacionContenidoPH {
     }
 
     getTotalCamposMalos() {
+        console.log(this.filas_malas)
         return this.totalCamposMalos;
     }
 
-    getNumeroCampo(nombreCampo){
+    // getNumeroCampo(nombreCampo) {
 
-        return nombreCampo.replace("CAMPO_", "")
-    }
+    //     return nombreCampo.replace("CAMPO_", "")
+    // }
 
 
-    async Validar(arrayCampos) {
+     async Validar(arrayCampos, resultEstructuraCampo) {
         var _this = this;
-
-
+        this.archivoFilas = arrayCampos.length;
+        
 
         //Calculos de fecha de acuerdo con la fecha de corte de la base de datos.
         _this.fehaMayorEdad = await validacionhemofila.calcularMayorEdad();
         _this.fechaMenorEdad = await validacionhemofila.CalcularMenorEdad();
         _this.fechaMaores60 = await validacionhemofila.calcularAfiliadosde60Añ0s();
         _this.fechaMaores9 = await validacionhemofila.calcularAfiliadosde9Años();
-        _this.fechaMayores70 = await validacionhemofila.calcularAfiliadosde70Años();
+        _this.fechaMayores70 = await  validacionhemofila.calcularAfiliadosde70Años();
         _this.fechacorte = await validacionhemofila.fechacorte();
-        console.log(_this.fechacorte)
+       
+
         //recorrer el array campos que son las filas del file txt
         for (let index = 0; index < arrayCampos.length; index++) {
 
@@ -78,7 +79,7 @@ class ValidacionContenidoPH {
             const camposFila = arrayCampos[index];
             var numFila = index + 1;
 
-            console.log(camposFila)
+
 
             //crear arreglos para adicionar campos buenos y malos
             var arrayCamposBuenos = [];
@@ -94,23 +95,17 @@ class ValidacionContenidoPH {
 
 
             // for (const key in camposFila) {
-                 var nombrecampo = 'key';
-                var valorcampo = camposFila['key'];
-                var numeroCampo = parseInt(nombrecampo.replace("CAMPO_", ""));
-                var campofila = {};
-                campofila[numeroCampo] = valorcampo;
+            var nombrecampo = 'key';
+            var valorcampo = camposFila['key'];
+            var numeroCampo = parseInt(nombrecampo.replace("CAMPO_", ""));
+            var campofila = {};
+            campofila[numeroCampo] = valorcampo;
 
-            // console.log(key)
-            // console.log(numeroCampo)
-            // console.log(valorcampo)
-            // console.log(numeroCampo)
 
             //validacion fila 7 lista
-
-
             if (camposFila.CAMPO_5 == 'CC' && validacionhemofila.formatofecha(camposFila.CAMPO_7) <= validacionhemofila.formatofecha(_this.fehaMayorEdad)) {
                 console.log('entro 7');
-                arrayCamposBuenos.push({'CAMPO_7':camposFila.CAMPO_7});
+                arrayCamposBuenos.push({ 'CAMPO_7': camposFila.CAMPO_7 });
                 _this.totalCamposBuenos = this.totalCamposBuenos + 1;
             } else {
                 var hemofilia: Hemofiliaerror = {
@@ -123,7 +118,6 @@ class ValidacionContenidoPH {
                     VALOR_NUEVO: '',
                     NUMERO_REGISTRO: numFila
                 }
-                console.log('******************************************************************************************')
                 arrayCamposMalos.push(hemofilia);
                 _this.totalCamposMalos = this.totalCamposMalos + 1;
             }
@@ -133,11 +127,12 @@ class ValidacionContenidoPH {
             //validacion fila 10 hasta la fila 13 lista
             if (validacionhemofila.formatofecha(camposFila.CAMPO_7) > validacionhemofila.formatofecha(_this.fechaMenorEdad)) {
                 if (camposFila.CAMPO_56 == '0' || camposFila.CAMPO_56 == '5555' || camposFila.CAMPO_56 == '9996' || camposFila.CAMPO_56 == '9999') {
-                    arrayCamposBuenos.push(campofila);
+                    arrayCamposBuenos.push({ 'CAMPO_56': camposFila.CAMPO_56 });
+
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
                     var hemofilia: Hemofiliaerror = {
-                        NUMERO_CAMPO: numeroCampo,
+                        NUMERO_CAMPO: 56,
                         TIPO_ERROR: 'CD',
                         DESCRIPCION_ERROR: 'B4389',
                         USUARIO_CREACION: '',
@@ -153,11 +148,11 @@ class ValidacionContenidoPH {
             //validacion fila 14 hasta la fila 17 lista
             if (validacionhemofila.formatofecha(camposFila.CAMPO_7) > validacionhemofila.formatofecha(_this.fechaMenorEdad)) {
                 if (camposFila.CAMPO_56_1 == '0' || camposFila.CAMPO_56_1 == '5555' || camposFila.CAMPO_56_1 == '9996' || camposFila.CAMPO_56_1 == '9999') {
-                    arrayCamposBuenos.push(campofila);
+                    arrayCamposBuenos.push({ 'CAMPO_56_1': camposFila.CAMPO_56_1 });
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
                     var hemofilia: Hemofiliaerror = {
-                        NUMERO_CAMPO: numeroCampo,
+                        NUMERO_CAMPO: 56_1,
                         TIPO_ERROR: 'CD',
                         DESCRIPCION_ERROR: 'B4390',
                         USUARIO_CREACION: '',
@@ -173,11 +168,11 @@ class ValidacionContenidoPH {
 
             //validacion fila 18 y 19
             if (validacionhemofila.formatofecha(camposFila.CAMPO_7) <= validacionhemofila.formatofecha(camposFila.CAMPO_66) && validacionhemofila.formatofecha(camposFila.CAMPO_7) <= validacionhemofila.formatofecha('1919-01-31')) {
-                arrayCamposBuenos.push(campofila);
+                arrayCamposBuenos.push({ 'CAMPO_7': camposFila.CAMPO_7 });
                 _this.totalCamposBuenos = this.totalCamposBuenos + 1;
             } else {
                 var hemofilia: Hemofiliaerror = {
-                    NUMERO_CAMPO: numeroCampo,
+                    NUMERO_CAMPO: 7,
                     TIPO_ERROR: 'CD',
                     DESCRIPCION_ERROR: 'B897',
                     USUARIO_CREACION: '',
@@ -193,10 +188,11 @@ class ValidacionContenidoPH {
             //validacion fila 21 lista 
             if (camposFila.CAMPO_8 == 'M') {
                 if (camposFila.CAMPO_23 != 2) {
-                    arrayCamposBuenos.push(campofila);
+                    arrayCamposBuenos.push({ 'CAMPO_23': camposFila.CAMPO_23 });
+
                 } else {
                     var hemofilia: Hemofiliaerror = {
-                        NUMERO_CAMPO: numeroCampo,
+                        NUMERO_CAMPO: 23,
                         TIPO_ERROR: 'CD',
                         DESCRIPCION_ERROR: 'B4557',
                         USUARIO_CREACION: '',
@@ -212,11 +208,11 @@ class ValidacionContenidoPH {
 
             //validacion fila 205 y 206
             if (validacionhemofila.formatofecha(camposFila.CAMPO_16) <= validacionhemofila.formatofecha(camposFila.CAMPO_66) && validacionhemofila.formatofecha(camposFila.CAMPO_16) >= validacionhemofila.formatofecha(camposFila.CAMPO_7)) {
-                arrayCamposBuenos.push(campofila);
+                arrayCamposBuenos.push({ 'CAMPO_16': camposFila.CAMPO_16 });
                 _this.totalCamposBuenos = this.totalCamposBuenos + 1;
             } else {
                 var hemofilia: Hemofiliaerror = {
-                    NUMERO_CAMPO: numeroCampo,
+                    NUMERO_CAMPO: 16,
                     TIPO_ERROR: 'CD',
                     DESCRIPCION_ERROR: 'B899 ',
                     USUARIO_CREACION: '',
@@ -231,11 +227,11 @@ class ValidacionContenidoPH {
 
             //validacion fila 208 lista
             if (camposFila.CAMPO_17 == '3' && camposFila.CAMPO_8 == 'M') {
-                arrayCamposBuenos.push(campofila);
+                arrayCamposBuenos.push({ 'CAMPO_8': camposFila.CAMPO_8 });
                 _this.totalCamposBuenos = this.totalCamposBuenos + 1;
             } else {
                 var hemofilia: Hemofiliaerror = {
-                    NUMERO_CAMPO: numeroCampo,
+                    NUMERO_CAMPO: 8,
                     TIPO_ERROR: 'CD',
                     DESCRIPCION_ERROR: 'B1566',
                     USUARIO_CREACION: '',
@@ -252,11 +248,12 @@ class ValidacionContenidoPH {
             if (camposFila.CAMPO_17 == '1') {
                 console.log(_this.fechaMaores60)
                 if (validacionhemofila.formatofecha(camposFila.CAMPO_7) >= validacionhemofila.formatofecha(_this.fechaMaores60) && validacionhemofila.formatofecha(camposFila.CAMPO_7) <= validacionhemofila.formatofecha(_this.fechaMaores9)) {
-                    arrayCamposBuenos.push(campofila);
+                    arrayCamposBuenos.push({ 'CAMPO_7': camposFila.CAMPO_7 });
+
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
                     var hemofilia: Hemofiliaerror = {
-                        NUMERO_CAMPO: numeroCampo,
+                        NUMERO_CAMPO: 7,
                         TIPO_ERROR: 'CD',
                         DESCRIPCION_ERROR: 'B1844',
                         USUARIO_CREACION: '',
@@ -272,11 +269,11 @@ class ValidacionContenidoPH {
 
             //validacion fila 211 LISTA
             if (camposFila.CAMPO_17 == '55' && camposFila.CAMPO_64 == '11') {
-                arrayCamposBuenos.push(campofila);
+                arrayCamposBuenos.push({ 'CAMPO_64': camposFila.CAMPO_64 });
                 _this.totalCamposBuenos = this.totalCamposBuenos + 1;
             } else {
                 var hemofilia: Hemofiliaerror = {
-                    NUMERO_CAMPO: numeroCampo,
+                    NUMERO_CAMPO: 64,
                     TIPO_ERROR: 'CD',
                     DESCRIPCION_ERROR: 'B2380',
                     USUARIO_CREACION: '',
@@ -291,11 +288,11 @@ class ValidacionContenidoPH {
 
             //validacion fila 212 LISTA
             if (camposFila.CAMPO_17 <= 2 && camposFila.CAMPO_8 == 'F') {
-                arrayCamposBuenos.push(campofila);
+                arrayCamposBuenos.push({ 'CAMPO_8': camposFila.CAMPO_8 });
                 _this.totalCamposBuenos = this.totalCamposBuenos + 1;
             } else {
                 var hemofilia: Hemofiliaerror = {
-                    NUMERO_CAMPO: numeroCampo,
+                    NUMERO_CAMPO: 8,
                     TIPO_ERROR: 'CD',
                     DESCRIPCION_ERROR: 'B900',
                     USUARIO_CREACION: '',
@@ -311,11 +308,13 @@ class ValidacionContenidoPH {
             //validacion fila 214 y 215 lista
             if (camposFila.CAMPO_18 == '3') {
                 if (validacionhemofila.formatofecha(camposFila.CAMPO_7) >= validacionhemofila.formatofecha(_this.fehaMayorEdad) || validacionhemofila.formatofecha(camposFila.CAMPO_7) <= validacionhemofila.formatofecha(_this.fechaMayores70)) {
-                    arrayCamposBuenos.push(campofila);
+                    arrayCamposBuenos.push({ 'CAMPO_7': camposFila.CAMPO_7 });
+                    console.log('******************************************************************************************')
+                    console.log(arrayCamposBuenos)
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
                     var hemofilia: Hemofiliaerror = {
-                        NUMERO_CAMPO: numeroCampo,
+                        NUMERO_CAMPO: 7,
                         TIPO_ERROR: 'CD',
                         DESCRIPCION_ERROR: 'B1845',
                         USUARIO_CREACION: '',
@@ -331,11 +330,11 @@ class ValidacionContenidoPH {
 
             //validacion fila 216 lista
             if (camposFila.CAMPO_18 == '55' && camposFila.CAMPO_64 == '11') {
-                arrayCamposBuenos.push(campofila);
+                arrayCamposBuenos.push({ 'CAMPO_64': camposFila.CAMPO_64 });
                 _this.totalCamposBuenos = this.totalCamposBuenos + 1;
             } else {
                 var hemofilia: Hemofiliaerror = {
-                    NUMERO_CAMPO: numeroCampo,
+                    NUMERO_CAMPO: 64,
                     TIPO_ERROR: 'CD',
                     DESCRIPCION_ERROR: 'B2381',
                     USUARIO_CREACION: '',
@@ -348,10 +347,10 @@ class ValidacionContenidoPH {
                 _this.totalCamposMalos = this.totalCamposMalos + 1;
             }
 
-            //validacion fila 218 y 219 lista
+            //validacion fila 218 y 219 pendiente
             if (camposFila.CAMPO_19 == '5555') {
                 if (camposFila.CAMPO_64 == '11' && validacionhemofila.formatofecha(camposFila.CAMPO_21) == validacionhemofila.formatofecha('1846-01-01')) {
-                    arrayCamposBuenos.push(campofila);
+                    arrayCamposBuenos.push({ 'CAMPO_64': camposFila.CAMPO_64 }, { 'CAMPO_21': camposFila.CAMPO_21 });
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
                     var hemofilia: Hemofiliaerror = {
@@ -371,11 +370,11 @@ class ValidacionContenidoPH {
 
             ////validacion fila 220 lista
             if (camposFila.CAMPO_19 == '9998' && validacionhemofila.formatofecha(camposFila.CAMPO_21) == '1811-01-01') {
-                arrayCamposBuenos.push(campofila);
+                arrayCamposBuenos.push({ 'CAMPO_21': camposFila.CAMPO_21 });
                 _this.totalCamposBuenos = this.totalCamposBuenos + 1;
             } else {
                 var hemofilia: Hemofiliaerror = {
-                    NUMERO_CAMPO: numeroCampo,
+                    NUMERO_CAMPO: 21,
                     TIPO_ERROR: 'CD',
                     DESCRIPCION_ERROR: 'B2383',
                     USUARIO_CREACION: '',
@@ -389,10 +388,10 @@ class ValidacionContenidoPH {
             }
             //validacion fila 222 lista
             if (camposFila.CAMPO_20 == '55' && camposFila.CAMPO_64 == '11') {
-                arrayCamposBuenos.push(campofila);
+                arrayCamposBuenos.push({ 'CAMPO_64': camposFila.CAMPO_64 });
             } else {
                 var hemofilia: Hemofiliaerror = {
-                    NUMERO_CAMPO: numeroCampo,
+                    NUMERO_CAMPO: 64,
                     TIPO_ERROR: 'CD',
                     DESCRIPCION_ERROR: 'B2384',
                     USUARIO_CREACION: '',
@@ -407,11 +406,11 @@ class ValidacionContenidoPH {
 
             //validacion fila 223 y 224 
             if (camposFila.CAMPO_20 <= 4 || camposFila.CAMPO_20 == '55') {
-                arrayCamposBuenos.push(campofila);
+                arrayCamposBuenos.push({ 'CAMPO_20': camposFila.CAMPO_20 });
                 _this.totalCamposBuenos = this.totalCamposBuenos + 1;
             } else {
                 var hemofilia: Hemofiliaerror = {
-                    NUMERO_CAMPO: numeroCampo,
+                    NUMERO_CAMPO: 20,
                     TIPO_ERROR: 'CD',
                     DESCRIPCION_ERROR: 'B3978',
                     USUARIO_CREACION: '',
@@ -426,11 +425,11 @@ class ValidacionContenidoPH {
 
             //validacion fila 226 lista
             if (validacionhemofila.formatofecha(camposFila.CAMPO_21) == '1811-01-01' && camposFila.CAMPO_64 != '2') {
-                arrayCamposBuenos.push(campofila);
+                arrayCamposBuenos.push({ 'CAMPO_64': camposFila.CAMPO_64 });
                 _this.totalCamposBuenos = this.totalCamposBuenos + 1;
             } else {
                 var hemofilia: Hemofiliaerror = {
-                    NUMERO_CAMPO: numeroCampo,
+                    NUMERO_CAMPO: 64,
                     TIPO_ERROR: 'CD',
                     DESCRIPCION_ERROR: 'B1558',
                     USUARIO_CREACION: '',
@@ -445,11 +444,11 @@ class ValidacionContenidoPH {
 
             //validacion fila 227 lista
             if (validacionhemofila.formatofecha(camposFila.CAMPO_21) == '1800-01-01' && camposFila.CAMPO_64 != '2') {
-                arrayCamposBuenos.push(campofila);
+                arrayCamposBuenos.push({ 'CAMPO_64': camposFila.CAMPO_64 });
                 _this.totalCamposBuenos = this.totalCamposBuenos + 1;
             } else {
                 var hemofilia: Hemofiliaerror = {
-                    NUMERO_CAMPO: numeroCampo,
+                    NUMERO_CAMPO: 64,
                     TIPO_ERROR: 'CD',
                     DESCRIPCION_ERROR: 'B2386',
                     USUARIO_CREACION: '',
@@ -464,11 +463,11 @@ class ValidacionContenidoPH {
 
             //validacion fila 228 lista
             if (camposFila.CAMPO_21 == '1846-01-01' && camposFila.CAMPO_64 == '11') {
-                arrayCamposBuenos.push(campofila);
+                arrayCamposBuenos.push({ 'CAMPO_64': camposFila.CAMPO_64 });
                 _this.totalCamposBuenos = this.totalCamposBuenos + 1;
             } else {
                 var hemofilia: Hemofiliaerror = {
-                    NUMERO_CAMPO: numeroCampo,
+                    NUMERO_CAMPO: 64,
                     TIPO_ERROR: 'CD',
                     DESCRIPCION_ERROR: 'B2387',
                     USUARIO_CREACION: '',
@@ -483,11 +482,11 @@ class ValidacionContenidoPH {
 
             //validacion fila 229 lista
             if (camposFila.CAMPO_21 >= camposFila.CAMPO_7 && camposFila.CAMPO_19 < 100) {
-                arrayCamposBuenos.push(campofila);
+                arrayCamposBuenos.push({ 'CAMPO_19': camposFila.CAMPO_19 });
                 _this.totalCamposBuenos = this.totalCamposBuenos + 1;
             } else {
                 var hemofilia: Hemofiliaerror = {
-                    NUMERO_CAMPO: numeroCampo,
+                    NUMERO_CAMPO: 19,
                     TIPO_ERROR: 'CD',
                     DESCRIPCION_ERROR: 'B2388',
                     USUARIO_CREACION: '',
@@ -503,11 +502,11 @@ class ValidacionContenidoPH {
 
             //validacion fila 230 hasta 234 lista
             if (validacionhemofila.formatofecha(camposFila.CAMPO_21) <= validacionhemofila.formatofecha(camposFila.CAMPO_66) && validacionhemofila.formatofecha(camposFila.CAMPO_21) >= validacionhemofila.formatofecha(camposFila.CAMPO_7) || camposFila.CAMPO_21 <= '1800-01-01' || camposFila.CAMPO_21 <= '1811-01-01' || camposFila.CAMPO_21 <= '1846-01-01') {
-                arrayCamposBuenos.push(campofila);
+                arrayCamposBuenos.push({ 'CAMPO_21': camposFila.CAMPO_21 });
                 _this.totalCamposBuenos = this.totalCamposBuenos + 1;
             } else {
                 var hemofilia: Hemofiliaerror = {
-                    NUMERO_CAMPO: numeroCampo,
+                    NUMERO_CAMPO: 21,
                     TIPO_ERROR: 'CD',
                     DESCRIPCION_ERROR: 'B901 ',
                     USUARIO_CREACION: '',
@@ -522,11 +521,11 @@ class ValidacionContenidoPH {
 
             // validacion fila 236 lista
             if (camposFila.CAMPO_22 == '99' && camposFila.CAMPO_64 != '2') {
-                arrayCamposBuenos.push(campofila);
+                arrayCamposBuenos.push({ 'CAMPO_64': camposFila.CAMPO_64 });
                 _this.totalCamposBuenos = this.totalCamposBuenos + 1;
             } else {
                 var hemofilia: Hemofiliaerror = {
-                    NUMERO_CAMPO: numeroCampo,
+                    NUMERO_CAMPO: 64,
                     TIPO_ERROR: 'CD',
                     DESCRIPCION_ERROR: 'B2389',
                     USUARIO_CREACION: '',
@@ -540,11 +539,11 @@ class ValidacionContenidoPH {
             }
             // validacion fila 238 ista
             if (camposFila.CAMPO_23 == '1' && camposFila.CAMPO_24 <= 2) {
-                arrayCamposBuenos.push(campofila);
+                arrayCamposBuenos.push({ 'CAMPO_24': camposFila.CAMPO_24 });
                 _this.totalCamposBuenos = this.totalCamposBuenos + 1;
             } else {
                 var hemofilia: Hemofiliaerror = {
-                    NUMERO_CAMPO: numeroCampo,
+                    NUMERO_CAMPO: 24,
                     TIPO_ERROR: 'CD',
                     DESCRIPCION_ERROR: 'B1158',
                     USUARIO_CREACION: '',
@@ -559,11 +558,11 @@ class ValidacionContenidoPH {
             //validacion fila  239 y 240 lista
             if (camposFila.CAMPO_23 == '3') {
                 if (camposFila.CAMPO_24 >= 3 && camposFila.CAMPO_24 <= 6) {
-                    arrayCamposBuenos.push(camposFila);
+                    arrayCamposBuenos.push({ 'CAMPO_24': camposFila.CAMPO_24 });
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
                     var hemofilia: Hemofiliaerror = {
-                        NUMERO_CAMPO: numeroCampo,
+                        NUMERO_CAMPO: 24,
                         TIPO_ERROR: 'CD',
                         DESCRIPCION_ERROR: 'B2392',
                         USUARIO_CREACION: '',
@@ -579,11 +578,11 @@ class ValidacionContenidoPH {
 
             //validacion fila 241 lista 
             if (camposFila.CAMPO_23 == '2' && camposFila.CAMPO_26 != '1') {
-                arrayCamposBuenos.push(campofila);
+                arrayCamposBuenos.push({ 'CAMPO_26': camposFila.CAMPO_26 });
                 _this.totalCamposBuenos = this.totalCamposBuenos + 1;
             } else {
                 var hemofilia: Hemofiliaerror = {
-                    NUMERO_CAMPO: numeroCampo,
+                    NUMERO_CAMPO: 26,
                     TIPO_ERROR: 'CD',
                     DESCRIPCION_ERROR: 'B2553',
                     USUARIO_CREACION: '',
@@ -595,10 +594,10 @@ class ValidacionContenidoPH {
                 arrayCamposMalos.push(hemofilia);
                 _this.totalCamposMalos = this.totalCamposMalos + 1;
             }
-            //validacion fila 242 hasta 258 lista
+            //validacion fila 242 hasta 258 pendiente
             if (camposFila.CAMPO_23 == '2') {
                 if (camposFila.CAMPO_8 == 'F' && camposFila.CAMPO_40 == '0' && camposFila.CAMPO_40_1 == '0' && camposFila.CAMPO_40_2 == '0' && camposFila.CAMPO_41 == '0' && camposFila.CAMPO_42 == '0' && camposFila.CAMPO_43 == '0' && camposFila.CAMPO_44 == '0' && camposFila.CAMPO_45 == '0' && camposFila.CAMPO_46 == '0' && camposFila.CAMPO_47_1 == '0' && camposFila.CAMPO_47_2 == '0' && camposFila.CAMPO_47_3 == '0' && camposFila.CAMPO_49 == '0' && camposFila.CAMPO_49_1 == '0' || camposFila.CAMPO_24 == '7' || camposFila.CAMPO_49 == '9999') {
-                    arrayCamposBuenos.push(campofila);
+                    arrayCamposBuenos.push({ 'CAMPO_8': camposFila.CAMPO_8 }, { 'CAMPO_40': camposFila.CAMPO_40 }, { 'CAMPO_40_1': camposFila.CAMPO_40_1 }, { 'CAMPO_40_2': camposFila.CAMPO_40_2 }, { 'CAMPO_43': camposFila.CAMPO_43 }, { 'CAMPO_44': camposFila.CAMPO_44 }, { 'CAMPO_45': camposFila.CAMPO_45 }, { 'CAMPO_46': camposFila.CAMPO_46 }, { 'CAMPO_47_1': camposFila.CAMPO_47_1 }, { 'CAMPO_47_2': camposFila.CAMPO_47_2 }, { 'CAMPO_47_3': camposFila.CAMPO_47_3 }, { 'CAMPO_49': camposFila.CAMPO_49 }, { 'CAMPO_49_1': camposFila.CAMPO_49_1 }, { 'CAMPO_24': camposFila.CAMPO_24 });
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
                     var hemofilia: Hemofiliaerror = {
@@ -618,11 +617,11 @@ class ValidacionContenidoPH {
 
             //validacion fila 259
             if (camposFila.CAMPO_23 > 12) {
-                arrayCamposBuenos.push(campofila);
+                arrayCamposBuenos.push({ 'CAMPO_23': camposFila.CAMPO_23 });
                 _this.totalCamposBuenos = this.totalCamposBuenos + 1;
             } else {
                 var hemofilia: Hemofiliaerror = {
-                    NUMERO_CAMPO: numeroCampo,
+                    NUMERO_CAMPO: 24,
                     TIPO_ERROR: 'CD',
                     DESCRIPCION_ERROR: 'B3987',
                     USUARIO_CREACION: '',
@@ -637,11 +636,11 @@ class ValidacionContenidoPH {
 
             //validacion fila 260 lista
             if (camposFila.CAMPO_23 >= 4 && camposFila.CAMPO_24 == '9999') {
-                arrayCamposBuenos.push(campofila);
+                arrayCamposBuenos.push({ 'CAMPO_24': camposFila.CAMPO_24 });
                 _this.totalCamposBuenos = this.totalCamposBuenos + 1;
             } else {
                 var hemofilia: Hemofiliaerror = {
-                    NUMERO_CAMPO: numeroCampo,
+                    NUMERO_CAMPO: 24,
                     TIPO_ERROR: 'CD',
                     DESCRIPCION_ERROR: 'B3988',
                     USUARIO_CREACION: '',
@@ -657,11 +656,11 @@ class ValidacionContenidoPH {
             //validacion fila 261 y 262 lista
             if (camposFila.CAMPO_23 >= 2) {
                 if (camposFila.CAMPO_25 == '9999' || camposFila.CAMPO_25 == '5555') {
-                    arrayCamposBuenos.push(campofila);
+                    arrayCamposBuenos.push({ 'CAMPO_25': camposFila.CAMPO_25 });
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
                     var hemofilia: Hemofiliaerror = {
-                        NUMERO_CAMPO: numeroCampo,
+                        NUMERO_CAMPO: 25,
                         TIPO_ERROR: 'CD',
                         DESCRIPCION_ERROR: 'B3989',
                         USUARIO_CREACION: '',
@@ -674,10 +673,10 @@ class ValidacionContenidoPH {
                     _this.totalCamposMalos = this.totalCamposMalos + 1;
                 }
             }
-            //validacion fila 263 hasta 265 lista
+            //validacion fila 263 hasta 265 pendiente
             if (camposFila.CAMPO_23 > 3) {
                 if (camposFila.CAMPO_40 == '9999' && camposFila.CAMPO_40_1 == '9999' && camposFila.CAMPO_40_2 == '9999') {
-                    arrayCamposBuenos.push(campofila);
+                    arrayCamposBuenos.push({ 'CAMPO_40': camposFila.CAMPO_40 }, { 'CAMPO_40_1': camposFila.CAMPO_40_1 }, { 'CAMPO_40_2': camposFila.CAMPO_40_2 });
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
                     var hemofilia: Hemofiliaerror = {
@@ -697,11 +696,11 @@ class ValidacionContenidoPH {
 
             //validacion fila 266 lista
             if (camposFila.CAMPO_23 > 3 && camposFila.CAMPO_49 == '9999') {
-                arrayCamposBuenos.push(campofila);
+                arrayCamposBuenos.push({ 'CAMPO_49': camposFila.CAMPO_49 });
                 _this.totalCamposBuenos = this.totalCamposBuenos + 1;
             } else {
                 var hemofilia: Hemofiliaerror = {
-                    NUMERO_CAMPO: numeroCampo,
+                    NUMERO_CAMPO: 49,
                     TIPO_ERROR: 'CD',
                     DESCRIPCION_ERROR: 'B4377',
                     USUARIO_CREACION: '',
@@ -717,11 +716,11 @@ class ValidacionContenidoPH {
             //validacion fila 268 hasta 271 lista
             if (camposFila.CAMPO_24 == '1') {
                 if (camposFila.CAMPO_25 >= 1 && camposFila.CAMPO_25 < 5 || camposFila.CAMPO_25 == '5555' || camposFila.CAMPO_25 == '3333') {
-                    arrayCamposBuenos.push(campofila);
+                    arrayCamposBuenos.push({ 'CAMPO_25': camposFila.CAMPO_25 });
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
                     var hemofilia: Hemofiliaerror = {
-                        NUMERO_CAMPO: numeroCampo,
+                        NUMERO_CAMPO: 25,
                         TIPO_ERROR: 'CD',
                         DESCRIPCION_ERROR: 'B1160',
                         USUARIO_CREACION: '',
@@ -737,11 +736,11 @@ class ValidacionContenidoPH {
             //validacion fila 272 hasta 274 lista
             if (camposFila.CAMPO_24 == '2') {
                 if (camposFila.CAMPO_25 < 1 || camposFila.CAMPO_25 == '5555' || camposFila.CAMPO_25 == '3333') {
-                    arrayCamposBuenos.push(campofila);
+                    arrayCamposBuenos.push({ 'CAMPO_25': camposFila.CAMPO_25 });
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
                     var hemofilia: Hemofiliaerror = {
-                        NUMERO_CAMPO: numeroCampo,
+                        NUMERO_CAMPO: 25,
                         TIPO_ERROR: 'CD',
                         DESCRIPCION_ERROR: 'B1161',
                         USUARIO_CREACION: '',
@@ -758,11 +757,11 @@ class ValidacionContenidoPH {
             //validacion fila 275 hasta 277 lista
             if (camposFila.CAMPO_24 == '0') {
                 if (camposFila.CAMPO_25 >= 5 || camposFila.CAMPO_25 == '5555' || camposFila.CAMPO_25 == '3333') {
-                    arrayCamposBuenos.push(campofila);
+                    arrayCamposBuenos.push({ 'CAMPO_25': camposFila.CAMPO_25 });
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
                     var hemofilia: Hemofiliaerror = {
-                        NUMERO_CAMPO: numeroCampo,
+                        NUMERO_CAMPO: 25,
                         TIPO_ERROR: 'CD',
                         DESCRIPCION_ERROR: 'B1563',
                         USUARIO_CREACION: '',
@@ -776,10 +775,10 @@ class ValidacionContenidoPH {
                 }
             }
 
-            //validacion fila 278 y 279 lista
+            //validacion fila 278 y 279 pendiente
             if (camposFila.CAMPO_24 == '9999') {
                 if (camposFila.CAMPO_31 == '9999' && camposFila.CAMPO_25 == '9999') {
-                    arrayCamposBuenos.push(campofila);
+                    arrayCamposBuenos.push({ 'CAMPO_25': camposFila.CAMPO_25 }, { 'CAMPO_31': camposFila.CAMPO_31 });
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
                     var hemofilia: Hemofiliaerror = {
@@ -799,11 +798,11 @@ class ValidacionContenidoPH {
 
             //validacion fila 280 lista
             if (camposFila.CAMPO_24 == '7' && camposFila.CAMPO_23 == '2') {
-                arrayCamposBuenos.push(campofila);
+                arrayCamposBuenos.push({ 'CAMPO_23': camposFila.CAMPO_23 });
                 _this.totalCamposBuenos = this.totalCamposBuenos + 1;
             } else {
                 var hemofilia: Hemofiliaerror = {
-                    NUMERO_CAMPO: numeroCampo,
+                    NUMERO_CAMPO: 23,
                     TIPO_ERROR: 'CD',
                     DESCRIPCION_ERROR: 'B2554',
                     USUARIO_CREACION: '',
@@ -818,11 +817,11 @@ class ValidacionContenidoPH {
 
             //validacion fila 282 lista
             if (camposFila.CAMPO_25 == '5555' && camposFila.CAMPO_64 == '11') {
-                arrayCamposBuenos.push(campofila);
+                arrayCamposBuenos.push({ 'CAMPO_64': camposFila.CAMPO_64 });
                 _this.totalCamposBuenos = this.totalCamposBuenos + 1;
             } else {
                 var hemofilia: Hemofiliaerror = {
-                    NUMERO_CAMPO: numeroCampo,
+                    NUMERO_CAMPO: 64,
                     TIPO_ERROR: 'CD',
                     DESCRIPCION_ERROR: 'B2393',
                     USUARIO_CREACION: '',
@@ -837,11 +836,11 @@ class ValidacionContenidoPH {
 
             //validacion fila 283 hasta 286 lista
             if (camposFila.CAMPO_25 <= 40 || camposFila.CAMPO_25 == '9999' || camposFila.CAMPO_25 == '5555' || camposFila.CAMPO_25 == '3333') {
-                arrayCamposBuenos.push(campofila);
+                arrayCamposBuenos.push({ 'CAMPO_25': camposFila.CAMPO_25 });
                 _this.totalCamposBuenos = this.totalCamposBuenos + 1;
             } else {
                 var hemofilia: Hemofiliaerror = {
-                    NUMERO_CAMPO: numeroCampo,
+                    NUMERO_CAMPO: 25,
                     TIPO_ERROR: 'CD',
                     DESCRIPCION_ERROR: 'B3990',
                     USUARIO_CREACION: '',
@@ -856,11 +855,11 @@ class ValidacionContenidoPH {
 
             //validacion fila 287 lista
             if (camposFila.CAMPO_25 <= 40 && camposFila.CAMPO_23 <= 1) {
-                arrayCamposBuenos.push(campofila);
+                arrayCamposBuenos.push({ 'CAMPO_23': camposFila.CAMPO_23 });
                 _this.totalCamposBuenos = this.totalCamposBuenos + 1;
             } else {
                 var hemofilia: Hemofiliaerror = {
-                    NUMERO_CAMPO: numeroCampo,
+                    NUMERO_CAMPO: 23,
                     TIPO_ERROR: 'CD',
                     DESCRIPCION_ERROR: 'B3991',
                     USUARIO_CREACION: '',
@@ -876,11 +875,11 @@ class ValidacionContenidoPH {
 
             //validacion fila 288 lista
             if (camposFila.CAMPO_25 == '9999' && camposFila.CAMPO_23 >= 2) {
-                arrayCamposBuenos.push(campofila);
+                arrayCamposBuenos.push({ 'CAMPO_23': camposFila.CAMPO_23 });
                 _this.totalCamposBuenos = this.totalCamposBuenos + 1;
             } else {
                 var hemofilia: Hemofiliaerror = {
-                    NUMERO_CAMPO: numeroCampo,
+                    NUMERO_CAMPO: 23,
                     TIPO_ERROR: 'CD',
                     DESCRIPCION_ERROR: 'B933',
                     USUARIO_CREACION: '',
@@ -894,11 +893,11 @@ class ValidacionContenidoPH {
             }
             //validacion fila 290 lista
             if (camposFila.CAMPO_26 == '5555' && camposFila.CAMPO_64 == '11') {
-                arrayCamposBuenos.push(campofila);
+                arrayCamposBuenos.push({ 'CAMPO_64': camposFila.CAMPO_64 });
                 _this.totalCamposBuenos = this.totalCamposBuenos + 1;
             } else {
                 var hemofilia: Hemofiliaerror = {
-                    NUMERO_CAMPO: numeroCampo,
+                    NUMERO_CAMPO: 64,
                     TIPO_ERROR: 'CD',
                     DESCRIPCION_ERROR: 'B2394',
                     USUARIO_CREACION: '',
@@ -913,11 +912,11 @@ class ValidacionContenidoPH {
 
             //validacion fila 291 y 292 lista
             if (camposFila.CAMPO_26 <= 2 || camposFila.CAMPO_26 == '5555') {
-                arrayCamposBuenos.push(campofila);
+                arrayCamposBuenos.push({ 'CAMPO_26': camposFila.CAMPO_26 });
                 _this.totalCamposBuenos = this.totalCamposBuenos + 1;
             } else {
                 var hemofilia: Hemofiliaerror = {
-                    NUMERO_CAMPO: numeroCampo,
+                    NUMERO_CAMPO: 26,
                     TIPO_ERROR: 'CD',
                     DESCRIPCION_ERROR: 'B2395',
                     USUARIO_CREACION: '',
@@ -932,11 +931,11 @@ class ValidacionContenidoPH {
 
             //validacion fila 294 lista
             if (camposFila.CAMPO_27 == '5555' && camposFila.CAMPO_64 == '11') {
-                arrayCamposBuenos.push(campofila);
+                arrayCamposBuenos.push({ 'CAMPO_64': camposFila.CAMPO_64 });
                 _this.totalCamposBuenos = this.totalCamposBuenos + 1;
             } else {
                 var hemofilia: Hemofiliaerror = {
-                    NUMERO_CAMPO: numeroCampo,
+                    NUMERO_CAMPO: 64,
                     TIPO_ERROR: 'CD',
                     DESCRIPCION_ERROR: 'B2396',
                     USUARIO_CREACION: '',
@@ -951,11 +950,11 @@ class ValidacionContenidoPH {
 
             //validacion campo 295 hasta 297 lista
             if (camposFila.CAMPO_27 <= 10 || camposFila.CAMPO_27 == '9999' || camposFila.CAMPO_27 == '5555') {
-                arrayCamposBuenos.push(campofila);
+                arrayCamposBuenos.push({ 'CAMPO_27': camposFila.CAMPO_27 });
                 _this.totalCamposBuenos = this.totalCamposBuenos + 1;
             } else {
                 var hemofilia: Hemofiliaerror = {
-                    NUMERO_CAMPO: numeroCampo,
+                    NUMERO_CAMPO: 27,
                     TIPO_ERROR: 'CD',
                     DESCRIPCION_ERROR: 'B3992',
                     USUARIO_CREACION: '',
@@ -971,11 +970,11 @@ class ValidacionContenidoPH {
             //validacion fila 298 hasta 300 lista
             if (camposFila.CAMPO_27 == '1') {
                 if (camposFila.CAMPO_23 == '1' || camposFila.CAMPO_23 == '2' || camposFila.CAMPO_23 >= 2) {
-                    arrayCamposBuenos.push(campofila);
+                    arrayCamposBuenos.push({ 'CAMPO_23': camposFila.CAMPO_23 });
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
                     var hemofilia: Hemofiliaerror = {
-                        NUMERO_CAMPO: numeroCampo,
+                        NUMERO_CAMPO: 23,
                         TIPO_ERROR: 'CD',
                         DESCRIPCION_ERROR: 'B3993',
                         USUARIO_CREACION: '',
@@ -991,11 +990,11 @@ class ValidacionContenidoPH {
 
             //validacion fila 301 lista
             if (camposFila.CAMPO_27 == '10' && camposFila.CAMPO_23 <= 1) {
-                arrayCamposBuenos.push(campofila);
+                arrayCamposBuenos.push({ 'CAMPO_23': camposFila.CAMPO_23 });
                 _this.totalCamposBuenos = this.totalCamposBuenos + 1;
             } else {
                 var hemofilia: Hemofiliaerror = {
-                    NUMERO_CAMPO: numeroCampo,
+                    NUMERO_CAMPO: 23,
                     TIPO_ERROR: 'CD',
                     DESCRIPCION_ERROR: 'B3994',
                     USUARIO_CREACION: '',
@@ -1010,11 +1009,11 @@ class ValidacionContenidoPH {
 
             //validacion fila 302 lista
             if (camposFila.CAMPO_27 == '6' && camposFila.CAMPO_23 == '3') {
-                arrayCamposBuenos.push(campofila);
+                arrayCamposBuenos.push({ 'CAMPO_23': camposFila.CAMPO_23 });
                 _this.totalCamposBuenos = this.totalCamposBuenos + 1;
             } else {
                 var hemofilia: Hemofiliaerror = {
-                    NUMERO_CAMPO: numeroCampo,
+                    NUMERO_CAMPO: 23,
                     TIPO_ERROR: 'CD',
                     DESCRIPCION_ERROR: 'B3995',
                     USUARIO_CREACION: '',
@@ -1026,10 +1025,10 @@ class ValidacionContenidoPH {
                 arrayCamposMalos.push(hemofilia);
                 _this.totalCamposMalos = this.totalCamposMalos + 1;
             }
-            //validacion fila 303 y 304 lista
+            //validacion fila 303 y 304 pendiente
             if (camposFila.CAMPO_27 == '9999') {
                 if (camposFila.CAMPO_23 > 3 && camposFila.CAMPO_28 == '9999') {
-                    arrayCamposBuenos.push(campofila);
+                    arrayCamposBuenos.push({ 'CAMPO_23': camposFila.CAMPO_23 }, { 'CAMPO_28': camposFila.CAMPO_28 });
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
                     var hemofilia: Hemofiliaerror = {
@@ -1048,12 +1047,11 @@ class ValidacionContenidoPH {
             }
             //validacion fila 306 lista
             if (camposFila.CAMPO_28 == '5555' && camposFila.CAMPO_64 == '11') {
-                arrayCamposBuenos.push(campofila);
-                console.log('validacion fila 306')
+                arrayCamposBuenos.push({ 'CAMPO_64': camposFila.CAMPO_64 });
                 _this.totalCamposBuenos = this.totalCamposBuenos + 1;
             } else {
                 var hemofilia: Hemofiliaerror = {
-                    NUMERO_CAMPO: numeroCampo,
+                    NUMERO_CAMPO: 64,
                     TIPO_ERROR: 'CD',
                     DESCRIPCION_ERROR: 'B2397',
                     USUARIO_CREACION: '',
@@ -1068,11 +1066,11 @@ class ValidacionContenidoPH {
 
             //validacion fila 307 hasta 311 lista
             if (camposFila.CAMPO_28 <= 1 || camposFila.CAMPO_28 == '5' || camposFila.CAMPO_28 == '6' || camposFila.CAMPO_28 == '9999' || camposFila.CAMPO_28 == '5555') {
-                arrayCamposBuenos.push(campofila);
+                arrayCamposBuenos.push({ 'CAMPO_28': camposFila.CAMPO_28 });
                 _this.totalCamposBuenos = this.totalCamposBuenos + 1;
             } else {
                 var hemofilia: Hemofiliaerror = {
-                    NUMERO_CAMPO: numeroCampo,
+                    NUMERO_CAMPO: 28,
                     TIPO_ERROR: 'CD',
                     DESCRIPCION_ERROR: 'B3996',
                     USUARIO_CREACION: '',
@@ -1087,11 +1085,11 @@ class ValidacionContenidoPH {
 
             //validacion fila 312 lista
             if (camposFila.CAMPO_28 == '9999' && camposFila.CAMPO_23 > 3) {
-                arrayCamposBuenos.push(campofila);
+                arrayCamposBuenos.push({ 'CAMPO_23': camposFila.CAMPO_23 });
                 _this.totalCamposBuenos = this.totalCamposBuenos + 1;
             } else {
                 var hemofilia: Hemofiliaerror = {
-                    NUMERO_CAMPO: numeroCampo,
+                    NUMERO_CAMPO: 23,
                     TIPO_ERROR: 'CD',
                     DESCRIPCION_ERROR: 'B936 ',
                     USUARIO_CREACION: '',
@@ -1106,11 +1104,11 @@ class ValidacionContenidoPH {
 
             //validacion fila 314 lista
             if (validacionhemofila.formatofecha(camposFila.CAMPO_29) == validacionhemofila.formatofecha('1845-01-01') && camposFila.CAMPO_23 > 3) {
-                arrayCamposBuenos.push(campofila);
+                arrayCamposBuenos.push({ 'CAMPO_23': camposFila.CAMPO_23 });
                 _this.totalCamposBuenos = this.totalCamposBuenos + 1;
             } else {
                 var hemofilia: Hemofiliaerror = {
-                    NUMERO_CAMPO: numeroCampo,
+                    NUMERO_CAMPO: 23,
                     TIPO_ERROR: 'CD',
                     DESCRIPCION_ERROR: 'B1559',
                     USUARIO_CREACION: '',
@@ -1123,10 +1121,10 @@ class ValidacionContenidoPH {
                 _this.totalCamposMalos = this.totalCamposMalos + 1;
             }
 
-            //validacion fila 315 y 316 lista
+            //validacion fila 315 y 316 pendiente
             if (validacionhemofila.formatofecha(camposFila.CAMPO_29) == validacionhemofila.formatofecha('1800-01-01')) {
                 if (camposFila.CAMPO_64 != '2' && camposFila.CAMPO_23 <= 3) {
-                    arrayCamposBuenos.push(campofila);
+                    arrayCamposBuenos.push({ 'CAMPO_23': camposFila.CAMPO_23 }, { 'CAMPO_64': camposFila.CAMPO_64 });
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
                     var hemofilia: Hemofiliaerror = {
@@ -1146,11 +1144,11 @@ class ValidacionContenidoPH {
 
             //validacion fila 317 lista
             if (validacionhemofila.formatofecha(camposFila.CAMPO_29) == validacionhemofila.formatofecha('1846-01-01') && camposFila.CAMPO_64 == '11') {
-                arrayCamposBuenos.push(campofila);
+                arrayCamposBuenos.push({ 'CAMPO_64': camposFila.CAMPO_64 });
                 _this.totalCamposBuenos = this.totalCamposBuenos + 1;
             } else {
                 var hemofilia: Hemofiliaerror = {
-                    NUMERO_CAMPO: numeroCampo,
+                    NUMERO_CAMPO: 64,
                     TIPO_ERROR: 'CD',
                     DESCRIPCION_ERROR: 'B2398',
                     USUARIO_CREACION: '',
@@ -1164,11 +1162,11 @@ class ValidacionContenidoPH {
             }
             //validacion fila 318 lista
             if (validacionhemofila.formatofecha(camposFila.CAMPO_29) == validacionhemofila.formatofecha('1811-01-01') && camposFila.CAMPO_23 <= 3) {
-                arrayCamposBuenos.push(campofila);
+                arrayCamposBuenos.push({ 'CAMPO_23': camposFila.CAMPO_23 });
                 _this.totalCamposBuenos = this.totalCamposBuenos + 1;
             } else {
                 var hemofilia: Hemofiliaerror = {
-                    NUMERO_CAMPO: numeroCampo,
+                    NUMERO_CAMPO: 23,
                     TIPO_ERROR: 'CD',
                     DESCRIPCION_ERROR: 'B3997',
                     USUARIO_CREACION: '',
@@ -1183,11 +1181,11 @@ class ValidacionContenidoPH {
 
             //validacion fila 319 hasta 324
             if (validacionhemofila.formatofecha(camposFila.CAMPO_29) <= validacionhemofila.formatofecha(camposFila.CAMPO_64) && validacionhemofila.formatofecha(camposFila.CAMPO_29) >= validacionhemofila.formatofecha(camposFila.CAMPO_21) || validacionhemofila.formatofecha(camposFila.CAMPO_29) == validacionhemofila.formatofecha('1800-01-01') || validacionhemofila.formatofecha(camposFila.CAMPO_29) == validacionhemofila.formatofecha('1845-01-01') || validacionhemofila.formatofecha(camposFila.CAMPO_29) == validacionhemofila.formatofecha('1811-01-01') || validacionhemofila.formatofecha(camposFila.CAMPO_29) == validacionhemofila.formatofecha('1846-01-01')) {
-                arrayCamposBuenos.push(campofila);
+                arrayCamposBuenos.push({ 'CAMPO_29': camposFila.CAMPO_29 });
                 _this.totalCamposBuenos = this.totalCamposBuenos + 1;
             } else {
                 var hemofilia: Hemofiliaerror = {
-                    NUMERO_CAMPO: numeroCampo,
+                    NUMERO_CAMPO: 29,
                     TIPO_ERROR: 'CD',
                     DESCRIPCION_ERROR: 'B902',
                     USUARIO_CREACION: '',
@@ -1201,10 +1199,10 @@ class ValidacionContenidoPH {
             }
 
 
-            //validacion fila 326 hasta 336 lista
+            //validacion fila 326 hasta 336 pendiente
             if (camposFila.CAMPO_30 == '7') {
                 if (camposFila.CAMPO_31 == '6' && camposFila.CAMPO_32_1 == '9998' && camposFila.CAMPO_32_2 == '0' && camposFila.CAMPO_32_3 == '0' && camposFila.CAMPO_32_4 == '0' && camposFila.CAMPO_33 == '4' && camposFila.CAMPO_34 == '2' && camposFila.CAMPO_35 == '0' && camposFila.CAMPO_36 == '0' && camposFila.CAMPO_37 == '0' && camposFila.CAMPO_38 == '0') {
-                    arrayCamposBuenos.push(campofila);
+                    arrayCamposBuenos.push({ 'CAMPO_32_1': camposFila.CAMPO_32_1 }, { 'CAMPO_32_2': camposFila.CAMPO_32_2 }, { 'CAMPO_32_3': camposFila.CAMPO_32_3 }, { 'CAMPO_32_4': camposFila.CAMPO_32_4 }, { 'CAMPO_33': camposFila.CAMPO_33 }, { 'CAMPO_34': camposFila.CAMPO_34 }, { 'CAMPO_35': camposFila.CAMPO_35 }, { 'CAMPO_36': camposFila.CAMPO_36 }, { 'CAMPO_37': camposFila.CAMPO_37 }, { 'CAMPO_38': camposFila.CAMPO_38 }, { 'CAMPO_31': camposFila.CAMPO_31 });
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
                     var hemofilia: Hemofiliaerror = {
@@ -1225,11 +1223,11 @@ class ValidacionContenidoPH {
             //validacion fila 337 hasta 339 lista
             if (camposFila.CAMPO_30 <= 1) {
                 if (camposFila.CAMPO_60 > 200000 || camposFila.CAMPO_60 == '0' || camposFila.CAMPO_60 == '99') {
-                    arrayCamposBuenos.push(campofila);
+                    arrayCamposBuenos.push({ 'CAMPO_60': camposFila.CAMPO_60 });
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
                     var hemofilia: Hemofiliaerror = {
-                        NUMERO_CAMPO: numeroCampo,
+                        NUMERO_CAMPO: 60,
                         TIPO_ERROR: 'CD',
                         DESCRIPCION_ERROR: 'B2453',
                         USUARIO_CREACION: '',
@@ -1243,10 +1241,10 @@ class ValidacionContenidoPH {
                 }
             }
 
-            //validacion fila 340 hasta 342 lista
+            //validacion fila 340 hasta 342 pendiente
             if (camposFila.CAMPO_30 == '8') {
                 if (camposFila.CAMPO_61 > 1500000 && camposFila.CAMPO_60 > 200000 || camposFila.CAMPO_61 == '99') {
-                    arrayCamposBuenos.push(campofila);
+                    arrayCamposBuenos.push({ 'CAMPO_61': camposFila.CAMPO_61 }, { 'CAMPO_60': camposFila.CAMPO_60 });
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
                     var hemofilia: Hemofiliaerror = {
@@ -1267,7 +1265,7 @@ class ValidacionContenidoPH {
             //validacion fila 343 hasta 345 lista
             if (camposFila.CAMPO_30 == '11') {
                 if (camposFila.CAMPO_61 > 1000000 && camposFila.CAMPO_60 > 200000 || camposFila.CAMPO_61 == '99') {
-                    arrayCamposBuenos.push(campofila);
+                    arrayCamposBuenos.push({ 'CAMPO_61': camposFila.CAMPO_61 }, { 'CAMPO_60': camposFila.CAMPO_60 });
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
                     var hemofilia: Hemofiliaerror = {
@@ -1288,11 +1286,11 @@ class ValidacionContenidoPH {
             //validacion fila 346 y 347 lista
             if (camposFila.CAMPO_30 == '2') {
                 if (camposFila.CAMPO_61 > 1500000 || camposFila.CAMPO_61 == '99') {
-                    arrayCamposBuenos.push(campofila);
+                    arrayCamposBuenos.push({ 'CAMPO_61': camposFila.CAMPO_61 });
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
                     var hemofilia: Hemofiliaerror = {
-                        NUMERO_CAMPO: numeroCampo,
+                        NUMERO_CAMPO: 61,
                         TIPO_ERROR: 'CD',
                         DESCRIPCION_ERROR: 'B2461',
                         USUARIO_CREACION: '',
@@ -1309,11 +1307,11 @@ class ValidacionContenidoPH {
             //validacion fila 348 y 349 lista
             if (camposFila.CAMPO_30 == '3') {
                 if (camposFila.CAMPO_61 > 1000000 || camposFila.CAMPO_61 == '99') {
-                    arrayCamposBuenos.push(campofila);
+                    arrayCamposBuenos.push({ 'CAMPO_61': camposFila.CAMPO_61 });
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
                     var hemofilia: Hemofiliaerror = {
-                        NUMERO_CAMPO: numeroCampo,
+                        NUMERO_CAMPO: 61,
                         TIPO_ERROR: 'CD',
                         DESCRIPCION_ERROR: 'B2462',
                         USUARIO_CREACION: '',
@@ -1327,10 +1325,10 @@ class ValidacionContenidoPH {
                 }
             }
 
-            //validacion fila 350 hasta 352 lista
+            //validacion fila 350 hasta 352 pendiente
             if (camposFila.CAMPO_30 == '9') {
                 if (camposFila.CAMPO_61 > 1000000 && camposFila.CAMPO_60 > 200000 || camposFila.CAMPO_61 == '99') {
-                    arrayCamposBuenos.push(campofila);
+                    arrayCamposBuenos.push({ 'CAMPO_61': camposFila.CAMPO_61 }, { 'CAMPO_60': camposFila.CAMPO_60 });
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
                     var hemofilia: Hemofiliaerror = {
@@ -1348,10 +1346,10 @@ class ValidacionContenidoPH {
                 }
             }
 
-            //validacion fila 353 hasta 355 lista
+            //validacion fila 353 hasta 355 pendiente
             if (camposFila.CAMPO_30 == '10') {
                 if (camposFila.CAMPO_61 > 1500000 && camposFila.CAMPO_60 > 200000 || camposFila.CAMPO_61 == '99') {
-                    arrayCamposBuenos.push(campofila);
+                    arrayCamposBuenos.push({ 'CAMPO_61': camposFila.CAMPO_61 }, { 'CAMPO_60': camposFila.CAMPO_60 });
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
                     var hemofilia: Hemofiliaerror = {
@@ -1371,11 +1369,11 @@ class ValidacionContenidoPH {
 
             //validacion fila 356 hasta 362
             if (camposFila.CAMPO_30 < 13 || camposFila.CAMPO_30 == '15' || camposFila.CAMPO_30 == '16' || camposFila.CAMPO_30 == '17' || camposFila.CAMPO_30 == '18' || camposFila.CAMPO_30 == '9996' || camposFila.CAMPO_30 == '9999') {
-                arrayCamposBuenos.push(campofila);
+                arrayCamposBuenos.push({ 'CAMPO_30': camposFila.CAMPO_30 });
                 _this.totalCamposBuenos = this.totalCamposBuenos + 1;
             } else {
                 var hemofilia: Hemofiliaerror = {
-                    NUMERO_CAMPO: numeroCampo,
+                    NUMERO_CAMPO: 30,
                     TIPO_ERROR: 'CD',
                     DESCRIPCION_ERROR: 'B3998',
                     USUARIO_CREACION: '',
@@ -1391,11 +1389,11 @@ class ValidacionContenidoPH {
             //validacion fila 363 hasta 365 lista
             if (camposFila.CAMPO_30 == '0') {
                 if (camposFila.CAMPO_23 == '0' || camposFila.CAMPO_23 == '3' || camposFila.CAMPO_23 == '2') {
-                    arrayCamposBuenos.push(campofila);
+                    arrayCamposBuenos.push({ 'CAMPO_23': camposFila.CAMPO_23 });
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
                     var hemofilia: Hemofiliaerror = {
-                        NUMERO_CAMPO: numeroCampo,
+                        NUMERO_CAMPO: 23,
                         TIPO_ERROR: 'CD',
                         DESCRIPCION_ERROR: 'B3999',
                         USUARIO_CREACION: '',
@@ -1412,11 +1410,11 @@ class ValidacionContenidoPH {
             //validacion fila 366 y 367 lista
             if (camposFila.CAMPO_30 == '1') {
                 if (camposFila.CAMPO_23 == '1' || camposFila.CAMPO_23 == '2') {
-                    arrayCamposBuenos.push(campofila);
+                    arrayCamposBuenos.push({ 'CAMPO_23': camposFila.CAMPO_23 });
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
                     var hemofilia: Hemofiliaerror = {
-                        NUMERO_CAMPO: numeroCampo,
+                        NUMERO_CAMPO: 23,
                         TIPO_ERROR: 'CD',
                         DESCRIPCION_ERROR: 'B4000',
                         USUARIO_CREACION: '',
@@ -1430,10 +1428,10 @@ class ValidacionContenidoPH {
                 }
             }
 
-            //validacion fila 368 hasta 370 lista
+            //validacion fila 368 hasta 370 pendiente 
             if (camposFila.CAMPO_30 == '2') {
                 if (camposFila.CAMPO_23 <= 1 && camposFila.CAMPO_48 <= 3 || camposFila.CAMPO_48 == '5555') {
-                    arrayCamposBuenos.push(campofila);
+                    arrayCamposBuenos.push({ 'CAMPO_23': camposFila.CAMPO_23 }, { 'CAMPO_48': camposFila.CAMPO_48 });
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
                     var hemofilia: Hemofiliaerror = {
@@ -1451,10 +1449,10 @@ class ValidacionContenidoPH {
                 }
             }
 
-            //validacion fila 371 y 372 lista
+            //validacion fila 371 y 372 pendiente
             if (camposFila.CAMPO_30 == '3') {
                 if (camposFila.CAMPO_23 <= 1 && camposFila.CAMPO_48 != '2') {
-                    arrayCamposBuenos.push(campofila);
+                    arrayCamposBuenos.push({ 'CAMPO_23': camposFila.CAMPO_23 }, { 'CAMPO_48': camposFila.CAMPO_48 });
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
                     var hemofilia: Hemofiliaerror = {
@@ -1474,11 +1472,11 @@ class ValidacionContenidoPH {
 
             //validacion fila 373 lista
             if (camposFila.CAMPO_30 == '7' && camposFila.CAMPO_23 <= 3) {
-                arrayCamposBuenos.push(campofila);
+                arrayCamposBuenos.push({ 'CAMPO_23': camposFila.CAMPO_23 });
                 _this.totalCamposBuenos = this.totalCamposBuenos + 1;
             } else {
                 var hemofilia: Hemofiliaerror = {
-                    NUMERO_CAMPO: numeroCampo,
+                    NUMERO_CAMPO: 23,
                     TIPO_ERROR: 'CD',
                     DESCRIPCION_ERROR: 'B4003',
                     USUARIO_CREACION: '',
@@ -1491,10 +1489,10 @@ class ValidacionContenidoPH {
                 _this.totalCamposMalos = this.totalCamposMalos + 1;
             }
 
-            //validacion campo 374 y 375 lista
+            //validacion campo 374 y 375 pendiente
             if (camposFila.CAMPO_30 == '8') {
                 if (camposFila.CAMPO_23 == '0' && camposFila.CAMPO_48 != '2') {
-                    arrayCamposBuenos.push(campofila);
+                    arrayCamposBuenos.push({ 'CAMPO_23': camposFila.CAMPO_23 }, { 'CAMPO_48': camposFila.CAMPO_48 });
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
                     var hemofilia: Hemofiliaerror = {
@@ -1512,10 +1510,10 @@ class ValidacionContenidoPH {
                 }
             }
 
-            //validacion fila 376 y 377 lista
+            //validacion fila 376 y 377 pendiente
             if (camposFila.CAMPO_30 == '9') {
                 if (camposFila.CAMPO_23 == '0' && camposFila.CAMPO_48 != '2') {
-                    arrayCamposBuenos.push(campofila);
+                    arrayCamposBuenos.push({ 'CAMPO_23': camposFila.CAMPO_23 }, { 'CAMPO_48': camposFila.CAMPO_48 });
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
                     var hemofilia: Hemofiliaerror = {
@@ -1533,10 +1531,10 @@ class ValidacionContenidoPH {
                 }
             }
 
-            //validacion fila 378 y 379 lista
+            //validacion fila 378 y 379 pendiente
             if (camposFila.CAMPO_30 == '10') {
                 if (camposFila.CAMPO_23 == '1' && camposFila.CAMPO_48 != '2') {
-                    arrayCamposBuenos.push(campofila);
+                    arrayCamposBuenos.push({ 'CAMPO_23': camposFila.CAMPO_23 }, { 'CAMPO_48': camposFila.CAMPO_48 });
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
                     var hemofilia: Hemofiliaerror = {
@@ -1554,10 +1552,10 @@ class ValidacionContenidoPH {
                 }
             }
 
-            //validacion fila 380 y 381 lista
+            //validacion fila 380 y 381 pendiente
             if (camposFila.CAMPO_30 == '11') {
                 if (camposFila.CAMPO_23 == '1' && camposFila.CAMPO_48 != '2') {
-                    arrayCamposBuenos.push(campofila);
+                    arrayCamposBuenos.push({ 'CAMPO_23': camposFila.CAMPO_23 }, { 'CAMPO_48': camposFila.CAMPO_48 });
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
                     var hemofilia: Hemofiliaerror = {
@@ -1577,11 +1575,11 @@ class ValidacionContenidoPH {
 
             //validacion fila 382 lista
             if (camposFila.CAMPO_30 == '12' && camposFila.CAMPO_23 == '3') {
-                arrayCamposBuenos.push(campofila);
+                arrayCamposBuenos.push({ 'CAMPO_23': camposFila.CAMPO_23 });
                 _this.totalCamposBuenos = this.totalCamposBuenos + 1;
             } else {
                 var hemofilia: Hemofiliaerror = {
-                    NUMERO_CAMPO: numeroCampo,
+                    NUMERO_CAMPO: 23,
                     TIPO_ERROR: 'CD',
                     DESCRIPCION_ERROR: 'B4008',
                     USUARIO_CREACION: '',
@@ -1594,10 +1592,10 @@ class ValidacionContenidoPH {
                 _this.totalCamposMalos = this.totalCamposMalos + 1;
             }
 
-            // validacion fila 383 hasta 385 lista
+            // validacion fila 383 hasta 385 pendoente
             if (camposFila.CAMPO_30 == '15') {
                 if (camposFila.CAMPO_23 <= 1 && camposFila.CAMPO_48 <= 3 || camposFila.CAMPO_48 == '5555') {
-                    arrayCamposBuenos.push(campofila);
+                    arrayCamposBuenos.push({ 'CAMPO_23': camposFila.CAMPO_23 }, { 'CAMPO_48': camposFila.CAMPO_48 });
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
                     var hemofilia: Hemofiliaerror = {
@@ -1615,10 +1613,10 @@ class ValidacionContenidoPH {
                 }
             }
 
-            //validacion fila 386 y 387 lista
+            //validacion fila 386 y 387 pendiente
             if (camposFila.CAMPO_30 == '16') {
                 if (camposFila.CAMPO_23 == '0' && camposFila.CAMPO_48 <= 2) {
-                    arrayCamposBuenos.push(campofila);
+                    arrayCamposBuenos.push({ 'CAMPO_23': camposFila.CAMPO_23 }, { 'CAMPO_48': camposFila.CAMPO_48 });
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
                     var hemofilia: Hemofiliaerror = {
@@ -1636,10 +1634,10 @@ class ValidacionContenidoPH {
                 }
             }
 
-            //validacion fila 388 y 389 lista
+            //validacion fila 388 y 389 pendiente
             if (camposFila.CAMPO_30 == '17') {
                 if (camposFila.CAMPO_23 <= 1 && camposFila.CAMPO_48 <= 2) {
-                    arrayCamposBuenos.push(campofila);
+                    arrayCamposBuenos.push({ 'CAMPO_23': camposFila.CAMPO_23 }, { 'CAMPO_48': camposFila.CAMPO_48 });
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
                     var hemofilia: Hemofiliaerror = {
@@ -1657,10 +1655,10 @@ class ValidacionContenidoPH {
                 }
             }
 
-            //validacion fila 390 y 391 lista
+            //validacion fila 390 y 391 pendiente
             if (camposFila.CAMPO_30 == '18') {
                 if (camposFila.CAMPO_23 <= 1 && camposFila.CAMPO_48 <= 2) {
-                    arrayCamposBuenos.push(campofila);
+                    arrayCamposBuenos.push({ 'CAMPO_23': camposFila.CAMPO_23 }, { 'CAMPO_48': camposFila.CAMPO_48 });
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
                     var hemofilia: Hemofiliaerror = {
@@ -1678,10 +1676,10 @@ class ValidacionContenidoPH {
                 }
             }
 
-            //validacion fila 392 y 393 lista
+            //validacion fila 392 y 393 pendiente
             if (camposFila.CAMPO_30 == '9996') {
                 if (camposFila.CAMPO_23 <= 3 && camposFila.CAMPO_64 == '9') {
-                    arrayCamposBuenos.push(campofila);
+                    arrayCamposBuenos.push({ 'CAMPO_23': camposFila.CAMPO_23 }, { 'CAMPO_48': camposFila.CAMPO_48 });
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
                     var hemofilia: Hemofiliaerror = {
@@ -1699,10 +1697,10 @@ class ValidacionContenidoPH {
                 }
             }
 
-            //validacion fila 394 y 395 lista
+            //validacion fila 394 y 395 pendiente
             if (camposFila.CAMPO_30 == '9999') {
                 if (camposFila.CAMPO_23 > 3 && camposFila.CAMPO_64 == '9') {
-                    arrayCamposBuenos.push(campofila);
+                    arrayCamposBuenos.push({ 'CAMPO_23': camposFila.CAMPO_23 }, { 'CAMPO_48': camposFila.CAMPO_48 });
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
                     var hemofilia: Hemofiliaerror = {
@@ -1723,11 +1721,11 @@ class ValidacionContenidoPH {
             //validacion fila 396 hasta 398
             if (camposFila.CAMPO_30 == '12') {
                 if (camposFila.CAMPO_60 > 2000000 || camposFila.CAMPO_60 == '99' || camposFila.CAMPO_60 == '933500') {
-                    arrayCamposBuenos.push(campofila);
+                    arrayCamposBuenos.push({ 'CAMPO_60': camposFila.CAMPO_60 });
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
                     var hemofilia: Hemofiliaerror = {
-                        NUMERO_CAMPO: numeroCampo,
+                        NUMERO_CAMPO: 60,
                         TIPO_ERROR: 'CD',
                         DESCRIPCION_ERROR: 'B4016',
                         USUARIO_CREACION: '',
@@ -1741,11 +1739,11 @@ class ValidacionContenidoPH {
                 }
             }
 
-            //validacion fila 399 y 400 lista
+            //validacion fila 399 y 400 pendiente
             if (camposFila.CAMPO_30 == '15') {
                 console.log(camposFila.CAMPO_62)
                 if (camposFila.CAMPO_62 > 4000000 && camposFila.CAMPO_34 == '3') {
-                    arrayCamposBuenos.push(campofila);
+                    arrayCamposBuenos.push({ 'CAMPO_62': camposFila.CAMPO_62 }, { 'CAMPO_34': camposFila.CAMPO_34 });
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
                     var hemofilia: Hemofiliaerror = {
@@ -1765,11 +1763,11 @@ class ValidacionContenidoPH {
 
             //validacion fila 401 lista
             if (camposFila.CAMPO_30 == '16' && camposFila.CAMPO_62 > 4000000) {
-                arrayCamposBuenos.push(campofila);
+                arrayCamposBuenos.push({ 'CAMPO_62': camposFila.CAMPO_62 });
                 _this.totalCamposBuenos = this.totalCamposBuenos + 1;
             } else {
                 var hemofilia: Hemofiliaerror = {
-                    NUMERO_CAMPO: numeroCampo,
+                    NUMERO_CAMPO: 62,
                     TIPO_ERROR: 'CD',
                     DESCRIPCION_ERROR: 'B4018',
                     USUARIO_CREACION: '',
@@ -1784,11 +1782,11 @@ class ValidacionContenidoPH {
 
             // validacion fila 402 lista
             if (camposFila.CAMPO_30 == '17' && camposFila.CAMPO_62 > 4000000) {
-                arrayCamposBuenos.push(campofila);
+                arrayCamposBuenos.push({ 'CAMPO_62': camposFila.CAMPO_62 });
                 _this.totalCamposBuenos = this.totalCamposBuenos + 1;
             } else {
                 var hemofilia: Hemofiliaerror = {
-                    NUMERO_CAMPO: numeroCampo,
+                    NUMERO_CAMPO: 62,
                     TIPO_ERROR: 'CD',
                     DESCRIPCION_ERROR: 'B4019',
                     USUARIO_CREACION: '',
@@ -1803,11 +1801,11 @@ class ValidacionContenidoPH {
 
             //validacion fila 403 lista
             if (camposFila.CAMPO_30 == '18' && camposFila.CAMPO_62 > 4000000) {
-                arrayCamposBuenos.push(campofila);
+                arrayCamposBuenos.push({ 'CAMPO_62': camposFila.CAMPO_62 });
                 _this.totalCamposBuenos = this.totalCamposBuenos + 1;
             } else {
                 var hemofilia: Hemofiliaerror = {
-                    NUMERO_CAMPO: numeroCampo,
+                    NUMERO_CAMPO: 62,
                     TIPO_ERROR: 'CD',
                     DESCRIPCION_ERROR: 'B4020',
                     USUARIO_CREACION: '',
@@ -1820,10 +1818,10 @@ class ValidacionContenidoPH {
                 _this.totalCamposMalos = this.totalCamposMalos + 1;
             }
 
-            //validacion fila 404 y 405  lista
+            //validacion fila 404 y 405  pendiente
             if (camposFila.CAMPO_30 == '9996') {
                 if (camposFila.CAMPO_60 == '0' && camposFila.CAMPO_61 == '0') {
-                    arrayCamposBuenos.push(campofila);
+                    arrayCamposBuenos.push({ 'CAMPO_60': camposFila.CAMPO_60 }, { 'CAMPO_61': camposFila.CAMPO_61 });
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
                     var hemofilia: Hemofiliaerror = {
@@ -1841,10 +1839,10 @@ class ValidacionContenidoPH {
                 }
             }
 
-            //validacion fila 406 y 407 lista
+            //validacion fila 406 y 407 pendiente
             if (camposFila.CAMPO_30 == '6') {
                 if (camposFila.CAMPO_32 == '0' && camposFila.CAMPO_31 == '0') {
-                    arrayCamposBuenos.push(campofila);
+                    arrayCamposBuenos.push({ 'CAMPO_32': camposFila.CAMPO_32 }, { 'CAMPO_31': camposFila.CAMPO_31 });
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
                     var hemofilia: Hemofiliaerror = {
@@ -1862,11 +1860,11 @@ class ValidacionContenidoPH {
                 }
             }
 
-            //validacion fila 409 hasta 413 lista
+            //validacion fila 409 hasta 413 pendiente
             if (camposFila.CAMPO_31 == '0') {
                 console.log(camposFila.CAMPO_32_4)
                 if (camposFila.CAMPO_30 != '7' && camposFila.CAMPO_30 != '9999' && camposFila.CAMPO_32_1 == '9998' && camposFila.CAMPO_32_2 == '0' && camposFila.CAMPO_32_4 > 0) {
-                    arrayCamposBuenos.push(campofila);
+                    arrayCamposBuenos.push({ 'CAMPO_30': camposFila.CAMPO_30 }, { 'CAMPO_32_1': camposFila.CAMPO_32_1 }, { 'CAMPO_32_2': camposFila.CAMPO_32_2 }, { 'CAMPO_32_4': camposFila.CAMPO_32_1 });
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
                     var hemofilia: Hemofiliaerror = {
@@ -1884,10 +1882,10 @@ class ValidacionContenidoPH {
                 }
             }
 
-            //validacion fila 414 hasta 420
+            //validacion fila 414 hasta 420 pendiente 
             if (camposFila.CAMPO_31 == '1') {
                 if (camposFila.CAMPO_32_1 < 90 && camposFila.CAMPO_32_2 >= 1 && camposFila.CAMPO_32_2 <= 6 && camposFila.CAMPO_32_3 == 999997 && camposFila.CAMPO_32_4 == '9997' || camposFila.CAMPO_32_3 == '999955' || camposFila.CAMPO_32_4 == '5555') {
-                    arrayCamposBuenos.push(campofila);
+                    arrayCamposBuenos.push({ 'CAMPO_32_1': camposFila.CAMPO_32_1 }, { 'CAMPO_32_2': camposFila.CAMPO_32_2 }, { 'CAMPO_32_3': camposFila.CAMPO_32_3 }, { 'CAMPO_32_4': camposFila.CAMPO_32_4 }, { 'CAMPO_32_3': camposFila.CAMPO_32_3 });
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
                     var hemofilia: Hemofiliaerror = {
@@ -1905,10 +1903,10 @@ class ValidacionContenidoPH {
                 }
             }
 
-            //validacion fila 421 hasta 424 
+            //validacion fila 421 hasta 424 pendiente 
             if (camposFila.CAMPO_31 == '3') {
                 if (camposFila.CAMPO_32_2 == '9997' && camposFila.CAMPO_32_3 == '999997' && camposFila.CAMPO_32_4 == '9997' && camposFila.CAMPO_48_2 == '1') {
-                    arrayCamposBuenos.push(campofila);
+                    arrayCamposBuenos.push({ 'CAMPO_32_2': camposFila.CAMPO_32_2 }, { 'CAMPO_32_3': camposFila.CAMPO_32_3 }, { 'CAMPO_32_4': camposFila.CAMPO_32_4 }, { 'CAMPO_48_2': camposFila.CAMPO_48_2 });
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
                     var hemofilia: Hemofiliaerror = {
@@ -1926,10 +1924,10 @@ class ValidacionContenidoPH {
                 }
             }
 
-            //validacion fila 425 hasta 431 
+            //validacion fila 425 hasta 431  pendiente 
             if (camposFila.CAMPO_31 == '2') {
                 if (camposFila.CAMPO_32_1 < 90 && camposFila.CAMPO_32_2 >= 1 && camposFila.CAMPO_32_3 == 999997 && camposFila.CAMPO_32_4 == '9997' || camposFila.CAMPO_32_3 == '999955' || camposFila.CAMPO_32_4 == '5555') {
-                    arrayCamposBuenos.push(campofila);
+                    arrayCamposBuenos.push({ 'CAMPO_32_1': camposFila.CAMPO_32_1 }, { 'CAMPO_32_2': camposFila.CAMPO_32_2 }, { 'CAMPO_32_3': camposFila.CAMPO_32_3 }, { 'CAMPO_32_4': camposFila.CAMPO_32_4 });
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
                     var hemofilia: Hemofiliaerror = {
@@ -1947,10 +1945,10 @@ class ValidacionContenidoPH {
                 }
             }
 
-            //validacion fila 432 hasta 438
+            //validacion fila 432 hasta 438 pendiente 
             if (camposFila.CAMPO_31 == '4') {
                 if (camposFila.CAMPO_32_1 >= 1 && camposFila.CAMPO_32_2 <= 6 && camposFila.CAMPO_32_3 == '999997' && camposFila.CAMPO_32_4 == '9997' && camposFila.CAMPO_48_2 == '1' || camposFila.CAMPO_32_3 == '999955' || camposFila.CAMPO_32_4 == '5555') {
-                    arrayCamposBuenos.push(campofila);
+                    arrayCamposBuenos.push({ 'CAMPO_32_1': camposFila.CAMPO_32_1 }, { 'CAMPO_32_2': camposFila.CAMPO_32_2 }, { 'CAMPO_32_3': camposFila.CAMPO_32_3 }, { 'CAMPO_32_4': camposFila.CAMPO_32_4 }, { 'CAMPO_48_2': camposFila.CAMPO_48_2 });
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
                     var hemofilia: Hemofiliaerror = {
@@ -1968,10 +1966,10 @@ class ValidacionContenidoPH {
                 }
             }
 
-            // validacion fila 439 a 443
+            // validacion fila 439 a 443 pendiente
             if (camposFila.CAMPO_31 == '5') {
                 if (camposFila.CAMPO_32_1 == '9998' && camposFila.CAMPO_32_2 == '0' && camposFila.CAMPO_32_3 > 0 && camposFila.CAMPO_32_4 > 0 && camposFila.CAMPO_48_2 == '1') {
-                    arrayCamposBuenos.push(campofila);
+                    arrayCamposBuenos.push({ 'CAMPO_32_1': camposFila.CAMPO_32_1 }, { 'CAMPO_32_2': camposFila.CAMPO_32_2 }, { 'CAMPO_32_3': camposFila.CAMPO_32_3 }, { 'CAMPO_32_4': camposFila.CAMPO_32_4 }, { 'CAMPO_48_2': camposFila.CAMPO_48_2 });
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
                     var hemofilia: Hemofiliaerror = {
@@ -1989,14 +1987,14 @@ class ValidacionContenidoPH {
                 }
             }
 
-            //validacion fila 444 hasta 447
+            //validacion fila 444 hasta 447 lista
             if (camposFila.CAMPO_31 < 6) {
                 if (camposFila.CAMPO_34 < 2 || camposFila.CAMPO_34 == '3' || camposFila.CAMPO_34 == '4' || camposFila.CAMPO_34 == '5555') {
-                    arrayCamposBuenos.push(campofila);
+                    arrayCamposBuenos.push({ 'CAMPO_34': camposFila.CAMPO_34 });
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
                     var hemofilia: Hemofiliaerror = {
-                        NUMERO_CAMPO: numeroCampo,
+                        NUMERO_CAMPO: 34,
                         TIPO_ERROR: 'CD',
                         DESCRIPCION_ERROR: 'B1853',
                         USUARIO_CREACION: '',
@@ -2012,11 +2010,11 @@ class ValidacionContenidoPH {
 
             //validacion fila 448
             if (camposFila.CAMPO_31 < 6 && camposFila.CAMPO_35 != '0') {
-                arrayCamposBuenos.push(campofila);
+                arrayCamposBuenos.push({ 'CAMPO_35': camposFila.CAMPO_35 });
                 _this.totalCamposBuenos = this.totalCamposBuenos + 1;
             } else {
                 var hemofilia: Hemofiliaerror = {
-                    NUMERO_CAMPO: numeroCampo,
+                    NUMERO_CAMPO: 6,
                     TIPO_ERROR: 'CD',
                     DESCRIPCION_ERROR: 'B1854',
                     USUARIO_CREACION: '',
@@ -2029,10 +2027,10 @@ class ValidacionContenidoPH {
                 _this.totalCamposMalos = this.totalCamposMalos + 1;
             }
 
-            //valiadacion fila 449 hasta 451
+            //valiadacion fila 449 hasta 451 pendiente
             if (camposFila.CAMPO_31 < 6) {
                 if (camposFila.CAMPO_60 >= 0 || camposFila.CAMPO_61 >= 0 || camposFila.CAMPO_62 >= 0) {
-                    arrayCamposBuenos.push(campofila);
+                    arrayCamposBuenos.push({ 'CAMPO_60': camposFila.CAMPO_60 }, { 'CAMPO_61': camposFila.CAMPO_61 }, { 'CAMPO_62': camposFila.CAMPO_62 });
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
                     var hemofilia: Hemofiliaerror = {
@@ -2050,14 +2048,14 @@ class ValidacionContenidoPH {
                 }
             }
 
-            //validacion fila 452 hasta 454 
+            //validacion fila 452 hasta 454 lista
             if (camposFila.CAMPO_31 == 4) {
                 if (camposFila.CAMPO_30 >= 8 && camposFila.CAMPO_30 <= 11 || camposFila.CAMPO_30 == '16') {
-                    arrayCamposBuenos.push(campofila);
+                    arrayCamposBuenos.push({ 'CAMPO_30': camposFila.CAMPO_30 });
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
                     var hemofilia: Hemofiliaerror = {
-                        NUMERO_CAMPO: numeroCampo,
+                        NUMERO_CAMPO: 30,
                         TIPO_ERROR: 'CD',
                         DESCRIPCION_ERROR: 'B1859',
                         USUARIO_CREACION: '',
@@ -2071,10 +2069,10 @@ class ValidacionContenidoPH {
                 }
             }
 
-            //validacion fila 455 hasta 457
+            //validacion fila 455 hasta 457 pendiente
             if (camposFila.CAMPO_31 == '5') {
                 if (camposFila.CAMPO_30 >= 8 && camposFila.CAMPO_30 <= 11 && camposFila.CAMPO_23 <= 1) {
-                    arrayCamposBuenos.push(campofila);
+                    arrayCamposBuenos.push({ 'CAMPO_30': camposFila.CAMPO_30 }, { 'CAMPO_23': camposFila.CAMPO_23 });
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
                     var hemofilia: Hemofiliaerror = {
@@ -6277,12 +6275,14 @@ class ValidacionContenidoPH {
 
             // }
             //guardar los arreglos campos buenos y malos
-            _this.filas_buenas['fila_' + numFila] = arrayCamposBuenos;
-            _this.filas_malas['fila_' + numFila] = arrayCamposMalos;
-
+            if (arrayCamposBuenos.length == resultEstructuraCampo.length) {
+                _this.filas_buenas['fila_' + numFila] = arrayCamposBuenos;
+            } else {
+                _this.filas_malas['fila_' + numFila] = arrayCamposMalos;
+                // console.log( _this.filas_malas)
+                // console.log('Total campos buenos  -----------------------------------------------')
+            }
         }
-        console.log('Total campos buenos  -----------------------------------------------')
-        console.log(_this.totalCamposBuenos);
     }
 }
 
