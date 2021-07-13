@@ -127,7 +127,7 @@ class ValidacionContenidoPH {
             //validacion fila 10 hasta la fila 13 lista
             if (validacionhemofila.formatofecha(camposFila.CAMPO_7) > validacionhemofila.formatofecha(_this.fechaMenorEdad)) {
                 if (camposFila.CAMPO_56 == '0' || camposFila.CAMPO_56 == '5555' || camposFila.CAMPO_56 == '9996' || camposFila.CAMPO_56 == '9999') {
-                    arrayCamposBuenos.push({ 'CAMPO_56': camposFila.CAMPO_56 });
+                    arrayCamposBuenos.push({'CAMPO_56': camposFila.CAMPO_56});
 
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
@@ -1202,7 +1202,8 @@ class ValidacionContenidoPH {
             //validacion fila 326 hasta 336 pendiente
             if (camposFila.CAMPO_30 == '7') {
                 if (camposFila.CAMPO_31 == '6' && camposFila.CAMPO_32_1 == '9998' && camposFila.CAMPO_32_2 == '0' && camposFila.CAMPO_32_3 == '0' && camposFila.CAMPO_32_4 == '0' && camposFila.CAMPO_33 == '4' && camposFila.CAMPO_34 == '2' && camposFila.CAMPO_35 == '0' && camposFila.CAMPO_36 == '0' && camposFila.CAMPO_37 == '0' && camposFila.CAMPO_38 == '0') {
-                    arrayCamposBuenos.push({ 'CAMPO_32_1': camposFila.CAMPO_32_1 }, { 'CAMPO_32_2': camposFila.CAMPO_32_2 }, { 'CAMPO_32_3': camposFila.CAMPO_32_3 }, { 'CAMPO_32_4': camposFila.CAMPO_32_4 }, { 'CAMPO_33': camposFila.CAMPO_33 }, { 'CAMPO_34': camposFila.CAMPO_34 }, { 'CAMPO_35': camposFila.CAMPO_35 }, { 'CAMPO_36': camposFila.CAMPO_36 }, { 'CAMPO_37': camposFila.CAMPO_37 }, { 'CAMPO_38': camposFila.CAMPO_38 }, { 'CAMPO_31': camposFila.CAMPO_31 });
+                    
+                    arrayCamposBuenos.push({'CAMPO_30': camposFila.CAMPO_30},);
                     _this.totalCamposBuenos = this.totalCamposBuenos + 1;
                 } else {
                     var hemofilia: Hemofiliaerror = {
