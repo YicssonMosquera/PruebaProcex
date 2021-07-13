@@ -19,6 +19,9 @@ export class HemofiliaListarComponent implements OnInit, OnDestroy {
   Hemofilia: any
   hemofiliafiltro = ""
   opcion: any;
+  rows = 10;
+  page = 0;
+  totalRecords: 0;
 
   constructor(private hemofiliaservice: HemofiliaService, private Router: Router, private ngxSpinnerService: NgxUiLoaderService) { }
 
@@ -116,6 +119,13 @@ export class HemofiliaListarComponent implements OnInit, OnDestroy {
       }
     }
 
+  }
+
+  paginador(event){
+    console.log(event);
+    this.rows = event.rows;
+    this.page = event.page;
+    this.CargarRegistroshemofilia();
   }
 
 }

@@ -610,11 +610,13 @@ class CargarOpcioneshemofiliaController {
     }
     CargarRegistrohermofilia2(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
+            const { Tipodocumento, numerodocumeto, VALIDACION_SOPORTE, VALIDACION_REGISTRO } = req.body;
             try {
                 var query = "SELECT ID_CUENTA_HEMOFILIA, CAMPO_1, CAMPO_2, CAMPO_3, CAMPO_4, CAMPO_5, CAMPO_6, CAMPO_7, CAMPO_8, ";
                 query += "case when VALIDACION_REGISTRO='N' then 'Sin validar' when VALIDACION_REGISTRO='S' then 'Registro validado' end as VALIDACION_REGISTRO, ";
                 query += "case when VALIDACION_SOPORTE='1' then 'Sin soportes' when VALIDACION_SOPORTE='2' then 'Soportes incompletos'  when VALIDACION_SOPORTE='3' then 'Soportes completos'  end as VALIDACION_SOPORTE ";
                 query += "from Cuenta_hemofilia";
+                query += " where CAMPO_5 LIKE '%" + Tipodocumento + "%' and CAMPO_6 LIKE '%" + numerodocumeto + "%'  and VALIDACION_REGISTRO LIKE '%" + VALIDACION_REGISTRO + "%'  and VALIDACION_SOPORTE LIKE '%" + VALIDACION_SOPORTE + "%' limit 1,10 ";
                 const Clientes = yield database_1.default.query(query, function (err, result, fields) {
                     if (err)
                         throw err;
@@ -626,6 +628,24 @@ class CargarOpcioneshemofiliaController {
                 res.status(404).json({ error: 'No se puedieron Datos' });
             }
             ;
+        });
+    }
+    getNumeroRegistro() {
+        return __awaiter(this, void 0, void 0, function* () {
+            return new Promise(function (resolev, reject) {
+                try {
+                    var query = "select count(0) as numero_registro from Cuenta_hemofilia;";
+                    database_1.default.query(query, function (err, result, fields) {
+                        if (err)
+                            throw err;
+                        resolev(result);
+                    });
+                }
+                catch (error) {
+                    //res.status(404).json({ error: 'No se pudieron almacenar datos' });
+                }
+                ;
+            });
         });
     }
     CargarRegistrohermofilia3(req, res) {

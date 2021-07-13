@@ -255,10 +255,8 @@ class LogicaDBProcesohemofilia {
         }
     }
     static guardarCamposMalosCd(idCabeza, oFilas) {
-        console.log(oFilas);
         for (const key in oFilas) {
             var arrayFilasMalas = oFilas[key];
-            console.log(arrayFilasMalas);
             for (let index = 0; index < arrayFilasMalas.length; index++) {
                 const campoMalo = arrayFilasMalas[index];
                 campoMalo.ID_PROCESO_HEMOFILIA = idCabeza;

@@ -1,7 +1,7 @@
 export interface Hemofiliaerror {
     ID_PROCESO_HEMOFILIA?:number;
     NUMERO_REGISTRO?:number;
-    NUMERO_CAMPO?:number;
+    NUMERO_CAMPO?:string;
     TIPO_ERROR?:string;
     DESCRIPCION_ERROR?:string;
     USUARIO_CREACION?:string;
