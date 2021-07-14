@@ -21,13 +21,18 @@ export class HemofiliaListarComponent implements OnInit, OnDestroy {
   opcion: any;
   rows = 10;
   page = 0;
-  totalRecords: 0;
+  Tipodocumento = '' 
+  numerodocumeto = ''
+  VALIDACION_SOPORTE = ''
+  VALIDACION_REGISTRO = ''
+  totalRecords
 
   constructor(private hemofiliaservice: HemofiliaService, private Router: Router, private ngxSpinnerService: NgxUiLoaderService) { }
 
   ngOnInit(): void {
     this.dtoptiontables()
     this.CargarRegistroshemofilia();
+    this.numeroRegistro();
   }
 
   dtoptiontables() {
@@ -87,9 +92,15 @@ export class HemofiliaListarComponent implements OnInit, OnDestroy {
   }
 
   CargarRegistroshemofilia() {
-    this.hemofiliaservice.CargarRegistrohemofilia().subscribe(res => {
+    this.hemofiliaservice.CargarRegistrohemofilia(this.Tipodocumento,this.numerodocumeto,this.VALIDACION_SOPORTE,this.VALIDACION_REGISTRO,this.page,this.rows).subscribe(res => {
       this.Hemofilia = res
-      this.dtTrigger.next();
+    })
+  }
+
+  numeroRegistro(){
+    this.hemofiliaservice.numeroRegstro().subscribe(res=>{
+      this.totalRecords = res;
+      console.log(res)
     })
   }
 

@@ -10,8 +10,8 @@ class ValidacionCamposPH {
     numeroErroresCampo: number;
     numMalos: number;
     numBuenos: number;
-    totalCamposMalos : number;
-    archivoFilas : number;
+    totalCamposMalos: number;
+    archivoFilas: number;
 
     constructor() {
         this.data = new Map();
@@ -29,15 +29,15 @@ class ValidacionCamposPH {
         return size;
     }
 
-    getArchivoBueno(){
+    getArchivoBueno() {
         var isBueno = false;
-        if(this.getFilasBuenas() == this.archivoFilas){
+        if (this.getFilasBuenas() == this.archivoFilas) {
             isBueno = true;
         }
         return isBueno;
     }
 
-    getTotalCamposMalos(){
+    getTotalCamposMalos() {
         return this.totalCamposMalos;
     }
 
@@ -56,7 +56,7 @@ class ValidacionCamposPH {
                 objeto.NUM_CAMPO = parseInt(objeto.NOMBRE_CAMPO.replace("CAMPO_", ""));
                 _this.data.set(objeto.NOMBRE_CAMPO, objeto);
             }
-           
+
             //recorrer el array campos que son las filas del file txt
             for (let index = 0; index < arrayCampos.length; index++) {
 
@@ -73,7 +73,7 @@ class ValidacionCamposPH {
                     var nombrecampo = key;
                     var valorcampo = camposFila[key];
                     var campofila = {};
-                    campofila[nombrecampo]=valorcampo;
+                    campofila[nombrecampo] = valorcampo;
                     var validacioncampo = _this.data.get(nombrecampo);
                     var validacion = validacionhemofila;
 
@@ -306,8 +306,75 @@ class ValidacionCamposPH {
                         }
                     }
 
+
+                    if (nombrecampo == "CAMPO_32") {
+                        if (validacion.isObligatorio(validacioncampo.VIGENTE)) {
+                            if (validacion.isMaxMin(valorcampo, validacioncampo.LONGITUD_MINIMA, validacioncampo.LONGITUD_MAXIMA)) {
+                                var hemofilia: Hemofiliaerror = {
+                                    NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                                    TIPO_ERROR: 'CE',
+                                    DESCRIPCION_ERROR: 'Longitud no corresponde campo',
+                                    USUARIO_CREACION: '',
+                                    USUARIO_MODIFICACION: '',
+                                    VALOR_ANTERIOR: '',
+                                    VALOR_NUEVO: '',
+                                    NUMERO_REGISTRO: numFila
+                                }
+                                arrayCamposMalos.push(hemofilia);
+                                _this.totalCamposMalos = this.totalCamposMalos + 1;
+                            } else if (validacion.isrango32(validacioncampo.VALORES, valorcampo)) {
+                                arrayCamposBuenos.push(campofila);
+                            } else {
+                                var hemofilia: Hemofiliaerror = {
+                                    NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                                    TIPO_ERROR: 'CE',
+                                    DESCRIPCION_ERROR: 'Tipo de datos no valido campo',
+                                    USUARIO_CREACION: '',
+                                    USUARIO_MODIFICACION: '',
+                                    VALOR_ANTERIOR: '',
+                                    VALOR_NUEVO: '',
+                                    NUMERO_REGISTRO: numFila
+                                }
+                                arrayCamposMalos.push(hemofilia);
+                                _this.totalCamposMalos = this.totalCamposMalos + 1;
+                            }
+                        } else if (validacion.isnoObligatorio(validacioncampo.VIGENTE)) {
+                            if (validacion.ismax(valorcampo, validacioncampo.LONGITUD_MAXIMA)) {
+                                var hemofilia: Hemofiliaerror = {
+
+                                    NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                                    TIPO_ERROR: 'CE',
+                                    DESCRIPCION_ERROR: 'Longitud no corresponde campo',
+                                    USUARIO_CREACION: '',
+                                    USUARIO_MODIFICACION: '',
+                                    VALOR_ANTERIOR: '',
+                                    VALOR_NUEVO: '',
+                                    NUMERO_REGISTRO: numFila
+                                }
+                                arrayCamposMalos.push(hemofilia);
+                                _this.totalCamposMalos = this.totalCamposMalos + 1;
+                            } else if (validacion.isrango32(validacioncampo.VALORES, valorcampo) || valorcampo == '') {
+                                arrayCamposBuenos.push(campofila);
+                            } else {
+                                var hemofilia: Hemofiliaerror = {
+
+                                    NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
+                                    TIPO_ERROR: 'CE',
+                                    DESCRIPCION_ERROR: 'Tipo de datos no valido campo',
+                                    USUARIO_CREACION: '',
+                                    USUARIO_MODIFICACION: '',
+                                    VALOR_ANTERIOR: '',
+                                    VALOR_NUEVO: '',
+                                    NUMERO_REGISTRO: numFila
+                                }
+                                arrayCamposMalos.push(hemofilia);
+                                _this.totalCamposMalos = this.totalCamposMalos + 1;
+                            }
+                        }
+                    }
+
                     /////////////////////////////////validacion campo 12,23, 32,32_4, 64 /////////////////////////////////////
-                    if (nombrecampo == "CAMPO_12" || nombrecampo == "CAMPO_23" || nombrecampo == "CAMPO_32" || nombrecampo == "CAMPO_32_4" || nombrecampo == "CAMPO_64") {
+                    if (nombrecampo == "CAMPO_12" || nombrecampo == "CAMPO_23" || nombrecampo == "CAMPO_32_4" || nombrecampo == "CAMPO_64") {
                         if (validacion.isObligatorio(validacioncampo.VIGENTE)) {
                             if (validacion.isMaxMin(valorcampo, validacioncampo.LONGITUD_MINIMA, validacioncampo.LONGITUD_MAXIMA)) {
                                 var hemofilia: Hemofiliaerror = {
@@ -327,7 +394,6 @@ class ValidacionCamposPH {
                                 arrayCamposBuenos.push(campofila);
                             } else {
                                 var hemofilia: Hemofiliaerror = {
-
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
                                     TIPO_ERROR: 'CE',
                                     DESCRIPCION_ERROR: 'Tipo de datos no valido campo',
@@ -545,6 +611,7 @@ class ValidacionCamposPH {
                                 _this.totalCamposMalos = this.totalCamposMalos + 1;
                             } else if (validacion.isRangocohincidencia(validacioncampo.VALORES, valorcampo)) {
                                 arrayCamposBuenos.push(campofila);
+
                             } else {
                                 var hemofilia: Hemofiliaerror = {
 
@@ -557,7 +624,9 @@ class ValidacionCamposPH {
                                     VALOR_NUEVO: '',
                                     NUMERO_REGISTRO: numFila
                                 }
+                                
                                 arrayCamposMalos.push(hemofilia);
+                               //aqui es 
                                 _this.totalCamposMalos = this.totalCamposMalos + 1;
                             }
                         } else if (validacion.isnoObligatorio(validacioncampo.VIGENTE)) {
@@ -589,6 +658,7 @@ class ValidacionCamposPH {
                                     VALOR_NUEVO: '',
                                     NUMERO_REGISTRO: numFila
                                 }
+                             
                                 arrayCamposMalos.push(hemofilia);
                                 _this.totalCamposMalos = this.totalCamposMalos + 1;
                             }
@@ -660,14 +730,10 @@ class ValidacionCamposPH {
                                 }
                                 arrayCamposMalos.push(hemofilia);
                                 _this.totalCamposMalos = this.totalCamposMalos + 1;
+                                
                             }
                         }
                     }
-
-
-
-
-
 
                     /////////////////////////////VALIDACION CAMPO 35,36,37,38,39/////////////////////////////////////////////
                     if (nombrecampo == "CAMPO_35" || nombrecampo == "CAMPO_36" || nombrecampo == "CAMPO_37" || nombrecampo == "CAMPO_38" || nombrecampo == "CAMPO_39") {
@@ -745,6 +811,7 @@ class ValidacionCamposPH {
                                 }
                                 arrayCamposMalos.push(hemofilia);
                                 _this.totalCamposMalos = this.totalCamposMalos + 1;
+                                
                             }
                         } else if (validacion.isnoObligatorio(validacioncampo.VIGENTE)) {
                             if (validacion.ismax(valorcampo, validacioncampo.LONGITUD_MAXIMA)) {
@@ -777,6 +844,7 @@ class ValidacionCamposPH {
                                 }
                                 arrayCamposMalos.push(hemofilia);
                                 _this.totalCamposMalos = this.totalCamposMalos + 1;
+                               
                             }
                         }
                     }
@@ -813,6 +881,7 @@ class ValidacionCamposPH {
                                 }
                                 arrayCamposMalos.push(hemofilia);
                                 _this.totalCamposMalos = this.totalCamposMalos + 1;
+                             
                             }
                         } else if (validacion.isnoObligatorio(validacioncampo.VIGENTE)) {
                             if (validacion.ismax(valorcampo, validacioncampo.LONGITUD_MAXIMA)) {
@@ -923,6 +992,7 @@ class ValidacionCamposPH {
                                 }
                                 arrayCamposMalos.push(hemofilia);
                                 _this.totalCamposMalos = this.totalCamposMalos + 1;
+                               
                             }
                         } else if (validacion.isnoObligatorio(validacioncampo.VIGENTE)) {
                             if (validacion.ismax(valorcampo, validacioncampo.LONGITUD_MAXIMA)) {
@@ -953,6 +1023,7 @@ class ValidacionCamposPH {
                                     VALOR_NUEVO: '',
                                     NUMERO_REGISTRO: numFila
                                 }
+                             
                                 arrayCamposMalos.push(hemofilia);
                                 _this.totalCamposMalos = this.totalCamposMalos + 1;
                             }
@@ -1002,10 +1073,13 @@ class ValidacionCamposPH {
                 }
 
                 //guardar los arreglos campos buenos y malos
+                console.log(resultEstructuraCampo.length);
                 if (arrayCamposBuenos.length == resultEstructuraCampo.length) {
                     _this.filas_buenas['fila_' + numFila] = camposFila;
+                    console.log(_this.filas_buenas)
                 } else {
                     _this.filas_malas['fila_' + numFila] = arrayCamposMalos;
+                    console.log('estamos dentro errrrr')
                 }
 
             }

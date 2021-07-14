@@ -3,7 +3,7 @@ import pool from '../database'
 
 
 
-class CargarOpcioneshemofiliaController{
+class CargarOpcioneshemofiliaController {
 
     public async CargarTipodocumento5(req: Request, res: Response) {
         try {
@@ -408,7 +408,7 @@ class CargarOpcioneshemofiliaController{
     }
     public async Codigovalidohabilitacionips22(req: Request, res: Response) {
         try {
-            const Clientes = await pool.query("select BD_ips.CODIGO_IPS, BD_ips.NOMBRE_IPS from BD_ips" , function (err, result, fields) {
+            const Clientes = await pool.query("select BD_ips.CODIGO_IPS, BD_ips.NOMBRE_IPS from BD_ips", function (err, result, fields) {
                 if (err) throw err;
                 res.json(result);
                 console.log(result)
@@ -421,7 +421,7 @@ class CargarOpcioneshemofiliaController{
 
     public async CodigoCUM35363738(req: Request, res: Response) {
         try {
-            const Clientes = await pool.query("select BD_cups.CODIGO_CUP, BD_cups.DESCRIPCION from BD_cups " , function (err, result, fields) {
+            const Clientes = await pool.query("select BD_cups.CODIGO_CUP, BD_cups.DESCRIPCION from BD_cups ", function (err, result, fields) {
                 if (err) throw err;
                 res.json(result);
                 console.log(result)
@@ -433,7 +433,7 @@ class CargarOpcioneshemofiliaController{
     }
     public async CargarOcupacion9(req: Request, res: Response) {
         try {
-            const Clientes = await pool.query("select BD_ocupacion.CODIGO_Ocupacion, BD_ocupacion.DESCRIPCION from BD_ocupacion" , function (err, result, fields) {
+            const Clientes = await pool.query("select BD_ocupacion.CODIGO_Ocupacion, BD_ocupacion.DESCRIPCION from BD_ocupacion", function (err, result, fields) {
                 if (err) throw err;
                 res.json(result);
                 console.log(result)
@@ -445,9 +445,9 @@ class CargarOpcioneshemofiliaController{
     }
 
     public async CargarRegistrohermofilia(req: Request, res: Response) {
-        const {Tipodocumento,numerodocumeto,VALIDACION_SOPORTE,VALIDACION_REGISTRO } = req.body
+        const { Tipodocumento, numerodocumeto, VALIDACION_SOPORTE, VALIDACION_REGISTRO } = req.body
         try {
-            const Clientes = await pool.query("select * from cuenta_hemofilia where cuenta_hemofilia.CAMPO_5 = ? or cuenta_hemofilia.CAMPO_6 = ? or cuenta_hemofilia.VALIDACION_SOPORTE = ? or cuenta_hemofilia.VALIDACION_REGISTRO = ? " ,[Tipodocumento,numerodocumeto,VALIDACION_SOPORTE,VALIDACION_REGISTRO] , function (err, result, fields) {
+            const Clientes = await pool.query("select * from cuenta_hemofilia where cuenta_hemofilia.CAMPO_5 = ? or cuenta_hemofilia.CAMPO_6 = ? or cuenta_hemofilia.VALIDACION_SOPORTE = ? or cuenta_hemofilia.VALIDACION_REGISTRO = ? ", [Tipodocumento, numerodocumeto, VALIDACION_SOPORTE, VALIDACION_REGISTRO], function (err, result, fields) {
                 if (err) throw err;
                 res.json(result);
                 console.log(result)
@@ -458,14 +458,14 @@ class CargarOpcioneshemofiliaController{
         };
     }
     public async CargarRegistrohermofilia2(req: Request, res: Response) {
-        const {Tipodocumento,numerodocumeto,VALIDACION_SOPORTE,VALIDACION_REGISTRO } = req.body
+        const { Tipodocumento, numerodocumeto, VALIDACION_SOPORTE, VALIDACION_REGISTRO, page, row } = req.body
         try {
             var query = "SELECT ID_CUENTA_HEMOFILIA, CAMPO_1, CAMPO_2, CAMPO_3, CAMPO_4, CAMPO_5, CAMPO_6, CAMPO_7, CAMPO_8, "
             query += "case when VALIDACION_REGISTRO='N' then 'Sin validar' when VALIDACION_REGISTRO='S' then 'Registro validado' end as VALIDACION_REGISTRO, "
             query += "case when VALIDACION_SOPORTE='1' then 'Sin soportes' when VALIDACION_SOPORTE='2' then 'Soportes incompletos'  when VALIDACION_SOPORTE='3' then 'Soportes completos'  end as VALIDACION_SOPORTE "
             query += "from Cuenta_hemofilia";
-            query += " where CAMPO_5 LIKE '%" + Tipodocumento +"%' and CAMPO_6 LIKE '%"+ numerodocumeto +"%'  and VALIDACION_REGISTRO LIKE '%"+ VALIDACION_REGISTRO +"%'  and VALIDACION_SOPORTE LIKE '%"+ VALIDACION_SOPORTE +"%' limit 1,10 ";
-            const Clientes = await pool.query(query, function (err, result, fields) {
+            query += " where CAMPO_5 LIKE '%" + Tipodocumento + "%' and CAMPO_6 LIKE '%" + numerodocumeto + "%'  and VALIDACION_REGISTRO LIKE '%" + VALIDACION_REGISTRO + "%'  and VALIDACION_SOPORTE LIKE '%" + VALIDACION_SOPORTE + "%' limit ?,? ";
+            const Clientes = await pool.query(query, [page, row], function (err, result, fields) {
                 if (err) throw err;
                 res.json(result);
                 console.log(result)
@@ -476,27 +476,26 @@ class CargarOpcioneshemofiliaController{
         };
     }
 
-    
-    public async getNumeroRegistro() {
-        return new Promise(function (resolev, reject) {
-            try {
-                var query = "select count(0) as numero_registro from Cuenta_hemofilia;";
-                pool.query(query, function (err, result, fields) {
-                    if (err) throw err;
-                    resolev(result);
-                });
-            }
-            catch (error) {
-                //res.status(404).json({ error: 'No se pudieron almacenar datos' });
-            };
-        });
+
+    public async getNumeroRegistro(req: Request, res: Response) {
+        try {
+            const Clientes = await pool.query("select count(0) as numero_registro from Cuenta_hemofilia", function (err, result, fields) {
+                if (err) throw err;
+                res.json(result);
+                console.log('resultado')
+                console.log(result)
+            });
+        }
+        catch (error) {
+            res.status(404).json({ error: 'No se puedieron Datos' });
+        };
     }
 
 
     public async CargarRegistrohermofilia3(req: Request, res: Response) {
-        const {Campo_6} = req.params
+        const { Campo_6 } = req.params
         try {
-            const Clientes = await pool.query("select * from Cuenta_hemofilia where Cuenta_hemofilia.CAMPO_6 = ? " ,[Campo_6] , function (err, result, fields) {
+            const Clientes = await pool.query("select * from Cuenta_hemofilia where Cuenta_hemofilia.CAMPO_6 = ? ", [Campo_6], function (err, result, fields) {
                 if (err) throw err;
                 res.json(result);
                 console.log(result)
@@ -508,9 +507,9 @@ class CargarOpcioneshemofiliaController{
     }
 
     public async Actualizarhemofilia(req: Request, res: Response) {
-        const {Campo_6} = req.params
+        const { Campo_6 } = req.params
         try {
-            await pool.query('UPDATE Cuenta_hemofilia set ? where Cuenta_hemofilia.CAMPO_6 = ? ', [req.body,Campo_6])
+            await pool.query('UPDATE Cuenta_hemofilia set ? where Cuenta_hemofilia.CAMPO_6 = ? ', [req.body, Campo_6])
             console.log(req.body)
             res.json({ message: 'Datos guardado con exito' });
 
@@ -538,4 +537,4 @@ class CargarOpcioneshemofiliaController{
 
     }
 }
-export const  cargarOpcioneshemofiliaController = new CargarOpcioneshemofiliaController();
+export const cargarOpcioneshemofiliaController = new CargarOpcioneshemofiliaController();

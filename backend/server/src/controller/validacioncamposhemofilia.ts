@@ -67,6 +67,14 @@ class Validacionhemofila {
         }
         return false
     }
+
+    isrango32(valores: any, campo: any){
+        let validacion = valores.split('-');
+        if (campo >= validacion[0] && campo <= validacion[1]) {
+            return true
+        }
+        return false
+    }
     isCohincidencia(valores: any, campo: any) {
         let validacion = valores.split(',');
         if (validacion.includes(campo)) {

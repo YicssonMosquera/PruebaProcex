@@ -127,8 +127,9 @@ export class HemofiliaService {
     return this.http.get(`${this.API_URI}/ocupacion`)
   }
 
-  CargarRegistrohemofilia() {
-    return this.http.get(`${this.API_URI}/cargarregistrohemofilia`)
+  CargarRegistrohemofilia(Tipodocumento,numerodocumeto,VALIDACION_SOPORTE,VALIDACION_REGISTRO, page, row ) {
+    const cargar = {Tipodocumento,numerodocumeto,VALIDACION_SOPORTE,VALIDACION_REGISTRO, page, row}
+    return this.http.post(`${this.API_URI}/cargarregistrohemofilia`, cargar)
   }
   CargarRegistrohemofilia3(Campo_6: any) {
     return this.http.get(`${this.API_URI}/${Campo_6}`)
@@ -157,6 +158,9 @@ export class HemofiliaService {
 
   consultarNombreArchivo() {
     return this.http.get(`${this.API_URI2}/`)
+  }
+  numeroRegstro() {
+    return this.http.get(`${this.API_URI}/numeroRegistro/Registro`)
   }
 
 }
