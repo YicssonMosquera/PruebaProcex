@@ -2,7 +2,28 @@ import DBParametroAplicacion from "../dao/BdParametroAplicacion";
 
 var moment = require('moment');
 
+
 class Validacionhemofila {
+    fechaMenorEdad
+    fechaMaores60
+    fechaMaores9
+    fechaMayores70
+    fehaMayorEdad
+    fechaC
+    constructor() {
+        this.fechaMenorEdad = new Date();
+        this.fechaMaores60 = new Date();
+        this.fechaMaores9 = new Date();
+        this.fechaMayores70 = new Date();
+        this.fehaMayorEdad = new Date();
+        this.fechaC =  new Date();
+        this.calcularAfiliadosde9Años();
+        this.calcularMayorEdad();
+        this.CalcularMenorEdad();
+        this.calcularAfiliadosde60Añ0s()
+        this.calcularAfiliadosde70Años();
+        this.fechacorte();
+    }
 
     isObligatorio(validacion: any) {
         if (validacion == "S") {
@@ -74,111 +95,95 @@ class Validacionhemofila {
         var formatoFecha = moment(new Date(Fecha)).format('YYYY-MM-DD')
         return formatoFecha;
     }
-    calcularMayorEdad() {
+   async calcularMayorEdad() {
+        var _this = this
         var fechacorte;
         var fehaMayorEdad
-        DBParametroAplicacion.fechaCorte(function (result) {
-            const fechaCorte = result;
-            for (var index = 0; index < Object.keys(fechaCorte).length; index++) {
-                var fechacorte = fechaCorte[index].VALOR_PARAMETRO;
-                fechacorte = new Date(fechacorte);
-                var calculoFechaM = fechacorte.getFullYear() - 18;
-                var fechamayoredad = calculoFechaM + '-' + (fechacorte.getMonth() + 1) + '-' + (fechacorte.getDate() + 1);
-                fehaMayorEdad = new Date(fechamayoredad)
-                console.log('maoyor edad --------------------------------------------')
-                console.log(fehaMayorEdad)
-                return fehaMayorEdad;
-            }
-        });
+        const fechaCorte = await DBParametroAplicacion.fechaCorte()
+        for (var index = 0; index < Object.keys(fechaCorte).length; index++) {
+            var fechacorte = fechaCorte[index].VALOR_PARAMETRO;
+            fechacorte = new Date(fechacorte);
+            var calculoFechaM = fechacorte.getFullYear() - 18;
+            var fechamayoredad = calculoFechaM + '-' + (fechacorte.getMonth() + 1) + '-' + (fechacorte.getDate() + 1);
+            _this.fehaMayorEdad = new Date(fechamayoredad)
+            return _this.fehaMayorEdad
+        }
 
     }
 
-    CalcularMenorEdad() {
+    async CalcularMenorEdad() {
+        var _this = this;
         var fechacorte;
         var fechaMenorEdad
-        DBParametroAplicacion.fechaCorte(function (result) {
-            const fechaCorte = result;
-            for (var index = 0; index < Object.keys(fechaCorte).length; index++) {
-                var fechacorte = fechaCorte[index].VALOR_PARAMETRO;
-                fechacorte = new Date(fechacorte);
-                var calculoFechaMe = fechacorte.getFullYear() - 5;
-                var fechamenorEdad = calculoFechaMe + '-' + (fechacorte.getMonth() + 1) + '-' + (fechacorte.getDate() + 1);
-                fechaMenorEdad = new Date(fechamenorEdad)
-                console.log('menor edad -----------------------------------------')
-                console.log(fechaMenorEdad)
-                return fechaMenorEdad;
-            }
-        });
+        const fechaCorte = await DBParametroAplicacion.fechaCorte()
+        for (var index = 0; index < Object.keys(fechaCorte).length; index++) {
+            var fechacorte = fechaCorte[index].VALOR_PARAMETRO;
+            fechacorte = new Date(fechacorte);
+            var calculoFechaMe = fechacorte.getFullYear() - 5;
+            var fechamenorEdad = calculoFechaMe + '-' + (fechacorte.getMonth() + 1) + '-' + (fechacorte.getDate() + 1);
+            _this.fechaMenorEdad = new Date(fechamenorEdad)
+            return _this.fechaMenorEdad;
+        }
     }
 
-     calcularAfiliadosde60Añ0s() {
+    async calcularAfiliadosde60Añ0s() {
+       var _this = this
         var fechacorte;
         var fechaMaores60
-        DBParametroAplicacion.fechaCorte(function (result){
-            const fechaCorte =result;
-            for (var index = 0; index < Object.keys(fechaCorte).length; index++) {
-                var fechacorte = fechaCorte[index].VALOR_PARAMETRO;
-                fechacorte = new Date(fechacorte);
-                var calculoFechaMe = fechacorte.getFullYear() - 60;
-                var fechamenorEdad = calculoFechaMe + '-' + (fechacorte.getMonth() + 1) + '-' + (fechacorte.getDate() + 1);
-                fechaMaores60 = new Date(fechamenorEdad)
-                console.log('menor 60 edad ----------------------------------------')
-                console.log(fechaMaores60)
-                return fechaMaores60;
-            }
-        });
+        const fechaCorte = await DBParametroAplicacion.fechaCorte()
+        for (var index = 0; index < Object.keys(fechaCorte).length; index++) {
+            var fechacorte = fechaCorte[index].VALOR_PARAMETRO;
+            fechacorte = new Date(fechacorte);
+            var calculoFechaMe = fechacorte.getFullYear() - 60;
+            var fechamenorEdad = calculoFechaMe + '-' + (fechacorte.getMonth() + 1) + '-' + (fechacorte.getDate() + 1);
+            _this.fechaMaores60 = new Date(fechamenorEdad)
+            return _this.fechaMaores60 
+        }
+
     }
 
 
-     calcularAfiliadosde9Años() {
+    async calcularAfiliadosde9Años() {
+        var _this = this;
         var fechacorte;
         var fechaMaores9
-        DBParametroAplicacion.fechaCorte(function (result){
-        const fechaCorte = result
+        const fechaCorte = await DBParametroAplicacion.fechaCorte()
         for (var index = 0; index < Object.keys(fechaCorte).length; index++) {
             var fechacorte = fechaCorte[index].VALOR_PARAMETRO;
             fechacorte = new Date(fechacorte);
             var calculoFechaMe = fechacorte.getFullYear() - 9;
             var fechamenorEdad = calculoFechaMe + '-' + (fechacorte.getMonth() + 1) + '-' + (fechacorte.getDate() + 1);
-            fechaMaores9 = new Date(fechamenorEdad)
-            console.log('menor 9 edad----------------------------------- ')
-            console.log(fechaMaores9)
-            return fechaMaores9;
+            _this.fechaMaores9 = new Date(fechamenorEdad)
+             return _this.fechaMaores9;
         }
-        });
-     
-    }
-     calcularAfiliadosde70Años() {
-        var fechacorte;
-        var fechaMayores70
-        DBParametroAplicacion.fechaCorte(function (result){
-            const fechaCorte = result;
-            for (var index = 0; index < Object.keys(fechaCorte).length; index++) {
-                var fechacorte = fechaCorte[index].VALOR_PARAMETRO;
-                fechacorte = new Date(fechacorte);
-                var calculoFechaMe = fechacorte.getFullYear() - 70;
-                var fechamenorEdad = calculoFechaMe + '-' + (fechacorte.getMonth() + 1) + '-' + (fechacorte.getDate() + 1);
-                fechaMayores70 = new Date(fechamenorEdad)
-                console.log('mayores  70 edad---------------------------------- ')
-               console.log(fechaMayores70)
-                return fechaMayores70;
-            }
-        });
+       
+      
     }
 
-     fechacorte() {
+    async calcularAfiliadosde70Años() {
+        var _this = this;
+        var fechacorte;
+        var fechaMayores70
+        const fechaCorte = await DBParametroAplicacion.fechaCorte()
+        for (var index = 0; index < Object.keys(fechaCorte).length; index++) {
+            var fechacorte = fechaCorte[index].VALOR_PARAMETRO;
+            fechacorte = new Date(fechacorte);
+            var calculoFechaMe = fechacorte.getFullYear() - 70;
+            var fechamenorEdad = calculoFechaMe + '-' + (fechacorte.getMonth() + 1) + '-' + (fechacorte.getDate() + 1);
+            _this.fechaMayores70 = new Date(fechamenorEdad)
+            return fechaMayores70;
+        }
+    }
+
+    async fechacorte() {
+        var _this = this;
         var fechaC
-        DBParametroAplicacion.fechaCorte(function (result){
-            const fechaCorte = result;
-            for (var index = 0; index < Object.keys(fechaCorte).length; index++) {
-                fechaC = fechaCorte[index].VALOR_PARAMETRO;
-                fechaC = new Date(fechaC);
-                console.log('fecha corte  ------------------------------- ')
-                console.log(fechaC)
-                return fechaC;
-            }
-            
-        });
+        const fechaCorte = await DBParametroAplicacion.fechaCorte()
+        for (var index = 0; index < Object.keys(fechaCorte).length; index++) {
+            fechaC = fechaCorte[index].VALOR_PARAMETRO;
+            _this.fechaC = new Date(fechaC);
+            return  _this.fechaC ;
+        }
     }
 }
 
