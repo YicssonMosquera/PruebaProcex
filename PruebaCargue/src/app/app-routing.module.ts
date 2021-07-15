@@ -11,7 +11,7 @@ import { CargarHemofiliaComponent } from './components/cargar-hemofilia/cargar-h
 
 const routes: Routes = [
 
-  {path: '',redirectTo:'/cargar',pathMatch:'full'},
+  {path: '',redirectTo:'/Hemofilia-cargar',pathMatch:'full'},
   {path:  'cargar',component:CargarExcelComponent,canActivate:[AuthGuard]},
   {path:  'Hemofilia-listar',component:HemofiliaListarComponent,canActivate:[AuthGuard]},
   {path:  'Hemofilia-frm',component:HemofiliaFormularioComponent,canActivate:[AuthGuard]},

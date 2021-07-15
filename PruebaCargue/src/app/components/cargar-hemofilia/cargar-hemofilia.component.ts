@@ -207,7 +207,7 @@ export class CargarHemofiliaComponent implements OnInit {
         form.clear();
         return;
       }
-
+      
       this.value6 = res;
       Swal.fire({
         title: 'Almacenado!',

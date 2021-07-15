@@ -1,15 +1,16 @@
-import { Hemofilia } from './../../models/hemofilia';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HemofiliaService } from '../../services/hemofilia/hemofilia.service'
 import { DataTableDirective } from 'angular-datatables';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { Subject } from 'rxjs';
 import { Router } from '@angular/router'
+import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-hemofilia-listar',
   templateUrl: './hemofilia-listar.component.html',
-  styleUrls: ['./hemofilia-listar.component.css']
+  styleUrls: ['./hemofilia-listar.component.css'],
+  providers: [NgbModalConfig, NgbModal]
 })
 export class HemofiliaListarComponent implements OnInit, OnDestroy {
 
@@ -27,7 +28,7 @@ export class HemofiliaListarComponent implements OnInit, OnDestroy {
   VALIDACION_REGISTRO = ''
   totalRecords
 
-  constructor(private hemofiliaservice: HemofiliaService, private Router: Router, private ngxSpinnerService: NgxUiLoaderService) { }
+  constructor(private hemofiliaservice: HemofiliaService, private Router: Router, private ngxSpinnerService: NgxUiLoaderService,private modalService: NgbModal) { }
 
   ngOnInit(): void {
     this.dtoptiontables()
@@ -138,5 +139,29 @@ export class HemofiliaListarComponent implements OnInit, OnDestroy {
     this.page = event.page;
     this.CargarRegistroshemofilia();
   }
+
+  
+  open(content: any) {
+    this.modalService.open(content, { size: 'sm', centered: true });
+  }
+  nombrearchiv(content2: any) {
+    this.modalService.open(content2, { size: 'sm', centered: true });
+  }
+
+  vigent(content3: any) {
+    this.modalService.open(content3, { size: 'sm', centered: true });
+  }
+
+  soportes(content4: any) {
+    this.modalService.open(content4, { size: 'sm', centered: true });
+  }
+  limpiarFiltros() {
+    this.Tipodocumento = '';
+    this.numerodocumeto = '';
+    this.VALIDACION_SOPORTE = '';
+    this.VALIDACION_REGISTRO = '';
+    this.CargarRegistroshemofilia();
+  }
+
 
 }

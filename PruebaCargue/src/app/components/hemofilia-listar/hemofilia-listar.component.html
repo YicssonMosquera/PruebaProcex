@@ -1,6 +1,11 @@
 <div class="y-card" style="height: 100%; width: 100%;">
     <div class="y-card-header">
-
+        <div class="row">
+            <div class="col-md-12" id="">
+                <button type="button"  [routerLink]="['/Hemofilia-frm']" id="button" class="btn btn-secondary"><i
+                        class="fas fa-file-alt"></i> Nuevo</button>
+            </div>
+        </div>
     </div>
     <div class="y-card-body" style="overflow: hidden; padding: 5px;">
         
@@ -9,19 +14,20 @@
         (onRowSelect)="onRowSelect($event)" (onRowUnselect)="onRowUnselect($event)">
         <ng-template pTemplate="header">
           <tr tableStyleClass="header">
-            <th style="width:90px;background-color: #02adb5; color: white;">P. Nombre<i class="fas fa-filter"
-              style="cursor: pointer;"></i> </th>
-            <th style="width:150px;background-color: #02adb5; color: white;">S. Nombre<i class="fas fa-filter"
-               style="cursor: pointer;"></i> </th>
-            <th style="width:110px;background-color: #02adb5; color: white;">P. Apellido</th>
-            <th style="width:100px;background-color: #02adb5; color: white;">S. Apellido</th>
-            <th style="width:80px;background-color: #02adb5; color: white;">Tipo de documento</th>
-            <th style="width:60px;background-color: #02adb5; color: white;">No. documento</th>
-            <th style="width:80px;background-color: #02adb5; color: white;">Fecha de nacimiento</th>
-            <th style="width:80px;background-color: #02adb5; color: white;">Sexo</th>
-            <th style="width:80px;background-color: #02adb5; color: white;">Validación registro</th>
-            <th style="width:80px;background-color: #02adb5; color: white;">Validación soportes<i class="fas fa-filter"
-                style="cursor: pointer;"></i></th>
+            <th style="width:90px;background-color: #02adb5e0; color: white;">P. Nombre </th>
+            <th style="width:150px;background-color: #02adb5e0; color: white;">S. Nombre </th>
+            <th style="width:110px;background-color: #02adb5e0; color: white;">P. Apellido</th>
+            <th style="width:100px;background-color: #02adb5e0; color: white;">S. Apellido</th>
+            <th style="width:80px;background-color: #02adb5e0; color: white;">Tipo de documento<i class="fas fa-filter"
+            style="cursor: pointer;" (click)="open(content)"></i></th>
+            <th style="width:80px;background-color: #02adb5e0; color: white;">No. documento<i class="fas fa-filter"
+                style="cursor: pointer;" (click)="nombrearchiv(content2)"></i></th>
+            <th style="width:80px;background-color: #02adb5e0; color: white;">Fecha de nacimiento</th>
+            <th style="width:80px;background-color: #02adb5e0; color: white;">Sexo</th>
+            <th style="width:80px;background-color: #02adb5e0; color: white;">Validación registro<i class="fas fa-filter"
+                style="cursor: pointer;"  (click)="vigent(content3)"></i></th>
+            <th style="width:80px;background-color: #02adb5e0; color: white;">Validación soportes<i class="fas fa-filter"
+                style="cursor: pointer;" (click)="soportes(content4)"></i></th>
           </tr>
         </ng-template>
         <ng-template pTemplate="body" let-data>
@@ -31,7 +37,7 @@
             <td style="width:110px">{{data.CAMPO_3}}</td>
             <td style="width:100px">{{data.CAMPO_4}}</td>
             <td style="width:80px">{{data.CAMPO_5}}</td>
-            <td style="width:60px">{{data.CAMPO_6}}</td>
+            <td style="width:80px">{{data.CAMPO_6}}</td>
             <td style="width:80px">{{data.CAMPO_7}}</td>
             <td style="width:80px">{{data.CAMPO_8}}</td>
             <td style="width:80px">{{data.VALIDACION_REGISTRO}}</td>
@@ -39,65 +45,6 @@
           </tr>
         </ng-template>
       </p-table>
-
-
-
-
-
-
-
-
-
-        <!-- <p-table [value]="hemofilia" styleClass="p-datatable-sm " [scrollable]="true" scrollHeight="261px"
-            tableStyleClass="prime-table">
-            <ng-template pTemplate="header">
-                <tr tableStyleClass="header">
-                    <th style="width:90px;background-color: #02adb5; color: white;">Radicado <i class="fas fa-filter"
-                            (click)="open(content)" style="cursor: pointer;"></i> </th>
-                    <th style="width:150px;background-color: #02adb5; color: white;">Nombre archivo <i
-                            class="fas fa-filter" (click)="nombrearchiv(content2)" style="cursor: pointer;"></i> </th>
-                    <th style="width:110px;background-color: #02adb5; color: white;">Fecha cargue</th>
-                    <th style="width:100px;background-color: #02adb5; color: white;">R.Procesados</th>
-                    <th style="width:80px;background-color: #02adb5; color: white;">R.Cargados</th>
-                    <th style="width:60px;background-color: #02adb5; color: white;">%</th>
-                    <th style="width:80px;background-color: #02adb5; color: white;">E.CA</th>
-                    <th style="width:80px;background-color: #02adb5; color: white;">E.CE</th>
-                    <th style="width:80px;background-color: #02adb5; color: white;">E.CD</th>
-                    <th style="width:80px;background-color: #02adb5; color: white;">Estado <i class="fas fa-filter"
-                            (click)="open(content4)" style="cursor: pointer;"></i></th>
-                    <th style="width:70px;background-color: #02adb5; color: white;">Vigente <i class="fas fa-filter"
-                            (click)="vigent(content3)" style="cursor: pointer;"></i></th>
-                    <th style="width:80px;background-color: #02adb5; color: white;">Perfil</th>
-                    <th style="width:80px;background-color: #02adb5; color: white;">Usuario</th>
-                    <th style="width:60px;background-color: #02adb5; color: white;">Logs</th>
-                    <th style="width:90px;background-color: #02adb5; color: white;">Archivo cargado</th>
-                </tr>
-            </ng-template>
-            <ng-template pTemplate="body" let-data>
-                <tr>
-                    <td style="width:90px">{{data.NUMERO_RADICACION}}</td>
-                    <td style="width:150px">{{data.NOMBRE_ARCHIVO}}</td>
-                    <td style="width:110px">{{data.FECHA_CREACION | date:"dd/MM/yyyy HH:mm:ss"}}</td>
-                    <td style="width:100px">{{data.REGISTROS_PROCESADOS}}</td>
-                    <td style="width:80px">{{data.REGISTROS_VALIDOS}}</td>
-                    <td style="width:60px">{{data.Porcentaje}}%</td>
-                    <td style="width:80px">{{data.ERRORES_CA}}</td>
-                    <td style="width:80px">{{data.ERRORES_CE}}</td>
-                    <td style="width:80px">{{data.ERRORES_CD}}</td>
-                    <td style="width:80px">{{data.Estado}}</td>
-                    <td style="width:70px">{{data.VIGENTE}}</td>
-                    <td style="width:80px">{{data.TIPO_USUARIO}}</td>
-                    <td style="width:80px">{{data.Login}}</td>
-                    <td style="width:60px"><i id="btn" class="far fa-file-excel"
-                            (click)="descargarLogsExcel(data.NUMERO_RADICACION)"></i>
-                        <img [src]="'assets/img/txt.svg'" class="ing-fluid" alt="no image" id="ims"
-                            (click)="descargarLogsTxt(data.NUMERO_RADICACION)">
-                    </td>
-                    <td style="width:90px"> <img [src]="'assets/img/zip.svg'" class="ing-fluid" alt="no image" id="ims"
-                            (click)="descargarArchivoCargado(data.NUMERO_RADICACION)"> </td>
-                </tr>
-            </ng-template>
-        </p-table> -->
     </div>
 
     <div class="y-card-footer" style="padding: 0px;">
@@ -108,173 +55,84 @@
 
 
 
-<!-- <ng-template #content let-c="close" let-d="dismiss" id="pagina">
+<ng-template #content let-c="close" let-d="dismiss" id="pagina">
     <div class="modal-body">
         <form>
             <div class="row">
                 <div class="col-md-12">
-                    <input type="number" class="form-control" type="text"
-                        onkeypress='return event.charCode >= 48 && event.charCode <= 57' name="radicado"
-                        [(ngModel)]="radicado" placeholder="Radicado">
+                    <input type="text" class="form-control" name="Tipodocumento"
+                        [(ngModel)]="Tipodocumento" placeholder="Tipo documento">
                 </div>
             </div>
         </form>
     </div>
     <div class="modal-footer">
-        <button pButton pRipple type="button" icon="pi pi-check" class="p-button-rounded" (click)="ConsultarCargue()"
+        <button pButton pRipple type="button" icon="pi pi-check" class="p-button-rounded" (click)="CargarRegistroshemofilia()"
             (click)="d('Cross click')" style="margin-right: 4px;"></button>
         <button pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded p-button-danger"
             (click)="limpiarFiltros()" (click)="d('Cross click')"></button>
     </div>
-</ng-template> -->
+</ng-template>
 
-<!-- <ng-template #content2 let-c="close" let-d="dismiss" id="pagina">
+<ng-template #content2 let-c="close" let-d="dismiss" id="pagina">
     <div class="modal-body">
         <form>
             <div class="row">
                 <div class="col-md-12">
-                    <input type="text" list="NombreArchivo" name="nombreArchvio" [(ngModel)]="nombreArchvio" id="tipo"
-                        class="form-control" placeholder="Nombre archivo">
-                    <datalist id="NombreArchivo">
-                        <option *ngFor='let nombreArchivo of nombreArchivo' [ngValue]="nombreArchivo.NOMBRE_ARCHIVO">
-                            {{nombreArchivo.NOMBRE_ARCHIVO}}
-                        </option>
-                    </datalist>
+                    <input type="number"  name="numerodocumeto" [(ngModel)]="numerodocumeto" id="tipo"
+                    onkeypress='return event.charCode >= 48 && event.charCode <= 57' name="Tipodocumento"   class="form-control" placeholder="Numero de documento">
                 </div>
             </div>
         </form>
     </div>
     <div class="modal-footer">
-        <button pButton pRipple type="button" icon="pi pi-check" class="p-button-rounded" (click)="ConsultarCargue()"
+        <button pButton pRipple type="button" icon="pi pi-check" class="p-button-rounded" (click)="CargarRegistroshemofilia()"
             (click)="d('Cross click')" style="margin-right: 4px;"></button>
         <button pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded p-button-danger"
             (click)="limpiarFiltros()" (click)="d('Cross click')"></button>
     </div>
-</ng-template> -->
+</ng-template>
 
-<!-- 
+
 <ng-template #content3 let-c="close" let-d="dismiss" id="pagina">
     <div class="modal-body">
         <form>
             <div class="row">
                 <div class="col-md-12">
-                    <select name="" id="" class="form-control" name="vigente" [(ngModel)]="vigente">
-                        <option value="S">S</option>
-                        <option value="N">N</option>
+                    <select name="" id="" class="form-control" name="VALIDACION_REGISTRO" [(ngModel)]="VALIDACION_REGISTRO">
+                        <option value="S">Registro validado</option>
+                        <option value="N">Sin validar</option>
                     </select>
                 </div>
             </div>
         </form>
     </div>
     <div class="modal-footer">
-        <button pButton pRipple type="button" icon="pi pi-check" class="p-button-rounded" (click)="ConsultarCargue()"
+        <button pButton pRipple type="button" icon="pi pi-check" class="p-button-rounded" (click)="CargarRegistroshemofilia()"
             (click)="d('Cross click')" style="margin-right: 4px;"></button>
         <button pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded p-button-danger"
             (click)="limpiarFiltros()" (click)="d('Cross click')"></button>
     </div>
-</ng-template> -->
-<!-- 
+</ng-template>
+
 <ng-template #content4 let-c="close" let-d="dismiss" id="pagina">
     <div class="modal-body">
         <form>
             <div class="row">
                 <div class="col-md-12">
-                    <select name="" id="" class="form-control" name="estado" [(ngModel)]="estado">
-                        <option value="2">Exitoso</option>
-                        <option value="4">Con errores</option>
-                        <option value="3">Rechazado</option>
+                    <select name="" id="" class="form-control" name="VALIDACION_SOPORTE" [(ngModel)]="VALIDACION_SOPORTE">
+                        <option value="1">Sin soportes</option>
+                        <option value="2">Soportes incompletos</option>
+                        <option value="3">Soportes completos</option>
                     </select>
                 </div>
             </div>
         </form>
     </div>
     <div class="modal-footer">
-        <button pButton pRipple type="button" icon="pi pi-check" class="p-button-rounded" (click)="ConsultarCargue()"
+        <button pButton pRipple type="button" icon="pi pi-check" class="p-button-rounded" (click)="CargarRegistroshemofilia()"
             (click)="d('Cross click')" style="margin-right: 4px;"></button>
         <button pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded p-button-danger"
             (click)="limpiarFiltros()" (click)="d('Cross click')"></button>
     </div>
-</ng-template> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <br>
-<div class="container" >
-<div class="row">
-<div class="col-md-6">
-    <form class="example-form">
-        <mat-form-field class="example-full-width"  id="filtros">
-          <mat-label>Buscar</mat-label>
-          <input matInput placeholder="Digite texto para buscar" id="filtros" name="hemofiliafiltro"  [(ngModel)]="hemofiliafiltro">
-        </mat-form-field>
-    </form>
-</div>
-<div class="col-md-6">
-    <button type="button"  id="button" class="btn btn-secondary"  [routerLink]="['/Hemofilia-frm']"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-plus-fill" viewBox="0 0 16 16">
-        <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM8.5 7v1.5H10a.5.5 0 0 1 0 1H8.5V11a.5.5 0 0 1-1 0V9.5H6a.5.5 0 0 1 0-1h1.5V7a.5.5 0 0 1 1 0z"/>
-      </svg>Nuevo</button>
-    </div>
-</div>
-</div>
-
-
-
-<div class="row pt-2">
-    <div class="col-md-12">
-        <div class="card">
-            <div class="card-body">
-                <table class="table table-striped table-bordered" cellspacing="0" style="width:100%"  datatable [dtOptions]="dtOptions">
-                    <thead>
-                        <tr>
-                            <th scope="col">Primer nombre</th>
-                            <th scope="col">Segundo nombre </th>
-                            <th scope="col">Primer apellido </th>
-                            <th scope="col">Segundo apellido </th>
-                            <th scope="col">Tipo de Identificación</th>
-                            <th scope="col">Número de Identificación</th>
-                            <th scope="col">Fecha de nacimiento</th>
-                            <th scope="col">Sexo</th>
-                            <th scope="col">Validación registro</th>
-                            <th scope="col">Validación soportes</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let hemofilia of Hemofilia | hemofilia:hemofiliafiltro" >
-                            <td>{{hemofilia.CAMPO_1}}</td>
-                            <td>{{hemofilia.CAMPO_2}}</td>
-                            <td>{{hemofilia.CAMPO_3}}</td>
-                            <td>{{hemofilia.CAMPO_4}}</td>
-                            <td>{{hemofilia.CAMPO_5}}</td>
-                            <td>{{hemofilia.CAMPO_6}}</td>
-                            <td>{{hemofilia.CAMPO_7}}</td>
-                            <td>{{hemofilia.CAMPO_8}}</td>
-                            <td>{{hemofilia.VALIDACION_REGISTRO}}</td>
-                            <td>{{hemofilia.VALIDACION_SOPORTE}}</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-            </div>
-        </div>
-    </div>
-</div>
- -->
+</ng-template>

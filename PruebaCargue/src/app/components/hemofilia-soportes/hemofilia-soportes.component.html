@@ -1,21 +1,9 @@
 <div class="y-card" style="height: 100%; width: 100%;">
     <div class="y-card-header">
         <div class="row">
-            <div class="col-md-6">
-                <form class="example-form">
-                    <mat-form-field class="example-full-width" id="filtros">
-                        <mat-label>Buscar</mat-label>
-                        <input matInput placeholder="Digite texto para buscar" id="filtros">
-                    </mat-form-field>
-                </form>
-            </div>
-            <div class="col-md-6">
-                <button type="button" id="button" class="btn btn-secondary" (click)="open(content)"><svg
-                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-file-earmark-plus-fill" viewBox="0 0 16 16">
-                        <path
-                            d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM8.5 7v1.5H10a.5.5 0 0 1 0 1H8.5V11a.5.5 0 0 1-1 0V9.5H6a.5.5 0 0 1 0-1h1.5V7a.5.5 0 0 1 1 0z" />
-                    </svg>Nuevo</button>
+            <div class="col-md-12" id="">
+                <button type="button" id="button" class="btn btn-secondary" (click)="open(content)"><i
+                        class="fas fa-file-alt"></i> Nuevo</button>
             </div>
         </div>
     </div>
@@ -25,53 +13,48 @@
             tableStyleClass="prime-table">
             <ng-template pTemplate="header">
                 <tr tableStyleClass="header">
-                    <th style="width:100px;background-color: #02adb5; color: white;">Tipo Archivo<i class="fas fa-filter"
+                    <th style="width:90px;background-color: #02adb5e0; color: white;">Tipo Archivo<i class="fas fa-filter"
                             style="cursor: pointer;"></i> </th>
-                    <th style="width:190px;background-color: #02adb5; color: white;">Nombre Archivo <i
-                            class="fas fa-filter"style="cursor: pointer;"></i> </th>
-                    <th style="width:125px;background-color: #02adb5; color: white;">Fecha cargue</th>
-                    <th style="width:125px;background-color: #02adb5; color: white;">Usuario Cargue</th>
-                    <th style="width:120px;background-color: #02adb5; color: white;">Anulado</th>
-                    <th style="width:110px;background-color: #02adb5; color: white;">Fecha Anulación</th>
-                    <th style="width:110px;background-color: #02adb5; color: white;">Usuario Anulación</th>
-                    <th style="width:110px;background-color: #02adb5; color: white;">Observaciones Anulación</th>
-                    <th style="width:110px;background-color: #02adb5; color: white;">Entregable</th>
-                    <th style="width:110px;background-color: #02adb5; color: white;">Descargar <i class="fas fa-filter"
-                             style="cursor: pointer;"></i></th>
+                    <th style="width:150px;background-color: #02adb5e0; color: white;">Nombre Archivo <i
+                            class="fas fa-filter" style="cursor: pointer;"></i> </th>
+                    <th style="width:110px;background-color: #02adb5e0; color: white;">Fecha cargue</th>
+                    <th style="width:100px;background-color: #02adb5e0; color: white;">Usuario Cargue</th>
+                    <th style="width:80px;background-color: #02adb5e0; color: white;">Anulado</th>
+                    <th style="width:70px;background-color: #02adb5e0; color: white;">Fecha Anulación</th>
+                    <th style="width:80px;background-color: #02adb5e0; color: white;">Usuario Anulación</th>
+                    <th style="width:80px;background-color: #02adb5e0; color: white;">Ob. Anulación</th>
+                    <th style="width:80px;background-color: #02adb5e0; color: white;">Entregable</th>
+                    <th style="width:80px;background-color: #02adb5e0; color: white;">Descargar <i class="fas fa-filter"
+                            style="cursor: pointer;"></i></th>
                 </tr>
             </ng-template>
             <ng-template pTemplate="body" let-data>
                 <tr>
-                    <td style="width:100px">{{data.Tipo_archivo}}</td>
-                    <td style="width:190px">{{data.Nombre_Archivo}}</td>
-                    <td style="width:135px">{{data.Fecha_cargue | date:"dd/MM/yyyy HH:mm:ss"}}</td>
-                    <td style="width:125px">{{data.Usuariocargue}}</td>
-                    <td style="width:120px">{{data.Anulado}}</td>
-                    <td style="width:110px">{{data.Fecha_anulacion}}</td>
-                    <td style="width:110px">{{data.Usuario_anulacion}}</td>
-                    <td style="width:110px">{{data.Observaciones_anulacion}}</td>
-                    <td style="width:110px">{{data.Entregable}}</td>
-                    <td style="width:110px">{{data.Estado}}</td>
-                    <td><img [src]="'assets/img/descarga.png'" class="ing-fluid" alt="no image"
-                        (click)="(Descargarsoporte(soporte.PKId))" id="img"></td>
+                    <td style="width:90px">{{data.Tipo_archivo}}</td>
+                    <td style="width:150px">{{data.Nombre_Archivo}}</td>
+                    <td style="width:110px">{{data.Fecha_cargue | date:"dd/MM/yyyy HH:mm:ss"}}</td>
+                    <td style="width:100px">{{data.Usuariocargue}}</td>
+                    <td style="width:80px">{{data.Anulado}}</td>
+                    <td style="width:70px">{{data.Fecha_anulacion}}</td>
+                    <td style="width:80px">{{data.Usuario_anulacion}}</td>
+                    <td style="width:80px">{{data.Observaciones_anulacion}}</td>
+                    <td style="width:80px">{{data.Entregable}}</td>
+                    <td style="width:80px">{{data.Estado}}</td>
+                    <td><i class="fas fa-download" (click)="(Descargarsoporte(soporte.PKId))"></i></td>
                 </tr>
             </ng-template>
         </p-table>
     </div>
     <div class="y-card-footer" style="padding: 0px;">
-        <!-- <p-paginator [rows]="rows" [totalRecords]="totalRecords" (onPageChange)="paginador($event)"
-          [rowsPerPageOptions]="[5,10,20,30,50]"></p-paginator> -->
-      </div>
+        <p-paginator [rows]="rows" [totalRecords]="totalRecords" (onPageChange)="paginador($event)"
+            [rowsPerPageOptions]="[5,10,20,30,50]"></p-paginator>
+    </div>
 </div>
-
-
-
-
 
 
 <ng-template #content let-c="close" let-d="dismiss" id="pagina">
     <div class="modal-header" id="soporte">
-        <h4 class="modal-title" id="modal-basic-title">Carga de soportes </h4>
+        <strong class="modal-title" id="modal-basic-title">Carga de soportes </strong>
         <button type="button" class="close" id="cerrar" aria-label="Close" (click)="d('Cross click')">
             <span aria-hidden="true">&times;</span>
         </button>
@@ -81,20 +64,17 @@
             <div class="row">
                 <div class="col-md-6">
                     <select name="Tipoarchivo" id="" class="form-control" [(ngModel)]="Tipoarchivo">
+                        <option value="">Seleccione tipo</option>
                         <option value="Imagen">Imagen</option>
                         <option value="PDF">Pdf</option>
                     </select>
                 </div>
                 <div class="col-md-6">
-                    <input type="file" class="form-control" accept="image/gif, image/png, image/jpeg, application/pdf"
+                    <input type="file"  accept="image/gif, image/png, image/jpeg, application/pdf"
                         (change)="onphotoselected($event)">
 
                 </div>
             </div>
         </form>
-    </div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-outline-dark" (click)="(Guargarsoporte())"
-            (click)="c('Save click')">Guardar</button>
     </div>
 </ng-template>

@@ -19,10 +19,12 @@
 
     #button{
         float: right;
+        margin-right: 30px;
+        margin-top: 5px;
     }
 
     #soporte{
-        background-color: #337ab7;
+        background-color: #02adb5;
         color: white;
         height: 40px;
       }
@@ -71,5 +73,7 @@
     background-color: rgb(233, 232, 232);
     
   }
-  
-
+ 
+  input[type="file"] {
+    color: transparent;
+}

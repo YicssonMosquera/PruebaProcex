@@ -15,15 +15,14 @@ class Carguehemofiliacontrollers {
 
             if (isValid) {
                 LogicaDBProcesohemofilia.cargarHemofilia(txt, longitud, ruta, nombreZip, body, perfil);
-                var cont = LogicaDBProcesohemofilia.cont;
+                var cont = LogicaDBProcesohemofilia.cont; 
                 res.json(cont);
             } else {
                 res.json({ error: 'el nombre del txt no cohincide con el nombre del zip' });
             }
-
         });
-
     }
+
     public async consultarCargue(req: Request, res: Response) {
         const obHemofilia = new DBProcesohemofilia()
         const { page, row, radicado, nombreArchvio, vigente, estado } = req.body
