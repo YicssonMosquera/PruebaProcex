@@ -24,11 +24,13 @@ export class HemofiliaSoportesComponent implements OnInit {
   nombrearchivo: string
   soporte: any
   Tipoarchivo = '';
-  
+  nombreArchivo = '';
+  tipoArchivo = '';
+  Anulado = '';
   private CC;
   rows = 10;
   page = 0;
-  totalRecords = 0;
+  totalRecords
   constructor(config: NgbModalConfig, private modalService: NgbModal,
     private loginservice: LoginService, private soporteservice: SoportesService, activateRoute: ActivatedRoute,) {
       config.backdrop = 'static';
@@ -37,12 +39,19 @@ export class HemofiliaSoportesComponent implements OnInit {
 
   ngOnInit(): void {
     this.cargarsoporte();
+    this.cargarNumeroRegistros();
   }
 
   cargarsoporte() {
-    this.soporteservice.Cargarsoportes(this.CC).subscribe(res => {
+    this.soporteservice.Cargarsoportes(this.CC,this.nombreArchivo,this.tipoArchivo,this.Anulado,this.page,this.rows).subscribe(res => {
       this.soporte = res;
       console.log(this.soporte)
+    })
+  }
+
+  cargarNumeroRegistros(){
+    this.soporteservice.numeroRegistro(this.CC).subscribe(res=>{
+      this.totalRecords = res;
     })
   }
 
@@ -93,7 +102,7 @@ export class HemofiliaSoportesComponent implements OnInit {
     console.log(event);
     this.rows = event.rows;
     this.page = event.page;
-    //this.ConsultarCargue();
+   this.cargarsoporte();
   }
 
 }

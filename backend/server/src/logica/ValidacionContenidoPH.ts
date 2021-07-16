@@ -43,7 +43,6 @@ class ValidacionContenidoPH {
 
     getFilasBuenas() {
         var size = Object.keys(this.filas_buenas).length;
-        console.log(size)
         return size;
     }
 
@@ -6483,8 +6482,6 @@ class ValidacionContenidoPH {
             _this.filas_malas['fila_' + numFila] = arrayCamposMalos;
                 for (const key in _this.filas_malas) {
                     var arrayFilasMalas = _this.filas_malas[key];
-                    console
-                    console.log(arrayFilasMalas.length)
                     if(arrayFilasMalas.length == 0){
                         _this.filas_buenas['fila_' + numFila] = camposFila;
                         

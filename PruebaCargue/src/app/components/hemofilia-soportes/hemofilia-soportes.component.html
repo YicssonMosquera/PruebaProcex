@@ -20,27 +20,25 @@
                     <th style="width:110px;background-color: #02adb5e0; color: white;">Fecha cargue</th>
                     <th style="width:100px;background-color: #02adb5e0; color: white;">Usuario Cargue</th>
                     <th style="width:80px;background-color: #02adb5e0; color: white;">Anulado</th>
-                    <th style="width:70px;background-color: #02adb5e0; color: white;">Fecha Anulación</th>
+                    <th style="width:80px;background-color: #02adb5e0; color: white;">Fecha Anulación</th>
                     <th style="width:80px;background-color: #02adb5e0; color: white;">Usuario Anulación</th>
                     <th style="width:80px;background-color: #02adb5e0; color: white;">Ob. Anulación</th>
                     <th style="width:80px;background-color: #02adb5e0; color: white;">Entregable</th>
-                    <th style="width:80px;background-color: #02adb5e0; color: white;">Descargar <i class="fas fa-filter"
-                            style="cursor: pointer;"></i></th>
+                    <th style="width:80px;background-color: #02adb5e0; color: white;">Descargar</th>
                 </tr>
             </ng-template>
             <ng-template pTemplate="body" let-data>
                 <tr>
                     <td style="width:90px">{{data.Tipo_archivo}}</td>
-                    <td style="width:150px">{{data.Nombre_Archivo}}</td>
-                    <td style="width:110px">{{data.Fecha_cargue | date:"dd/MM/yyyy HH:mm:ss"}}</td>
+                    <td style="width:145px">{{data.Nombre_Archivo}}</td>
+                    <td style="width:118px">{{data.Fecha_cargue | date:"dd/MM/yyyy HH:mm:ss"}}</td>
                     <td style="width:100px">{{data.Usuariocargue}}</td>
                     <td style="width:80px">{{data.Anulado}}</td>
-                    <td style="width:70px">{{data.Fecha_anulacion}}</td>
+                    <td style="width:80px">{{data.Fecha_anulacion}}</td>
                     <td style="width:80px">{{data.Usuario_anulacion}}</td>
                     <td style="width:80px">{{data.Observaciones_anulacion}}</td>
                     <td style="width:80px">{{data.Entregable}}</td>
-                    <td style="width:80px">{{data.Estado}}</td>
-                    <td><i class="fas fa-download" (click)="(Descargarsoporte(soporte.PKId))"></i></td>
+                    <td style="width:80px"><i class="fas fa-download" style="cursor: pointer" (click)="(Descargarsoporte(data.PKId))"></i></td>
                 </tr>
             </ng-template>
         </p-table>

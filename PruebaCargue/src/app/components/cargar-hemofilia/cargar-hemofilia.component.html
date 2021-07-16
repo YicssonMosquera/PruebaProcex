@@ -64,7 +64,7 @@
     </div>
   </div>
   <div class="y-card-body" style="overflow: hidden; padding: 5px;">
-    <p-table [value]="hemofilia" styleClass="p-datatable-sm " [scrollable]="true" scrollHeight="261px"
+    <p-table [value]="hemofilia" styleClass="p-datatable-sm" [scrollable]="true"  scrollHeight="261px"
       tableStyleClass="prime-table">
       <ng-template pTemplate="header">
         <tr tableStyleClass="header">
@@ -90,7 +90,7 @@
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-data>
-        <tr>
+        <tr [ngClass]="{'color-cd': data.Estado === 'Exitoso', 'color-ce': data.Estado === 'Con errores' }">
           <td style="width:90px">{{data.NUMERO_RADICACION}}</td>
           <td style="width:150px">{{data.NOMBRE_ARCHIVO}}</td>
           <td style="width:110px">{{data.FECHA_CREACION | date:"dd/MM/yyyy HH:mm:ss"}}</td>
@@ -104,12 +104,11 @@
           <td style="width:70px">{{data.VIGENTE}}</td>
           <td style="width:80px">{{data.TIPO_USUARIO}}</td>
           <td style="width:80px">{{data.Login}}</td>
-          <td style="width:60px"><i id="btn" class="far fa-file-excel"
+          <td style="width:70px; padding: 0px;"><i id="btn" class="far fa-file-excel"
               (click)="descargarLogsExcel(data.NUMERO_RADICACION)"></i>
-            <img [src]="'assets/img/txt.svg'" class="ing-fluid" alt="no image" id="ims"
-              (click)="descargarLogsTxt(data.NUMERO_RADICACION)">
+              <i class="fas fa-file-alt" style="font-size: 15px;"></i>
           </td>
-          <td style="width:90px"> <img [src]="'assets/img/zip.svg'" class="ing-fluid" alt="no image" id="ims"
+          <td style="width:70px; padding: 0px;"> <img [src]="'assets/img/zip.svg'" class="ing-fluid" alt="no image" id="ims"
               (click)="descargarArchivoCargado(data.NUMERO_RADICACION)"> </td>
         </tr>
       </ng-template>

@@ -28,6 +28,7 @@ class ValidacionCamposPH {
     }
     getFilasBuenas() {
         var size = Object.keys(this.filas_buenas).length;
+        console.log(size);
         return size;
     }
     validar(arrayCampos, resultEstructuraCampo) {

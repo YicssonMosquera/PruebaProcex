@@ -481,9 +481,7 @@ class CargarOpcioneshemofiliaController {
         try {
             const Clientes = await pool.query("select count(0) as numero_registro from Cuenta_hemofilia", function (err, result, fields) {
                 if (err) throw err;
-                res.json(result);
-                console.log('resultado')
-                console.log(result)
+                res.json(result[0].numero_registro);
             });
         }
         catch (error) {

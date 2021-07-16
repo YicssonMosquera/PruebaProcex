@@ -64,9 +64,6 @@ export class CargarHemofiliaComponent implements OnInit {
     var prueba = this.myform
   }
 
-
-
-
   ngOnInit(): void {
     this.existFile = false;
     this.ConsultarCargue();

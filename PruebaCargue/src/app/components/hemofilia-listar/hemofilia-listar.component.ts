@@ -101,7 +101,6 @@ export class HemofiliaListarComponent implements OnInit, OnDestroy {
   numeroRegistro(){
     this.hemofiliaservice.numeroRegstro().subscribe(res=>{
       this.totalRecords = res;
-      console.log(res)
     })
   }
 

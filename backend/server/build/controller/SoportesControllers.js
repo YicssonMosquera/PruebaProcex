@@ -44,13 +44,29 @@ class SoportesControllers {
     }
     Cargarsoporteporusuario(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { Documento_hemofilia } = req.params;
+            const { Documento_hemofilia, nombreArchivo, tipoArchivo, Anulado, page, row } = req.body;
             try {
-                const Clientes = yield database_1.default.query("select * from soportes where soportes.Documento_hemofilia = ? ", [Documento_hemofilia], function (err, result, fields) {
+                const Clientes = yield database_1.default.query("select * from soportes where Documento_hemofilia = ? and  Nombre_Archivo LIKE '%" + nombreArchivo + "%' and Tipo_archivo LIKE '%" + tipoArchivo + "%'  and Anulado LIKE '%" + Anulado + "%'  order by Fecha_cargue desc limit ?,?", [Documento_hemofilia, page, row], function (err, result, fields) {
                     if (err)
                         throw err;
                     res.json(result);
                     console.log(result);
+                });
+            }
+            catch (error) {
+                res.status(404).json({ error: 'No se puedieron Datos' });
+            }
+            ;
+        });
+    }
+    getNumeroRegistro(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { Documento_hemofilia } = req.params;
+            try {
+                const Clientes = yield database_1.default.query("select count(0) as numero_registro from soportes where Documento_hemofilia = ? ", [Documento_hemofilia], function (err, result, fields) {
+                    if (err)
+                        throw err;
+                    res.json(result[0].numero_registro);
                 });
             }
             catch (error) {

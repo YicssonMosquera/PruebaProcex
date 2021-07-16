@@ -27,7 +27,12 @@ export class SoportesService {
 
    }
 
-   Cargarsoportes(Documento_hemofilia:string){
+   Cargarsoportes(Documento_hemofilia,nombreArchivo,tipoArchivo,Anulado,page,row){
+     const cargar = {Documento_hemofilia,nombreArchivo,tipoArchivo,Anulado,page,row}
+    return this.http.post(`${this.API_URI}/soporte`,cargar)
+   }
+
+   numeroRegistro(Documento_hemofilia){
     return this.http.get(`${this.API_URI}/${Documento_hemofilia}`)
    }
 

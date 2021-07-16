@@ -13,7 +13,8 @@ class SoportesRoutes {
     }
     config() {
         this.router.post('/', multer_1.default.single('soporte'), SoportesControllers_1.soportesControllers.GuardarSoporte);
-        this.router.get('/:Documento_hemofilia', SoportesControllers_1.soportesControllers.Cargarsoporteporusuario);
+        this.router.post('/soporte', SoportesControllers_1.soportesControllers.Cargarsoporteporusuario);
+        this.router.get('/:Documento_hemofilia', SoportesControllers_1.soportesControllers.getNumeroRegistro);
     }
 }
 const soportesRoutes = new SoportesRoutes();
