@@ -13,6 +13,7 @@ class CargahemofiliaRoutes{
        this.router.post('/guardarHMFile',multer2.single('file'),carguehemofiliacontrollers.guardarHemofiliaFile)
        this.router.post('/',carguehemofiliacontrollers.consultarCargue);
        this.router.get('/',carguehemofiliacontrollers.consultarNombreArchivo);
+       this.router.get('/archivocargado/:ID_PROCESO_HEMOFILIA',carguehemofiliacontrollers.consultarUltimoArchivoCargado);
     }
 }
 

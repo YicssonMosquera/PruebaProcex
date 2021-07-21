@@ -150,27 +150,35 @@ class LogicaDBProcesohemofilia {
                 const element = araryCH[index];
                 // this.Campos = element;
             }
-            this.guardar();
+            var idProcesoHemofilia = yield this.guardar();
+            return idProcesoHemofilia;
         });
     }
     static guardar() {
-        var _this = this;
-        var campos = this.Campos;
-        //Guardar proceso hemofilia encabezado
-        var procesohemofilia = {
-            USUARIO_CREACION: this.User,
-            USUARIO_MODIFICACION: this.User,
-            NOMBRE_ARCHIVO: this.Nombre,
-            LONGITUD_ARCHIVO: this.Londitud,
-            RUTA_ARCHIVO: this.Ruta,
-            ESTADO_PROCESO: '1',
-            VIGENTE: 'S',
-            PROCESADO: 'N'
-        };
-        DbProcesoHemofilia_1.default.guardar(procesohemofilia, function (result) {
-            //Guardar Dbprocesohemofilia detalle
-            _this.guardarProcesoHemofiliaDetalle(result.insertId, campos);
-            _this.Radicado();
+        return __awaiter(this, void 0, void 0, function* () {
+            var _this = this;
+            var campos = this.Campos;
+            var idProcesoHemofilia = null;
+            //Guardar proceso hemofilia encabezado
+            var procesohemofilia = {
+                USUARIO_CREACION: this.User,
+                USUARIO_MODIFICACION: this.User,
+                NOMBRE_ARCHIVO: this.Nombre,
+                LONGITUD_ARCHIVO: this.Londitud,
+                RUTA_ARCHIVO: this.Ruta,
+                ESTADO_PROCESO: '1',
+                VIGENTE: 'S',
+                PROCESADO: 'N'
+            };
+            return new Promise(function (resolev, reject) {
+                DbProcesoHemofilia_1.default.guardar(procesohemofilia, function (result) {
+                    idProcesoHemofilia = result.insertId;
+                    //Guardar Dbprocesohemofilia detalle
+                    _this.guardarProcesoHemofiliaDetalle(idProcesoHemofilia, campos);
+                    _this.Radicado();
+                    resolev(idProcesoHemofilia);
+                });
+            });
         });
     }
     static Radicado() {
@@ -271,6 +279,15 @@ class LogicaDBProcesohemofilia {
             const obHemofilia = new DbProcesoHemofilia_1.default();
             var archivoExistente = yield obHemofilia.getVigente(nombreZip, body);
             return archivoExistente;
+        });
+    }
+    static consultarArchivoCargado(ID_PROCESO_HEMOFILIA) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const obHemofilia = new DbProcesoHemofilia_1.default();
+            const archvioCargado = yield obHemofilia.consultarUltimoArchivoCargado(ID_PROCESO_HEMOFILIA);
+            console.log('-----------------------------------------------------------------');
+            console.log(archvioCargado);
+            return archvioCargado;
         });
     }
 }

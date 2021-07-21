@@ -149,14 +149,17 @@ class LogicaDBProcesohemofilia {
             // this.Campos = element;
 
         }
-        this.guardar();
+
+        var idProcesoHemofilia = await this.guardar();
+        return idProcesoHemofilia;
 
     }
 
-    public static guardar() {
+    public static async guardar() {
+        
         var _this = this;
         var campos = this.Campos;
-
+        var idProcesoHemofilia = null;
         //Guardar proceso hemofilia encabezado
         var procesohemofilia: procesohemofilia = {
             USUARIO_CREACION: this.User,
@@ -168,10 +171,14 @@ class LogicaDBProcesohemofilia {
             VIGENTE: 'S',
             PROCESADO: 'N'
         }
-        DBProcesohemofilia.guardar(procesohemofilia, function (result) {
-            //Guardar Dbprocesohemofilia detalle
-            _this.guardarProcesoHemofiliaDetalle(result.insertId, campos);
-            _this.Radicado();
+        return new Promise(function (resolev, reject) {
+            DBProcesohemofilia.guardar(procesohemofilia, function (result) {
+                idProcesoHemofilia = result.insertId;
+                //Guardar Dbprocesohemofilia detalle
+                _this.guardarProcesoHemofiliaDetalle(idProcesoHemofilia, campos);
+                _this.Radicado();
+                resolev(idProcesoHemofilia);
+            });
         });
     }
 
@@ -205,7 +212,7 @@ class LogicaDBProcesohemofilia {
 
         //validarCampos
         const oValidacionCamposPH = new ValidacionCamposPH();
-        const oValidacionContenidoPH =  new ValidacionContenidoPH();
+        const oValidacionContenidoPH = new ValidacionContenidoPH();
         oValidacionCamposPH.validar(arrayCampos, resultEstructuraCampo);
         oValidacionContenidoPH.Validar(arrayCampos, resultEstructuraCampo)
         this.guardarCamposBuenos(idCabeza, oValidacionCamposPH.filas_buenas);
@@ -281,6 +288,14 @@ class LogicaDBProcesohemofilia {
         const obHemofilia = new DBProcesohemofilia();
         var archivoExistente = await obHemofilia.getVigente(nombreZip, body);
         return archivoExistente;
+    }
+
+    public static async consultarArchivoCargado(ID_PROCESO_HEMOFILIA){
+        const obHemofilia = new DBProcesohemofilia()
+        const archvioCargado = await obHemofilia.consultarUltimoArchivoCargado(ID_PROCESO_HEMOFILIA);
+        console.log('-----------------------------------------------------------------')
+        console.log(archvioCargado)
+        return archvioCargado;
     }
 }
 

@@ -163,4 +163,8 @@ export class HemofiliaService {
     return this.http.get(`${this.API_URI}/numeroRegistro/Registro`)
   }
 
+  consultarUltimoArchivoCargado(ID_PROCESO_HEMOFILIA){
+    return this.http.get(`${this.API_URI2}/archivocargado/${ID_PROCESO_HEMOFILIA}`)
+  }
+
 }

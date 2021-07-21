@@ -14,9 +14,10 @@ class Carguehemofiliacontrollers {
             var isValid = LogicaDBProcesohemofilia.validarNombresFile(nombreZip, nombreTxt);
 
             if (isValid) {
-                LogicaDBProcesohemofilia.cargarHemofilia(txt, longitud, ruta, nombreZip, body, perfil);
-                var cont = LogicaDBProcesohemofilia.cont; 
-                res.json(cont);
+                LogicaDBProcesohemofilia.cargarHemofilia(txt, longitud, ruta, nombreZip, body, perfil).then(function(idProcesoHemofilia){
+                    res.json(idProcesoHemofilia);
+                });
+             
             } else {
                 res.json({ error: 'el nombre del txt no cohincide con el nombre del zip' });
             }
@@ -38,6 +39,14 @@ class Carguehemofiliacontrollers {
         const nombreArchivo = await obHemofilia.getNombreArchivo();
         res.json(nombreArchivo);
     }
+
+    
+    public async consultarUltimoArchivoCargado(req: Request, res: Response) {
+        const {ID_PROCESO_HEMOFILIA} = req.params;
+       var archvioCargado = await LogicaDBProcesohemofilia.consultarArchivoCargado(ID_PROCESO_HEMOFILIA)
+        res.json(archvioCargado);
+    }
+
 }
 
 export const carguehemofiliacontrollers = new Carguehemofiliacontrollers();

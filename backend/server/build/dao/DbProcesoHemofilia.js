@@ -123,5 +123,21 @@ class DBProcesohemofilia {
         }
         ;
     }
+    consultarUltimoArchivoCargado(ID_PROCESO_HEMOFILIA) {
+        return new Promise(function (resolev, reject) {
+            try {
+                var query = "select * from bd_proceso_hemofilia where ID_PROCESO_HEMOFILIA = ? ";
+                database_1.default.query(query, [ID_PROCESO_HEMOFILIA], function (err, result, fields) {
+                    if (err)
+                        throw err;
+                    resolev(result);
+                });
+            }
+            catch (error) {
+                //res.status(404).json({ error: 'No se pudieron almacenar datos' });
+            }
+            ;
+        });
+    }
 }
 exports.default = DBProcesohemofilia;

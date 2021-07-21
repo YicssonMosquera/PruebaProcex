@@ -25,9 +25,9 @@ class Carguehemofiliacontrollers {
         FileZipUtil_1.default.getFileTxt(req.file, req.body, function (txt, longitud, ruta, nombreZip, nombreTxt, body, perfil) {
             var isValid = LogicaDbProcesoHemofilia_1.default.validarNombresFile(nombreZip, nombreTxt);
             if (isValid) {
-                LogicaDbProcesoHemofilia_1.default.cargarHemofilia(txt, longitud, ruta, nombreZip, body, perfil);
-                var cont = LogicaDbProcesoHemofilia_1.default.cont;
-                res.json(cont);
+                LogicaDbProcesoHemofilia_1.default.cargarHemofilia(txt, longitud, ruta, nombreZip, body, perfil).then(function (idProcesoHemofilia) {
+                    res.json(idProcesoHemofilia);
+                });
             }
             else {
                 res.json({ error: 'el nombre del txt no cohincide con el nombre del zip' });
@@ -50,6 +50,13 @@ class Carguehemofiliacontrollers {
             const obHemofilia = new DbProcesoHemofilia_1.default();
             const nombreArchivo = yield obHemofilia.getNombreArchivo();
             res.json(nombreArchivo);
+        });
+    }
+    consultarUltimoArchivoCargado(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { ID_PROCESO_HEMOFILIA } = req.params;
+            var archvioCargado = yield LogicaDbProcesoHemofilia_1.default.consultarArchivoCargado(ID_PROCESO_HEMOFILIA);
+            res.json(archvioCargado);
         });
     }
 }

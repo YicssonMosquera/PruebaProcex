@@ -7,6 +7,7 @@ import loginRoutes from './routes/loginroutes'
 import cargaropcioneshemofiliaRoutes from './routes/Cargaropcioneshemofiliaroutes'
 import soportesRoutes from './routes/SoportesRoutes'; 
 import cargahemofiliaRoutes from './routes/CarguehemofiliaRoutes';
+import logsherrores from './routes/LogsHerroresRoutes';
 import paht from 'path'
 class Server {
 
@@ -28,11 +29,12 @@ class Server {
 
     routes():void {
         this.app.use(indexRoutes);
-        this.app.use('/api/4505',agregar4505Routes)
-        this.app.use('/api/login',loginRoutes)
-        this.app.use('/api/hemofilia',cargaropcioneshemofiliaRoutes)
-        this.app.use('/api/soportes', soportesRoutes)
-        this.app.use('/api/carguehemofilia', cargahemofiliaRoutes)
+        this.app.use('/api/4505',agregar4505Routes);
+        this.app.use('/api/login',loginRoutes);
+        this.app.use('/api/hemofilia',cargaropcioneshemofiliaRoutes);
+        this.app.use('/api/soportes', soportesRoutes);
+        this.app.use('/api/carguehemofilia', cargahemofiliaRoutes);
+        this.app.use('/api/logsherrores', logsherrores);
         this.app.use('/soportes',express.static(paht.resolve('soportes')));
         this.app.use('/Carguehemofilia',express.static(paht.resolve('Carguehemofilia')));
     }

@@ -5,6 +5,7 @@ import { LoginService } from '../../services/login/login.service';
 import { saveAs } from 'file-saver'
 import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import Swal from 'sweetalert2';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-cargar-hemofilia',
@@ -13,6 +14,7 @@ import Swal from 'sweetalert2';
   providers: [NgbModalConfig, NgbModal]
 })
 export class CargarHemofiliaComponent implements OnInit {
+  idProcesoHemofilia;
   hemofilia
   uploadedFiles: any[] = [];
   resultado
@@ -35,6 +37,7 @@ export class CargarHemofiliaComponent implements OnInit {
   cargahemofilia: any
   UserFullName: string;
   dragAreaClass: string;
+
   private User
   private perfil
 
@@ -83,7 +86,7 @@ export class CargarHemofiliaComponent implements OnInit {
   }
 
   descargarLogsTxt(data) {
-    console.log(data)
+    this.dynamicDownloadTxt();
   }
 
 
@@ -191,7 +194,6 @@ export class CargarHemofiliaComponent implements OnInit {
   cargarhemofilia(form) {
     this.hemofiliaservice.cargamasivahemofilia(this.file, this.User, this.perfil).subscribe(res => {
       var respuesta = res;
-      console.log(res);
 
       if (respuesta['error']) {
         Swal.fire({
@@ -203,8 +205,10 @@ export class CargarHemofiliaComponent implements OnInit {
         })
         form.clear();
         return;
+      } else {
+        this.idProcesoHemofilia = respuesta;
       }
-      
+
       this.value6 = res;
       Swal.fire({
         title: 'Almacenado!',
@@ -214,10 +218,45 @@ export class CargarHemofiliaComponent implements OnInit {
       }
       ).then((result) => {
         if (result.value) {
-          this.ConsultarCargue();
+          this.hemofiliaservice.consultarUltimoArchivoCargado(this.idProcesoHemofilia).subscribe(res => {
+            var respuesta = res[0];
+            console.log(respuesta.ESTADO_PROCESO)
+            if (respuesta.ESTADO_PROCESO == 4) {
+              Swal.fire({
+                icon: 'info',
+                title: 'Estado del proceso',
+                text: 'Con errores' + ' ' + 'Radicado' + ' ' + respuesta.NUMERO_RADICACION,
+                showConfirmButton: true,
+                allowOutsideClick: false, // NO PERMITE QUE SE CIERRE AL DAR CLIC POR FUERA
+              }).then((result) => {
+                if (result.value) {
+                  this.ConsultarCargue();
+                }
+              })
+            }
+            if (respuesta.ESTADO_PROCESO == 2) {
+              Swal.fire({
+                icon: 'info',
+                title: 'Estado del proceso',
+                text: 'Exitoso' + ' ' + 'Radicado' + ' ' + respuesta.NUMERO_RADICACION,
+                showConfirmButton: true,
+                allowOutsideClick: false, // NO PERMITE QUE SE CIERRE AL DAR CLIC POR FUERA
+              }).then((result) => {
+                if (result.value) {
+                  this.ConsultarCargue();
+                }
+              })
+            }
+
+          })
         }
       })
     })
+  }
+
+  consultarUltimoArchivoCargado() {
+    console.log(this.idProcesoHemofilia)
+
   }
 
   cosnultarNombreArchivo() {
@@ -251,5 +290,41 @@ export class CargarHemofiliaComponent implements OnInit {
     this.vigente = 'S';
     this.estado = '';
     this.ConsultarCargue();
+  }
+
+  fakeValidateUserData() {
+    return of({
+      userDate1: 1,
+      userData2: 2
+    });
+  }
+  private setting = {
+    element: {
+      dynamicDownload: null as HTMLElement
+    }
+  }
+  dynamicDownloadTxt() {
+    this.fakeValidateUserData().subscribe((res) => {
+      this.dyanmicDownloadByHtmlTag({
+        fileName: 'My Report',
+        text: JSON.stringify(res)
+      });
+    });
+
+  }
+  private dyanmicDownloadByHtmlTag(arg: {
+    fileName: string,
+    text: string
+  }) {
+    if (!this.setting.element.dynamicDownload) {
+      this.setting.element.dynamicDownload = document.createElement('a');
+    }
+    const element = this.setting.element.dynamicDownload;
+    const fileType = arg.fileName.indexOf('.json') > -1 ? 'text/json' : 'text/plain';
+    element.setAttribute('href', `data:${fileType};charset=utf-8,${encodeURIComponent(arg.text)}`);
+    element.setAttribute('download', arg.fileName);
+
+    var event = new MouseEvent("click");
+    element.dispatchEvent(event);
   }
 }
