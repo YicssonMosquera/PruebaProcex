@@ -14,6 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.logsherrorescontrollers = void 0;
 const LogsHerrores_1 = __importDefault(require("../dao/LogsHerrores"));
+const crearExcel_1 = __importDefault(require("../logica/crearExcel"));
 class LogsHerroresControllers {
     cargarHerroresTipoB(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -23,17 +24,21 @@ class LogsHerroresControllers {
             res.json(HerroresTipob);
         });
     }
+    cargarHerroresExcel(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { NUMERO_RADICACION } = req.params;
+            const Logsherrores = new LogsHerrores_1.default();
+            const HerroresTipob = yield Logsherrores.cargarHerroresLogsExcel(NUMERO_RADICACION);
+            crearExcel_1.default.generateExcel(HerroresTipob, res);
+            res.json(HerroresTipob);
+        });
+    }
     cargarHerroresTipoA(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { NUMERO_RADICACION } = req.params;
             const Logsherrores = new LogsHerrores_1.default();
             const HerroresTipoA = yield Logsherrores.cargarHerroresTipoA(NUMERO_RADICACION);
             res.json(HerroresTipoA);
-        });
-    }
-    aaaa(req, res) {
-        return __awaiter(this, void 0, void 0, function* () {
-            res.json('hola');
         });
     }
 }

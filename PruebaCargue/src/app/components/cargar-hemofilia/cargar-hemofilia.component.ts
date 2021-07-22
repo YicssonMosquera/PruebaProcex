@@ -2,8 +2,9 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { HemofiliaService } from '../../services/hemofilia/hemofilia.service';
 import { LoginService } from '../../services/login/login.service';
-import { saveAs } from 'file-saver'
+import * as FileSaver from 'file-saver';
 import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import {LogsHerroresService} from '../../services/logsHerrores/logs-herrores.service'
 import Swal from 'sweetalert2';
 import { of } from 'rxjs';
 
@@ -44,7 +45,7 @@ export class CargarHemofiliaComponent implements OnInit {
   @ViewChild('form') myform: ElementRef;
 
   constructor(private hemofiliaservice: HemofiliaService, private loginservice: LoginService, private router: Router,
-    config: NgbModalConfig, private modalService: NgbModal,) {
+    config: NgbModalConfig, private modalService: NgbModal, private logsHerrores:LogsHerroresService) {
     config.keyboard = false;
     this.User = this.loginservice.getCurrentUser();
     this.perfil = this.loginservice.getCurrentperfil();
@@ -82,11 +83,14 @@ export class CargarHemofiliaComponent implements OnInit {
   }
 
   descargarLogsExcel(data) {
-    console.log(data)
+    let EXCEL_EXTENSION = '.xlsx';
+   const Ruta = 'http://localhost:3000/logsExcel/'+ data
+    this.logsHerrores.cargarLogsHerrores(data).subscribe(res=>{
+      saveAs(Ruta + EXCEL_EXTENSION)
+    })
   }
 
   descargarLogsTxt(data) {
-    this.dynamicDownloadTxt();
   }
 
 
@@ -303,28 +307,5 @@ export class CargarHemofiliaComponent implements OnInit {
       dynamicDownload: null as HTMLElement
     }
   }
-  dynamicDownloadTxt() {
-    this.fakeValidateUserData().subscribe((res) => {
-      this.dyanmicDownloadByHtmlTag({
-        fileName: 'My Report',
-        text: JSON.stringify(res)
-      });
-    });
-
-  }
-  private dyanmicDownloadByHtmlTag(arg: {
-    fileName: string,
-    text: string
-  }) {
-    if (!this.setting.element.dynamicDownload) {
-      this.setting.element.dynamicDownload = document.createElement('a');
-    }
-    const element = this.setting.element.dynamicDownload;
-    const fileType = arg.fileName.indexOf('.json') > -1 ? 'text/json' : 'text/plain';
-    element.setAttribute('href', `data:${fileType};charset=utf-8,${encodeURIComponent(arg.text)}`);
-    element.setAttribute('download', arg.fileName);
-
-    var event = new MouseEvent("click");
-    element.dispatchEvent(event);
-  }
+ 
 }

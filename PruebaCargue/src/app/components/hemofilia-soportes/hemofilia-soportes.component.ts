@@ -33,7 +33,7 @@ export class HemofiliaSoportesComponent implements OnInit {
   totalRecords
   constructor(config: NgbModalConfig, private modalService: NgbModal,
     private loginservice: LoginService, private soporteservice: SoportesService, activateRoute: ActivatedRoute,) {
-      config.backdrop = 'static';
+    config.backdrop = 'static';
     config.keyboard = false; this.usuario = this.loginservice.getCurrentUser(); this.CC = activateRoute.snapshot.params['cc']
   }
 
@@ -43,14 +43,14 @@ export class HemofiliaSoportesComponent implements OnInit {
   }
 
   cargarsoporte() {
-    this.soporteservice.Cargarsoportes(this.CC,this.nombreArchivo,this.tipoArchivo,this.Anulado,this.page,this.rows).subscribe(res => {
+    this.soporteservice.Cargarsoportes(this.CC, this.nombreArchivo, this.tipoArchivo, this.Anulado, this.page, this.rows).subscribe(res => {
       this.soporte = res;
       console.log(this.soporte)
     })
   }
 
-  cargarNumeroRegistros(){
-    this.soporteservice.numeroRegistro(this.CC).subscribe(res=>{
+  cargarNumeroRegistros() {
+    this.soporteservice.numeroRegistro(this.CC).subscribe(res => {
       this.totalRecords = res;
     })
   }
@@ -102,7 +102,7 @@ export class HemofiliaSoportesComponent implements OnInit {
     console.log(event);
     this.rows = event.rows;
     this.page = event.page;
-   this.cargarsoporte();
+    this.cargarsoporte();
   }
 
 }

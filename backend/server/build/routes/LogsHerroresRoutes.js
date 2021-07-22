@@ -8,9 +8,9 @@ class LogsHerroresRoutes {
         this.config();
     }
     config() {
-        this.router.get('/', LogsHerroresControllers_1.logsherrorescontrollers.aaaa);
         this.router.get('/herrorestipob/:NUMERO_RADICACION', LogsHerroresControllers_1.logsherrorescontrollers.cargarHerroresTipoB);
         this.router.get('/herrorestipoa/:NUMERO_RADICACION', LogsHerroresControllers_1.logsherrorescontrollers.cargarHerroresTipoA);
+        this.router.get('/herroresexcel/:NUMERO_RADICACION', LogsHerroresControllers_1.logsherrorescontrollers.cargarHerroresExcel);
     }
 }
 const logsherrores = new LogsHerroresRoutes();

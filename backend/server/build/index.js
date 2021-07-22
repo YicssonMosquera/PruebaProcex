@@ -36,6 +36,7 @@ class Server {
         this.app.use('/api/carguehemofilia', CarguehemofiliaRoutes_1.default);
         this.app.use('/api/logsherrores', LogsHerroresRoutes_1.default);
         this.app.use('/soportes', express_1.default.static(path_1.default.resolve('soportes')));
+        this.app.use('/logsExcel', express_1.default.static(path_1.default.resolve('logsExcel')));
         this.app.use('/Carguehemofilia', express_1.default.static(path_1.default.resolve('Carguehemofilia')));
     }
     start() {

@@ -1,9 +1,5 @@
-
-
 <!-- Spinner para cuando se estan procesando solicitudes http -->
 <ngx-ui-loader></ngx-ui-loader>
-
-  
 
 
 <div class="y-card" style="height: 100%;">
@@ -11,7 +7,7 @@
     <banner *ngIf='loginService.isloggedIn'></banner>
     <app-menuu *ngIf='loginService.isloggedIn'></app-menuu>
   </div>
-    <div class="y-card-body">
-      <router-outlet id="pagina"></router-outlet >
-    </div>
+  <div class="y-card-body">
+    <router-outlet id="pagina"></router-outlet>
+  </div>
 </div>

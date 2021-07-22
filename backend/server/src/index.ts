@@ -36,6 +36,7 @@ class Server {
         this.app.use('/api/carguehemofilia', cargahemofiliaRoutes);
         this.app.use('/api/logsherrores', logsherrores);
         this.app.use('/soportes',express.static(paht.resolve('soportes')));
+        this.app.use('/logsExcel',express.static(paht.resolve('logsExcel')));
         this.app.use('/Carguehemofilia',express.static(paht.resolve('Carguehemofilia')));
     }
 

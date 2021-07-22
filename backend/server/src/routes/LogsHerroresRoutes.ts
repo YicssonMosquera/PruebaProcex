@@ -9,9 +9,9 @@ class LogsHerroresRoutes {
     }
 
     config(): void {
-        this.router.get('/',logsherrorescontrollers.aaaa)
         this.router.get('/herrorestipob/:NUMERO_RADICACION',logsherrorescontrollers.cargarHerroresTipoB)
         this.router.get('/herrorestipoa/:NUMERO_RADICACION',logsherrorescontrollers.cargarHerroresTipoA)
+        this.router.get('/herroresexcel/:NUMERO_RADICACION',logsherrorescontrollers.cargarHerroresExcel)
     }
 }
 
