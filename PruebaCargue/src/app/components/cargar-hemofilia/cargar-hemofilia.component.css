@@ -67,3 +67,12 @@ body {
     height: 10px;
 }
 
+
+#menu{
+    float: right;
+    color:   #666666 ;
+    margin-top: -15px;
+  }
+  #pagina{
+    background-image: linear-gradient(to right, rgb(253, 255, 255),white)
+  }

@@ -9,32 +9,37 @@
     width: 300px;
     font-size: 10px;
     color: #000000;
+    height: 26px;
 }
 #documento{
     width: 300px;
-    margin-left: 20px;
+    margin-left: 18px;
     font-size: 10px;
     color: #000000;
+    height: 26px;
 }
 #pnombre{
     width: 300px;
-    margin-left: 20px;
+    margin-left: 18px;
     font-size: 10px;
     color: #000000;
+    height: 26px;
 }
 #snombre{
     width: 300px;
-    margin-left: 20px;
+    margin-left: 18px;
     font-size: 10px;
     color: #000000;
+    height: 26px;
 }
 #papellido{
     width: 300px;
     font-size: 10px;
     color: #000000;
+    height: 26px;
 }
 #Agendar{
-    margin-left: 20px;
+    margin-left: 18px;
     font-size: 10px;
 }
 #agenda{
@@ -49,7 +54,7 @@ button.calendar, button.calendar:active {
     background-position: center;
   }
   #fechan{
-    margin-left: 20px;
+    margin-left: 18px;
     margin-right: 20px;
     font-size: 10px;
     color: #000000;
@@ -67,56 +72,65 @@ button.calendar, button.calendar:active {
     margin-left: 12px;
     font-size: 10px;
     color: #000000;
+    height: 26px;
 }
 #edad2{
-  margin-left: 20px;
-  font-size: 10px;
-  color: #000000;
+    margin-left: 18px;
+    font-size: 10px;
+    color: #000000;
+    height: 26px;
 }
 #edadc{
     margin-left: 8px;
     font-size: 10px;
     color: #000000;
+    height: 26px;
 }
 #edadc2{
-    margin-left: 8px;
+    margin-left: 4px;
     width: 80px;
     font-size: 10px;
     color: #000000;
+    height: 26px;
 }
 #sexo{
     margin-left: 10px;
     width: 120px;
     font-size: 10px;
     color: #000000;
+    height: 26px;
 }
 #numeropaciente{
   width: 260px;
-  margin-left: 20px;
+  margin-left: 18px;
   font-size: 10px;
   justify-content: center;
   color: #000000;
+  height: 26px;
 }
 #numeropaciente1{
   width: 300px;
-  margin-left: 20px;
+  margin-left: 18px;
   font-size: 10px;
   box-sizing: inherit;
   color: #000000;
-  margin-top: -15px;
+  margin-top: 3px;
+  height: 26px;
 }
 #GrupoP{
   width: 300px;
   font-size: 10px;
   color: #000000;
   margin-top: 3px;
+  height: 26px;
 }
 #Mresidencia{
   width: 300px;
-  margin-left: 20px;
+  margin-left: 18px;
   font-size: 10px;
   color: #000000;
   margin-top: 3px;
+  height: 26px;
 }
 #fechaCor1{
   margin-left: -10px;
@@ -125,6 +139,7 @@ button.calendar, button.calendar:active {
   color: #000000;
   box-sizing: inherit;
 }
+
 #fechaCor12{
   margin-left: 8px;
   margin-right: 10px;
@@ -149,30 +164,30 @@ button.calendar, button.calendar:active {
 #Estadog{
   width: 300px;
   font-size: 10px;
+  height: 26px;
   color: #000000;
-
 }
 
 #hematosis{
   width: 300px;
   font-size: 10px;
   color: #000000;
-  margin-top: 10px;
-
+  height: 26px;
 }
 #CodigoV{
   width: 300px;
-  margin-left: 20px;
+  margin-left: 18px;
   font-size: 10px;
   color: #000000;
-  margin-top: -15px;
+  margin-top: 3px;
+  height: 26px;
 }
 #CodigoV2{
   width: 300px;
-  margin-left: 20px;
+  margin-left: 18px;
   font-size: 10px;
   color: #000000;
-
+  height: 26px;
 }
 
 #fechanD1{
@@ -194,55 +209,56 @@ button.calendar, button.calendar:active {
 }
 #MDiagnostico{
   width: 300px;
-  margin-left: 20px;
+  margin-left: 18px;
   font-size: 10px;
   color: #000000;
   margin-top: 12px;
+  height: 26px;
 }
 #FechaIN{
   width: 260px;
-  margin-left: 20px;
+  margin-left: 18px;
   font-size: 10px;
   color: #000000;
 }
 #FrecuenciaS{
   width: 300px;
-  margin-left: 20px;
+  margin-left: 18px;
   font-size: 10px;
   color: #000000;
-
+  height: 26px;
 }
 #hemorragia{
   width: 300px;
-  margin-left: 20px;
+  margin-left: 18px;
   font-size: 10px;
   color: #000000;
-  margin-top: 10px;
-
+  height: 26px;
 }
 #Dosis{
   width: 300px;
   font-size: 10px;
   color: #000000;
-  margin-top: -10px;
+  height: 26px;
 }
 
 #HemorrageaL{
   width: 300px;
   font-size: 10px;
   color: #000000;
-  margin-top: 20px;
+  height: 26px;
 }
 #HemorrageaL1{
   width: 300px;
   font-size: 10px;
   color: #000000;
-
+  height: 26px;
 }
 #FechaDet{
   width: 300px;
   font-size: 10px;
   color: #000000;
+  height: 26px;
 }
 
 #FechaDet2{
@@ -256,10 +272,11 @@ button.calendar, button.calendar:active {
 }
 #fechat{
   width: 260px;
-  margin-left: 20px;
+  margin-left: 18px;
   font-size: 10px;
   color: #000000;
   margin-top: -10;
+  height: 26px;
 }
 #fechat1{
   margin-top: -10;
@@ -269,50 +286,56 @@ button.calendar, button.calendar:active {
   width: 300px;
     font-size: 10px;
     color: #000000;
-    margin-top: 20px;
-}
+    margin-top: 10px;
+    height: 26px;
+  }
 #Recibió{
   width: 300px;
-  margin-left: 20px;
+  margin-left: 18px;
   font-size: 10px;
   color: #000000;
-  margin-top: 20px;
+  margin-top: 10px;
+  height: 26px;
 }
 #factor{
   width: 300px;
-    margin-left: 20px;
+    margin-left: 18px;
     font-size: 10px;
     color: #000000;
     margin-top: -10px;
-}
+    height: 26px;
+  }
 #Costototal{
   width: 300px;
-  margin-left: 20px;
+  margin-left: 18px;
   font-size: 10px;
   color: #000000;
-  margin-top: 20px;
+  margin-top: 15px;
+  height: 26px;
 }
 
 #Costototal2{
   width: 300px;
-  margin-left: 20px;
+  margin-left: 18px;
   font-size: 10px;
   color: #000000;
-  margin-top: 28px;
+  height: 26px;
 }
 #Costototal3{
   width: 300px;
-  margin-left: 20px;
+  margin-left: 18px;
   font-size: 10px;
   color: #000000;
   margin-top: 30px;
+  height: 26px;
 }
 #Costototal4{
   width: 300px;
-  margin-left: 20px;
+  margin-left: 18px;
   font-size: 10px;
   color: #000000;
-  margin-top: 18px;
+  margin-top: 14px;
+  height: 26px;
 }
 #menu{
   float: right;
@@ -321,29 +344,30 @@ button.calendar, button.calendar:active {
 }
 #Modalidad{
   width: 300px;
-    font-size: 10px;
-    color: #000000;
-    margin-top: 10px;
-}
+  font-size: 10px;
+  color: #000000;
+  height: 26px;
+  }
 #administracion{
   width: 300px;
     font-size: 10px;
-    margin-left: 20px;
+    margin-left: 18px;
     color: #000000;
-    margin-top: 10px;
-}
+    height: 26px;
+  }
 
 #CodigoC{
   width: 300px;
   font-size: 10px;
   color: #000000;
-  margin-top: 10px;
+  margin-top: 7.5px;
+  height: 26px;
 }
 
 #foother{
   position: fixed;
   left: 0;
-  top: 555px;
+  top:  653px;
   right:0;
 }
 
@@ -364,28 +388,30 @@ button.calendar, button.calendar:active {
 }
 
 #nuevo{
- margin-left: 20px;
+ margin-left: 18px;
  width: 300px;
 }
 
 #nuevo1{
   width: 300px;
   margin-top: 12px;
- }
+  height: 26px;
+}
 
 #nuevo2{
   width: 200px;
   font-size: 10px;
   color: #000000;
-
+  margin-top: 8px;
+  height: 26px;
 }
 
 #nuevo3{
   width: 125px;
   font-size: 10px;
   color: #000000;
-
-
+  margin-top: 8px;
+  height: 26px;
 }
 #nuevo4{
   margin-left: -20px;
@@ -393,7 +419,8 @@ button.calendar, button.calendar:active {
   margin-top: 3px;
   font-size: 10px;
   color: #000000;
- }
+  height: 26px;
+}
 
  #nuevo5{
   width: 168px;
@@ -407,21 +434,36 @@ button.calendar, button.calendar:active {
   width: 135px;
   font-size: 10px;
   color: #000000;
- }
+  height: 26px;
+  margin-top: 8px;
+}
 
  #nuevo7{
-  margin-left: 20px;
+  margin-left: 18px;
   width: 180px;
   font-size: 10px;
   color: #000000;
- }
+  height: 26px;
+}
+
  #nuevo8{
   width: 125px;
   font-size: 10px;
   color: #000000;
-
+  margin-top: 8px;
+  height: 26px;
 }
 
+#span1{
+  margin-top: 0px;
+}
+
+#nuevo9{
+  width: 200px;
+  font-size: 10px;
+  color: #000000;
+  height: 26px;
+}
 #soporte{
   background-color: #337ab7;
   color: white;
@@ -431,27 +473,22 @@ button.calendar, button.calendar:active {
   color: white;
 }
 
-.y-card{
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-}
-.y-card-header{
-  order: 1;
-}
-.y-card-body{
-  flex-grow: 1;
-  order: 2;
-  overflow: auto;
-  margin: 0;
+.input-group-text{
+  height: 26px !important;
+  margin-top: 8px;
 
 }
-.y-card-footer{
-  order: 3;
-  border-top: 1px solid rgb(204, 202, 202);
-  padding: 10px;
-  background-color: rgb(233, 232, 232);
-  
+label{
+  margin-bottom: 0rem;
 }
 
+#titulo{
+  position: absolute;
+    top: 5px;
+}
+/* 
+.form-control{
+  height: 26px !important;
+  font-size: 13px !important;
+} */
 

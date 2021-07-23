@@ -4,7 +4,7 @@ import { HemofiliaService } from '../../services/hemofilia/hemofilia.service';
 import { LoginService } from '../../services/login/login.service';
 import * as FileSaver from 'file-saver';
 import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import {LogsHerroresService} from '../../services/logsHerrores/logs-herrores.service'
+import { LogsHerroresService } from '../../services/logsHerrores/logs-herrores.service'
 import Swal from 'sweetalert2';
 import { of } from 'rxjs';
 
@@ -45,7 +45,7 @@ export class CargarHemofiliaComponent implements OnInit {
   @ViewChild('form') myform: ElementRef;
 
   constructor(private hemofiliaservice: HemofiliaService, private loginservice: LoginService, private router: Router,
-    config: NgbModalConfig, private modalService: NgbModal, private logsHerrores:LogsHerroresService) {
+    config: NgbModalConfig, private modalService: NgbModal, private logsHerrores: LogsHerroresService) {
     config.keyboard = false;
     this.User = this.loginservice.getCurrentUser();
     this.perfil = this.loginservice.getCurrentperfil();
@@ -84,9 +84,11 @@ export class CargarHemofiliaComponent implements OnInit {
 
   descargarLogsExcel(data) {
     let EXCEL_EXTENSION = '.xlsx';
-   const Ruta = 'http://localhost:3000/logsExcel/'+ data
-    this.logsHerrores.cargarLogsHerrores(data).subscribe(res=>{
-      saveAs(Ruta + EXCEL_EXTENSION)
+    const Ruta = 'http://localhost:3000/logsExcel/' + data+'.xlsx'
+    this.logsHerrores.cargarLogsHerrores(data).subscribe(res => {
+      // const blob = new Blob([Ruta], { type: fileType });
+      // const url = window.URL.createObjectURL(blob);
+      saveAs(Ruta, data+'.xlsx');
     })
   }
 
@@ -213,7 +215,7 @@ export class CargarHemofiliaComponent implements OnInit {
         this.idProcesoHemofilia = respuesta;
       }
 
-      this.value6 = res;
+      //this.value6 = res;
       Swal.fire({
         title: 'Almacenado!',
         text: 'Archivo cargado',
@@ -224,6 +226,8 @@ export class CargarHemofiliaComponent implements OnInit {
         if (result.value) {
           this.hemofiliaservice.consultarUltimoArchivoCargado(this.idProcesoHemofilia).subscribe(res => {
             var respuesta = res[0];
+            var registros = res[0].REGISTROS_PROCESADOS
+            this.value6 = registros + 100 - registros;
             console.log(respuesta.ESTADO_PROCESO)
             if (respuesta.ESTADO_PROCESO == 4) {
               Swal.fire({
@@ -307,5 +311,5 @@ export class CargarHemofiliaComponent implements OnInit {
       dynamicDownload: null as HTMLElement
     }
   }
- 
+
 }

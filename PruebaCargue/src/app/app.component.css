@@ -1,21 +1,32 @@
 #pagina{
-    background-image: linear-gradient(to right, rgb(253, 255, 255),white);
-    height: 100%;
+  background-image: linear-gradient(to right, rgb(253, 255, 255),white);
+  height: 100%;
 }
 
 .y-card{
-  display: flex;
-  flex-direction: column;
+display: flex;
+flex-direction: column;
 }
 .y-card-header{
-  order: 1;
+order: 1;
 }
 .y-card-body{
-  flex-grow: 1;
-  order: 2;
-  overflow: auto;
+flex-grow: 1;
+order: 2;
+overflow: auto;
 }
 .y-card-footer{
-  order: 3;
+order: 3;
 }
-
+#eliminar{
+margin-left: 5px;
+border: none;
+background: none;
+font: menu
+}
+#boton_home{
+margin: 5px;
+}
+.mat-menu-item {
+background: white !important;
+}

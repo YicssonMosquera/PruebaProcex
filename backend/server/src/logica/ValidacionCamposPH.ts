@@ -84,7 +84,7 @@ class ValidacionCamposPH {
                             if (validacion.isMaxMin(valorcampo, validacioncampo.LONGITUD_MINIMA, validacioncampo.LONGITUD_MAXIMA)) {
                                 var hemofilia: Hemofiliaerror = {
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Longitud no corresponde campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',
@@ -101,7 +101,7 @@ class ValidacionCamposPH {
                             if (validacion.ismax(valorcampo, validacioncampo.LONGITUD_MAXIMA)) {
                                 var hemofilia: Hemofiliaerror = {
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Longitud no corresponde campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',
@@ -123,7 +123,7 @@ class ValidacionCamposPH {
                                 var hemofilia: Hemofiliaerror = {
 
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Longitud no corresponde campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',
@@ -141,7 +141,7 @@ class ValidacionCamposPH {
                                 var hemofilia: Hemofiliaerror = {
 
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Longitud no corresponde campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',
@@ -163,7 +163,7 @@ class ValidacionCamposPH {
                                 var hemofilia: Hemofiliaerror = {
 
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Longitud no corresponde campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',
@@ -179,7 +179,7 @@ class ValidacionCamposPH {
                                 var hemofilia: Hemofiliaerror = {
 
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Tipo de datos no valido campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',
@@ -196,7 +196,7 @@ class ValidacionCamposPH {
                                 var hemofilia: Hemofiliaerror = {
 
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Longitud no corresponde campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',
@@ -212,7 +212,7 @@ class ValidacionCamposPH {
                                 var hemofilia: Hemofiliaerror = {
 
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Tipo de datos no valido campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',
@@ -233,7 +233,7 @@ class ValidacionCamposPH {
                                 var hemofilia: Hemofiliaerror = {
 
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Longitud no corresponde campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',
@@ -251,7 +251,7 @@ class ValidacionCamposPH {
                                 var hemofilia: Hemofiliaerror = {
 
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Longitud no corresponde campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',
@@ -273,7 +273,7 @@ class ValidacionCamposPH {
                                 var hemofilia: Hemofiliaerror = {
 
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Longitud no corresponde campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',
@@ -291,7 +291,7 @@ class ValidacionCamposPH {
                                 var hemofilia: Hemofiliaerror = {
 
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Longitud no corresponde campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',
@@ -313,7 +313,7 @@ class ValidacionCamposPH {
                             if (validacion.isMaxMin(valorcampo, validacioncampo.LONGITUD_MINIMA, validacioncampo.LONGITUD_MAXIMA)) {
                                 var hemofilia: Hemofiliaerror = {
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Longitud no corresponde campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',
@@ -328,7 +328,7 @@ class ValidacionCamposPH {
                             } else {
                                 var hemofilia: Hemofiliaerror = {
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Tipo de datos no valido campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',
@@ -344,7 +344,7 @@ class ValidacionCamposPH {
                                 var hemofilia: Hemofiliaerror = {
 
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Longitud no corresponde campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',
@@ -360,7 +360,7 @@ class ValidacionCamposPH {
                                 var hemofilia: Hemofiliaerror = {
 
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Tipo de datos no valido campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',
@@ -381,7 +381,7 @@ class ValidacionCamposPH {
                                 var hemofilia: Hemofiliaerror = {
 
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Longitud no corresponde campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',
@@ -396,7 +396,7 @@ class ValidacionCamposPH {
                             } else {
                                 var hemofilia: Hemofiliaerror = {
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Tipo de datos no valido campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',
@@ -412,7 +412,7 @@ class ValidacionCamposPH {
                                 var hemofilia: Hemofiliaerror = {
 
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Longitud no corresponde campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',
@@ -428,7 +428,7 @@ class ValidacionCamposPH {
                                 var hemofilia: Hemofiliaerror = {
 
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Tipo de datos no valido campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',
@@ -449,7 +449,7 @@ class ValidacionCamposPH {
                                 var hemofilia: Hemofiliaerror = {
 
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Longitud no corresponde campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',
@@ -467,7 +467,7 @@ class ValidacionCamposPH {
                                 var hemofilia: Hemofiliaerror = {
 
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Longitud no corresponde campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',
@@ -491,7 +491,7 @@ class ValidacionCamposPH {
                                 var hemofilia: Hemofiliaerror = {
 
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Longitud no corresponde campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',
@@ -507,7 +507,7 @@ class ValidacionCamposPH {
                                 var hemofilia: Hemofiliaerror = {
 
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Tipo de datos no valido campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',
@@ -523,7 +523,7 @@ class ValidacionCamposPH {
                                 var hemofilia: Hemofiliaerror = {
 
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Longitud no corresponde campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',
@@ -539,7 +539,7 @@ class ValidacionCamposPH {
                                 var hemofilia: Hemofiliaerror = {
 
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Tipo de datos no valido campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',
@@ -561,7 +561,7 @@ class ValidacionCamposPH {
                                 var hemofilia: Hemofiliaerror = {
 
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Longitud no corresponde campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',
@@ -579,7 +579,7 @@ class ValidacionCamposPH {
                                 var hemofilia: Hemofiliaerror = {
 
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Longitud no corresponde campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',
@@ -600,7 +600,7 @@ class ValidacionCamposPH {
                                 var hemofilia: Hemofiliaerror = {
 
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Longitud no corresponde campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',
@@ -617,7 +617,7 @@ class ValidacionCamposPH {
                                 var hemofilia: Hemofiliaerror = {
 
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Tipo de datos no valido campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',
@@ -635,7 +635,7 @@ class ValidacionCamposPH {
                                 var hemofilia: Hemofiliaerror = {
 
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Longitud no corresponde campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',
@@ -651,7 +651,7 @@ class ValidacionCamposPH {
                                 var hemofilia: Hemofiliaerror = {
 
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Tipo de datos no valido campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',
@@ -672,7 +672,7 @@ class ValidacionCamposPH {
                                 var hemofilia: Hemofiliaerror = {
 
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Longitud no corresponde campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',
@@ -688,7 +688,7 @@ class ValidacionCamposPH {
                                 var hemofilia: Hemofiliaerror = {
 
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Tipo de datos no valido campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',
@@ -704,7 +704,7 @@ class ValidacionCamposPH {
                                 var hemofilia: Hemofiliaerror = {
 
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Longitud no corresponde campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',
@@ -721,7 +721,7 @@ class ValidacionCamposPH {
                                 var hemofilia: Hemofiliaerror = {
 
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Tipo de datos no valido campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',
@@ -743,7 +743,7 @@ class ValidacionCamposPH {
                                 var hemofilia: Hemofiliaerror = {
 
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Longitud no corresponde campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',
@@ -761,7 +761,7 @@ class ValidacionCamposPH {
                                 var hemofilia: Hemofiliaerror = {
 
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Longitud no corresponde campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',
@@ -786,7 +786,7 @@ class ValidacionCamposPH {
                                 var hemofilia: Hemofiliaerror = {
 
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Longitud no corresponde campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',
@@ -802,7 +802,7 @@ class ValidacionCamposPH {
                                 var hemofilia: Hemofiliaerror = {
 
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Tipo de datos no valido campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',
@@ -819,7 +819,7 @@ class ValidacionCamposPH {
                                 var hemofilia: Hemofiliaerror = {
 
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Longitud no corresponde campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',
@@ -835,7 +835,7 @@ class ValidacionCamposPH {
                                 var hemofilia: Hemofiliaerror = {
 
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Tipo de datos no valido campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',
@@ -856,7 +856,7 @@ class ValidacionCamposPH {
                                 var hemofilia: Hemofiliaerror = {
 
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Longitud no corresponde campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',
@@ -872,7 +872,7 @@ class ValidacionCamposPH {
                                 var hemofilia: Hemofiliaerror = {
 
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Tipo de datos no valido campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',
@@ -889,7 +889,7 @@ class ValidacionCamposPH {
                                 var hemofilia: Hemofiliaerror = {
 
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Longitud no corresponde campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',
@@ -905,7 +905,7 @@ class ValidacionCamposPH {
                                 var hemofilia: Hemofiliaerror = {
 
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Tipo de datos no valido campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',
@@ -926,7 +926,7 @@ class ValidacionCamposPH {
                                 var hemofilia: Hemofiliaerror = {
 
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Longitud no corresponde campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',
@@ -945,7 +945,7 @@ class ValidacionCamposPH {
                                 var hemofilia: Hemofiliaerror = {
 
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Longitud no corresponde campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',
@@ -967,7 +967,7 @@ class ValidacionCamposPH {
                                 var hemofilia: Hemofiliaerror = {
 
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Longitud no corresponde campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',
@@ -983,7 +983,7 @@ class ValidacionCamposPH {
                                 var hemofilia: Hemofiliaerror = {
 
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Tipo de datos no valido campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',
@@ -1000,7 +1000,7 @@ class ValidacionCamposPH {
                                 var hemofilia: Hemofiliaerror = {
 
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Longitud no corresponde campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',
@@ -1016,7 +1016,7 @@ class ValidacionCamposPH {
                                 var hemofilia: Hemofiliaerror = {
 
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Tipo de datos no valido campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',
@@ -1037,7 +1037,7 @@ class ValidacionCamposPH {
                                 var hemofilia: Hemofiliaerror = {
 
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Longitud no corresponde campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',
@@ -1055,7 +1055,7 @@ class ValidacionCamposPH {
                                 var hemofilia: Hemofiliaerror = {
 
                                     NUMERO_CAMPO: validacioncampo.NUM_CAMPO,
-                                    TIPO_ERROR: 'CE',
+                                    TIPO_ERROR: 'A',
                                     DESCRIPCION_ERROR: 'Longitud no corresponde campo',
                                     USUARIO_CREACION: '',
                                     USUARIO_MODIFICACION: '',

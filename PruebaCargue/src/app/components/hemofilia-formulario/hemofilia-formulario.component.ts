@@ -4,6 +4,7 @@ import { HemofiliaService } from '../../services/hemofilia/hemofilia.service'
 import { Hemofilia } from '../../models/hemofilia'
 import { ActivatedRoute } from '@angular/router';
 import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { AppComponent } from 'src/app/app.component';
 
 import Swal from 'sweetalert2';
 @Component({
@@ -164,7 +165,7 @@ export class HemofiliaFormularioComponent implements OnInit {
     DOSIS_PROFILAXIS:'',
   }
   constructor(private hemofiliaservice: HemofiliaService,activateRoute: ActivatedRoute,
-    config: NgbModalConfig, private modalService: NgbModal) {config.backdrop = 'static';
+    config: NgbModalConfig, private modalService: NgbModal, public tabs:AppComponent) {config.backdrop = 'static';
     config.keyboard = false;}
 
   ngOnInit(): void {
@@ -447,6 +448,9 @@ export class HemofiliaFormularioComponent implements OnInit {
     }
     open(content:any) {
       this.modalService.open(content,{ size: 'lg' });
+    }
+    formularioNuevo(){
+      this.tabs.crearTab('Soporte', 'Hemofilia-soporte/:cc');
     }
 
 }

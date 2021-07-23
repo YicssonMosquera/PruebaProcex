@@ -4,6 +4,8 @@ import { HemofiliaService } from '../../services/hemofilia/hemofilia.service'
 import { Hemofilia } from '../../models/hemofilia'
 import { ActivatedRoute } from '@angular/router';
 import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { AppComponent } from 'src/app/app.component';
+
 import {Router} from '@angular/router'
 import Swal from 'sweetalert2';
 @Component({
@@ -160,7 +162,7 @@ export class HemofiliaEditComponent implements OnInit {
 
 
   constructor(private hemofiliaservice: HemofiliaService,activateRoute: ActivatedRoute,
-    config: NgbModalConfig, private modalService: NgbModal, private Router:Router ) { this.CC = activateRoute.snapshot.params['cc'];config.backdrop = 'static';
+    config: NgbModalConfig, private modalService: NgbModal, private Router:Router, public tabs:AppComponent ) { this.CC = activateRoute.snapshot.params['cc'];config.backdrop = 'static';
     config.keyboard = false;  }
 
   ngOnInit(): void {
@@ -532,14 +534,11 @@ export class HemofiliaEditComponent implements OnInit {
     this.modalService.open(content,{ size: 'lg' });
   }
 
-  editar(){
+editar(){
     for (let i = 0; i < this.hemofilia1.length; i++) {
-      this.Router.navigate(['Hemofilia-soporte/', this.hemofilia1[i].ID_CUENTA_HEMOFILIA]);
+      this.tabs.crearTab('Soporte','Hemofilia-soporte/'+ this.hemofilia1[i].ID_CUENTA_HEMOFILIA);
     }
-
   }
-
-
 
 
 }

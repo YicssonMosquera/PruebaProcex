@@ -14,7 +14,6 @@ const fs = require('fs');
 class CrearExcel {
     static generateExcel(Datos, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            console.log('*****************************************');
             console.log(Datos);
             // Execute the statement to fetch data in results
             const results = Datos;
@@ -31,7 +30,7 @@ class CrearExcel {
             worksheet.getRow(1).getCell(3).value = yield Datos[0].Numero_radicacion;
             worksheet.getRow(2).getCell(3).value = yield Datos[0].Nombre_archivo;
             worksheet.getRow(3).getCell(3).value = yield Datos[0].Fecha_procesado;
-            worksheet.getRow(4).getCell(3).value = yield Datos[0].Cantidad_errores;
+            worksheet.getRow(4).getCell(3).value = yield Datos[0].total_errores;
             worksheet.getRow(5).getCell(3).value = yield Datos[0].Registros_procesados;
             worksheet.getRow(6).getCell(3).value = yield Datos[0].Usuario;
             worksheet.getRow(7).getCell(1).value = 'Fila';

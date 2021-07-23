@@ -2,7 +2,7 @@
     <div class="y-card-header">
         <div class="row">
             <div class="col-md-12" id="">
-                <button type="button" [routerLink]="['/Hemofilia-frm']" id="button" class="btn btn-secondary"><i
+                <button type="button" (click)="formularioNuevo()" id="button" class="btn btn-secondary"><i
                         class="fas fa-file-alt"></i> Nuevo</button>
             </div>
         </div>
@@ -51,8 +51,6 @@
             [rowsPerPageOptions]="[5,10,20,30,50]"></p-paginator>
     </div>
 </div>
-
-
 
 <ng-template #content let-c="close" let-d="dismiss" id="pagina">
     <div class="modal-body">

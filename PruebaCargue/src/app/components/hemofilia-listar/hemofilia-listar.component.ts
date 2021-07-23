@@ -5,6 +5,7 @@ import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { Subject } from 'rxjs';
 import { Router } from '@angular/router'
 import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { AppComponent } from 'src/app/app.component';
 
 @Component({
   selector: 'app-hemofilia-listar',
@@ -28,7 +29,7 @@ export class HemofiliaListarComponent implements OnInit, OnDestroy {
   VALIDACION_REGISTRO = ''
   totalRecords
 
-  constructor(private hemofiliaservice: HemofiliaService, private Router: Router, private ngxSpinnerService: NgxUiLoaderService,private modalService: NgbModal) { }
+  constructor(private hemofiliaservice: HemofiliaService, private Router: Router, private ngxSpinnerService: NgxUiLoaderService,private modalService: NgbModal, public tabs:AppComponent) { }
 
   ngOnInit(): void {
     this.dtoptiontables()
@@ -66,10 +67,10 @@ export class HemofiliaListarComponent implements OnInit, OnDestroy {
       console.log(this.opcion)
       if (this.opcion.length > 0) {
         this.ngxSpinnerService.stop();
-        this.Router.navigate(['Hemofilia-frm/', CC]);
+        this.tabs.crearTab('Registro', 'Hemofilia-frm/'+CC);
       } else {
         this.ngxSpinnerService.stop();
-        this.Router.navigate(['Hemofilia-frm']);
+        this.tabs.crearTab('Registro', 'Hemofilia-frm');
       }
 
     })
@@ -160,6 +161,9 @@ export class HemofiliaListarComponent implements OnInit, OnDestroy {
     this.VALIDACION_SOPORTE = '';
     this.VALIDACION_REGISTRO = '';
     this.CargarRegistroshemofilia();
+  }
+  formularioNuevo(){
+    this.tabs.crearTab('Registro', 'Hemofilia-frm');
   }
 
 
