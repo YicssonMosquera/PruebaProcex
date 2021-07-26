@@ -65,7 +65,7 @@ class CrearExcel {
 
 
 
-      
+
         worksheet.columns = [
             { key: 'fila_del_error', width: 10 },
             { key: 'Numero_campo', width: 10 },
@@ -91,13 +91,19 @@ class CrearExcel {
             })
             row.commit();
         });
-      
+        // res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        // res.setHeader("Content-Disposition", "attachment; filename=" + fileName);
+
 
         // Finally save the worksheet into the folder from where we are running the code. 
-        workbook.xlsx.writeFile("./logsExcel/"+fileName+"").then(function() {
-            console.log("xlsx file is written.");
+        workbook.xlsx.writeFile("./logsExcel/" + fileName).then(function () {
+            console.log("ya guardo el excel");
+          
+           
         });
-       // await workbook.xlsx.writeFile(fileName);
+
+       
+        // await workbook.xlsx.writeFile(fileName);
     }
 
 }

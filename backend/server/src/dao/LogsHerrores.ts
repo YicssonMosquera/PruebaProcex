@@ -46,7 +46,7 @@ class LogsHerrores {
         return new Promise(function (resolev, reject) {
             try {
                 var query = "select bd_proceso_hemofilia.NUMERO_RADICACION as 'Numero_radicacion', bd_proceso_hemofilia.NOMBRE_ARCHIVO as 'Nombre_archivo', ";
-                query += "(select count(*) from bd_proceso_hemofilia,bd_proceso_hemofilia_error where bd_proceso_hemofilia.ID_PROCESO_HEMOFILIA = bd_proceso_hemofilia_error.ID_PROCESO_HEMOFILIA and bd_proceso_hemofilia.NUMERO_RADICACION = 864 ) as 'total_errores', ";
+                query += "(select count(*) from bd_proceso_hemofilia,bd_proceso_hemofilia_error where bd_proceso_hemofilia.ID_PROCESO_HEMOFILIA = bd_proceso_hemofilia_error.ID_PROCESO_HEMOFILIA and bd_proceso_hemofilia.NUMERO_RADICACION = "+NUMERO_RADICACION+" ) as 'total_errores', ";
                 query += "bd_proceso_hemofilia.FECHA_CREACION as 'Fecha_procesado',bd_proceso_hemofilia.REGISTROS_PROCESADOS as 'Registros_procesados', ";
                 query += "bd_proceso_hemofilia.ERRORES_CD as 'Cantidad_errores', bd_proceso_hemofilia.USUARIO_CREACION as 'Usuario', bd_proceso_hemofilia_error.NUMERO_CAMPO as 'Numero_campo', ";
                 query += "bd_proceso_hemofilia_error.NUMERO_REGISTRO as 'fila_del_error', bd_proceso_hemofilia_error.TIPO_ERROR as 'Tipo_error', bd_proceso_hemofilia_error.DESCRIPCION_ERROR as 'Descripcion' "
