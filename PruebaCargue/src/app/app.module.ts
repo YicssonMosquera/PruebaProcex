@@ -49,7 +49,8 @@ import { HemofiliaEditComponent } from './components/hemofilia-edit/hemofilia-ed
 import { HemofiliaSoportesComponent } from './components/hemofilia-soportes/hemofilia-soportes.component';
 import { CargarHemofiliaComponent } from './components/cargar-hemofilia/cargar-hemofilia.component';
 import {BannerComponent}   from './components/banner/banner.component';
-import { MenuuComponent, } from './components/menuu/menuu.component'
+import { MenuuComponent, } from './components/menuu/menuu.component';
+import { CuentaCancerComponent } from './components/cuenta-cancer/cuenta-cancer.component'
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { MenuuComponent, } from './components/menuu/menuu.component'
     HemofiliaSoportesComponent,
     CargarHemofiliaComponent,
     BannerComponent,
-    MenuuComponent
+    MenuuComponent,
+    CuentaCancerComponent
   ],
   imports: [
     BrowserModule,
