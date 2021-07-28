@@ -87,7 +87,7 @@
                                             </div>
                                             <div class="col-xs-1">
                                                 <label id="edadc">Edad corte:</label>
-                                                <input type="number"  readonly="true" class="form-control" id="edadc2">
+                                                <input type="number" readonly="true" class="form-control" id="edadc2">
                                             </div>
                                             <div class="col-xs-2">
                                                 <label id="sexo">11.Sexo:</label>
@@ -106,17 +106,9 @@
                                         </div>
                                         <div class="input-group mb-3">
                                             <div class="col-xs-4">
-                                                <label id="tipo">9.Ocupación:</label>
+                                                <label id="tipo">13.Direccion:</label>
 
-                                                <input type="text" list="ocupacion" value="5" id="tipo"
-                                                    class="form-control">
-                                                <datalist id="ocupacion">
-                                                    <option *ngFor='let Ocupacion of Ocupacion'
-                                                        [ngValue]="Ocupacion.DESCRIPCION"
-                                                        [ngValue]="Ocupacion.CODIGO_Ocupacion">
-                                                        {{Ocupacion.CODIGO_Ocupacion}}.{{Ocupacion.DESCRIPCION}}
-                                                    </option>
-                                                </datalist>
+                                                <input type="text" id="tipo" class="form-control">
                                             </div>
                                             <div class="col-xs-4">
                                                 <label id="documento">2.Régimen de afiliación:</label>
@@ -151,24 +143,16 @@
                                                 <label id="tipo">3.Grupo poblacional:</label>
                                                 <select name="" class="form-control" id="GrupoP">
                                                     <option value=""></option>
-                                                    <option *ngFor='let GProblacional of GProblacional'
-                                                        [ngValue]="GProblacional.NOMBRE_OPCION"
-                                                        [ngValue]="GProblacional.CODIGO_OPCION">
-                                                        {{GProblacional.CODIGO_OPCION}}.{{GProblacional.NOMBRE_OPCION}}
+                                                    <option *ngFor='let C2_CAMPO_3 of C2_CAMPO_3'
+                                                        [ngValue]="C2_CAMPO_3.NOMBRE_OPCION"
+                                                        [ngValue]="C2_CAMPO_3.CODIGO_OPCION">
+                                                        {{C2_CAMPO_3.CODIGO_OPCION}}.{{C2_CAMPO_3.NOMBRE_OPCION}}
                                                     </option>
                                                 </select>
                                             </div>
                                             <div class="col-xs-4">
-                                                <label id="documento">15.Municipio de residencia:</label>
-                                                <input type="text" list="municipio" id="Mresidencia"
-                                                    class="form-control">
-                                                <datalist id="municipio">
-                                                    <option *ngFor='let municipioresidencia of municipioresidencia'
-                                                        [ngValue]="tipodocumento.NOMBRE_CIUDAD"
-                                                        [ngValue]="municipioresidencia.CODIGO_CIUDAD">
-                                                        {{municipioresidencia.CODIGO_CIUDAD}}.{{municipioresidencia.NOMBRE_CIUDAD}}
-                                                    </option>
-                                                </datalist>
+                                                <label id="documento">15.Codigo de municipio de residencia:</label>
+                                                <input type="text" id="Mresidencia" class="form-control">
                                             </div>
                                             <div class="col-xs-2">
                                                 <label id="numeropaciente1">14.Número telefónico:</label>
@@ -210,7 +194,7 @@
                                                                     d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
                                                             </svg></span>
                                                     </div>
-                                                    <input type="date" class="form-control"  id="nuevo3">
+                                                    <input type="date" class="form-control" id="nuevo3">
                                                 </div>
                                             </div>
                                         </div>
@@ -242,14 +226,14 @@
                                     <div class="input-group mb-3">
                                         <div class="col-xs-4">
                                             <div class="col-xs-4">
-                                                <label  id="tipo">17.Fecha inicio sintomas de AR:</label>
+                                                <label id="tipo">17.Fecha inicio sintomas de AR:</label>
 
                                                 <div class="input-group" id="nuevo1">
                                                     <div class="input-group-prepend">
-                                                        <span id="span1" class="input-group-text"><svg
-                                                                xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                                fill="currentColor" class="bi bi-calendar2-date"
-                                                                viewBox="0 0 16 16">
+                                                        <span id="span2" class="input-group-text"><svg
+                                                                xmlns="http://www.w3.org/2000/svg" width="16"
+                                                                height="16" fill="currentColor"
+                                                                class="bi bi-calendar2-date" viewBox="0 0 16 16">
                                                                 <path
                                                                     d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
                                                                 <path
@@ -258,7 +242,7 @@
                                                                     d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
                                                             </svg></span>
                                                     </div>
-                                                    <input type="date" class="form-control" id="nuevo9">
+                                                    <input type="date" class="form-control" id="fechaInicioS">
                                                 </div>
                                             </div>
                                         </div>
@@ -300,7 +284,21 @@
                                                                 d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
                                                         </svg></span>
                                                 </div>
-                                                <input type="date" class="form-control" id="nuevo9">
+                                                <input type="date" class="form-control" id="fechaDiagnosticoAR">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xs-2">
+                                            <label id="fechaCor1">20.Talla:</label>
+                                            <div class="input-group" id="nuevo4">
+                                                <input type="text" class="form-control" id="pesoTalla">
+                                            </div>
+
+                                        </div>
+                                        <div class="col-xs-1">
+                                            <label id="fechaCor12">21.Peso inicial:</label>
+                                            <div class="input-group" id="nuevo5">
+                                                <input type="text" class="form-control" id="pesoTalla">
                                             </div>
                                         </div>
                                     </div>
@@ -325,58 +323,150 @@
                                 <form>
                                     <div class="input-group mb-3">
                                         <div class="col-xs-4">
-                                            <label id="fechaD3">21.Fecha de diagnóstico: </label>
-                                            <div class="input-group" id="nuevo1">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text"><svg
-                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                            fill="currentColor" class="bi bi-calendar2-date"
-                                                            viewBox="0 0 16 16">
-                                                            <path
-                                                                d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
-                                                            <path
-                                                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
-                                                            <path
-                                                                d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
-                                                        </svg></span>
-                                                </div>
-                                                <input type="date" class="form-control" id="nuevo2">
-
-                                            </div>
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <label id="MDiagnostico">19.Edad del usuario en el momento del diagnóstico
-                                                :</label>
-                                            <input type="number" class="form-control" id="MDiagnostico">
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <label id="MDiagnostico">20.Motivo de la prueba de diagnóstico: </label>
-                                            <select class="form-control" id="MDiagnostico">
-                                                <option value=""></option>
-                                                <option *ngFor='let MPDiagnostico of MPDiagnostico'
-                                                    [ngValue]="MPDiagnostico.NOMBRE_OPCION"
-                                                    [ngValue]="MPDiagnostico.CODIGO_OPCION">
-                                                    {{MPDiagnostico.CODIGO_OPCION}}.{{MPDiagnostico.NOMBRE_OPCION}}
+                                            <label id="tipo">22.Radiografia de manos al diagnóstico:</label>
+                                            <select name="" class="form-control" id="papellido">
+                                                <option *ngFor='let C21_CAMPO_22 of C21_CAMPO_22'
+                                                    [ngValue]="C21_CAMPO_22.NOMBRE_OPCION"
+                                                    [ngValue]="C21_CAMPO_22.CODIGO_OPCION">
+                                                    {{C21_CAMPO_22.CODIGO_OPCION}}.{{C21_CAMPO_22.NOMBRE_OPCION}}
                                                 </option>
                                             </select>
                                         </div>
                                         <div class="col-xs-4">
-                                            <label id="CodigoV">22.Código válido de habilitación de la IPS donde se
-                                                realiza la confirmación
-                                                diagnóstica (IPS donde se realiza el diagnóstico por parte de el
-                                                médico):</label>
-
-                                            <input type="text" list="codigovalido" id="CodigoV2" class="form-control">
-                                            <datalist id="codigovalido">
-                                                <option *ngFor='let codigohabilitacionIps of codigohabilitacionIps'
-                                                    [ngValue]="codigohabilitacionIps.NOMBRE_IPS"
-                                                    [ngValue]="codigohabilitacionIps.CODIGO_IPS">
-                                                    {{codigohabilitacionIps.CODIGO_IPS}}.{{codigohabilitacionIps.NOMBRE_IPS}}
+                                            <label id="documento">23.Radiografia de pies al diagnóstico:</label>
+                                            <select name="" class="form-control" id="documento">
+                                                <option *ngFor='let C22_CAMPO_23 of C22_CAMPO_23'
+                                                    [ngValue]="C22_CAMPO_23.NOMBRE_OPCION"
+                                                    [ngValue]="C22_CAMPO_23.CODIGO_OPCION">
+                                                    {{C22_CAMPO_23.CODIGO_OPCION}}.{{C22_CAMPO_23.NOMBRE_OPCION}}
                                                 </option>
-                                            </datalist>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">24.VSG Inicial:</label>
+                                            <input type="text" class="form-control" id="documento">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">25.PCR Inicial:</label>
+                                            <input type="text" class="form-control" id="documento">
                                         </div>
                                     </div>
 
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <label id="tipo">26.Factor reumatoideo inicial:</label>
+                                            <select name="" class="form-control" id="papellido">
+                                                <option *ngFor='let C25_CAMPO_26 of C25_CAMPO_26'
+                                                    [ngValue]="C25_CAMPO_26.NOMBRE_OPCION"
+                                                    [ngValue]="C25_CAMPO_26.CODIGO_OPCION">
+                                                    {{C25_CAMPO_26.CODIGO_OPCION}}.{{C25_CAMPO_26.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">27.Hemoglobina inicial:</label>
+                                            <input type="text" class="form-control" id="documento">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">28.Leucocitos inicial:</label>
+                                            <input type="text" class="form-control" id="documento">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">29.Creatinina Inicial:</label>
+                                            <input type="text" class="form-control" id="documento">
+                                        </div>
+                                    </div>
+
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <label id="tipo">30.TFG Inicial:</label>
+                                            <input type="text" class="form-control" id="papellido">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">31.Parcial de Orina inicial:</label>
+                                            <select name="" class="form-control" id="documento">
+                                                <option *ngFor='let C30_CAMPO_31 of C30_CAMPO_31'
+                                                    [ngValue]="C30_CAMPO_31.NOMBRE_OPCION"
+                                                    [ngValue]="C30_CAMPO_31.CODIGO_OPCION">
+                                                    {{C30_CAMPO_31.CODIGO_OPCION}}.{{C30_CAMPO_31.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">32.ALT Inicial:</label>
+                                            <input type="text" class="form-control" id="documento">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">33.Anti-CCP al diagnóstico:</label>
+                                            <input type="text" class="form-control" id="documento">
+                                        </div>
+                                    </div>
+
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <label id="tipo">34.HTA al diagnóstico:</label>
+                                            <select name="" class="form-control" id="papellido">
+                                                <option *ngFor='let C33_CAMPO_34 of C33_CAMPO_34'
+                                                    [ngValue]="C33_CAMPO_34.NOMBRE_OPCION"
+                                                    [ngValue]="C33_CAMPO_34.CODIGO_OPCION">
+                                                    {{C33_CAMPO_34.CODIGO_OPCION}}.{{C33_CAMPO_34.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">35.DM al diagnóstico:</label>
+                                            <select name="" class="form-control" id="documento">
+                                                <option *ngFor='let C34_CAMPO_35 of C34_CAMPO_35'
+                                                    [ngValue]="C34_CAMPO_35.NOMBRE_OPCION"
+                                                    [ngValue]="C34_CAMPO_35.CODIGO_OPCION">
+                                                    {{C34_CAMPO_35.CODIGO_OPCION}}.{{C34_CAMPO_35.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">36.ECV al diagnóstico:</label>
+                                            <select name="" class="form-control" id="documento">
+                                                <option *ngFor='let C35_CAMPO_36 of C35_CAMPO_36'
+                                                    [ngValue]="C35_CAMPO_36.NOMBRE_OPCION"
+                                                    [ngValue]="C35_CAMPO_36.CODIGO_OPCION">
+                                                    {{C35_CAMPO_36.CODIGO_OPCION}}.{{C35_CAMPO_36.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">37.ERC al diagnóstico:</label>
+                                            <select name="" class="form-control" id="documento">
+                                                <option *ngFor='let C36_CAMPO_37 of C36_CAMPO_37'
+                                                    [ngValue]="C36_CAMPO_37.NOMBRE_OPCION"
+                                                    [ngValue]="C36_CAMPO_37.CODIGO_OPCION">
+                                                    {{C36_CAMPO_37.CODIGO_OPCION}}.{{C36_CAMPO_37.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <label id="tipo">38.Osteoporosis al diagnóstico:</label>
+                                            <select name="" class="form-control" id="papellido">
+                                                <option *ngFor='let C37_CAMPO_38 of C37_CAMPO_38'
+                                                    [ngValue]="C37_CAMPO_38.NOMBRE_OPCION"
+                                                    [ngValue]="C37_CAMPO_38.CODIGO_OPCION">
+                                                    {{C37_CAMPO_38.CODIGO_OPCION}}.{{C37_CAMPO_38.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">39.Sindrome de Sjogren al diagnóstico:</label>
+                                            <select name="" class="form-control" id="documento">
+                                                <option *ngFor='let C38_CAMPO_39 of C38_CAMPO_39'
+                                                    [ngValue]="C38_CAMPO_39.NOMBRE_OPCION"
+                                                    [ngValue]="C38_CAMPO_39.CODIGO_OPCION">
+                                                    {{C38_CAMPO_39.CODIGO_OPCION}}.{{C38_CAMPO_39.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
                                 </form>
                             </div>
                         </div>
@@ -402,70 +492,42 @@
                                 <form>
                                     <div class="input-group mb-3">
                                         <div class="col-xs-4">
-                                            <label id="tipo">23. Tipo de deficiencia diagnosticada:</label>
-                                            <select name="" class="form-control" id="tipo">
-                                                <option value=""></option>
-                                                <option *ngFor='let TPDiagnostico of TPDiagnostico'
-                                                    [ngValue]="TPDiagnostico.NOMBRE_OPCION"
-                                                    [ngValue]="TPDiagnostico.CODIGO_OPCION">
-                                                    {{TPDiagnostico.CODIGO_OPCION}}.{{TPDiagnostico.NOMBRE_OPCION}}
-                                                </option>
-                                            </select>
+                                            <div class="col-xs-4">
+                                                <label id="tipo">40.Fecha del primer DAS 28:</label>
+                                                <div class="input-group" id="nuevo1">
+                                                    <div class="input-group-prepend">
+                                                        <span id="span2" class="input-group-text"><svg
+                                                                xmlns="http://www.w3.org/2000/svg" width="16"
+                                                                height="16" fill="currentColor"
+                                                                class="bi bi-calendar2-date" viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
+                                                                <path
+                                                                    d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
+                                                                <path
+                                                                    d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
+                                                            </svg></span>
+                                                    </div>
+                                                    <input type="date" class="form-control" id="fechaInicioS">
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="col-xs-4">
-                                            <label id="documento">24.Clasificación de severidad según nivel de
-                                                factor:</label>
+                                            <label id="documento">41.Profesional que realizó el primer DAS 28:</label>
                                             <select name="" class="form-control" id="documento">
-                                                <option value=""></option>
-                                                <option *ngFor='let CLSeveridad of CLSeveridad'
-                                                    [ngValue]="CLSeveridad.NOMBRE_OPCION"
-                                                    [ngValue]="CLSeveridad.CODIGO_OPCION">
-                                                    {{CLSeveridad.CODIGO_OPCION}}.{{CLSeveridad.NOMBRE_OPCION}}
+                                                <option *ngFor='let C40_CAMPO_41 of C40_CAMPO_41'
+                                                    [ngValue]="C40_CAMPO_41.NOMBRE_OPCION"
+                                                    [ngValue]="C40_CAMPO_41.CODIGO_OPCION">
+                                                    {{C40_CAMPO_41.CODIGO_OPCION}}.{{C40_CAMPO_41.NOMBRE_OPCION}}
                                                 </option>
                                             </select>
                                         </div>
                                         <div class="col-xs-4">
-                                            <label id="documento">25.Actividad coagulante del factor:</label>
+                                            <label id="documento">42.Resultado del primer DAS 28:</label>
                                             <input type="number" class="form-control" id="documento">
                                         </div>
                                         <div class="col-xs-4">
-                                            <label id="documento">26.Antecedentes familiares asociados a
-                                                hemofilia:</label>
-                                            <select name="" class="form-control" id="documento">
-                                                <option value=""></option>
-                                                <option *ngFor='let ASHemofilia of ASHemofilia'
-                                                    [ngValue]="ASHemofilia.NOMBRE_OPCION"
-                                                    [ngValue]="ASHemofilia.CODIGO_OPCION">
-                                                    {{ASHemofilia.CODIGO_OPCION}}.{{ASHemofilia.NOMBRE_OPCION}}
-                                                </option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="input-group mb-3">
-                                        <div class="col-xs-4">
-                                            <label id="tipo">27.Factor recibido: </label>
-                                            <select name="" class="form-control" id="tipo">
-                                                <option value=""></option>
-                                                <option *ngFor='let FactorR of FactorR'
-                                                    [ngValue]="FactorR.NOMBRE_OPCION" [ngValue]="FactorR.CODIGO_OPCION">
-                                                    {{FactorR.CODIGO_OPCION}}.{{FactorR.NOMBRE_OPCION}}
-                                                </option>
-                                            </select>
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <label id="documento">28.Esquema:</label>
-                                            <select name="" class="form-control" id="documento">
-                                                <option value=""></option>
-                                                <option *ngFor='let Esquema1 of Esquema1'
-                                                    [ngValue]="Esquema1.NOMBRE_OPCION"
-                                                    [ngValue]="Esquema1.CODIGO_OPCION">
-                                                    {{Esquema1.CODIGO_OPCION}}.{{Esquema1.NOMBRE_OPCION}}
-                                                </option>
-                                            </select>
-                                        </div>
-                                        <div div class="col-xs-4">
-                                            <label id="documento">29.Fecha de inicio del primer tratamiento:</label>
-
+                                            <label id="documento">43.Fecha del primer HAQ realizado:</label>
                                             <div class="input-group" id="nuevo">
                                                 <div class="input-group-prepend">
                                                     <span id="span1" class="input-group-text"><svg
@@ -482,6 +544,123 @@
                                                 </div>
                                                 <input type="date" class="form-control" id="nuevo9">
                                             </div>
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <label id="tipo">44.HAQ (Health Assessment Questionnaire) inicial: </label>
+                                            <input type="text" id="tipo" class="form-control">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">45.1.Fecha inicio tratamiento sin DMARD:</label>
+                                            <div class="input-group" id="nuevo">
+                                                <div class="input-group-prepend">
+                                                    <span id="span1" class="input-group-text"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-calendar2-date"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
+                                                            <path
+                                                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
+                                                            <path
+                                                                d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
+                                                        </svg></span>
+                                                </div>
+                                                <input type="date" class="form-control" id="nuevo9">
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">45.2.Analgesicos No Opioides (Acetaminofen - Dipirona)
+                                                al inicio:</label>
+                                            <select name="" class="form-control" id="documento">
+                                                <option *ngFor='let C45_CAMPO_45_2 of C45_CAMPO_45_2'
+                                                    [ngValue]="C45_CAMPO_45_2.NOMBRE_OPCION"
+                                                    [ngValue]="C45_CAMPO_45_2.CODIGO_OPCION">
+                                                    {{C45_CAMPO_45_2.CODIGO_OPCION}}.{{C45_CAMPO_45_2.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-xs-4">
+                                            <label id="documento">45.3.Analgesicos Opioides (Codeina - Tramadol) al
+                                                inicio:</label>
+                                            <select name="" class="form-control" id="documento">
+                                                <option *ngFor='let C46_CAMPO_45_3 of C46_CAMPO_45_3'
+                                                    [ngValue]="C46_CAMPO_45_3.NOMBRE_OPCION"
+                                                    [ngValue]="C46_CAMPO_45_3.CODIGO_OPCION">
+                                                    {{C46_CAMPO_45_3.CODIGO_OPCION}}.{{C46_CAMPO_45_3.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <label id="tipo">45.4.AINES al inicio:</label>
+                                            <select name="" class="form-control" id="tipo">
+                                                <option *ngFor='let C46_CAMPO_45_4 of C46_CAMPO_45_4'
+                                                    [ngValue]="C46_CAMPO_45_4.NOMBRE_OPCION"
+                                                    [ngValue]="C46_CAMPO_45_4.CODIGO_OPCION">
+                                                    {{C46_CAMPO_45_4.CODIGO_OPCION}}.{{C46_CAMPO_45_4.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">45.5.Corticoides al inicio:</label>
+                                            <select name="" class="form-control" id="documento">
+                                                <option *ngFor='let C46_CAMPO_45_5 of C46_CAMPO_45_5'
+                                                    [ngValue]="C46_CAMPO_45_5.NOMBRE_OPCION"
+                                                    [ngValue]="C46_CAMPO_45_5.CODIGO_OPCION">
+                                                    {{C46_CAMPO_45_5.CODIGO_OPCION}}.{{C46_CAMPO_45_5.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-xs-4">
+                                            <label id="documento">45.6.Fecha inicio tratamiento con DMARD:</label>
+                                            <div class="input-group" id="nuevo">
+                                                <div class="input-group-prepend">
+                                                    <span id="span1" class="input-group-text"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-calendar2-date"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
+                                                            <path
+                                                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
+                                                            <path
+                                                                d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
+                                                        </svg></span>
+                                                </div>
+                                                <input type="date" class="form-control" id="nuevo9">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xs-4">
+                                            <label id="documento">45.7.Tamizaje para TB antes de inicio de
+                                                DMARD:</label>
+                                            <select name="" class="form-control" id="documento">
+                                                <option *ngFor='let C50_CAMPO_45_7 of C50_CAMPO_45_7'
+                                                    [ngValue]="C50_CAMPO_45_7.NOMBRE_OPCION"
+                                                    [ngValue]="C50_CAMPO_45_7.CODIGO_OPCION">
+                                                    {{C50_CAMPO_45_7.CODIGO_OPCION}}.{{C50_CAMPO_45_7.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <label id="tipo">45.8.Antecedente de linfoma antes del inicio de
+                                                DMARD:</label>
+                                            <select name="" class="form-control" id="tipo">
+                                                <option *ngFor='let C59_CAMPO_46_8 of C59_CAMPO_46_8'
+                                                    [ngValue]="C59_CAMPO_46_8.NOMBRE_OPCION"
+                                                    [ngValue]="C59_CAMPO_46_8.CODIGO_OPCION">
+                                                    {{C59_CAMPO_46_8.CODIGO_OPCION}}.{{C59_CAMPO_46_8.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
                                         </div>
                                     </div>
 
@@ -507,157 +686,239 @@
                             data-parent="#accordion">
                             <div class="card-body" id="pagina">
                                 <form>
+
                                     <div class="input-group mb-3">
                                         <div class="col-xs-4">
-                                            <label id="tipo">30.Factor recibido:</label>
-                                            <select name="" class="form-control" id="tipo">
-                                                <option value=""></option>
-                                                <option *ngFor='let FactorrecibidoTA of FactorrecibidoTA'
-                                                    [ngValue]="FactorrecibidoTA.NOMBRE_OPCION"
-                                                    [ngValue]="FactorrecibidoTA.CODIGO_OPCION">
-                                                    {{FactorrecibidoTA.CODIGO_OPCION}}.{{FactorrecibidoTA.NOMBRE_OPCION}}
+                                            <label id="tipo">46.1.Azatioprina:</label>
+                                            <select name="" class="form-control" id="papellido">
+                                                <option *ngFor='let C52_CAMPO_46_1 of C52_CAMPO_46_1'
+                                                    [ngValue]="C52_CAMPO_46_1.NOMBRE_OPCION"
+                                                    [ngValue]="C52_CAMPO_46_1.CODIGO_OPCION">
+                                                    {{C52_CAMPO_46_1.CODIGO_OPCION}}.{{C52_CAMPO_46_1.NOMBRE_OPCION}}
                                                 </option>
-
                                             </select>
                                         </div>
                                         <div class="col-xs-4">
-                                            <label id="documento">31.Esquema: </label>
+                                            <label id="documento">46.2.Ciclosporina:</label>
                                             <select name="" class="form-control" id="documento">
-                                                <option value=""></option>
-                                                <option *ngFor='let EsquemaTA of EsquemaTA'
-                                                    [ngValue]="EsquemaTA. NOMBRE_OPCION"
-                                                    [ngValue]="EsquemaTA.CODIGO_OPCION">
-                                                    {{EsquemaTA.CODIGO_OPCION}}.{{EsquemaTA.NOMBRE_OPCION}}
+                                                <option *ngFor='let C53_CAMPO_46_2 of C53_CAMPO_46_2'
+                                                    [ngValue]="C53_CAMPO_46_2.NOMBRE_OPCION"
+                                                    [ngValue]="C53_CAMPO_46_2.CODIGO_OPCION">
+                                                    {{C53_CAMPO_46_2.CODIGO_OPCION}}.{{C53_CAMPO_46_2.NOMBRE_OPCION}}
                                                 </option>
-
                                             </select>
                                         </div>
                                         <div class="col-xs-4">
-                                            <label id="documento">32.Peso (kg): </label>
-                                            <input type="number" class="form-control" id="documento">
+                                            <label id="documento">46.3.Ciclofosfamida:</label>
+                                            <select name="" class="form-control" id="documento">
+                                                <option *ngFor='let C54_CAMPO_46_3 of C54_CAMPO_46_3'
+                                                    [ngValue]="C54_CAMPO_46_3.NOMBRE_OPCION"
+                                                    [ngValue]="C54_CAMPO_46_3.CODIGO_OPCION">
+                                                    {{C54_CAMPO_46_3.CODIGO_OPCION}}.{{C54_CAMPO_46_3.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
                                         </div>
                                         <div class="col-xs-4">
-                                            <label id="documento">Dosis profilaxis: </label>
+                                            <label id="documento">46.4.Cloroquina:</label>
+                                            <select name="" class="form-control" id="documento">
+                                                <option *ngFor='let C55_CAMPO_46_4 of C55_CAMPO_46_4'
+                                                    [ngValue]="C55_CAMPO_46_4.NOMBRE_OPCION"
+                                                    [ngValue]="C55_CAMPO_46_4.CODIGO_OPCION">
+                                                    {{C55_CAMPO_46_4.CODIGO_OPCION}}.{{C55_CAMPO_46_4.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <label id="tipo">46.5.D-penicilaimina:</label>
+                                            <select name="" class="form-control" id="papellido">
+                                                <option *ngFor='let C56_CAMPO_46_5 of C56_CAMPO_46_5'
+                                                    [ngValue]="C56_CAMPO_46_5.NOMBRE_OPCION"
+                                                    [ngValue]="C56_CAMPO_46_5.CODIGO_OPCION">
+                                                    {{C56_CAMPO_46_5.CODIGO_OPCION}}.{{C56_CAMPO_46_5.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">46.6.Etanercept:</label>
+                                            <select name="" class="form-control" id="documento">
+                                                <option *ngFor='let C57_CAMPO_46_6 of C57_CAMPO_46_6'
+                                                    [ngValue]="C57_CAMPO_46_6.NOMBRE_OPCION"
+                                                    [ngValue]="C57_CAMPO_46_6.CODIGO_OPCION">
+                                                    {{C57_CAMPO_46_6.CODIGO_OPCION}}.{{C57_CAMPO_46_6.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">46.7.Leflunomida:</label>
+                                            <select name="" class="form-control" id="documento">
+                                                <option *ngFor='let C58_CAMPO_46_7 of C58_CAMPO_46_7'
+                                                    [ngValue]="C58_CAMPO_46_7.NOMBRE_OPCION"
+                                                    [ngValue]="C58_CAMPO_46_7.CODIGO_OPCION">
+                                                    {{C58_CAMPO_46_7.CODIGO_OPCION}}.{{C58_CAMPO_46_7.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">46.8.Metotrexate:</label>
+                                            <select name="" class="form-control" id="documento">
+                                                <option *ngFor='let C59_CAMPO_46_8 of C59_CAMPO_46_8'
+                                                    [ngValue]="C59_CAMPO_46_8.NOMBRE_OPCION"
+                                                    [ngValue]="C59_CAMPO_46_8.CODIGO_OPCION">
+                                                    {{C59_CAMPO_46_8.CODIGO_OPCION}}.{{C59_CAMPO_46_8.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <label id="tipo">46.9.Rituximab:</label>
+                                            <select name="" class="form-control" id="papellido">
+                                                <option *ngFor='let C60_CAMPO_46_9 of C60_CAMPO_46_9'
+                                                    [ngValue]="C60_CAMPO_46_9.NOMBRE_OPCION"
+                                                    [ngValue]="C60_CAMPO_46_9.CODIGO_OPCION">
+                                                    {{C60_CAMPO_46_9.CODIGO_OPCION}}.{{C60_CAMPO_46_9.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">46.10.Sulfasalazina:</label>
+                                            <select name="" class="form-control" id="documento">
+                                                <option *ngFor='let C61_CAMPO_46_10 of C61_CAMPO_46_10'
+                                                    [ngValue]="C61_CAMPO_46_10.NOMBRE_OPCION"
+                                                    [ngValue]="C61_CAMPO_46_10.CODIGO_OPCION">
+                                                    {{C61_CAMPO_46_10.CODIGO_OPCION}}.{{C61_CAMPO_46_10.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">47.1.Abatacept:</label>
+                                            <select name="" class="form-control" id="documento">
+                                                <option *ngFor='let C62_CAMPO_47_1 of C62_CAMPO_47_1'
+                                                    [ngValue]="C62_CAMPO_47_1.NOMBRE_OPCION"
+                                                    [ngValue]="C62_CAMPO_47_1.CODIGO_OPCION">
+                                                    {{C62_CAMPO_47_1.CODIGO_OPCION}}.{{C62_CAMPO_47_1.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">47.2.Adalimumab:</label>
+                                            <select name="" class="form-control" id="documento">
+                                                <option *ngFor='let C63_CAMPO_47_2 of C63_CAMPO_47_2'
+                                                    [ngValue]="C63_CAMPO_47_2.NOMBRE_OPCION"
+                                                    [ngValue]="C63_CAMPO_47_2.CODIGO_OPCION">
+                                                    {{C63_CAMPO_47_2.CODIGO_OPCION}}.{{C63_CAMPO_47_2.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <label id="tipo">47.3.Certolizumab:</label>
+                                            <select name="" class="form-control" id="papellido">
+                                                <option *ngFor='let C64_CAMPO_47_3 of C64_CAMPO_47_3'
+                                                    [ngValue]="C64_CAMPO_47_3.NOMBRE_OPCION"
+                                                    [ngValue]="C64_CAMPO_47_3.CODIGO_OPCION">
+                                                    {{C64_CAMPO_47_3.CODIGO_OPCION}}.{{C64_CAMPO_47_3.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">47.4.Golimumab:</label>
+                                            <select name="" class="form-control" id="documento">
+                                                <option *ngFor='let C65_CAMPO_47_4 of C65_CAMPO_47_4'
+                                                    [ngValue]="C65_CAMPO_47_4.NOMBRE_OPCION"
+                                                    [ngValue]="C65_CAMPO_47_4.CODIGO_OPCION">
+                                                    {{C65_CAMPO_47_4.CODIGO_OPCION}}.{{C65_CAMPO_47_4.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">47.5.Hidroxicloroquina:</label>
+                                            <select name="" class="form-control" id="documento">
+                                                <option *ngFor='let C66_CAMPO_47_5 of C66_CAMPO_47_5'
+                                                    [ngValue]="C66_CAMPO_47_5.NOMBRE_OPCION"
+                                                    [ngValue]="C66_CAMPO_47_5.CODIGO_OPCION">
+                                                    {{C66_CAMPO_47_5.CODIGO_OPCION}}.{{C66_CAMPO_47_5.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">47.6.Infliximab:</label>
+                                            <select name="" class="form-control" id="documento">
+                                                <option *ngFor='let C67_CAMPO_47_6 of C67_CAMPO_47_6'
+                                                    [ngValue]="C67_CAMPO_47_6.NOMBRE_OPCION"
+                                                    [ngValue]="C67_CAMPO_47_6.CODIGO_OPCION">
+                                                    {{C67_CAMPO_47_6.CODIGO_OPCION}}.{{C67_CAMPO_47_6.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <label id="tipo">47.7.Sales de oro:</label>
+                                            <select name="" class="form-control" id="papellido">
+                                                <option *ngFor='let C68_CAMPO_47_7 of C68_CAMPO_47_7'
+                                                    [ngValue]="C68_CAMPO_47_7.NOMBRE_OPCION"
+                                                    [ngValue]="C68_CAMPO_47_7.CODIGO_OPCION">
+                                                    {{C68_CAMPO_47_7.CODIGO_OPCION}}.{{C68_CAMPO_47_7.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">47.8.Tocilizumab:</label>
+                                            <select name="" class="form-control" id="documento">
+                                                <option *ngFor='let C69_CAMPO_47_8 of C69_CAMPO_47_8'
+                                                    [ngValue]="C69_CAMPO_47_8.NOMBRE_OPCION"
+                                                    [ngValue]="C69_CAMPO_47_8.CODIGO_OPCION">
+                                                    {{C69_CAMPO_47_8.CODIGO_OPCION}}.{{C69_CAMPO_47_8.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">47.9.Tofacitinib:</label>
+                                            <select name="" class="form-control" id="documento">
+                                                <option *ngFor='let C70_CAMPO_47_9 of C70_CAMPO_47_9'
+                                                    [ngValue]="C70_CAMPO_47_9.NOMBRE_OPCION"
+                                                    [ngValue]="C70_CAMPO_47_9.CODIGO_OPCION">
+                                                    {{C70_CAMPO_47_9.CODIGO_OPCION}}.{{C70_CAMPO_47_9.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">47.10.Sulfasalazina:</label>
+                                            <select name="" class="form-control" id="documento">
+                                                <option *ngFor='let C71_CAMPO_47_10 of C71_CAMPO_47_10'
+                                                    [ngValue]="C71_CAMPO_47_10.NOMBRE_OPCION"
+                                                    [ngValue]="C71_CAMPO_47_10.CODIGO_OPCION">
+                                                    {{C71_CAMPO_47_10.CODIGO_OPCION}}.{{C71_CAMPO_47_10.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <label id="tipo">47.11.Otro medicamento No POS (medicamento1):</label>
+                                            <input type="text" class="form-control" id="papellido">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">47.12.Otro medicamento No POS (medicamento2):</label>
                                             <input type="text" class="form-control" id="documento">
                                         </div>
-                                    </div>
-                                    <div class="input-group mb-3">
                                         <div class="col-xs-4">
-                                            <label id="Dosis">32.1.Dosis: UI/dosis (profilaxis) (última dosis calculada
-                                                para el
-                                                periodo):</label>
-                                            <input type="text" class="form-control" id="Dosis">
+                                            <label id="documento">47.13.Otro medicamento No POS (medicamento3):</label>
+                                            <input type="text" class="form-control" id="documento">
                                         </div>
                                         <div class="col-xs-4">
-                                            <label id="FrecuenciaS">32.2.Frecuencia por semana (profilaxis):</label>
-                                            <select name="" class="form-control" id="FrecuenciaS">
-                                                <option value=""></option>
-                                                <option *ngFor='let Frecuenciasemana of Frecuenciasemana'
-                                                    [ngValue]="Frecuenciasemana.NOMBRE_OPCION"
-                                                    [ngValue]="Frecuenciasemana.CODIGO_OPCION">
-                                                    {{Frecuenciasemana.CODIGO_OPCION}}.{{Frecuenciasemana.NOMBRE_OPCION}}
-                                                </option>
-                                            </select>
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <label id="documento"> 32.3. Número de unidades totales en el periodo UI/dl
-                                                (demanda): </label>
-                                            <input type="number" class="form-control" id="documento">
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <label id="documento">32.4.Numero de aplicaciones del factor en el periodo
-                                                (demanda):</label>
-                                            <input name="" class="form-control" id="documento">
-                                        </div>
-                                    </div>
-                                    <div class="input-group mb-3">
-                                        <div class="col-xs-4">
-                                            <label id="Modalidad">33.Modalidad de aplicación tratamiento:</label>
-                                            <select name="" class="form-control" id="Modalidad">
-                                                <option value=""></option>
-                                                <option *ngFor='let Modalidadtratamiento of Modalidadtratamiento'
-                                                    [ngValue]="Modalidadtratamiento.NOMBRE_OPCION"
-                                                    [ngValue]="Modalidadtratamiento.CODIGO_OPCION">
-                                                    {{Modalidadtratamiento.CODIGO_OPCION}}.{{Modalidadtratamiento.NOMBRE_OPCION}}
-                                                </option>
-
-                                            </select>
-                                        </div>
-
-                                        <div class="col-xs-4">
-                                            <label id="administracion">34.Vía de administración:</label>
-                                            <select name="" class="form-control" id="administracion">
-                                                <option value=""></option>
-                                                <option *ngFor='let Viaadministracion of Viaadministracion'
-                                                    [ngValue]="Viaadministracion. NOMBRE_OPCION"
-                                                    [ngValue]="Viaadministracion.CODIGO_OPCION">
-                                                    {{Viaadministracion.CODIGO_OPCION}}.{{Viaadministracion.NOMBRE_OPCION}}
-                                                </option>
-
-                                            </select>
-                                        </div>
-
-                                        <div class="col-xs-4">
-                                            <label id="documento">35.Código CUM del factor/medicamento que recibe el
-                                                paciente a la fecha de
-                                                corte
-                                                (relacionado con la coagulopatía reportada):</label>
-                                            <input type="text" list="cups35" id="documento" class="form-control">
-                                            <datalist id="cups35">
-                                                <option *ngFor='let codigocups of codigocups'
-                                                    [ngValue]="codigocups.DESCRIPCION"
-                                                    [ngValue]="codigocups.CODIGO_CUP">
-                                                    {{codigocups.CODIGO_CUP}}.{{codigocups.DESCRIPCION}}
-                                                </option>
-                                            </datalist>
-
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <label id="documento">36.Código CUM del otro factor/medicamento que recibe
-                                                el paciente a la fecha
-                                                de
-                                                corte (relacionado con la coagulopatía reportada):</label>
-
-                                            <input type="text" list="cups36" id="documento" class="form-control">
-                                            <datalist id="cups36">
-                                                <option *ngFor='let codigocups of codigocups'
-                                                    [ngValue]="codigocups.DESCRIPCION"
-                                                    [ngValue]="codigocups.CODIGO_CUP">
-                                                    {{codigocups.CODIGO_CUP}}.{{codigocups.DESCRIPCION}}
-                                                </option>
-                                            </datalist>
-                                        </div>
-                                    </div>
-                                    <div class="input-group mb-3">
-                                        <div class="col-xs-4">
-                                            <label id="CodigoC">37.Código CUM del otro factor/medicamento que recibe el
-                                                paciente a la fecha de
-                                                corte
-                                                (relacionado con la coagulopatía reportada): </label>
-
-                                            <input type="text" list="cups37" id="CodigoC" class="form-control">
-                                            <datalist id="cups37">
-                                                <option *ngFor='let codigocups of codigocups'
-                                                    [ngValue]="codigocups.DESCRIPCION"
-                                                    [ngValue]="codigocups.CODIGO_CUP">
-                                                    {{codigocups.CODIGO_CUP}}.{{codigocups.DESCRIPCION}}
-                                                </option>
-                                            </datalist>
-
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <label id="documento">38. Código CUM del otro factor/medicamento que recibe
-                                                el paciente a la fecha
-                                                de
-                                                corte (relacionado con la coagulopatía reportada):</label>
-                                            <input type="text" list="cups38" id="documento" class="form-control">
-                                            <datalist id="cups38">
-                                                <option *ngFor='let codigocups of codigocups'
-                                                    [ngValue]="codigocups.DESCRIPCION"
-                                                    [ngValue]="codigocups.CODIGO_CUP">
-                                                    {{codigocups.CODIGO_CUP}}.{{codigocups.DESCRIPCION}}
-                                                </option>
-                                            </datalist>
+                                            <label id="documento">47.14.Otro medicamento No POS (medicamento4):</label>
+                                            <input type="text" class="form-control" id="documento">
                                         </div>
                                     </div>
                                 </form>
@@ -684,100 +945,58 @@
                                 <form>
                                     <div class="input-group mb-3">
                                         <div class="col-xs-4">
-                                            <label id="Dosis">39.Código válido de habilitación de la IPS donde se
-                                                realiza el seguimiento
-                                                actual:
-                                            </label>
-                                            <input type="text" list="codigovalido39" id="Dosis" class="form-control">
-                                            <datalist id="codigovalido39">
-                                                <option *ngFor='let codigohabilitacionIps of codigohabilitacionIps'
-                                                    [ngValue]="codigohabilitacionIps.NOMBRE_IPS"
-                                                    [ngValue]="codigohabilitacionIps.CODIGO_IPS">
-                                                    {{codigohabilitacionIps.CODIGO_IPS}}.{{codigohabilitacionIps.NOMBRE_IPS}}
-                                                </option>
-                                            </datalist>
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <label id="documento">57.Seleccionar el profesional que lidera la atención
-                                                del paciente :</label>
-                                            <select name="" class="form-control" id="documento">
-                                                <option value=""></option>
-                                                <option *ngFor='let ProfesionalSP of ProfesionalSP'
-                                                    [ngValue]="ProfesionalSP. NOMBRE_OPCION"
-                                                    [ngValue]="ProfesionalSP.CODIGO_OPCION">
-                                                    {{ProfesionalSP.CODIGO_OPCION}}.{{ProfesionalSP.NOMBRE_OPCION}}
-                                                </option>
-
-                                            </select>
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <label id="FrecuenciaS">57.1.Consultas presenciales con Hematólogo :</label>
-                                            <input type="number" class="form-control" id="FrecuenciaS">
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <label id="FrecuenciaS">57.2.Consultas presenciales con Ortopedista :
-                                            </label>
-                                            <input type="number" class="form-control" id="FrecuenciaS">
-                                        </div>
-                                    </div>
-                                    <div class="input-group mb-3">
-                                        <div class="col-xs-4">
-                                            <label id="tipo">57.3.Intervención por parte del profesional de
-                                                enfermería:</label>
-                                            <input type="number" class="form-control" id="papellido">
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <label id="FrecuenciaS">57.4. Consultas con Odontólogo :</label>
-                                            <input type="number" class="form-control" id="FrecuenciaS">
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <label id="FrecuenciaS">57.5. Consultas con Nutricionista: </label>
-                                            <input type="number" class="form-control" id="FrecuenciaS">
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <label id="FrecuenciaS">57.6. Intervención por parte de Trabajo Social :
-                                            </label>
-                                            <input type="number" class="form-control" id="FrecuenciaS">
-                                        </div>
-                                    </div>
-                                    <div class="input-group mb-3">
-                                        <div class="col-xs-4">
-                                            <label id="tipo">57.7.Consultas con Fisiatría :</label>
-                                            <input type="number" class="form-control" id="papellido">
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <label id="documento">57.8. Consultas con Psicología:</label>
-                                            <input type="number" class="form-control" id="documento">
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <label id="documento">57.9. Intervención por parte de Químico
-                                                farmacéutico:</label>
-                                            <input type="number" class="form-control" id="documento">
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <label id="documento">57.10. Intervención por parte de Fisioterapia:</label>
-                                            <input type="number" class="form-control" id="documento">
-                                        </div>
-                                    </div>
-                                    <div class="input-group mb-3">
-                                        <div class="col-xs-4">
-                                            <label id="tipo">57.11.Primer nombre del médico tratante principal::</label>
+                                            <label id="tipo">48.Peso último semestre:</label>
                                             <input type="text" class="form-control" id="papellido">
                                         </div>
                                         <div class="col-xs-4">
-                                            <label id="documento">57.12. Segundo nombre del médico tratante
-                                                principal:</label>
+                                            <label id="documento">49.Radiografia de manos (ultimas realizadas despues de
+                                                iniciales):</label>
                                             <input type="text" class="form-control" id="documento">
                                         </div>
                                         <div class="col-xs-4">
-                                            <label id="documento">57.13. Primer apellido del médico tratante
-                                                principal:</label>
+                                            <label id="documento">50.Radiografia de pies (ultimas realizadas despues de
+                                                iniciales):</label>
                                             <input type="text" class="form-control" id="documento">
                                         </div>
                                         <div class="col-xs-4">
-                                            <label id="documento">57.14. Segundo Apellido del médico tratante
-                                                principal:</label>
+                                            <label id="documento">51.PCR último semestre:</label>
                                             <input type="text" class="form-control" id="documento">
+                                        </div>
+                                    </div>
+
+
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <label id="tipo">52.VSG último semestre:</label>
+                                            <input type="text" class="form-control" id="papellido">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">53.Hemoglobina último semestreb:</label>
+                                            <input type="text" class="form-control" id="documento">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">54.Leucocitos último semestre:</label>
+                                            <input type="text" class="form-control" id="documento">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">55.Creatinina último semestre:</label>
+                                            <input type="text" class="form-control" id="documento">
+                                        </div>
+                                    </div>
+
+
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <label id="tipo">56.TFG último semestre:</label>
+                                            <input type="number" class="form-control" id="papellido">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">57.Parcial de Orina último semestre:</label>
+                                            <input type="number" class="form-control" id="documento">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">58.ALT último semestre:</label>
+                                            <input type="number" class="form-control" id="documento">
                                         </div>
                                     </div>
                                 </form>
@@ -785,8 +1004,6 @@
                         </div>
                     </div>
                     <br>
-
-
 
                     <div class="card">
                         <div class="card-header align-items-center justify-content-between" id="header">
@@ -805,93 +1022,123 @@
                                 <form>
                                     <div class="input-group mb-3">
                                         <div class="col-xs-4">
-                                            <label id="hematosis">40.Hemartrosis:</label>
-                                            <select name="" class="form-control" id="hematosis">
-                                                <option value=""></option>
-                                                <option *ngFor='let Hermatosis of Hermatosis'
-                                                    [ngValue]="Hermatosis. NOMBRE_OPCION"
-                                                    [ngValue]="Hermatosis.CODIGO_OPCION">
-                                                    {{Hermatosis.CODIGO_OPCION}}.{{Hermatosis.NOMBRE_OPCION}}
-                                                </option>
-                                            </select>
+                                            <label id="tipo">59.HTA actual:</label>
+                                            <input type="text" class="form-control" id="papellido">
                                         </div>
                                         <div class="col-xs-4">
-                                            <label id="documento">40.1.Numero de hemartrosis espontaneas durante los
-                                                últimos doce
-                                                meses:</label>
-                                            <input type="number" class="form-control" id="documento">
+                                            <label id="documento">60.DM actual:</label>
+                                            <input type="text" class="form-control" id="documento">
                                         </div>
                                         <div class="col-xs-4">
-                                            <label id="pnombre">40.2.Numero de hemartrosis traumáticas durante los
-                                                últimos doce meses:</label>
-                                            <input type="number" class="form-control" id="pnombre">
+                                            <label id="documento">61.ECV actual:</label>
+                                            <input type="text" class="form-control" id="documento">
                                         </div>
                                         <div class="col-xs-4">
-                                            <label id="hemorragia">41.Hemorragia del ilio-psoas:</label>
-                                            <input type="number" class="form-control" id="hemorragia">
+                                            <label id="documento">62.ERC actual:</label>
+                                            <input type="text" class="form-control" id="documento">
                                         </div>
                                     </div>
                                     <div class="input-group mb-3">
                                         <div class="col-xs-4">
-                                            <label id="tipo">42.Hemorragia de otros muscular/tejidos blandos: </label>
-                                            <input type="number" class="form-control" id="papellido">
+                                            <label id="tipo">63.Osteoporosis actual: </label>
+                                            <input type="text" id="tipo" class="form-control">
                                         </div>
                                         <div class="col-xs-4">
-                                            <label id="documento">43.Hemorragia intracraneal:</label>
-                                            <input type="number" class="form-control" id="documento">
+                                            <label id="documento">64.Sindrome de Sjogren actual:</label>
+                                            <input type="text" class="form-control" id="documento">
                                         </div>
+
                                         <div class="col-xs-4">
-                                            <label id="documento">44.Hemorragia en cuello o garganta:</label>
-                                            <input type="number" class="form-control" id="documento">
+                                            <label id="documento">65.Fecha del último DAS 28 realizado:</label>
+                                            <div class="input-group" id="nuevo">
+                                                <div class="input-group-prepend">
+                                                    <span id="span1" class="input-group-text"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-calendar2-date"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
+                                                            <path
+                                                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
+                                                            <path
+                                                                d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
+                                                        </svg></span>
+                                                </div>
+                                                <input type="date" class="form-control" id="nuevo9">
+                                            </div>
                                         </div>
+
                                         <div class="col-xs-4">
-                                            <label id="documento">45.Hemorragia oral:</label>
-                                            <input type="number" class="form-control" id="documento">
-                                        </div>
-                                    </div>
-                                    <div class="input-group mb-3">
-                                        <div class="col-xs-4">
-                                            <label id="HemorrageaL1">46.Hemorragias en otras localizaciones:</label>
-                                            <input type="number" class="form-control" id="HemorrageaL">
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <label id="documento">47.1.Numero de otras hemorragias espontaneas
-                                                diferentes a hemartrosis
-                                                durante
-                                                los
-                                                últimos doce meses:</label>
-                                            <input type="number" class="form-control" id="documento">
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <label id="documento">47.2.Numero de otras hemorragias traumáticas
-                                                diferentes a hemartrosis
-                                                durante
-                                                los
-                                                últimos doce meses:</label>
-                                            <input type="number" class="form-control" id="documento">
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <label id="documento">47.3. Numero de otras hemorragias asociadas a
-                                                procedimiento diferentes a
-                                                hemartrosis durante los últimos doce meses:</label>
-                                            <input type="number" class="form-control" id="documento">
+                                            <label id="documento">66.Profesional que realizó el último DAS 28:</label>
+                                            <input type="text" class="form-control" id="documento">
                                         </div>
                                     </div>
+
                                     <div class="input-group mb-3">
                                         <div class="col-xs-4">
-                                            <label id="tipo">58.Número de atenciones en el servicio de urgencias que
-                                                requieren tratamiento
-                                                para
-                                                la
-                                                condición de hemofilia:</label>
-                                            <input type="number" class="form-control" id="papellido">
+                                            <label id="tipo">67.Resultado del último DAS 28: </label>
+                                            <input type="text" id="tipo" class="form-control">
                                         </div>
                                         <div class="col-xs-4">
-                                            <label id="documento">59. Numero de eventos hospitalarios por causa de la
-                                                hemofilia incluye
-                                                eventos
-                                                programados y no programados):</label>
-                                            <input type="number" class="form-control" id="documento">
+                                            <label id="documento">68.Estado de actividad actual de la AR según DAS
+                                                28:</label>
+                                            <input type="text" class="form-control" id="documento">
+                                        </div>
+
+                                        <div class="col-xs-4">
+                                            <label id="documento">69.Fecha del último HAQ (Health Assessment
+                                                Questionnaire) realizado:</label>
+                                            <div class="input-group" id="nuevo">
+                                                <div class="input-group-prepend">
+                                                    <span id="span1" class="input-group-text"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-calendar2-date"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
+                                                            <path
+                                                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
+                                                            <path
+                                                                d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
+                                                        </svg></span>
+                                                </div>
+                                                <input type="date" class="form-control" id="nuevo9">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xs-4">
+                                            <label id="documento">70.HAQ (Health Assessment Questionnaire) último
+                                                semestre:</label>
+                                            <input type="text" class="form-control" id="documento">
+                                        </div>
+                                    </div>
+
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <label id="tipo">70.1.Analgesicos No Opioides (Acetaminofen - Dipirona)
+                                                :</label>
+                                            <input type="text" class="form-control" id="papellido">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">70.2.Analgesicos Opioides (Codeina - Tramadol)
+                                                :</label>
+                                            <input type="text" class="form-control" id="documento">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">70.3.AINES:</label>
+                                            <input type="text" class="form-control" id="documento">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">70.4.Corticoides:</label>
+                                            <input type="text" class="form-control" id="documento">
+                                        </div>
+                                    </div>
+
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <label id="tipo">70.5.Meses de uso de Glucocoticoides a dosis de 10 mg/dia o
+                                                mayores durante los 12 meses previos a la fecha de reporte:</label>
+                                            <input type="text" class="form-control" id="papellido">
                                         </div>
                                     </div>
                                 </form>
@@ -919,23 +1166,15 @@
                                 <form>
                                     <div class="input-group mb-3">
                                         <div class="col-xs-4">
-                                            <label id="PresenciaI">48.Presencia de inhibidor a la fecha de
-                                                corte:</label>
-                                            <select name="" class="form-control" id="PresenciaI">
-                                                <option value=""></option>
-                                                <option *ngFor='let Ingiborfechacorte of Ingiborfechacorte'
-                                                    [ngValue]="Ingiborfechacorte. NOMBRE_OPCION"
-                                                    [ngValue]="Ingiborfechacorte.CODIGO_OPCION">
-                                                    {{Ingiborfechacorte.CODIGO_OPCION}}.{{Ingiborfechacorte.NOMBRE_OPCION}}
-                                                </option>
-                                            </select>
+                                            <label id="tipo">71.6.Calcio:</label>
+                                            <input type="text" class="form-control" id="papellido">
                                         </div>
-                                        <div div class="col-xs-4">
-                                            <label id="fechat">48.1.Fecha de determinación de títulos del inhibidor
-                                                (Esta fecha debe
-                                                encontrarse
-                                                dentro del periodo de reporte, reportar la última más cercana a la fecha
-                                                de corte):</label>
+                                        <div class="col-xs-4">
+                                            <label id="documento">71.7.Vitamina D:</label>
+                                            <input type="text" class="form-control" id="documento">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">72.Fecha inicio tratamiento actual con DMARD:</label>
                                             <div class="input-group" id="nuevo">
                                                 <div class="input-group-prepend">
                                                     <span id="span1" class="input-group-text"><svg
@@ -950,46 +1189,121 @@
                                                                 d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
                                                         </svg></span>
                                                 </div>
-                                                <input type="date" class="form-control"  id="nuevo9">
-
+                                                <input type="date" class="form-control" id="nuevo9">
                                             </div>
-
-
-
                                         </div>
                                         <div class="col-xs-4">
-                                            <label id="documento">48.2.¿Ha recibido el paciente ITI (Inducción a la
-                                                Tolerancia Inmune) en
-                                                algún
-                                                momento de su vida? (tiene un antecedente de inhibidores y de la
-                                                exposición a
-                                                tratamientos):</label>
-                                            <select name="" class="form-control" id="documento">
-                                                <option value=""></option>
-                                                <option *ngFor='let PacienteITI of PacienteITI'
-                                                    [ngValue]="PacienteITI. NOMBRE_OPCION"
-                                                    [ngValue]="PacienteITI.CODIGO_OPCION">
-                                                    {{PacienteITI.CODIGO_OPCION}}.{{PacienteITI.NOMBRE_OPCION}}
-                                                </option>
-                                            </select>
+                                            <label id="documento">73.1.Azatioprina:</label>
+                                            <input type="text" class="form-control" id="documento">
+                                        </div>
+                                    </div>
+
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <label id="tipo">73.2.Ciclosporina:</label>
+                                            <input type="text" class="form-control" id="papellido">
                                         </div>
                                         <div class="col-xs-4">
-                                            <label id="Recibió">48.3.¿Recibió ITI (Inmunotolerancia) durante el
-                                                periodo?:</label>
-                                            <select name="" class="form-control" id="Recibió">
-                                                <option value=""></option>
-                                                <option *ngFor='let RecibioITI of RecibioITI'
-                                                    [ngValue]="RecibioITI. NOMBRE_OPCION"
-                                                    [ngValue]="RecibioITI.CODIGO_OPCION">
-                                                    {{RecibioITI.CODIGO_OPCION}}.{{RecibioITI.NOMBRE_OPCION}}
-                                                </option>
-                                            </select>
+                                            <label id="documento">73.3.Ciclofosfamida:</label>
+                                            <input type="text" class="form-control" id="documento">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">73.4.Cloroquina:</label>
+                                            <input type="text" class="form-control" id="documento">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">73.5.penicilaimina:</label>
+                                            <input type="text" class="form-control" id="documento">
                                         </div>
                                     </div>
                                     <div class="input-group mb-3">
                                         <div class="col-xs-4">
-                                            <label id="tipo">48.4. Tiempo que lleva el paciente en ITI (días):</label>
-                                            <input type="number" class="form-control" id="papellido">
+                                            <label id="tipo">73.6.Etanercept:</label>
+                                            <input type="text" class="form-control" id="papellido">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">73.7.Leflunomida:</label>
+                                            <input type="text" class="form-control" id="documento">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">73.8.Metotrexate:</label>
+                                            <input type="text" class="form-control" id="documento">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">73.9.Rituximab:</label>
+                                            <input type="text" class="form-control" id="documento">
+                                        </div>
+                                    </div>
+
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <label id="tipo">73.10.Sulfasalazina:</label>
+                                            <input type="text" class="form-control" id="papellido">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">74.1.Abatacept:</label>
+                                            <input type="text" class="form-control" id="documento">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">74.2.Adalimumab:</label>
+                                            <input type="text" class="form-control" id="documento">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">74.3.Certolizumab:</label>
+                                            <input type="text" class="form-control" id="documento">
+                                        </div>
+                                    </div>
+
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <label id="tipo">74.4.Golimumab:</label>
+                                            <input type="text" class="form-control" id="papellido">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">74.5.Hidroxicloroquina:</label>
+                                            <input type="text" class="form-control" id="documento">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">74.6.Infliximab:</label>
+                                            <input type="text" class="form-control" id="documento">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">74.7.Sales de oro:</label>
+                                            <input type="text" class="form-control" id="documento">
+                                        </div>
+                                    </div>
+
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <label id="tipo">74.8.Golimumab:</label>
+                                            <input type="text" class="form-control" id="papellido">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">74.9.Tofacitinib:</label>
+                                            <input type="text" class="form-control" id="documento">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">74.10.Anakinra:</label>
+                                            <input type="text" class="form-control" id="documento">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">74.11.Otro medicamento No POS (medicamento1):</label>
+                                            <input type="text" class="form-control" id="documento">
+                                        </div>
+                                    </div>
+
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <label id="tipo">74.12.Otro medicamento No POS (medicamento2):</label>
+                                            <input type="text" class="form-control" id="papellido">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">74.13.Otro medicamento No POS (medicamento3):</label>
+                                            <input type="text" class="form-control" id="documento">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">74.14.Otro medicamento No POS (medicamento4):</label>
+                                            <input type="text" class="form-control" id="documento">
                                         </div>
                                     </div>
                                 </form>
@@ -1016,28 +1330,19 @@
                                 <form>
                                     <div class="input-group mb-3">
                                         <div class="col-xs-4">
-                                            <label id="tipo"> 49. Artropatía hemofílica crónica: </label>
-                                            <select name="" class="form-control" id="tipo">
-                                                <option value=""></option>
-                                                <option *ngFor='let hermofiliacronica of hermofiliacronica'
-                                                    [ngValue]="hermofiliacronica. NOMBRE_OPCION"
-                                                    [ngValue]="hermofiliacronica.CODIGO_OPCION">
-                                                    {{hermofiliacronica.CODIGO_OPCION}}.{{hermofiliacronica.NOMBRE_OPCION}}
-                                                </option>
-                                            </select>
+                                            <label id="tipo">75.1.Número de consultas con reumatologo en el último
+                                                año:</label>
+                                            <input type="text" class="form-control" id="papellido">
                                         </div>
                                         <div class="col-xs-4">
-                                            <label id="documento">49.1. Numero de articulaciones comprometidas: </label>
-                                            <input type="number" class="form-control" id="documento">
+                                            <label id="documento">75.2.Número de consultas con el internista por AR en
+                                                el último año:</label>
+                                            <input type="text" class="form-control" id="documento">
                                         </div>
                                         <div class="col-xs-4">
-                                            <label id="documento">56.Reemplazos articulares: </label>
-                                            <input type="number" class="form-control" id="documento">
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <label id="documento">56.1.Reemplazos articulares en el periodo de
-                                                corte:</label>
-                                            <input type="number" class="form-control" id="documento">
+                                            <label id="documento">75.3.Número de consultas con el medico familiar por AR
+                                                en el último año:</label>
+                                            <input type="text" class="form-control" id="documento">
                                         </div>
                                     </div>
                                 </form>
@@ -1064,76 +1369,20 @@
                                 <form>
                                     <div class="input-group mb-3">
                                         <div class="col-xs-4">
-                                            <label id="tipo">50.Usuario infectado por VHC:</label>
-                                            <select name="" class="form-control" id="tipo">
-                                                <option value=""></option>
-                                                <option *ngFor='let VHC of VHC' [ngValue]="VHC. NOMBRE_OPCION"
-                                                    [ngValue]="VHC.CODIGO_OPCION">
-                                                    {{VHC.CODIGO_OPCION}}.{{VHC.NOMBRE_OPCION}}
-                                                </option>
-                                            </select>
+                                            <label id="tipo">75.4.Reemplazo articular 1 por AR:</label>
+                                            <input type="text" class="form-control" id="papellido">
                                         </div>
                                         <div class="col-xs-4">
-                                            <label id="documento">51.Usuario infectado por VHB: </label>
-                                            <select name="" class="form-control" id="documento">
-                                                <option value=""></option>
-                                                <option *ngFor='let VHB of VHB' [ngValue]="VHB. NOMBRE_OPCION"
-                                                    [ngValue]="VHB.CODIGO_OPCION">
-                                                    {{VHB.CODIGO_OPCION}}.{{VHB.NOMBRE_OPCION}}
-                                                </option>
-                                            </select>
+                                            <label id="documento">75.5.Reemplazo articular 2 por AR:</label>
+                                            <input type="text" class="form-control" id="documento">
                                         </div>
                                         <div class="col-xs-4">
-                                            <label id="documento">52.Usuario infectado por VIH:</label>
-                                            <select name="" class="form-control" id="documento">
-                                                <option value=""></option>
-                                                <option *ngFor='let VIH of VIH' [ngValue]="VIH. NOMBRE_OPCION"
-                                                    [ngValue]="VIH.CODIGO_OPCION">
-                                                    {{VIH.CODIGO_OPCION}}.{{VIH.NOMBRE_OPCION}}
-                                                </option>
-                                            </select>
+                                            <label id="documento">75.6.Reemplazo articular 3 por AR:</label>
+                                            <input type="text" class="form-control" id="documento">
                                         </div>
                                         <div class="col-xs-4">
-                                            <label id="documento">53.Pseudotumores: </label>
-                                            <select name="" class="form-control" id="documento">
-                                                <option value=""></option>
-                                                <option *ngFor='let Pseudotumor of Pseudotumor'
-                                                    [ngValue]="Pseudotumor. NOMBRE_OPCION"
-                                                    [ngValue]="Pseudotumor.CODIGO_OPCION">
-                                                    {{Pseudotumor.CODIGO_OPCION}}.{{Pseudotumor.NOMBRE_OPCION}}
-                                                </option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="input-group mb-3">
-                                        <div class="col-xs-4">
-                                            <label id="tipo">54. Fracturas (osteopenia/ osteoporosis):</label>
-                                            <select name="" class="form-control" id="tipo">
-                                                <option value=""></option>
-                                                <option *ngFor='let Fractura of Fractura'
-                                                    [ngValue]="Fractura. NOMBRE_OPCION"
-                                                    [ngValue]="Fractura.CODIGO_OPCION">
-                                                    {{Fractura.CODIGO_OPCION}}.{{Fractura.NOMBRE_OPCION}}
-                                                </option>
-                                            </select>
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <label id="documento">55.Anafilaxis: </label>
-                                            <select name="" class="form-control" id="documento">
-                                                <option value=""></option>
-                                                <option *ngFor='let Anasifilis of Anasifilis'
-                                                    [ngValue]="Anasifilis. NOMBRE_OPCION"
-                                                    [ngValue]="Anasifilis.CODIGO_OPCION">
-                                                    {{Anasifilis.CODIGO_OPCION}}.{{Anasifilis.NOMBRE_OPCION}}
-                                                </option>
-                                            </select>
-                                        </div>
-                                        <div class="col-xs-">
-                                            <label id="documento">55.1. A que factor se le atribuye la reacción
-                                                anafiláctica?: </label>
-                                            <select name="" class="form-control" id="documento">
-
-                                            </select>
+                                            <label id="documento">75.7.Reemplazo articular 4 por AR:</label>
+                                            <input type="text" class="form-control" id="documento">
                                         </div>
                                     </div>
                                 </form>
@@ -1160,31 +1409,47 @@
                                 <form>
                                     <div class="input-group mb-3">
                                         <div class="col-xs-4">
-                                            <label id="tipo">60. Costo del total de unidades de factor (VIII o IX en
-                                                personas con hemofilia, o
-                                                el
-                                                factor que correspondiente según la coagulopatía, en cualquier
-                                                presentación que incluya como
-                                                principio activo factor) administradas al paciente durante el periodo:
+                                            <label id="tipo">76.Número de hospitalizaciones por AR en el último año
                                             </label>
-                                            <input type="number" class="form-control" id="papellido">
+                                            <input type="text" class="form-control" id="papellido">
                                         </div>
                                         <div class="col-xs-4">
-                                            <label id="Costototal">61. Costo total de los agentes de puente (FrVIIa o
-                                                CCPa) administrados al
-                                                paciente durante el periodo:</label>
-                                            <input type="number" class="form-control" id="Costototal">
+                                            <label id="Costototal">77.Codigo de habilitacion de la sede de la IPS donde
+                                                se hace el seguimiento y atención de la AR al paciente
+                                                actualmente:</label>
+                                            <input type="text" class="form-control" id="Costototal">
                                         </div>
                                         <div class="col-xs-4">
-                                            <label id="Costototal2">62. Costo total del manejo asociado a la
-                                                coagulopatia:</label>
-                                            <input type="number" class="form-control" id="Costototal3">
+                                            <label id="Costototal2">78. Codigo del municipio de la IPS</label>
+                                            <input type="text" class="form-control" id="Costototal3">
                                         </div>
                                         <div class="col-xs-4">
-                                            <label id="Costototal4">63. Costo Incapacidades laborales relacionadas con
-                                                la coagulopatia:
+                                            <label id="Costototal4">79. Fecha de ingreso a la IPS actual donde se hace
+                                                el seguimiento y atencion de la AR al paciente:
                                             </label>
-                                            <input type="number" class="form-control" id="Costototal4">
+                                            <input type="text" class="form-control" id="Costototal4">
+                                        </div>
+                                    </div>
+
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <label id="tipo">80.Quien hace la atencion clinica para AR al paciente
+                                                actualmente:</label>
+                                            <input type="text" class="form-control" id="papellido">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">81.Novedad del paciente respecto al reporte
+                                                anterior:</label>
+                                            <input type="text" class="form-control" id="documento">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">82.Fecha de desafiliacion de la EAPB:</label>
+                                            <input type="text" class="form-control" id="documento">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">83.EAPB o Ente territorial al cual se traslado el
+                                                paciente desafiliado:</label>
+                                            <input type="text" class="form-control" id="documento">
                                         </div>
                                     </div>
                                 </form>
@@ -1211,45 +1476,52 @@
                                 <form>
                                     <div class="input-group mb-3">
                                         <div class="col-xs-4">
-                                            <label id="tipo">64. Novedades:</label>
-                                            <select name="" class="form-control" id="tipo">
+                                            <div class="col-xs-4">
+                                                <label id="tipo">84.Fecha del primer DAS 28:</label>
+                                                <div class="input-group" id="nuevo1">
+                                                    <div class="input-group-prepend">
+                                                        <span id="span2" class="input-group-text"><svg
+                                                                xmlns="http://www.w3.org/2000/svg" width="16"
+                                                                height="16" fill="currentColor"
+                                                                class="bi bi-calendar2-date" viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
+                                                                <path
+                                                                    d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
+                                                                <path
+                                                                    d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
+                                                            </svg></span>
+                                                    </div>
+                                                    <input type="date" class="form-control" id="fechaInicioS">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">85. Causa de muerte:</label>
+                                            <select name="" class="form-control" id="documento">
                                                 <option value=""></option>
-                                                <option *ngFor='let Novedad of Novedad'
-                                                    [ngValue]="Novedad. NOMBRE_OPCION"
-                                                    [ngValue]="Novedad.CODIGO_OPCION">
-                                                    {{Novedad.CODIGO_OPCION}}.{{Novedad.NOMBRE_OPCION}}
-                                                </option>
+                                                <option></option>
+
                                             </select>
                                         </div>
                                         <div class="col-xs-4">
-                                            <label id="documento">64.1. Causa de muerte:</label>
-                                            <select name="" class="form-control" id="documento">
-                                                <option value=""></option>
-                                                <option *ngFor='let Causademuerte of Causademuerte'
-                                                    [ngValue]="Causademuerte. NOMBRE_OPCION"
-                                                    [ngValue]="Causademuerte.CODIGO_OPCION">
-                                                    {{Causademuerte.CODIGO_OPCION}}.{{Causademuerte.NOMBRE_OPCION}}
-                                                </option>
-                                            </select>
+                                            <label id="documento">86.Costo anual de DMARD POS:</label>
+                                            <input type="text" class="form-control" id="documento">
                                         </div>
-                                        <div div class="col-xs-4">
-                                            <label id="documento">64.2. Fecha de muerte: </label>
-                                            <div class="input-group" id="nuevo">
-                                                <div class="input-group-prepend">
-                                                    <span id="span1" class="input-group-text"><svg
-                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                            fill="currentColor" class="bi bi-calendar2-date"
-                                                            viewBox="0 0 16 16">
-                                                            <path
-                                                                d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
-                                                            <path
-                                                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
-                                                            <path
-                                                                d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
-                                                        </svg></span>
-                                                </div>
-                                                <input type="date" class="form-control" id="nuevo9">
-                                            </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">87.Costo anual de DMARD NO POS:</label>
+                                            <input type="text" class="form-control" id="documento">
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <label id="tipo">88.Costo total anual del manejo de la AR:</label>
+                                            <input type="text" class="form-control" id="papellido">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">89.Costo anual de incapacidades laborales relacionadas
+                                                con la AR:</label>
+                                            <input type="text" class="form-control" id="documento">
                                         </div>
                                     </div>
                                 </form>
@@ -1263,10 +1535,9 @@
 
     <div class="y-card-footer">
         <div class="card-foother align-items-center justify-content-between">
-            <button type="button" id="button" class="btn btn-secondary"> <i
-                    class="fas fa-save"></i> Guardar</button>
-            <button type="button" id="button" class="btn btn-primary"> <i
-                    class="fas fa-file-import"></i> Soporte</button>
+            <button type="button" id="button" class="btn btn-secondary"> <i class="fas fa-save"></i> Guardar</button>
+            <button type="button" id="button" class="btn btn-primary"> <i class="fas fa-file-import"></i>
+                Soporte</button>
         </div>
     </div>
 </div>
