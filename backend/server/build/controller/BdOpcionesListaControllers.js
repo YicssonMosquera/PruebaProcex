@@ -255,5 +255,275 @@ class BdOpcionesListaControllers {
             res.json(opcionesLista);
         });
     }
+    cargarRadiografiademanos49(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const opcionesLista = yield BdOpcionesListas_1.default.cargarRadiografiademanos49();
+            res.json(opcionesLista);
+        });
+    }
+    cargarRadiografiadepies50(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const opcionesLista = yield BdOpcionesListas_1.default.cargarRadiografiadepies50();
+            res.json(opcionesLista);
+        });
+    }
+    cargarParcialdeOrinaúltimosemestre57(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const opcionesLista = yield BdOpcionesListas_1.default.cargarParcialdeOrinaúltimosemestre57();
+            res.json(opcionesLista);
+        });
+    }
+    cargarALTultimosemestre58(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const opcionesLista = yield BdOpcionesListas_1.default.cargarALTultimosemestre58();
+            res.json(opcionesLista);
+        });
+    }
+    cargarHTAactual59(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const opcionesLista = yield BdOpcionesListas_1.default.cargarHTAactual59();
+            res.json(opcionesLista);
+        });
+    }
+    cargarDMactua60(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const opcionesLista = yield BdOpcionesListas_1.default.cargarDMactua60();
+            res.json(opcionesLista);
+        });
+    }
+    cargarECVactual61(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const opcionesLista = yield BdOpcionesListas_1.default.cargarECVactual61();
+            res.json(opcionesLista);
+        });
+    }
+    cargarERCactual62(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const opcionesLista = yield BdOpcionesListas_1.default.cargarERCactual62();
+            res.json(opcionesLista);
+        });
+    }
+    cargarOsteoporosisactual63(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const opcionesLista = yield BdOpcionesListas_1.default.cargarOsteoporosisactual63();
+            res.json(opcionesLista);
+        });
+    }
+    cargarSindromeSjogrenactual64(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const opcionesLista = yield BdOpcionesListas_1.default.cargarSindromeSjogrenactual64();
+            res.json(opcionesLista);
+        });
+    }
+    cargarProfesionalrealizoultimoDAS28_66(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const opcionesLista = yield BdOpcionesListas_1.default.cargarProfesionalrealizoultimoDAS28_66();
+            res.json(opcionesLista);
+        });
+    }
+    cargarEstadoactividadactualdelaARegúnDAS28_68(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const opcionesLista = yield BdOpcionesListas_1.default.cargarEstadoactividadactualdelaARegúnDAS28_68();
+            res.json(opcionesLista);
+        });
+    }
+    cargarAnalgesicosNoOpioides71_1(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const opcionesLista = yield BdOpcionesListas_1.default.cargarAnalgesicosNoOpioides71_1();
+            res.json(opcionesLista);
+        });
+    }
+    cargarAnalgesicosOpioides71_2(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const opcionesLista = yield BdOpcionesListas_1.default.cargarAnalgesicosOpioides71_2();
+            res.json(opcionesLista);
+        });
+    }
+    cargarAINES71_3(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const opcionesLista = yield BdOpcionesListas_1.default.cargarAINES71_3();
+            res.json(opcionesLista);
+        });
+    }
+    cargarCorticoides71_4(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const opcionesLista = yield BdOpcionesListas_1.default.cargarCorticoides71_4();
+            res.json(opcionesLista);
+        });
+    }
+    cargarCalcio71_6(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const opcionesLista = yield BdOpcionesListas_1.default.cargarCalcio71_6();
+            res.json(opcionesLista);
+        });
+    }
+    cargarVitaminaD71_7(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const opcionesLista = yield BdOpcionesListas_1.default.cargarVitaminaD71_7();
+            res.json(opcionesLista);
+        });
+    }
+    cargarAzatioprina73_1(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const opcionesLista = yield BdOpcionesListas_1.default.cargarAzatioprina73_1();
+            res.json(opcionesLista);
+        });
+    }
+    cargarCiclosporina73_2(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const opcionesLista = yield BdOpcionesListas_1.default.cargarCiclosporina73_2();
+            res.json(opcionesLista);
+        });
+    }
+    cargarCiclofosfamida73_3(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const opcionesLista = yield BdOpcionesListas_1.default.cargarCiclofosfamida73_3();
+            res.json(opcionesLista);
+        });
+    }
+    cargarCorticoides73_4(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const opcionesLista = yield BdOpcionesListas_1.default.cargarCorticoides73_4();
+            res.json(opcionesLista);
+        });
+    }
+    cargarDpenicilaimina73_5(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const opcionesLista = yield BdOpcionesListas_1.default.cargarDpenicilaimina73_5();
+            res.json(opcionesLista);
+        });
+    }
+    cargarEtanercept73_6(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const opcionesLista = yield BdOpcionesListas_1.default.cargarEtanercept73_6();
+            res.json(opcionesLista);
+        });
+    }
+    cargarLeflunomida73_7(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const opcionesLista = yield BdOpcionesListas_1.default.cargarLeflunomida73_7();
+            res.json(opcionesLista);
+        });
+    }
+    cargarMetotrexate73_8(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const opcionesLista = yield BdOpcionesListas_1.default.cargarMetotrexate73_8();
+            res.json(opcionesLista);
+        });
+    }
+    cargarRituximab73_9(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const opcionesLista = yield BdOpcionesListas_1.default.cargarRituximab73_9();
+            res.json(opcionesLista);
+        });
+    }
+    cargarSulfasalazina73_10(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const opcionesLista = yield BdOpcionesListas_1.default.cargarSulfasalazina73_10();
+            res.json(opcionesLista);
+        });
+    }
+    cargarAbatacept74_1(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const opcionesLista = yield BdOpcionesListas_1.default.cargarAbatacept74_1();
+            res.json(opcionesLista);
+        });
+    }
+    cargarAdalimumab74_2(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const opcionesLista = yield BdOpcionesListas_1.default.cargarAdalimumab74_2();
+            res.json(opcionesLista);
+        });
+    }
+    cargarCertolizumab74_3(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const opcionesLista = yield BdOpcionesListas_1.default.cargarCertolizumab74_3();
+            res.json(opcionesLista);
+        });
+    }
+    cargarGolimumab74_4(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const opcionesLista = yield BdOpcionesListas_1.default.cargarGolimumab74_4();
+            res.json(opcionesLista);
+        });
+    }
+    cargaHidroxicloroquina74_5(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const opcionesLista = yield BdOpcionesListas_1.default.cargaHidroxicloroquina74_5();
+            res.json(opcionesLista);
+        });
+    }
+    cargarInfliximab74_6(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const opcionesLista = yield BdOpcionesListas_1.default.cargarInfliximab74_6();
+            res.json(opcionesLista);
+        });
+    }
+    cargarSalesdeoro74_7(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const opcionesLista = yield BdOpcionesListas_1.default.cargarSalesdeoro74_7();
+            res.json(opcionesLista);
+        });
+    }
+    cargarTocilizumab74_8(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const opcionesLista = yield BdOpcionesListas_1.default.cargarTocilizumab74_8();
+            res.json(opcionesLista);
+        });
+    }
+    cargarTofacitinib74_9(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const opcionesLista = yield BdOpcionesListas_1.default.cargarTofacitinib74_9();
+            res.json(opcionesLista);
+        });
+    }
+    cargarAnakinra74_10(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const opcionesLista = yield BdOpcionesListas_1.default.cargarAnakinra74_10();
+            res.json(opcionesLista);
+        });
+    }
+    cargarReemplazoarticular1porAR575_4(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const opcionesLista = yield BdOpcionesListas_1.default.cargarReemplazoarticular1porAR575_4();
+            res.json(opcionesLista);
+        });
+    }
+    cargarReemplazoarticular2porAR75_5(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const opcionesLista = yield BdOpcionesListas_1.default.cargarReemplazoarticular2porAR75_5();
+            res.json(opcionesLista);
+        });
+    }
+    cargarReemplazoarticular3porAR75_6(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const opcionesLista = yield BdOpcionesListas_1.default.cargarReemplazoarticular3porAR75_6();
+            res.json(opcionesLista);
+        });
+    }
+    cargarReemplazoarticula4porAR75_7(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const opcionesLista = yield BdOpcionesListas_1.default.cargarReemplazoarticula4porAR75_7();
+            res.json(opcionesLista);
+        });
+    }
+    cargarQuienhacelaatencionclinicaparaAR80(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const opcionesLista = yield BdOpcionesListas_1.default.cargarQuienhacelaatencionclinicaparaAR80();
+            res.json(opcionesLista);
+        });
+    }
+    cargarNovedaddelpacienterespectoalreporteanterior81(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const opcionesLista = yield BdOpcionesListas_1.default.cargarNovedaddelpacienterespectoalreporteanterior81();
+            res.json(opcionesLista);
+        });
+    }
+    cargarCausademuerte85(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const opcionesLista = yield BdOpcionesListas_1.default.cargarCausademuerte85();
+            res.json(opcionesLista);
+        });
+    }
 }
 exports.bdopcionesListaControllers = new BdOpcionesListaControllers();

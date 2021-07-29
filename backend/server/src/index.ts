@@ -9,6 +9,7 @@ import soportesRoutes from './routes/SoportesRoutes';
 import cargahemofiliaRoutes from './routes/CarguehemofiliaRoutes';
 import logsherrores from './routes/LogsHerroresRoutes';
 import bdopcioneslistasRouter from './routes/BDOpcionesListarouter';
+import cac_ArtritisRoutes from './routes/CAC_ArtritisRoutes';
 import paht from 'path'
 class Server {
 
@@ -37,6 +38,7 @@ class Server {
         this.app.use('/api/carguehemofilia', cargahemofiliaRoutes);
         this.app.use('/api/logsherrores', logsherrores);
         this.app.use('/api/opcionesLista', bdopcioneslistasRouter);
+        this.app.use('/api/artritis', cac_ArtritisRoutes);
         this.app.use('/soportes',express.static(paht.resolve('soportes')));
         this.app.use('/logsExcel',express.static(paht.resolve('logsExcel')));
         this.app.use('/Carguehemofilia',express.static(paht.resolve('Carguehemofilia')));

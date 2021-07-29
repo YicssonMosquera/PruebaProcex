@@ -50,7 +50,8 @@ import { HemofiliaSoportesComponent } from './components/hemofilia-soportes/hemo
 import { CargarHemofiliaComponent } from './components/cargar-hemofilia/cargar-hemofilia.component';
 import {BannerComponent}   from './components/banner/banner.component';
 import { MenuuComponent, } from './components/menuu/menuu.component';
-import { CuentaCancerComponent } from './components/cuenta-cancer/cuenta-cancer.component'
+import { CuentaCancerComponent } from './components/cuenta-cancer/cuenta-cancer.component';
+import { CuentaCancerListarComponent } from './components/cuenta-cancer-listar/cuenta-cancer-listar.component'
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { CuentaCancerComponent } from './components/cuenta-cancer/cuenta-cancer.
     CargarHemofiliaComponent,
     BannerComponent,
     MenuuComponent,
-    CuentaCancerComponent
+    CuentaCancerComponent,
+    CuentaCancerListarComponent
   ],
   imports: [
     BrowserModule,

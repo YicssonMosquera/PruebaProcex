@@ -32,33 +32,32 @@ export class HemofiliaListarComponent implements OnInit, OnDestroy {
   constructor(private hemofiliaservice: HemofiliaService, private Router: Router, private ngxSpinnerService: NgxUiLoaderService,private modalService: NgbModal, public tabs:AppComponent) { }
 
   ngOnInit(): void {
-    this.dtoptiontables()
     this.CargarRegistroshemofilia();
     this.numeroRegistro();
   }
 
-  dtoptiontables() {
-    this.dtOptions = {
-      pagingType: 'full_numbers',
-      pageLength: 10,
-      "lengthChange": false,
-      processing: false,
-      searching: false,
-      "scrollX": true,
-      "order": [[6, "desc"]],
-      rowCallback: (row: Node, data: any[] | Object, index: number) => {
-        const self = this;
-        // Unbind first in order to avoid any duplicate handler
-        // (see https://github.com/l-lin/angular-datatables/issues/87)
-        $('td', row).unbind('dblclick');
-        $('td', row).bind('dblclick', () => {
-          self.Seleccionarusuario(data);
-        });
-        return row;
-      }
-    }
+  // dtoptiontables() {
+  //   this.dtOptions = {
+  //     pagingType: 'full_numbers',
+  //     pageLength: 10,
+  //     "lengthChange": false,
+  //     processing: false,
+  //     searching: false,
+  //     "scrollX": true,
+  //     "order": [[6, "desc"]],
+  //     rowCallback: (row: Node, data: any[] | Object, index: number) => {
+  //       const self = this;
+  //       // Unbind first in order to avoid any duplicate handler
+  //       // (see https://github.com/l-lin/angular-datatables/issues/87)
+  //       $('td', row).unbind('dblclick');
+  //       $('td', row).bind('dblclick', () => {
+  //         self.Seleccionarusuario(data);
+  //       });
+  //       return row;
+  //     }
+  //   }
 
-  }
+  // }
   onRowSelect(event) {
     const CC = event.data.CAMPO_6;
     this.ngxSpinnerService.start();

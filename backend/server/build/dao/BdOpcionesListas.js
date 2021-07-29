@@ -770,5 +770,515 @@ class BD_opciones_listas {
             ;
         });
     }
+    static cargarEstadoactividadactualdelaARegúnDAS28_68() {
+        return new Promise(function (resolev, reject) {
+            try {
+                database_1.default.query("select * from BD_opciones_listas where CODIGO_LISTA = 'hemofilia.C96_CAMPO_68' ", function (err, result, fields) {
+                    if (err)
+                        throw err;
+                    resolev(result);
+                });
+            }
+            catch (error) {
+                //res.status(404).json({ error: 'No se pudieron almacenar datos' });
+            }
+            ;
+        });
+    }
+    static cargarAnalgesicosNoOpioides71_1() {
+        return new Promise(function (resolev, reject) {
+            try {
+                database_1.default.query("select * from BD_opciones_listas where CODIGO_LISTA = 'hemofilia.C99_CAMPO_71_1' ", function (err, result, fields) {
+                    if (err)
+                        throw err;
+                    resolev(result);
+                });
+            }
+            catch (error) {
+                //res.status(404).json({ error: 'No se pudieron almacenar datos' });
+            }
+            ;
+        });
+    }
+    static cargarAnalgesicosOpioides71_2() {
+        return new Promise(function (resolev, reject) {
+            try {
+                database_1.default.query("select * from BD_opciones_listas where CODIGO_LISTA = 'hemofilia.C100_CAMPO_71_2' ", function (err, result, fields) {
+                    if (err)
+                        throw err;
+                    resolev(result);
+                });
+            }
+            catch (error) {
+                //res.status(404).json({ error: 'No se pudieron almacenar datos' });
+            }
+            ;
+        });
+    }
+    static cargarAINES71_3() {
+        return new Promise(function (resolev, reject) {
+            try {
+                database_1.default.query("select * from BD_opciones_listas where CODIGO_LISTA = 'hemofilia.C101_CAMPO_71_3' ", function (err, result, fields) {
+                    if (err)
+                        throw err;
+                    resolev(result);
+                });
+            }
+            catch (error) {
+                //res.status(404).json({ error: 'No se pudieron almacenar datos' });
+            }
+            ;
+        });
+    }
+    static cargarCorticoides71_4() {
+        return new Promise(function (resolev, reject) {
+            try {
+                database_1.default.query("select * from BD_opciones_listas where CODIGO_LISTA = 'hemofilia.C102_CAMPO_71_4' ", function (err, result, fields) {
+                    if (err)
+                        throw err;
+                    resolev(result);
+                });
+            }
+            catch (error) {
+                //res.status(404).json({ error: 'No se pudieron almacenar datos' });
+            }
+            ;
+        });
+    }
+    static cargarCalcio71_6() {
+        return new Promise(function (resolev, reject) {
+            try {
+                database_1.default.query("select * from BD_opciones_listas where CODIGO_LISTA = 'hemofilia.C104_CAMPO_71_6' ", function (err, result, fields) {
+                    if (err)
+                        throw err;
+                    resolev(result);
+                });
+            }
+            catch (error) {
+                //res.status(404).json({ error: 'No se pudieron almacenar datos' });
+            }
+            ;
+        });
+    }
+    static cargarVitaminaD71_7() {
+        return new Promise(function (resolev, reject) {
+            try {
+                database_1.default.query("select * from BD_opciones_listas where CODIGO_LISTA = 'hemofilia.C105_CAMPO_71_7' ", function (err, result, fields) {
+                    if (err)
+                        throw err;
+                    resolev(result);
+                });
+            }
+            catch (error) {
+                //res.status(404).json({ error: 'No se pudieron almacenar datos' });
+            }
+            ;
+        });
+    }
+    static cargarAzatioprina73_1() {
+        return new Promise(function (resolev, reject) {
+            try {
+                database_1.default.query("select * from BD_opciones_listas where CODIGO_LISTA = 'hemofilia.C107_CAMPO_73_1' ", function (err, result, fields) {
+                    if (err)
+                        throw err;
+                    resolev(result);
+                });
+            }
+            catch (error) {
+                //res.status(404).json({ error: 'No se pudieron almacenar datos' });
+            }
+            ;
+        });
+    }
+    static cargarCiclosporina73_2() {
+        return new Promise(function (resolev, reject) {
+            try {
+                database_1.default.query("select * from BD_opciones_listas where CODIGO_LISTA = 'hemofilia.C108_CAMPO_73_2' ", function (err, result, fields) {
+                    if (err)
+                        throw err;
+                    resolev(result);
+                });
+            }
+            catch (error) {
+                //res.status(404).json({ error: 'No se pudieron almacenar datos' });
+            }
+            ;
+        });
+    }
+    static cargarCiclofosfamida73_3() {
+        return new Promise(function (resolev, reject) {
+            try {
+                database_1.default.query("select * from BD_opciones_listas where CODIGO_LISTA = 'hemofilia.C109_CAMPO_73_3' ", function (err, result, fields) {
+                    if (err)
+                        throw err;
+                    resolev(result);
+                });
+            }
+            catch (error) {
+                //res.status(404).json({ error: 'No se pudieron almacenar datos' });
+            }
+            ;
+        });
+    }
+    static cargarCorticoides73_4() {
+        return new Promise(function (resolev, reject) {
+            try {
+                database_1.default.query("select * from BD_opciones_listas where CODIGO_LISTA = 'hemofilia.C110_CAMPO_73_4' ", function (err, result, fields) {
+                    if (err)
+                        throw err;
+                    resolev(result);
+                });
+            }
+            catch (error) {
+                //res.status(404).json({ error: 'No se pudieron almacenar datos' });
+            }
+            ;
+        });
+    }
+    static cargarDpenicilaimina73_5() {
+        return new Promise(function (resolev, reject) {
+            try {
+                database_1.default.query("select * from BD_opciones_listas where CODIGO_LISTA = 'hemofilia.C111_CAMPO_73_5' ", function (err, result, fields) {
+                    if (err)
+                        throw err;
+                    resolev(result);
+                });
+            }
+            catch (error) {
+                //res.status(404).json({ error: 'No se pudieron almacenar datos' });
+            }
+            ;
+        });
+    }
+    static cargarEtanercept73_6() {
+        return new Promise(function (resolev, reject) {
+            try {
+                database_1.default.query("select * from BD_opciones_listas where CODIGO_LISTA = 'hemofilia.C112_CAMPO_73_6' ", function (err, result, fields) {
+                    if (err)
+                        throw err;
+                    resolev(result);
+                });
+            }
+            catch (error) {
+                //res.status(404).json({ error: 'No se pudieron almacenar datos' });
+            }
+            ;
+        });
+    }
+    static cargarLeflunomida73_7() {
+        return new Promise(function (resolev, reject) {
+            try {
+                database_1.default.query("select * from BD_opciones_listas where CODIGO_LISTA = 'hemofilia.C113_CAMPO_73_7' ", function (err, result, fields) {
+                    if (err)
+                        throw err;
+                    resolev(result);
+                });
+            }
+            catch (error) {
+                //res.status(404).json({ error: 'No se pudieron almacenar datos' });
+            }
+            ;
+        });
+    }
+    static cargarMetotrexate73_8() {
+        return new Promise(function (resolev, reject) {
+            try {
+                database_1.default.query("select * from BD_opciones_listas where CODIGO_LISTA = 'hemofilia.C114_CAMPO_73_8' ", function (err, result, fields) {
+                    if (err)
+                        throw err;
+                    resolev(result);
+                });
+            }
+            catch (error) {
+                //res.status(404).json({ error: 'No se pudieron almacenar datos' });
+            }
+            ;
+        });
+    }
+    static cargarRituximab73_9() {
+        return new Promise(function (resolev, reject) {
+            try {
+                database_1.default.query("select * from BD_opciones_listas where CODIGO_LISTA = 'hemofilia.C115_CAMPO_73_9' ", function (err, result, fields) {
+                    if (err)
+                        throw err;
+                    resolev(result);
+                });
+            }
+            catch (error) {
+                //res.status(404).json({ error: 'No se pudieron almacenar datos' });
+            }
+            ;
+        });
+    }
+    static cargarSulfasalazina73_10() {
+        return new Promise(function (resolev, reject) {
+            try {
+                database_1.default.query("select * from BD_opciones_listas where CODIGO_LISTA = 'hemofilia.C116_CAMPO_73_10' ", function (err, result, fields) {
+                    if (err)
+                        throw err;
+                    resolev(result);
+                });
+            }
+            catch (error) {
+                //res.status(404).json({ error: 'No se pudieron almacenar datos' });
+            }
+            ;
+        });
+    }
+    static cargarAbatacept74_1() {
+        return new Promise(function (resolev, reject) {
+            try {
+                database_1.default.query("select * from BD_opciones_listas where CODIGO_LISTA = 'cachemofiliaarchivo.C117_CAMPO_74_1' ", function (err, result, fields) {
+                    if (err)
+                        throw err;
+                    resolev(result);
+                });
+            }
+            catch (error) {
+                //res.status(404).json({ error: 'No se pudieron almacenar datos' });
+            }
+            ;
+        });
+    }
+    static cargarAdalimumab74_2() {
+        return new Promise(function (resolev, reject) {
+            try {
+                database_1.default.query("select * from BD_opciones_listas where CODIGO_LISTA = 'hemofilia.C118_CAMPO_74_2' ", function (err, result, fields) {
+                    if (err)
+                        throw err;
+                    resolev(result);
+                });
+            }
+            catch (error) {
+                //res.status(404).json({ error: 'No se pudieron almacenar datos' });
+            }
+            ;
+        });
+    }
+    static cargarCertolizumab74_3() {
+        return new Promise(function (resolev, reject) {
+            try {
+                database_1.default.query("select * from BD_opciones_listas where CODIGO_LISTA = 'hemofilia.C119_CAMPO_74_3' ", function (err, result, fields) {
+                    if (err)
+                        throw err;
+                    resolev(result);
+                });
+            }
+            catch (error) {
+                //res.status(404).json({ error: 'No se pudieron almacenar datos' });
+            }
+            ;
+        });
+    }
+    static cargarGolimumab74_4() {
+        return new Promise(function (resolev, reject) {
+            try {
+                database_1.default.query("select * from BD_opciones_listas where CODIGO_LISTA = 'hemofilia.C120_CAMPO_74_4' ", function (err, result, fields) {
+                    if (err)
+                        throw err;
+                    resolev(result);
+                });
+            }
+            catch (error) {
+                //res.status(404).json({ error: 'No se pudieron almacenar datos' });
+            }
+            ;
+        });
+    }
+    static cargaHidroxicloroquina74_5() {
+        return new Promise(function (resolev, reject) {
+            try {
+                database_1.default.query("select * from BD_opciones_listas where CODIGO_LISTA = 'hemofilia.C121_CAMPO_74_5' ", function (err, result, fields) {
+                    if (err)
+                        throw err;
+                    resolev(result);
+                });
+            }
+            catch (error) {
+                //res.status(404).json({ error: 'No se pudieron almacenar datos' });
+            }
+            ;
+        });
+    }
+    static cargarInfliximab74_6() {
+        return new Promise(function (resolev, reject) {
+            try {
+                database_1.default.query("select * from BD_opciones_listas where CODIGO_LISTA = 'hemofilia.C122_CAMPO_74_6' ", function (err, result, fields) {
+                    if (err)
+                        throw err;
+                    resolev(result);
+                });
+            }
+            catch (error) {
+                //res.status(404).json({ error: 'No se pudieron almacenar datos' });
+            }
+            ;
+        });
+    }
+    static cargarSalesdeoro74_7() {
+        return new Promise(function (resolev, reject) {
+            try {
+                database_1.default.query("select * from BD_opciones_listas where CODIGO_LISTA = 'hemofilia.C123_CAMPO_74_7' ", function (err, result, fields) {
+                    if (err)
+                        throw err;
+                    resolev(result);
+                });
+            }
+            catch (error) {
+                //res.status(404).json({ error: 'No se pudieron almacenar datos' });
+            }
+            ;
+        });
+    }
+    static cargarTocilizumab74_8() {
+        return new Promise(function (resolev, reject) {
+            try {
+                database_1.default.query("select * from BD_opciones_listas where CODIGO_LISTA = 'hemofilia.C124_CAMPO_74_8' ", function (err, result, fields) {
+                    if (err)
+                        throw err;
+                    resolev(result);
+                });
+            }
+            catch (error) {
+                //res.status(404).json({ error: 'No se pudieron almacenar datos' });
+            }
+            ;
+        });
+    }
+    static cargarTofacitinib74_9() {
+        return new Promise(function (resolev, reject) {
+            try {
+                database_1.default.query("select * from BD_opciones_listas where CODIGO_LISTA = 'hemofilia.C125_CAMPO_74_9' ", function (err, result, fields) {
+                    if (err)
+                        throw err;
+                    resolev(result);
+                });
+            }
+            catch (error) {
+                //res.status(404).json({ error: 'No se pudieron almacenar datos' });
+            }
+            ;
+        });
+    }
+    static cargarAnakinra74_10() {
+        return new Promise(function (resolev, reject) {
+            try {
+                database_1.default.query("select * from BD_opciones_listas where CODIGO_LISTA = 'hemofilia.C126_CAMPO_74_10' ", function (err, result, fields) {
+                    if (err)
+                        throw err;
+                    resolev(result);
+                });
+            }
+            catch (error) {
+                //res.status(404).json({ error: 'No se pudieron almacenar datos' });
+            }
+            ;
+        });
+    }
+    static cargarReemplazoarticular1porAR575_4() {
+        return new Promise(function (resolev, reject) {
+            try {
+                database_1.default.query("select * from BD_opciones_listas where CODIGO_LISTA = 'hemofilia.C134_CAMPO_75_4' ", function (err, result, fields) {
+                    if (err)
+                        throw err;
+                    resolev(result);
+                });
+            }
+            catch (error) {
+                //res.status(404).json({ error: 'No se pudieron almacenar datos' });
+            }
+            ;
+        });
+    }
+    static cargarReemplazoarticular2porAR75_5() {
+        return new Promise(function (resolev, reject) {
+            try {
+                database_1.default.query("select * from BD_opciones_listas where CODIGO_LISTA = 'hemofilia.C135_CAMPO_75_5' ", function (err, result, fields) {
+                    if (err)
+                        throw err;
+                    resolev(result);
+                });
+            }
+            catch (error) {
+                //res.status(404).json({ error: 'No se pudieron almacenar datos' });
+            }
+            ;
+        });
+    }
+    static cargarReemplazoarticular3porAR75_6() {
+        return new Promise(function (resolev, reject) {
+            try {
+                database_1.default.query("select * from BD_opciones_listas where CODIGO_LISTA = 'hemofilia.C136_CAMPO_75_6' ", function (err, result, fields) {
+                    if (err)
+                        throw err;
+                    resolev(result);
+                });
+            }
+            catch (error) {
+                //res.status(404).json({ error: 'No se pudieron almacenar datos' });
+            }
+            ;
+        });
+    }
+    static cargarReemplazoarticula4porAR75_7() {
+        return new Promise(function (resolev, reject) {
+            try {
+                database_1.default.query("select * from BD_opciones_listas where CODIGO_LISTA = 'hemofilia.C137_CAMPO_75_7' ", function (err, result, fields) {
+                    if (err)
+                        throw err;
+                    resolev(result);
+                });
+            }
+            catch (error) {
+                //res.status(404).json({ error: 'No se pudieron almacenar datos' });
+            }
+            ;
+        });
+    }
+    static cargarQuienhacelaatencionclinicaparaAR80() {
+        return new Promise(function (resolev, reject) {
+            try {
+                database_1.default.query("select * from BD_opciones_listas where CODIGO_LISTA = 'hemofilia.C142_CAMPO_80' ", function (err, result, fields) {
+                    if (err)
+                        throw err;
+                    resolev(result);
+                });
+            }
+            catch (error) {
+                //res.status(404).json({ error: 'No se pudieron almacenar datos' });
+            }
+            ;
+        });
+    }
+    static cargarNovedaddelpacienterespectoalreporteanterior81() {
+        return new Promise(function (resolev, reject) {
+            try {
+                database_1.default.query("select * from BD_opciones_listas where CODIGO_LISTA = 'hemofilia.C143_CAMPO_81' ", function (err, result, fields) {
+                    if (err)
+                        throw err;
+                    resolev(result);
+                });
+            }
+            catch (error) {
+                //res.status(404).json({ error: 'No se pudieron almacenar datos' });
+            }
+            ;
+        });
+    }
+    static cargarCausademuerte85() {
+        return new Promise(function (resolev, reject) {
+            try {
+                database_1.default.query("select * from BD_opciones_listas where CODIGO_LISTA = 'hemofilia.C147_CAMPO_85' ", function (err, result, fields) {
+                    if (err)
+                        throw err;
+                    resolev(result);
+                });
+            }
+            catch (error) {
+                //res.status(404).json({ error: 'No se pudieron almacenar datos' });
+            }
+            ;
+        });
+    }
 }
 exports.default = BD_opciones_listas;

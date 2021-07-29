@@ -9,6 +9,7 @@ import {AuthGuard} from './rutasprotegidas/guards/auth.guard'
 import { HemofiliaSoportesComponent } from './components/hemofilia-soportes/hemofilia-soportes.component';
 import { CargarHemofiliaComponent } from './components/cargar-hemofilia/cargar-hemofilia.component';
 import { CuentaCancerComponent } from './components/cuenta-cancer/cuenta-cancer.component';
+import {CuentaCancerListarComponent} from './components/cuenta-cancer-listar/cuenta-cancer-listar.component';
 
 const routes: Routes = [
 
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path:  'Hemofilia-soporte/:cc',component:HemofiliaSoportesComponent,canActivate:[AuthGuard]},
   {path:  'Hemofilia-cargar',component:CargarHemofiliaComponent,canActivate:[AuthGuard]},
   {path:  'Cancer-frm',component:CuentaCancerComponent,canActivate:[AuthGuard]},
+  {path:  'Cancer-listar',component:CuentaCancerListarComponent,canActivate:[AuthGuard]},
   {path:  'Login',component:LoginComponent},
 ];
 

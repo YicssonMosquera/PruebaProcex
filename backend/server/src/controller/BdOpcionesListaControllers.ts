@@ -185,6 +185,186 @@ class BdOpcionesListaControllers {
         const opcionesLista = await BD_opciones_listas.cargarAnakinra47_10();
         res.json(opcionesLista);
     }
+    public async cargarRadiografiademanos49(req: Request, res: Response) {
+        const opcionesLista = await BD_opciones_listas.cargarRadiografiademanos49();
+        res.json(opcionesLista);
+    }
+    public async cargarRadiografiadepies50(req: Request, res: Response) {
+        const opcionesLista = await BD_opciones_listas.cargarRadiografiadepies50();
+        res.json(opcionesLista);
+    }
+    public async cargarParcialdeOrinaúltimosemestre57(req: Request, res: Response) {
+        const opcionesLista = await BD_opciones_listas.cargarParcialdeOrinaúltimosemestre57();
+        res.json(opcionesLista);
+    }
+    public async cargarALTultimosemestre58(req: Request, res: Response) {
+        const opcionesLista = await BD_opciones_listas.cargarALTultimosemestre58();
+        res.json(opcionesLista);
+    }
+    public async cargarHTAactual59(req: Request, res: Response) {
+        const opcionesLista = await BD_opciones_listas.cargarHTAactual59();
+        res.json(opcionesLista);
+    }
+    public async cargarDMactua60(req: Request, res: Response) {
+        const opcionesLista = await BD_opciones_listas.cargarDMactua60();
+        res.json(opcionesLista);
+    }
+    public async cargarECVactual61(req: Request, res: Response) {
+        const opcionesLista = await BD_opciones_listas.cargarECVactual61();
+        res.json(opcionesLista);
+    }
+    public async cargarERCactual62(req: Request, res: Response) {
+        const opcionesLista = await BD_opciones_listas.cargarERCactual62();
+        res.json(opcionesLista);
+    }
+    public async cargarOsteoporosisactual63(req: Request, res: Response) {
+        const opcionesLista = await BD_opciones_listas.cargarOsteoporosisactual63();
+        res.json(opcionesLista);
+    }
+    public async cargarSindromeSjogrenactual64(req: Request, res: Response) {
+        const opcionesLista = await BD_opciones_listas.cargarSindromeSjogrenactual64();
+        res.json(opcionesLista);
+    }
+    public async cargarProfesionalrealizoultimoDAS28_66(req: Request, res: Response) {
+        const opcionesLista = await BD_opciones_listas.cargarProfesionalrealizoultimoDAS28_66();
+        res.json(opcionesLista);
+    }
+    public async cargarEstadoactividadactualdelaARegúnDAS28_68(req: Request, res: Response) {
+        const opcionesLista = await BD_opciones_listas.cargarEstadoactividadactualdelaARegúnDAS28_68();
+        res.json(opcionesLista);
+    }
+    public async cargarAnalgesicosNoOpioides71_1(req: Request, res: Response) {
+        const opcionesLista = await BD_opciones_listas.cargarAnalgesicosNoOpioides71_1();
+        res.json(opcionesLista);
+    }
+    public async cargarAnalgesicosOpioides71_2(req: Request, res: Response) {
+        const opcionesLista = await BD_opciones_listas.cargarAnalgesicosOpioides71_2();
+        res.json(opcionesLista);
+    }
+    public async cargarAINES71_3(req: Request, res: Response) {
+        const opcionesLista = await BD_opciones_listas.cargarAINES71_3();
+        res.json(opcionesLista);
+    }
+    public async cargarCorticoides71_4(req: Request, res: Response) {
+        const opcionesLista = await BD_opciones_listas.cargarCorticoides71_4();
+        res.json(opcionesLista);
+    }
+    public async cargarCalcio71_6(req: Request, res: Response) {
+        const opcionesLista = await BD_opciones_listas.cargarCalcio71_6();
+        res.json(opcionesLista);
+    }
+    public async cargarVitaminaD71_7(req: Request, res: Response) {
+        const opcionesLista = await BD_opciones_listas.cargarVitaminaD71_7();
+        res.json(opcionesLista);
+    }
+    public async cargarAzatioprina73_1(req: Request, res: Response) {
+        const opcionesLista = await BD_opciones_listas.cargarAzatioprina73_1();
+        res.json(opcionesLista);
+    }
+    public async cargarCiclosporina73_2(req: Request, res: Response) {
+        const opcionesLista = await BD_opciones_listas.cargarCiclosporina73_2();
+        res.json(opcionesLista);
+    }
+    public async cargarCiclofosfamida73_3(req: Request, res: Response) {
+        const opcionesLista = await BD_opciones_listas.cargarCiclofosfamida73_3();
+        res.json(opcionesLista);
+    }
+    public async cargarCorticoides73_4(req: Request, res: Response) {
+        const opcionesLista = await BD_opciones_listas.cargarCorticoides73_4();
+        res.json(opcionesLista);
+    }
+    public async cargarDpenicilaimina73_5(req: Request, res: Response) {
+        const opcionesLista = await BD_opciones_listas.cargarDpenicilaimina73_5();
+        res.json(opcionesLista);
+    }
+    public async cargarEtanercept73_6(req: Request, res: Response) {
+        const opcionesLista = await BD_opciones_listas.cargarEtanercept73_6();
+        res.json(opcionesLista);
+    }
+    public async cargarLeflunomida73_7(req: Request, res: Response) {
+        const opcionesLista = await BD_opciones_listas.cargarLeflunomida73_7();
+        res.json(opcionesLista);
+    }
+    public async cargarMetotrexate73_8(req: Request, res: Response) {
+        const opcionesLista = await BD_opciones_listas.cargarMetotrexate73_8();
+        res.json(opcionesLista);
+    }
+    public async cargarRituximab73_9(req: Request, res: Response) {
+        const opcionesLista = await BD_opciones_listas.cargarRituximab73_9();
+        res.json(opcionesLista);
+    }
+    public async cargarSulfasalazina73_10(req: Request, res: Response) {
+        const opcionesLista = await BD_opciones_listas.cargarSulfasalazina73_10();
+        res.json(opcionesLista);
+    }
+    public async cargarAbatacept74_1(req: Request, res: Response) {
+        const opcionesLista = await BD_opciones_listas.cargarAbatacept74_1();
+        res.json(opcionesLista);
+    }
+    public async cargarAdalimumab74_2(req: Request, res: Response) {
+        const opcionesLista = await BD_opciones_listas.cargarAdalimumab74_2();
+        res.json(opcionesLista);
+    }
+    public async cargarCertolizumab74_3(req: Request, res: Response) {
+        const opcionesLista = await BD_opciones_listas.cargarCertolizumab74_3();
+        res.json(opcionesLista);
+    }
+    public async cargarGolimumab74_4(req: Request, res: Response) {
+        const opcionesLista = await BD_opciones_listas.cargarGolimumab74_4();
+        res.json(opcionesLista);
+    }
+    public async cargaHidroxicloroquina74_5(req: Request, res: Response) {
+        const opcionesLista = await BD_opciones_listas.cargaHidroxicloroquina74_5();
+        res.json(opcionesLista);
+    }
+    public async cargarInfliximab74_6(req: Request, res: Response) {
+        const opcionesLista = await BD_opciones_listas.cargarInfliximab74_6();
+        res.json(opcionesLista);
+    }
+    public async cargarSalesdeoro74_7(req: Request, res: Response) {
+        const opcionesLista = await BD_opciones_listas.cargarSalesdeoro74_7();
+        res.json(opcionesLista);
+    }
+    public async cargarTocilizumab74_8(req: Request, res: Response) {
+        const opcionesLista = await BD_opciones_listas.cargarTocilizumab74_8();
+        res.json(opcionesLista);
+    }
+    public async cargarTofacitinib74_9(req: Request, res: Response) {
+        const opcionesLista = await BD_opciones_listas.cargarTofacitinib74_9();
+        res.json(opcionesLista);
+    }
+    public async cargarAnakinra74_10(req: Request, res: Response) {
+        const opcionesLista = await BD_opciones_listas.cargarAnakinra74_10();
+        res.json(opcionesLista);
+    }
+    public async cargarReemplazoarticular1porAR575_4(req: Request, res: Response) {
+        const opcionesLista = await BD_opciones_listas.cargarReemplazoarticular1porAR575_4();
+        res.json(opcionesLista);
+    }
+    public async cargarReemplazoarticular2porAR75_5(req: Request, res: Response) {
+        const opcionesLista = await BD_opciones_listas.cargarReemplazoarticular2porAR75_5();
+        res.json(opcionesLista);
+    }
+    public async cargarReemplazoarticular3porAR75_6(req: Request, res: Response) {
+        const opcionesLista = await BD_opciones_listas.cargarReemplazoarticular3porAR75_6();
+        res.json(opcionesLista);
+    }
+    public async cargarReemplazoarticula4porAR75_7(req: Request, res: Response) {
+        const opcionesLista = await BD_opciones_listas.cargarReemplazoarticula4porAR75_7();
+        res.json(opcionesLista);
+    }
+    public async cargarQuienhacelaatencionclinicaparaAR80(req: Request, res: Response) {
+        const opcionesLista = await BD_opciones_listas.cargarQuienhacelaatencionclinicaparaAR80();
+        res.json(opcionesLista);
+    }
+    public async cargarNovedaddelpacienterespectoalreporteanterior81(req: Request, res: Response) {
+        const opcionesLista = await BD_opciones_listas.cargarNovedaddelpacienterespectoalreporteanterior81();
+        res.json(opcionesLista);
+    }
+    public async cargarCausademuerte85(req: Request, res: Response) {
+        const opcionesLista = await BD_opciones_listas.cargarCausademuerte85();
+        res.json(opcionesLista);
+    }
 
 }
 export const bdopcionesListaControllers = new BdOpcionesListaControllers();

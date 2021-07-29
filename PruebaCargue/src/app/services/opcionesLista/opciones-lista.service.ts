@@ -130,9 +130,142 @@ export class OpcionesListaService {
   cargarAnakinra47_10() {
     return this.http.get(`${this.API_URI}/C71_CAMPO_47_10`)
   }
-  // cargarEtanercept46_6() {
-  //   return this.http.get(`${this.API_URI}/C71_CAMPO_47_10`)
-  // }
+
+  cargarRadiografiademanos49(){
+    return this.http.get(`${this.API_URI}/C77_CAMPO_49`)
+  }
+  cargarRadiografiadepies50(){
+    return this.http.get(`${this.API_URI}/C78_CAMPO_50`)
+  }
+  cargarParcialdeOrinaúltimosemestre57(){
+    return this.http.get(`${this.API_URI}/C85_CAMPO_57`)
+  }
+  cargarALTultimosemestre58(){
+    return this.http.get(`${this.API_URI}/C86_CAMPO_58`)
+  }
+  cargarHTAactual59(){
+    return this.http.get(`${this.API_URI}/C87_CAMPO_59`)
+  }
+  cargarDMactua60(){
+    return this.http.get(`${this.API_URI}/C88_CAMPO_60`)
+  }
+  cargarECVactual61(){
+    return this.http.get(`${this.API_URI}/C89_CAMPO_61`)
+  }
+  cargarERCactual62(){
+    return this.http.get(`${this.API_URI}/C90_CAMPO_62`)
+  }
+  cargarOsteoporosisactual63(){
+    return this.http.get(`${this.API_URI}/C91_CAMPO_63`)
+  }
+  cargarSindromeSjogrenactual64(){
+    return this.http.get(`${this.API_URI}/C92_CAMPO_64`)
+  }
+  cargarProfesionalrealizoultimoDAS28_66(){
+    return this.http.get(`${this.API_URI}/C94_CAMPO_66`)
+  }
+  cargarEstadoactividadactualdelaARegúnDAS28_68(){
+    return this.http.get(`${this.API_URI}/C96_CAMPO_68`)
+  }
+  cargarAnalgesicosNoOpioides71_1(){
+    return this.http.get(`${this.API_URI}/C99_CAMPO_71_1`)
+  }
+  cargarAnalgesicosOpioides71_2(){
+    return this.http.get(`${this.API_URI}/C100_CAMPO_71_2`)
+  }
+  cargarAINES71_3(){
+    return this.http.get(`${this.API_URI}/C101_CAMPO_71_3`)
+  }
+  cargarCorticoides71_4(){
+    return this.http.get(`${this.API_URI}/C102_CAMPO_71_4`)
+  }
+  cargarCalcio71_6(){
+    return this.http.get(`${this.API_URI}/C104_CAMPO_71_6`)
+  }
+  cargarVitaminaD71_7(){
+    return this.http.get(`${this.API_URI}/C105_CAMPO_71_7`)
+  }
+  cargarAzatioprina73_1(){
+    return this.http.get(`${this.API_URI}/C107_CAMPO_73_1`)
+  }
+  cargarCiclosporina73_2(){
+    return this.http.get(`${this.API_URI}/C108_CAMPO_73_2`)
+  }
+  cargarCiclofosfamida73_3(){
+    return this.http.get(`${this.API_URI}/C109_CAMPO_73_3`)
+  }
+  cargarCorticoides73_4(){
+    return this.http.get(`${this.API_URI}/C110_CAMPO_73_4`)
+  }
+  cargarDpenicilaimina73_5(){
+    return this.http.get(`${this.API_URI}/C111_CAMPO_73_5`)
+  }
+  cargarEtanercept73_6(){
+    return this.http.get(`${this.API_URI}/C112_CAMPO_73_6`)
+  }
+  cargarLeflunomida73_7(){
+    return this.http.get(`${this.API_URI}/C113_CAMPO_73_7`)
+  }
+  cargarMetotrexate73_8(){
+    return this.http.get(`${this.API_URI}/C114_CAMPO_73_8`)
+  }
+  cargarRituximab73_9(){
+    return this.http.get(`${this.API_URI}/C115_CAMPO_73_9`)
+  }
+  cargarSulfasalazina73_10(){
+    return this.http.get(`${this.API_URI}/C116_CAMPO_73_10`)
+  }
+  cargarAbatacept74_1(){
+    return this.http.get(`${this.API_URI}/C117_CAMPO_74_1`)
+  }
+  cargarAdalimumab74_2(){
+    return this.http.get(`${this.API_URI}/C118_CAMPO_74_2`)
+  }
+  cargarCertolizumab74_3(){
+    return this.http.get(`${this.API_URI}/C119_CAMPO_74_3`)
+  }
+  cargarGolimumab74_4(){
+    return this.http.get(`${this.API_URI}/C120_CAMPO_74_4`)
+  }
+  cargaHidroxicloroquina74_5(){
+    return this.http.get(`${this.API_URI}/C121_CAMPO_74_5`)
+  }
+  cargarInfliximab74_6(){
+    return this.http.get(`${this.API_URI}/C122_CAMPO_74_6`)
+  }
+  cargarSalesdeoro74_7(){
+    return this.http.get(`${this.API_URI}/C123_CAMPO_74_7`)
+  }
+  cargarTocilizumab74_8(){
+    return this.http.get(`${this.API_URI}/C124_CAMPO_74_8`)
+  }
+  cargarTofacitinib74_9(){
+    return this.http.get(`${this.API_URI}/C125_CAMPO_74_9`)
+  }
+  cargarAnakinra74_10(){
+    return this.http.get(`${this.API_URI}/C126_CAMPO_74_10`)
+  }
+  cargarReemplazoarticular1porAR575_4(){
+    return this.http.get(`${this.API_URI}/C134_CAMPO_75_4`)
+  }
+  cargarReemplazoarticular2porAR75_5(){
+    return this.http.get(`${this.API_URI}/C135_CAMPO_75_5`)
+  }
+  cargarReemplazoarticular3porAR75_6(){
+    return this.http.get(`${this.API_URI}/C136_CAMPO_75_6`)
+  }
+  cargarReemplazoarticula4porAR75_7(){
+    return this.http.get(`${this.API_URI}/C137_CAMPO_75_7`)
+  }
+  cargarQuienhacelaatencionclinicaparaAR80(){
+    return this.http.get(`${this.API_URI}/C142_CAMPO_80`)
+  }
+  cargarNovedaddelpacienterespectoalreporteanterior81(){
+    return this.http.get(`${this.API_URI}/C143_CAMPO_81`)
+  }
+  cargarCausademuerte85(){
+    return this.http.get(`${this.API_URI}/C147_CAMPO_85`)
+  }
 
 
 }
