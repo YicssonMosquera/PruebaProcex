@@ -19,4 +19,11 @@ export class CACArtritisService {
     const cargar = { page, row,NoIdentificacion,primerNombre,primerApellido,TipoIdentificaion}
     return this.http.post(`${this.API_URI}/consultar`, cargar)
   }
+
+  getOne(C8_CAMPO_9){
+    return this.http.get(`${this.API_URI}/${C8_CAMPO_9}`)
+  }
+  ActualizarDatos(C8_CAMPO_9, artritis: ARTRITIS) {
+    return this.http.put(`${this.API_URI}/${C8_CAMPO_9}`, artritis)
+  }
 }

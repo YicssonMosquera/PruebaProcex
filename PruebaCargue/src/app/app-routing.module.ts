@@ -10,6 +10,7 @@ import { HemofiliaSoportesComponent } from './components/hemofilia-soportes/hemo
 import { CargarHemofiliaComponent } from './components/cargar-hemofilia/cargar-hemofilia.component';
 import { CuentaCancerComponent } from './components/cuenta-cancer/cuenta-cancer.component';
 import {CuentaCancerListarComponent} from './components/cuenta-cancer-listar/cuenta-cancer-listar.component';
+import {CuentaCancerActualizarComponent} from './components/cuenta-cancer-actualizar/cuenta-cancer-actualizar.component'
 
 const routes: Routes = [
 
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path:  'Hemofilia-cargar',component:CargarHemofiliaComponent,canActivate:[AuthGuard]},
   {path:  'Cancer-frm',component:CuentaCancerComponent,canActivate:[AuthGuard]},
   {path:  'Cancer-listar',component:CuentaCancerListarComponent,canActivate:[AuthGuard]},
+  {path:  'Cancer-edit/:cc',component:CuentaCancerActualizarComponent,canActivate:[AuthGuard]},
   {path:  'Login',component:LoginComponent},
 ];
 

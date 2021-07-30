@@ -35,7 +35,7 @@ export class BannerComponent implements OnInit {
   }
 
   ngOnDestroy() {
-    this.cargar.unsubscribe();
+  
   }
   
 }

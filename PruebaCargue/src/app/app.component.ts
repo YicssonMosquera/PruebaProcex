@@ -1,6 +1,7 @@
 import { LoginService } from './services/login/login.service'
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router'
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 interface tab { nombre_pantalla: string; contenido: string }
 @Component({
   selector: 'app-root',
@@ -10,8 +11,8 @@ interface tab { nombre_pantalla: string; contenido: string }
 export class AppComponent {
   title = 'PruebaCargue';
   tab: tab;
-  inicio = { nombre_pantalla: 'Hemofilia', contenido: 'Hemofilia-cargar' };
-  constructor(private rutaActiva: ActivatedRoute, private Router: Router, public loginService: LoginService) { }
+  inicio = { nombre_pantalla: 'Inicio', contenido: 'Hemofilia-cargar' };
+  constructor(private rutaActiva: ActivatedRoute, private Router: Router, public loginService: LoginService,private ngxSpinnerService: NgxUiLoaderService,) { }
 
   ngOnInit(): void {
     this.tab = {
@@ -24,6 +25,11 @@ export class AppComponent {
         this.tab.contenido = params.contenido;
       }
     );
+  }
+  logout() {
+    this.ngxSpinnerService.start();
+    this.loginService.logoutUser()
+    this.ngxSpinnerService.stop();
   }
 
 

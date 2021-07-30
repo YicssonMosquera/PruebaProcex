@@ -13,31 +13,27 @@
             tableStyleClass="prime-table" selectionMode="single" dataKey="code" (onRowSelect)="onRowSelect($event)">
             <ng-template pTemplate="header">
                 <tr tableStyleClass="header">
-                    <th style="width:90px;background-color: #02adb5e0; color: white;">No. documento</th>
-                    <th style="width:150px;background-color: #02adb5e0; color: white;">P. Nombre </th>
-                    <th style="width:110px;background-color: #02adb5e0; color: white;">S. Nombre</th>
-                    <th style="width:100px;background-color: #02adb5e0; color: white;">P. Apellido</th>
-                    <th style="width:80px;background-color: #02adb5e0; color: white;">S. Apellido<i
-                            class="fas fa-filter" style="cursor: pointer;" (click)="open(content)"></i></th>
                     <th style="width:80px;background-color: #02adb5e0; color: white;">Tipo identificacion<i
-                            class="fas fa-filter" style="cursor: pointer;" (click)="nombrearchiv(content2)"></i></th>
-                    <th style="width:80px;background-color: #02adb5e0; color: white;">No identificacion</th>
+                        class="fas fa-filter" style="cursor: pointer;" (click)="nombrearchiv(content2)"></i></th>
+                    <th style="width:90px;background-color: #02adb5e0; color: white;">No identificacion<i
+                        class="fas fa-filter" style="cursor: pointer;" (click)="vigent(content3)"></i></th>
+                    <th style="width:150px;background-color: #02adb5e0; color: white;">Primer nombre<i
+                        class="fas fa-filter" style="cursor: pointer;" (click)="open(content)"></i> </th>
+                    <th style="width:110px;background-color: #02adb5e0; color: white;">Segundo nombre</th>
+                    <th style="width:100px;background-color: #02adb5e0; color: white;">Primer apellido</th>
+                    <th style="width:80px;background-color: #02adb5e0; color: white;">Segundo apellido</th>
                     <th style="width:80px;background-color: #02adb5e0; color: white;">Fecha nacimiento</th>
-                    <th style="width:80px;background-color: #02adb5e0; color: white;">Sexo<i
-                            class="fas fa-filter" style="cursor: pointer;" (click)="vigent(content3)"></i></th>
-                    <!-- <th style="width:80px;background-color: #02adb5e0; color: white;">Validación soportes<i
-                            class="fas fa-filter" style="cursor: pointer;" (click)="soportes(content4)"></i></th> -->
+                    <th style="width:80px;background-color: #02adb5e0; color: white;">Sexo</th>
                 </tr>
             </ng-template>
             <ng-template pTemplate="body" let-data>
                 <tr [pSelectableRow]="data">
+                    <td style="width:80px">{{data.C7_CAMPO_8}}</td>
                     <td style="width:90px">{{data.C8_CAMPO_9}}</td>
                     <td style="width:150px">{{data.C3_CAMPO_4}}</td>
                     <td style="width:110px">{{data.C4_CAMPO_5}}</td>
                     <td style="width:100px">{{data.C5_CAMPO_6}}</td>
                     <td style="width:80px">{{data.C6_CAMPO_7}}</td>
-                    <td style="width:80px">{{data.C7_CAMPO_8}}</td>
-                    <td style="width:80px">{{data.C8_CAMPO_9}}</td>
                     <td style="width:80px">{{data.C9_CAMPO_10}}</td>
                     <td style="width:80px">{{data.C10_CAMPO_11}}</td>
                 </tr>
@@ -75,9 +71,17 @@
         <form>
             <div class="row">
                 <div class="col-md-12">
-                    <input type="number" name="TipoIdentificaion" [(ngModel)]="TipoIdentificaion" id="tipo"
-                        onkeypress='return event.charCode >= 48 && event.charCode <= 57' name="Tipodocumento"
-                        class="form-control" placeholder="Numero de documento">
+
+                    <select name="" class="form-control" id="tipo"
+                    name="TipoIdentificaion" [(ngModel)]="TipoIdentificaion">
+                    <option value=""></option>
+                    <option *ngFor='let identificacion of identificacion'
+                        [ngValue]="identificacion.NOMBRE_OPCION"
+                        [ngValue]="identificacion.CODIGO_OPCION">
+                        {{identificacion.CODIGO_OPCION}}.{{identificacion.NOMBRE_OPCION}}
+                    </option>
+                </select>
+                   
                 </div>
             </div>
         </form>
@@ -96,11 +100,9 @@
         <form>
             <div class="row">
                 <div class="col-md-12">
-                    <select name="" id="" class="form-control" name="NoIdentificacion"
-                        [(ngModel)]="NoIdentificacion">
-                        <option value="S">Registro validado</option>
-                        <option value="N">Sin validar</option>
-                    </select>
+                     <input type="number" name="NoIdentificacion" [(ngModel)]="NoIdentificacion" id="tipo"
+                        onkeypress='return event.charCode >= 48 && event.charCode <= 57'
+                        class="form-control" placeholder="Numero de documento">
                 </div>
             </div>
         </form>

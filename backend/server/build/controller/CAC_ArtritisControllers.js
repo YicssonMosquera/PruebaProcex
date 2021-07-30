@@ -32,5 +32,21 @@ class CAC_ArtritisControllers {
             res.json(respuesta);
         });
     }
+    cargarPaciente(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { C8_CAMPO_9 } = req.params;
+            const oCACArtritis = new CAC_Artritis_1.default();
+            const artritis = yield oCACArtritis.getOne(C8_CAMPO_9);
+            res.json(artritis);
+        });
+    }
+    actualizarDatos(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { C8_CAMPO_9 } = req.params;
+            const oCACArtritis = new CAC_Artritis_1.default();
+            const artritis = yield oCACArtritis.actualizarDatos(req.body, C8_CAMPO_9);
+            res.json(artritis);
+        });
+    }
 }
 exports.cac_ArtritisControllers = new CAC_ArtritisControllers();

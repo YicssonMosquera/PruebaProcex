@@ -53,5 +53,35 @@ class CAC_Artritis {
             ;
         });
     }
+    getOne(C8_CAMPO_9) {
+        return new Promise(function (resolev, reject) {
+            try {
+                database_1.default.query("SELECT * FROM cuenta_artritis where C8_CAMPO_9 = ? ", [C8_CAMPO_9], function (err, result, fields) {
+                    if (err)
+                        throw err;
+                    resolev(result);
+                });
+            }
+            catch (error) {
+                // res.status(404).json({ error: 'No se puedieron Datos' });
+            }
+            ;
+        });
+    }
+    actualizarDatos(newDatos, C8_CAMPO_9) {
+        return new Promise(function (resolev, reject) {
+            try {
+                database_1.default.query('UPDATE cuenta_artritis set ? where cuenta_artritis.C8_CAMPO_9 = ? ', [newDatos, C8_CAMPO_9], function (err, result, fields) {
+                    if (err)
+                        throw err;
+                    resolev(result);
+                });
+            }
+            catch (error) {
+                // res.status(404).json({ error: 'No se pudieron almacenar datos' });
+            }
+            ;
+        });
+    }
 }
 exports.default = CAC_Artritis;

@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
       localStorage.setItem("perfil", JSON.stringify(this.usuario.Perfil) );
       this.loginserve.setUser(this.usuario.PKUsuario, res.token)
       this.ngxSpinnerService.stop();
-      this.router.navigateByUrl('/cargar');
+      this.router.navigateByUrl('/Cancer-listar');
     },
     () => {
       Swal.fire({

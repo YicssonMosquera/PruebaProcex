@@ -6,6 +6,7 @@ import { Router } from '@angular/router'
 import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from 'src/app/app.component';
 import {CACArtritisService} from '../../services/CAC-Artritis/cac-artritis.service'
+import { HemofiliaService } from 'src/app/services/hemofilia/hemofilia.service';
 @Component({
   selector: 'app-cuenta-cancer-listar',
   templateUrl: './cuenta-cancer-listar.component.html',
@@ -19,13 +20,16 @@ export class CuentaCancerListarComponent implements OnInit {
   NoIdentificacion = ''
   primerNombre = ''
   primerApellido= ''
-  TipoIdentificaion = ''
+  TipoIdentificaion = '';
+  identificacion
   totalRecords
+  opcion: any;
 
-  constructor(private artritisservice:CACArtritisService,private Router: Router, private ngxSpinnerService: NgxUiLoaderService,private modalService: NgbModal, public tabs:AppComponent) { }
+  constructor(private artritisservice:CACArtritisService,private Router: Router, private ngxSpinnerService: NgxUiLoaderService,private modalService: NgbModal, public tabs:AppComponent,private hemofiliaservice: HemofiliaService) { }
 
   ngOnInit(): void {
     this.consultarDatos();
+    this.Cargartipodocumento();
   }
 
   consultarDatos(){
@@ -50,20 +54,25 @@ export class CuentaCancerListarComponent implements OnInit {
     this.consultarDatos();
   }
   onRowSelect(event) {
-    // const CC = event.data.CAMPO_6;
-    // this.ngxSpinnerService.start();
-    // this.hemofiliaservice.CargarRegistrohemofilia3(CC).subscribe(res => {
-    //   this.opcion = res;
-    //   console.log(this.opcion)
-    //   if (this.opcion.length > 0) {
-    //     this.ngxSpinnerService.stop();
-    //     this.tabs.crearTab('Registro', 'Hemofilia-frm/'+CC);
-    //   } else {
-    //     this.ngxSpinnerService.stop();
-    //     this.tabs.crearTab('Registro', 'Hemofilia-frm');
-    //   }
+    const CC = event.data.C8_CAMPO_9;
+    this.ngxSpinnerService.start();
+    this.artritisservice.getOne(CC).subscribe(res => {
+      this.opcion = res;
+      console.log(this.opcion)
+      if (this.opcion.length > 0) {
+        this.ngxSpinnerService.stop();
+        this.tabs.crearTab('Registro', 'Cancer-edit/'+CC);
+      } else {
+        this.ngxSpinnerService.stop();
+        this.tabs.crearTab('Registro', 'Cancer-frm');
+      }
 
-    // })
+    })
+  }
+  Cargartipodocumento() {
+    this.hemofiliaservice.CargarTipodocumento().subscribe(res => {
+      this.identificacion = res;
+    })
   }
 
     

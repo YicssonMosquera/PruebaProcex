@@ -14,7 +14,7 @@
 <ngx-ui-loader></ngx-ui-loader>
 
 <div class="y-card" style="height: 100%;">
-  <div class="y-card-header">
+  <div class="y-card-header" *ngIf='loginService.isloggedIn'>
     <banner *ngIf='loginService.isloggedIn'></banner>
     <!-- <app-menuu *ngIf='loginService.isloggedIn'></app-menuu> -->
     <!-- menu principal -->
@@ -22,32 +22,33 @@
 
       <!-- <a mat-tab-link (click)="crearTab('Inicio','Hemofilia-frm/36295362')" class="menu"><i id="boton_home;"
         class="fas fa-home"></i>Inicio</a> -->
-      <a mat-tab-link [matMenuTriggerFor]="carga_de_archivos" class="menu" #carga_archivo="matMenuTrigger"
-        >Carga de archivos <i id="boton_home" class="fas fa-caret-down"></i></a>
-      <a mat-tab-link [matMenuTriggerFor]="cuentas_cac" class="menu" #cuentas_cac2="matMenuTrigger"
-        >Cuentas CAC <i id="boton_home" class="fas fa-caret-down"></i></a>
-      <button mat-button style="position: absolute;right:0px;top:-3px;color: white;">salir <i id="icono"
-          class="fas fa-sign-out-alt"></i></button>
+      <a mat-tab-link [matMenuTriggerFor]="carga_de_archivos" class="menu" #carga_archivo="matMenuTrigger">Carga de
+        archivos <i id="boton_home" class="fas fa-caret-down"></i></a>
+      <a mat-tab-link [matMenuTriggerFor]="cuentas_cac" class="menu" #cuentas_cac2="matMenuTrigger">Cuentas CAC <i
+          id="boton_home" class="fas fa-caret-down"></i></a>
+      <button mat-button style="position:  absolute;right:0px;top:-3px;color: white;" (click)="logout()">salir <i
+          id="icono" class="fas fa-sign-out-alt"></i></button>
     </nav>
 
     <!-- submenus de carga de archivos  -->
     <mat-menu #carga_de_archivos="matMenu">
-      <div >
+      <div>
         <a (click)="crearTab('Hemofilia','Hemofilia-cargar')" mat-menu-item>Hemofilia</a>
       </div>
     </mat-menu>
 
     <!-- submenus de Cuentas CAC -->
     <mat-menu #cuentas_cac="matMenu">
-      <div >
+      <div>
         <a (click)="crearTab('Hemofilia','Hemofilia-listar')" mat-menu-item>Hemofilia</a>
-        <a (click)="crearTab('Cancer','Cancer-listar')" mat-menu-item>Cancer</a>
+        <a (click)="crearTab('Artritis','Cancer-listar')" mat-menu-item>Artritis</a>
       </div>
     </mat-menu>
   </div>
   <div class="y-card-body">
+
     <mat-tab-group [selectedIndex]="indexx">
-      <mat-tab *ngFor="let tab of tabs; let index = index;" style="height: 30px;">
+      <mat-tab *ngFor="let tab of tabs; let index = index;" style="height: 0px;">
         <ng-template mat-tab-label>
           <nav [routerLink]="tab.contenido" (click)="cambio(index)">{{tab.nombre_pantalla}}<button id="eliminar"
               (click)="removeTab(index)"><i class="fas fa-times"></i></button></nav>

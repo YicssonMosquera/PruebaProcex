@@ -91,13 +91,13 @@ strong, b{
     background: #f4f7fa;
 }
 .primary-bg{
-    background: #00438b;
+    background: #038188;
 }
 .secondary-bg{
     background: #ff8657;
 }
 .color-primary{
-    color: #00438b;
+    color: #038188;
 }
 .color-secondary{
     color: #ff8657
@@ -150,35 +150,35 @@ strong, b{
 }
 
 .primary-solid-btn{
-    border-color: #00438b;
-    background: #00438b;
+    border-color: #038188;
+    background: #038188;
     color: #ffffff;
 }
 .primary-solid-btn:hover{
     background: transparent;
-    color: #081d43;
-    border-color: #081d43;
+    color: #038188 !important;
+    border-color: #038188 !important;
 }
 .solid-btn{
-    background: #ff8657;
+    background: #02adb5;
     color: #ffffff;
-    border-color: #ff8657;
+    border-color: #02adb5
 }
 
 .solid-btn:hover{
-    background: #f70;
-    border-color: #f70;
+    background: #028a91;
     color: #ffffff;
+    border-color: #028a91
 }
 
 .outline-btn{
-    border-color: #0062cc;
+    border-color: #038188;
     color: #fff;
-    background: rgba(0, 98, 204, 0.51);
+    background: #038188;
 }
 .outline-btn:hover{
     background: #ffffff;
-    color: #00438b;
+    color: #038188;
     border-color: #ffffff;
 }
 
@@ -188,7 +188,7 @@ strong, b{
 
 /*form field css*/
 .form-control{
-    border-color: #ebebeb;
+    border-color: #31acc7;
     padding: .675rem 0.85rem;
 }
 .form-control:focus{
@@ -361,10 +361,10 @@ select.form-control.has-value{
     border-bottom: 1px solid #ebebeb;
 }
 .white-bg.custom-nav ul li a, .custom-nav ul li a{
-    color: #081d43 !important;
+    color: #000000 !important;
 }
 .white-bg.custom-nav ul li a:hover, .custom-nav ul li a:hover{
-    color: #00438b!important;
+    color: #26a7c3!important;
 }
 .bg-transparent ul li a{
     color: #ffffff;
@@ -379,6 +379,8 @@ select.form-control.has-value{
 .navbar{
     padding: 0.12rem 1rem;
     transition: all .3s ease-in-out;
+    background-color: transparent;
+    color: white;
 }
 
 
@@ -432,8 +434,9 @@ select.form-control.has-value{
     .animation-two {
         position: absolute;
         bottom: -10px;
-        -webkit-animation: move-two 8s ease-in-out infinite;
-        animation: move-two 8s ease-in-out infinite;
+        left: -45px;
+        -webkit-animation: move-two 9s ease-in-out infinite;
+        animation: move-two 9s ease-in-out infinite;
     }
     @-webkit-keyframes move-two {
         0% {
@@ -1380,4 +1383,33 @@ blockquote:before {
 .social-list li a, .copyright-text a{
     color: #00438b;
     opacity: 0.8;
+}
+/* --------------------------------------------------------
+ */
+
+#primero{
+    margin-left: 100px;
+    top: -75px;
+    position: relative;
+}
+
+#segundo{
+    position: absolute;
+    right: 0%;
+    top: 77px;
+}
+
+.aparecer{
+    /* -webkit-animation-name: fadeInLeft;
+    animation-name: fadeInLeft; */
+    animation-duration: 3s;
+    animation-name: slidein;
+}
+
+#icono{
+    height: 50px;
+    width: 50px;
+    font-size: 30px;
+    margin-left: 25px;
+    color: white !important;
 }

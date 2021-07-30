@@ -11,6 +11,8 @@ class CAC_ArtritisRoutes {
     config(): void {
         this.router.post('/almacenar', cac_ArtritisControllers.guardarDatos);
         this.router.post('/consultar', cac_ArtritisControllers.consultarDatos);
+        this.router.get('/:C8_CAMPO_9', cac_ArtritisControllers.cargarPaciente);
+        this.router.put('/:C8_CAMPO_9', cac_ArtritisControllers.actualizarDatos);
     }
 }
 

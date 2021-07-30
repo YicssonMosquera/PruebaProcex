@@ -1,199 +1,57 @@
-<body cz-shortcut-listen="true">
-	<noscript>You need to enable JavaScript to run this app.</noscript>
-	<div id="root">
-		<div>
-			<header class="header">
-				<nav class="navbar navbar-expand-lg fixed-top custom-nav white-bg">
-					<div class="container">
-					
-						<button class="navbar-toggler" type="button"
-							data-toggle="collapse" data-target="#navbarSupportedContent"
-							aria-controls="navbarSupportedContent" aria-expanded="false"
-							aria-label="Toggle navigation">
-							<span class="fas fa-bars"></span>
-						</button>
-						<div class="collapse navbar-collapse main-menu"
-							id="navbarSupportedContent">
-							<ul class="navbar-nav ml-auto">
-								<li class="nav-item"><a class="nav-link page-scroll"
-									href="#mainLogin">Inicio de sesión</a></li>
-								<li class="nav-item"><a class="nav-link page-scroll"
-									href="#documentos">Documentos de Interés</a></li>
-								<li class="nav-item"><a class="nav-link page-scroll"
-									href="#aboutPrestadores">Información para prestadores</a></li>
-								<li class="nav-item"><a class="nav-link page-scroll"
-									href="#contacto">Contacto/Soporte</a></li>
-							</ul>
+<div class="y-card" style="background-color: white;">
+	<img src="assets/img/borde_bajo.png" alt="" style="height: 45%;width: 100%;position: absolute;top: 345px;">
+	<div class="y-card-body">
+		<section id="mainLogin" class="hero-section hero-section-2 ptb-100">
+			<div>
+				<div class="row align-items-center justify-content-between">
+					<div class="col-md-6 col-lg-6" id="primero">
+
+						<img id="aparecer" [src]="'assets/img/LOGO_PROCEX.png'" style="width:200px" alt="logo"
+							class="img-fluid pb-3">
+						<h3>Estado actual de la aplicación:</h3>
+						<p class="lead">Abierta para cargue hasta el día 10 (del 11 al 15 como cargue extemporáneo)
+						</p>
+						<div class="form-group input-group" style="width: 300px;">
+							<input type="text" name="usuario.PKUsuario" [(ngModel)]="usuario.PKUsuario"
+								class="form-control" placeholder="Usuario" autocomplete="off" required="" value="">
+						</div>
+						<div class="form-group input-group" style="width: 300px;">
+							<input type="password" name="usuario.password" [(ngModel)]="usuario.password"
+								class="form-control" placeholder="*******" required="" value="">
+						</div>
+
+						<button class="btn solid-btn btn-primary" (click)="Iniciarseccion()">Iniciar Sesión</button>
+
+					</div>
+					<div class="col-md-6 col-lg-5" id="segundo">
+						<div>
+							<img style="height: 300px;" class="img-fluid d-block animation-one"
+								[src]="'assets/img/pc.png'" alt="animation">
+							<img class="img-fluid d-none d-lg-block animation-two" [src]="'assets/img/float2_1.png'"
+								alt="animation" width="120">
+							<img style="height: 100px;width: 100px;" class="img-fluid d-none d-lg-block animation-four"
+								[src]="'assets/img/float4.png'" alt="animation" width="230">
 						</div>
 					</div>
-				</nav>
-			</header>
-			<div class="main">
-				<section id="mainLogin" class="hero-section hero-section-2 ptb-100"
-					style="background: url(&quot;assets/img/curve-bg.jpg&quot;) center center no-repeat;">
-					<div class="container">
-						<div class="row align-items-center justify-content-between">
-							<div class="col-md-6 col-lg-6">
-								<div class="hero-content-left ptb-80">
-									<img [src]="'assets/img/logo.png'"  style="width:200px" alt="logo" class="img-fluid pb-3">
-									<h3>Estado actual de la aplicación:</h3>
-									<p class="lead">Abierta para cargue hasta el día 10 (del 11 al 15 como cargue extemporáneo)</p>
-									<div class="form-group input-group" style="width: 300px;">
-										<input type="text" name="usuario.PKUsuario" [(ngModel)]="usuario.PKUsuario"
-										class="form-control" placeholder="Usuario" autocomplete="off" required="" value="">
-									</div>
-									<div class="form-group input-group" style="width: 300px;">
-										<input type="password" name="usuario.password" [(ngModel)]="usuario.password"  
-										class="form-control" placeholder="*******" required="" value="">
-									</div>
-									
-									<button class="btn solid-btn btn-primary" (click) ="Iniciarseccion()">Iniciar Sesión</button> 
-								</div>
-							</div>
-							<div class="col-md-6 col-lg-5">
-								<div class="hero-animation-img">
-									<img class="img-fluid d-block animation-one"
-									    [src]="'assets/img/hero-animation-04.svg'"
-										alt="animation"><img
-										class="img-fluid d-none d-lg-block animation-two"
-										[src]="'assets/img/hero-animation-01.svg'"
-										alt="animation" width="120"><img
-										class="img-fluid d-none d-lg-block animation-three"
-										[src]="'assets/img/hero-animation-02.svg'"
-										alt="animation" width="120"><img
-										class="img-fluid d-none d-lg-block animation-four"
-										[src]="'assets/img/hero-animation-03.svg'"
-										alt="animation" width="230">
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-				<section id="documentos" class="promo-section pt-5 pb-100">
-					<div class="container">
-						<div class="row justify-content-center">
-							<div class="col-lg-7 col-md-8">
-								<div class="section-heading text-center mb-5">
-									<h2>Documentos de Interés</h2>
-								</div>
-							</div>
-						</div>
-						<div class="row no-gutters">
-							<div class="col-lg-4 col-md-6 col-sm-6 col-12">
-								<div class="single-services single-feature-hover gray-light-bg single-feature text-center p-5 h-100">
-									<span class="fas fa-book icon-color-1 icon rounded"></span>
-									<div class="feature-content">
-										<h5>Convert traffic into sales</h5>
-										<p>Increase sales by showing true dynamics of your
-											website. Build your online store’s the trust using Social
-											Proof &amp; Urgency for your business.</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-4 col-md-6 col-sm-6 col-12">
-								<div class="single-services single-feature-hover gray-light-bg single-feature text-center p-5 h-100">
-									<span class="fas fa-file-excel icon-color-2 icon rounded"></span>
-									<div class="feature-content">
-										<h5>Increase store trust</h5>
-										<p>Build your online store’s trust using the Social Proof,
-											Security &amp; Urgency. Realize the importance of social
-											proof in customer’s purchase decision.</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-4 col-md-6 col-sm-6 col-12">
-								<div class="single-services single-feature-hover gray-light-bg single-feature text-center p-5 h-100">
-									<span class="fas fa-file-pdf icon-color-3 icon rounded"></span>
-									<div class="feature-content">
-										<h5>Growth guaranteed</h5>
-										<p>Realize importance of social proof in customer’s
-											purchase decision. Increase sales by showing true dynamics,
-											talent of your website.</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-				<section id="aboutPrestadores" class="about-us ptb-100 gray-light-bg">
-					<div class="container">
-						<div class="row align-items-center">
-							<div class="col-md-6">
-								<div class="about-content-left">
-									
-									<h3>Sistema De Información Para La Gestión Integral Del Riesgo En Salud - Sigires</h3>
-									<div style="text-align: justify; font-size: 14px;">
-										<p style="font-weight: bold;">Información para prestadores:</p>
-										<p>Estamos realizando algunos cambios, siguenos en redes sociales para mantenerte informado y para que participes en nuestros proximos concursos!</p>
-										<p style="font-weight: bold;">En esta plataforma podrá gestionar la información de las actividades de protección específica y detección temprana (PyP), al igual que lo referente patologías de alto impacto, programas especiales, y demás actividades relacionadas con los siguientes anexos:</p>
-										<p> Resolución 4505 de 2012: Según el anexo técnico del Ministerio de salud y 
-											protección social. RIPS - Resolución 3374 de 2000: Registros Individuales de 
-											Prestación de Servicios de Salud. CAC - Cuenta de alto costo: Cancer, Artritis, ERC, 
-											Hemofilia, VIH. Vacunación: Registros de biologicos PAIWEB. Toma y resultados de laboratorios. Además, 
-											podrá visualizar indicadores de gestión (incluidos los indicadores Ministerio de salud y protección social)
-											con sus respectivos tableros de control, cumplimientos, coberturas y ranking de IPS.</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="counter">
-									<div class="single-card box-animation-1 secondary-bg text-white">
-										<img [src]="'assets/img/img-1.svg'" class="img-fluid img-full-box">
-									</div>
-									<div class="single-card box-animation-2 icon-color-1">
-										<img [src]="'assets/img/img-3.svg'" class="img-fluid img-full-box">
-									</div>
-									<div class="single-card box-animation-3 icon-color-2">
-										<img [src]="'assets/aimg/img-4.svg'" class="img-fluid img-full-box">
-									</div>
-									<div class="single-card box-animation-4 primary-bg text-white">
-										<img [src]="'assets/img/img-2.svg'" class="img-fluid img-full-box">
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-				
-				<div>
-					<section id="contacto" class="call-to-action ptb-100 background-img"
-						style="background: url(&quot;assets/img/imgFondo.jpg&quot;) center center no-repeat fixed;">
-						<div class="container">
-							<div class="row justify-content-center">
-								<div class="col-11 mb-3">
-									<div class="call-to-action-content text-center text-white">
-										<h2 class="text-white">Nos complace ayudarte en todo momento!</h2>
-									</div>
-								</div>
-								<div class="row justify-content-md-center">
-									<div class="col-md-4">
-										<div class="single-services single-feature text-center gray-light-bg rounded border mt-4 pt-5 pb-5 pl-4 pr-4">
-											<span class="fas fa-users icon-color-1 icon rounded"></span>
-											<div class="feature-content">
-												<h5 class="mb-2"> Social Media</h5>
-												<span class="fab fa-facebook-f icon-color-6 icon rounded"></span>
-												<span class="fab fa-twitter icon-color-4 icon rounded"></span>
-												<span class="fas fa-question icon-color-3 icon rounded"></span>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-4">
-										<div class="single-services single-feature text-center gray-light-bg rounded border mt-4 pt-5 pb-5 pl-4 pr-4">
-											<span class="fas fa-headset icon-color-3 icon rounded"></span>
-											<div class="feature-content">
-												<h5 class="mb-2"> Líneas de soporte</h5>
-												<p>While browsing the Facebook or Twitter or even Linkedin, you are subjected to advertisements for them</p>
-											</div>
-										</div>
-									</div>
-									
-								</div>
-							</div>
-						</div>
-					</section>
 				</div>
 			</div>
+		</section>
+		<div style="position: absolute;top: 88%;right: 78px;">
+			<a mat-icon-button target="_blank" id="icono" href="https://www.facebook.com/ProcexSoftware"><i
+					class="fab fa-facebook-square"></i></a>
+			<a mat-icon-button target="_blank" id="icono"
+				href="https://www.youtube.com/channel/UCBHC24rCn_0i4ukCnQiJuOg"><i class="fab fa-youtube"></i></a>
+			<a mat-icon-button [matMenuTriggerFor]="menu" target="_blank" id="icono"><i class="fas fa-headset"></i></a>
+			<mat-menu #menu="matMenu">
+				<a mat-menu-item class="appWhatsapp" target="_blank"
+					href="https://api.whatsapp.com/send?phone=573006660504">3006660504</a>
+				<a mat-menu-item class="appWhatsapp" target="_blank"
+					href="https://api.whatsapp.com/send?phone=573016908595">3016908595</a>
+				<a mat-menu-item class="appWhatsapp" target="_blank"
+					href="https://api.whatsapp.com/send?phone=573502905319">3502905319</a>
+				<a mat-menu-item class="appWhatsapp" target="_blank"
+					href="https://api.whatsapp.com/send?phone=573042813839">3042813839</a>
+			</mat-menu>
 		</div>
 	</div>
-	
-</body>
+</div>
