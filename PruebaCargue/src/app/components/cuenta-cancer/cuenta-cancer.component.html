@@ -22,200 +22,198 @@
                             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                                 data-parent="#accordion">
                                 <div class="card-body" id="pagina">
-                                   
-                                        <div class="input-group mb-3">
-                                            <div class="col-xs-4">
-                                                <label id="tipo">8.Tipo de identificacion del paciente:</label>
-                                                <select name="" class="form-control" id="tipo"
-                                                    name="ARTRITIS.C7_CAMPO_8" [(ngModel)]="ARTRITIS.C7_CAMPO_8">
-                                                    <option value=""></option>
-                                                    <option *ngFor='let tipodocumento of tipodocumento'
-                                                        [ngValue]="tipodocumento.NOMBRE_OPCION"
-                                                        [ngValue]="tipodocumento.CODIGO_OPCION">
-                                                        {{tipodocumento.CODIGO_OPCION}}.{{tipodocumento.NOMBRE_OPCION}}
-                                                    </option>
-                                                </select>
-                                            </div>
-                                            <div class="col-xs-4">
-                                                <label id="documento">9.Número de identificacion del paciente:</label>
-                                                <input type="text"
-                                                    onkeypress='return event.charCode >= 48 && event.charCode <= 57'
-                                                    class="form-control" id="documento" name="ARTRITIS.C8_CAMPO_9"
-                                                    [(ngModel)]="ARTRITIS.C8_CAMPO_9">
-                                            </div>
-                                            <div class="col-xs-4">
-                                                <label id="pnombre">4.Primer nombre:</label>
-                                                <input type="text" class="form-control" id="pnombre"
-                                                    name="ARTRITIS.C3_CAMPO_4" [(ngModel)]="ARTRITIS.C3_CAMPO_4">
-                                            </div>
-                                            <div class="col-xs-4">
-                                                <label id="snombre">5.Segundo nombre:</label>
-                                                <input type="text" class="form-control" id="snombre"
-                                                    name="ARTRITIS.C4_CAMPO_5" [(ngModel)]="ARTRITIS.C4_CAMPO_5">
-                                            </div>
 
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <label id="tipo">8.Tipo de identificacion del paciente:</label>
+                                            <select name="" class="form-control" id="tipo" name="ARTRITIS.C7_CAMPO_8"
+                                                [(ngModel)]="ARTRITIS.C7_CAMPO_8">
+                                                <option value=""></option>
+                                                <option *ngFor='let tipodocumento of tipodocumento'
+                                                    [ngValue]="tipodocumento.NOMBRE_OPCION"
+                                                    [ngValue]="tipodocumento.CODIGO_OPCION">
+                                                    {{tipodocumento.CODIGO_OPCION}}.{{tipodocumento.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
                                         </div>
-                                        <div class="input-group mb-3">
-                                            <div class="col-xs-4">
-                                                <label id="tipo">6.Primer apellido:</label>
-                                                <input type="text" class="form-control" id="papellido"
-                                                    name="ARTRITIS.C5_CAMPO_6" [(ngModel)]="ARTRITIS.C5_CAMPO_6">
-                                            </div>
-                                            <div class="col-xs-4">
-                                                <label id="snombre">7.Segundo apellido: </label>
-                                                <input type="text" class="form-control" id="snombre"
-                                                    name="ARTRITIS.C6_CAMPO_7" [(ngModel)]="ARTRITIS.C6_CAMPO_7">
-                                            </div>
-                                            <div class="col-xs-2">
-                                                <label id="fechan">10.Fecha de nacimiento:</label>
-                                                <div class="input-group" id="nuevo7">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text"><svg
-                                                                xmlns="http://www.w3.org/2000/svg" width="16"
-                                                                height="16" fill="currentColor"
-                                                                class="bi bi-calendar2-date" viewBox="0 0 16 16">
-                                                                <path
-                                                                    d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
-                                                                <path
-                                                                    d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
-                                                                <path
-                                                                    d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
-                                                            </svg></span>
-                                                    </div>
-                                                    <input type="date" class="form-control" id="nuevo6"
-                                                        name="ARTRITIS.C9_CAMPO_10" [(ngModel)]="ARTRITIS.C9_CAMPO_10">
+                                        <div class="col-xs-4">
+                                            <label id="documento">9.Número de identificacion del paciente:</label>
+                                            <input type="text"
+                                                onkeypress='return event.charCode >= 48 && event.charCode <= 57'
+                                                class="form-control" id="documento" name="ARTRITIS.C8_CAMPO_9"
+                                                [(ngModel)]="ARTRITIS.C8_CAMPO_9">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="pnombre">4.Primer nombre:</label>
+                                            <input type="text" class="form-control" id="pnombre"
+                                                name="ARTRITIS.C3_CAMPO_4" [(ngModel)]="ARTRITIS.C3_CAMPO_4">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="snombre">5.Segundo nombre:</label>
+                                            <input type="text" class="form-control" id="snombre"
+                                                name="ARTRITIS.C4_CAMPO_5" [(ngModel)]="ARTRITIS.C4_CAMPO_5">
+                                        </div>
 
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <label id="tipo">6.Primer apellido:</label>
+                                            <input type="text" class="form-control" id="papellido"
+                                                name="ARTRITIS.C5_CAMPO_6" [(ngModel)]="ARTRITIS.C5_CAMPO_6">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="snombre">7.Segundo apellido: </label>
+                                            <input type="text" class="form-control" id="snombre"
+                                                name="ARTRITIS.C6_CAMPO_7" [(ngModel)]="ARTRITIS.C6_CAMPO_7">
+                                        </div>
+                                        <div class="col-xs-2">
+                                            <label id="fechan">10.Fecha de nacimiento:</label>
+                                            <div class="input-group" id="nuevo7">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-calendar2-date"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
+                                                            <path
+                                                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
+                                                            <path
+                                                                d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
+                                                        </svg></span>
                                                 </div>
+                                                <input type="date" class="form-control" id="nuevo6"
+                                                    name="ARTRITIS.C9_CAMPO_10" [(ngModel)]="ARTRITIS.C9_CAMPO_10">
 
                                             </div>
-                                            <div class="col-xs-1">
-                                                <label id="edad2">Edad actual:</label>
-                                                <input type="number" readonly="true" class="form-control" id="edad">
-                                            </div>
-                                            <div class="col-xs-1">
-                                                <label id="edadc">Edad corte:</label>
-                                                <input type="number" readonly="true" class="form-control" id="edadc2">
-                                            </div>
-                                            <div class="col-xs-2">
-                                                <label id="sexo">11.Sexo:</label>
-                                                <select name="" class="form-control" id="sexo"   name="ARTRITIS.C10_CAMPO_11" [(ngModel)]="ARTRITIS.C10_CAMPO_11">
-                                                    <option *ngFor='let Sexo of Sexo' [ngValue]="Sexo.NOMBRE_OPCION"
-                                                        [ngValue]="Sexo.CODIGO_OPCION">
-                                                        {{Sexo.CODIGO_OPCION}}.{{Sexo.NOMBRE_OPCION}}
-                                                    </option>
-                                                </select>
-                                            </div>
-                                            <div class="col-xs-2">
-                                                <label id="sexo">90.Serial BDUA:</label>
-                                                <input type="number" class="form-control" id="sexo"
-                                                    name="ARTRITIS.C152_CAMPO_90" [(ngModel)]="ARTRITIS.C152_CAMPO_90">
 
-                                            </div>
                                         </div>
-                                        <div class="input-group mb-3">
-                                            <div class="col-xs-4">
-                                                <label id="tipo">13.Direccion:</label>
-
-                                                <input type="text" id="tipo" class="form-control"
-                                                    name="ARTRITIS.C12_CAMPO_13" [(ngModel)]="ARTRITIS.C12_CAMPO_13">
-                                            </div>
-                                            <div class="col-xs-4">
-                                                <label id="documento">2.Régimen de afiliación:</label>
-                                                <select name="" class="form-control" id="documento"
-                                                    name="ARTRITIS.C1_CAMPO_2" [(ngModel)]="ARTRITIS.C1_CAMPO_2">
-                                                    <option *ngFor='let RegimenAF of RegimenAF'
-                                                        [ngValue]="RegimenAF.NOMBRE_OPCION"
-                                                        [ngValue]="RegimenAF.CODIGO_OPCION">
-                                                        {{RegimenAF.CODIGO_OPCION}}.{{RegimenAF.NOMBRE_OPCION}}
-                                                    </option>
-                                                </select>
-                                            </div>
-                                            <div class="col-xs-4">
-                                                <label id="documento">1.Código de la EAPB o de la entidad
-                                                    territorial:</label>
-                                                <input type="text" class="form-control" id="pnombre"
-                                                    name="ARTRITIS.C0_CAMPO_1" [(ngModel)]="ARTRITIS.C0_CAMPO_1">
-                                            </div>
-                                            <div class="col-xs-4">
-                                                <label id="documento">12.Código pertenencia étnica:</label>
-                                                <select name="" class="form-control" id="documento"
-                                                    name="ARTRITIS.C11_CAMPO_12" [(ngModel)]="ARTRITIS.C11_CAMPO_12">
-                                                    <option *ngFor='let CEtnica of CEtnica'
-                                                        [ngValue]="CEtnica.NOMBRE_OPCION"
-                                                        [ngValue]="CEtnica.CODIGO_OPCION">
-                                                        {{CEtnica.CODIGO_OPCION}}.{{CEtnica.NOMBRE_OPCION}}
-                                                    </option>
-                                                </select>
-                                            </div>
+                                        <div class="col-xs-1">
+                                            <label id="edad2">Edad actual:</label>
+                                            <input type="number" readonly="true" class="form-control" id="edad">
                                         </div>
-                                        <div class="input-group mb-3">
-                                            <div class="col-xs-4">
-                                                <label id="tipo">3.Grupo poblacional:</label>
-                                                <select name="" class="form-control" id="GrupoP"
-                                                    name="ARTRITIS.C2_CAMPO_3" [(ngModel)]="ARTRITIS.C2_CAMPO_3">
-                                                    <option *ngFor='let C2_CAMPO_3 of C2_CAMPO_3'
-                                                        [ngValue]="C2_CAMPO_3.NOMBRE_OPCION"
-                                                        [ngValue]="C2_CAMPO_3.CODIGO_OPCION">
-                                                        {{C2_CAMPO_3.CODIGO_OPCION}}.{{C2_CAMPO_3.NOMBRE_OPCION}}
-                                                    </option>
-                                                </select>
-                                            </div>
-                                            <div class="col-xs-4">
-                                                <label id="documento">15.Codigo de municipio de residencia:</label>
-                                                <input type="text" id="Mresidencia" class="form-control"
-                                                    name="ARTRITIS.C14_CAMPO_15" [(ngModel)]="ARTRITIS.C14_CAMPO_15">
-                                            </div>
-                                            <div class="col-xs-2">
-                                                <label id="numeropaciente1">14.Número telefónico:</label>
-                                                <input type="number" class="form-control" id="numeropaciente"
-                                                    name="ARTRITIS.C13_CAMPO_14" [(ngModel)]="ARTRITIS.C13_CAMPO_14">
-                                            </div>
-                                            <div class="col-xs-2">
-                                                <label id="fechaCor1">16.Fecha de afiliación a la EAPB:</label>
-                                                <div class="input-group" id="nuevo4">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text"><svg
-                                                                xmlns="http://www.w3.org/2000/svg" width="16"
-                                                                height="16" fill="currentColor"
-                                                                class="bi bi-calendar2-date" viewBox="0 0 16 16">
-                                                                <path
-                                                                    d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
-                                                                <path
-                                                                    d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
-                                                                <path
-                                                                    d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
-                                                            </svg></span>
-                                                    </div>
-                                                    <input type="date" class="form-control" id="nuevo3"
-                                                        name="ARTRITIS.C15_CAMPO_16"
-                                                        [(ngModel)]="ARTRITIS.C15_CAMPO_16">
+                                        <div class="col-xs-1">
+                                            <label id="edadc">Edad corte:</label>
+                                            <input type="number" readonly="true" class="form-control" id="edadc2">
+                                        </div>
+                                        <div class="col-xs-2">
+                                            <label id="sexo">11.Sexo:</label>
+                                            <select name="" class="form-control" id="sexo" name="ARTRITIS.C10_CAMPO_11"
+                                                [(ngModel)]="ARTRITIS.C10_CAMPO_11">
+                                                <option *ngFor='let Sexo of Sexo' [ngValue]="Sexo.NOMBRE_OPCION"
+                                                    [ngValue]="Sexo.CODIGO_OPCION">
+                                                    {{Sexo.CODIGO_OPCION}}.{{Sexo.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-2">
+                                            <label id="sexo">90.Serial BDUA:</label>
+                                            <input type="number" class="form-control" id="sexo"
+                                                name="ARTRITIS.C152_CAMPO_90" [(ngModel)]="ARTRITIS.C152_CAMPO_90">
+
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <label id="tipo">13.Direccion:</label>
+
+                                            <input type="text" id="tipo" class="form-control"
+                                                name="ARTRITIS.C12_CAMPO_13" [(ngModel)]="ARTRITIS.C12_CAMPO_13">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">2.Régimen de afiliación:</label>
+                                            <select name="" class="form-control" id="documento"
+                                                name="ARTRITIS.C1_CAMPO_2" [(ngModel)]="ARTRITIS.C1_CAMPO_2">
+                                                <option *ngFor='let RegimenAF of RegimenAF'
+                                                    [ngValue]="RegimenAF.NOMBRE_OPCION"
+                                                    [ngValue]="RegimenAF.CODIGO_OPCION">
+                                                    {{RegimenAF.CODIGO_OPCION}}.{{RegimenAF.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">1.Código de la EAPB o de la entidad
+                                                territorial:</label>
+                                            <input type="text" class="form-control" id="pnombre"
+                                                name="ARTRITIS.C0_CAMPO_1" [(ngModel)]="ARTRITIS.C0_CAMPO_1">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">12.Código pertenencia étnica:</label>
+                                            <select name="" class="form-control" id="documento"
+                                                name="ARTRITIS.C11_CAMPO_12" [(ngModel)]="ARTRITIS.C11_CAMPO_12">
+                                                <option *ngFor='let CEtnica of CEtnica'
+                                                    [ngValue]="CEtnica.NOMBRE_OPCION" [ngValue]="CEtnica.CODIGO_OPCION">
+                                                    {{CEtnica.CODIGO_OPCION}}.{{CEtnica.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <label id="tipo">3.Grupo poblacional:</label>
+                                            <select name="" class="form-control" id="GrupoP" name="ARTRITIS.C2_CAMPO_3"
+                                                [(ngModel)]="ARTRITIS.C2_CAMPO_3">
+                                                <option *ngFor='let C2_CAMPO_3 of C2_CAMPO_3'
+                                                    [ngValue]="C2_CAMPO_3.NOMBRE_OPCION"
+                                                    [ngValue]="C2_CAMPO_3.CODIGO_OPCION">
+                                                    {{C2_CAMPO_3.CODIGO_OPCION}}.{{C2_CAMPO_3.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">15.Codigo de municipio de residencia:</label>
+                                            <input type="text" id="Mresidencia" class="form-control"
+                                                name="ARTRITIS.C14_CAMPO_15" [(ngModel)]="ARTRITIS.C14_CAMPO_15">
+                                        </div>
+                                        <div class="col-xs-2">
+                                            <label id="numeropaciente1">14.Número telefónico:</label>
+                                            <input type="number" class="form-control" id="numeropaciente"
+                                                name="ARTRITIS.C13_CAMPO_14" [(ngModel)]="ARTRITIS.C13_CAMPO_14">
+                                        </div>
+                                        <div class="col-xs-2">
+                                            <label id="fechaCor1">16.Fecha de afiliación a la EAPB:</label>
+                                            <div class="input-group" id="nuevo4">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-calendar2-date"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
+                                                            <path
+                                                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
+                                                            <path
+                                                                d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
+                                                        </svg></span>
                                                 </div>
-
+                                                <input type="date" class="form-control" id="nuevo3"
+                                                    name="ARTRITIS.C15_CAMPO_16" [(ngModel)]="ARTRITIS.C15_CAMPO_16">
                                             </div>
-                                            <div class="col-xs-1">
-                                                <label id="fechaCor12">91. Fecha de corte:</label>
-                                                <div class="input-group" id="nuevo5">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text"><svg
-                                                                xmlns="http://www.w3.org/2000/svg" width="16"
-                                                                height="16" fill="currentColor"
-                                                                class="bi bi-calendar2-date" viewBox="0 0 16 16">
-                                                                <path
-                                                                    d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
-                                                                <path
-                                                                    d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
-                                                                <path
-                                                                    d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
-                                                            </svg></span>
-                                                    </div>
-                                                    <input type="date" class="form-control" id="nuevo3"
-                                                        name="ARTRITIS.C153_CAMPO_91"
-                                                        [(ngModel)]="ARTRITIS.C153_CAMPO_91">
+
+                                        </div>
+                                        <div class="col-xs-1">
+                                            <label id="fechaCor12">91. Fecha de corte:</label>
+                                            <div class="input-group" id="nuevo5">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-calendar2-date"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
+                                                            <path
+                                                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
+                                                            <path
+                                                                d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
+                                                        </svg></span>
                                                 </div>
+                                                <input type="date" class="form-control" id="nuevo3"
+                                                    name="ARTRITIS.C153_CAMPO_91" [(ngModel)]="ARTRITIS.C153_CAMPO_91">
                                             </div>
                                         </div>
+                                    </div>
 
-                                    
+
                                 </div>
                             </div>
 
@@ -238,38 +236,15 @@
                         <div id="collapseOne1" class="collapse show" aria-labelledby="headingOne"
                             data-parent="#accordion">
                             <div class="card-body" id="pagina">
-                                
-                                    <div class="input-group mb-3">
-                                        <div class="col-xs-4">
-                                            <div class="col-xs-4">
-                                                <label id="tipo">17.Fecha inicio sintomas de AR:</label>
 
-                                                <div class="input-group" id="nuevo1">
-                                                    <div class="input-group-prepend">
-                                                        <span id="span2" class="input-group-text"><svg
-                                                                xmlns="http://www.w3.org/2000/svg" width="16"
-                                                                height="16" fill="currentColor"
-                                                                class="bi bi-calendar2-date" viewBox="0 0 16 16">
-                                                                <path
-                                                                    d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
-                                                                <path
-                                                                    d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
-                                                                <path
-                                                                    d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
-                                                            </svg></span>
-                                                    </div>
-                                                    <input type="date" class="form-control" id="fechaInicioS"
-                                                        name="ARTRITIS.C16_CAMPO_17"
-                                                        [(ngModel)]="ARTRITIS.C16_CAMPO_17">
-                                                </div>
-                                            </div>
-                                        </div>
+                                <div class="input-group mb-3">
+                                    <div class="col-xs-4">
                                         <div class="col-xs-4">
-                                            <label id="documento">18.Fecha primera visita especialista por AR:</label>
+                                            <label id="tipo">17.Fecha inicio sintomas de AR:</label>
 
-                                            <div class="input-group" id="nuevo">
+                                            <div class="input-group" id="nuevo1">
                                                 <div class="input-group-prepend">
-                                                    <span id="span1" class="input-group-text"><svg
+                                                    <span id="span2" class="input-group-text"><svg
                                                             xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                             fill="currentColor" class="bi bi-calendar2-date"
                                                             viewBox="0 0 16 16">
@@ -281,50 +256,72 @@
                                                                 d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
                                                         </svg></span>
                                                 </div>
-                                                <input type="date" class="form-control" id="nuevo9"
-                                                    name="ARTRITIS.C17_CAMPO_18" [(ngModel)]="ARTRITIS.C17_CAMPO_18">
-                                            </div>
-                                        </div>
-
-                                        <div class="col-xs-4">
-                                            <label id="documento">19.Fecha de diagnóstico de AR:</label>
-
-                                            <div class="input-group" id="nuevo">
-                                                <div class="input-group-prepend">
-                                                    <span id="span1" class="input-group-text"><svg
-                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                            fill="currentColor" class="bi bi-calendar2-date"
-                                                            viewBox="0 0 16 16">
-                                                            <path
-                                                                d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
-                                                            <path
-                                                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
-                                                            <path
-                                                                d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
-                                                        </svg></span>
-                                                </div>
-                                                <input type="date" class="form-control" id="fechaDiagnosticoAR"
-                                                    name="ARTRITIS.C18_CAMPO_19" [(ngModel)]="ARTRITIS.C18_CAMPO_19">
-                                            </div>
-                                        </div>
-
-                                        <div class="col-xs-2">
-                                            <label id="fechaCor1">20.Talla:</label>
-                                            <div class="input-group" id="nuevo4">
-                                                <input type="text" class="form-control" id="pesoTalla"
-                                                    name="ARTRITIS.C19_CAMPO_20" [(ngModel)]="ARTRITIS.C19_CAMPO_20">
-                                            </div>
-
-                                        </div>
-                                        <div class="col-xs-1">
-                                            <label id="fechaCor12">21.Peso inicial:</label>
-                                            <div class="input-group" id="nuevo5">
-                                                <input type="text" class="form-control" id="pesoTalla"
-                                                    name="ARTRITIS.C20_CAMPO_21" [(ngModel)]="ARTRITIS.C20_CAMPO_21">
+                                                <input type="date" class="form-control" id="fechaInicioS"
+                                                    name="ARTRITIS.C16_CAMPO_17" [(ngModel)]="ARTRITIS.C16_CAMPO_17">
                                             </div>
                                         </div>
                                     </div>
-                                
+                                    <div class="col-xs-4">
+                                        <label id="documento">18.Fecha primera visita especialista por AR:</label>
+
+                                        <div class="input-group" id="nuevo">
+                                            <div class="input-group-prepend">
+                                                <span id="span1" class="input-group-text"><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        fill="currentColor" class="bi bi-calendar2-date"
+                                                        viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
+                                                        <path
+                                                            d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
+                                                        <path
+                                                            d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
+                                                    </svg></span>
+                                            </div>
+                                            <input type="date" class="form-control" id="nuevo9"
+                                                name="ARTRITIS.C17_CAMPO_18" [(ngModel)]="ARTRITIS.C17_CAMPO_18">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-4">
+                                        <label id="documento">19.Fecha de diagnóstico de AR:</label>
+
+                                        <div class="input-group" id="nuevo">
+                                            <div class="input-group-prepend">
+                                                <span id="span1" class="input-group-text"><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        fill="currentColor" class="bi bi-calendar2-date"
+                                                        viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
+                                                        <path
+                                                            d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
+                                                        <path
+                                                            d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
+                                                    </svg></span>
+                                            </div>
+                                            <input type="date" class="form-control" id="fechaDiagnosticoAR"
+                                                name="ARTRITIS.C18_CAMPO_19" [(ngModel)]="ARTRITIS.C18_CAMPO_19">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-2">
+                                        <label id="fechaCor1">20.Talla:</label>
+                                        <div class="input-group" id="nuevo4">
+                                            <input type="text" class="form-control" id="pesoTalla"
+                                                name="ARTRITIS.C19_CAMPO_20" [(ngModel)]="ARTRITIS.C19_CAMPO_20">
+                                        </div>
+
+                                    </div>
+                                    <div class="col-xs-1">
+                                        <label id="fechaCor12">21.Peso inicial:</label>
+                                        <div class="input-group" id="nuevo5">
+                                            <input type="text" class="form-control" id="pesoTalla"
+                                                name="ARTRITIS.C20_CAMPO_21" [(ngModel)]="ARTRITIS.C20_CAMPO_21">
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -342,172 +339,172 @@
                         <div id="collapseOne2" class="collapse show" aria-labelledby="headingOne"
                             data-parent="#accordion">
                             <div class="card-body" id="pagina">
-                                
-                                    <div class="input-group mb-3">
-                                        <div class="col-xs-4">
-                                            <label id="tipo">22.Radiografia de manos al diagnóstico:</label>
-                                            <select name="" class="form-control" id="papellido"
-                                                name="ARTRITIS.C21_CAMPO_22" [(ngModel)]="ARTRITIS.C21_CAMPO_22">
-                                                <option *ngFor='let C21_CAMPO_22 of C21_CAMPO_22'
-                                                    [ngValue]="C21_CAMPO_22.NOMBRE_OPCION"
-                                                    [ngValue]="C21_CAMPO_22.CODIGO_OPCION">
-                                                    {{C21_CAMPO_22.CODIGO_OPCION}}.{{C21_CAMPO_22.NOMBRE_OPCION}}
-                                                </option>
-                                            </select>
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <label id="documento">23.Radiografia de pies al diagnóstico:</label>
-                                            <select name="" class="form-control" id="documento"
-                                                name="ARTRITIS.C22_CAMPO_23" [(ngModel)]="ARTRITIS.C22_CAMPO_23">
-                                                <option *ngFor='let C22_CAMPO_23 of C22_CAMPO_23'
-                                                    [ngValue]="C22_CAMPO_23.NOMBRE_OPCION"
-                                                    [ngValue]="C22_CAMPO_23.CODIGO_OPCION">
-                                                    {{C22_CAMPO_23.CODIGO_OPCION}}.{{C22_CAMPO_23.NOMBRE_OPCION}}
-                                                </option>
-                                            </select>
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <label id="documento">24.VSG Inicial:</label>
-                                            <input type="text" class="form-control" id="documento"
-                                                name="ARTRITIS.C23_CAMPO_24" [(ngModel)]="ARTRITIS.C23_CAMPO_24">
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <label id="documento">25.PCR Inicial:</label>
-                                            <input type="text" class="form-control" id="documento"
-                                                name="ARTRITIS.C24_CAMPO_25" [(ngModel)]="ARTRITIS.C24_CAMPO_25">
-                                        </div>
-                                    </div>
 
-                                    <div class="input-group mb-3">
-                                        <div class="col-xs-4">
-                                            <label id="tipo">26.Factor reumatoideo inicial:</label>
-                                            <select name="" class="form-control" id="papellido"
-                                                name="ARTRITIS.C25_CAMPO_26" [(ngModel)]="ARTRITIS.C25_CAMPO_26">
-                                                <option *ngFor='let C25_CAMPO_26 of C25_CAMPO_26'
-                                                    [ngValue]="C25_CAMPO_26.NOMBRE_OPCION"
-                                                    [ngValue]="C25_CAMPO_26.CODIGO_OPCION">
-                                                    {{C25_CAMPO_26.CODIGO_OPCION}}.{{C25_CAMPO_26.NOMBRE_OPCION}}
-                                                </option>
-                                            </select>
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <label id="documento">27.Hemoglobina inicial:</label>
-                                            <input type="text" class="form-control" id="documento"
-                                                name="ARTRITIS.C26_CAMPO_27" [(ngModel)]="ARTRITIS.C26_CAMPO_27">
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <label id="documento">28.Leucocitos inicial:</label>
-                                            <input type="text" class="form-control" id="documento"
-                                                name="ARTRITIS.C27_CAMPO_28" [(ngModel)]="ARTRITIS.C27_CAMPO_28">
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <label id="documento">29.Creatinina Inicial:</label>
-                                            <input type="text" class="form-control" id="documento"
-                                                name="ARTRITIS.C28_CAMPO_29" [(ngModel)]="ARTRITIS.C28_CAMPO_29">
-                                        </div>
+                                <div class="input-group mb-3">
+                                    <div class="col-xs-4">
+                                        <label id="tipo">22.Radiografia de manos al diagnóstico:</label>
+                                        <select name="" class="form-control" id="papellido" name="ARTRITIS.C21_CAMPO_22"
+                                            [(ngModel)]="ARTRITIS.C21_CAMPO_22">
+                                            <option *ngFor='let C21_CAMPO_22 of C21_CAMPO_22'
+                                                [ngValue]="C21_CAMPO_22.NOMBRE_OPCION"
+                                                [ngValue]="C21_CAMPO_22.CODIGO_OPCION">
+                                                {{C21_CAMPO_22.CODIGO_OPCION}}.{{C21_CAMPO_22.NOMBRE_OPCION}}
+                                            </option>
+                                        </select>
                                     </div>
+                                    <div class="col-xs-4">
+                                        <label id="documento">23.Radiografia de pies al diagnóstico:</label>
+                                        <select name="" class="form-control" id="documento" name="ARTRITIS.C22_CAMPO_23"
+                                            [(ngModel)]="ARTRITIS.C22_CAMPO_23">
+                                            <option *ngFor='let C22_CAMPO_23 of C22_CAMPO_23'
+                                                [ngValue]="C22_CAMPO_23.NOMBRE_OPCION"
+                                                [ngValue]="C22_CAMPO_23.CODIGO_OPCION">
+                                                {{C22_CAMPO_23.CODIGO_OPCION}}.{{C22_CAMPO_23.NOMBRE_OPCION}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <label id="documento">24.VSG Inicial:</label>
+                                        <input type="text" class="form-control" id="documento"
+                                            name="ARTRITIS.C23_CAMPO_24" [(ngModel)]="ARTRITIS.C23_CAMPO_24">
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <label id="documento">25.PCR Inicial:</label>
+                                        <input type="text" class="form-control" id="documento"
+                                            name="ARTRITIS.C24_CAMPO_25" [(ngModel)]="ARTRITIS.C24_CAMPO_25">
+                                    </div>
+                                </div>
 
-                                    <div class="input-group mb-3">
-                                        <div class="col-xs-4">
-                                            <label id="tipo">30.TFG Inicial:</label>
-                                            <input type="text" class="form-control" id="papellido"
-                                                name="ARTRITIS.C29_CAMPO_30" [(ngModel)]="ARTRITIS.C29_CAMPO_30">
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <label id="documento">31.Parcial de Orina inicial:</label>
-                                            <select name="" class="form-control" id="documento"
-                                                ame="ARTRITIS.C30_CAMPO_31" [(ngModel)]="ARTRITIS.C30_CAMPO_31">
-                                                <option *ngFor='let C30_CAMPO_31 of C30_CAMPO_31'
-                                                    [ngValue]="C30_CAMPO_31.NOMBRE_OPCION"
-                                                    [ngValue]="C30_CAMPO_31.CODIGO_OPCION">
-                                                    {{C30_CAMPO_31.CODIGO_OPCION}}.{{C30_CAMPO_31.NOMBRE_OPCION}}
-                                                </option>
-                                            </select>
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <label id="documento">32.ALT Inicial:</label>
-                                            <input type="text" class="form-control" id="documento"
-                                                ame="ARTRITIS.C31_CAMPO_32" [(ngModel)]="ARTRITIS.C31_CAMPO_32">
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <label id="documento">33.Anti-CCP al diagnóstico:</label>
-                                            <input type="text" class="form-control" id="documento"
-                                                ame="ARTRITIS.C32_CAMPO_33" [(ngModel)]="ARTRITIS.C32_CAMPO_33">
-                                        </div>
+                                <div class="input-group mb-3">
+                                    <div class="col-xs-4">
+                                        <label id="tipo">26.Factor reumatoideo inicial:</label>
+                                        <select name="" class="form-control" id="papellido" name="ARTRITIS.C25_CAMPO_26"
+                                            [(ngModel)]="ARTRITIS.C25_CAMPO_26">
+                                            <option *ngFor='let C25_CAMPO_26 of C25_CAMPO_26'
+                                                [ngValue]="C25_CAMPO_26.NOMBRE_OPCION"
+                                                [ngValue]="C25_CAMPO_26.CODIGO_OPCION">
+                                                {{C25_CAMPO_26.CODIGO_OPCION}}.{{C25_CAMPO_26.NOMBRE_OPCION}}
+                                            </option>
+                                        </select>
                                     </div>
+                                    <div class="col-xs-4">
+                                        <label id="documento">27.Hemoglobina inicial:</label>
+                                        <input type="text" class="form-control" id="documento"
+                                            name="ARTRITIS.C26_CAMPO_27" [(ngModel)]="ARTRITIS.C26_CAMPO_27">
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <label id="documento">28.Leucocitos inicial:</label>
+                                        <input type="text" class="form-control" id="documento"
+                                            name="ARTRITIS.C27_CAMPO_28" [(ngModel)]="ARTRITIS.C27_CAMPO_28">
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <label id="documento">29.Creatinina Inicial:</label>
+                                        <input type="text" class="form-control" id="documento"
+                                            name="ARTRITIS.C28_CAMPO_29" [(ngModel)]="ARTRITIS.C28_CAMPO_29">
+                                    </div>
+                                </div>
 
-                                    <div class="input-group mb-3">
-                                        <div class="col-xs-4">
-                                            <label id="tipo">34.HTA al diagnóstico:</label>
-                                            <select name="" class="form-control" id="papellido"
-                                                ame="ARTRITIS.C33_CAMPO_34" [(ngModel)]="ARTRITIS.C33_CAMPO_34">
-                                                <option *ngFor='let C33_CAMPO_34 of C33_CAMPO_34'
-                                                    [ngValue]="C33_CAMPO_34.NOMBRE_OPCION"
-                                                    [ngValue]="C33_CAMPO_34.CODIGO_OPCION">
-                                                    {{C33_CAMPO_34.CODIGO_OPCION}}.{{C33_CAMPO_34.NOMBRE_OPCION}}
-                                                </option>
-                                            </select>
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <label id="documento">35.DM al diagnóstico:</label>
-                                            <select name="" class="form-control" id="documento"
-                                                ame="ARTRITIS.C34_CAMPO_35" [(ngModel)]="ARTRITIS.C34_CAMPO_35">
-                                                <option *ngFor='let C34_CAMPO_35 of C34_CAMPO_35'
-                                                    [ngValue]="C34_CAMPO_35.NOMBRE_OPCION"
-                                                    [ngValue]="C34_CAMPO_35.CODIGO_OPCION">
-                                                    {{C34_CAMPO_35.CODIGO_OPCION}}.{{C34_CAMPO_35.NOMBRE_OPCION}}
-                                                </option>
-                                            </select>
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <label id="documento">36.ECV al diagnóstico:</label>
-                                            <select name="" class="form-control" id="documento"
-                                                ame="ARTRITIS.C35_CAMPO_36" [(ngModel)]="ARTRITIS.C35_CAMPO_36">
-                                                <option *ngFor='let C35_CAMPO_36 of C35_CAMPO_36'
-                                                    [ngValue]="C35_CAMPO_36.NOMBRE_OPCION"
-                                                    [ngValue]="C35_CAMPO_36.CODIGO_OPCION">
-                                                    {{C35_CAMPO_36.CODIGO_OPCION}}.{{C35_CAMPO_36.NOMBRE_OPCION}}
-                                                </option>
-                                            </select>
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <label id="documento">37.ERC al diagnóstico:</label>
-                                            <select name="" class="form-control" id="documento"
-                                                ame="ARTRITIS.C36_CAMPO_37" [(ngModel)]="ARTRITIS.C36_CAMPO_37">
-                                                <option *ngFor='let C36_CAMPO_37 of C36_CAMPO_37'
-                                                    [ngValue]="C36_CAMPO_37.NOMBRE_OPCION"
-                                                    [ngValue]="C36_CAMPO_37.CODIGO_OPCION">
-                                                    {{C36_CAMPO_37.CODIGO_OPCION}}.{{C36_CAMPO_37.NOMBRE_OPCION}}
-                                                </option>
-                                            </select>
-                                        </div>
+                                <div class="input-group mb-3">
+                                    <div class="col-xs-4">
+                                        <label id="tipo">30.TFG Inicial:</label>
+                                        <input type="text" class="form-control" id="papellido"
+                                            name="ARTRITIS.C29_CAMPO_30" [(ngModel)]="ARTRITIS.C29_CAMPO_30">
                                     </div>
+                                    <div class="col-xs-4">
+                                        <label id="documento">31.Parcial de Orina inicial:</label>
+                                        <select name="" class="form-control" id="documento" ame="ARTRITIS.C30_CAMPO_31"
+                                            [(ngModel)]="ARTRITIS.C30_CAMPO_31">
+                                            <option *ngFor='let C30_CAMPO_31 of C30_CAMPO_31'
+                                                [ngValue]="C30_CAMPO_31.NOMBRE_OPCION"
+                                                [ngValue]="C30_CAMPO_31.CODIGO_OPCION">
+                                                {{C30_CAMPO_31.CODIGO_OPCION}}.{{C30_CAMPO_31.NOMBRE_OPCION}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <label id="documento">32.ALT Inicial:</label>
+                                        <input type="text" class="form-control" id="documento"
+                                            ame="ARTRITIS.C31_CAMPO_32" [(ngModel)]="ARTRITIS.C31_CAMPO_32">
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <label id="documento">33.Anti-CCP al diagnóstico:</label>
+                                        <input type="text" class="form-control" id="documento"
+                                            ame="ARTRITIS.C32_CAMPO_33" [(ngModel)]="ARTRITIS.C32_CAMPO_33">
+                                    </div>
+                                </div>
 
-                                    <div class="input-group mb-3">
-                                        <div class="col-xs-4">
-                                            <label id="tipo">38.Osteoporosis al diagnóstico:</label>
-                                            <select name="" class="form-control" id="papellido"
-                                                ame="ARTRITIS.C37_CAMPO_38" [(ngModel)]="ARTRITIS.C37_CAMPO_38">
-                                                <option *ngFor='let C37_CAMPO_38 of C37_CAMPO_38'
-                                                    [ngValue]="C37_CAMPO_38.NOMBRE_OPCION"
-                                                    [ngValue]="C37_CAMPO_38.CODIGO_OPCION">
-                                                    {{C37_CAMPO_38.CODIGO_OPCION}}.{{C37_CAMPO_38.NOMBRE_OPCION}}
-                                                </option>
-                                            </select>
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <label id="documento">39.Sindrome de Sjogren al diagnóstico:</label>
-                                            <select name="" class="form-control" id="documento"
-                                                ame="ARTRITIS.C38_CAMPO_39" [(ngModel)]="ARTRITIS.C38_CAMPO_39">
-                                                <option *ngFor='let C38_CAMPO_39 of C38_CAMPO_39'
-                                                    [ngValue]="C38_CAMPO_39.NOMBRE_OPCION"
-                                                    [ngValue]="C38_CAMPO_39.CODIGO_OPCION">
-                                                    {{C38_CAMPO_39.CODIGO_OPCION}}.{{C38_CAMPO_39.NOMBRE_OPCION}}
-                                                </option>
-                                            </select>
-                                        </div>
+                                <div class="input-group mb-3">
+                                    <div class="col-xs-4">
+                                        <label id="tipo">34.HTA al diagnóstico:</label>
+                                        <select name="" class="form-control" id="papellido" ame="ARTRITIS.C33_CAMPO_34"
+                                            [(ngModel)]="ARTRITIS.C33_CAMPO_34">
+                                            <option *ngFor='let C33_CAMPO_34 of C33_CAMPO_34'
+                                                [ngValue]="C33_CAMPO_34.NOMBRE_OPCION"
+                                                [ngValue]="C33_CAMPO_34.CODIGO_OPCION">
+                                                {{C33_CAMPO_34.CODIGO_OPCION}}.{{C33_CAMPO_34.NOMBRE_OPCION}}
+                                            </option>
+                                        </select>
                                     </div>
-                                
+                                    <div class="col-xs-4">
+                                        <label id="documento">35.DM al diagnóstico:</label>
+                                        <select name="" class="form-control" id="documento" ame="ARTRITIS.C34_CAMPO_35"
+                                            [(ngModel)]="ARTRITIS.C34_CAMPO_35">
+                                            <option *ngFor='let C34_CAMPO_35 of C34_CAMPO_35'
+                                                [ngValue]="C34_CAMPO_35.NOMBRE_OPCION"
+                                                [ngValue]="C34_CAMPO_35.CODIGO_OPCION">
+                                                {{C34_CAMPO_35.CODIGO_OPCION}}.{{C34_CAMPO_35.NOMBRE_OPCION}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <label id="documento">36.ECV al diagnóstico:</label>
+                                        <select name="" class="form-control" id="documento" ame="ARTRITIS.C35_CAMPO_36"
+                                            [(ngModel)]="ARTRITIS.C35_CAMPO_36">
+                                            <option *ngFor='let C35_CAMPO_36 of C35_CAMPO_36'
+                                                [ngValue]="C35_CAMPO_36.NOMBRE_OPCION"
+                                                [ngValue]="C35_CAMPO_36.CODIGO_OPCION">
+                                                {{C35_CAMPO_36.CODIGO_OPCION}}.{{C35_CAMPO_36.NOMBRE_OPCION}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <label id="documento">37.ERC al diagnóstico:</label>
+                                        <select name="" class="form-control" id="documento" ame="ARTRITIS.C36_CAMPO_37"
+                                            [(ngModel)]="ARTRITIS.C36_CAMPO_37">
+                                            <option *ngFor='let C36_CAMPO_37 of C36_CAMPO_37'
+                                                [ngValue]="C36_CAMPO_37.NOMBRE_OPCION"
+                                                [ngValue]="C36_CAMPO_37.CODIGO_OPCION">
+                                                {{C36_CAMPO_37.CODIGO_OPCION}}.{{C36_CAMPO_37.NOMBRE_OPCION}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="input-group mb-3">
+                                    <div class="col-xs-4">
+                                        <label id="tipo">38.Osteoporosis al diagnóstico:</label>
+                                        <select name="" class="form-control" id="papellido" ame="ARTRITIS.C37_CAMPO_38"
+                                            [(ngModel)]="ARTRITIS.C37_CAMPO_38">
+                                            <option *ngFor='let C37_CAMPO_38 of C37_CAMPO_38'
+                                                [ngValue]="C37_CAMPO_38.NOMBRE_OPCION"
+                                                [ngValue]="C37_CAMPO_38.CODIGO_OPCION">
+                                                {{C37_CAMPO_38.CODIGO_OPCION}}.{{C37_CAMPO_38.NOMBRE_OPCION}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <label id="documento">39.Sindrome de Sjogren al diagnóstico:</label>
+                                        <select name="" class="form-control" id="documento" ame="ARTRITIS.C38_CAMPO_39"
+                                            [(ngModel)]="ARTRITIS.C38_CAMPO_39">
+                                            <option *ngFor='let C38_CAMPO_39 of C38_CAMPO_39'
+                                                [ngValue]="C38_CAMPO_39.NOMBRE_OPCION"
+                                                [ngValue]="C38_CAMPO_39.CODIGO_OPCION">
+                                                {{C38_CAMPO_39.CODIGO_OPCION}}.{{C38_CAMPO_39.NOMBRE_OPCION}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -1991,7 +1988,8 @@
 
     <div class="y-card-footer">
         <div class="card-foother align-items-center justify-content-between">
-            <button type="button" id="button" class="btn btn-secondary"  (click)="GuargarDatos()"> <i class="fas fa-save"></i> Guardar</button>
+            <button type="button" id="button" class="btn btn-secondary" (click)="GuargarDatos()"> <i
+                    class="fas fa-save"></i> Guardar</button>
             <button type="button" id="button" class="btn btn-primary"> <i class="fas fa-file-import"></i>
                 Soporte</button>
         </div>

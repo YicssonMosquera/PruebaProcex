@@ -15,6 +15,8 @@ const CarguehemofiliaRoutes_1 = __importDefault(require("./routes/Carguehemofili
 const LogsHerroresRoutes_1 = __importDefault(require("./routes/LogsHerroresRoutes"));
 const BDOpcionesListarouter_1 = __importDefault(require("./routes/BDOpcionesListarouter"));
 const CAC_ArtritisRoutes_1 = __importDefault(require("./routes/CAC_ArtritisRoutes"));
+const BdOpcionesListasERCRoutes_1 = __importDefault(require("./routes/BdOpcionesListasERCRoutes"));
+const CACErcRoutes_1 = __importDefault(require("./routes/CACErcRoutes"));
 const path_1 = __importDefault(require("path"));
 class Server {
     constructor() {
@@ -39,6 +41,8 @@ class Server {
         this.app.use('/api/logsherrores', LogsHerroresRoutes_1.default);
         this.app.use('/api/opcionesLista', BDOpcionesListarouter_1.default);
         this.app.use('/api/artritis', CAC_ArtritisRoutes_1.default);
+        this.app.use('/api/opcionesListasERC', BdOpcionesListasERCRoutes_1.default);
+        this.app.use('/api/erc', CACErcRoutes_1.default);
         this.app.use('/soportes', express_1.default.static(path_1.default.resolve('soportes')));
         this.app.use('/logsExcel', express_1.default.static(path_1.default.resolve('logsExcel')));
         this.app.use('/Carguehemofilia', express_1.default.static(path_1.default.resolve('Carguehemofilia')));

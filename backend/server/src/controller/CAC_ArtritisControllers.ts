@@ -1,4 +1,4 @@
-import { Request, Response, json, request } from 'express'
+import { Request, Response, json } from 'express'
 import CAC_Artritis from '../dao/CAC_Artritis'
 class CAC_ArtritisControllers {
 

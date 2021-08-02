@@ -1,0 +1,1795 @@
+<div class="y-card" style="height: 100%;  width: 100%;">
+    <div class="y-card-header">
+
+    </div>
+
+    <div class="y-card-body" style="padding: 20px 15px;">
+        <div class="row justify-content-center align-items-center" id="pagina">
+            <div class="row">
+                <div class="col-12">
+                    <div id="accordion">
+                        <div class="card">
+                            <div class="card-header align-items-center justify-content-between" id="header">
+                                <label>Datos basicos del usuario</label>
+
+                                <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon"
+                                    data-toggle="collapse" data-target="#collapseOne" id="menu" data-toggle="collapse"
+                                    data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <mat-icon>menu</mat-icon>
+                                </button>
+
+                            </div>
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                data-parent="#accordion">
+                                <div class="card-body" id="pagina">
+
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <label id="tipo">5.Tipo de Identificación del usuario:</label>
+                                            <select name="" class="form-control" id="tipo" name="erc.CAMPO_5"
+                                                [(ngModel)]="erc.CAMPO_5">
+                                                <option *ngFor='let C4_CAMPO_5 of C4_CAMPO_5'
+                                                    [ngValue]="C4_CAMPO_5.NOMBRE_OPCION"
+                                                    [ngValue]="C4_CAMPO_5.CODIGO_OPCION">
+                                                    {{C4_CAMPO_5.CODIGO_OPCION}}.{{C4_CAMPO_5.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">6.Número de Identificación del usuario:</label>
+                                            <input type="text"
+                                                onkeypress='return event.charCode >= 48 && event.charCode <= 57'
+                                                class="form-control" id="documento" name="erc.CAMPO_6"
+                                                [(ngModel)]="erc.CAMPO_6">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="pnombre">1.Primer nombre:</label>
+                                            <input type="text" class="form-control" id="pnombre" name="erc.CAMPO_1"
+                                                [(ngModel)]="erc.CAMPO_1">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="snombre">2.Segundo nombre:</label>
+                                            <input type="text" class="form-control" id="snombre" name="erc.CAMPO_2"
+                                                [(ngModel)]="erc.CAMPO_2">
+                                        </div>
+
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <label id="tipo">3.Primer apellido:</label>
+                                            <input type="text" class="form-control" id="papellido" name="erc.CAMPO_3"
+                                                [(ngModel)]="erc.CAMPO_3">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="snombre">4.Segundo apellido: </label>
+                                            <input type="text" class="form-control" id="snombre" name="erc.CAMPO_4"
+                                                [(ngModel)]="erc.CAMPO_4">
+                                        </div>
+                                        <div class="col-xs-2">
+                                            <label id="fechan">7.Fecha de nacimiento:</label>
+                                            <div class="input-group" id="nuevo7">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-calendar2-date"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
+                                                            <path
+                                                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
+                                                            <path
+                                                                d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
+                                                        </svg></span>
+                                                </div>
+                                                <input type="date" class="form-control" id="nuevo6" name="erc.CAMPO_7"
+                                                    [(ngModel)]="erc.CAMPO_7">
+
+                                            </div>
+
+                                        </div>
+                                        <div class="col-xs-1">
+                                            <label id="edad2">Edad actual:</label>
+                                            <input type="number" readonly="true" class="form-control" id="edad">
+                                        </div>
+                                        <div class="col-xs-1">
+                                            <label id="edadc">Edad corte:</label>
+                                            <input type="number" readonly="true" class="form-control" id="edadc2">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="sexo">8.Sexo:</label>
+                                            <select name="" class="form-control" id="sexo" name="erc.CAMPO_8"
+                                                [(ngModel)]="erc.CAMPO_8">
+                                                <option *ngFor='let C7_CAMPO_8 of C7_CAMPO_8'
+                                                    [ngValue]="C7_CAMPO_8.NOMBRE_OPCION"
+                                                    [ngValue]="C7_CAMPO_8.CODIGO_OPCION">
+                                                    {{C7_CAMPO_8.CODIGO_OPCION}}.{{C7_CAMPO_8.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <label id="tipo">10.Código de la EPS o de la entidad territorial :</label>
+
+                                            <input type="text" id="tipo" class="form-control" name="erc.CAMPO_10"
+                                            [(ngModel)]="erc.CAMPO_10">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">9.Régimen de afiliación:</label>
+                                            <select name="" class="form-control" id="documento"  name="erc.CAMPO_9"
+                                            [(ngModel)]="erc.CAMPO_9">
+                                                <option *ngFor='let C8_CAMPO_9 of C8_CAMPO_9'
+                                                    [ngValue]="C8_CAMPO_9.NOMBRE_OPCION"
+                                                    [ngValue]="C8_CAMPO_9.CODIGO_OPCION">
+                                                    {{C8_CAMPO_9.CODIGO_OPCION}}.{{C8_CAMPO_9.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">14.Número telefónico:</label>
+                                            <input type="text" class="form-control" id="pnombre"  name="erc.CAMPO_14"
+                                            [(ngModel)]="erc.CAMPO_14">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">11.Código pertenencia étnica:</label>
+                                            <select name="" class="form-control" id="documento"  name="erc.CAMPO_11"
+                                            [(ngModel)]="erc.CAMPO_11">
+                                                <option *ngFor='let C10_CAMPO_11 of C10_CAMPO_11'
+                                                    [ngValue]="C10_CAMPO_11.NOMBRE_OPCION"
+                                                    [ngValue]="C10_CAMPO_11.CODIGO_OPCION">
+                                                    {{C10_CAMPO_11.CODIGO_OPCION}}.{{C10_CAMPO_11.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <label id="tipo">12.Grupo poblacional:</label>
+                                            <select name="" class="form-control" id="GrupoP" name="erc.CAMPO_12"
+                                            [(ngModel)]="erc.CAMPO_12">
+                                                <option *ngFor='let C11_CAMPO_12 of C11_CAMPO_12'
+                                                    [ngValue]="C11_CAMPO_12.NOMBRE_OPCION"
+                                                    [ngValue]="C11_CAMPO_12.CODIGO_OPCION">
+                                                    {{C11_CAMPO_12.CODIGO_OPCION}}.{{C11_CAMPO_12.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">13.Municipio de residencia:</label>
+                                            <input type="text" id="Mresidencia" class="form-control"  name="erc.CAMPO_13" [(ngModel)]="erc.CAMPO_13">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">17.Fecha de afiliación a la EAPB:</label>
+                                            <div class="input-group" id="nuevo">
+                                                <div class="input-group-prepend">
+                                                    <span id="span1" class="input-group-text"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-calendar2-date"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
+                                                            <path
+                                                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
+                                                            <path
+                                                                d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
+                                                        </svg></span>
+                                                </div>
+                                                <input type="date" class="form-control" id="nuevo9"  name="erc.CAMPO_17" [(ngModel)]="erc.CAMPO_17">
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="card">
+
+                        <div class="card-header align-items-center justify-content-between" id="header">
+                            <label>Planificacion</label>
+                            <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon"
+                                data-toggle="collapse" data-target="#collapseOne1" id="menu" data-toggle="collapse"
+                                data-target="#collapseOne1" aria-expanded="true" aria-controls="collapseOne1">
+                                <mat-icon>menu</mat-icon>
+                            </button>
+                        </div>
+
+                        <div id="collapseOne1" class="collapse show" aria-labelledby="headingOne"
+                            data-parent="#accordion">
+                            <div class="card-body" id="pagina">
+
+                                <div class="input-group mb-3">
+                                    <div class="col-xs-4">
+                                        <div class="col-xs-4">
+                                            <label id="tipo">15.Fecha de afiliación a la EPS que registra:</label>
+
+                                            <div class="input-group" id="nuevo1">
+                                                <div class="input-group-prepend">
+                                                    <span id="span2" class="input-group-text"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-calendar2-date"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
+                                                            <path
+                                                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
+                                                            <path
+                                                                d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
+                                                        </svg></span>
+                                                </div>
+                                                <input type="date" class="form-control" id="fechaInicioS1"  name="erc.CAMPO_15" [(ngModel)]="erc.CAMPO_15">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <label id="documento">16.Código de la IPS donde se hace seguimiento al
+                                            usuario:</label>
+                                        <input type="text" id="Mresidencia1" class="form-control"  name="erc.CAMPO_16" [(ngModel)]="erc.CAMPO_16">
+                                    </div>
+
+
+                                    <div class="col-xs-4">
+                                        <label id="documento">18.El usuario tiene diagnóstico confirmado de Hipertensión
+                                            Arterial -HTA (CIE-10 con códigos entre I10-I159):</label>
+                                            <select name="" class="form-control" id="GrupoP" name="erc.CAMPO_18"
+                                            [(ngModel)]="erc.CAMPO_18">
+                                                <option *ngFor='let C17_CAMPO_18 of C17_CAMPO_18'
+                                                    [ngValue]="C17_CAMPO_18.NOMBRE_OPCION"
+                                                    [ngValue]="C17_CAMPO_18.CODIGO_OPCION">
+                                                    {{C17_CAMPO_18.CODIGO_OPCION}}.{{C17_CAMPO_18.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                    </div>
+
+                                    <div class="col-xs-4">
+                                        <label id="documento">19.Fecha de diagnostico de la Hipertension
+                                            Arterial:</label>
+                                        <div class="input-group" id="nuevo">
+                                            <div class="input-group-prepend">
+                                                <span id="span01" class="input-group-text"><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        fill="currentColor" class="bi bi-calendar2-date"
+                                                        viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
+                                                        <path
+                                                            d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
+                                                        <path
+                                                            d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
+                                                    </svg></span>
+                                            </div>
+                                            <input type="date" class="form-control" id="nuevo09"  name="erc.CAMPO_19" [(ngModel)]="erc.CAMPO_19">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="card">
+                        <div class="card-header align-items-center justify-content-between" id="header">
+                            <label>Diagnóstico Usuario</label>
+                            <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon"
+                                data-toggle="collapse" data-target="#collapseOne2" id="menu" data-toggle="collapse"
+                                data-target="#collapseOne2" aria-expanded="true" aria-controls="collapseOne2">
+                                <mat-icon>menu</mat-icon>
+                            </button>
+                        </div>
+
+                        <div id="collapseOne2" class="collapse show" aria-labelledby="headingOne"
+                            data-parent="#accordion">
+                            <div class="card-body" id="pagina">
+
+                                <div class="input-group mb-3">
+                                    <div class="col-xs-4">
+                                        <label id="tipo">19.1.Costo HTA durante el período de reporte:</label>
+                                        <input type="text" class="form-control" id="papellid1"  name="erc.CAMPO_19_1" [(ngModel)]="erc.CAMPO_19_1">
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <label id="documento">20.El usuario tiene diagnóstico confirmado de Diabetes
+                                            Mellitus- DM (CIE-10 con códigos entre E10-E149; O24-O249; P702):</label>
+                                        <select name="" class="form-control" id="documento"  name="erc.CAMPO_20" [(ngModel)]="erc.CAMPO_20">
+                                            <option *ngFor='let C20_CAMPO_20 of C20_CAMPO_20'
+                                                [ngValue]="C20_CAMPO_20.NOMBRE_OPCION"
+                                                [ngValue]="C20_CAMPO_20.CODIGO_OPCION">
+                                                {{C20_CAMPO_20.CODIGO_OPCION}}.{{C20_CAMPO_20.NOMBRE_OPCION}}
+                                            </option>
+                                        </select>
+                                    </div> 
+                                    <div class="col-xs-4">
+                                        <label id="documento">21.Fecha de diagnostico de la Diabetes Mellitus:</label>
+                                        <div class="input-group" id="nuevo">
+                                            <div class="input-group-prepend">
+                                                <span id="span01" class="input-group-text"><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        fill="currentColor" class="bi bi-calendar2-date"
+                                                        viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
+                                                        <path
+                                                            d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
+                                                        <path
+                                                            d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
+                                                    </svg></span>
+                                            </div>
+                                            <input type="date" class="form-control" id="nuevo09"  name="erc.CAMPO_21" [(ngModel)]="erc.CAMPO_21">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <label id="documento">21.1.Costo DM durante el período de reporte:</label>
+                                        <input type="text" class="form-control" id="documento1"  name="erc.CAMPO_21_1" [(ngModel)]="erc.CAMPO_21_1">
+                                    </div>
+                                </div>
+
+                                <div class="input-group mb-3">
+                                    <div class="col-xs-4">
+                                        <label id="tipo">22.Etiología de la ERC:</label>
+                                        <select name="" class="form-control" id="papellido"  name="erc.CAMPO_22" [(ngModel)]="erc.CAMPO_22">
+                                            <option *ngFor='let C23_CAMPO_22 of C23_CAMPO_22'
+                                                [ngValue]="C23_CAMPO_22.NOMBRE_OPCION"
+                                                [ngValue]="C23_CAMPO_22.CODIGO_OPCION">
+                                                {{C23_CAMPO_22.CODIGO_OPCION}}.{{C23_CAMPO_22.NOMBRE_OPCION}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <label id="documento">23.Peso (kg):</label>
+                                        <input type="text" class="form-control" id="documento"  name="erc.CAMPO_23" [(ngModel)]="erc.CAMPO_23">
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <label id="documento">24.Talla (cm):</label>
+                                        <input type="text" class="form-control" id="documento"  name="erc.CAMPO_24" [(ngModel)]="erc.CAMPO_24">
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="card">
+                        <div class="card-header align-items-center justify-content-between" id="header">
+                            <label>Antecedentes del diagnóstico</label>
+
+                            <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon"
+                                data-toggle="collapse" data-target="#collapseOne3" id="menu" data-toggle="collapse"
+                                data-target="#collapseOne3" aria-expanded="true" aria-controls="collapseOne3">
+                                <mat-icon>menu</mat-icon>
+                            </button>
+                        </div>
+
+                        <div id="collapseOne3" class="collapse show" aria-labelledby="headingOne"
+                            data-parent="#accordion">
+                            <div class="card-body" id="pagina">
+                                <form>
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <label id="tipo">25.Tensión arterial sistólica (mm de Hg):</label>
+                                            <input type="text" id="tipo" class="form-control"  name="erc.CAMPO_25" [(ngModel)]="erc.CAMPO_25">
+                                        </div>
+
+                                        <div class="col-xs-4">
+                                            <label id="documento">26.Tensión arterial diastólica (mm de Hg):</label>
+                                            <input type="number" class="form-control" id="documento"  name="erc.CAMPO_26" [(ngModel)]="erc.CAMPO_26">
+                                        </div>
+
+                                        <div class="col-xs-4">
+                                            <label id="documento">27.Creatinina (mg/dl):</label>
+                                            <input type="number" class="form-control" id="documento"  name="erc.CAMPO_27" [(ngModel)]="erc.CAMPO_27">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">27.1.Fecha de última Creatinina :</label>
+                                            <div class="input-group" id="nuevo">
+                                                <div class="input-group-prepend">
+                                                    <span id="span1" class="input-group-text"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-calendar2-date"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
+                                                            <path
+                                                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
+                                                            <path
+                                                                d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
+                                                        </svg></span>
+                                                </div>
+                                                <input type="date" class="form-control" id="nuevo9"  name="erc.CAMPO_27_1" [(ngModel)]="erc.CAMPO_27_1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <label id="tipo">28.Hemoglobina Glicosilada: </label>
+                                            <input type="text" id="tipo" class="form-control"  name="erc.CAMPO_28" [(ngModel)]="erc.CAMPO_28">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">28.1Fecha de última Hemoglobina Glicosilada:</label>
+                                            <div class="input-group" id="nuevo">
+                                                <div class="input-group-prepend">
+                                                    <span id="span1" class="input-group-text"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-calendar2-date"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
+                                                            <path
+                                                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
+                                                            <path
+                                                                d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
+                                                        </svg></span>
+                                                </div>
+                                                <input type="date" class="form-control" id="nuevo9"  name="erc.CAMPO_28_1" [(ngModel)]="erc.CAMPO_28_1">
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">29.Albuminuria: </label>
+                                            <input type="number" class="form-control" id="documento"  name="erc.CAMPO_28_1" [(ngModel)]="erc.CAMPO_28_1">
+                                        </div>
+
+                                        <div class="col-xs-4">
+                                            <label id="documento">29.1Fecha de la última Albuminuria:</label>
+                                            <div class="input-group" id="nuevo">
+                                                <div class="input-group-prepend">
+                                                    <span id="span1" class="input-group-text"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-calendar2-date"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
+                                                            <path
+                                                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
+                                                            <path
+                                                                d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
+                                                        </svg></span>
+                                                </div>
+                                                <input type="date" class="form-control" id="nuevo9"  name="erc.CAMPO_29" [(ngModel)]="erc.CAMPO_29">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <label id="tipo">30.Relación Albuminuria/Creatinuria: </label>
+                                            <input type="text" id="tipo" class="form-control"  name="erc.CAMPO_30" [(ngModel)]="erc.CAMPO_30">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">30.1.1Fecha de la última Creatinuria:</label>
+                                            <div class="input-group" id="nuevo">
+                                                <div class="input-group-prepend">
+                                                    <span id="span1" class="input-group-text"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-calendar2-date"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
+                                                            <path
+                                                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
+                                                            <path
+                                                                d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
+                                                        </svg></span>
+                                                </div>
+                                                <input type="date" class="form-control" id="nuevo9"  name="erc.CAMPO_30_1" [(ngModel)]="erc.CAMPO_30_1">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xs-4">
+                                            <label id="documento">31.Colesterol total : </label>
+                                            <input type="number" class="form-control" id="documento"  name="erc.CAMPO_31" [(ngModel)]="erc.CAMPO_31">
+                                        </div>
+
+                                        <div class="col-xs-4">
+                                            <label id="documento">31.1Fecha de la último Colesterol total:</label>
+                                            <div class="input-group" id="nuevo">
+                                                <div class="input-group-prepend">
+                                                    <span id="span1" class="input-group-text"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-calendar2-date"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
+                                                            <path
+                                                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
+                                                            <path
+                                                                d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
+                                                        </svg></span>
+                                                </div>
+                                                <input type="date" class="form-control" id="nuevo9"  name="erc.CAMPO_31_1" [(ngModel)]="erc.CAMPO_31_1">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <label id="tipo">32.HDL: </label>
+                                            <input type="text" id="tipo" class="form-control"  name="erc.CAMPO_32" [(ngModel)]="erc.CAMPO_32">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">32.1.Fecha de la último HDL:</label>
+                                            <div class="input-group" id="nuevo">
+                                                <div class="input-group-prepend">
+                                                    <span id="span1" class="input-group-text"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-calendar2-date"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
+                                                            <path
+                                                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
+                                                            <path
+                                                                d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
+                                                        </svg></span>
+                                                </div>
+                                                <input type="date" class="form-control" id="nuevo9"  name="erc.CAMPO_32_1" [(ngModel)]="erc.CAMPO_32_1">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xs-4">
+                                            <label id="documento">33.LDL : </label>
+                                            <input type="number" class="form-control" id="documento"  name="erc.CAMPO_33" [(ngModel)]="erc.CAMPO_33">
+                                        </div>
+
+                                        <div class="col-xs-4">
+                                            <label id="documento">33.1.Fecha del último LDL:</label>
+                                            <div class="input-group" id="nuevo">
+                                                <div class="input-group-prepend">
+                                                    <span id="span1" class="input-group-text"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-calendar2-date"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
+                                                            <path
+                                                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
+                                                            <path
+                                                                d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
+                                                        </svg></span>
+                                                </div>
+                                                <input type="date" class="form-control" id="nuevo9"  name="erc.CAMPO_33_1" [(ngModel)]="erc.CAMPO_33_1">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <label id="tipo">34.PTH: </label>
+                                            <input type="text" id="tipo" class="form-control"  name="erc.CAMPO_34" [(ngModel)]="erc.CAMPO_34">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">34.1.Fecha de la última PTH:</label>
+                                            <div class="input-group" id="nuevo">
+                                                <div class="input-group-prepend">
+                                                    <span id="span1" class="input-group-text"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-calendar2-date"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
+                                                            <path
+                                                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
+                                                            <path
+                                                                d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
+                                                        </svg></span>
+                                                </div>
+                                                <input type="date" class="form-control" id="nuevo9"  name="erc.CAMPO_34_1" [(ngModel)]="erc.CAMPO_34_1">
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+
+
+                    <div class="card">
+                        <div class="card-header align-items-center justify-content-between" id="header">
+                            <label>Tratamiento Actual</label>
+                            <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon"
+                                data-toggle="collapse" data-target="#collapseOne4" id="menu" data-toggle="collapse"
+                                data-target="#collapseOne4" aria-expanded="true" aria-controls="collapseOne4">
+                                <mat-icon>menu</mat-icon>
+                            </button>
+
+                        </div>
+
+                        <div id="collapseOne4" class="collapse show" aria-labelledby="headingOne"
+                            data-parent="#accordion">
+                            <div class="card-body" id="pagina">
+                                <form>
+
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <div id="div-info2">
+                                                <label id="tipo">35.Tasa de filtración glomerular (TFGe): <button
+                                                        mat-icon-button type="button"
+                                                        class="btn btn-outline-secondary mr-2" placement="right"
+                                                        ngbTooltip="según Cockroft-Gault (en adultos) y Swhartz (en menores de 18 años) o FRR estimada mediante el cálculo del Kru, dentro del periodo del reporte.
+                                                    ACLARACION: Sin enfermedad renal y con enfermedad renal estadios 1 y 2 la creatinina debe tener máximo un año de vigencia a la fecha de corte.                            
+                                                    Con enfermedad renal estadios 3, 4 o más se aceptan creatininas hasta de los últimos tres meses antes de la fecha de corte. ">
+                                                        <i class="fas fa-question-circle" id="icono-info"></i>
+                                                    </button></label>
+
+                                            </div>
+                                            <input type="text" class="form-control" id="papellido"  name="erc.CAMPO_35" [(ngModel)]="erc.CAMPO_35">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">36.El usuario recibe Inhibidor de la Enzima
+                                                convertidora de angiotensina (IECA):</label>
+                                            <select name="" class="form-control" id="documento"  name="erc.CAMPO_36" [(ngModel)]="erc.CAMPO_36">
+                                                <option *ngFor='let C45_CAMPO_36 of C45_CAMPO_36'
+                                                    [ngValue]="C45_CAMPO_36.NOMBRE_OPCION"
+                                                    [ngValue]="C45_CAMPO_36.CODIGO_OPCION">
+                                                    {{C45_CAMPO_36.CODIGO_OPCION}}.{{C45_CAMPO_36.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">37.El usuario recibe Antagonista de los receptores de
+                                                angiotensina II (ARA II):</label>
+                                            <select name="" class="form-control" id="documento"  name="erc.CAMPO_37" [(ngModel)]="erc.CAMPO_37">
+                                                <option *ngFor='let C46_CAMPO_37 of C46_CAMPO_37'
+                                                    [ngValue]="C46_CAMPO_37.NOMBRE_OPCION"
+                                                    [ngValue]="C46_CAMPO_37.CODIGO_OPCION">
+                                                    {{C46_CAMPO_37.CODIGO_OPCION}}.{{C46_CAMPO_37.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">38.El usuario tiene diagnóstico de enfermedad renal
+                                                crónica en cualquier de sus estadios.:</label>
+                                            <select name="" class="form-control" id="documento"  name="erc.CAMPO_38" [(ngModel)]="erc.CAMPO_38">
+                                                <option *ngFor='let C47_CAMPO_38 of C47_CAMPO_38'
+                                                    [ngValue]="C47_CAMPO_38.NOMBRE_OPCION"
+                                                    [ngValue]="C47_CAMPO_38.CODIGO_OPCION">
+                                                    {{C47_CAMPO_38.CODIGO_OPCION}}.{{C47_CAMPO_38.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <label id="tipo">39.Estadio de ERC (Enfermedad Renal: Ver las notas finales
+                                                numeral V) :</label>
+                                            <select name="" class="form-control" id="papellido"  name="erc.CAMPO_39" [(ngModel)]="erc.CAMPO_39">
+                                                <option *ngFor='let C48_CAMPO_39 of C48_CAMPO_39'
+                                                    [ngValue]="C48_CAMPO_39.NOMBRE_OPCION"
+                                                    [ngValue]="C48_CAMPO_39.CODIGO_OPCION">
+                                                    {{C48_CAMPO_39.CODIGO_OPCION}}.{{C48_CAMPO_39.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-xs-4">
+                                            <label id="documento">40.Fecha de diagnóstico de ERC estadio 5 (Solo aplica
+                                                si marco la opción 5 de la pregunta anterior):</label>
+                                            <input type="text" class="form-control" id="documento"  name="erc.CAMPO_40" [(ngModel)]="erc.CAMPO_40">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">41.La persona se encuentra en un programa de atención
+                                                de ERC (renoprotección, nefroprotección, protección renal,
+                                                prediálisis)</label>
+                                            <select name="" class="form-control" id="documento"  name="erc.CAMPO_41" [(ngModel)]="erc.CAMPO_41">
+                                                <option *ngFor='let C50_CAMPO_41 of C50_CAMPO_41'
+                                                    [ngValue]="C50_CAMPO_41.NOMBRE_OPCION"
+                                                    [ngValue]="C50_CAMPO_41.CODIGO_OPCION">
+                                                    {{C50_CAMPO_41.CODIGO_OPCION}}.{{C50_CAMPO_41.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">42.TFG a la fecha, en que el usuario inicio la primera
+                                                terapia de reemplazo renal -TRR:</label>
+                                            <input type="text" class="form-control" id="documento"  name="erc.CAMPO_42" [(ngModel)]="erc.CAMPO_42">
+                                        </div>
+                                    </div>
+
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4" style="margin-top: 8px;">
+                                            <label style="top: 0px; font-size: 10px;">43.Modo de Inicio de la Terapia de
+                                                Reemplazo Renal (primera
+                                                TRR):</label>
+                                            <select name="" class="form-control" id="papellido"  name="erc.CAMPO_43" [(ngModel)]="erc.CAMPO_43">
+                                                <option *ngFor='let C52_CAMPO_43 of C52_CAMPO_43'
+                                                    [ngValue]="C52_CAMPO_43.NOMBRE_OPCION"
+                                                    [ngValue]="C52_CAMPO_43.CODIGO_OPCION">
+                                                    {{C52_CAMPO_43.CODIGO_OPCION}}.{{C52_CAMPO_43.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <div id="div-info2">
+                                                <label id="documento">44.Fecha en que se inicio la terapia: <button
+                                                        mat-icon-button type="button"
+                                                        class="btn btn-outline-secondary mr-2" placement="right"
+                                                        ngbTooltip="de reemplazo renal que recibe el usuario en el momento de la fecha de corte. Sí el Trasplante es la terapia reportada, esta Fecha se refiere a la Fecha de trasplante.">
+                                                        <i class="fas fa-question-circle" id="icono-info"></i>
+                                                    </button></label>
+
+                                            </div>
+                                            <div class="input-group" id="nuevo">
+                                                <div class="input-group-prepend">
+                                                    <span id="span1" class="input-group-text"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-calendar2-date"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
+                                                            <path
+                                                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
+                                                            <path
+                                                                d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
+                                                        </svg></span>
+                                                </div>
+                                                <input type="date" class="form-control" id="nuevo9"  name="erc.CAMPO_44" [(ngModel)]="erc.CAMPO_44">
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <div id="div-info2">
+                                                <label id="documento">45.Fecha de Ingreso a la Unidad Renal Actual
+                                                    <button mat-icon-button type="button"
+                                                        class="btn btn-outline-secondary mr-2" placement="right"
+                                                        ngbTooltip=" que le presta el servicio en el momento de la fecha de corte, en cualquier modalidad de terapia dialítica (Unidad Actual).">
+                                                        <i class="fas fa-question-circle" id="icono-info"></i>
+                                                    </button></label>
+
+                                            </div>
+                                            <div class="input-group" id="nuevo">
+                                                <div class="input-group-prepend">
+                                                    <span id="span1" class="input-group-text"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-calendar2-date"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
+                                                            <path
+                                                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
+                                                            <path
+                                                                d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
+                                                        </svg></span>
+                                                </div>
+                                                <input type="date" class="form-control" id="nuevo9"  name="erc.CAMPO_45" [(ngModel)]="erc.CAMPO_45">
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-4" style="margin-top: 7px;">
+                                            <label
+                                                style="top: 0px; font-size: 10px;  margin-left: 20px;">46.Hemodiálisis
+                                                (HD):</label>
+                                            <select name="" class="form-control" id="documento"  name="erc.CAMPO_46" [(ngModel)]="erc.CAMPO_46">
+                                                <option *ngFor='let C55_CAMPO_46 of C55_CAMPO_46'
+                                                    [ngValue]="C55_CAMPO_46.NOMBRE_OPCION"
+                                                    [ngValue]="C55_CAMPO_46.CODIGO_OPCION">
+                                                    {{C55_CAMPO_46.CODIGO_OPCION}}.{{C55_CAMPO_46.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+
+
+                    <div class="card">
+                        <div class="card-header align-items-center justify-content-between" id="header">
+                            <label>Consultas</label>
+                            <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon"
+                                data-toggle="collapse" data-target="#collapseOne5" id="menu" data-toggle="collapse"
+                                data-target="#collapseOne5" aria-expanded="true" aria-controls="collapseOne5">
+                                <mat-icon>menu</mat-icon>
+                            </button>
+
+                        </div>
+
+                        <div id="collapseOne5" class="collapse show" aria-labelledby="headingOne"
+                            data-parent="#accordion">
+                            <div class="card-body" id="pagina">
+                                <form>
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <label id="tipo">47.Dosis de diálisis (Kt/V) single pool:</label>
+                                            <input type="text" class="form-control" id="papellido"  name="erc.CAMPO_47" [(ngModel)]="erc.CAMPO_47">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">48.Costo total de la hemodiálisis HD durante el
+                                                período de reporte:</label>
+                                            <select name="" class="form-control" id="documento"  name="erc.CAMPO_48" [(ngModel)]="erc.CAMPO_48">
+                                                <option *ngFor='let C57_CAMPO_48 of C57_CAMPO_48'
+                                                    [ngValue]="C57_CAMPO_48.NOMBRE_OPCION"
+                                                    [ngValue]="C57_CAMPO_48.CODIGO_OPCION">
+                                                    {{C57_CAMPO_48.CODIGO_OPCION}}.{{C57_CAMPO_48.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">49.Diálisis peritoneal (DP):</label>
+                                            <input type="text" class="form-control" id="documento"  name="erc.CAMPO_49" [(ngModel)]="erc.CAMPO_49">
+                                        </div>
+                                        <div class="col-xs-4" style="margin-top: 2px;">
+                                            <label id="documento">50.Dosis de diálisis (Kt/V) dpd. KTV/dpd: de máximo
+                                                cuatro meses de antigüedad contados a partir de la fecha de
+                                                corte:</label>
+                                            <input type="text" class="form-control" id="documento"  name="erc.CAMPO_50" [(ngModel)]="erc.CAMPO_50">
+                                        </div>
+                                    </div>
+
+
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <label id="tipo">51.Numero de horas de dialisis :</label>
+                                            <input type="text" class="form-control" id="papellido"  name="erc.CAMPO_51" [(ngModel)]="erc.CAMPO_51">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">52.Peritonitis:</label>
+                                            <input type="text" class="form-control" id="documento"  name="erc.CAMPO_52" [(ngModel)]="erc.CAMPO_52">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">53.Costo DP durante el período de reporte.:</label>
+                                            <input type="text" class="form-control" id="documento"  name="erc.CAMPO_53" [(ngModel)]="erc.CAMPO_53">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">54.Vacuna Hepatitis B:</label>
+                                            <select name="" class="form-control" id="documento"  name="erc.CAMPO_54" [(ngModel)]="erc.CAMPO_54">
+                                                <option *ngFor='let C63_CAMPO_54 of C63_CAMPO_54'
+                                                    [ngValue]="C63_CAMPO_54.NOMBRE_OPCION"
+                                                    [ngValue]="C63_CAMPO_54.CODIGO_OPCION">
+                                                    {{C63_CAMPO_54.CODIGO_OPCION}}.{{C63_CAMPO_54.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="card">
+                        <div class="card-header align-items-center justify-content-between" id="header">
+                            <label>Sangrados</label>
+
+                            <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon"
+                                data-toggle="collapse" data-target="#collapseOne6" id="menu" data-toggle="collapse"
+                                data-target="#collapseOne6" aria-expanded="true" aria-controls="collapseOne6">
+                                <mat-icon>menu</mat-icon>
+                            </button>
+
+                        </div>
+                        <div id="collapseOne6" class="collapse show" aria-labelledby="headingOne"
+                            data-parent="#accordion">
+                            <div class="card-body" id="pagina">
+                                <form>
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <label id="tipo">55.Registre la fecha de diagnóstico de la infección por
+                                                Hepatitis B, si el usuario la ha presentado. :</label>
+                                            <input type="text" class="form-control" id="papellido"  name="erc.CAMPO_55" [(ngModel)]="erc.CAMPO_55">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">56.Registre la fecha de diagnóstico de la infección
+                                                por Hepatitis C, si el usuario la ha presentado.:</label>
+                                            <input type="text" class="form-control" id="documento"  name="erc.CAMPO_56" [(ngModel)]="erc.CAMPO_56">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">57.Terapia no Dialítica para ERC estadio 5 (también
+                                                llamada tratamiento médico de nefroproteción):</label>
+                                            <select name="" class="form-control" id="documento"  name="erc.CAMPO_57" [(ngModel)]="erc.CAMPO_57">
+                                                <option *ngFor='let C66_CAMPO_57 of C66_CAMPO_57'
+                                                    [ngValue]="C66_CAMPO_57.NOMBRE_OPCION"
+                                                    [ngValue]="C66_CAMPO_57.CODIGO_OPCION">
+                                                    {{C66_CAMPO_57.CODIGO_OPCION}}.{{C66_CAMPO_57.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-4" style="margin-top: -3px;">
+                                            <label id="documento">58.Costo de la terapia ERC estadio 5 con tratamiento
+                                                médico</label>
+                                            <input type="text" class="form-control" id="documento"  name="erc.CAMPO_58" [(ngModel)]="erc.CAMPO_58">
+                                        </div>
+
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+
+
+
+                    <div class="card">
+                        <div class="card-header align-items-center justify-content-between" id="header">
+                            <label>Laboratorios</label>
+
+                            <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon"
+                                data-toggle="collapse" data-target="#collapseOne7" id="menu" data-toggle="collapse"
+                                data-target="#collapseOne7" aria-expanded="true" aria-controls="collapseOne7">
+                                <mat-icon>menu</mat-icon>
+                            </button>
+                        </div>
+
+                        <div id="collapseOne7" class="collapse show" aria-labelledby="headingOne"
+                            data-parent="#accordion">
+                            <div class="card-body" id="pagina">
+                                <form>
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <div id="div-info2">
+                                                <label id="tipo">59.Hemoglobina. <button mat-icon-button type="button"
+                                                        class="btn btn-outline-secondary mr-2" placement="right"
+                                                        ngbTooltip=" (aplica solo cuando el usuario está en diálisis): Las hemoglobinas deben ser del último trimestre contado a partir de la fecha de corte y sus tomas debieron ser pre-diálisis en personas en hemodiálisis ">
+                                                        <i class="fas fa-question-circle" id="icono-info"></i>
+                                                    </button></label>
+
+                                            </div>
+                                            <input type="text" class="form-control" id="papellido"  name="erc.CAMPO_59" [(ngModel)]="erc.CAMPO_59">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <div id="div-info2">
+                                                <label id="documento">60.Albúmina Sérica <button mat-icon-button
+                                                        type="button" class="btn btn-outline-secondary mr-2"
+                                                        placement="right"
+                                                        ngbTooltip="(aplica solo cuando el usuario está en diálisis): La albúmina debe tener máximo tres meses de antigüedad a partir de la fecha de corte y su toma debió ser pre-diálisis en personas en hemodiálisis. ">
+                                                        <i class="fas fa-question-circle" id="icono-info"></i>
+                                                    </button></label>
+                                            </div>
+                                            <input type="text" class="form-control" id="documento"  name="erc.CAMPO_60" [(ngModel)]="erc.CAMPO_60">
+                                        </div>
+
+                                        <div class="col-xs-4">
+                                            <div id="div-info2">
+                                                <label id="documento">61.Fósforo (P) <button mat-icon-button
+                                                        type="button" class="btn btn-outline-secondary mr-2"
+                                                        placement="right"
+                                                        ngbTooltip=" (aplica solo cuando el usuario está en diálisis). Los niveles séricos de fósforo deben ser del último trimestre contado a partir de la fecha de corte y sus tomas debieron ser pre-diálisis en personas en hemodiálisis.">
+                                                        <i class="fas fa-question-circle" id="icono-info"></i>
+                                                    </button></label>
+                                            </div>
+                                            <input type="text" class="form-control" id="documento"  name="erc.CAMPO_61" [(ngModel)]="erc.CAMPO_61">
+                                        </div>
+
+                                        <div class="col-xs-4">
+                                            <div id="div-info2">
+                                                <label id="documento">62.Última valoración clínica por nefrología
+                                                    <button mat-icon-button type="button"
+                                                        class="btn btn-outline-secondary mr-2" placement="left"
+                                                        ngbTooltip="dentro del periodo de reporte de pacientes con ERC estadio 5 en diálisis o con TMND,en relación con la posibilidad de trasplante renal">
+                                                        <i class="fas fa-question-circle" id="icono-info"></i>
+                                                    </button></label>
+                                            </div>
+                                            <select name="" class="form-control" id="documento"  name="erc.CAMPO_62" [(ngModel)]="erc.CAMPO_62">
+                                                <option *ngFor='let C71_CAMPO_62 of C71_CAMPO_62'
+                                                    [ngValue]="C71_CAMPO_62.NOMBRE_OPCION"
+                                                    [ngValue]="C71_CAMPO_62.CODIGO_OPCION">
+                                                    {{C71_CAMPO_62.CODIGO_OPCION}}.{{C71_CAMPO_62.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+
+
+                                    </div>
+
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <div id="div-info2">
+                                                <label id="tipo">62.1¿Se reportó cáncer activo en los últimos 12
+                                                    meses<button mat-icon-button type="button"
+                                                        class="btn btn-outline-secondary mr-2" placement="right"
+                                                        ngbTooltip="como contraindicación para el transplante renal, en la valoración de nefrología?">
+                                                        <i class="fas fa-question-circle" id="icono-info"></i>
+                                                    </button></label>
+                                            </div>
+                                            <select name="" class="form-control" id="papellido"  name="erc.CAMPO_62_1" [(ngModel)]="erc.CAMPO_62_1">
+                                                <option *ngFor='let C72_CAMPO_62_1 of C72_CAMPO_62_1'
+                                                    [ngValue]="C72_CAMPO_62_1.NOMBRE_OPCION"
+                                                    [ngValue]="C72_CAMPO_62_1.CODIGO_OPCION">
+                                                    {{C72_CAMPO_62_1.CODIGO_OPCION}}.{{C72_CAMPO_62_1.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <div id="div-info2">
+                                                <label id="documento">62.2.¿Se reportó infección crónica o activa
+                                                    <button mat-icon-button type="button"
+                                                        class="btn btn-outline-secondary mr-2" placement="right"
+                                                        ngbTooltip="no tratada o no controlada hasta en los últimos tres meses antes de la fecha de corte, como contraindicación para el transplante renal, en la valoración de nefrología?">
+                                                        <i class="fas fa-question-circle" id="icono-info"></i>
+                                                    </button></label>
+                                            </div>
+
+                                            <select name="" class="form-control" id="documento"  name="erc.CAMPO_62_2" [(ngModel)]="erc.CAMPO_62_2">
+                                                <option *ngFor='let C73_CAMPO_62_2 of C73_CAMPO_62_2'
+                                                    [ngValue]="C73_CAMPO_62_2.NOMBRE_OPCION"
+                                                    [ngValue]="C73_CAMPO_62_2.CODIGO_OPCION">
+                                                    {{C73_CAMPO_62_2.CODIGO_OPCION}}.{{C73_CAMPO_62_2.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <div id="div-info2">
+                                                <label id="documento">62.3¿Se reportó como contraindicación <button
+                                                        mat-icon-button type="button"
+                                                        class="btn btn-outline-secondary mr-2" placement="right"
+                                                        ngbTooltip=" para el transplante renal, en la valoración de nefrología que el paciente presenta esperanza de vida menor o igual a 6 meses?">
+                                                        <i class="fas fa-question-circle" id="icono-info"></i>
+                                                    </button></label>
+                                            </div>
+                                            <select name="" class="form-control" id="documento"  name="erc.CAMPO_62_3" [(ngModel)]="erc.CAMPO_62_3">
+                                                <option *ngFor='let C74_CAMPO_62_3 of C74_CAMPO_62_3'
+                                                    [ngValue]="C74_CAMPO_62_3.NOMBRE_OPCION"
+                                                    [ngValue]="C74_CAMPO_62_3.CODIGO_OPCION">
+                                                    {{C74_CAMPO_62_3.CODIGO_OPCION}}.{{C74_CAMPO_62_3.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <div id="div-info2">
+                                                <label id="documento">62.4¿Se reportó como contraindicación<button
+                                                        mat-icon-button type="button"
+                                                        class="btn btn-outline-secondary mr-2" placement="left"
+                                                        ngbTooltip="para el transplante renal, en la valoración de nefrología que el paciente presenta esperanza de vida menor o igual a 6 meses?">
+                                                        <i class="fas fa-question-circle" id="icono-info"></i>
+                                                    </button></label>
+                                            </div>
+                                            <select name="" class="form-control" id="documento"  name="erc.CAMPO_62_4" [(ngModel)]="erc.CAMPO_62_4">
+                                                <option *ngFor='let C75_CAMPO_62_4 of C75_CAMPO_62_4'
+                                                    [ngValue]="C75_CAMPO_62_4.NOMBRE_OPCION"
+                                                    [ngValue]="C75_CAMPO_62_4.CODIGO_OPCION">
+                                                    {{C75_CAMPO_62_4.CODIGO_OPCION}}.{{C75_CAMPO_62_4.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <div id="div-info2">
+                                                <label id="tipo">62.5¿Se reportó como contraindicación<button
+                                                        mat-icon-button type="button"
+                                                        class="btn btn-outline-secondary mr-2" placement="right"
+                                                        ngbTooltip=" para el transplante renal, en la valoración de nefrología que el paciente presenta potenciales limitaciones al autocuidado y adherencia al tratamiento post trasplante?">
+                                                        <i class="fas fa-question-circle" id="icono-info"></i>
+                                                    </button></label>
+                                            </div>
+                                            <select name="" class="form-control" id="papellido"  name="erc.CAMPO_62_5" [(ngModel)]="erc.CAMPO_62_5">
+                                                <option *ngFor='let C76_CAMPO_62_5 of C76_CAMPO_62_5'
+                                                    [ngValue]="C76_CAMPO_62_5.NOMBRE_OPCION"
+                                                    [ngValue]="C76_CAMPO_62_5.CODIGO_OPCION">
+                                                    {{C76_CAMPO_62_5.CODIGO_OPCION}}.{{C76_CAMPO_62_5.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <div id="div-info2">
+                                                <label id="documento">62.6.¿Se reportó enfermedad cardiaca <button
+                                                        mat-icon-button type="button"
+                                                        class="btn btn-outline-secondary mr-2" placement="right"
+                                                        ngbTooltip="cerebrovascular o vascular periférica, como contraindicación para el transplante renal, en la valoración de nefrología? ">
+                                                        <i class="fas fa-question-circle" id="icono-info"></i>
+                                                    </button></label>
+                                            </div>
+
+                                            <select name="" class="form-control" id="documento"  name="erc.CAMPO_62_6" [(ngModel)]="erc.CAMPO_62_6">
+                                                <option *ngFor='let C77_CAMPO_62_6 of C77_CAMPO_62_6'
+                                                    [ngValue]="C77_CAMPO_62_6.NOMBRE_OPCION"
+                                                    [ngValue]="C77_CAMPO_62_6.CODIGO_OPCION">
+                                                    {{C77_CAMPO_62_6.CODIGO_OPCION}}.{{C77_CAMPO_62_6.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <div id="div-info2">
+                                                <label id="documento">62.7 ¿Se reportó infección por el VIH <button
+                                                        mat-icon-button type="button"
+                                                        class="btn btn-outline-secondary mr-2" placement="right"
+                                                        ngbTooltip="como contraindicación para el transplante renal, en la valoración de nefrología?">
+                                                        <i class="fas fa-question-circle" id="icono-info"></i>
+                                                    </button></label>
+                                            </div>
+                                            <select name="" class="form-control" id="documento"  name="erc.CAMPO_62_7" [(ngModel)]="erc.CAMPO_62_7">
+                                                <option *ngFor='let C78_CAMPO_62_7 of C78_CAMPO_62_7'
+                                                    [ngValue]="C78_CAMPO_62_7.NOMBRE_OPCION"
+                                                    [ngValue]="C78_CAMPO_62_7.CODIGO_OPCION">
+                                                    {{C78_CAMPO_62_7.CODIGO_OPCION}}.{{C78_CAMPO_62_7.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <div id="div-info2">
+                                                <label id="documento">62.8 ¿Se reportó infección por el VHC<button
+                                                        mat-icon-button type="button"
+                                                        class="btn btn-outline-secondary mr-2" placement="left"
+                                                        ngbTooltip="como contraindicación para el transplante renal, en la valoración de nefrología?">
+                                                        <i class="fas fa-question-circle" id="icono-info"></i>
+                                                    </button></label>
+                                            </div>
+                                            <select name="" class="form-control" id="documento"  name="erc.CAMPO_62_8" [(ngModel)]="erc.CAMPO_62_8">
+                                                <option *ngFor='let C79_CAMPO_62_8 of C79_CAMPO_62_8'
+                                                    [ngValue]="C79_CAMPO_62_8.NOMBRE_OPCION"
+                                                    [ngValue]="C79_CAMPO_62_8.CODIGO_OPCION">
+                                                    {{C79_CAMPO_62_8.CODIGO_OPCION}}.{{C79_CAMPO_62_8.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <div id="div-info2">
+                                                <label id="tipo">62.9 ¿Se reportó como contraindicación<button
+                                                        mat-icon-button type="button"
+                                                        class="btn btn-outline-secondary mr-2" placement="right"
+                                                        ngbTooltip="para el transplante renal, en la valoración de nefrología, que el paciente presenta enfermedad inmunológica activa los últimos tres meses antes de la fecha de corte?">
+                                                        <i class="fas fa-question-circle" id="icono-info"></i>
+                                                    </button></label>
+                                            </div>
+                                            <select name="" class="form-control" id="papellido"  name="erc.CAMPO_62_9" [(ngModel)]="erc.CAMPO_62_9">
+                                                <option *ngFor='let C80_CAMPO_62_9 of C80_CAMPO_62_9'
+                                                    [ngValue]="C80_CAMPO_62_9.NOMBRE_OPCION"
+                                                    [ngValue]="C80_CAMPO_62_9.CODIGO_OPCION">
+                                                    {{C80_CAMPO_62_9.CODIGO_OPCION}}.{{C80_CAMPO_62_9.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <div id="div-info2">
+                                                <label id="documento">62.10.¿Se reportó como contraindicación <button
+                                                        mat-icon-button type="button"
+                                                        class="btn btn-outline-secondary mr-2" placement="right"
+                                                        ngbTooltip=" para el transplante renal, en la valoración de nefrología, que el paciente presenta enfermedad pulmonar crónica? ">
+                                                        <i class="fas fa-question-circle" id="icono-info"></i>
+                                                    </button></label>
+                                            </div>
+
+                                            <select name="" class="form-control" id="documento"  name="erc.CAMPO_62_10" [(ngModel)]="erc.CAMPO_62_10">
+                                                <option *ngFor='let C81_CAMPO_62_10 of C81_CAMPO_62_10'
+                                                    [ngValue]="C81_CAMPO_62_10.NOMBRE_OPCION"
+                                                    [ngValue]="C81_CAMPO_62_10.CODIGO_OPCION">
+                                                    {{C81_CAMPO_62_10.CODIGO_OPCION}}.{{C81_CAMPO_62_10.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <div id="div-info2">
+                                                <label id="documento">62.11 ¿Se reportó como contraindicación<button
+                                                        mat-icon-button type="button"
+                                                        class="btn btn-outline-secondary mr-2" placement="right"
+                                                        ngbTooltip="para el transplante renal, en la valoración de nefrología, que el paciente presenta otras enfermedades crónicas?">
+                                                        <i class="fas fa-question-circle" id="icono-info"></i>
+                                                    </button></label>
+                                            </div>
+                                            <select name="" class="form-control" id="documento"  name="erc.CAMPO_62_11" [(ngModel)]="erc.CAMPO_62_11">
+                                                <option *ngFor='let C82_CAMPO_62_11 of C82_CAMPO_62_11'
+                                                    [ngValue]="C82_CAMPO_62_11.NOMBRE_OPCION"
+                                                    [ngValue]="C82_CAMPO_62_11.CODIGO_OPCION">
+                                                    {{C82_CAMPO_62_11.CODIGO_OPCION}}.{{C82_CAMPO_62_11.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-4" style="margin-top: -2px;">
+                                            <label id="documento">63Fecha de Ingreso a lista de espera para la
+                                                realización del trasplante:</label>
+                                            <div class="input-group" id="nuevo">
+                                                <div class="input-group-prepend">
+                                                    <span id="span1" class="input-group-text"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-calendar2-date"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
+                                                            <path
+                                                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
+                                                            <path
+                                                                d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
+                                                        </svg></span>
+                                                </div>
+                                                <input type="date" class="form-control" id="nuevo9"  name="erc.CAMPO_63" [(ngModel)]="erc.CAMPO_63">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+
+
+
+                    <div class="card">
+                        <div class="card-header align-items-center justify-content-between" id="header">
+                            <label>Compromiso Articular</label>
+                            <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon"
+                                data-toggle="collapse" data-target="#collapseOne8" id="menu" data-toggle="collapse"
+                                data-target="#collapseOne8" aria-expanded="true" aria-controls="collapseOne8">
+                                <mat-icon>menu</mat-icon>
+                            </button>
+
+                        </div>
+                        <div id="collapseOne8" class="collapse show" aria-labelledby="headingOne"
+                            data-parent="#accordion">
+                            <div class="card-body" id="pagina">
+                                <form>
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <label id="tipo">63.1.Registre el código de la IPS donde está en lista de
+                                                espera:</label>
+                                            <input type="text" class="form-control" id="papellido"  name="erc.CAMPO_63_1" [(ngModel)]="erc.CAMPO_63_1">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">64.¿El usuario ha recibido trasplante renal?:</label>
+                                            <select name="" class="form-control" id="documento"  name="erc.CAMPO_64" [(ngModel)]="erc.CAMPO_64">
+                                                <option *ngFor='let C85_CAMPO_64 of C85_CAMPO_64'
+                                                    [ngValue]="C85_CAMPO_64.NOMBRE_OPCION"
+                                                    [ngValue]="C85_CAMPO_64.CODIGO_OPCION">
+                                                    {{C85_CAMPO_64.CODIGO_OPCION}}.{{C85_CAMPO_64.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">65.Código de la EPS que realizó el trasplante</label>
+                                            <input type="text" class="form-control" id="documento"  name="erc.CAMPO_65" [(ngModel)]="erc.CAMPO_65">
+                                        </div>
+
+                                        <div class="col-xs-4">
+                                            <label id="documento">67.Tipo de donante</label>
+                                            <select name="" class="form-control" id="documento"  name="erc.CAMPO_67" [(ngModel)]="erc.CAMPO_67">
+                                                <option *ngFor='let C88_CAMPO_67 of C88_CAMPO_67'
+                                                    [ngValue]="C88_CAMPO_67.NOMBRE_OPCION"
+                                                    [ngValue]="C88_CAMPO_67.CODIGO_OPCION">
+                                                    {{C88_CAMPO_67.CODIGO_OPCION}}.{{C88_CAMPO_67.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4" style="margin-top: -3px;">
+                                            <label id="tipo">68.Costo del trasplante:</label>
+                                            <input type="text" class="form-control" id="papellido"  name="erc.CAMPO_68" [(ngModel)]="erc.CAMPO_68">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">66.Código de la IPS o Grupo de trasplante, que realizó
+                                                el último trasplante renal:</label>
+                                            <input type="text" class="form-control" id="documento"  name="erc.CAMPO_66" [(ngModel)]="erc.CAMPO_66">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">69.¿El usuario ha presentado alguna complicación
+                                                relacionada con el trasplante renal?</label>
+                                                <select name="" class="form-control" id="documento"  name="erc.CAMPO_69" [(ngModel)]="erc.CAMPO_69">
+                                                    <option *ngFor='let C90_CAMPO_69 of C90_CAMPO_69'
+                                                        [ngValue]="C90_CAMPO_69.NOMBRE_OPCION"
+                                                        [ngValue]="C90_CAMPO_69.CODIGO_OPCION">
+                                                        {{C90_CAMPO_69.CODIGO_OPCION}}.{{C90_CAMPO_69.NOMBRE_OPCION}}
+                                                    </option>
+                                                </select>
+                                        </div>
+
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+
+
+                    <div class="card">
+                        <div class="card-header align-items-center justify-content-between" id="header">
+                            <label>Infecciosas</label>
+                            <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon"
+                                data-toggle="collapse" data-target="#collapseOne9" id="menu" data-toggle="collapse"
+                                data-target="#collapseOne9" aria-expanded="true" aria-controls="collapseOne9">
+                                <mat-icon>menu</mat-icon>
+                            </button>
+
+                        </div>
+                        <div id="collapseOne9" class="collapse show" aria-labelledby="headingOne"
+                            data-parent="#accordion">
+
+                            <div class="card-body" id="pagina">
+                                <form>
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <div class="col-xs-4">
+                                                <label id="tipo">69.1.Fecha de diagnóstico si ha presentado infección
+                                                    por Citomegalovirus:</label>
+
+                                                <div class="input-group" id="nuevo1">
+                                                    <div class="input-group-prepend">
+                                                        <span id="span2" class="input-group-text"><svg
+                                                                xmlns="http://www.w3.org/2000/svg" width="16"
+                                                                height="16" fill="currentColor"
+                                                                class="bi bi-calendar2-date" viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
+                                                                <path
+                                                                    d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
+                                                                <path
+                                                                    d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
+                                                            </svg></span>
+                                                    </div>
+                                                    <input type="date" class="form-control" id="fechaInicioS1"  name="erc.CAMPO_69_1" [(ngModel)]="erc.CAMPO_69_1">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xs-4">
+                                            <label id="documento">69.2Fecha de diagnóstico si ha presentado infección
+                                                por hongos:</label>
+                                            <div class="input-group" id="nuevo">
+                                                <div class="input-group-prepend">
+                                                    <span id="span1" class="input-group-text"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-calendar2-date"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
+                                                            <path
+                                                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
+                                                            <path
+                                                                d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
+                                                        </svg></span>
+                                                </div>
+                                                <input type="date" class="form-control" id="nuevo9"  name="erc.CAMPO_69_2" [(ngModel)]="erc.CAMPO_69_2">
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-xs-4">
+                                            <label id="documento">69.3Fecha de diagnóstico si ha presentado infección
+                                                por tuberculosis:</label>
+                                            <div class="input-group" id="nuevo">
+                                                <div class="input-group-prepend">
+                                                    <span id="span1" class="input-group-text"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-calendar2-date"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
+                                                            <path
+                                                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
+                                                            <path
+                                                                d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
+                                                        </svg></span>
+                                                </div>
+                                                <input type="date" class="form-control" id="nuevo9"  name="erc.CAMPO_69_3" [(ngModel)]="erc.CAMPO_69_3">
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-xs-4">
+                                            <label id="documento">69.4 Fecha de diagnóstico si ha presentado alguna
+                                                complicación vascular:</label>
+                                            <div class="input-group" id="nuevo">
+                                                <div class="input-group-prepend">
+                                                    <span id="span1" class="input-group-text"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-calendar2-date"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
+                                                            <path
+                                                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
+                                                            <path
+                                                                d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
+                                                        </svg></span>
+                                                </div>
+                                                <input type="date" class="form-control" id="nuevo9"  name="erc.CAMPO_69_4" [(ngModel)]="erc.CAMPO_69_4">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <div class="col-xs-4">
+                                                <label id="tipo">69.5.Fecha de diagnóstico si ha presentado alguna
+                                                    complicación urológica:</label>
+
+                                                <div class="input-group" id="nuevo1">
+                                                    <div class="input-group-prepend">
+                                                        <span id="span2" class="input-group-text"><svg
+                                                                xmlns="http://www.w3.org/2000/svg" width="16"
+                                                                height="16" fill="currentColor"
+                                                                class="bi bi-calendar2-date" viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
+                                                                <path
+                                                                    d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
+                                                                <path
+                                                                    d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
+                                                            </svg></span>
+                                                    </div>
+                                                    <input type="date" class="form-control" id="fechaInicioS1"  name="erc.CAMPO_69_5" [(ngModel)]="erc.CAMPO_69_5">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xs-4">
+                                            <label id="documento">69.6Fecha de diagnóstico si ha presentado alguna
+                                                complicación herida quirúrgica:</label>
+                                            <div class="input-group" id="nuevo">
+                                                <div class="input-group-prepend">
+                                                    <span id="span1" class="input-group-text"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-calendar2-date"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
+                                                            <path
+                                                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
+                                                            <path
+                                                                d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
+                                                        </svg></span>
+                                                </div>
+                                                <input type="date" class="form-control" id="nuevo9"  name="erc.CAMPO_69_6" [(ngModel)]="erc.CAMPO_69_6">
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-xs-4" style="margin-top: -3px;">
+                                            <label id="documento">69.7 Fecha del primer diagnóstico de cáncer:</label>
+                                            <div class="input-group" id="nuevo">
+                                                <div class="input-group-prepend">
+                                                    <span id="span1" class="input-group-text"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-calendar2-date"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
+                                                            <path
+                                                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
+                                                            <path
+                                                                d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
+                                                        </svg></span>
+                                                </div>
+                                                <input type="date" class="form-control" id="nuevo9"  name="erc.CAMPO_69_7" [(ngModel)]="erc.CAMPO_69_7">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+
+
+                    <div class="card">
+                        <div class="card-header align-items-center justify-content-between" id="header">
+                            <label>Costos Tratamiento</label>
+
+                            <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon"
+                                data-toggle="collapse" data-target="#collapseOne10" id="menu" data-toggle="collapse"
+                                data-target="#collapseOne10" aria-expanded="true" aria-controls="collapseOne10">
+                                <mat-icon>menu</mat-icon>
+                            </button>
+                        </div>
+
+                        <div id="collapseOne10" class="collapse show" aria-labelledby="headingOne"
+                            data-parent="#accordion">
+                            <div class="card-body" id="pagina">
+                                <form>
+
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <label id="tipo">70.Cuantos médicamentos inmunosupresores se formularon para
+                                                el manejo en este último corte: </label>
+                                            <input type="text" class="form-control" id="papellido"  name="erc.CAMPO_70" [(ngModel)]="erc.CAMPO_70">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">70.1En algún momento, desde el último reporte hasta el
+                                                reporte actual ha recibido metilprednisolona</label>
+                                            <select name="" class="form-control" id="documento"  name="erc.CAMPO_70_1" [(ngModel)]="erc.CAMPO_70_1">
+                                                <option *ngFor='let C99_CAMPO_70_1 of C99_CAMPO_70_1'
+                                                    [ngValue]="C99_CAMPO_70_1.NOMBRE_OPCION"
+                                                    [ngValue]="C99_CAMPO_70_1.CODIGO_OPCION">
+                                                    {{C99_CAMPO_70_1.CODIGO_OPCION}}.{{C99_CAMPO_70_1.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">70.2 En algún momento, desde el último reporte hasta
+                                                el reporte actual ha recibido azatioprina</label>
+                                            <select name="" class="form-control" id="documento"  name="erc.CAMPO_70_2" [(ngModel)]="erc.CAMPO_70_2">
+                                                <option *ngFor='let C100_CAMPO_70_2 of C100_CAMPO_70_2'
+                                                    [ngValue]="C100_CAMPO_70_2.NOMBRE_OPCION"
+                                                    [ngValue]="C100_CAMPO_70_2.CODIGO_OPCION">
+                                                    {{C100_CAMPO_70_2.CODIGO_OPCION}}.{{C100_CAMPO_70_2.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">70.3 En algún momento, desde el último reporte hasta el
+                                                reporte actual ha recibido ciclosporina</label>
+                                            <select name="" class="form-control" id="documento"  name="erc.CAMPO_70_3" [(ngModel)]="erc.CAMPO_70_3">
+                                                <option *ngFor='let C101_CAMPO_70_3 of C101_CAMPO_70_3'
+                                                    [ngValue]="C101_CAMPO_70_3.NOMBRE_OPCION"
+                                                    [ngValue]="C101_CAMPO_70_3.CODIGO_OPCION">
+                                                    {{C101_CAMPO_70_3.CODIGO_OPCION}}.{{C101_CAMPO_70_3.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <label id="tipo">70.4En algún momento, desde el último reporte hasta el
+                                                reporte actual ha recibido micofenolato</label>
+                                            <select name="" class="form-control" id="papellido"  name="erc.CAMPO_70_4" [(ngModel)]="erc.CAMPO_70_4">
+                                                <option *ngFor='let C102_CAMPO_70_4 of C102_CAMPO_70_4'
+                                                    [ngValue]="C102_CAMPO_70_4.NOMBRE_OPCION"
+                                                    [ngValue]="C102_CAMPO_70_4.CODIGO_OPCION">
+                                                    {{C102_CAMPO_70_4.CODIGO_OPCION}}.{{C102_CAMPO_70_4.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">70.5 En algún momento, desde el último reporte hasta
+                                                el reporte actual ha recibido tacrolimus.</label>
+
+                                            <select name="" class="form-control" id="documento"  name="erc.CAMPO_70_5" [(ngModel)]="erc.CAMPO_70_5">
+                                                <option *ngFor='let C103_CAMPO_70_5 of C103_CAMPO_70_5'
+                                                    [ngValue]="C103_CAMPO_70_5.NOMBRE_OPCION"
+                                                    [ngValue]="C103_CAMPO_70_5.CODIGO_OPCION">
+                                                    {{C103_CAMPO_70_5.CODIGO_OPCION}}.{{C103_CAMPO_70_5.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">70.6 En algún momento, desde el último reporte hasta
+                                                el reporte actual ha recibido prednisona</label>
+
+                                            <select name="" class="form-control" id="documento"  name="erc.CAMPO_70_6" [(ngModel)]="erc.CAMPO_70_6">
+                                                <option *ngFor='let C104_CAMPO_70_6 of C104_CAMPO_70_6'
+                                                    [ngValue]="C104_CAMPO_70_6.NOMBRE_OPCION"
+                                                    [ngValue]="C104_CAMPO_70_6.CODIGO_OPCION">
+                                                    {{C104_CAMPO_70_6.CODIGO_OPCION}}.{{C104_CAMPO_70_6.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-4" style="margin-top: 3px;">
+                                            <div id="div-info2">
+                                                <label id="documento" style="display: flex !important;">70.7.En el
+                                                    periodo del reporte, el paciente ha recibido para el manejo de
+                                                    trasplante renal <button mat-icon-button type="button"
+                                                        class="btn btn-outline-secondary mr-2" placement="left"
+                                                        ngbTooltip="medicamentos inmunosupresores no incluidos en las variables 70.1 a 70.6 o no incluidos en el plan de beneficios (medicamento 1)">
+                                                        <i class="fas fa-question-circle" id="icono-info"
+                                                            style="margin-top: -15px !important;"></i>
+                                                    </button></label>
+                                            </div>
+                                            <input type="text" class="form-control" id="documento"  name="erc.CAMPO_70_7" [(ngModel)]="erc.CAMPO_70_7">
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <div id="div-info2">
+                                                <label id="tipo" style="display: flex !important;" >70.8.En el periodo del reporte, el paciente ha recibido para el manejo de trasplante rena. <button mat-icon-button type="button"
+                                                        class="btn btn-outline-secondary mr-2" placement="right"
+                                                        ngbTooltip=" medicamentos inmunosupresores no incluidos en las variables 70.1 a 70.6 o no incluidos en el plan de beneficios (medicamento 2) ">
+                                                        <i class="fas fa-question-circle" id="icono-info"    style="margin-top: -15px !important;"></i>
+                                                    </button></label>
+
+                                            </div>
+                                            <input type="text" class="form-control" id="papellido"  name="erc.CAMPO_70_8" [(ngModel)]="erc.CAMPO_70_8">
+                                        </div>
+
+                                        <div class="col-xs-4">
+                                            <div id="div-info2">
+                                                <label id="documento" style="display: flex !important;">70.9.En el periodo del reporte, el paciente ha recibido para el manejo de trasplante renal <button mat-icon-button type="button"
+                                                        class="btn btn-outline-secondary mr-2" placement="left"
+                                                        ngbTooltip="medicamentos inmunosupresores no incluidos en las variables 70.1 a 70.6 o no incluidos en el plan de beneficios (medicamento 3)">
+                                                        <i class="fas fa-question-circle" id="icono-info"
+                                                            style="margin-top: -15px !important;"></i>
+                                                    </button></label>
+                                            </div>
+                                            <input type="text" class="form-control" id="documento"  name="erc.CAMPO_70_9" [(ngModel)]="erc.CAMPO_70_9">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <div id="div-info2">
+                                                <label id="documento" style="display: flex !important;">71.¿Cuantos episodios de rechazo agudo en los últimos 12 meses al trasplante
+                                                     <button mat-icon-button type="button"
+                                                        class="btn btn-outline-secondary mr-2" placement="left"
+                                                        ngbTooltip="confirmado por biopsia, ha presentado el usuario?">
+                                                        <i class="fas fa-question-circle" id="icono-info"
+                                                            style="margin-top: -15px !important;"></i>
+                                                    </button></label>
+                                            </div>
+                                            <input type="text" class="form-control" id="documento"  name="erc.CAMPO_71" [(ngModel)]="erc.CAMPO_71">
+                                        </div>
+                                    </div>
+                                  
+                                  
+                                  
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+
+
+                    <div class="card">
+                        <div class="card-header align-items-center justify-content-between" id="header">
+                            <label>Novedades Administrativas</label>
+                            <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon"
+                                data-toggle="collapse" data-target="#collapseOne11" id="menu" data-toggle="collapse"
+                                data-target="#collapseOne11" aria-expanded="true" aria-controls="collapseOne11">
+                                <mat-icon>menu</mat-icon>
+                            </button>
+
+                        </div>
+                        <div id="collapseOne11" class="collapse show" aria-labelledby="headingOne"
+                            data-parent="#accordion">
+
+                            <div class="card-body" id="pagina">
+                                <form>
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <div class="col-xs-4">
+                                                <label id="tipo">72.Fecha del primer rechazo del injerto:</label>
+
+                                                <div class="input-group" id="nuevo1">
+                                                    <div class="input-group-prepend">
+                                                        <span id="span2" class="input-group-text"><svg
+                                                                xmlns="http://www.w3.org/2000/svg" width="16"
+                                                                height="16" fill="currentColor"
+                                                                class="bi bi-calendar2-date" viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
+                                                                <path
+                                                                    d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
+                                                                <path
+                                                                    d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
+                                                            </svg></span>
+                                                    </div>
+                                                    <input type="date" class="form-control" id="fechaInicioS1"  name="erc.CAMPO_72" [(ngModel)]="erc.CAMPO_72">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">73 Fecha de retorno a diálisis:</label>
+                                            <div class="input-group" id="nuevo">
+                                                <div class="input-group-prepend">
+                                                    <span id="span1" class="input-group-text"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-calendar2-date"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
+                                                            <path
+                                                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
+                                                            <path
+                                                                d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
+                                                        </svg></span>
+                                                </div>
+                                                <input type="date" class="form-control" id="nuevo9"  name="erc.CAMPO_73" [(ngModel)]="erc.CAMPO_73">
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">74.Número de trasplantes renales que ha
+                                                recibido:</label>
+                                            <input type="text" class="form-control" id="documento"  name="erc.CAMPO_74" [(ngModel)]="erc.CAMPO_74">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">75.Costo de la terapia postrasplanteS:</label>
+                                            <input type="text" class="form-control" id="documento"  name="erc.CAMPO_75" [(ngModel)]="erc.CAMPO_75">
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <label id="tipo">76.Tiempo de prestación de servicios</label>
+                                            <input type="text" class="form-control" id="papellido"  name="erc.CAMPO_76" [(ngModel)]="erc.CAMPO_76">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">77. Costo Total:</label>
+                                            <input type="text" class="form-control" id="documento"  name="erc.CAMPO_77" [(ngModel)]="erc.CAMPO_77">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">78. Código de la EPS de origen:</label>
+                                            <input type="text" class="form-control" id="documento"  name="erc.CAMPO_78" [(ngModel)]="erc.CAMPO_78">
+                                        </div>
+
+                                        <div class="col-xs-4"> 
+                                            <label id="documento">79.Novedad con respecto al reporte anterior:</label>
+
+                                            <select name="" class="form-control" id="documento"  name="erc.CAMPO_79" [(ngModel)]="erc.CAMPO_79">
+                                                <option *ngFor='let C116_CAMPO_79 of C116_CAMPO_79'
+                                                    [ngValue]="C116_CAMPO_79.NOMBRE_OPCION"
+                                                    [ngValue]="C116_CAMPO_79.CODIGO_OPCION"> 
+                                                    {{C116_CAMPO_79.CODIGO_OPCION}}.{{C116_CAMPO_79.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="input-group mb-3">
+                                        <div class="col-xs-4">
+                                            <label id="tipo">80. Causa de Muerte:</label>
+                                            <select name="" class="form-control" id="tipo" name="erc.CAMPO_80"
+                                                [(ngModel)]="erc.CAMPO_80">
+                                                <option *ngFor='let C117_CAMPO_80 of C117_CAMPO_80'
+                                                    [ngValue]="C117_CAMPO_80.NOMBRE_OPCION"
+                                                    [ngValue]="C117_CAMPO_80.CODIGO_OPCION">
+                                                    {{C117_CAMPO_80.CODIGO_OPCION}}.{{C117_CAMPO_80.NOMBRE_OPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label id="documento">80.1 Fecha de muerte:</label>
+                                            <div class="input-group" id="nuevo">
+                                                <div class="input-group-prepend">
+                                                    <span id="span1" class="input-group-text"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-calendar2-date"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
+                                                            <path
+                                                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
+                                                            <path
+                                                                d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
+                                                        </svg></span>
+                                                </div>
+                                                <input type="date" class="form-control" id="nuevo9"  name="erc.CAMPO_80_1" [(ngModel)]="erc.CAMPO_80_1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="y-card-footer">
+        <div class="card-foother align-items-center justify-content-between">
+            <button type="button" id="button" class="btn btn-secondary" (click)="guardarDatos()"> <i class="fas fa-save"></i> Guardar</button>
+            <button type="button" id="button" class="btn btn-primary"> <i class="fas fa-file-import"></i>
+                Soporte</button>
+        </div>
+    </div>
+</div>
+
+<!-- <ng-template #content let-c="close" let-d="dismiss" id="pagina">
+    <div class="modal-header" id="soporte">
+      <h4 class="modal-title" id="modal-basic-title">Carga de soportes </h4>
+      <button type="button" id="cerrar" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="row">
+        <div class="col-md-6">
+          <input type="text" class="form-control">
+        </div>
+        <div class="col-md-6">
+          <input type="file" class="form-control">
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-6">
+          <input type="text" class="form-control">
+        </div>
+        <div class="col-md-6">
+          <input type="file" class="form-control">
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="c('Save click')"> Guardar</button>
+    </div>
+  </ng-template> -->

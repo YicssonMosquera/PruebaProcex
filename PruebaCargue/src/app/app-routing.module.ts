@@ -10,7 +10,11 @@ import { HemofiliaSoportesComponent } from './components/hemofilia-soportes/hemo
 import { CargarHemofiliaComponent } from './components/cargar-hemofilia/cargar-hemofilia.component';
 import { CuentaCancerComponent } from './components/cuenta-cancer/cuenta-cancer.component';
 import {CuentaCancerListarComponent} from './components/cuenta-cancer-listar/cuenta-cancer-listar.component';
-import {CuentaCancerActualizarComponent} from './components/cuenta-cancer-actualizar/cuenta-cancer-actualizar.component'
+import {CuentaCancerActualizarComponent} from './components/cuenta-cancer-actualizar/cuenta-cancer-actualizar.component';
+import {CuentaErcComponent} from './components/cuenta-erc/cuenta-erc.component';
+import {CuentaErcListarComponent} from './components/cuenta-erc-listar/cuenta-erc-listar.component'
+import {CuentaErcEditComponent} from './components/cuenta-erc-edit/cuenta-erc-edit.component'
+
 
 const routes: Routes = [
 
@@ -24,6 +28,9 @@ const routes: Routes = [
   {path:  'Cancer-frm',component:CuentaCancerComponent,canActivate:[AuthGuard]},
   {path:  'Cancer-listar',component:CuentaCancerListarComponent,canActivate:[AuthGuard]},
   {path:  'Cancer-edit/:cc',component:CuentaCancerActualizarComponent,canActivate:[AuthGuard]},
+  {path:  'Erc-frm',component:CuentaErcComponent,canActivate:[AuthGuard]},
+  {path:  'Erc-listar',component:CuentaErcListarComponent,canActivate:[AuthGuard]},
+  {path:  'Erc-edit/:cc',component:CuentaErcEditComponent,canActivate:[AuthGuard]},
   {path:  'Login',component:LoginComponent},
 ];
 
