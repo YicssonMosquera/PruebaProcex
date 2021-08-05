@@ -267,6 +267,7 @@ export class CargarHemofiliaComponent implements OnInit {
 
   }
 
+
   cosnultarNombreArchivo() {
     this.hemofiliaservice.consultarNombreArchivo().subscribe(res => {
       this.nombreArchivo = res;

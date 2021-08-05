@@ -293,8 +293,6 @@ class LogicaDBProcesohemofilia {
     public static async consultarArchivoCargado(ID_PROCESO_HEMOFILIA){
         const obHemofilia = new DBProcesohemofilia()
         const archvioCargado = await obHemofilia.consultarUltimoArchivoCargado(ID_PROCESO_HEMOFILIA);
-        console.log('-----------------------------------------------------------------')
-        console.log(archvioCargado)
         return archvioCargado;
     }
 }

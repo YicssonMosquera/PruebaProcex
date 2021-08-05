@@ -61,10 +61,10 @@ export class CuentaCancerListarComponent implements OnInit {
       console.log(this.opcion)
       if (this.opcion.length > 0) {
         this.ngxSpinnerService.stop();
-        this.tabs.crearTab('Registro', 'Cancer-edit/'+CC);
+        this.tabs.crearTab('Artitis-frm ', 'Artritis-edit/'+CC);
       } else {
         this.ngxSpinnerService.stop();
-        this.tabs.crearTab('Registro', 'Cancer-frm');
+        this.tabs.crearTab('Artitis-frm', 'Artritis-frm');
       }
 
     })
@@ -92,7 +92,7 @@ export class CuentaCancerListarComponent implements OnInit {
   }
 
   formularioNuevo(){
-    this.tabs.crearTab('Registro', 'Cancer-frm');
+    this.tabs.crearTab('Artitis-frm', 'Artritis-frm');
   }
 
 }

@@ -23,7 +23,8 @@
                     <th style="width:100px;background-color: #02adb5e0; color: white;">Primer apellido</th>
                     <th style="width:80px;background-color: #02adb5e0; color: white;">Segundo apellido</th>
                     <th style="width:80px;background-color: #02adb5e0; color: white;">Fecha nacimiento</th>
-                    <th style="width:80px;background-color: #02adb5e0; color: white;">Sexo</th>
+                    <th style="width:80px;background-color: #02adb5e0; color: white;">Sexo <i
+                        class="fas fa-filter" style="cursor: pointer;" (click)="sexo1(content4)"></i></th>
                 </tr>
             </ng-template>
             <ng-template pTemplate="body" let-data>
@@ -52,8 +53,8 @@
         <form>
             <div class="row">
                 <div class="col-md-12">
-                    <input type="text" class="form-control" name="primerApellido" [(ngModel)]="primerApellido"
-                        placeholder="Tipo documento">
+                    <input type="text" class="form-control" name="primerNombre" [(ngModel)]="primerNombre"
+                        placeholder="Primer nombre">
                 </div>
             </div>
         </form>
@@ -75,11 +76,11 @@
                     <select name="" class="form-control" id="tipo"
                     name="tipoDocumento" [(ngModel)]="tipoDocumento">
                     <option value=""></option>
-                    <!-- <option *ngFor='let identificacion of identificacion'
-                        [ngValue]="identificacion.NOMBRE_OPCION"
-                        [ngValue]="identificacion.CODIGO_OPCION">
-                        {{identificacion.CODIGO_OPCION}}.{{identificacion.NOMBRE_OPCION}}
-                    </option> -->
+                    <option *ngFor='let C4_CAMPO_5 of C4_CAMPO_5'
+                        [ngValue]="C4_CAMPO_5.NOMBRE_OPCION"
+                        [ngValue]="C4_CAMPO_5.CODIGO_OPCION">
+                        {{C4_CAMPO_5.CODIGO_OPCION}}.{{C4_CAMPO_5.NOMBRE_OPCION}}
+                    </option>
                 </select>
                    
                 </div>
@@ -122,9 +123,11 @@
                 <div class="col-md-12">
                     <select name="" id="" class="form-control" name="sexo"
                         [(ngModel)]="sexo">
-                        <option value="1">Sin soportes</option>
-                        <option value="2">Soportes incompletos</option>
-                        <option value="3">Soportes completos</option>
+                        <option *ngFor='let C7_CAMPO_8 of C7_CAMPO_8'
+                        [ngValue]="C7_CAMPO_8.NOMBRE_OPCION"
+                        [ngValue]="C7_CAMPO_8.CODIGO_OPCION">
+                        {{C7_CAMPO_8.CODIGO_OPCION}}.{{C7_CAMPO_8.NOMBRE_OPCION}}
+                    </option>
                     </select>
                 </div>
             </div>

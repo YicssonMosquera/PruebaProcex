@@ -4,6 +4,7 @@ import { Router } from '@angular/router'
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import {CuentaErcService} from '../../services/cuenta-erc/cuenta-erc.service'
 import { AppComponent } from 'src/app/app.component';
+import { OpcionesListasErcService } from 'src/app/services/opcionesListas-erc/opciones-listas-erc.service';
 
 @Component({
   selector: 'app-cuenta-erc-listar',
@@ -22,10 +23,14 @@ export class CuentaErcListarComponent implements OnInit {
   resultado
   totalRecords
   opcion
-  constructor(private CuentaErcService:CuentaErcService,private Router: Router, private ngxSpinnerService: NgxUiLoaderService,private modalService: NgbModal, public tabs:AppComponent) { }
+  C4_CAMPO_5
+  C7_CAMPO_8
+  constructor(private CuentaErcService:CuentaErcService,private Router: Router, private ngxSpinnerService: NgxUiLoaderService,private modalService: NgbModal, public tabs:AppComponent, private OpcionesListasErcService:OpcionesListasErcService) { }
 
   ngOnInit(): void {
     this.consultarDatos();
+    this.cargarTipoDocumento5();
+    this.cargarSexo8();
   }
 
   consultarDatos(){
@@ -59,10 +64,10 @@ export class CuentaErcListarComponent implements OnInit {
       console.log(this.opcion)
       if (this.opcion.length > 0) {
         this.ngxSpinnerService.stop();
-        this.tabs.crearTab('Registro', 'Erc-edit/'+CC);
+        this.tabs.crearTab('ERC-frm', 'Erc-edit/'+CC);
       } else {
         this.ngxSpinnerService.stop();
-        this.tabs.crearTab('Registro', 'Erc-frm');
+        this.tabs.crearTab('ERC-frm', 'Erc-frm');
       }
 
     })
@@ -72,7 +77,17 @@ export class CuentaErcListarComponent implements OnInit {
   // //     this.identificacion = res;
   // //   })
   // }
+  cargarTipoDocumento5() {
+    this.OpcionesListasErcService.cargarTipoDocumento5().subscribe(res => {
+      this.C4_CAMPO_5 = res;
+    })
+  }
 
+  cargarSexo8() {
+    this.OpcionesListasErcService.cargarSexo8().subscribe(res => {
+      this.C7_CAMPO_8 = res;
+    })
+  }
     
   open(content: any) {
     this.modalService.open(content, { size: 'sm', centered: true });
@@ -85,12 +100,12 @@ export class CuentaErcListarComponent implements OnInit {
     this.modalService.open(content3, { size: 'sm', centered: true });
   }
 
-  soportes(content4: any) {
+  sexo1(content4: any) {
     this.modalService.open(content4, { size: 'sm', centered: true });
   }
 
   formularioNuevo(){
-    this.tabs.crearTab('Registro', 'Cancer-frm');
+    this.tabs.crearTab('ERC-frm', 'Erc-frm');
   }
 
 }

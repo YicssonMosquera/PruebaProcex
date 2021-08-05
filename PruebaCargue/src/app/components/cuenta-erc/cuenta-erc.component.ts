@@ -221,7 +221,7 @@ export class CuentaErcComponent implements OnInit {
     this.cargarEnalgunmomentodesdeelultimoreporte70_4();
     this.cargarEnalgunmomentodesdeelultimoreporte70_5();
     this.cargarEnalgunmomentodesdeelultimoreporte70_6();
-    this.cargarNovedadconrespectoalreporteanterior79
+    this.cargarNovedadconrespectoalreporteanterior79();
     this.cargarCausadeMuerte80();
   }
 
@@ -422,7 +422,10 @@ export class CuentaErcComponent implements OnInit {
   }
   cargarNovedadconrespectoalreporteanterior79() {
     this.OpcionesListasErcService.cargarNovedadconrespectoalreporteanterior79().subscribe(res=>{
+      console.log('campo79')
+      
       this.C116_CAMPO_79 = res;
+      console.log( this.C116_CAMPO_79)
     })
   }
   cargarCausadeMuerte80() {

@@ -44,11 +44,9 @@ class CargaropcioneshemofiliaRoutes {
         this.router.get('/codigovalidoips', CargaropcioneshemofiliaControllers_1.cargarOpcioneshemofiliaController.Codigovalidohabilitacionips22);
         this.router.get('/cum', CargaropcioneshemofiliaControllers_1.cargarOpcioneshemofiliaController.CodigoCUM35363738);
         this.router.get('/ocupacion', CargaropcioneshemofiliaControllers_1.cargarOpcioneshemofiliaController.CargarOcupacion9);
-        this.router.post('/', CargaropcioneshemofiliaControllers_1.cargarOpcioneshemofiliaController.Guardarhemofilia);
         this.router.post('/cargarhemofilia', CargaropcioneshemofiliaControllers_1.cargarOpcioneshemofiliaController.CargarRegistrohermofilia);
         this.router.post('/cargarregistrohemofilia', CargaropcioneshemofiliaControllers_1.cargarOpcioneshemofiliaController.CargarRegistrohermofilia2);
         this.router.get('/:Campo_6', CargaropcioneshemofiliaControllers_1.cargarOpcioneshemofiliaController.CargarRegistrohermofilia3);
-        this.router.put('/update/:Campo_6', CargaropcioneshemofiliaControllers_1.cargarOpcioneshemofiliaController.Actualizarhemofilia);
         this.router.get('/numeroRegistro/Registro', CargaropcioneshemofiliaControllers_1.cargarOpcioneshemofiliaController.getNumeroRegistro);
     }
 }

@@ -5,8 +5,9 @@ import { Hemofilia } from '../../models/hemofilia'
 import { ActivatedRoute } from '@angular/router';
 import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from 'src/app/app.component';
-
+import {CACHemofiliaService} from 'src/app/services/CAC-Hemofilia/cac-hemofilia.service'
 import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-hemofilia-formulario',
   templateUrl: './hemofilia-formulario.component.html',
@@ -60,113 +61,119 @@ export class HemofiliaFormularioComponent implements OnInit {
   codigohabilitacionIps: any;
   codigocups: any;
   Ocupacion: any;
-  hemofilia1:any
+  hemofilia1: any
   isReadonly = true;
+  validacionRegistro = false;
   hemofilia: Hemofilia = {
-    CAMPO_1:'',
-    CAMPO_2:'',
-    CAMPO_3:'',
-    CAMPO_4:'',
-    CAMPO_5:'',
-    CAMPO_6:'',
-    CAMPO_7:'',
-    CAMPO_8:'',
-    CAMPO_9:'',
-    CAMPO_10:'',
-    CAMPO_11:'',
-    CAMPO_12:'',
-    CAMPO_13:'',
-    CAMPO_14:'',
-    CAMPO_15:'',
-    CAMPO_16:'',
-    CAMPO_17:'',
-    CAMPO_18:'',
-    CAMPO_19:'',
-    CAMPO_20:'',
-    CAMPO_21:'',
-    CAMPO_22:'',
-    CAMPO_23:'',
-    CAMPO_24:'',
-    CAMPO_25:'',
-    CAMPO_26:'',
-    CAMPO_27:'',
-    CAMPO_28:'',
-    CAMPO_29:'',
-    CAMPO_30:'',
-    CAMPO_31:'',
-    CAMPO_32:'',
-    CAMPO_32_1:'',
-    CAMPO_32_2:'',
-    CAMPO_32_3:'',
-    CAMPO_32_4:'',
-    CAMPO_33:'',
-    CAMPO_34:'',
-    CAMPO_35:'',
-    CAMPO_36:'',
-    CAMPO_37:'',
-    CAMPO_38:'',
-    CAMPO_39:'',
-    CAMPO_40:'',
-    CAMPO_40_1:'',
-    CAMPO_40_2:'',
-    CAMPO_41:'',
-    CAMPO_42:'',
-    CAMPO_43:'',
-    CAMPO_44:'',
-    CAMPO_45:'',
-    CAMPO_46:'',
-    CAMPO_47_1:'',
-    CAMPO_47_2:'',
-    CAMPO_47_3:'',
-    CAMPO_48:'',
-    CAMPO_48_1:'',
-    CAMPO_48_2:'',
-    CAMPO_48_3:'',
-    CAMPO_48_4:'',
-    CAMPO_49:'',
-    CAMPO_49_1:'',
-    CAMPO_50:'',
-    CAMPO_51:'',
-    CAMPO_52:'',
-    CAMPO_53:'',
-    CAMPO_54:'',
-    CAMPO_55:'',
-    CAMPO_55_1:'',
-    CAMPO_56:'',
-    CAMPO_56_1:'',
-    CAMPO_57:'',
-    CAMPO_57_1:'',
-    CAMPO_57_2:'',
-    CAMPO_57_3:'',
-    CAMPO_57_4:'',
-    CAMPO_57_5:'',
-    CAMPO_57_6:'',
-    CAMPO_57_7:'',
-    CAMPO_57_8:'',
-    CAMPO_57_9:'',
-    CAMPO_57_10:'',
-    CAMPO_57_11:'',
-    CAMPO_57_12:'',
-    CAMPO_57_13:'',
-    CAMPO_57_14:'',
-    CAMPO_58:'',
-    CAMPO_59:'',
-    CAMPO_60:'',
-    CAMPO_61:'',
-    CAMPO_62:'',
-    CAMPO_63:'',
-    CAMPO_64:'',
-    CAMPO_64_1:'',
-    CAMPO_64_2:'',
-    CAMPO_65:'',
-    CAMPO_66:'',
-    EDAD_CORTE:'',
-    EDAD_ACTUAL:'',
-    DOSIS_PROFILAXIS:'',
+    CAMPO_1: '',
+    CAMPO_2: '',
+    CAMPO_3: '',
+    CAMPO_4: '',
+    CAMPO_5: '',
+    CAMPO_6: '',
+    CAMPO_7: '',
+    CAMPO_8: '',
+    CAMPO_9: '',
+    CAMPO_10: '',
+    CAMPO_11: '',
+    CAMPO_12: '',
+    CAMPO_13: '',
+    CAMPO_14: '',
+    CAMPO_15: '',
+    CAMPO_16: '',
+    CAMPO_17: '',
+    CAMPO_18: '',
+    CAMPO_19: '',
+    CAMPO_20: '',
+    CAMPO_21: '',
+    CAMPO_22: '',
+    CAMPO_23: '',
+    CAMPO_24: '',
+    CAMPO_25: '',
+    CAMPO_26: '',
+    CAMPO_27: '',
+    CAMPO_28: '',
+    CAMPO_29: '',
+    CAMPO_30: '',
+    CAMPO_31: '',
+    CAMPO_32: '',
+    CAMPO_32_1: '',
+    CAMPO_32_2: '',
+    CAMPO_32_3: '',
+    CAMPO_32_4: '',
+    CAMPO_33: '',
+    CAMPO_34: '',
+    CAMPO_35: '',
+    CAMPO_36: '',
+    CAMPO_37: '',
+    CAMPO_38: '',
+    CAMPO_39: '',
+    CAMPO_40: '',
+    CAMPO_40_1: '',
+    CAMPO_40_2: '',
+    CAMPO_41: '',
+    CAMPO_42: '',
+    CAMPO_43: '',
+    CAMPO_44: '',
+    CAMPO_45: '',
+    CAMPO_46: '',
+    CAMPO_47_1: '',
+    CAMPO_47_2: '',
+    CAMPO_47_3: '',
+    CAMPO_48: '',
+    CAMPO_48_1: '',
+    CAMPO_48_2: '',
+    CAMPO_48_3: '',
+    CAMPO_48_4: '',
+    CAMPO_49: '',
+    CAMPO_49_1: '',
+    CAMPO_50: '',
+    CAMPO_51: '',
+    CAMPO_52: '',
+    CAMPO_53: '',
+    CAMPO_54: '',
+    CAMPO_55: '',
+    CAMPO_55_1: '',
+    CAMPO_56: '',
+    CAMPO_56_1: '',
+    CAMPO_57: '',
+    CAMPO_57_1: '',
+    CAMPO_57_2: '',
+    CAMPO_57_3: '',
+    CAMPO_57_4: '',
+    CAMPO_57_5: '',
+    CAMPO_57_6: '',
+    CAMPO_57_7: '',
+    CAMPO_57_8: '',
+    CAMPO_57_9: '',
+    CAMPO_57_10: '',
+    CAMPO_57_11: '',
+    CAMPO_57_12: '',
+    CAMPO_57_13: '',
+    CAMPO_57_14: '',
+    CAMPO_58: '',
+    CAMPO_59: '',
+    CAMPO_60: '',
+    CAMPO_61: '',
+    CAMPO_62: '',
+    CAMPO_63: '',
+    CAMPO_64: '',
+    CAMPO_64_1: '',
+    CAMPO_64_2: '',
+    CAMPO_65: '',
+    CAMPO_66: '',
+    EDAD_CORTE: '',
+    EDAD_ACTUAL: '',
+    DOSIS_PROFILAXIS: '',
+    VALIDACION_REGISTRO:'N',
+    VALIDACION_SOPORTE:'1'
+  
   }
-  constructor(private hemofiliaservice: HemofiliaService,activateRoute: ActivatedRoute,
-    config: NgbModalConfig, private modalService: NgbModal, public tabs:AppComponent) {config.backdrop = 'static';
-    config.keyboard = false;}
+  constructor(private hemofiliaservice: HemofiliaService, activateRoute: ActivatedRoute,
+    config: NgbModalConfig, private modalService: NgbModal, public tabs: AppComponent, private CACHemofiliaservice:CACHemofiliaService) {
+    config.backdrop = 'static';
+    config.keyboard = false;
+  }
 
   ngOnInit(): void {
     this.Funcionesdecarga();
@@ -396,11 +403,75 @@ export class HemofiliaFormularioComponent implements OnInit {
       this.codigocups = res;
     })
   }
-
   CargarOcupacion() {
     this.hemofiliaservice.CargarOcupacion().subscribe(res => {
       this.Ocupacion = res;
     })
+  }
+
+  //Validacion de fechas
+  CAMPO_7(hemofilia) {
+    var startDate = new Date(hemofilia);
+    console.log(startDate)
+    var today = new Date();
+    if (startDate > today) {
+      alert("la fecha de nacimiento debe ser menor a la fecha actual");
+      this.hemofilia.CAMPO_7 = '';
+    }
+  }
+
+  CAMPO_16(hemofilia) {
+    var startDate = new Date(hemofilia);
+    var today = new Date();
+    if (startDate > today) {
+      alert("la Fecha de afiliación a la EPS debe ser menor a la fecha actual");
+      this.hemofilia.CAMPO_16 = '';
+    }
+  }
+  
+  CAMPO_66(hemofilia) {
+    var startDate = new Date(hemofilia);
+    var today = new Date();
+    if (startDate > today) {
+      alert("la Fecha de corte debe ser menor a la fecha actual");
+      this.hemofilia.CAMPO_66 = '';
+    }
+  }
+
+  CAMPO_21(hemofilia) {
+    var startDate = new Date(hemofilia);
+    var today = new Date();
+    if (startDate > today) {
+      alert("la Fecha de diagnóstico debe ser menor a la fecha actual");
+      this.hemofilia.CAMPO_21 = '';
+    }
+  }
+
+  CAMPO_29(hemofilia) {
+    var startDate = new Date(hemofilia);
+    var today = new Date();
+    if (startDate > today) {
+      alert("la Fecha de inicio del primer tratamiento debe ser menor a la fecha actual");
+      this.hemofilia.CAMPO_29 = '';
+    }
+  }
+
+  CAMPO_48_1(hemofilia) {
+    var startDate = new Date(hemofilia);
+    var today = new Date();
+    if (startDate > today) {
+      alert("la Fecha de determinación de títulos del inhibido debe ser menor a la fecha actual");
+      this.hemofilia.CAMPO_48_1 = '';
+    }
+  }
+
+  CAMPO_64_2(hemofilia) {
+    var startDate = new Date(hemofilia);
+    var today = new Date();
+    if (startDate > today) {
+      alert("la Fecha de muerte debe ser menor a la fecha actual");
+      this.hemofilia.CAMPO_64_2 = '';
+    }
   }
 
 
@@ -425,32 +496,84 @@ export class HemofiliaFormularioComponent implements OnInit {
     this.hemofilia.CAMPO_36 = hemofilia_36;
 
     let hemofilia_37 = this.hemofilia.CAMPO_37?.split('.')[0];
-     this.hemofilia.CAMPO_37 = hemofilia_37;
+    this.hemofilia.CAMPO_37 = hemofilia_37;
 
     let hemofilia_38 = this.hemofilia.CAMPO_38?.split('.')[0];
     this.hemofilia.CAMPO_38 = hemofilia_38;
-       console.log(this.hemofilia);
+    console.log(this.hemofilia);
 
-       this.hemofiliaservice.Guardarhemofilia(this.hemofilia).subscribe(res => {
-           Swal.fire({
-             title: 'Almacenado!',
-             text: 'Datos almacenados con exito.',
-             icon: 'success',
-             allowOutsideClick: false
-           }
+    this.CACHemofiliaservice.Guardarhemofilia(this.hemofilia).subscribe(res => {
+      Swal.fire({
+        title: 'Almacenado!',
+        text: 'Datos almacenados con exito.',
+        icon: 'success',
+        allowOutsideClick: false
+      }
 
-           ).then((result) => {
-             if (result.value) {
+      ).then((result) => {
+        if (result.value) {
 
-             }
-           })
-         })
+        }
+      })
+    })
+  }
+
+
+  open(content: any) {
+    this.modalService.open(content, { size: 'lg' });
+  }
+
+  GuardarDatosconValidacion(){
+    let hemofilia_9 = this.hemofilia.CAMPO_9?.split('.')[0];
+    this.hemofilia.CAMPO_9 = hemofilia_9;
+
+    let hemofilia_14 = this.hemofilia.CAMPO_14?.split('.')[0];
+    this.hemofilia.CAMPO_14 = hemofilia_14;
+
+    let hemofilia_22 = this.hemofilia.CAMPO_22?.split('.')[0];
+    this.hemofilia.CAMPO_22 = hemofilia_22;
+
+    let hemofilia_39 = this.hemofilia.CAMPO_39?.split('.')[0];
+    this.hemofilia.CAMPO_39 = hemofilia_39;
+
+    let hemofilia_35 = this.hemofilia.CAMPO_35?.split('.')[0];
+    this.hemofilia.CAMPO_35 = hemofilia_35;
+
+    let hemofilia_36 = this.hemofilia.CAMPO_36?.split('.')[0];
+    this.hemofilia.CAMPO_36 = hemofilia_36;
+
+    let hemofilia_37 = this.hemofilia.CAMPO_37?.split('.')[0];
+    this.hemofilia.CAMPO_37 = hemofilia_37;
+
+    let hemofilia_38 = this.hemofilia.CAMPO_38?.split('.')[0];
+    this.hemofilia.CAMPO_38 = hemofilia_38;
+    console.log(this.hemofilia);
+
+    this.CACHemofiliaservice.validarRegistros(this.hemofilia).subscribe(res => {
+      Swal.fire({
+        title: 'Almacenado!',
+        text: 'Datos almacenados con exito.',
+        icon: 'success',
+        allowOutsideClick: false
+      }
+
+      ).then((result) => {
+        if (result.value) {
+
+        }
+      })
+    })
+  }
+
+  GuardarRegistros(){
+    if(this.validacionRegistro == true){
+     this.GuardarDatosconValidacion()
+    }else{
+      this.GuargarDatos();
     }
-    open(content:any) {
-      this.modalService.open(content,{ size: 'lg' });
-    }
-    formularioNuevo(){
-      this.tabs.crearTab('Soporte', 'Hemofilia-soporte/:cc');
-    }
+  }
+  formularioNuevo() {
+    this.tabs.crearTab('Soporte', 'Hemofilia-soporte/:cc');
+  }
 
 }

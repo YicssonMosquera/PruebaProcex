@@ -10,8 +10,8 @@ class CACErcRoutes {
     config() {
         this.router.post('/almacenar', CAC_ERCControllers_1.cac_ERCControllers.guardarDatos);
         this.router.post('/consultar', CAC_ERCControllers_1.cac_ERCControllers.consultarDatos);
-        this.router.get('/:C8_CAMPO_9', CAC_ERCControllers_1.cac_ERCControllers.cargarPaciente);
-        this.router.put('/:C8_CAMPO_9', CAC_ERCControllers_1.cac_ERCControllers.actualizarDatos);
+        this.router.get('/:CAMPO_6', CAC_ERCControllers_1.cac_ERCControllers.cargarPaciente);
+        this.router.put('/:CAMPO_6', CAC_ERCControllers_1.cac_ERCControllers.actualizarDatos);
     }
 }
 const cacErcRoutes = new CACErcRoutes();

@@ -3,6 +3,7 @@ import { HemofiliaService } from 'src/app/services/hemofilia/hemofilia.service';
 import { OpcionesListaService } from 'src/app/services/opcionesLista/opciones-lista.service';
 import {CACArtritisService} from 'src/app/services/CAC-Artritis/cac-artritis.service'
 import {ARTRITIS} from '../../models/artritis'
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-cuenta-cancer',
   templateUrl: './cuenta-cancer.component.html',
@@ -818,7 +819,18 @@ export class CuentaCancerComponent implements OnInit {
   GuargarDatos(){
     delete this.ARTRITIS.ID_CUENTA_ARTRITIs;
     this.Artritisservice.GuardarArtritis(this.ARTRITIS).subscribe(res=>{
-      console.log(res);
+      Swal.fire({
+        title: 'Almacenado!',
+        text: 'Datos almacenados con exito.',
+        icon: 'success',
+        allowOutsideClick: false
+      }
+
+      ).then((result) => {
+        if (result.value) {
+
+        }
+      })
     })
   }
 

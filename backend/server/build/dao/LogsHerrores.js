@@ -69,5 +69,23 @@ class LogsHerrores {
             ;
         });
     }
+    LogsErroresFrm(CAMPO_6) {
+        return new Promise(function (resolev, reject) {
+            try {
+                var query = "select E.NUMERO_CAMPO, E.TIPO_ERROR, E.DESCRIPCION_ERROR ";
+                query += "from  bd_proceso_hemofilia_error_frm E, cuenta_hemofilia C  ";
+                query += "where C.ID_CUENTA_HEMOFILIA = E.ID_CUENTA_HEMOFILIA and E.VIGENTE = 'S' and C.CAMPO_6 = ? ";
+                database_1.default.query(query, [CAMPO_6], function (err, result, fields) {
+                    if (err)
+                        throw err;
+                    resolev(result);
+                });
+            }
+            catch (error) {
+                //res.status(404).json({ error: 'No se pudieron almacenar datos' });
+            }
+            ;
+        });
+    }
 }
 exports.default = LogsHerrores;

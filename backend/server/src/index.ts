@@ -7,11 +7,14 @@ import loginRoutes from './routes/loginroutes'
 import cargaropcioneshemofiliaRoutes from './routes/Cargaropcioneshemofiliaroutes'
 import soportesRoutes from './routes/SoportesRoutes'; 
 import cargahemofiliaRoutes from './routes/CarguehemofiliaRoutes';
-import logsherrores from './routes/LogsHerroresRoutes';
+import logsErrores from './routes/LogsErroresRoutes';
 import bdopcioneslistasRouter from './routes/BDOpcionesListarouter';
 import cac_ArtritisRoutes from './routes/CAC_ArtritisRoutes';
 import bdOpcionesListasERCroutes from './routes/BdOpcionesListasERCRoutes';
 import cacErcRoutes from './routes/CACErcRoutes';
+import BdopcionesListasCANCERroutes from './routes/BdopcionesListasCANCERroutes';
+import cac_cancerRouter from './routes/CAC_cancerRouter'
+import procesoHemofiliaFrmRoutes from './routes/ProcesoHemofiliaFrmRoutes'
 import paht from 'path'
 class Server {
 
@@ -38,11 +41,14 @@ class Server {
         this.app.use('/api/hemofilia',cargaropcioneshemofiliaRoutes);
         this.app.use('/api/soportes', soportesRoutes);
         this.app.use('/api/carguehemofilia', cargahemofiliaRoutes);
-        this.app.use('/api/logsherrores', logsherrores);
+        this.app.use('/api/logsherrores', logsErrores);
         this.app.use('/api/opcionesLista', bdopcioneslistasRouter);
         this.app.use('/api/artritis', cac_ArtritisRoutes);
         this.app.use('/api/opcionesListasERC', bdOpcionesListasERCroutes);
         this.app.use('/api/erc', cacErcRoutes);
+        this.app.use('/api/opcionesListasCancer', BdopcionesListasCANCERroutes);
+        this.app.use('/api/cancer', cac_cancerRouter);
+        this.app.use('/api/hemofilivalidar', procesoHemofiliaFrmRoutes);
         this.app.use('/soportes',express.static(paht.resolve('soportes')));
         this.app.use('/logsExcel',express.static(paht.resolve('logsExcel')));
         this.app.use('/Carguehemofilia',express.static(paht.resolve('Carguehemofilia')));

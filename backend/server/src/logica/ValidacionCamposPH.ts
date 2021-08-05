@@ -48,6 +48,7 @@ class ValidacionCamposPH {
     }
 
     validar(arrayCampos, resultEstructuraCampo) {
+
         var _this = this;
         this.archivoFilas = arrayCampos.length;
         try {
@@ -96,6 +97,7 @@ class ValidacionCamposPH {
                                 _this.totalCamposMalos = this.totalCamposMalos + 1;
                             } else {
                                 arrayCamposBuenos.push(campofila);
+
                             }
                         } else if (validacion.isnoObligatorio(validacioncampo.VIGENTE)) {
                             if (validacion.ismax(valorcampo, validacioncampo.LONGITUD_MAXIMA)) {
@@ -1080,7 +1082,9 @@ class ValidacionCamposPH {
                     console.log(_this.filas_buenas)
                 } else {
                     _this.filas_malas['fila_' + numFila] = arrayCamposMalos;
-                    console.log('estamos dentro errrrr')
+                    console.log('filas malas ++++++++++++++++++++++++++++++++++')
+                    console.log( _this.filas_malas)
+                    console.log( Object.keys(this.filas_malas).length)
                 }
 
             }

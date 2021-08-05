@@ -12,11 +12,14 @@ const loginroutes_1 = __importDefault(require("./routes/loginroutes"));
 const Cargaropcioneshemofiliaroutes_1 = __importDefault(require("./routes/Cargaropcioneshemofiliaroutes"));
 const SoportesRoutes_1 = __importDefault(require("./routes/SoportesRoutes"));
 const CarguehemofiliaRoutes_1 = __importDefault(require("./routes/CarguehemofiliaRoutes"));
-const LogsHerroresRoutes_1 = __importDefault(require("./routes/LogsHerroresRoutes"));
+const LogsErroresRoutes_1 = __importDefault(require("./routes/LogsErroresRoutes"));
 const BDOpcionesListarouter_1 = __importDefault(require("./routes/BDOpcionesListarouter"));
 const CAC_ArtritisRoutes_1 = __importDefault(require("./routes/CAC_ArtritisRoutes"));
 const BdOpcionesListasERCRoutes_1 = __importDefault(require("./routes/BdOpcionesListasERCRoutes"));
 const CACErcRoutes_1 = __importDefault(require("./routes/CACErcRoutes"));
+const BdopcionesListasCANCERroutes_1 = __importDefault(require("./routes/BdopcionesListasCANCERroutes"));
+const CAC_cancerRouter_1 = __importDefault(require("./routes/CAC_cancerRouter"));
+const ProcesoHemofiliaFrmRoutes_1 = __importDefault(require("./routes/ProcesoHemofiliaFrmRoutes"));
 const path_1 = __importDefault(require("path"));
 class Server {
     constructor() {
@@ -38,11 +41,14 @@ class Server {
         this.app.use('/api/hemofilia', Cargaropcioneshemofiliaroutes_1.default);
         this.app.use('/api/soportes', SoportesRoutes_1.default);
         this.app.use('/api/carguehemofilia', CarguehemofiliaRoutes_1.default);
-        this.app.use('/api/logsherrores', LogsHerroresRoutes_1.default);
+        this.app.use('/api/logsherrores', LogsErroresRoutes_1.default);
         this.app.use('/api/opcionesLista', BDOpcionesListarouter_1.default);
         this.app.use('/api/artritis', CAC_ArtritisRoutes_1.default);
         this.app.use('/api/opcionesListasERC', BdOpcionesListasERCRoutes_1.default);
         this.app.use('/api/erc', CACErcRoutes_1.default);
+        this.app.use('/api/opcionesListasCancer', BdopcionesListasCANCERroutes_1.default);
+        this.app.use('/api/cancer', CAC_cancerRouter_1.default);
+        this.app.use('/api/hemofilivalidar', ProcesoHemofiliaFrmRoutes_1.default);
         this.app.use('/soportes', express_1.default.static(path_1.default.resolve('soportes')));
         this.app.use('/logsExcel', express_1.default.static(path_1.default.resolve('logsExcel')));
         this.app.use('/Carguehemofilia', express_1.default.static(path_1.default.resolve('Carguehemofilia')));

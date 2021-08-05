@@ -67,7 +67,7 @@
                                         </div>
                                         <div class="col-xs-2">
                                             <label id="fechan">7.Fecha de nacimiento:</label>
-                                            <div class="input-group" id="nuevo7" *ngFor="let Erc of Erc">
+                                            <div class="input-group" id="nuevo7">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text"><svg
                                                             xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -238,10 +238,10 @@
                                     </div>
 
 
-                                    <div class="col-xs-4">
+                                    <div class="col-xs-4" style="margin-top: -3px;">
                                         <label id="documento">18.El usuario tiene diagnóstico confirmado de Hipertensión
                                             Arterial -HTA (CIE-10 con códigos entre I10-I159):</label>
-                                        <select name="" class="form-control" id="GrupoP" name="Erc.CAMPO_18"
+                                        <select name="" class="form-control" id="documento" name="Erc.CAMPO_18"
                                             [(ngModel)]="Erc.CAMPO_18" *ngFor="let Erc of Erc">
                                             <option *ngFor='let C17_CAMPO_18 of C17_CAMPO_18'
                                                 [ngValue]="C17_CAMPO_18.NOMBRE_OPCION"
@@ -982,10 +982,11 @@
                                     <div class="input-group mb-3">
                                         <div class="col-xs-4">
                                             <div id="div-info2">
-                                                <label id="tipo">59.Hemoglobina. <button mat-icon-button type="button"
+                                                <label id="tipo" style="display: flex !important;">59.Hemoglobina
+                                                    (aplica solo cuando el usuario está en diálisis)<button mat-icon-button type="button"
                                                         class="btn btn-outline-secondary mr-2" placement="right"
-                                                        ngbTooltip=" (aplica solo cuando el usuario está en diálisis): Las hemoglobinas deben ser del último trimestre contado a partir de la fecha de corte y sus tomas debieron ser pre-diálisis en personas en hemodiálisis ">
-                                                        <i class="fas fa-question-circle" id="icono-info"></i>
+                                                        ngbTooltip="Las hemoglobinas deben ser del último trimestre contado a partir de la fecha de corte y sus tomas debieron ser pre-diálisis en personas en hemodiálisis">
+                                                        <i class="fas fa-question-circle" id="icono-info" style="margin-top: -15px !important;"></i>
                                                     </button></label>
 
                                             </div>
@@ -994,11 +995,13 @@
                                         </div>
                                         <div class="col-xs-4">
                                             <div id="div-info2">
-                                                <label id="documento">60.Albúmina Sérica <button mat-icon-button
-                                                        type="button" class="btn btn-outline-secondary mr-2"
-                                                        placement="right"
-                                                        ngbTooltip="(aplica solo cuando el usuario está en diálisis): La albúmina debe tener máximo tres meses de antigüedad a partir de la fecha de corte y su toma debió ser pre-diálisis en personas en hemodiálisis. ">
-                                                        <i class="fas fa-question-circle" id="icono-info"></i>
+                                                <label id="documento" style="display: flex !important;">60.Albúmina
+                                                    Sérica Albúmina Sérica (aplica solo cuando el usuario está en
+                                                    diálisis)<button mat-icon-button type="button"
+                                                        class="btn btn-outline-secondary mr-2" placement="right"
+                                                        ngbTooltip="La albúmina debe tener máximo tres meses de antigüedad a partir de la fecha de corte y su toma debió ser pre-diálisis en personas en hemodiálisis. ">
+                                                        <i class="fas fa-question-circle" id="icono-info"
+                                                            style="margin-top: -15px !important;"></i>
                                                     </button></label>
                                             </div>
                                             <input type="text" class="form-control" id="documento" name="Erc.CAMPO_60"
@@ -1007,11 +1010,13 @@
 
                                         <div class="col-xs-4">
                                             <div id="div-info2">
-                                                <label id="documento">61.Fósforo (P) <button mat-icon-button
-                                                        type="button" class="btn btn-outline-secondary mr-2"
-                                                        placement="right"
-                                                        ngbTooltip=" (aplica solo cuando el usuario está en diálisis). Los niveles séricos de fósforo deben ser del último trimestre contado a partir de la fecha de corte y sus tomas debieron ser pre-diálisis en personas en hemodiálisis.">
-                                                        <i class="fas fa-question-circle" id="icono-info"></i>
+                                                <label id="documento" style="display: flex !important;">61.Fósforo (P)
+                                                    (aplica solo cuando el usuario está en diálisis)<button
+                                                        mat-icon-button type="button"
+                                                        class="btn btn-outline-secondary mr-2" placement="right"
+                                                        ngbTooltip="Los niveles séricos de fósforo deben ser del último trimestre contado a partir de la fecha de corte y sus tomas debieron ser pre-diálisis en personas en hemodiálisis.">
+                                                        <i class="fas fa-question-circle" id="icono-info"
+                                                            style="margin-top: -15px !important;"></i>
                                                     </button></label>
                                             </div>
                                             <input type="text" class="form-control" id="documento" name="Erc.CAMPO_61"
@@ -1020,11 +1025,14 @@
 
                                         <div class="col-xs-4">
                                             <div id="div-info2">
-                                                <label id="documento">62.Última valoración clínica por nefrología
+                                                <label id="documento" style="display: flex !important;">62.Última
+                                                    valoración clínica por nefrología dentro del periodo de reporte de
+                                                    pacientes con ERC
                                                     <button mat-icon-button type="button"
                                                         class="btn btn-outline-secondary mr-2" placement="left"
-                                                        ngbTooltip="dentro del periodo de reporte de pacientes con Erc estadio 5 en diálisis o con TMND,en relación con la posibilidad de trasplante renal">
-                                                        <i class="fas fa-question-circle" id="icono-info"></i>
+                                                        ngbTooltip="estadio 5 en diálisis o con TMND,en relación con la posibilidad de trasplante renal">
+                                                        <i class="fas fa-question-circle" id="icono-info"
+                                                            style="margin-top: -15px !important;"></i>
                                                     </button></label>
                                             </div>
                                             <select name="" class="form-control" id="documento" name="Erc.CAMPO_62"
@@ -1042,14 +1050,9 @@
 
                                     <div class="input-group mb-3">
                                         <div class="col-xs-4">
-                                            <div id="div-info2">
-                                                <label id="tipo">62.1¿Se reportó cáncer activo en los últimos 12
-                                                    meses<button mat-icon-button type="button"
-                                                        class="btn btn-outline-secondary mr-2" placement="right"
-                                                        ngbTooltip="como contraindicación para el transplante renal, en la valoración de nefrología?">
-                                                        <i class="fas fa-question-circle" id="icono-info"></i>
-                                                    </button></label>
-                                            </div>
+                                            <label id="tipo">62.1¿Se reportó cáncer activo en los últimos 12 meses, como
+                                                contraindicación para el transplante renal, en la valoración de
+                                                nefrología?</label>
                                             <select name="" class="form-control" id="papellido" name="Erc.CAMPO_62_1"
                                                 [(ngModel)]="Erc.CAMPO_62_1" *ngFor="let Erc of Erc">
                                                 <option *ngFor='let C72_CAMPO_62_1 of C72_CAMPO_62_1'
@@ -1059,16 +1062,11 @@
                                                 </option>
                                             </select>
                                         </div>
-                                        <div class="col-xs-4">
-                                            <div id="div-info2">
-                                                <label id="documento">62.2.¿Se reportó infección crónica o activa
-                                                    <button mat-icon-button type="button"
-                                                        class="btn btn-outline-secondary mr-2" placement="right"
-                                                        ngbTooltip="no tratada o no controlada hasta en los últimos tres meses antes de la fecha de corte, como contraindicación para el transplante renal, en la valoración de nefrología?">
-                                                        <i class="fas fa-question-circle" id="icono-info"></i>
-                                                    </button></label>
-                                            </div>
-
+                                        <div class="col-xs-4" style="margin-top: -15px;">
+                                            <label id="documento">62.2.¿Se reportó infección crónica o activa no tratada
+                                                o no controlada hasta en los últimos tres meses antes de la fecha de
+                                                corte, como contraindicación para el transplante renal, en la valoración
+                                                de nefrología?</label>
                                             <select name="" class="form-control" id="documento" name="Erc.CAMPO_62_2"
                                                 [(ngModel)]="Erc.CAMPO_62_2" *ngFor="let Erc of Erc">
                                                 <option *ngFor='let C73_CAMPO_62_2 of C73_CAMPO_62_2'
@@ -1079,14 +1077,9 @@
                                             </select>
                                         </div>
                                         <div class="col-xs-4">
-                                            <div id="div-info2">
-                                                <label id="documento">62.3¿Se reportó como contraindicación <button
-                                                        mat-icon-button type="button"
-                                                        class="btn btn-outline-secondary mr-2" placement="right"
-                                                        ngbTooltip=" para el transplante renal, en la valoración de nefrología que el paciente presenta esperanza de vida menor o igual a 6 meses?">
-                                                        <i class="fas fa-question-circle" id="icono-info"></i>
-                                                    </button></label>
-                                            </div>
+                                            <label id="documento">62.3¿Se reportó como contraindicación para el
+                                                transplante renal, en la valoración de nefrología que el paciente NO ha
+                                                manifestado su deseo de trasplantarse?</label>
                                             <select name="" class="form-control" id="documento" name="Erc.CAMPO_62_3"
                                                 [(ngModel)]="Erc.CAMPO_62_3" *ngFor="let Erc of Erc">
                                                 <option *ngFor='let C74_CAMPO_62_3 of C74_CAMPO_62_3'
@@ -1097,14 +1090,9 @@
                                             </select>
                                         </div>
                                         <div class="col-xs-4">
-                                            <div id="div-info2">
-                                                <label id="documento">62.4¿Se reportó como contraindicación<button
-                                                        mat-icon-button type="button"
-                                                        class="btn btn-outline-secondary mr-2" placement="left"
-                                                        ngbTooltip="para el transplante renal, en la valoración de nefrología que el paciente presenta esperanza de vida menor o igual a 6 meses?">
-                                                        <i class="fas fa-question-circle" id="icono-info"></i>
-                                                    </button></label>
-                                            </div>
+                                            <label id="documento">62.4¿Se reportó como contraindicación para el
+                                                transplante renal, en la valoración de nefrología que el paciente
+                                                presenta esperanza de vida menor o igual a 6 meses?</label>
                                             <select name="" class="form-control" id="documento" name="Erc.CAMPO_62_4"
                                                 [(ngModel)]="Erc.CAMPO_62_4" *ngFor="let Erc of Erc">
                                                 <option *ngFor='let C75_CAMPO_62_4 of C75_CAMPO_62_4'
@@ -1117,14 +1105,10 @@
                                     </div>
                                     <div class="input-group mb-3">
                                         <div class="col-xs-4">
-                                            <div id="div-info2">
-                                                <label id="tipo">62.5¿Se reportó como contraindicación<button
-                                                        mat-icon-button type="button"
-                                                        class="btn btn-outline-secondary mr-2" placement="right"
-                                                        ngbTooltip=" para el transplante renal, en la valoración de nefrología que el paciente presenta potenciales limitaciones al autocuidado y adherencia al tratamiento post trasplante?">
-                                                        <i class="fas fa-question-circle" id="icono-info"></i>
-                                                    </button></label>
-                                            </div>
+                                            <label id="tipo">62.5¿Se reportó como contraindicación para el transplante
+                                                renal, en la valoración de nefrología que el paciente presenta
+                                                potenciales limitaciones al autocuidado y adherencia al tratamiento post
+                                                trasplante?</label>
                                             <select name="" class="form-control" id="papellido" name="Erc.CAMPO_62_5"
                                                 [(ngModel)]="Erc.CAMPO_62_5" *ngFor="let Erc of Erc">
                                                 <option *ngFor='let C76_CAMPO_62_5 of C76_CAMPO_62_5'
@@ -1135,15 +1119,7 @@
                                             </select>
                                         </div>
                                         <div class="col-xs-4">
-                                            <div id="div-info2">
-                                                <label id="documento">62.6.¿Se reportó enfermedad cardiaca <button
-                                                        mat-icon-button type="button"
-                                                        class="btn btn-outline-secondary mr-2" placement="right"
-                                                        ngbTooltip="cerebrovascular o vascular periférica, como contraindicación para el transplante renal, en la valoración de nefrología? ">
-                                                        <i class="fas fa-question-circle" id="icono-info"></i>
-                                                    </button></label>
-                                            </div>
-
+                                            <label id="documento">62.6.¿Se reportó como contraindicación para el transplante renal, en la valoración de nefrología que el paciente presenta potenciales limitaciones al autocuidado y adherencia al tratamiento post trasplante? </label>
                                             <select name="" class="form-control" id="documento" name="Erc.CAMPO_62_6"
                                                 [(ngModel)]="Erc.CAMPO_62_6" *ngFor="let Erc of Erc">
                                                 <option *ngFor='let C77_CAMPO_62_6 of C77_CAMPO_62_6'
@@ -1153,15 +1129,8 @@
                                                 </option>
                                             </select>
                                         </div>
-                                        <div class="col-xs-4">
-                                            <div id="div-info2">
-                                                <label id="documento">62.7 ¿Se reportó infección por el VIH <button
-                                                        mat-icon-button type="button"
-                                                        class="btn btn-outline-secondary mr-2" placement="right"
-                                                        ngbTooltip="como contraindicación para el transplante renal, en la valoración de nefrología?">
-                                                        <i class="fas fa-question-circle" id="icono-info"></i>
-                                                    </button></label>
-                                            </div>
+                                        <div class="col-xs-4"  style="margin-top: 30px;">
+                                            <label id="documento">62.7  ¿Se reportó  infección por el VIH, como contraindicación para el transplante renal, en la valoración de nefrología?</label>
                                             <select name="" class="form-control" id="documento" name="Erc.CAMPO_62_7"
                                                 [(ngModel)]="Erc.CAMPO_62_7" *ngFor="let Erc of Erc">
                                                 <option *ngFor='let C78_CAMPO_62_7 of C78_CAMPO_62_7'
@@ -1171,15 +1140,8 @@
                                                 </option>
                                             </select>
                                         </div>
-                                        <div class="col-xs-4">
-                                            <div id="div-info2">
-                                                <label id="documento">62.8 ¿Se reportó infección por el VHC<button
-                                                        mat-icon-button type="button"
-                                                        class="btn btn-outline-secondary mr-2" placement="left"
-                                                        ngbTooltip="como contraindicación para el transplante renal, en la valoración de nefrología?">
-                                                        <i class="fas fa-question-circle" id="icono-info"></i>
-                                                    </button></label>
-                                            </div>
+                                        <div class="col-xs-4" style="margin-top: 30px;">
+                                            <label id="documento">62.8  ¿Se reportó  infección por el VHC, como contraindicación para el transplante renal, en la valoración de nefrología?</label>
                                             <select name="" class="form-control" id="documento" name="Erc.CAMPO_62_8"
                                                 [(ngModel)]="Erc.CAMPO_62_8" *ngFor="let Erc of Erc">
                                                 <option *ngFor='let C79_CAMPO_62_8 of C79_CAMPO_62_8'
@@ -1193,14 +1155,7 @@
 
                                     <div class="input-group mb-3">
                                         <div class="col-xs-4">
-                                            <div id="div-info2">
-                                                <label id="tipo">62.9 ¿Se reportó como contraindicación<button
-                                                        mat-icon-button type="button"
-                                                        class="btn btn-outline-secondary mr-2" placement="right"
-                                                        ngbTooltip="para el transplante renal, en la valoración de nefrología, que el paciente presenta enfermedad inmunológica activa los últimos tres meses antes de la fecha de corte?">
-                                                        <i class="fas fa-question-circle" id="icono-info"></i>
-                                                    </button></label>
-                                            </div>
+                                                <label id="tipo">62.9 ¿Se reportó como contraindicación para el transplante renal, en la valoración de nefrología, que el paciente presenta enfermedad inmunológica activa los últimos tres meses antes de la fecha de corte?</label>
                                             <select name="" class="form-control" id="papellido" name="Erc.CAMPO_62_9"
                                                 [(ngModel)]="Erc.CAMPO_62_9" *ngFor="let Erc of Erc">
                                                 <option *ngFor='let C80_CAMPO_62_9 of C80_CAMPO_62_9'
@@ -1210,16 +1165,8 @@
                                                 </option>
                                             </select>
                                         </div>
-                                        <div class="col-xs-4">
-                                            <div id="div-info2">
-                                                <label id="documento">62.10.¿Se reportó como contraindicación <button
-                                                        mat-icon-button type="button"
-                                                        class="btn btn-outline-secondary mr-2" placement="right"
-                                                        ngbTooltip=" para el transplante renal, en la valoración de nefrología, que el paciente presenta enfermedad pulmonar crónica? ">
-                                                        <i class="fas fa-question-circle" id="icono-info"></i>
-                                                    </button></label>
-                                            </div>
-
+                                        <div class="col-xs-4"  style="margin-top: 15px;">
+                                            <label id="documento">62.10. ¿Se reportó como contraindicación para el transplante renal, en la valoración de nefrología, que el paciente presenta enfermedad pulmonar crónica?</label>
                                             <select name="" class="form-control" id="documento" name="Erc.CAMPO_62_10"
                                                 [(ngModel)]="Erc.CAMPO_62_10" *ngFor="let Erc of Erc">
                                                 <option *ngFor='let C81_CAMPO_62_10 of C81_CAMPO_62_10'
@@ -1229,15 +1176,8 @@
                                                 </option>
                                             </select>
                                         </div>
-                                        <div class="col-xs-4">
-                                            <div id="div-info2">
-                                                <label id="documento">62.11 ¿Se reportó como contraindicación<button
-                                                        mat-icon-button type="button"
-                                                        class="btn btn-outline-secondary mr-2" placement="right"
-                                                        ngbTooltip="para el transplante renal, en la valoración de nefrología, que el paciente presenta otras enfermedades crónicas?">
-                                                        <i class="fas fa-question-circle" id="icono-info"></i>
-                                                    </button></label>
-                                            </div>
+                                        <div class="col-xs-4"  style="margin-top: 15px;">
+                                            <label id="documento">62.11 ¿Se reportó como contraindicación para el transplante renal, en la valoración de nefrología, que el paciente presenta otras enfermedades crónicas?</label>
                                             <select name="" class="form-control" id="documento" name="Erc.CAMPO_62_11"
                                                 [(ngModel)]="Erc.CAMPO_62_11" *ngFor="let Erc of Erc">
                                                 <option *ngFor='let C82_CAMPO_62_11 of C82_CAMPO_62_11'
@@ -1247,7 +1187,7 @@
                                                 </option>
                                             </select>
                                         </div>
-                                        <div class="col-xs-4" style="margin-top: -2px;">
+                                        <div class="col-xs-4"  style="margin-top: 29px;">
                                             <label id="documento">63Fecha de Ingreso a lista de espera para la
                                                 realización del trasplante:</label>
                                             <div class="input-group" id="nuevo">

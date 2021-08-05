@@ -662,32 +662,5 @@ class CargarOpcioneshemofiliaController {
             ;
         });
     }
-    Actualizarhemofilia(req, res) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { Campo_6 } = req.params;
-            try {
-                yield database_1.default.query('UPDATE Cuenta_hemofilia set ? where Cuenta_hemofilia.CAMPO_6 = ? ', [req.body, Campo_6]);
-                console.log(req.body);
-                res.json({ message: 'Datos guardado con exito' });
-            }
-            catch (error) {
-                res.status(404).json({ error: 'No se pudieron almacenar datos' });
-            }
-            ;
-        });
-    }
-    Guardarhemofilia(req, res) {
-        return __awaiter(this, void 0, void 0, function* () {
-            try {
-                yield database_1.default.query('insert into Cuenta_hemofilia set ?', [req.body]);
-                console.log(req.body);
-                res.json({ message: 'Datos guardado con exito' });
-            }
-            catch (error) {
-                res.status(404).json({ error: 'No se pudieron almacenar datos' });
-            }
-            ;
-        });
-    }
 }
 exports.cargarOpcioneshemofiliaController = new CargarOpcioneshemofiliaController();

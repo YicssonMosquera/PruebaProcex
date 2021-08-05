@@ -20,10 +20,10 @@ export class CuentaErcService {
     return this.http.post(`${this.API_URI}/consultar`, cargar)
   }
 
-  getOne(C8_CAMPO_9) {
-    return this.http.get(`${this.API_URI}/${C8_CAMPO_9}`)
+  getOne(CAMPO_6) {
+    return this.http.get(`${this.API_URI}/${CAMPO_6}`)
   }
-  ActualizarDatos(C8_CAMPO_9, artritis: ERC) {
-    return this.http.put(`${this.API_URI}/${C8_CAMPO_9}`, artritis)
+  ActualizarDatos(CAMPO_6, ERC: ERC) {
+    return this.http.put(`${this.API_URI}/${CAMPO_6}`, ERC)
   }
 }

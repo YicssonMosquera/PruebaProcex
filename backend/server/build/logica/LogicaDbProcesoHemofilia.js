@@ -285,8 +285,6 @@ class LogicaDBProcesohemofilia {
         return __awaiter(this, void 0, void 0, function* () {
             const obHemofilia = new DbProcesoHemofilia_1.default();
             const archvioCargado = yield obHemofilia.consultarUltimoArchivoCargado(ID_PROCESO_HEMOFILIA);
-            console.log('-----------------------------------------------------------------');
-            console.log(archvioCargado);
             return archvioCargado;
         });
     }

@@ -503,36 +503,5 @@ class CargarOpcioneshemofiliaController {
             res.status(404).json({ error: 'No se puedieron Datos' });
         };
     }
-
-    public async Actualizarhemofilia(req: Request, res: Response) {
-        const { Campo_6 } = req.params
-        try {
-            await pool.query('UPDATE Cuenta_hemofilia set ? where Cuenta_hemofilia.CAMPO_6 = ? ', [req.body, Campo_6])
-            console.log(req.body)
-            res.json({ message: 'Datos guardado con exito' });
-
-        }
-        catch (error) {
-            res.status(404).json({ error: 'No se pudieron almacenar datos' });
-        };
-
-
-    }
-
-
-
-    public async Guardarhemofilia(req: Request, res: Response) {
-        try {
-            await pool.query('insert into Cuenta_hemofilia set ?', [req.body])
-            console.log(req.body)
-            res.json({ message: 'Datos guardado con exito' });
-
-        }
-        catch (error) {
-            res.status(404).json({ error: 'No se pudieron almacenar datos' });
-        };
-
-
-    }
 }
 export const cargarOpcioneshemofiliaController = new CargarOpcioneshemofiliaController();

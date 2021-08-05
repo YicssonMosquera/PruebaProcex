@@ -1223,8 +1223,25 @@
   </div>
   <div class="y-card-footer">
     <div class="card-foother align-items-center justify-content-between">
-      <button type="button" id="button" class="btn btn-secondary" (click)="GuargarDatos()"> <i class="fas fa-save"></i> Guardar</button>
-      <button type="button" id="button" class="btn btn-primary" (click)="editar()"> <i class="fas fa-file-import"></i> Soporte</button>
+      <strong for="" style="margin-right: 5px; color: rgb(109, 108, 108); font-size: 11px;" >Validar registro   <input type="checkbox" name="validacionRegistro" [(ngModel)]="validacionRegistro"></strong>
+      <button type="button" id="button" class="btn btn-light" (click)="GuardarRegistros()"> <i class="fas fa-save" style="color: rgba(6, 183, 253, 0.885); font-size: 12px;"></i> Guardar</button>
+      <button type="button" id="button" class="btn btn-light" (click)="editar()"> <i class="fas fa-file-import"></i> Soporte</button>
+      <button type="button"  id="button" class="btn btn-light" (click)="openLg(content)" ><i class="fas fa-eye" ></i> Errores</button>
+
     </div>
   </div>
 </div>
+
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Logs de errores</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+  </div>
+</ng-template>

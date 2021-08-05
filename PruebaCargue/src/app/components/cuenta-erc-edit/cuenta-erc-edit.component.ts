@@ -186,6 +186,7 @@ export class CuentaErcEditComponent implements OnInit {
 
   ngOnInit(): void {
     this.funcionesdeCarga();
+    
   }
   funcionesdeCarga() {
     this.consultarDatos();
@@ -228,7 +229,7 @@ export class CuentaErcEditComponent implements OnInit {
     this.cargarEnalgunmomentodesdeelultimoreporte70_4();
     this.cargarEnalgunmomentodesdeelultimoreporte70_5();
     this.cargarEnalgunmomentodesdeelultimoreporte70_6();
-    this.cargarNovedadconrespectoalreporteanterior79
+    this.cargarNovedadconrespectoalreporteanterior79();
     this.cargarCausadeMuerte80();
   }
 
@@ -445,6 +446,7 @@ export class CuentaErcEditComponent implements OnInit {
     })
   }
 
+
   guardarDatos() {
     for (let i = 0; i < this.Erc.length; i++) {
       this.erc.CAMPO_1 = this.Erc[i].CAMPO_1
@@ -567,7 +569,8 @@ export class CuentaErcEditComponent implements OnInit {
       this.erc.CAMPO_80 = this.Erc[i].CAMPO_80
       this.erc.CAMPO_80_1 = this.Erc[i].CAMPO_80_1
     }
-    this.CuentaErcService.ActualizarDatos(this.erc, this.CC).subscribe(res => {
+    this.CuentaErcService.ActualizarDatos(this.CC, this.erc).subscribe(res => {
+      console.log(this.CC)
       console.log(this.erc)
       Swal.fire({
         title: 'Almacenado!',

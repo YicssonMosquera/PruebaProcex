@@ -12,9 +12,9 @@ import { CuentaCancerComponent } from './components/cuenta-cancer/cuenta-cancer.
 import {CuentaCancerListarComponent} from './components/cuenta-cancer-listar/cuenta-cancer-listar.component';
 import {CuentaCancerActualizarComponent} from './components/cuenta-cancer-actualizar/cuenta-cancer-actualizar.component';
 import {CuentaErcComponent} from './components/cuenta-erc/cuenta-erc.component';
-import {CuentaErcListarComponent} from './components/cuenta-erc-listar/cuenta-erc-listar.component'
 import {CuentaErcEditComponent} from './components/cuenta-erc-edit/cuenta-erc-edit.component'
-
+import {CuentaErcListarComponent} from '../app/components/cuenta-erc-listar/cuenta-erc-listar.component'
+import {CancerFrmComponent} from '../app/components/cancer-frm/cancer-frm.component'
 
 const routes: Routes = [
 
@@ -25,12 +25,13 @@ const routes: Routes = [
   {path:  'Hemofilia-frm/:cc',component:HemofiliaEditComponent,canActivate:[AuthGuard]},
   {path:  'Hemofilia-soporte/:cc',component:HemofiliaSoportesComponent,canActivate:[AuthGuard]},
   {path:  'Hemofilia-cargar',component:CargarHemofiliaComponent,canActivate:[AuthGuard]},
-  {path:  'Cancer-frm',component:CuentaCancerComponent,canActivate:[AuthGuard]},
-  {path:  'Cancer-listar',component:CuentaCancerListarComponent,canActivate:[AuthGuard]},
-  {path:  'Cancer-edit/:cc',component:CuentaCancerActualizarComponent,canActivate:[AuthGuard]},
+  {path:  'Artritis-frm',component:CuentaCancerComponent,canActivate:[AuthGuard]},
+  {path:  'Artritis-listar',component:CuentaCancerListarComponent,canActivate:[AuthGuard]},
+  {path:  'Artritis-edit/:cc',component:CuentaCancerActualizarComponent,canActivate:[AuthGuard]},
   {path:  'Erc-frm',component:CuentaErcComponent,canActivate:[AuthGuard]},
   {path:  'Erc-listar',component:CuentaErcListarComponent,canActivate:[AuthGuard]},
   {path:  'Erc-edit/:cc',component:CuentaErcEditComponent,canActivate:[AuthGuard]},
+  {path:  'cancer-guard',component:CancerFrmComponent,canActivate:[AuthGuard]},
   {path:  'Login',component:LoginComponent},
 ];
 

@@ -75,26 +75,27 @@ export class HemofiliaListarComponent implements OnInit, OnDestroy {
     })
   }
 
-  onRowUnselect(event) {
-    const CC = event.data.CAMPO_6;
-    this.ngxSpinnerService.start();
-    this.hemofiliaservice.CargarRegistrohemofilia3(CC).subscribe(res => {
-      this.opcion = res;
-      console.log(this.opcion)
-      if (this.opcion.length > 0) {
-        this.ngxSpinnerService.stop();
-        this.Router.navigate(['Hemofilia-frm/', CC]);
-      } else {
-        this.ngxSpinnerService.stop();
-        this.Router.navigate(['Hemofilia-frm']);
-      }
+  // onRowUnselect(event) {
+  //   const CC = event.data.CAMPO_6;
+  //   this.ngxSpinnerService.start();
+  //   this.hemofiliaservice.CargarRegistrohemofilia3(CC).subscribe(res => {
+  //     this.opcion = res;
+  //     console.log(this.opcion)
+  //     if (this.opcion.length > 0) {
+  //       this.ngxSpinnerService.stop();
+  //       this.Router.navigate(['Hemofilia-frm/', CC]);
+  //     } else {
+  //       this.ngxSpinnerService.stop();
+  //       this.Router.navigate(['Hemofilia-frm']);
+  //     }
 
-    })
-  }
+  //   })
+  // }
 
   CargarRegistroshemofilia() {
     this.hemofiliaservice.CargarRegistrohemofilia(this.Tipodocumento,this.numerodocumeto,this.VALIDACION_SOPORTE,this.VALIDACION_REGISTRO,this.page,this.rows).subscribe(res => {
       this.Hemofilia = res
+      console.log(res);
     })
   }
 

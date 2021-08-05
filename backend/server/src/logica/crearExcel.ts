@@ -1,4 +1,4 @@
-import LogsHerrores from "../dao/LogsHerrores";
+import LogsHerrores from "../dao/LogsErrores";
 const Excel = require('exceljs');
 const fs = require('fs')
 

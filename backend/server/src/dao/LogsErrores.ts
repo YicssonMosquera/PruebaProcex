@@ -3,7 +3,7 @@ import pool from '../database'
 
 class LogsHerrores {
 
-    cargarHerroresTipoB(NUMERO_RADICACION) {
+    cargarErroresTipoB(NUMERO_RADICACION) {
         return new Promise(function (resolev, reject) {
             try {
                 var query = "select bd_proceso_hemofilia.NUMERO_RADICACION as 'Numero radicacion', bd_proceso_hemofilia.NOMBRE_ARCHIVO as 'Nombre archivo', ";
@@ -22,7 +22,7 @@ class LogsHerrores {
             };
         });
     }
-    cargarHerroresTipoA(NUMERO_RADICACION) {
+    cargarErroresTipoA(NUMERO_RADICACION) {
         return new Promise(function (resolev, reject) {
             try {
                 var query = "select bd_proceso_hemofilia.NUMERO_RADICACION as 'Numero radicacion', bd_proceso_hemofilia.NOMBRE_ARCHIVO as 'Nombre archivo', ";
@@ -42,7 +42,7 @@ class LogsHerrores {
         });
     }
 
-    cargarHerroresLogsExcel(NUMERO_RADICACION) {
+    cargarErroresLogsExcel(NUMERO_RADICACION) {
         return new Promise(function (resolev, reject) {
             try {
                 var query = "select bd_proceso_hemofilia.NUMERO_RADICACION as 'Numero_radicacion', bd_proceso_hemofilia.NOMBRE_ARCHIVO as 'Nombre_archivo', ";
@@ -53,6 +53,23 @@ class LogsHerrores {
                 query += "from bd_proceso_hemofilia,bd_proceso_hemofilia_error where bd_proceso_hemofilia.ID_PROCESO_HEMOFILIA = bd_proceso_hemofilia_error.ID_PROCESO_HEMOFILIA "
                 query += "and bd_proceso_hemofilia.NUMERO_RADICACION = ? "
                 pool.query(query, [NUMERO_RADICACION], function (err, result, fields) {
+                    if (err) throw err;
+                    resolev(result);
+                });
+            }
+            catch (error) {
+                //res.status(404).json({ error: 'No se pudieron almacenar datos' });
+            };
+        });
+    }
+
+    public LogsErroresFrm(CAMPO_6) {
+        return new Promise(function (resolev, reject) {
+            try {
+                var query = "select E.NUMERO_CAMPO, E.TIPO_ERROR, E.DESCRIPCION_ERROR ";
+                query += "from  bd_proceso_hemofilia_error_frm E, cuenta_hemofilia C  ";
+                query += "where C.ID_CUENTA_HEMOFILIA = E.ID_CUENTA_HEMOFILIA and E.VIGENTE = 'S' and C.CAMPO_6 = ? ";
+                pool.query(query, [CAMPO_6], function (err, result, fields) {
                     if (err) throw err;
                     resolev(result);
                 });

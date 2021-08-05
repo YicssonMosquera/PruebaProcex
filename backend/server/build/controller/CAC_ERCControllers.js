@@ -34,17 +34,18 @@ class CAC_ERCControllers {
     }
     cargarPaciente(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { C8_CAMPO_9 } = req.params;
+            const { CAMPO_6 } = req.params;
             const oCACErc = new CAC_ERC_1.default();
-            const erc = yield oCACErc.getOne(C8_CAMPO_9);
+            const erc = yield oCACErc.getOne(CAMPO_6);
             res.json(erc);
         });
     }
     actualizarDatos(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { C8_CAMPO_9 } = req.params;
+            const { CAMPO_6 } = req.params;
+            console.log(CAMPO_6);
             const oCACErc = new CAC_ERC_1.default();
-            const erc = yield oCACErc.actualizarDatos(req.body, C8_CAMPO_9);
+            const erc = yield oCACErc.actualizarDatos(req.body, CAMPO_6);
             res.json(erc);
         });
     }

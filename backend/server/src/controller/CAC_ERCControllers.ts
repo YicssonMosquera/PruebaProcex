@@ -18,16 +18,17 @@ class CAC_ERCControllers {
   }
 
   public async cargarPaciente(req: Request, res: Response) {
-    const { C8_CAMPO_9 } = req.params;
+    const { CAMPO_6 } = req.params;
     const oCACErc = new CAC_ERC();
-    const erc = await oCACErc.getOne(C8_CAMPO_9);
+    const erc = await oCACErc.getOne(CAMPO_6);
     res.json(erc)
   }
 
   public async actualizarDatos(req: Request, res: Response) {
-    const { C8_CAMPO_9 } = req.params;
+    const { CAMPO_6 } = req.params;
+    console.log(CAMPO_6)
     const oCACErc = new CAC_ERC();
-    const erc = await oCACErc.actualizarDatos(req.body,C8_CAMPO_9);
+    const erc = await oCACErc.actualizarDatos(req.body, CAMPO_6);
     res.json(erc)
   }
 }

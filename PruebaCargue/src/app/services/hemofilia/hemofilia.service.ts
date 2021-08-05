@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import keys from '../../../keys'
 import { Hemofilia } from '../../models/cargahemofilia'
-import {Paginator} from '../../models/paginator'
 
 @Injectable({
   providedIn: 'root'
@@ -135,14 +134,6 @@ export class HemofiliaService {
     return this.http.get(`${this.API_URI}/${Campo_6}`)
   }
 
-  Guardarhemofilia(Hemofilia: Hemofilia) {
-    return this.http.post(`${this.API_URI}/`, Hemofilia)
-  }
-
-  ActualizarRegistro(Campo_6: Hemofilia, Hemofilia: Hemofilia) {
-    return this.http.put(`${this.API_URI}/update/${Campo_6}`, Hemofilia)
-  }
-
   cargamasivahemofilia(file: File, User: string, perfil:string) {
     const fd = new FormData();
     fd.append('file', file);
@@ -166,5 +157,7 @@ export class HemofiliaService {
   consultarUltimoArchivoCargado(ID_PROCESO_HEMOFILIA){
     return this.http.get(`${this.API_URI2}/archivocargado/${ID_PROCESO_HEMOFILIA}`)
   }
+
+
 
 }
