@@ -6,12 +6,16 @@ import keys from '../../../keys'
 })
 export class LogsHerroresService {
 
-  API_URI = keys.api.API_URI + '/logsherrores';
+  API_URI = keys.api.API_URI + '/logsErrores';
 
   constructor(private http: HttpClient) { }
 
-  cargarLogsHerrores(NUMERO_RADICACION){
-    return this.http.get(`${this.API_URI}/herroresexcel/${NUMERO_RADICACION}`)
+  cargarLogsErrores(NUMERO_RADICACION){
+    return this.http.get(`${this.API_URI}/erroresexcel/${NUMERO_RADICACION}`)
+  }
+
+  cargarErroresFrm(CAMPO_6){
+    return this.http.get(`${this.API_URI}/erroresFrm/${CAMPO_6}`)
   }
 
 }

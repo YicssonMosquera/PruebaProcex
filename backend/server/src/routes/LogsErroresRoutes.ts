@@ -11,8 +11,8 @@ class LogsErroresRoutes {
     config(): void {
         this.router.get('/herrorestipob/:NUMERO_RADICACION',logsherrorescontrollers.cargarErroresTipoB)
         this.router.get('/herrorestipoa/:NUMERO_RADICACION',logsherrorescontrollers.cargarErroresTipoA)
-        this.router.get('/herroresexcel/:NUMERO_RADICACION',logsherrorescontrollers.cargarErroresExcel)
-        this.router.get('/erroresFrm/:NUMERO_RADICACION',logsherrorescontrollers.LogsErroresFrm)
+        this.router.get('/erroresexcel/:NUMERO_RADICACION',logsherrorescontrollers.cargarErroresExcel)
+        this.router.get('/erroresFrm/:CAMPO_6',logsherrorescontrollers.LogsErroresFrm)
     }
 }
 

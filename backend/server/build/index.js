@@ -41,7 +41,7 @@ class Server {
         this.app.use('/api/hemofilia', Cargaropcioneshemofiliaroutes_1.default);
         this.app.use('/api/soportes', SoportesRoutes_1.default);
         this.app.use('/api/carguehemofilia', CarguehemofiliaRoutes_1.default);
-        this.app.use('/api/logsherrores', LogsErroresRoutes_1.default);
+        this.app.use('/api/logsErrores', LogsErroresRoutes_1.default);
         this.app.use('/api/opcionesLista', BDOpcionesListarouter_1.default);
         this.app.use('/api/artritis', CAC_ArtritisRoutes_1.default);
         this.app.use('/api/opcionesListasERC', BdOpcionesListasERCRoutes_1.default);

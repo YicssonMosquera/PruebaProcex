@@ -85,7 +85,7 @@ export class CargarHemofiliaComponent implements OnInit {
   descargarLogsExcel(data) {
     let EXCEL_EXTENSION = '.xlsx';
     const Ruta = 'http://localhost:3000/logsExcel/' + data+'.xlsx'
-    this.logsHerrores.cargarLogsHerrores(data).subscribe(res => {
+    this.logsHerrores.cargarLogsErrores(data).subscribe(res => {
       // const blob = new Blob([Ruta], { type: fileType });
       // const url = window.URL.createObjectURL(blob);
       saveAs(Ruta, data+'.xlsx');

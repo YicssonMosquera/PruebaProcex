@@ -10,8 +10,8 @@ class LogsErroresRoutes {
     config() {
         this.router.get('/herrorestipob/:NUMERO_RADICACION', LogsErroresControllers_1.logsherrorescontrollers.cargarErroresTipoB);
         this.router.get('/herrorestipoa/:NUMERO_RADICACION', LogsErroresControllers_1.logsherrorescontrollers.cargarErroresTipoA);
-        this.router.get('/herroresexcel/:NUMERO_RADICACION', LogsErroresControllers_1.logsherrorescontrollers.cargarErroresExcel);
-        this.router.get('/erroresFrm/:NUMERO_RADICACION', LogsErroresControllers_1.logsherrorescontrollers.LogsErroresFrm);
+        this.router.get('/erroresexcel/:NUMERO_RADICACION', LogsErroresControllers_1.logsherrorescontrollers.cargarErroresExcel);
+        this.router.get('/erroresFrm/:CAMPO_6', LogsErroresControllers_1.logsherrorescontrollers.LogsErroresFrm);
     }
 }
 const logsErrores = new LogsErroresRoutes();
