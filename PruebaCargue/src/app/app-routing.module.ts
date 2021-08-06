@@ -12,9 +12,12 @@ import { CuentaCancerComponent } from './components/cuenta-cancer/cuenta-cancer.
 import {CuentaCancerListarComponent} from './components/cuenta-cancer-listar/cuenta-cancer-listar.component';
 import {CuentaCancerActualizarComponent} from './components/cuenta-cancer-actualizar/cuenta-cancer-actualizar.component';
 import {CuentaErcComponent} from './components/cuenta-erc/cuenta-erc.component';
-import {CuentaErcEditComponent} from './components/cuenta-erc-edit/cuenta-erc-edit.component'
-import {CuentaErcListarComponent} from '../app/components/cuenta-erc-listar/cuenta-erc-listar.component'
-import {CancerFrmComponent} from '../app/components/cancer-frm/cancer-frm.component'
+import {CuentaErcEditComponent} from './components/cuenta-erc-edit/cuenta-erc-edit.component';
+import {CuentaErcListarComponent} from '../app/components/cuenta-erc-listar/cuenta-erc-listar.component';
+import {CancerFrmComponent} from '../app/components/cancer-frm/cancer-frm.component';
+import {CancerEditComponent} from '../app/components/cancer-edit/cancer-edit.component';
+import {CancerCargarComponent} from '../app/components/cancer-cargar/cancer-cargar.component';
+import { CancerSoporteComponent } from './components/cancer-soporte/cancer-soporte.component';
 
 const routes: Routes = [
 
@@ -31,7 +34,10 @@ const routes: Routes = [
   {path:  'Erc-frm',component:CuentaErcComponent,canActivate:[AuthGuard]},
   {path:  'Erc-listar',component:CuentaErcListarComponent,canActivate:[AuthGuard]},
   {path:  'Erc-edit/:cc',component:CuentaErcEditComponent,canActivate:[AuthGuard]},
-  {path:  'cancer-guard',component:CancerFrmComponent,canActivate:[AuthGuard]},
+  {path:  'Cancer-frm',component:CancerFrmComponent,canActivate:[AuthGuard]},
+  {path:  'Cancer-frm/:cc',component:CancerEditComponent,canActivate:[AuthGuard]},
+  {path:  'Cancer-listar',component:CancerCargarComponent,canActivate:[AuthGuard]},
+  {path:  'Cancer-soporte/:cc',component:CancerSoporteComponent,canActivate:[AuthGuard]},
   {path:  'Login',component:LoginComponent},
 ];
 

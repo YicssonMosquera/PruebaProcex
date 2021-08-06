@@ -6,6 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from 'src/app/app.component';
 import { CACHemofiliaService } from 'src/app/services/CAC-Hemofilia/cac-hemofilia.service'
+import { LogsHerroresService } from 'src/app/services/logsHerrores/logs-herrores.service'
 
 import { Router } from '@angular/router'
 import Swal from 'sweetalert2';
@@ -161,16 +162,18 @@ export class HemofiliaEditComponent implements OnInit {
     DOSIS_PROFILAXIS: '',
   }
   validacionRegistro = false;
+  Hemofilia
 
 
   constructor(private hemofiliaservice: HemofiliaService, activateRoute: ActivatedRoute, private CACHemofiliaservice: CACHemofiliaService,
-    config: NgbModalConfig, private modalService: NgbModal, private Router: Router, public tabs: AppComponent,) {
+    config: NgbModalConfig, private modalService: NgbModal, private Router: Router, public tabs: AppComponent, private logsErroresService: LogsHerroresService) {
     this.CC = activateRoute.snapshot.params['cc']; config.backdrop = 'static';
     config.keyboard = false;
   }
 
   ngOnInit(): void {
     this.Funcionesdecarga();
+    this.cargarErrores();
   }
   Funcionesdecarga() {
     this.Cargarregistrohemofilia();
@@ -773,16 +776,31 @@ export class HemofiliaEditComponent implements OnInit {
     })
   }
 
-  GuardarRegistros(){
-    if(this.validacionRegistro == true){
-     this.GuardarDatosconValidacion()
-    }else{
+  GuardarRegistros() {
+    if (this.validacionRegistro == true) {
+      this.GuardarDatosconValidacion()
+    } else {
       this.GuargarDatos();
     }
   }
 
   openLg(content) {
-    this.modalService.open(content, { size: 'lg', scrollable: true });
+    this.modalService.open(content, { size: 'lg' });
+  }
+
+  cargarErrores() {
+    this.logsErroresService.cargarErroresFrm(this.CC).subscribe(res => {
+      this.Hemofilia = res;
+      console.log(this.Hemofilia)
+    })
+  }
+
+  modal() {
+    var myModal = document.getElementById('myModal')
+    var myInput = document.getElementById('myInput')
+    myModal.addEventListener('shown.bs.modal', function () {
+      myInput.focus()
+    })
   }
 
 

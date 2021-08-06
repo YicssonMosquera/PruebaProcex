@@ -14,6 +14,12 @@ import Swal from 'sweetalert2';
   styleUrls: ['./cancer-frm.component.css']
 })
 export class CancerFrmComponent implements OnInit {
+  _cancer_1 = true;
+  _cancer_3 = true;
+  _cancer_5 = true;
+  _cancer_6 = true;
+  _cancer_7 = true;
+  _cancer_8 = true;
   cancer5: any;
   cancer8: any;
   Ocupacion: any;
@@ -139,7 +145,8 @@ export class CancerFrmComponent implements OnInit {
   cancer128: any;
   cancer129: any;
   cancer132: any;
-
+  nacimiento
+  existe
 
   cancer: Cancer = {
     ID_CUENTA_CANCER: '',
@@ -323,8 +330,6 @@ export class CancerFrmComponent implements OnInit {
 
   Funcionesdecarga() {
 
-
-
     this.cargarCancer5();
     this.cargarCancer8();
     this.cargarCancer10();
@@ -449,11 +454,742 @@ export class CancerFrmComponent implements OnInit {
     this.cargarCancer129();
     this.cargarCancer132();
 
-
-
     this.CargarOcupacion();
     this.CargarMunicipioresidencia();
 
+  }
+
+  identificacionExiste() {
+    let entro = false;
+    if (this.cancer.CAMPO_1 == '') {
+      this._cancer_1 = false;
+      entro = true;
+    } else {
+      this._cancer_1 = true;
+    }
+
+    if (this.cancer.CAMPO_3 == '') {
+      this._cancer_3 = false;
+      entro = true;
+    } else {
+      this._cancer_3 = true;
+    }
+    if (this.cancer.CAMPO_5 == '') {
+      this._cancer_5 = false;
+      entro = true;
+    } else {
+      this._cancer_5 = true;
+    }
+
+    if (this.cancer.CAMPO_6 == '') {
+      this._cancer_6 = false;
+      entro = true;
+    } else {
+      this._cancer_6 = true;
+    }
+    if (this.cancer.CAMPO_7 == '') {
+      this._cancer_7 = false;
+      entro = true;
+    } else {
+      this._cancer_7 = true;
+    }
+    if (this.cancer.CAMPO_8 == '') {
+      this._cancer_8 = false;
+      entro = true;
+    } else {
+      this._cancer_8 = true;
+    }
+
+    if (entro == true) {
+      Swal.fire({
+        icon: 'error',
+        title: '¡Advertencia!',
+        text: 'Digite los campos obligatorios',
+      })
+
+    } else {
+
+      this.cacCancerServiceService.CargarIdentificacion(this.cancer.CAMPO_6).subscribe(res => {
+        this.existe = res;
+        if (this.existe == '') {
+          this.GuargarDatos();
+        } else {
+          // this._cancer_1 = true;
+          // this._cancer_3 = true;
+          // this._cancer_5 = true;
+          // this._cancer_6 = true;
+          // this._cancer_7 = true;
+          // this._cancer_8 = true;
+
+          Swal.fire({
+            title: 'Ya existe un usuario con este documento',
+            text: "¿Desea ir a editar dicho usuario?",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, quiero ir',
+            cancelButtonText: 'No, volver al formulario'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              this.tabs.crearTab('Cancer-frm', 'Cancer-frm/' + this.cancer.CAMPO_6);
+            }
+          })
+        }
+      })
+    }
+  }
+
+  cargarNacimiento(_nacimiento) {
+    this.nacimiento = new Date(_nacimiento);
+  }
+
+  CAMPO_7(cancer) {
+    var startDate = new Date(cancer);
+    var today = new Date();
+    if (startDate > today) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'la Fecha de nacimiento debe ser menor a la fecha actual',
+      })
+      this.cancer.CAMPO_7 = '';
+    }
+  }
+
+  CAMPO_16(cancer) {
+    var startDate = new Date(cancer);
+    var today = new Date();
+    if (startDate > today) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'la Fecha de afiliación a la EAPB que reporta debe ser menor a la fecha actual',
+      })
+      this.cancer.CAMPO_16 = '';
+    }
+    if (startDate < this.nacimiento) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'La Fecha ingresada debe ser mayor a la fecha de nacimiento',
+      })
+      this.cancer.CAMPO_16 = '';
+    }
+  }
+
+
+  CAMPO_18(cancer) {
+    var startDate = new Date(cancer);
+    var today = new Date();
+    if (startDate > today) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'la Fecha de diagnóstico del cáncer reportado actualmente debe ser menor a la fecha actual',
+      })
+      this.cancer.CAMPO_18 = '';
+    }
+    if (startDate < this.nacimiento) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'La Fecha ingresada debe ser mayor a la fecha de nacimiento',
+      })
+      this.cancer.CAMPO_18 = '';
+    }
+  }
+
+
+  CAMPO_19(cancer) {
+    var startDate = new Date(cancer);
+    var today = new Date();
+    if (startDate > today) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'la Fecha de la nota de remisión debe ser menor a la fecha actual',
+      })
+      this.cancer.CAMPO_19 = '';
+    }
+    if (startDate < this.nacimiento) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'La Fecha ingresada debe ser mayor a la fecha de nacimiento',
+      })
+      this.cancer.CAMPO_19 = '';
+    }
+  }
+
+
+  CAMPO_20(cancer) {
+    var startDate = new Date(cancer);
+    var today = new Date();
+    if (startDate > today) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'la Fecha de ingreso a la institución debe ser menor a la fecha actual',
+      })
+      this.cancer.CAMPO_20 = '';
+    }
+    if (startDate < this.nacimiento) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'La Fecha ingresada debe ser mayor a la fecha de nacimiento',
+      })
+      this.cancer.CAMPO_20 = '';
+    }
+  }
+
+  CAMPO_23(cancer) {
+    var startDate = new Date(cancer);
+    var today = new Date();
+    if (startDate > today) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'la Fecha de recolección de muestra para estudio histopatológico debe ser menor a la fecha actual',
+      })
+      this.cancer.CAMPO_23 = '';
+    }
+    if (startDate < this.nacimiento) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'La Fecha ingresada debe ser mayor a la fecha de nacimiento',
+      })
+      this.cancer.CAMPO_23 = '';
+    }
+  }
+
+  CAMPO_24(cancer) {
+    var startDate = new Date(cancer);
+    var today = new Date();
+    if (startDate > today) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'la Fecha de informe histopatológico válido debe ser menor a la fecha actual',
+      })
+      this.cancer.CAMPO_24 = '';
+    }
+    if (startDate < this.nacimiento) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'La Fecha ingresada debe ser mayor a la fecha de nacimiento',
+      })
+      this.cancer.CAMPO_24 = '';
+    }
+  }
+
+  CAMPO_26(cancer) {
+    var startDate = new Date(cancer);
+    var today = new Date();
+    if (startDate > today) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'la Fecha de primera consulta con médico tratante de la enfermedad maligna debe ser menor a la fecha actual',
+      })
+      this.cancer.CAMPO_26 = '';
+    }
+    if (startDate < this.nacimiento) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'La Fecha ingresada debe ser mayor a la fecha de nacimiento',
+      })
+      this.cancer.CAMPO_26 = '';
+
+    }
+  }
+
+  CAMPO_30(cancer) {
+    var startDate = new Date(cancer);
+    var today = new Date();
+    if (startDate > today) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'la Fecha en que se realizó esta estadificación debe ser menor a la fecha actual',
+      })
+      this.cancer.CAMPO_30 = '';
+    }
+    if (startDate < this.nacimiento) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'La Fecha ingresada debe ser mayor a la fecha de nacimiento',
+      })
+      this.cancer.CAMPO_30 = '';
+    }
+  }
+
+  CAMPO_32(cancer) {
+    var startDate = new Date(cancer);
+    var today = new Date();
+    if (startDate > today) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'la Fecha de realización de la última prueba HER2 debe ser menor a la fecha actual',
+      })
+      this.cancer.CAMPO_32 = '';
+    }
+    if (startDate < this.nacimiento) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'La Fecha ingresada debe ser mayor a la fecha de nacimiento',
+      })
+      this.cancer.CAMPO_32 = '';
+    }
+  }
+
+  CAMPO_35(cancer) {
+    var startDate = new Date(cancer);
+    var today = new Date();
+    if (startDate > today) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'la Fecha en que se realizó la estadificación de Dukes debe ser menor a la fecha actual',
+      })
+      this.cancer.CAMPO_35 = '';
+    }
+    if (startDate < this.nacimiento) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'La Fecha ingresada debe ser mayor a la fecha de nacimiento',
+      })
+      this.cancer.CAMPO_35 = '';
+    }
+  }
+
+  CAMPO_39(cancer) {
+    var startDate = new Date(cancer);
+    var today = new Date();
+    if (startDate > today) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'la Fecha de clasificación de riesgo debe ser menor a la fecha actual',
+      })
+      this.cancer.CAMPO_39 = '';
+    }
+
+    if (startDate < this.nacimiento) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'La Fecha ingresada debe ser mayor a la fecha de nacimiento',
+      })
+      this.cancer.CAMPO_39 = '';
+    }
+  }
+
+  CAMPO_43(cancer) {
+    var startDate = new Date(cancer);
+    var today = new Date();
+    if (startDate > today) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'la Fecha de diagnóstico del otro cáncer primario debe ser menor a la fecha actual',
+      })
+      this.cancer.CAMPO_43 = '';
+    }
+    if (startDate < this.nacimiento) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'La Fecha ingresada debe ser mayor a la fecha de nacimiento',
+      })
+      this.cancer.CAMPO_43 = '';
+    }
+  }
+
+  CAMPO_49(cancer) {
+    var startDate = new Date(cancer);
+    var today = new Date();
+    if (startDate > today) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'la Fecha de inicio del primer ciclo de quimioterapia debe ser menor a la fecha actual',
+      })
+      this.cancer.CAMPO_49 = '';
+    }
+    if (startDate < this.nacimiento) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'La Fecha ingresada debe ser mayor a la fecha de nacimiento',
+      })
+      this.cancer.CAMPO_49 = '';
+    }
+  }
+
+  CAMPO_58(cancer) {
+    var startDate = new Date(cancer);
+    var today = new Date();
+    if (startDate > today) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'la Fecha de finalización del primer ciclo debe ser menor a la fecha actual',
+      })
+      this.cancer.CAMPO_58 = '';
+    }
+    if (startDate < this.nacimiento) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'La Fecha ingresada debe ser mayor a la fecha de nacimiento',
+      })
+      this.cancer.CAMPO_58 = '';
+    }
+  }
+
+  CAMPO_62(cancer) {
+    var startDate = new Date(cancer);
+    var today = new Date();
+    if (startDate > today) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'la Fecha de inicio del último ciclo de quimioterapia debe ser menor a la fecha actual',
+      })
+      this.cancer.CAMPO_62 = '';
+    }
+    if (startDate < this.nacimiento) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'La Fecha ingresada debe ser mayor a la fecha de nacimiento',
+      })
+      this.cancer.CAMPO_62 = '';
+    }
+  }
+
+  CAMPO_71(cancer) {
+    var startDate = new Date(cancer);
+    var today = new Date();
+    if (startDate > today) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'la Fecha de finalización del último ciclo debe ser menor a la fecha actual',
+      })
+      this.cancer.CAMPO_71 = '';
+    }
+    if (startDate < this.nacimiento) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'La Fecha ingresada debe ser mayor a la fecha de nacimiento',
+      })
+      this.cancer.CAMPO_71 = '';
+    }
+  }
+
+  CAMPO_76(cancer) {
+    var startDate = new Date(cancer);
+    var today = new Date();
+    if (startDate > today) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'la Fecha de realización de la primera cirugía debe ser menor a la fecha actual',
+      })
+      this.cancer.CAMPO_76 = '';
+    }
+    if (startDate < this.nacimiento) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'La Fecha ingresada debe ser mayor a la fecha de nacimiento',
+      })
+      this.cancer.CAMPO_76 = '';
+    }
+  }
+
+  CAMPO_80(cancer) {
+    var startDate = new Date(cancer);
+    var today = new Date();
+    if (startDate > today) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'la Fecha de realización del último procedimiento quirúrgico o de reintervención debe ser menor a la fecha actual',
+      })
+      this.cancer.CAMPO_80 = '';
+    }
+    if (startDate < this.nacimiento) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'La Fecha ingresada debe ser mayor a la fecha de nacimiento',
+      })
+      this.cancer.CAMPO_80 = '';
+    }
+  }
+
+  CAMPO_88(cancer) {
+    var startDate = new Date(cancer);
+    var today = new Date();
+    if (startDate > today) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'la Fecha de inicio de primer o único esquema de radioterapia suministrado debe ser menor a la fecha actual',
+      })
+      this.cancer.CAMPO_88 = '';
+    }
+    if (startDate < this.nacimiento) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'La Fecha ingresada debe ser mayor a la fecha de nacimiento',
+      })
+      this.cancer.CAMPO_88 = '';
+    }
+  }
+
+  CAMPO_94(cancer) {
+    var startDate = new Date(cancer);
+    var today = new Date();
+    if (startDate > today) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'la Fecha de finalización de primer o único esquema de radioterapia debe ser menor a la fecha actual',
+      })
+      this.cancer.CAMPO_94 = '';
+    }
+    if (startDate < this.nacimiento) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'La Fecha ingresada debe ser mayor a la fecha de nacimiento',
+      })
+      this.cancer.CAMPO_94 = '';
+    }
+  }
+
+  CAMPO_97(cancer) {
+    var startDate = new Date(cancer);
+    var today = new Date();
+    if (startDate > today) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'la Fecha de inicio del último esquema de radioterapia debe ser menor a la fecha actual',
+      })
+      this.cancer.CAMPO_97 = '';
+    }
+    if (startDate < this.nacimiento) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'La Fecha ingresada debe ser mayor a la fecha de nacimiento',
+      })
+      this.cancer.CAMPO_97 = '';
+    }
+  }
+
+  CAMPO_103(cancer) {
+    var startDate = new Date(cancer);
+    var today = new Date();
+    if (startDate > today) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'la Fecha de finalización del último esquema de radioterapia debe ser menor a la fecha actual',
+      })
+      this.cancer.CAMPO_103 = '';
+    }
+    if (startDate < this.nacimiento) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'La Fecha ingresada debe ser mayor a la fecha de nacimiento',
+      })
+      this.cancer.CAMPO_103 = '';
+    }
+  }
+
+  CAMPO_109(cancer) {
+    var startDate = new Date(cancer);
+    var today = new Date();
+    if (startDate > today) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'la Fecha de trasplante debe ser menor a la fecha actual',
+      })
+      this.cancer.CAMPO_109 = '';
+    }
+    if (startDate < this.nacimiento) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'La Fecha ingresada debe ser mayor a la fecha de nacimiento',
+      })
+      this.cancer.CAMPO_109 = '';
+    }
+  }
+
+  CAMPO_112(cancer) {
+    var startDate = new Date(cancer);
+    var today = new Date();
+    if (startDate > today) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'la Fecha de cirugía debe ser menor a la fecha actual',
+      })
+      this.cancer.CAMPO_112 = '';
+    }
+    if (startDate < this.nacimiento) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'La Fecha ingresada debe ser mayor a la fecha de nacimiento',
+      })
+      this.cancer.CAMPO_112 = '';
+    }
+  }
+
+  CAMPO_115(cancer) {
+    var startDate = new Date(cancer);
+    var today = new Date();
+    if (startDate > today) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'la Fecha de primera consulta o procedimiento de cuidado paliativo debe ser menor a la fecha actual',
+      })
+      this.cancer.CAMPO_115 = '';
+    }
+    if (startDate < this.nacimiento) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'La Fecha ingresada debe ser mayor a la fecha de nacimiento',
+      })
+      this.cancer.CAMPO_115 = '';
+    }
+  }
+
+  CAMPO_118(cancer) {
+    var startDate = new Date(cancer);
+    var today = new Date();
+    if (startDate > today) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'la Fecha de primera consulta con el servicio de psiquiatría debe ser menor a la fecha actual',
+      })
+      this.cancer.CAMPO_118 = '';
+    }
+    if (startDate < this.nacimiento) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'La Fecha ingresada debe ser mayor a la fecha de nacimiento',
+      })
+      this.cancer.CAMPO_118 = '';
+    }
+  }
+
+  CAMPO_121(cancer) {
+    var startDate = new Date(cancer);
+    var today = new Date();
+    if (startDate > today) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'la Fecha de consulta inicial con nutrición debe ser menor a la fecha actual',
+      })
+      this.cancer.CAMPO_121 = '';
+    }
+    if (startDate < this.nacimiento) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'La Fecha ingresada debe ser mayor a la fecha de nacimiento',
+      })
+      this.cancer.CAMPO_121 = '';
+    }
+  }
+
+  CAMPO_130(cancer) {
+    var startDate = new Date(cancer);
+    var today = new Date();
+    if (startDate > today) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'la Fecha de desafiliación de la EPS debe ser menor a la fecha actual',
+      })
+      this.cancer.CAMPO_130 = '';
+    }
+    if (startDate < this.nacimiento) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'La Fecha ingresada debe ser mayor a la fecha de nacimiento',
+      })
+      this.cancer.CAMPO_130 = '';
+    }
+  }
+
+  CAMPO_131(cancer) {
+    var startDate = new Date(cancer);
+    var today = new Date();
+    if (startDate > today) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'la Fecha de muerte debe ser menor a la fecha actual',
+      })
+      this.cancer.CAMPO_131 = '';
+    }
+    if (startDate < this.nacimiento) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'La Fecha ingresada debe ser mayor a la fecha de nacimiento',
+      })
+      this.cancer.CAMPO_131 = '';
+    }
+  }
+
+  CAMPO_134(cancer) {
+    var startDate = new Date(cancer);
+    var today = new Date();
+    if (startDate > today) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'la Fecha de Corte debe ser menor a la fecha actual',
+      })
+      this.cancer.CAMPO_134 = '';
+    }
+    if (startDate < this.nacimiento) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en la fecha',
+        text: 'La Fecha ingresada debe ser mayor a la fecha de nacimiento',
+      })
+      this.cancer.CAMPO_134 = '';
+    }
   }
 
 
@@ -1325,6 +2061,110 @@ export class CancerFrmComponent implements OnInit {
 
 
   GuargarDatos() {
+    // this.identificacionExiste();
+    // if (this.existe == '') {
+    // let entro = false;
+
+    // if (this.cancer.CAMPO_1 == '') {
+    //   this._cancer_1 = false;
+    //   entro = true;
+    // } else {
+    //   this._cancer_1 = true;
+    // }
+
+    // if (this.cancer.CAMPO_3 == '') {
+    //   this._cancer_3 = false;
+    //   entro = true;
+    // } else {
+    //   this._cancer_3 = true;
+    // }
+    // if (this.cancer.CAMPO_5 == '') {
+    //   this._cancer_5 = false;
+    //   entro = true;
+    // } else {
+    //   this._cancer_5 = true;
+    // }
+
+    // if (this.cancer.CAMPO_6 == '') {
+    //   this._cancer_6 = false;
+    //   entro = true;
+    // } else {
+    //   this._cancer_6 = true;
+    // }
+    // if (this.cancer.CAMPO_7 == '') {
+    //   this._cancer_7 = false;
+    //   entro = true;
+    // } else {
+    //   this._cancer_7 = true;
+    // }
+    // if (this.cancer.CAMPO_8 == '') {
+    //   this._cancer_8 = false;
+    //   entro = true;
+    // } else {
+    //   this._cancer_8 = true;
+    // }
+
+    // if (entro == true) {
+    //   Swal.fire({
+    //     icon: 'error',
+    //     title: '¡Advertencia!',
+    //     text: 'Digite los campos obligatorios',
+    //   })
+
+    // } else {
+
+    let cancer_9 = this.cancer.CAMPO_9?.split('.')[0];
+    this.cancer.CAMPO_9 = cancer_9;
+
+    let cancer_14 = this.cancer.CAMPO_14?.split('.')[0];
+    this.cancer.CAMPO_14 = cancer_14;
+
+    let cancer_51 = this.cancer.CAMPO_51?.split('.')[0];
+    this.cancer.CAMPO_51 = cancer_51;
+
+    let cancer_52 = this.cancer.CAMPO_52?.split('.')[0];
+    this.cancer.CAMPO_52 = cancer_52;
+
+    let cancer_64 = this.cancer.CAMPO_64?.split('.')[0];
+    this.cancer.CAMPO_64 = cancer_64;
+
+    let cancer_65 = this.cancer.CAMPO_65?.split('.')[0];
+    this.cancer.CAMPO_65 = cancer_65;
+
+    let cancer_77 = this.cancer.CAMPO_77?.split('.')[0];
+    this.cancer.CAMPO_77 = cancer_77;
+
+    let cancer_82 = this.cancer.CAMPO_82?.split('.')[0];
+    this.cancer.CAMPO_82 = cancer_82;
+
+    let cancer_92 = this.cancer.CAMPO_92?.split('.')[0];
+    this.cancer.CAMPO_92 = cancer_92;
+
+    let cancer_93 = this.cancer.CAMPO_93?.split('.')[0];
+    this.cancer.CAMPO_93 = cancer_93;
+
+    let cancer_101 = this.cancer.CAMPO_101?.split('.')[0];
+    this.cancer.CAMPO_101 = cancer_101;
+
+    let cancer_102 = this.cancer.CAMPO_102?.split('.')[0];
+    this.cancer.CAMPO_102 = cancer_102;
+
+    let cancer_110 = this.cancer.CAMPO_110?.split('.')[0];
+    this.cancer.CAMPO_110 = cancer_110;
+
+    let cancer_113 = this.cancer.CAMPO_113?.split('.')[0];
+    this.cancer.CAMPO_113 = cancer_113;
+
+    let cancer_116 = this.cancer.CAMPO_116?.split('.')[0];
+    this.cancer.CAMPO_116 = cancer_116;
+
+    let cancer_119 = this.cancer.CAMPO_119?.split('.')[0];
+    this.cancer.CAMPO_119 = cancer_119;
+
+    let cancer_122 = this.cancer.CAMPO_122?.split('.')[0];
+    this.cancer.CAMPO_122 = cancer_122;
+
+
     delete this.cancer.ID_CUENTA_CANCER;
     console.log(this.cancer)
     this.cacCancerServiceService.GuardarCancer(this.cancer).subscribe(res => {
@@ -1342,12 +2182,22 @@ export class CancerFrmComponent implements OnInit {
       })
     })
   }
+  // } else {
+  //   Swal.fire({
+  //     icon: 'error',
+  //     title: '¡Advertencia!',
+  //     text: 'Ya existe un usuarios con este documento',
+  //   })
+  // alert('coge el documento')
+  //   }
+  // }
 
-  // open(content: any) {
-  //   this.modalService.open(content, { size: 'lg' });
-  // }
-  // formularioNuevo() {
-  //   this.tabs.crearTab('Soporte', 'Hemofilia-soporte/:cc');
-  // }
+
+  open(content: any) {
+    this.modalService.open(content, { size: 'lg' });
+  }
+  formularioNuevo() {
+    this.tabs.crearTab('Soporte', 'Hemofilia-soporte/:cc');
+  }
 
 }

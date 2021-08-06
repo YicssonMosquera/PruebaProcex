@@ -58,7 +58,8 @@ import { CuentaErcListarComponent } from './components/cuenta-erc-listar/cuenta-
 import { CuentaErcEditComponent } from './components/cuenta-erc-edit/cuenta-erc-edit.component';
 import { CancerCargarComponent } from './components/cancer-cargar/cancer-cargar.component';
 import { CancerEditComponent } from './components/cancer-edit/cancer-edit.component';
-import { CancerFrmComponent } from './components/cancer-frm/cancer-frm.component'
+import { CancerFrmComponent } from './components/cancer-frm/cancer-frm.component';
+import {CancerSoporteComponent} from './components/cancer-soporte/cancer-soporte.component'
 
 @NgModule({
   declarations: [
@@ -82,7 +83,8 @@ import { CancerFrmComponent } from './components/cancer-frm/cancer-frm.component
     CuentaErcEditComponent,
     CancerCargarComponent,
     CancerEditComponent,
-    CancerFrmComponent
+    CancerFrmComponent,
+    CancerSoporteComponent
   ],
   imports: [
     BrowserModule,

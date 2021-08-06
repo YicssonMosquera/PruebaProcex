@@ -10,6 +10,7 @@ export class OpcionesListasCancerService {
 
   constructor(private http: HttpClient) { }
 
+  
   cargarCancer5() {
     return this.http.get(`${this.API_URI}/C4_CAMPO_5`)
   }

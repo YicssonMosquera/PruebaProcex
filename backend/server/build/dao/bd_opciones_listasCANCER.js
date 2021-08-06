@@ -503,7 +503,7 @@ class bd_opciones_listasCANCER {
     static cancer51() {
         return new Promise(function (resolev, reject) {
             try {
-                database_1.default.query("select * from BD_opciones_listas where CODIGO_LISTA = 'hemofilia.C58_CAMPO_51' ", function (err, result, fields) {
+                database_1.default.query("select * from bd_ips", function (err, result, fields) {
                     if (err)
                         throw err;
                     resolev(result);
@@ -518,7 +518,7 @@ class bd_opciones_listasCANCER {
     static cancer52() {
         return new Promise(function (resolev, reject) {
             try {
-                database_1.default.query("select * from BD_opciones_listas where CODIGO_LISTA = 'hemofilia.C59_CAMPO_52' ", function (err, result, fields) {
+                database_1.default.query("select * from bd_ips", function (err, result, fields) {
                     if (err)
                         throw err;
                     resolev(result);
@@ -803,7 +803,7 @@ class bd_opciones_listasCANCER {
     static cancer64() {
         return new Promise(function (resolev, reject) {
             try {
-                database_1.default.query("select * from BD_opciones_listas where CODIGO_LISTA = 'hemofilia.C80_CAMPO_64' ", function (err, result, fields) {
+                database_1.default.query("select * from bd_ips", function (err, result, fields) {
                     if (err)
                         throw err;
                     resolev(result);
@@ -818,7 +818,7 @@ class bd_opciones_listasCANCER {
     static cancer65() {
         return new Promise(function (resolev, reject) {
             try {
-                database_1.default.query("select * from BD_opciones_listas where CODIGO_LISTA = 'hemofilia.C81_CAMPO_65' ", function (err, result, fields) {
+                database_1.default.query("select * from bd_ips", function (err, result, fields) {
                     if (err)
                         throw err;
                     resolev(result);
@@ -1103,7 +1103,7 @@ class bd_opciones_listasCANCER {
     static cancer77() {
         return new Promise(function (resolev, reject) {
             try {
-                database_1.default.query("select * from BD_opciones_listas where CODIGO_LISTA = 'hemofilia.C102_CAMPO_77' ", function (err, result, fields) {
+                database_1.default.query("select * from bd_ips", function (err, result, fields) {
                     if (err)
                         throw err;
                     resolev(result);
@@ -1163,7 +1163,7 @@ class bd_opciones_listasCANCER {
     static cancer82() {
         return new Promise(function (resolev, reject) {
             try {
-                database_1.default.query("select * from BD_opciones_listas where CODIGO_LISTA = 'hemofilia.C107_CAMPO_82' ", function (err, result, fields) {
+                database_1.default.query("select * from bd_ips", function (err, result, fields) {
                     if (err)
                         throw err;
                     resolev(result);
@@ -1298,7 +1298,7 @@ class bd_opciones_listasCANCER {
     static cancer92() {
         return new Promise(function (resolev, reject) {
             try {
-                database_1.default.query("select * from BD_opciones_listas where CODIGO_LISTA = 'hemofilia.C117_CAMPO_92' ", function (err, result, fields) {
+                database_1.default.query("select * from bd_ips", function (err, result, fields) {
                     if (err)
                         throw err;
                     resolev(result);
@@ -1313,7 +1313,7 @@ class bd_opciones_listasCANCER {
     static cancer93() {
         return new Promise(function (resolev, reject) {
             try {
-                database_1.default.query("select * from BD_opciones_listas where CODIGO_LISTA = 'hemofilia.C118_CAMPO_93' ", function (err, result, fields) {
+                database_1.default.query("select * from bd_ips", function (err, result, fields) {
                     if (err)
                         throw err;
                     resolev(result);
@@ -1403,7 +1403,7 @@ class bd_opciones_listasCANCER {
     static cancer101() {
         return new Promise(function (resolev, reject) {
             try {
-                database_1.default.query("select * from BD_opciones_listas where CODIGO_LISTA = 'hemofilia.C126_CAMPO_101' ", function (err, result, fields) {
+                database_1.default.query("select * from bd_ips", function (err, result, fields) {
                     if (err)
                         throw err;
                     resolev(result);
@@ -1418,7 +1418,7 @@ class bd_opciones_listasCANCER {
     static cancer102() {
         return new Promise(function (resolev, reject) {
             try {
-                database_1.default.query("select * from BD_opciones_listas where CODIGO_LISTA = 'hemofilia.C127_CAMPO_102' ", function (err, result, fields) {
+                database_1.default.query("select * from bd_ips", function (err, result, fields) {
                     if (err)
                         throw err;
                     resolev(result);
@@ -1508,7 +1508,7 @@ class bd_opciones_listasCANCER {
     static cancer110() {
         return new Promise(function (resolev, reject) {
             try {
-                database_1.default.query("select * from BD_opciones_listas where CODIGO_LISTA = 'hemofilia.C135_CAMPO_110' ", function (err, result, fields) {
+                database_1.default.query("select * from bd_ips", function (err, result, fields) {
                     if (err)
                         throw err;
                     resolev(result);
@@ -1538,7 +1538,7 @@ class bd_opciones_listasCANCER {
     static cancer113() {
         return new Promise(function (resolev, reject) {
             try {
-                database_1.default.query("select * from BD_opciones_listas where CODIGO_LISTA = 'hemofilia.C138_CAMPO_113' ", function (err, result, fields) {
+                database_1.default.query("select * from bd_ips", function (err, result, fields) {
                     if (err)
                         throw err;
                     resolev(result);
@@ -1658,7 +1658,7 @@ class bd_opciones_listasCANCER {
     static cancer116() {
         return new Promise(function (resolev, reject) {
             try {
-                database_1.default.query("select * from BD_opciones_listas where CODIGO_LISTA = 'hemofilia.C147_CAMPO_116'", function (err, result, fields) {
+                database_1.default.query("select * from bd_ips", function (err, result, fields) {
                     if (err)
                         throw err;
                     resolev(result);
@@ -1688,7 +1688,7 @@ class bd_opciones_listasCANCER {
     static cancer119() {
         return new Promise(function (resolev, reject) {
             try {
-                database_1.default.query("select * from BD_opciones_listas where CODIGO_LISTA = 'hemofilia.C150_CAMPO_119'", function (err, result, fields) {
+                database_1.default.query("select * from bd_ips", function (err, result, fields) {
                     if (err)
                         throw err;
                     resolev(result);
@@ -1718,7 +1718,7 @@ class bd_opciones_listasCANCER {
     static cancer122() {
         return new Promise(function (resolev, reject) {
             try {
-                database_1.default.query("select * from BD_opciones_listas where CODIGO_LISTA = 'hemofilia.C153_CAMPO_122'", function (err, result, fields) {
+                database_1.default.query("select * from bd_ips", function (err, result, fields) {
                     if (err)
                         throw err;
                     resolev(result);

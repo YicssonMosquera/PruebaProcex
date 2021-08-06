@@ -17,5 +17,23 @@ export class CACCancerServiceService {
     return this.http.post(`${this.API_URI}/`, Cancer)
   }
 
+  ActualizarRegistro(Campo_6: Cancer, cancer: Cancer) {
+    return this.http.put(`${this.API_URI}/update/${Campo_6}`, cancer)
+  }
+
+  CargarRegistrocancer(Tipodocumento,numerodocumeto, page, row ) {
+    const cargar = {Tipodocumento,numerodocumeto, page, row}
+    return this.http.post(`${this.API_URI}/cargarregistrocancer`, cargar)
+  }
+
+  CargarIdentificacion(Campo_6) {
+    return this.http.get(`${this.API_URI}/${Campo_6}`)
+  }
+
+  numeroRegistro() {
+    return this.http.get(`${this.API_URI}/numeroRegistro/cancer`)
+  }
+
+
 
 }

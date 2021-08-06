@@ -10,11 +10,17 @@ class CAC_cancerRouter{
 
     config(): void {
        this.router.post('/',cac_cancerControllers.guardarDatos);
+       this.router.post('/cargarregistrocancer',cac_cancerControllers.CargarRegistroCancer);
+       this.router.get('/numeroRegistro/cancer',cac_cancerControllers.getNumeroRegistro);
+       this.router.put('/update/:Campo_6',cac_cancerControllers.Actualizarcancer);
+       this.router.get('/:Campo_6',cac_cancerControllers.CargarIdentificacion)
+
+
     }
 
 
 
-
+ 
 }
 
 const cac_cancerRouter = new CAC_cancerRouter()
