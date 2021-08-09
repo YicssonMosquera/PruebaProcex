@@ -785,7 +785,7 @@ export class HemofiliaEditComponent implements OnInit {
   }
 
   openLg(content) {
-    this.modalService.open(content, { size: 'lg' });
+    this.modalService.open(content, { size: 'lg', scrollable: true });
   }
 
   cargarErrores() {
