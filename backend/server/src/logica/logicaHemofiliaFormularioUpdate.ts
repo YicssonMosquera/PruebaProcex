@@ -8,15 +8,12 @@ import ValidacionContenidoPH from "./ValidacionContenidoPH";
 
 class logicaHemofiliaFormularioUpdate {
     public static Campos = [];
-
-
-
     public static async cargarHemofiliaFrm(arrayCampos, Campo_6) {
         this.Campos = [];
         this.Campos.push(arrayCampos);
-
         this.cuentahemofilia(arrayCampos, Campo_6)
     }
+
 
     public static async cuentahemofilia(arrayCampos, Campo_6) {
         var _this = this;
@@ -46,10 +43,6 @@ class logicaHemofiliaFormularioUpdate {
         this.guardarCamposMalos(idCabeza, oValidacionCamposPH.filas_malas);
         this.guardarCamposMalosCd(idCabeza, oValidacionContenidoPH.filas_malas)
     }
-
-
-
-
 
     public static guardarCamposBuenos(idCabeza, oFilas) {
         //Guardar los detalles, campos buenos

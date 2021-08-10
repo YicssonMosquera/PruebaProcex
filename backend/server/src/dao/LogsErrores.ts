@@ -1,4 +1,3 @@
-import { Request, Response, json, request } from 'express'
 import pool from '../database'
 
 class LogsHerrores {

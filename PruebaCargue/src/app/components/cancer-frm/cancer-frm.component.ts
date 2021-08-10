@@ -14,6 +14,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./cancer-frm.component.css']
 })
 export class CancerFrmComponent implements OnInit {
+  validacionRegistro = false;
   _cancer_1 = true;
   _cancer_3 = true;
   _cancer_5 = true;
@@ -512,7 +513,11 @@ export class CancerFrmComponent implements OnInit {
       this.cacCancerServiceService.CargarIdentificacion(this.cancer.CAMPO_6).subscribe(res => {
         this.existe = res;
         if (this.existe == '') {
-          this.GuargarDatos();
+          if(this.validacionRegistro == true){
+            this.guardarDatosValidacion();
+           }else{
+             this.GuargarDatos();
+           }
         } else {
           // this._cancer_1 = true;
           // this._cancer_3 = true;
@@ -2061,57 +2066,6 @@ export class CancerFrmComponent implements OnInit {
 
 
   GuargarDatos() {
-    // this.identificacionExiste();
-    // if (this.existe == '') {
-    // let entro = false;
-
-    // if (this.cancer.CAMPO_1 == '') {
-    //   this._cancer_1 = false;
-    //   entro = true;
-    // } else {
-    //   this._cancer_1 = true;
-    // }
-
-    // if (this.cancer.CAMPO_3 == '') {
-    //   this._cancer_3 = false;
-    //   entro = true;
-    // } else {
-    //   this._cancer_3 = true;
-    // }
-    // if (this.cancer.CAMPO_5 == '') {
-    //   this._cancer_5 = false;
-    //   entro = true;
-    // } else {
-    //   this._cancer_5 = true;
-    // }
-
-    // if (this.cancer.CAMPO_6 == '') {
-    //   this._cancer_6 = false;
-    //   entro = true;
-    // } else {
-    //   this._cancer_6 = true;
-    // }
-    // if (this.cancer.CAMPO_7 == '') {
-    //   this._cancer_7 = false;
-    //   entro = true;
-    // } else {
-    //   this._cancer_7 = true;
-    // }
-    // if (this.cancer.CAMPO_8 == '') {
-    //   this._cancer_8 = false;
-    //   entro = true;
-    // } else {
-    //   this._cancer_8 = true;
-    // }
-
-    // if (entro == true) {
-    //   Swal.fire({
-    //     icon: 'error',
-    //     title: '¡Advertencia!',
-    //     text: 'Digite los campos obligatorios',
-    //   })
-
-    // } else {
 
     let cancer_9 = this.cancer.CAMPO_9?.split('.')[0];
     this.cancer.CAMPO_9 = cancer_9;
@@ -2182,16 +2136,80 @@ export class CancerFrmComponent implements OnInit {
       })
     })
   }
-  // } else {
-  //   Swal.fire({
-  //     icon: 'error',
-  //     title: '¡Advertencia!',
-  //     text: 'Ya existe un usuarios con este documento',
-  //   })
-  // alert('coge el documento')
-  //   }
-  // }
 
+
+  guardarDatosValidacion(){
+    let cancer_9 = this.cancer.CAMPO_9?.split('.')[0];
+    this.cancer.CAMPO_9 = cancer_9;
+
+    let cancer_14 = this.cancer.CAMPO_14?.split('.')[0];
+    this.cancer.CAMPO_14 = cancer_14;
+
+    let cancer_51 = this.cancer.CAMPO_51?.split('.')[0];
+    this.cancer.CAMPO_51 = cancer_51;
+
+    let cancer_52 = this.cancer.CAMPO_52?.split('.')[0];
+    this.cancer.CAMPO_52 = cancer_52;
+
+    let cancer_64 = this.cancer.CAMPO_64?.split('.')[0];
+    this.cancer.CAMPO_64 = cancer_64;
+
+    let cancer_65 = this.cancer.CAMPO_65?.split('.')[0];
+    this.cancer.CAMPO_65 = cancer_65;
+
+    let cancer_77 = this.cancer.CAMPO_77?.split('.')[0];
+    this.cancer.CAMPO_77 = cancer_77;
+
+    let cancer_82 = this.cancer.CAMPO_82?.split('.')[0];
+    this.cancer.CAMPO_82 = cancer_82;
+
+    let cancer_92 = this.cancer.CAMPO_92?.split('.')[0];
+    this.cancer.CAMPO_92 = cancer_92;
+
+    let cancer_93 = this.cancer.CAMPO_93?.split('.')[0];
+    this.cancer.CAMPO_93 = cancer_93;
+
+    let cancer_101 = this.cancer.CAMPO_101?.split('.')[0];
+    this.cancer.CAMPO_101 = cancer_101;
+
+    let cancer_102 = this.cancer.CAMPO_102?.split('.')[0];
+    this.cancer.CAMPO_102 = cancer_102;
+
+    let cancer_110 = this.cancer.CAMPO_110?.split('.')[0];
+    this.cancer.CAMPO_110 = cancer_110;
+
+    let cancer_113 = this.cancer.CAMPO_113?.split('.')[0];
+    this.cancer.CAMPO_113 = cancer_113;
+
+    let cancer_116 = this.cancer.CAMPO_116?.split('.')[0];
+    this.cancer.CAMPO_116 = cancer_116;
+
+    let cancer_119 = this.cancer.CAMPO_119?.split('.')[0];
+    this.cancer.CAMPO_119 = cancer_119;
+
+    let cancer_122 = this.cancer.CAMPO_122?.split('.')[0];
+    this.cancer.CAMPO_122 = cancer_122;
+
+
+    delete this.cancer.ID_CUENTA_CANCER;
+    console.log(this.cancer)
+    this.cacCancerServiceService.GuardarCancerValidacion(this.cancer).subscribe(res => {
+      Swal.fire({
+        title: 'Almacenado!',
+        text: 'Datos almacenados con exito.',
+        icon: 'success',
+        allowOutsideClick: false
+      }
+
+      ).then((result) => {
+        if (result.value) {
+
+        }
+      })
+    })
+  }
+  
+  
 
   open(content: any) {
     this.modalService.open(content, { size: 'lg' });

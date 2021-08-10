@@ -14,7 +14,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./cancer-edit.component.css']
 })
 export class CancerEditComponent implements OnInit {
-
+  validacionRegistro = false;
   _cancer_1 = true;
   _cancer_3 = true;
   _cancer_7 = true;
@@ -837,6 +837,350 @@ export class CancerEditComponent implements OnInit {
       }
 
       this.cacCancerServiceService.ActualizarRegistro(this.CC, this.cancer).subscribe(res => {
+        console.log(res)
+        Swal.fire({
+          title: 'Almacenado!',
+          text: 'Datos almacenados con exito.',
+          icon: 'success',
+          allowOutsideClick: false
+        }
+        ).then((result) => {
+          if (result.value) {
+
+          }
+        })
+      })
+    }
+  }
+
+
+  GuardarDatosconValidacion(){
+    let entro = false;
+    if (this.CANCER[0].CAMPO_1 == '') {
+      this._cancer_1 = false;
+      entro = true;
+    } else {
+      this._cancer_1 = true;
+    }
+
+    if (this.CANCER[0].CAMPO_3 == '') {
+      this._cancer_3 = false;
+      entro = true;
+    } else {
+      this._cancer_3 = true;
+    }
+    if (this.CANCER[0].CAMPO_7 == '') {
+      this._cancer_7 = false;
+      entro = true;
+    } else {
+      this._cancer_7 = true;
+    }
+    if (this.CANCER[0].CAMPO_8 == '') {
+      this._cancer_8 = false;
+      entro = true;
+    } else {
+      this._cancer_8 = true;
+    }
+
+    if (entro == true) {
+      Swal.fire({
+        icon: 'error',
+        title: '¡Advertencia!',
+        text: 'Digite los campos obligatorios',
+      })
+
+    } else {
+
+
+      for (let i = 0; i < this.CANCER.length; i++) {
+        this.cancer.CAMPO_1 = this.CANCER[i].CAMPO_1
+        this.cancer.CAMPO_2 = this.CANCER[i].CAMPO_2
+        this.cancer.CAMPO_3 = this.CANCER[i].CAMPO_3
+        this.cancer.CAMPO_4 = this.CANCER[i].CAMPO_4
+        this.cancer.CAMPO_5 = this.CANCER[i].CAMPO_5
+        this.cancer.CAMPO_6 = this.CANCER[i].CAMPO_6
+        this.cancer.CAMPO_7 = this.CANCER[i].CAMPO_7
+        this.cancer.CAMPO_8 = this.CANCER[i].CAMPO_8
+        this.cancer.CAMPO_9 = this.CANCER[i].CAMPO_9
+        this.cancer.CAMPO_10 = this.CANCER[i].CAMPO_10
+        this.cancer.CAMPO_11 = this.CANCER[i].CAMPO_11
+        this.cancer.CAMPO_12 = this.CANCER[i].CAMPO_12
+        this.cancer.CAMPO_13 = this.CANCER[i].CAMPO_13
+        this.cancer.CAMPO_14 = this.CANCER[i].CAMPO_14
+        this.cancer.CAMPO_15 = this.CANCER[i].CAMPO_15
+        this.cancer.CAMPO_16 = this.CANCER[i].CAMPO_16
+        this.cancer.CAMPO_17 = this.CANCER[i].CAMPO_17
+        this.cancer.CAMPO_18 = this.CANCER[i].CAMPO_18
+        this.cancer.CAMPO_19 = this.CANCER[i].CAMPO_19
+        this.cancer.CAMPO_20 = this.CANCER[i].CAMPO_20
+        this.cancer.CAMPO_21 = this.CANCER[i].CAMPO_21
+        this.cancer.CAMPO_22 = this.CANCER[i].CAMPO_22
+        this.cancer.CAMPO_23 = this.CANCER[i].CAMPO_23
+        this.cancer.CAMPO_24 = this.CANCER[i].CAMPO_24
+        this.cancer.CAMPO_25 = this.CANCER[i].CAMPO_25
+        this.cancer.CAMPO_26 = this.CANCER[i].CAMPO_26
+        this.cancer.CAMPO_27 = this.CANCER[i].CAMPO_27
+        this.cancer.CAMPO_28 = this.CANCER[i].CAMPO_28
+        this.cancer.CAMPO_29 = this.CANCER[i].CAMPO_29
+        this.cancer.CAMPO_30 = this.CANCER[i].CAMPO_30
+        this.cancer.CAMPO_31 = this.CANCER[i].CAMPO_31
+        this.cancer.CAMPO_32 = this.CANCER[i].CAMPO_32
+        this.cancer.CAMPO_33 = this.CANCER[i].CAMPO_33
+        this.cancer.CAMPO_34 = this.CANCER[i].CAMPO_34
+        this.cancer.CAMPO_35 = this.CANCER[i].CAMPO_35
+        this.cancer.CAMPO_36 = this.CANCER[i].CAMPO_36
+        this.cancer.CAMPO_37 = this.CANCER[i].CAMPO_37
+        this.cancer.CAMPO_38 = this.CANCER[i].CAMPO_38
+        this.cancer.CAMPO_39 = this.CANCER[i].CAMPO_39
+        this.cancer.CAMPO_40 = this.CANCER[i].CAMPO_40
+        this.cancer.CAMPO_41 = this.CANCER[i].CAMPO_41
+        this.cancer.CAMPO_42 = this.CANCER[i].CAMPO_42
+        this.cancer.CAMPO_43 = this.CANCER[i].CAMPO_43
+        this.cancer.CAMPO_44 = this.CANCER[i].CAMPO_44
+        this.cancer.CAMPO_45 = this.CANCER[i].CAMPO_45
+        this.cancer.CAMPO_46 = this.CANCER[i].CAMPO_46
+        this.cancer.CAMPO_46_1 = this.CANCER[i].CAMPO_46_1
+        this.cancer.CAMPO_46_2 = this.CANCER[i].CAMPO_46_2
+        this.cancer.CAMPO_46_3 = this.CANCER[i].CAMPO_46_3
+        this.cancer.CAMPO_46_4 = this.CANCER[i].CAMPO_46_4
+        this.cancer.CAMPO_46_5 = this.CANCER[i].CAMPO_46_5
+        this.cancer.CAMPO_46_6 = this.CANCER[i].CAMPO_46_6
+        this.cancer.CAMPO_46_7 = this.CANCER[i].CAMPO_46_7
+        this.cancer.CAMPO_46_8 = this.CANCER[i].CAMPO_46_8
+        this.cancer.CAMPO_47 = this.CANCER[i].CAMPO_47
+        this.cancer.CAMPO_48 = this.CANCER[i].CAMPO_48
+        this.cancer.CAMPO_49 = this.CANCER[i].CAMPO_49
+        this.cancer.CAMPO_50 = this.CANCER[i].CAMPO_50
+        this.cancer.CAMPO_51 = this.CANCER[i].CAMPO_51
+        this.cancer.CAMPO_52 = this.CANCER[i].CAMPO_52
+        this.cancer.CAMPO_53 = this.CANCER[i].CAMPO_53
+        this.cancer.CAMPO_53_1 = this.CANCER[i].CAMPO_53_1
+        this.cancer.CAMPO_53_2 = this.CANCER[i].CAMPO_53_2
+        this.cancer.CAMPO_53_3 = this.CANCER[i].CAMPO_53_3
+        this.cancer.CAMPO_53_4 = this.CANCER[i].CAMPO_53_4
+        this.cancer.CAMPO_53_5 = this.CANCER[i].CAMPO_53_5
+        this.cancer.CAMPO_53_6 = this.CANCER[i].CAMPO_53_6
+        this.cancer.CAMPO_53_7 = this.CANCER[i].CAMPO_53_7
+        this.cancer.CAMPO_53_8 = this.CANCER[i].CAMPO_53_8
+        this.cancer.CAMPO_53_9 = this.CANCER[i].CAMPO_53_9
+        this.cancer.CAMPO_54 = this.CANCER[i].CAMPO_54
+        this.cancer.CAMPO_55 = this.CANCER[i].CAMPO_55
+        this.cancer.CAMPO_56 = this.CANCER[i].CAMPO_56
+        this.cancer.CAMPO_57 = this.CANCER[i].CAMPO_57
+        this.cancer.CAMPO_58 = this.CANCER[i].CAMPO_58
+        this.cancer.CAMPO_59 = this.CANCER[i].CAMPO_59
+        this.cancer.CAMPO_60 = this.CANCER[i].CAMPO_60
+        this.cancer.CAMPO_61 = this.CANCER[i].CAMPO_61
+        this.cancer.CAMPO_62 = this.CANCER[i].CAMPO_62
+        this.cancer.CAMPO_63 = this.CANCER[i].CAMPO_63
+        this.cancer.CAMPO_64 = this.CANCER[i].CAMPO_64
+        this.cancer.CAMPO_65 = this.CANCER[i].CAMPO_65
+        this.cancer.CAMPO_66 = this.CANCER[i].CAMPO_66
+        this.cancer.CAMPO_66_1 = this.CANCER[i].CAMPO_66_1
+        this.cancer.CAMPO_66_2 = this.CANCER[i].CAMPO_66_2
+        this.cancer.CAMPO_66_3 = this.CANCER[i].CAMPO_66_3
+        this.cancer.CAMPO_66_4 = this.CANCER[i].CAMPO_66_4
+        this.cancer.CAMPO_66_5 = this.CANCER[i].CAMPO_66_5
+        this.cancer.CAMPO_66_6 = this.CANCER[i].CAMPO_66_6
+        this.cancer.CAMPO_66_7 = this.CANCER[i].CAMPO_66_7
+        this.cancer.CAMPO_66_8 = this.CANCER[i].CAMPO_66_8
+        this.cancer.CAMPO_66_9 = this.CANCER[i].CAMPO_66_9
+        this.cancer.CAMPO_67 = this.CANCER[i].CAMPO_67
+        this.cancer.CAMPO_68 = this.CANCER[i].CAMPO_68
+        this.cancer.CAMPO_69 = this.CANCER[i].CAMPO_69
+        this.cancer.CAMPO_70 = this.CANCER[i].CAMPO_70
+        this.cancer.CAMPO_71 = this.CANCER[i].CAMPO_71
+        this.cancer.CAMPO_72 = this.CANCER[i].CAMPO_72
+        this.cancer.CAMPO_73 = this.CANCER[i].CAMPO_73
+        this.cancer.CAMPO_74 = this.CANCER[i].CAMPO_74
+        this.cancer.CAMPO_75 = this.CANCER[i].CAMPO_75
+        this.cancer.CAMPO_76 = this.CANCER[i].CAMPO_76
+        this.cancer.CAMPO_77 = this.CANCER[i].CAMPO_77
+        this.cancer.CAMPO_78 = this.CANCER[i].CAMPO_78
+        this.cancer.CAMPO_79 = this.CANCER[i].CAMPO_79
+        this.cancer.CAMPO_80 = this.CANCER[i].CAMPO_80
+        this.cancer.CAMPO_81 = this.CANCER[i].CAMPO_81
+        this.cancer.CAMPO_82 = this.CANCER[i].CAMPO_82
+        this.cancer.CAMPO_83 = this.CANCER[i].CAMPO_83
+        this.cancer.CAMPO_84 = this.CANCER[i].CAMPO_84
+        this.cancer.CAMPO_85 = this.CANCER[i].CAMPO_85
+        this.cancer.CAMPO_86 = this.CANCER[i].CAMPO_86
+        this.cancer.CAMPO_87 = this.CANCER[i].CAMPO_87
+        this.cancer.CAMPO_88 = this.CANCER[i].CAMPO_88
+        this.cancer.CAMPO_89 = this.CANCER[i].CAMPO_89
+        this.cancer.CAMPO_90 = this.CANCER[i].CAMPO_90
+        this.cancer.CAMPO_91 = this.CANCER[i].CAMPO_91
+        this.cancer.CAMPO_92 = this.CANCER[i].CAMPO_92
+        this.cancer.CAMPO_93 = this.CANCER[i].CAMPO_93
+        this.cancer.CAMPO_94 = this.CANCER[i].CAMPO_94
+        this.cancer.CAMPO_95 = this.CANCER[i].CAMPO_95
+        this.cancer.CAMPO_96 = this.CANCER[i].CAMPO_96
+        this.cancer.CAMPO_97 = this.CANCER[i].CAMPO_97
+        this.cancer.CAMPO_98 = this.CANCER[i].CAMPO_98
+        this.cancer.CAMPO_99 = this.CANCER[i].CAMPO_99
+        this.cancer.CAMPO_100 = this.CANCER[i].CAMPO_100
+        this.cancer.CAMPO_101 = this.CANCER[i].CAMPO_101
+        this.cancer.CAMPO_102 = this.CANCER[i].CAMPO_102
+        this.cancer.CAMPO_103 = this.CANCER[i].CAMPO_103
+        this.cancer.CAMPO_104 = this.CANCER[i].CAMPO_104
+        this.cancer.CAMPO_105 = this.CANCER[i].CAMPO_105
+        this.cancer.CAMPO_106 = this.CANCER[i].CAMPO_106
+        this.cancer.CAMPO_107 = this.CANCER[i].CAMPO_107
+        this.cancer.CAMPO_108 = this.CANCER[i].CAMPO_108
+        this.cancer.CAMPO_109 = this.CANCER[i].CAMPO_109
+        this.cancer.CAMPO_110 = this.CANCER[i].CAMPO_110
+        this.cancer.CAMPO_111 = this.CANCER[i].CAMPO_111
+        this.cancer.CAMPO_112 = this.CANCER[i].CAMPO_112
+        this.cancer.CAMPO_113 = this.CANCER[i].CAMPO_113
+        this.cancer.CAMPO_114 = this.CANCER[i].CAMPO_114
+        this.cancer.CAMPO_114_1 = this.CANCER[i].CAMPO_114_1
+        this.cancer.CAMPO_114_2 = this.CANCER[i].CAMPO_114_2
+        this.cancer.CAMPO_114_3 = this.CANCER[i].CAMPO_114_3
+        this.cancer.CAMPO_114_4 = this.CANCER[i].CAMPO_114_4
+        this.cancer.CAMPO_114_5 = this.CANCER[i].CAMPO_114_5
+        this.cancer.CAMPO_114_6 = this.CANCER[i].CAMPO_114_6
+        this.cancer.CAMPO_115 = this.CANCER[i].CAMPO_115
+        this.cancer.CAMPO_116 = this.CANCER[i].CAMPO_116
+        this.cancer.CAMPO_117 = this.CANCER[i].CAMPO_117
+        this.cancer.CAMPO_118 = this.CANCER[i].CAMPO_118
+        this.cancer.CAMPO_119 = this.CANCER[i].CAMPO_119
+        this.cancer.CAMPO_120 = this.CANCER[i].CAMPO_120
+        this.cancer.CAMPO_121 = this.CANCER[i].CAMPO_121
+        this.cancer.CAMPO_122 = this.CANCER[i].CAMPO_122
+        this.cancer.CAMPO_123 = this.CANCER[i].CAMPO_123
+        this.cancer.CAMPO_124 = this.CANCER[i].CAMPO_124
+        this.cancer.CAMPO_125 = this.CANCER[i].CAMPO_125
+        this.cancer.CAMPO_126 = this.CANCER[i].CAMPO_126
+        this.cancer.CAMPO_127 = this.CANCER[i].CAMPO_127
+        this.cancer.CAMPO_128 = this.CANCER[i].CAMPO_128
+        this.cancer.CAMPO_129 = this.CANCER[i].CAMPO_129
+        this.cancer.CAMPO_130 = this.CANCER[i].CAMPO_130
+        this.cancer.CAMPO_131 = this.CANCER[i].CAMPO_131
+        this.cancer.CAMPO_132 = this.CANCER[i].CAMPO_132
+        this.cancer.CAMPO_133 = this.CANCER[i].CAMPO_133
+        this.cancer.CAMPO_134 = this.CANCER[i].CAMPO_134
+
+        let cancer_9 = this.CANCER[i].CAMPO_9.split('.')[0];
+        if (cancer_9) {
+          this.cancer.CAMPO_9 = cancer_9;
+        } else {
+          this.cancer.CAMPO_9 = this.CANCER[i].CAMPO_9
+        }
+
+        let cancer_14 = this.CANCER[i].CAMPO_14.split('.')[0];
+        if (cancer_14) {
+          this.cancer.CAMPO_14 = cancer_14;
+        } else {
+          this.cancer.CAMPO_14 = this.CANCER[i].CAMPO_14
+        }
+
+        let cancer_51 = this.CANCER[i].CAMPO_51.split('.')[0];
+        if (cancer_51) {
+          this.cancer.CAMPO_51 = cancer_51;
+        } else {
+          this.cancer.CAMPO_51 = this.CANCER[i].CAMPO_51
+        }
+
+        let cancer_52 = this.CANCER[i].CAMPO_52.split('.')[0];
+        if (cancer_52) {
+          this.cancer.CAMPO_52 = cancer_52;
+        } else {
+          this.cancer.CAMPO_52 = this.CANCER[i].CAMPO_52
+        }
+
+        let cancer_64 = this.CANCER[i].CAMPO_64.split('.')[0];
+        if (cancer_64) {
+          this.cancer.CAMPO_64 = cancer_64;
+        } else {
+          this.cancer.CAMPO_64 = this.CANCER[i].CAMPO_64
+        }
+
+        let cancer_65 = this.CANCER[i].CAMPO_65.split('.')[0];
+        if (cancer_65) {
+          this.cancer.CAMPO_65 = cancer_65;
+        } else {
+          this.cancer.CAMPO_65 = this.CANCER[i].CAMPO_65
+        }
+
+        let cancer_77 = this.CANCER[i].CAMPO_77.split('.')[0];
+        if (cancer_77) {
+          this.cancer.CAMPO_77 = cancer_77;
+        } else {
+          this.cancer.CAMPO_77 = this.CANCER[i].CAMPO_77
+        }
+
+        let cancer_82 = this.CANCER[i].CAMPO_82.split('.')[0];
+        if (cancer_82) {
+          this.cancer.CAMPO_82 = cancer_82;
+        } else {
+          this.cancer.CAMPO_82 = this.CANCER[i].CAMPO_82
+        }
+
+        let cancer_92 = this.CANCER[i].CAMPO_92.split('.')[0];
+        if (cancer_92) {
+          this.cancer.CAMPO_92 = cancer_92;
+        } else {
+          this.cancer.CAMPO_92 = this.CANCER[i].CAMPO_92
+        }
+
+        let cancer_93 = this.CANCER[i].CAMPO_93.split('.')[0];
+        if (cancer_93) {
+          this.cancer.CAMPO_93 = cancer_93;
+        } else {
+          this.cancer.CAMPO_93 = this.CANCER[i].CAMPO_93
+        }
+
+        let cancer_101 = this.CANCER[i].CAMPO_101.split('.')[0];
+        if (cancer_101) {
+          this.cancer.CAMPO_101 = cancer_101;
+        } else {
+          this.cancer.CAMPO_101 = this.CANCER[i].CAMPO_101
+        }
+
+        let cancer_102 = this.CANCER[i].CAMPO_102.split('.')[0];
+        if (cancer_102) {
+          this.cancer.CAMPO_102 = cancer_102;
+        } else {
+          this.cancer.CAMPO_102 = this.CANCER[i].CAMPO_102
+        }
+
+        let cancer_110 = this.CANCER[i].CAMPO_110.split('.')[0];
+        if (cancer_110) {
+          this.cancer.CAMPO_110 = cancer_110;
+        } else {
+          this.cancer.CAMPO_110 = this.CANCER[i].CAMPO_110
+        }
+
+        let cancer_113 = this.CANCER[i].CAMPO_113.split('.')[0];
+        if (cancer_113) {
+          this.cancer.CAMPO_113 = cancer_113;
+        } else {
+          this.cancer.CAMPO_113 = this.CANCER[i].CAMPO_113
+        }
+
+        let cancer_116 = this.CANCER[i].CAMPO_116.split('.')[0];
+        if (cancer_116) {
+          this.cancer.CAMPO_116 = cancer_116;
+        } else {
+          this.cancer.CAMPO_116 = this.CANCER[i].CAMPO_116
+        }
+
+        let cancer_119 = this.CANCER[i].CAMPO_119.split('.')[0];
+        if (cancer_119) {
+          this.cancer.CAMPO_119 = cancer_119;
+        } else {
+          this.cancer.CAMPO_119 = this.CANCER[i].CAMPO_119
+        }
+
+        let cancer_122 = this.CANCER[i].CAMPO_122.split('.')[0];
+        if (cancer_122) {
+          this.cancer.CAMPO_122 = cancer_122;
+        } else {
+          this.cancer.CAMPO_122 = this.CANCER[i].CAMPO_122
+        }
+      }
+
+      this.cacCancerServiceService.validarRegistrosEdit(this.CC, this.cancer).subscribe(res => {
         console.log(this.CC)
         Swal.fire({
           title: 'Almacenado!',
@@ -850,6 +1194,18 @@ export class CancerEditComponent implements OnInit {
           }
         })
       })
+    }
+  }
+
+
+  GuardarRegistros() {
+    
+    if (this.validacionRegistro == true) {
+      console.log(this.validacionRegistro +'entraaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
+      this.GuardarDatosconValidacion()
+    } else {
+      console.log(' No           entraaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
+      this.GuargarDatos();
     }
   }
 

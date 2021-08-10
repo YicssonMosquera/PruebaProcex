@@ -14,7 +14,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.cac_cancerControllers = void 0;
 const CAC_cancer_1 = __importDefault(require("../dao/CAC_cancer"));
-const database_1 = __importDefault(require("../database"));
 class CAC_cancerControllers {
     guardarDatos(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -24,68 +23,42 @@ class CAC_cancerControllers {
     }
     getNumeroRegistro(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            try {
-                const Clientes = yield database_1.default.query("select count(0) as numero_registro from cuenta_cancer", function (err, result, fields) {
-                    if (err)
-                        throw err;
-                    res.json(result[0].numero_registro);
-                });
-            }
-            catch (error) {
-                res.status(404).json({ error: 'No se obtuvieron Datos' });
-            }
-            ;
+            var datos = yield CAC_cancer_1.default.getNumeroRegistro();
+            res.json(datos);
         });
     }
     CargarRegistroCancer(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { Tipodocumento, numerodocumeto, page, row } = req.body;
-            try {
-                var query = "SELECT ID_CUENTA_CANCER, CAMPO_1, CAMPO_2, CAMPO_3, CAMPO_4, CAMPO_5, CAMPO_6, CAMPO_7, CAMPO_8 ";
-                query += "from cuenta_cancer";
-                query += " where CAMPO_5 LIKE '%" + Tipodocumento + "%' and CAMPO_6 LIKE '%" + numerodocumeto + "%' limit ?,? ";
-                const Clientes = yield database_1.default.query(query, [page, row], function (err, result, fields) {
-                    if (err)
-                        throw err;
-                    res.json(result);
-                    console.log(result);
-                });
-            }
-            catch (error) {
-                res.status(404).json({ error: 'No se obtuvieron datos' });
-            }
-            ;
+            var datos = yield CAC_cancer_1.default.CargarRegistroCancer(Tipodocumento, numerodocumeto, page, row);
+            res.json(datos);
         });
     }
     Actualizarcancer(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { Campo_6 } = req.params;
             try {
-                yield database_1.default.query('UPDATE cuenta_cancer set ? where cuenta_cancer.CAMPO_6 = ? ', [req.body, Campo_6]);
-                console.log(req.body);
+                const obCancer = new CAC_cancer_1.default();
+                var datos = yield obCancer.Actualizarcancer(req.body, Campo_6);
                 res.json({ message: 'Datos guardado con exito' });
             }
             catch (error) {
                 res.status(404).json({ error: 'No se pudieron almacenar datos' });
             }
-            ;
         });
     }
     CargarIdentificacion(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { Campo_6 } = req.params;
-            try {
-                const Clientes = yield database_1.default.query("select * from cuenta_cancer where cuenta_cancer.CAMPO_6 = ? ", [Campo_6], function (err, result, fields) {
-                    if (err)
-                        throw err;
-                    res.json(result);
-                    console.log(result);
-                });
-            }
-            catch (error) {
-                res.status(404).json({ error: 'No se puedieron Datos' });
-            }
-            ;
+            var datos = yield CAC_cancer_1.default.CargarIdentificacion(Campo_6);
+            res.json(datos);
+        });
+    }
+    buscarAfiliado(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { Campo_6, campo_5 } = req.params;
+            var datos = yield CAC_cancer_1.default.consultaAfiliado(Campo_6, campo_5);
+            res.json(datos);
         });
     }
 }

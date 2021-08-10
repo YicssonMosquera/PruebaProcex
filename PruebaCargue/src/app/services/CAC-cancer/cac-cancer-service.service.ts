@@ -8,12 +8,11 @@ import { Cancer } from 'src/app/models/cancer';
 })
 export class CACCancerServiceService {
   API_URI = keys.api.API_URI + '/cancer';
+  API_URI2 = keys.api.API_URI + '/cancervalidar';
 
   constructor(private http: HttpClient) { }
 
   GuardarCancer(Cancer: Cancer) {
-    console.log('si entra ruta');
-    console.log(this.API_URI);
     return this.http.post(`${this.API_URI}/`, Cancer)
   }
 
@@ -21,8 +20,8 @@ export class CACCancerServiceService {
     return this.http.put(`${this.API_URI}/update/${Campo_6}`, cancer)
   }
 
-  CargarRegistrocancer(Tipodocumento,numerodocumeto, page, row ) {
-    const cargar = {Tipodocumento,numerodocumeto, page, row}
+  CargarRegistrocancer(Tipodocumento, numerodocumeto, page, row) {
+    const cargar = { Tipodocumento, numerodocumeto, page, row }
     return this.http.post(`${this.API_URI}/cargarregistrocancer`, cargar)
   }
 
@@ -34,6 +33,13 @@ export class CACCancerServiceService {
     return this.http.get(`${this.API_URI}/numeroRegistro/cancer`)
   }
 
+  GuardarCancerValidacion(Cancer: Cancer) {
+    return this.http.post(`${this.API_URI2}/validar`, Cancer)
+  }
+
+  validarRegistrosEdit(Campo_6: Cancer, Cancer: Cancer){
+    return this.http.put(`${this.API_URI2}/validar/${Campo_6}`, Cancer)
+  }
 
 
 }

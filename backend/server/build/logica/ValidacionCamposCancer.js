@@ -909,9 +909,9 @@ class ValidacionCamposCancer {
                 }
                 else {
                     _this.filas_malas['fila_' + numFila] = arrayCamposMalos;
-                    console.log('filas malas ++++++++++++++++++++++++++++++++++');
-                    console.log(_this.filas_malas);
-                    console.log(Object.keys(this.filas_malas).length);
+                    //   console.log('filas malas ++++++++++++++++++++++++++++++++++')
+                    //   console.log( _this.filas_malas)
+                    //   console.log( Object.keys(this.filas_malas).length)
                 }
             }
         }
