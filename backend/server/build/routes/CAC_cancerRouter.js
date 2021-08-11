@@ -13,6 +13,7 @@ class CAC_cancerRouter {
         this.router.get('/numeroRegistro/cancer', CAC_cancerControllers_1.cac_cancerControllers.getNumeroRegistro);
         this.router.put('/update/:Campo_6', CAC_cancerControllers_1.cac_cancerControllers.Actualizarcancer);
         this.router.get('/:Campo_6', CAC_cancerControllers_1.cac_cancerControllers.CargarIdentificacion);
+        this.router.post('/afiliado', CAC_cancerControllers_1.cac_cancerControllers.buscarAfiliado);
     }
 }
 const cac_cancerRouter = new CAC_cancerRouter();

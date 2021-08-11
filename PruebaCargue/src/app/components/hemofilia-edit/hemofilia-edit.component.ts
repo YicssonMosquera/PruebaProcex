@@ -173,7 +173,6 @@ export class HemofiliaEditComponent implements OnInit {
 
   ngOnInit(): void {
     this.Funcionesdecarga();
-    this.cargarErrores();
   }
   Funcionesdecarga() {
     this.Cargarregistrohemofilia();
@@ -785,13 +784,13 @@ export class HemofiliaEditComponent implements OnInit {
   }
 
   openLg(content) {
+    this.cargarErrores();
     this.modalService.open(content, { size: 'lg', scrollable: true });
   }
 
   cargarErrores() {
     this.logsErroresService.cargarErroresFrm(this.CC).subscribe(res => {
       this.Hemofilia = res;
-      console.log(this.Hemofilia)
     })
   }
 

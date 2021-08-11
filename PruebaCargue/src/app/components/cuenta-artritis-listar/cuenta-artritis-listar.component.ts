@@ -5,12 +5,14 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from 'src/app/app.component';
 import { CACArtritisService } from '../../services/CAC-Artritis/cac-artritis.service'
 import { HemofiliaService } from 'src/app/services/hemofilia/hemofilia.service';
+
 @Component({
-  selector: 'app-cuenta-cancer-listar',
-  templateUrl: './cuenta-cancer-listar.component.html',
-  styleUrls: ['./cuenta-cancer-listar.component.css']
+  selector: 'app-cuenta-artritis-listar',
+  templateUrl: './cuenta-artritis-listar.component.html',
+  styleUrls: ['./cuenta-artritis-listar.component.css']
 })
-export class CuentaCancerListarComponent implements OnInit {
+export class CuentaArtritisListarComponent implements OnInit {
+
   rows = 10;
   page = 0;
   artritis
@@ -22,7 +24,6 @@ export class CuentaCancerListarComponent implements OnInit {
   identificacion
   totalRecords
   opcion: any;
-
   constructor(private artritisservice: CACArtritisService, private Router: Router, private ngxSpinnerService: NgxUiLoaderService, private modalService: NgbModal, public tabs: AppComponent, private hemofiliaservice: HemofiliaService) { }
 
   ngOnInit(): void {
@@ -92,5 +93,4 @@ export class CuentaCancerListarComponent implements OnInit {
   formularioNuevo() {
     this.tabs.crearTab('Artitis-frm', 'Artritis-frm');
   }
-
 }

@@ -6,6 +6,7 @@ import { CACCancerServiceService } from '../../services/CAC-cancer/cac-cancer-se
 import { ActivatedRoute } from '@angular/router';
 import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from 'src/app/app.component';
+import {LogsErroresCancerService} from 'src/app/services/logsErroresCancer/logs-errores-cancer.service'
 import Swal from 'sweetalert2';
 
 @Component({
@@ -15,6 +16,7 @@ import Swal from 'sweetalert2';
 })
 export class CancerEditComponent implements OnInit {
   validacionRegistro = false;
+  Cancerlist
   _cancer_1 = true;
   _cancer_3 = true;
   _cancer_7 = true;
@@ -320,7 +322,7 @@ export class CancerEditComponent implements OnInit {
 
   }
   constructor(private cacCancerServiceService: CACCancerServiceService, private hemofiliaservice: HemofiliaService, private opcionesListasCancerService: OpcionesListasCancerService, activateRoute: ActivatedRoute,
-    config: NgbModalConfig, private modalService: NgbModal, public tabs: AppComponent) {
+    config: NgbModalConfig, private modalService: NgbModal, public tabs: AppComponent, private LogsErroresCancerService:LogsErroresCancerService) {
     this.CC = activateRoute.snapshot.params['cc']; config.backdrop = 'static';
     config.keyboard = false;
   }
@@ -2723,8 +2725,16 @@ export class CancerEditComponent implements OnInit {
     })
   }
 
-  open(content: any) {
-    this.modalService.open(content, { size: 'lg' });
+  cargarErrores() {
+    this.LogsErroresCancerService.cargarErroresFrm(this.CC).subscribe(res => {
+      this.Cancerlist = res;
+      console.log(this.Cancerlist)
+    })
+  }
+
+  openLg(content) {
+    this. cargarErrores();
+    this.modalService.open(content, { size: 'lg', scrollable: true });
   }
   soporte() {
     this.tabs.crearTab('Soporte', 'Cancer-soporte/' + this.CC);

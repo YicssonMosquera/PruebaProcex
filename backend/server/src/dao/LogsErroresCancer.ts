@@ -7,7 +7,7 @@ class LogsErroresCancer {
             try {
                 var query = "select A.NUMERO_CAMPO, A.TIPO_ERROR, A.DESCRIPCION_ERROR ";
                 query += "from  bd_proceso_cancer_error_frm A, cuenta_cancer C  ";
-                query += "where C.ID_CUENTA_CANCER = A.ID_CUENTA_CANCER and A.VIGENTE = 'S' and C.CAMPO_6 =w ? ";
+                query += "where C.ID_CUENTA_CANCER = A.ID_CUENTA_CANCER and A.VIGENTE = 'S' and C.CAMPO_6 = ? ";
                 pool.query(query, [CAMPO_6], function (err, result, fields) {
                     if (err) throw err;
                     resolev(result);

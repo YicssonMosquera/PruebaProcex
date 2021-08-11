@@ -17,7 +17,8 @@ class CAC_cancerControllers {
 
     public async CargarRegistroCancer(req: Request, res: Response) {
         const { Tipodocumento, numerodocumeto, page, row } = req.body
-        var datos = await CAC_cancer.CargarRegistroCancer(Tipodocumento, numerodocumeto, page, row)
+        const pagina = row * page
+        var datos = await CAC_cancer.CargarRegistroCancer(Tipodocumento, numerodocumeto, pagina, row)
         res.json(datos);
     }
 
@@ -40,8 +41,8 @@ class CAC_cancerControllers {
     }
 
     public async buscarAfiliado(req: Request, res: Response) {
-        const { Campo_6, campo_5 } = req.params
-        var datos = await CAC_cancer.consultaAfiliado(Campo_6, campo_5)
+        const { Campo_6, Campo_5 } = req.body
+        var datos = await CAC_cancer.consultaAfiliado(Campo_6, Campo_5)
         res.json(datos);
     }
 }

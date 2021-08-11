@@ -25,8 +25,9 @@ class CAC_ArtritisControllers {
     consultarDatos(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { page, row, NoIdentificacion, primerNombre, primerApellido, TipoIdentificaion } = req.body;
+            const pagina = row * page;
             const oCACArtritis = new CAC_Artritis_1.default();
-            const artritis = yield oCACArtritis.consultarDatos(page, row, NoIdentificacion, primerNombre, primerApellido, TipoIdentificaion);
+            const artritis = yield oCACArtritis.consultarDatos(pagina, row, NoIdentificacion, primerNombre, primerApellido, TipoIdentificaion);
             const data = yield oCACArtritis.getNumeroRegistro();
             const respuesta = { artritis: artritis, numero_registro: data[0].numero_registro };
             res.json(respuesta);
@@ -34,17 +35,17 @@ class CAC_ArtritisControllers {
     }
     cargarPaciente(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { C8_CAMPO_9 } = req.params;
+            const { CAMPO_9 } = req.params;
             const oCACArtritis = new CAC_Artritis_1.default();
-            const artritis = yield oCACArtritis.getOne(C8_CAMPO_9);
+            const artritis = yield oCACArtritis.getOne(CAMPO_9);
             res.json(artritis);
         });
     }
     actualizarDatos(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { C8_CAMPO_9 } = req.params;
+            const { CAMPO_9 } = req.params;
             const oCACArtritis = new CAC_Artritis_1.default();
-            const artritis = yield oCACArtritis.actualizarDatos(req.body, C8_CAMPO_9);
+            const artritis = yield oCACArtritis.actualizarDatos(req.body, CAMPO_9);
             res.json(artritis);
         });
     }

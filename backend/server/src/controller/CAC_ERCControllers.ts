@@ -10,8 +10,9 @@ class CAC_ERCControllers {
 
   public async consultarDatos(req: Request, res: Response) {
     const { page, row, tipoDocumento, NoDocumento, primerNombre, primerApellido, sexo } = req.body
+    const pagina = row * page
     const oCACErc = new CAC_ERC();
-    const erc = await oCACErc.consultarDatos(page, row, tipoDocumento, NoDocumento, primerNombre, primerApellido, sexo)
+    const erc = await oCACErc.consultarDatos(pagina, row, tipoDocumento, NoDocumento, primerNombre, primerApellido, sexo)
     const data = await oCACErc.getNumeroRegistro();
     const respuesta = { ERC: erc, numero_registro: data[0].numero_registro };
     res.json(respuesta);

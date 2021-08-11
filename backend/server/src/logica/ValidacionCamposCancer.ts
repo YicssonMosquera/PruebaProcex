@@ -33,7 +33,9 @@ class ValidacionCamposCancer {
             //insertando valores al map
             for (let i = 0; i < resultEstructuraCampo.length; i++) {
                 var objeto = resultEstructuraCampo[i];
-                objeto.NUM_CAMPO = parseInt(objeto.NOMBRE_CAMPO.replace("CAMPO_", ""));
+                objeto.NUM_CAMPO = objeto.NOMBRE_CAMPO.replace("CAMPO_", "");
+                console.log('objeto.NUM_CAMPO +++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
+                console.log(objeto.NUM_CAMPO)
                 _this.data.set(objeto.NOMBRE_CAMPO, objeto);
             }
 
@@ -939,10 +941,10 @@ class ValidacionCamposCancer {
                     }
                 }
                 //guardar los arreglos campos buenos y malos
-                console.log(resultEstructuraCampo.length);
+                // console.log(resultEstructuraCampo.length);
                 if (arrayCamposBuenos.length == resultEstructuraCampo.length) {
                     _this.filas_buenas['fila_' + numFila] = camposFila;
-                    console.log(_this.filas_buenas)
+                    // console.log(_this.filas_buenas)
                 } else {
                     _this.filas_malas['fila_' + numFila] = arrayCamposMalos;
                     //   console.log('filas malas ++++++++++++++++++++++++++++++++++')

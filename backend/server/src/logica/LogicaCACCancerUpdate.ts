@@ -42,8 +42,6 @@ class LogicaCACCancerUpdate {
     }
 
     public static guardarCamposMalos(idCabeza, oFilas) {
-        console.log('--------------------------------------- id cuenta ')
-        console.log(oFilas)
         //Guardar detalles campos malos
         for (const key in oFilas) {
             var arrayFilasMalas = oFilas[key];

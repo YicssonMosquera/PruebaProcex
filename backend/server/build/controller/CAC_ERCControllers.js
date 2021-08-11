@@ -25,8 +25,9 @@ class CAC_ERCControllers {
     consultarDatos(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { page, row, tipoDocumento, NoDocumento, primerNombre, primerApellido, sexo } = req.body;
+            const pagina = row * page;
             const oCACErc = new CAC_ERC_1.default();
-            const erc = yield oCACErc.consultarDatos(page, row, tipoDocumento, NoDocumento, primerNombre, primerApellido, sexo);
+            const erc = yield oCACErc.consultarDatos(pagina, row, tipoDocumento, NoDocumento, primerNombre, primerApellido, sexo);
             const data = yield oCACErc.getNumeroRegistro();
             const respuesta = { ERC: erc, numero_registro: data[0].numero_registro };
             res.json(respuesta);

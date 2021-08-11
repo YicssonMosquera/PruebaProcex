@@ -1,4 +1,5 @@
 import pool from '../database'
+var moment = require('moment');
 
 class CAC_cancer {
 
@@ -47,7 +48,7 @@ class CAC_cancer {
         });
     }
 
-    public  Actualizarcancer(newDatos, Campo_6) {
+    public Actualizarcancer(newDatos, Campo_6) {
         return new Promise(function (resolev, reject) {
             try {
                 pool.query('UPDATE cuenta_cancer set ? where cuenta_cancer.CAMPO_6 = ? ', [newDatos, Campo_6], function (err, result, fields) {
@@ -76,20 +77,6 @@ class CAC_cancer {
         });
     }
 
-    public static consultaAfiliado(NUMERO_IDENTIFICACION, TIPO_DOCUMENTO) {
-        return new Promise(function (resolev, reject) {
-            try {
-                pool.query('select * from afiliado where afiliado.NUMERO_IDENTIFICACION = ? and TIPO_DOCUMENTO = ?  ', [NUMERO_IDENTIFICACION, TIPO_DOCUMENTO], function (err, result, fields) {
-                    if (err) throw err;
-                    resolev(result)
-                });
-            }
-            catch (error) {
-                //res.status(404).json({ error: 'No se pudieron almacenar datos' });
-            };
-        });
-    }
-
     //cargar Id cuenta cancer
     public getOne(Campo_6) {
         return new Promise(function (resolev, reject) {
@@ -104,6 +91,27 @@ class CAC_cancer {
             };
         });
     }
+
+
+    public static consultaAfiliado(Campo_6, Campo_5) {
+        return new Promise(function (resolev, reject) {
+            try {
+                pool.query('select * from afiliado where afiliado.NUMERO_IDENTIFICACION = ? and TIPO_DOCUMENTO = ?  ', [Campo_6, Campo_5], function (err, result, fields) {
+                    if (err) throw err;
+                    for (let index = 0; index < result.length; index++) {
+                        const element = result[index];
+                        element.FECHA_NACIMIENTO = moment(new Date(element.FECHA_NACIMIENTO)).format('YYYY-MM-DD')
+                        resolev(element)
+                    }
+                });
+            }
+            catch (error) {
+                //res.status(404).json({ error: 'No se pudieron almacenar datos' });
+            };
+        });
+    }
+
+
 }
 
 export default CAC_cancer;

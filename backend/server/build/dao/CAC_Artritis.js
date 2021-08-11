@@ -23,8 +23,8 @@ class CAC_Artritis {
     consultarDatos(page, row, NoIdentificacion, primerNombre, primerApellido, TipoIdentificaion) {
         return new Promise(function (resolev, reject) {
             try {
-                var query = "SELECT C.C8_CAMPO_9, C.C3_CAMPO_4, C.C4_CAMPO_5, C.C5_CAMPO_6, C.C6_CAMPO_7, C.C7_CAMPO_8, C.C8_CAMPO_9, C.C9_CAMPO_10, C.C10_CAMPO_11  ";
-                query += "FROM cuenta_artritis C  where C.C3_CAMPO_4 LIKE '%" + primerNombre + "%' and C.C5_CAMPO_6 LIKE '%" + primerApellido + "%'  and C.C7_CAMPO_8 LIKE '%" + TipoIdentificaion + "%'  and C.C8_CAMPO_9 LIKE '%" + NoIdentificacion + "%' limit ?,? ";
+                var query = "SELECT C.CAMPO_9, C.CAMPO_4, C.CAMPO_5, C.CAMPO_6, C.CAMPO_7, C.CAMPO_8, C.CAMPO_9, C.CAMPO_10, C.CAMPO_11  ";
+                query += "FROM cuenta_artritis C  where C.CAMPO_4 LIKE '%" + primerNombre + "%' and C.CAMPO_6 LIKE '%" + primerApellido + "%'  and C.CAMPO_8 LIKE '%" + TipoIdentificaion + "%'  and C.CAMPO_9 LIKE '%" + NoIdentificacion + "%' limit ?,? ";
                 database_1.default.query(query, [page, row], function (err, result, fields) {
                     if (err)
                         throw err;
@@ -53,10 +53,10 @@ class CAC_Artritis {
             ;
         });
     }
-    getOne(C8_CAMPO_9) {
+    getOne(CAMPO_9) {
         return new Promise(function (resolev, reject) {
             try {
-                database_1.default.query("SELECT * FROM cuenta_artritis where C8_CAMPO_9 = ? ", [C8_CAMPO_9], function (err, result, fields) {
+                database_1.default.query("SELECT * FROM cuenta_artritis where CAMPO_9 = ? ", [CAMPO_9], function (err, result, fields) {
                     if (err)
                         throw err;
                     resolev(result);
@@ -68,10 +68,10 @@ class CAC_Artritis {
             ;
         });
     }
-    actualizarDatos(newDatos, C8_CAMPO_9) {
+    actualizarDatos(newDatos, CAMPO_9) {
         return new Promise(function (resolev, reject) {
             try {
-                database_1.default.query('UPDATE cuenta_artritis set ? where cuenta_artritis.C8_CAMPO_9 = ? ', [newDatos, C8_CAMPO_9], function (err, result, fields) {
+                database_1.default.query('UPDATE cuenta_artritis set ? where cuenta_artritis.CAMPO_9 = ? ', [newDatos, CAMPO_9], function (err, result, fields) {
                     if (err)
                         throw err;
                     resolev(result);

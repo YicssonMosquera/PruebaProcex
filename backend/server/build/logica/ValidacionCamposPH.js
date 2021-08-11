@@ -38,7 +38,7 @@ class ValidacionCamposPH {
             //insertando valores al map
             for (let i = 0; i < resultEstructuraCampo.length; i++) {
                 var objeto = resultEstructuraCampo[i];
-                objeto.NUM_CAMPO = parseInt(objeto.NOMBRE_CAMPO.replace("CAMPO_", ""));
+                objeto.NUM_CAMPO = objeto.NOMBRE_CAMPO.replace("CAMPO_", "");
                 _this.data.set(objeto.NOMBRE_CAMPO, objeto);
             }
             //recorrer el array campos que son las filas del file txt

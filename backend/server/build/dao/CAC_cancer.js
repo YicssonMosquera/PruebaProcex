@@ -4,6 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const database_1 = __importDefault(require("../database"));
+var moment = require('moment');
 class CAC_cancer {
     static guardarDatos(newDatos) {
         return new Promise(function (resolev, reject) {
@@ -83,21 +84,6 @@ class CAC_cancer {
             ;
         });
     }
-    static consultaAfiliado(NUMERO_IDENTIFICACION, TIPO_DOCUMENTO) {
-        return new Promise(function (resolev, reject) {
-            try {
-                database_1.default.query('select * from afiliado where afiliado.NUMERO_IDENTIFICACION = ? and TIPO_DOCUMENTO = ?  ', [NUMERO_IDENTIFICACION, TIPO_DOCUMENTO], function (err, result, fields) {
-                    if (err)
-                        throw err;
-                    resolev(result);
-                });
-            }
-            catch (error) {
-                //res.status(404).json({ error: 'No se pudieron almacenar datos' });
-            }
-            ;
-        });
-    }
     //cargar Id cuenta cancer
     getOne(Campo_6) {
         return new Promise(function (resolev, reject) {
@@ -110,6 +96,25 @@ class CAC_cancer {
             }
             catch (error) {
                 // res.status(404).json({ error: 'No se puedieron Datos' });
+            }
+            ;
+        });
+    }
+    static consultaAfiliado(Campo_6, Campo_5) {
+        return new Promise(function (resolev, reject) {
+            try {
+                database_1.default.query('select * from afiliado where afiliado.NUMERO_IDENTIFICACION = ? and TIPO_DOCUMENTO = ?  ', [Campo_6, Campo_5], function (err, result, fields) {
+                    if (err)
+                        throw err;
+                    for (let index = 0; index < result.length; index++) {
+                        const element = result[index];
+                        element.FECHA_NACIMIENTO = moment(new Date(element.FECHA_NACIMIENTO)).format('YYYY-MM-DD');
+                        resolev(element);
+                    }
+                });
+            }
+            catch (error) {
+                //res.status(404).json({ error: 'No se pudieron almacenar datos' });
             }
             ;
         });

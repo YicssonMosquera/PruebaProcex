@@ -1,15 +1,108 @@
 import { Component, OnInit } from '@angular/core';
+import { ARTRITIS } from 'src/app/models/artritis';
 import { HemofiliaService } from 'src/app/services/hemofilia/hemofilia.service';
 import { OpcionesListaService } from 'src/app/services/opcionesLista/opciones-lista.service';
-import { CACArtritisService } from 'src/app/services/CAC-Artritis/cac-artritis.service'
-import { ARTRITIS } from '../../models/artritis'
+import { CACArtritisService } from 'src/app/services/CAC-Artritis/cac-artritis.service';
 import Swal from 'sweetalert2';
+
 @Component({
-  selector: 'app-cuenta-cancer',
-  templateUrl: './cuenta-cancer.component.html',
-  styleUrls: ['./cuenta-cancer.component.css']
+  selector: 'app-cuenta-artritis',
+  templateUrl: './cuenta-artritis.component.html',
+  styleUrls: ['./cuenta-artritis.component.css']
 })
-export class CuentaCancerComponent implements OnInit {
+export class CuentaArtritisComponent implements OnInit {
+
+  horas: any
+  minutos: any
+  tipodocumento: any
+  Sexo: any
+  RegimenAF: any
+  CEtnica: any
+  C2_CAMPO_3
+  C21_CAMPO_22
+  C22_CAMPO_23
+  C25_CAMPO_26
+  C30_CAMPO_31
+  C31_CAMPO_32
+  C32_CAMPO_33
+  C33_CAMPO_34
+  C34_CAMPO_35
+  C35_CAMPO_36
+  C36_CAMPO_37
+  C37_CAMPO_38
+  C38_CAMPO_39
+  C40_CAMPO_41
+  C45_CAMPO_45_2
+  C46_CAMPO_45_3
+  C46_CAMPO_45_4
+  C46_CAMPO_45_5
+  C50_CAMPO_45_7
+  C51_CAMPO_45_8
+  C52_CAMPO_46_1
+  C53_CAMPO_46_2
+  C54_CAMPO_46_3
+  C55_CAMPO_46_4
+  C56_CAMPO_46_5
+  C57_CAMPO_46_6
+  C58_CAMPO_46_7
+  C59_CAMPO_46_8
+  C60_CAMPO_46_9
+  C61_CAMPO_46_10
+  C62_CAMPO_47_1
+  C63_CAMPO_47_2
+  C64_CAMPO_47_3
+  C65_CAMPO_47_4
+  C66_CAMPO_47_5
+  C67_CAMPO_47_6
+  C68_CAMPO_47_7
+  C69_CAMPO_47_8
+  C70_CAMPO_47_9
+  C71_CAMPO_47_10
+  C77_CAMPO_49
+  C78_CAMPO_50
+  C85_CAMPO_57
+  C86_CAMPO_58
+  C87_CAMPO_59
+  C88_CAMPO_60
+  C89_CAMPO_61
+  C90_CAMPO_62
+  C91_CAMPO_63
+  C92_CAMPO_64
+  C94_CAMPO_66
+  C96_CAMPO_68
+  C99_CAMPO_71_1
+  C100_CAMPO_71_2
+  C101_CAMPO_71_3
+  C102_CAMPO_71_4
+  C104_CAMPO_71_6
+  C105_CAMPO_71_7
+  C107_CAMPO_73_1
+  C108_CAMPO_73_2
+  C109_CAMPO_73_3
+  C110_CAMPO_73_4
+  C111_CAMPO_73_5
+  C112_CAMPO_73_6
+  C113_CAMPO_73_7
+  C114_CAMPO_73_8
+  C115_CAMPO_73_9
+  C116_CAMPO_73_10
+  C117_CAMPO_74_1
+  C118_CAMPO_74_2
+  C119_CAMPO_74_3
+  C120_CAMPO_74_4
+  C121_CAMPO_74_5
+  C122_CAMPO_74_6
+  C123_CAMPO_74_7
+  C124_CAMPO_74_8
+  C125_CAMPO_74_9
+  C126_CAMPO_74_10
+  C134_CAMPO_75_4
+  C135_CAMPO_75_5
+  C136_CAMPO_75_6
+  C137_CAMPO_75_7
+  C142_CAMPO_80
+  C143_CAMPO_81
+  C147_CAMPO_85
 
   ARTRITIS: ARTRITIS = {
     ID_CUENTA_ARTRITIs: '',
@@ -167,103 +260,9 @@ export class CuentaCancerComponent implements OnInit {
     CAMPO_89:'',
     CAMPO_90:'',
     CAMPO_91:''
-
   }
 
-  horas: any
-  minutos: any
-  tipodocumento: any
-  Sexo: any
-  RegimenAF: any
-  CEtnica: any
-  C2_CAMPO_3
-  C21_CAMPO_22
-  C22_CAMPO_23
-  C25_CAMPO_26
-  C30_CAMPO_31
-  C31_CAMPO_32
-  C32_CAMPO_33
-  C33_CAMPO_34
-  C34_CAMPO_35
-  C35_CAMPO_36
-  C36_CAMPO_37
-  C37_CAMPO_38
-  C38_CAMPO_39
-  C40_CAMPO_41
-  C45_CAMPO_45_2
-  C46_CAMPO_45_3
-  C46_CAMPO_45_4
-  C46_CAMPO_45_5
-  C50_CAMPO_45_7
-  C51_CAMPO_45_8
-  C52_CAMPO_46_1
-  C53_CAMPO_46_2
-  C54_CAMPO_46_3
-  C55_CAMPO_46_4
-  C56_CAMPO_46_5
-  C57_CAMPO_46_6
-  C58_CAMPO_46_7
-  C59_CAMPO_46_8
-  C60_CAMPO_46_9
-  C61_CAMPO_46_10
-  C62_CAMPO_47_1
-  C63_CAMPO_47_2
-  C64_CAMPO_47_3
-  C65_CAMPO_47_4
-  C66_CAMPO_47_5
-  C67_CAMPO_47_6
-  C68_CAMPO_47_7
-  C69_CAMPO_47_8
-  C70_CAMPO_47_9
-  C71_CAMPO_47_10
-  C77_CAMPO_49
-  C78_CAMPO_50
-  C85_CAMPO_57
-  C86_CAMPO_58
-  C87_CAMPO_59
-  C88_CAMPO_60
-  C89_CAMPO_61
-  C90_CAMPO_62
-  C91_CAMPO_63
-  C92_CAMPO_64
-  C94_CAMPO_66
-  C96_CAMPO_68
-  C99_CAMPO_71_1
-  C100_CAMPO_71_2
-  C101_CAMPO_71_3
-  C102_CAMPO_71_4
-  C104_CAMPO_71_6
-  C105_CAMPO_71_7
-  C107_CAMPO_73_1
-  C108_CAMPO_73_2
-  C109_CAMPO_73_3
-  C110_CAMPO_73_4
-  C111_CAMPO_73_5
-  C112_CAMPO_73_6
-  C113_CAMPO_73_7
-  C114_CAMPO_73_8
-  C115_CAMPO_73_9
-  C116_CAMPO_73_10
-  C117_CAMPO_74_1
-  C118_CAMPO_74_2
-  C119_CAMPO_74_3
-  C120_CAMPO_74_4
-  C121_CAMPO_74_5
-  C122_CAMPO_74_6
-  C123_CAMPO_74_7
-  C124_CAMPO_74_8
-  C125_CAMPO_74_9
-  C126_CAMPO_74_10
-  C134_CAMPO_75_4
-  C135_CAMPO_75_5
-  C136_CAMPO_75_6
-  C137_CAMPO_75_7
-  C142_CAMPO_80
-  C143_CAMPO_81
-  C147_CAMPO_85
 
-
-  isReadonly = true;
   constructor(private hemofiliaservice: HemofiliaService, private opcionesListaService: OpcionesListaService, private Artritisservice: CACArtritisService) { }
 
   ngOnInit(): void {

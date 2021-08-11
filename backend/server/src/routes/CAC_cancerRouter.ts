@@ -14,6 +14,7 @@ class CAC_cancerRouter{
        this.router.get('/numeroRegistro/cancer',cac_cancerControllers.getNumeroRegistro);
        this.router.put('/update/:Campo_6',cac_cancerControllers.Actualizarcancer);
        this.router.get('/:Campo_6',cac_cancerControllers.CargarIdentificacion)
+       this.router.post('/afiliado',cac_cancerControllers.buscarAfiliado)
 
 
     }

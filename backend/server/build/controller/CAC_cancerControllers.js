@@ -30,7 +30,8 @@ class CAC_cancerControllers {
     CargarRegistroCancer(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { Tipodocumento, numerodocumeto, page, row } = req.body;
-            var datos = yield CAC_cancer_1.default.CargarRegistroCancer(Tipodocumento, numerodocumeto, page, row);
+            const pagina = row * page;
+            var datos = yield CAC_cancer_1.default.CargarRegistroCancer(Tipodocumento, numerodocumeto, pagina, row);
             res.json(datos);
         });
     }
@@ -56,8 +57,8 @@ class CAC_cancerControllers {
     }
     buscarAfiliado(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { Campo_6, campo_5 } = req.params;
-            var datos = yield CAC_cancer_1.default.consultaAfiliado(Campo_6, campo_5);
+            const { Campo_6, Campo_5 } = req.body;
+            var datos = yield CAC_cancer_1.default.consultaAfiliado(Campo_6, Campo_5);
             res.json(datos);
         });
     }
