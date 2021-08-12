@@ -21,6 +21,7 @@ const BdopcionesListasCANCERroutes_1 = __importDefault(require("./routes/Bdopcio
 const CAC_cancerRouter_1 = __importDefault(require("./routes/CAC_cancerRouter"));
 const ProcesoHemofiliaFrmRoutes_1 = __importDefault(require("./routes/ProcesoHemofiliaFrmRoutes"));
 const procesoCancerFrmRoutes_1 = __importDefault(require("./routes/procesoCancerFrmRoutes"));
+const procesoArtritisFrmRoutes_1 = __importDefault(require("./routes/procesoArtritisFrmRoutes"));
 const LogsErroresCancerRouter_1 = __importDefault(require("./routes/LogsErroresCancerRouter"));
 const path_1 = __importDefault(require("path"));
 class Server {
@@ -52,6 +53,7 @@ class Server {
         this.app.use('/api/cancer', CAC_cancerRouter_1.default);
         this.app.use('/api/hemofilivalidar', ProcesoHemofiliaFrmRoutes_1.default);
         this.app.use('/api/cancervalidar', procesoCancerFrmRoutes_1.default);
+        this.app.use('/api/artritisvalidar', procesoArtritisFrmRoutes_1.default);
         this.app.use('/api/LogsErroresCancer', LogsErroresCancerRouter_1.default);
         this.app.use('/soportes', express_1.default.static(path_1.default.resolve('soportes')));
         this.app.use('/logsExcel', express_1.default.static(path_1.default.resolve('logsExcel')));

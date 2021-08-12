@@ -50,6 +50,7 @@ class CAC_Artritis {
             try {
                 pool.query("SELECT * FROM cuenta_artritis where CAMPO_9 = ? ", [CAMPO_9], function (err, result, fields) {
                     if (err) throw err;
+                    console.log(result)
                     resolev(result)
                 });
             }

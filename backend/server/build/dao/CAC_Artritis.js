@@ -59,6 +59,7 @@ class CAC_Artritis {
                 database_1.default.query("SELECT * FROM cuenta_artritis where CAMPO_9 = ? ", [CAMPO_9], function (err, result, fields) {
                     if (err)
                         throw err;
+                    console.log(result);
                     resolev(result);
                 });
             }

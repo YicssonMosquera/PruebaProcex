@@ -19,7 +19,7 @@ class CAC_ArtritisControllers {
   }
 
   public async cargarPaciente(req: Request, res: Response) {
-    const { CAMPO_9 } = req.params;
+    const {CAMPO_9 } = req.params;
     const oCACArtritis = new CAC_Artritis();
     const artritis = await oCACArtritis.getOne(CAMPO_9);
     res.json(artritis)

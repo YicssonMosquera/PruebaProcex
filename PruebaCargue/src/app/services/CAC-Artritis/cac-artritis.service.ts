@@ -8,6 +8,7 @@ import keys from '../../../keys'
 })
 export class CACArtritisService {
   API_URI = keys.api.API_URI + '/artritis';
+  API_URI2 = keys.api.API_URI + '/artritisvalidar';
 
   constructor(private http: HttpClient) { }
 
@@ -26,4 +27,13 @@ export class CACArtritisService {
   ActualizarDatos(CAMPO_9, artritis: ARTRITIS) {
     return this.http.put(`${this.API_URI}/${CAMPO_9}`, artritis)
   }
+
+  GuardarArtritisValidacion(artritis: ARTRITIS) {
+    return this.http.post(`${this.API_URI2}/validar`, artritis)
+  }
+
+  validarRegistrosEdit(CAMPO_9: ARTRITIS,artritis: ARTRITIS){
+    return this.http.put(`${this.API_URI2}/validar/${CAMPO_9}`, artritis)
+  }
+
 }

@@ -53,7 +53,7 @@ export class CuentaArtritisListarComponent implements OnInit {
     this.consultarDatos();
   }
   onRowSelect(event) {
-    const CC = event.data.C8_CAMPO_9;
+    const CC = event.data.CAMPO_9;
     this.ngxSpinnerService.start();
     this.artritisservice.getOne(CC).subscribe(res => {
       this.opcion = res;

@@ -107,7 +107,6 @@ export class CuentaArtritisEditComponent implements OnInit {
   C147_CAMPO_85
 
   ARTRITIS: ARTRITIS = {
-    ID_CUENTA_ARTRITIs: '',
     CAMPO_1: '',
     CAMPO_2: '',
     CAMPO_3: '',

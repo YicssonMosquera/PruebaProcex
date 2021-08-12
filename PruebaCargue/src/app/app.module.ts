@@ -50,9 +50,6 @@ import { HemofiliaSoportesComponent } from './components/hemofilia-soportes/hemo
 import { CargarHemofiliaComponent } from './components/cargar-hemofilia/cargar-hemofilia.component';
 import {BannerComponent}   from './components/banner/banner.component';
 import { MenuuComponent, } from './components/menuu/menuu.component';
-import { CuentaCancerComponent } from './components/cuenta-cancer/cuenta-cancer.component';
-import { CuentaCancerListarComponent } from './components/cuenta-cancer-listar/cuenta-cancer-listar.component';
-import { CuentaCancerActualizarComponent } from './components/cuenta-cancer-actualizar/cuenta-cancer-actualizar.component';
 import { CuentaErcComponent } from './components/cuenta-erc/cuenta-erc.component';
 import { CuentaErcListarComponent } from './components/cuenta-erc-listar/cuenta-erc-listar.component';
 import { CuentaErcEditComponent } from './components/cuenta-erc-edit/cuenta-erc-edit.component';
@@ -78,9 +75,6 @@ import { CuentaArtritisEditComponent } from './components/cuenta-artritis-edit/c
     CargarHemofiliaComponent,
     BannerComponent,
     MenuuComponent,
-    CuentaCancerComponent,
-    CuentaCancerListarComponent,
-    CuentaCancerActualizarComponent,
     CuentaErcComponent,
     CuentaErcListarComponent,
     CuentaErcEditComponent,

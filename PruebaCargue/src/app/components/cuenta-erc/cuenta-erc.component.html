@@ -710,8 +710,24 @@
                                         <div class="col-xs-4">
                                             <label id="documento">40.Fecha de diagnóstico de ERC estadio 5 (Solo aplica
                                                 si marco la opción 5 de la pregunta anterior):</label>
-                                            <input type="text" class="form-control" id="documento" name="erc.CAMPO_40"
-                                                [(ngModel)]="erc.CAMPO_40">
+                                            <div class="input-group" id="nuevo">
+                                                <div class="input-group-prepend">
+                                                    <span id="span1" class="input-group-text"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-calendar2-date"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
+                                                            <path
+                                                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
+                                                            <path
+                                                                d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
+                                                        </svg></span>
+                                                </div>
+                                                <input type="date" class="form-control" id="nuevo9" name="erc.CAMPO_40"
+                                                    [(ngModel)]="erc.CAMPO_40">
+                                            </div>
+
                                         </div>
                                         <div class="col-xs-4">
                                             <label id="documento">41.La persona se encuentra en un programa de atención
@@ -924,17 +940,51 @@
                             <div class="card-body" id="pagina">
                                 <form>
                                     <div class="input-group mb-3">
-                                        <div class="col-xs-4">
+                                        <div class="col-xs-4" style="margin-top: 2px;">
                                             <label id="tipo">55.Registre la fecha de diagnóstico de la infección por
                                                 Hepatitis B, si el usuario la ha presentado. :</label>
-                                            <input type="text" class="form-control" id="papellido" name="erc.CAMPO_55"
-                                                [(ngModel)]="erc.CAMPO_55">
+                                            <div class="input-group" id="nuevo1">
+                                                <div class="input-group-prepend">
+                                                    <span id="span2" class="input-group-text"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-calendar2-date"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
+                                                            <path
+                                                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
+                                                            <path
+                                                                d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
+                                                        </svg></span>
+                                                </div>
+                                                <input type="date" class="form-control" id="fechaInicioS1"
+                                                    name="erc.CAMPO_55" [(ngModel)]="erc.CAMPO_55">
+                                            </div>
+
+
                                         </div>
                                         <div class="col-xs-4">
                                             <label id="documento">56.Registre la fecha de diagnóstico de la infección
                                                 por Hepatitis C, si el usuario la ha presentado.:</label>
-                                            <input type="text" class="form-control" id="documento" name="erc.CAMPO_56"
-                                                [(ngModel)]="erc.CAMPO_56">
+
+                                            <div class="input-group" id="nuevo">
+                                                <div class="input-group-prepend">
+                                                    <span id="span1" class="input-group-text"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-calendar2-date"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
+                                                            <path
+                                                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
+                                                            <path
+                                                                d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
+                                                        </svg></span>
+                                                </div>
+                                                <input type="date" class="form-control" id="nuevo9" name="erc.CAMPO_56"
+                                                    [(ngModel)]="erc.CAMPO_56">
+                                            </div>
+
                                         </div>
                                         <div class="col-xs-4">
                                             <label id="documento">57.Terapia no Dialítica para ERC estadio 5 (también
@@ -948,7 +998,7 @@
                                                 </option>
                                             </select>
                                         </div>
-                                        <div class="col-xs-4" style="margin-top: -3px;">
+                                        <div class="col-xs-4" style="margin-top: -1px;">
                                             <label id="documento">58.Costo de la terapia ERC estadio 5 con tratamiento
                                                 médico</label>
                                             <input type="text" class="form-control" id="documento" name="erc.CAMPO_58"
@@ -1121,7 +1171,10 @@
                                             </select>
                                         </div>
                                         <div class="col-xs-4">
-                                            <label id="documento">62.6.¿Se reportó como contraindicación para el transplante renal, en la valoración de nefrología que el paciente presenta potenciales limitaciones al autocuidado y adherencia al tratamiento post trasplante? </label>
+                                            <label id="documento">62.6.¿Se reportó como contraindicación para el
+                                                transplante renal, en la valoración de nefrología que el paciente
+                                                presenta potenciales limitaciones al autocuidado y adherencia al
+                                                tratamiento post trasplante? </label>
                                             <select name="" class="form-control" id="documento" name="erc.CAMPO_62_6"
                                                 [(ngModel)]="erc.CAMPO_62_6">
                                                 <option *ngFor='let C77_CAMPO_62_6 of C77_CAMPO_62_6'
@@ -1132,7 +1185,9 @@
                                             </select>
                                         </div>
                                         <div class="col-xs-4" style="margin-top: 30px;">
-                                             <label id="documento">62.7  ¿Se reportó  infección por el VIH, como contraindicación para el transplante renal, en la valoración de nefrología?</label>
+                                            <label id="documento">62.7 ¿Se reportó infección por el VIH, como
+                                                contraindicación para el transplante renal, en la valoración de
+                                                nefrología?</label>
                                             <select name="" class="form-control" id="documento" name="erc.CAMPO_62_7"
                                                 [(ngModel)]="erc.CAMPO_62_7">
                                                 <option *ngFor='let C78_CAMPO_62_7 of C78_CAMPO_62_7'
@@ -1142,8 +1197,10 @@
                                                 </option>
                                             </select>
                                         </div>
-                                        <div class="col-xs-4"  style="margin-top: 30px;">
-                                                <label id="documento">62.8  ¿Se reportó  infección por el VHC, como contraindicación para el transplante renal, en la valoración de nefrología?</label>
+                                        <div class="col-xs-4" style="margin-top: 30px;">
+                                            <label id="documento">62.8 ¿Se reportó infección por el VHC, como
+                                                contraindicación para el transplante renal, en la valoración de
+                                                nefrología?</label>
                                             <select name="" class="form-control" id="documento" name="erc.CAMPO_62_8"
                                                 [(ngModel)]="erc.CAMPO_62_8">
                                                 <option *ngFor='let C79_CAMPO_62_8 of C79_CAMPO_62_8'
@@ -1157,7 +1214,10 @@
 
                                     <div class="input-group mb-3">
                                         <div class="col-xs-4">
-                                                <label id="tipo">62.9 ¿Se reportó como contraindicación para el transplante renal, en la valoración de nefrología, que el paciente presenta enfermedad inmunológica activa los últimos tres meses antes de la fecha de corte?</label>
+                                            <label id="tipo">62.9 ¿Se reportó como contraindicación para el transplante
+                                                renal, en la valoración de nefrología, que el paciente presenta
+                                                enfermedad inmunológica activa los últimos tres meses antes de la fecha
+                                                de corte?</label>
                                             <select name="" class="form-control" id="papellido" name="erc.CAMPO_62_9"
                                                 [(ngModel)]="erc.CAMPO_62_9">
                                                 <option *ngFor='let C80_CAMPO_62_9 of C80_CAMPO_62_9'
@@ -1168,7 +1228,9 @@
                                             </select>
                                         </div>
                                         <div class="col-xs-4" style="margin-top: 15px;">
-                                            <label id="documento">62.10. ¿Se reportó como contraindicación para el transplante renal, en la valoración de nefrología, que el paciente presenta enfermedad pulmonar crónica?</label>
+                                            <label id="documento">62.10. ¿Se reportó como contraindicación para el
+                                                transplante renal, en la valoración de nefrología, que el paciente
+                                                presenta enfermedad pulmonar crónica?</label>
                                             <select name="" class="form-control" id="documento" name="erc.CAMPO_62_10"
                                                 [(ngModel)]="erc.CAMPO_62_10">
                                                 <option *ngFor='let C81_CAMPO_62_10 of C81_CAMPO_62_10'
@@ -1178,8 +1240,10 @@
                                                 </option>
                                             </select>
                                         </div>
-                                        <div class="col-xs-4"  style="margin-top: 15px;">
-                                            <label id="documento">62.11 ¿Se reportó como contraindicación para el transplante renal, en la valoración de nefrología, que el paciente presenta otras enfermedades crónicas?</label>
+                                        <div class="col-xs-4" style="margin-top: 15px;">
+                                            <label id="documento">62.11 ¿Se reportó como contraindicación para el
+                                                transplante renal, en la valoración de nefrología, que el paciente
+                                                presenta otras enfermedades crónicas?</label>
                                             <select name="" class="form-control" id="documento" name="erc.CAMPO_62_11"
                                                 [(ngModel)]="erc.CAMPO_62_11">
                                                 <option *ngFor='let C82_CAMPO_62_11 of C82_CAMPO_62_11'
@@ -1189,7 +1253,7 @@
                                                 </option>
                                             </select>
                                         </div>
-                                        <div class="col-xs-4"  style="margin-top: 29px;">
+                                        <div class="col-xs-4" style="margin-top: 29px;">
                                             <label id="documento">63Fecha de Ingreso a lista de espera para la
                                                 realización del trasplante:</label>
                                             <div class="input-group" id="nuevo">
