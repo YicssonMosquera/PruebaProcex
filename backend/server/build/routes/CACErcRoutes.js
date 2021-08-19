@@ -12,6 +12,8 @@ class CACErcRoutes {
         this.router.post('/consultar', CAC_ERCControllers_1.cac_ERCControllers.consultarDatos);
         this.router.get('/:CAMPO_6', CAC_ERCControllers_1.cac_ERCControllers.cargarPaciente);
         this.router.put('/:CAMPO_6', CAC_ERCControllers_1.cac_ERCControllers.actualizarDatos);
+        this.router.post('/afiliado_ERC', CAC_ERCControllers_1.cac_ERCControllers.buscarAfiliado);
+        this.router.post('/CAC_Erc', CAC_ERCControllers_1.cac_ERCControllers.buscarCAC);
     }
 }
 const cacErcRoutes = new CACErcRoutes();

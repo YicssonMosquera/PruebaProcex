@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import { HemofiliaService } from '../../services/hemofilia/hemofilia.service'
 import { Hemofilia } from '../../models/hemofilia'
 import { ActivatedRoute } from '@angular/router';

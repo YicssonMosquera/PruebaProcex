@@ -5,7 +5,7 @@ import { Hemofilia } from '../../models/hemofilia'
 import { ActivatedRoute } from '@angular/router';
 import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from 'src/app/app.component';
-import {CACHemofiliaService} from 'src/app/services/CAC-Hemofilia/cac-hemofilia.service'
+import { CACHemofiliaService } from 'src/app/services/CAC-Hemofilia/cac-hemofilia.service'
 import Swal from 'sweetalert2';
 
 @Component({
@@ -165,12 +165,12 @@ export class HemofiliaFormularioComponent implements OnInit {
     EDAD_CORTE: '',
     EDAD_ACTUAL: '',
     DOSIS_PROFILAXIS: '',
-    VALIDACION_REGISTRO:'N',
-    VALIDACION_SOPORTE:'1'
-  
+    VALIDACION_REGISTRO: 'N',
+    VALIDACION_SOPORTE: '1'
+
   }
   constructor(private hemofiliaservice: HemofiliaService, activateRoute: ActivatedRoute,
-    config: NgbModalConfig, private modalService: NgbModal, public tabs: AppComponent, private CACHemofiliaservice:CACHemofiliaService) {
+    config: NgbModalConfig, private modalService: NgbModal, public tabs: AppComponent, private CACHemofiliaservice: CACHemofiliaService) {
     config.backdrop = 'static';
     config.keyboard = false;
   }
@@ -428,7 +428,7 @@ export class HemofiliaFormularioComponent implements OnInit {
       this.hemofilia.CAMPO_16 = '';
     }
   }
-  
+
   CAMPO_66(hemofilia) {
     var startDate = new Date(hemofilia);
     var today = new Date();
@@ -523,7 +523,7 @@ export class HemofiliaFormularioComponent implements OnInit {
     this.modalService.open(content, { size: 'lg' });
   }
 
-  GuardarDatosconValidacion(){
+  GuardarDatosconValidacion() {
     let hemofilia_9 = this.hemofilia.CAMPO_9?.split('.')[0];
     this.hemofilia.CAMPO_9 = hemofilia_9;
 
@@ -565,15 +565,123 @@ export class HemofiliaFormularioComponent implements OnInit {
     })
   }
 
-  GuardarRegistros(){
-    if(this.validacionRegistro == true){
-     this.GuardarDatosconValidacion()
-    }else{
+  GuardarRegistros() {
+    if (this.validacionRegistro == true) {
+      this.GuardarDatosconValidacion()
+    } else {
       this.GuargarDatos();
     }
   }
   formularioNuevo() {
     this.tabs.crearTab('Soporte', 'Hemofilia-soporte/:cc');
+  }
+
+  nuevoRegistro() {
+    this.hemofilia = {
+      CAMPO_1: '',
+      CAMPO_2: '',
+      CAMPO_3: '',
+      CAMPO_4: '',
+      CAMPO_5: '',
+      CAMPO_6: '',
+      CAMPO_7: '',
+      CAMPO_8: '',
+      CAMPO_9: '',
+      CAMPO_10: '',
+      CAMPO_11: '',
+      CAMPO_12: '',
+      CAMPO_13: '',
+      CAMPO_14: '',
+      CAMPO_15: '',
+      CAMPO_16: '',
+      CAMPO_17: '',
+      CAMPO_18: '',
+      CAMPO_19: '',
+      CAMPO_20: '',
+      CAMPO_21: '',
+      CAMPO_22: '',
+      CAMPO_23: '',
+      CAMPO_24: '',
+      CAMPO_25: '',
+      CAMPO_26: '',
+      CAMPO_27: '',
+      CAMPO_28: '',
+      CAMPO_29: '',
+      CAMPO_30: '',
+      CAMPO_31: '',
+      CAMPO_32: '',
+      CAMPO_32_1: '',
+      CAMPO_32_2: '',
+      CAMPO_32_3: '',
+      CAMPO_32_4: '',
+      CAMPO_33: '',
+      CAMPO_34: '',
+      CAMPO_35: '',
+      CAMPO_36: '',
+      CAMPO_37: '',
+      CAMPO_38: '',
+      CAMPO_39: '',
+      CAMPO_40: '',
+      CAMPO_40_1: '',
+      CAMPO_40_2: '',
+      CAMPO_41: '',
+      CAMPO_42: '',
+      CAMPO_43: '',
+      CAMPO_44: '',
+      CAMPO_45: '',
+      CAMPO_46: '',
+      CAMPO_47_1: '',
+      CAMPO_47_2: '',
+      CAMPO_47_3: '',
+      CAMPO_48: '',
+      CAMPO_48_1: '',
+      CAMPO_48_2: '',
+      CAMPO_48_3: '',
+      CAMPO_48_4: '',
+      CAMPO_49: '',
+      CAMPO_49_1: '',
+      CAMPO_50: '',
+      CAMPO_51: '',
+      CAMPO_52: '',
+      CAMPO_53: '',
+      CAMPO_54: '',
+      CAMPO_55: '',
+      CAMPO_55_1: '',
+      CAMPO_56: '',
+      CAMPO_56_1: '',
+      CAMPO_57: '',
+      CAMPO_57_1: '',
+      CAMPO_57_2: '',
+      CAMPO_57_3: '',
+      CAMPO_57_4: '',
+      CAMPO_57_5: '',
+      CAMPO_57_6: '',
+      CAMPO_57_7: '',
+      CAMPO_57_8: '',
+      CAMPO_57_9: '',
+      CAMPO_57_10: '',
+      CAMPO_57_11: '',
+      CAMPO_57_12: '',
+      CAMPO_57_13: '',
+      CAMPO_57_14: '',
+      CAMPO_58: '',
+      CAMPO_59: '',
+      CAMPO_60: '',
+      CAMPO_61: '',
+      CAMPO_62: '',
+      CAMPO_63: '',
+      CAMPO_64: '',
+      CAMPO_64_1: '',
+      CAMPO_64_2: '',
+      CAMPO_65: '',
+      CAMPO_66: '',
+      EDAD_CORTE: '',
+      EDAD_ACTUAL: '',
+      DOSIS_PROFILAXIS: '',
+      VALIDACION_REGISTRO: 'N',
+      VALIDACION_SOPORTE: '1'
+
+    }
   }
 
 }

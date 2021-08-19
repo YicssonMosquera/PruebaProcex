@@ -1047,16 +1047,11 @@ class ValidacionCamposPH {
                     }
                 }
                 //guardar los arreglos campos buenos y malos
-                console.log(resultEstructuraCampo.length);
                 if (arrayCamposBuenos.length == resultEstructuraCampo.length) {
                     _this.filas_buenas['fila_' + numFila] = camposFila;
-                    console.log(_this.filas_buenas);
                 }
                 else {
                     _this.filas_malas['fila_' + numFila] = arrayCamposMalos;
-                    console.log('filas malas ++++++++++++++++++++++++++++++++++');
-                    console.log(_this.filas_malas);
-                    console.log(Object.keys(this.filas_malas).length);
                 }
             }
         }

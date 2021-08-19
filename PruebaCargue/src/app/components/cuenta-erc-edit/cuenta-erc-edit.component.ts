@@ -6,12 +6,15 @@ import Swal from 'sweetalert2';
 import { ActivatedRoute } from '@angular/router';
 import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from 'src/app/app.component';
+import {LogsErroresErcService} from 'src/app/services/logsErroresErc/logs-errores-erc.service'
 @Component({
   selector: 'app-cuenta-erc-edit',
   templateUrl: './cuenta-erc-edit.component.html',
   styleUrls: ['./cuenta-erc-edit.component.css']
 })
 export class CuentaErcEditComponent implements OnInit {
+  validacionRegistro = false;
+  Erclist
   C4_CAMPO_5
   C7_CAMPO_8
   C8_CAMPO_9
@@ -179,14 +182,14 @@ export class CuentaErcEditComponent implements OnInit {
   Erc
 
   constructor(private OpcionesListasErcService: OpcionesListasErcService, private CuentaErcService: CuentaErcService, activateRoute: ActivatedRoute,
-    config: NgbModalConfig, private modalService: NgbModal, public tabs: AppComponent) {
+    config: NgbModalConfig, private modalService: NgbModal, public tabs: AppComponent, private LogsErroresErcService:LogsErroresErcService) {
     this.CC = activateRoute.snapshot.params['cc']; config.backdrop = 'static';
     config.keyboard = false;
   }
 
   ngOnInit(): void {
     this.funcionesdeCarga();
-    
+
   }
   funcionesdeCarga() {
     this.consultarDatos();
@@ -586,6 +589,166 @@ export class CuentaErcEditComponent implements OnInit {
       })
     })
 
+  }
+
+  GuardarDatosconValidacion(){
+    for (let i = 0; i < this.Erc.length; i++) {
+      this.erc.CAMPO_1 = this.Erc[i].CAMPO_1
+      this.erc.CAMPO_2 = this.Erc[i].CAMPO_2
+      this.erc.CAMPO_3 = this.Erc[i].CAMPO_3
+      this.erc.CAMPO_4 = this.Erc[i].CAMPO_4
+      this.erc.CAMPO_5 = this.Erc[i].CAMPO_5
+      this.erc.CAMPO_6 = this.Erc[i].CAMPO_6
+      this.erc.CAMPO_7 = this.Erc[i].CAMPO_7
+      this.erc.CAMPO_8 = this.Erc[i].CAMPO_8
+      this.erc.CAMPO_9 = this.Erc[i].CAMPO_9
+      this.erc.CAMPO_10 = this.Erc[i].CAMPO_10
+      this.erc.CAMPO_11 = this.Erc[i].CAMPO_11
+      this.erc.CAMPO_12 = this.Erc[i].CAMPO_12
+      this.erc.CAMPO_13 = this.Erc[i].CAMPO_13
+      this.erc.CAMPO_14 = this.Erc[i].CAMPO_14
+      this.erc.CAMPO_15 = this.Erc[i].CAMPO_15
+      this.erc.CAMPO_16 = this.Erc[i].CAMPO_16
+      this.erc.CAMPO_17 = this.Erc[i].CAMPO_17
+      this.erc.CAMPO_19 = this.Erc[i].CAMPO_19
+      this.erc.CAMPO_19 = this.Erc[i].CAMPO_19
+      this.erc.CAMPO_19_1 = this.Erc[i].CAMPO_19_1
+      this.erc.CAMPO_20 = this.Erc[i].CAMPO_20
+      this.erc.CAMPO_21 = this.Erc[i].CAMPO_21
+      this.erc.CAMPO_21_1 = this.Erc[i].CAMPO_21_1
+      this.erc.CAMPO_22 = this.Erc[i].CAMPO_22
+      this.erc.CAMPO_23 = this.Erc[i].CAMPO_23
+      this.erc.CAMPO_24 = this.Erc[i].CAMPO_24
+      this.erc.CAMPO_25 = this.Erc[i].CAMPO_25
+      this.erc.CAMPO_26 = this.Erc[i].CAMPO_26
+      this.erc.CAMPO_27 = this.Erc[i].CAMPO_27
+      this.erc.CAMPO_27_1 = this.Erc[i].CAMPO_27_1
+      this.erc.CAMPO_28 = this.Erc[i].CAMPO_28
+      this.erc.CAMPO_28_1 = this.Erc[i].CAMPO_28_1
+      this.erc.CAMPO_29 = this.Erc[i].CAMPO_29
+      this.erc.CAMPO_29_1 = this.Erc[i].CAMPO_29_1
+      this.erc.CAMPO_30 = this.Erc[i].CAMPO_30
+      this.erc.CAMPO_30_1 = this.Erc[i].CAMPO_30_1
+      this.erc.CAMPO_31 = this.Erc[i].CAMPO_31
+      this.erc.CAMPO_31_1 = this.Erc[i].CAMPO_31_1
+      this.erc.CAMPO_32 = this.Erc[i].CAMPO_32
+      this.erc.CAMPO_32_1 = this.Erc[i].CAMPO_32_1
+      this.erc.CAMPO_33 = this.Erc[i].CAMPO_33
+      this.erc.CAMPO_33_1 = this.Erc[i].CAMPO_33_1
+      this.erc.CAMPO_34 = this.Erc[i].CAMPO_34
+      this.erc.CAMPO_34_1 = this.Erc[i].CAMPO_34_1
+      this.erc.CAMPO_35 = this.Erc[i].CAMPO_35
+      this.erc.CAMPO_36 = this.Erc[i].CAMPO_36
+      this.erc.CAMPO_37 = this.Erc[i].CAMPO_37
+      this.erc.CAMPO_38 = this.Erc[i].CAMPO_38
+      this.erc.CAMPO_39 = this.Erc[i].CAMPO_39
+      this.erc.CAMPO_40 = this.Erc[i].CAMPO_40
+      this.erc.CAMPO_41 = this.Erc[i].CAMPO_41
+      this.erc.CAMPO_42 = this.Erc[i].CAMPO_42
+      this.erc.CAMPO_43 = this.Erc[i].CAMPO_43
+      this.erc.CAMPO_44 = this.Erc[i].CAMPO_44
+      this.erc.CAMPO_45 = this.Erc[i].CAMPO_45
+      this.erc.CAMPO_46 = this.Erc[i].CAMPO_46
+      this.erc.CAMPO_47 = this.Erc[i].CAMPO_47
+      this.erc.CAMPO_48 = this.Erc[i].CAMPO_48
+      this.erc.CAMPO_49 = this.Erc[i].CAMPO_49
+      this.erc.CAMPO_50 = this.Erc[i].CAMPO_50
+      this.erc.CAMPO_51 = this.Erc[i].CAMPO_51
+      this.erc.CAMPO_52 = this.Erc[i].CAMPO_52
+      this.erc.CAMPO_53 = this.Erc[i].CAMPO_53
+      this.erc.CAMPO_54 = this.Erc[i].CAMPO_54
+      this.erc.CAMPO_55 = this.Erc[i].CAMPO_55
+      this.erc.CAMPO_56 = this.Erc[i].CAMPO_56
+      this.erc.CAMPO_57 = this.Erc[i].CAMPO_57
+      this.erc.CAMPO_58 = this.Erc[i].CAMPO_58
+      this.erc.CAMPO_59 = this.Erc[i].CAMPO_59
+      this.erc.CAMPO_60 = this.Erc[i].CAMPO_60
+      this.erc.CAMPO_61 = this.Erc[i].CAMPO_61
+      this.erc.CAMPO_62 = this.Erc[i].CAMPO_62
+      this.erc.CAMPO_62_1 = this.Erc[i].CAMPO_62_1
+      this.erc.CAMPO_62_2 = this.Erc[i].CAMPO_62_2
+      this.erc.CAMPO_62_3 = this.Erc[i].CAMPO_62_3
+      this.erc.CAMPO_62_4 = this.Erc[i].CAMPO_62_4
+      this.erc.CAMPO_62_5 = this.Erc[i].CAMPO_62_5
+      this.erc.CAMPO_62_6 = this.Erc[i].CAMPO_62_6
+      this.erc.CAMPO_62_7 = this.Erc[i].CAMPO_62_7
+      this.erc.CAMPO_62_8 = this.Erc[i].CAMPO_62_8
+      this.erc.CAMPO_62_9 = this.Erc[i].CAMPO_62_9
+      this.erc.CAMPO_62_10 = this.Erc[i].CAMPO_62_10
+      this.erc.CAMPO_62_11 = this.Erc[i].CAMPO_62_11
+      this.erc.CAMPO_63 = this.Erc[i].CAMPO_63
+      this.erc.CAMPO_63_1 = this.Erc[i].CAMPO_63_1
+      this.erc.CAMPO_64 = this.Erc[i].CAMPO_64
+      this.erc.CAMPO_65 = this.Erc[i].CAMPO_65
+      this.erc.CAMPO_66 = this.Erc[i].CAMPO_66
+      this.erc.CAMPO_67 = this.Erc[i].CAMPO_67
+      this.erc.CAMPO_68 = this.Erc[i].CAMPO_68
+      this.erc.CAMPO_69 = this.Erc[i].CAMPO_69
+      this.erc.CAMPO_69_1 = this.Erc[i].CAMPO_69_1
+      this.erc.CAMPO_69_2 = this.Erc[i].CAMPO_69_2
+      this.erc.CAMPO_69_3 = this.Erc[i].CAMPO_69_3
+      this.erc.CAMPO_69_4 = this.Erc[i].CAMPO_69_4
+      this.erc.CAMPO_69_5 = this.Erc[i].CAMPO_69_5
+      this.erc.CAMPO_69_6 = this.Erc[i].CAMPO_69_6
+      this.erc.CAMPO_69_7 = this.Erc[i].CAMPO_69_7
+      this.erc.CAMPO_70 = this.Erc[i].CAMPO_70
+      this.erc.CAMPO_70_1 = this.Erc[i].CAMPO_70_1
+      this.erc.CAMPO_70_2 = this.Erc[i].CAMPO_70_2
+      this.erc.CAMPO_70_3 = this.Erc[i].CAMPO_70_3
+      this.erc.CAMPO_70_4 = this.Erc[i].CAMPO_70_4
+      this.erc.CAMPO_70_5 = this.Erc[i].CAMPO_70_5
+      this.erc.CAMPO_70_6 = this.Erc[i].CAMPO_70_6
+      this.erc.CAMPO_70_7 = this.Erc[i].CAMPO_70_7
+      this.erc.CAMPO_70_8 = this.Erc[i].CAMPO_70_8
+      this.erc.CAMPO_70_9 = this.Erc[i].CAMPO_70_9
+      this.erc.CAMPO_71 = this.Erc[i].CAMPO_71
+      this.erc.CAMPO_72 = this.Erc[i].CAMPO_72
+      this.erc.CAMPO_73 = this.Erc[i].CAMPO_73
+      this.erc.CAMPO_74 = this.Erc[i].CAMPO_74
+      this.erc.CAMPO_75 = this.Erc[i].CAMPO_75
+      this.erc.CAMPO_76 = this.Erc[i].CAMPO_76
+      this.erc.CAMPO_77 = this.Erc[i].CAMPO_77
+      this.erc.CAMPO_78 = this.Erc[i].CAMPO_78
+      this.erc.CAMPO_79 = this.Erc[i].CAMPO_79
+      this.erc.CAMPO_80 = this.Erc[i].CAMPO_80
+      this.erc.CAMPO_80_1 = this.Erc[i].CAMPO_80_1
+    }
+    this.CuentaErcService.validarRegistrosEdit(this.CC, this.erc).subscribe(res => {
+      console.log(this.CC)
+      console.log(this.erc)
+      Swal.fire({
+        title: 'Almacenado!',
+        text: 'Datos almacenados con exito.',
+        icon: 'success',
+        allowOutsideClick: false
+      }
+
+      ).then((result) => {
+        if (result.value) {
+
+        }
+      })
+    })
+
+  }
+  cargarErrores() {
+    this.LogsErroresErcService.cargarErroresFrm(this.CC).subscribe(res => {
+      this.Erclist = res;
+      console.log(this.Erclist)
+    })
+  }
+
+  openLg(content) {
+    this.cargarErrores();
+    this.modalService.open(content, { size: 'lg', scrollable: true });
+  }
+
+  GuardarRegistros() {
+    if (this.validacionRegistro == true) {
+      this.GuardarDatosconValidacion()
+    } else {
+      this.guardarDatos();
+    }
   }
 
 

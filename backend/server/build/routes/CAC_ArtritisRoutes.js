@@ -12,6 +12,8 @@ class CAC_ArtritisRoutes {
         this.router.post('/consultar', CAC_ArtritisControllers_1.cac_ArtritisControllers.consultarDatos);
         this.router.get('/:CAMPO_9', CAC_ArtritisControllers_1.cac_ArtritisControllers.cargarPaciente);
         this.router.put('/:CAMPO_9', CAC_ArtritisControllers_1.cac_ArtritisControllers.actualizarDatos);
+        this.router.post('/afiliado_Artritis', CAC_ArtritisControllers_1.cac_ArtritisControllers.buscarAfiliado);
+        this.router.post('/CAC_Artritis', CAC_ArtritisControllers_1.cac_ArtritisControllers.buscarCAC);
     }
 }
 const cac_ArtritisRoutes = new CAC_ArtritisRoutes();

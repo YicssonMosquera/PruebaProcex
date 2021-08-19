@@ -26,5 +26,14 @@ export class CACHemofiliaService {
     return this.http.put(`${this.API_URI}/validar/${Campo_6}`, Hemofilia)
   }
 
+  CargarAfiliado(Campo_6,Campo_5) {
+    const guardar = { Campo_6, Campo_5 } 
+    return this.http.post(`${this.API_URI}/afiliado_Hemofilia`, guardar)
+  }
+  CargarCAC(Campo_6,Campo_5) {
+    const guardar = { Campo_6, Campo_5 } 
+    return this.http.post(`${this.API_URI}/CAC_Hemofilia`, guardar)
+  }
+
 
 }

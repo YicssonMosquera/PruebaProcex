@@ -60,7 +60,7 @@ class BdOcionesListasERC {
     public static cargarGrupopoblacional12() {
         return new Promise(function (resolev, reject) {
             try {
-                pool.query("select * from BD_opciones_listas where CODIGO_LISTA = 'hemofilia.C11_CAMPO_12' ", function (err, result, fields) {
+                pool.query("select * from BD_opciones_listas where CODIGO_LISTA = 'erc.C11_CAMPO_12' ", function (err, result, fields) {
                     if (err) throw err;
                     resolev(result);
                 });

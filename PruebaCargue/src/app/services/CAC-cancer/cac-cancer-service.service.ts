@@ -41,5 +41,15 @@ export class CACCancerServiceService {
     return this.http.put(`${this.API_URI2}/validar/${Campo_6}`, Cancer)
   }
 
+  CargarAfiliado(Campo_6,Campo_5) {
+    const guardar = { Campo_6, Campo_5 } 
+    return this.http.post(`${this.API_URI}/afiliado_Cancer`, guardar)
+  }
+
+  CargarCAC(Campo_6,Campo_5) {
+    const guardar = { Campo_6, Campo_5 } 
+    return this.http.post(`${this.API_URI}/CAC_Cancer`, guardar)
+  }
+
 
 }

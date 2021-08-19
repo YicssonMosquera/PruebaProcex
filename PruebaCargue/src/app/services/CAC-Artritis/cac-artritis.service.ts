@@ -32,8 +32,17 @@ export class CACArtritisService {
     return this.http.post(`${this.API_URI2}/validar`, artritis)
   }
 
-  validarRegistrosEdit(CAMPO_9: ARTRITIS,artritis: ARTRITIS){
+  validarRegistrosEdit(CAMPO_9: ARTRITIS, artritis: ARTRITIS){
     return this.http.put(`${this.API_URI2}/validar/${CAMPO_9}`, artritis)
   }
+  CargarAfiliado(Campo_9, Campo_8) {
+    const guardar = { Campo_9, Campo_8 }
+    return this.http.post(`${this.API_URI}/afiliado_Artritis`, guardar)
+  }
+  CargarCAC(Campo_9, Campo_8) {
+    const guardar = { Campo_9, Campo_8 }
+    return this.http.post(`${this.API_URI}/CAC_Artritis`, guardar)
+  }
+
 
 }

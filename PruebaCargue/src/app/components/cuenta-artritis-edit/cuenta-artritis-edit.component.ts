@@ -6,6 +6,7 @@ import { ARTRITIS } from '../../models/artritis'
 import { ActivatedRoute } from '@angular/router';
 import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from 'src/app/app.component';
+import {LogsErroresArtritisService} from 'src/app/services/logsErroresArtritis/logs-errores-artritis.service'
 import Swal from 'sweetalert2';
 
 @Component({
@@ -14,6 +15,8 @@ import Swal from 'sweetalert2';
   styleUrls: ['./cuenta-artritis-edit.component.css']
 })
 export class CuentaArtritisEditComponent implements OnInit {
+  validacionRegistro = false
+  Artritislist
   horas: any
   minutos: any
   tipodocumento: any
@@ -266,7 +269,7 @@ export class CuentaArtritisEditComponent implements OnInit {
   private CC;
 
   isReadonly = true;
-  constructor(private hemofiliaservice: HemofiliaService, activateRoute: ActivatedRoute,
+  constructor(private hemofiliaservice: HemofiliaService, activateRoute: ActivatedRoute, private LogsErroresArtritisService:LogsErroresArtritisService,
     config: NgbModalConfig, private modalService: NgbModal, public tabs: AppComponent, private opcionesListaService: OpcionesListaService, private Artritisservice: CACArtritisService) {
     this.CC = activateRoute.snapshot.params['cc']; config.backdrop = 'static';
     config.keyboard = false;
@@ -1008,5 +1011,201 @@ export class CuentaArtritisEditComponent implements OnInit {
       })
     })
   }
+
+  guardarCamposValidacion() {
+    for (let i = 0; i < this.artritis.length; i++) {
+      this.ARTRITIS.CAMPO_1 = this.artritis[i].CAMPO_1;
+      this.ARTRITIS.CAMPO_2 = this.artritis[i].CAMPO_2;
+      this.ARTRITIS.CAMPO_3 = this.artritis[i].CAMPO_3;
+      this.ARTRITIS.CAMPO_4 = this.artritis[i].CAMPO_4;
+      this.ARTRITIS.CAMPO_5 = this.artritis[i].CAMPO_5;
+      this.ARTRITIS.CAMPO_6 = this.artritis[i].CAMPO_6;
+      this.ARTRITIS.CAMPO_7 = this.artritis[i].CAMPO_7;
+      this.ARTRITIS.CAMPO_8 = this.artritis[i].CAMPO_8;
+      this.ARTRITIS.CAMPO_9 = this.artritis[i].CAMPO_9;
+      this.ARTRITIS.CAMPO_10 = this.artritis[i].CAMPO_10;
+      this.ARTRITIS.CAMPO_11 = this.artritis[i].CAMPO_11;
+      this.ARTRITIS.CAMPO_12 = this.artritis[i].CAMPO_12;
+      this.ARTRITIS.CAMPO_13 = this.artritis[i].CAMPO_13;
+      this.ARTRITIS.CAMPO_14 = this.artritis[i].CAMPO_14;
+      this.ARTRITIS.CAMPO_15 = this.artritis[i].CAMPO_15;
+      this.ARTRITIS.CAMPO_16 = this.artritis[i].CAMPO_16;
+      this.ARTRITIS.CAMPO_17 = this.artritis[i].CAMPO_17;
+      this.ARTRITIS.CAMPO_18 = this.artritis[i].CAMPO_18;
+      this.ARTRITIS.CAMPO_19 = this.artritis[i].CAMPO_19;
+      this.ARTRITIS.CAMPO_20 = this.artritis[i].CAMPO_20;
+      this.ARTRITIS.CAMPO_21 = this.artritis[i].CAMPO_21;
+      this.ARTRITIS.CAMPO_22 = this.artritis[i].CAMPO_22;
+      this.ARTRITIS.CAMPO_23 = this.artritis[i].CAMPO_23;
+      this.ARTRITIS.CAMPO_24 = this.artritis[i].CAMPO_24;
+      this.ARTRITIS.CAMPO_25 = this.artritis[i].CAMPO_25;
+      this.ARTRITIS.CAMPO_26 = this.artritis[i].CAMPO_26;
+      this.ARTRITIS.CAMPO_27 = this.artritis[i].CAMPO_27;
+      this.ARTRITIS.CAMPO_28 = this.artritis[i].CAMPO_28;
+      this.ARTRITIS.CAMPO_29 = this.artritis[i].CAMPO_29;
+      this.ARTRITIS.CAMPO_30 = this.artritis[i].CAMPO_30;
+      this.ARTRITIS.CAMPO_31 = this.artritis[i].CAMPO_31;
+      this.ARTRITIS.CAMPO_32 = this.artritis[i].CAMPO_32;
+      this.ARTRITIS.CAMPO_33 = this.artritis[i].CAMPO_33;
+      this.ARTRITIS.CAMPO_34 = this.artritis[i].CAMPO_34;
+      this.ARTRITIS.CAMPO_35 = this.artritis[i].CAMPO_35;
+      this.ARTRITIS.CAMPO_36 = this.artritis[i].CAMPO_36;
+      this.ARTRITIS.CAMPO_37 = this.artritis[i].CAMPO_37;
+      this.ARTRITIS.CAMPO_38 = this.artritis[i].CAMPO_38
+      this.ARTRITIS.CAMPO_39 = this.artritis[i].CAMPO_39;
+      this.ARTRITIS.CAMPO_40 = this.artritis[i].CAMPO_40;
+      this.ARTRITIS.CAMPO_41 = this.artritis[i].CAMPO_41;
+      this.ARTRITIS.CAMPO_42 = this.artritis[i].CAMPO_42;
+      this.ARTRITIS.CAMPO_43 = this.artritis[i].CAMPO_43;
+      this.ARTRITIS.CAMPO_44 = this.artritis[i].CAMPO_44;
+      this.ARTRITIS.CAMPO_45_1 = this.artritis[i].CAMPO_45_1;
+      this.ARTRITIS.CAMPO_45_2 = this.artritis[i].CAMPO_45_2;
+      this.ARTRITIS.CAMPO_45_3 = this.artritis[i].CAMPO_45_3;
+      this.ARTRITIS.CAMPO_45_4 = this.artritis[i].CAMPO_45_4;
+      this.ARTRITIS.CAMPO_45_5 = this.artritis[i].CAMPO_45_5;
+      this.ARTRITIS.CAMPO_45_6 = this.artritis[i].CAMPO_45_6;
+      this.ARTRITIS.CAMPO_45_7 = this.artritis[i].CAMPO_45_7;
+      this.ARTRITIS.CAMPO_45_8 = this.artritis[i].CAMPO_45_8;
+      this.ARTRITIS.CAMPO_46_1 = this.artritis[i].CAMPO_46_1;
+      this.ARTRITIS.CAMPO_46_2 = this.artritis[i].CAMPO_46_2;
+      this.ARTRITIS.CAMPO_46_3 = this.artritis[i].CAMPO_46_3;
+      this.ARTRITIS.CAMPO_46_4 = this.artritis[i].CAMPO_46_4;
+      this.ARTRITIS.CAMPO_46_5 = this.artritis[i].CAMPO_46_5;
+      this.ARTRITIS.CAMPO_46_6 = this.artritis[i].CAMPO_46_6;
+      this.ARTRITIS.CAMPO_46_7 = this.artritis[i].CAMPO_46_7;
+      this.ARTRITIS.CAMPO_46_8 = this.artritis[i].CAMPO_46_8;
+      this.ARTRITIS.CAMPO_46_9 = this.artritis[i].CAMPO_46_9;
+      this.ARTRITIS.CAMPO_46_10 = this.artritis[i].CAMPO_46_10;
+      this.ARTRITIS.CAMPO_47_1 = this.artritis[i].CAMPO_47_1;
+      this.ARTRITIS.CAMPO_47_2 = this.artritis[i].CAMPO_47_2;
+      this.ARTRITIS.CAMPO_47_3 = this.artritis[i].CAMPO_47_3;
+      this.ARTRITIS.CAMPO_47_4 = this.artritis[i].CAMPO_47_4;
+      this.ARTRITIS.CAMPO_47_5 = this.artritis[i].CAMPO_47_5;
+      this.ARTRITIS.CAMPO_47_6 = this.artritis[i].CAMPO_47_6;
+      this.ARTRITIS.CAMPO_47_7 = this.artritis[i].CAMPO_47_7;
+      this.ARTRITIS.CAMPO_47_8 = this.artritis[i].CAMPO_47_8;
+      this.ARTRITIS.CAMPO_47_9 = this.artritis[i].CAMPO_47_9;
+      this.ARTRITIS.CAMPO_47_10 = this.artritis[i].CAMPO_47_10;
+      this.ARTRITIS.CAMPO_47_11 = this.artritis[i].CAMPO_47_11;
+      this.ARTRITIS.CAMPO_47_12 = this.artritis[i].CAMPO_47_12;
+      this.ARTRITIS.CAMPO_47_13 = this.artritis[i].CAMPO_47_13;
+      this.ARTRITIS.CAMPO_47_14 = this.artritis[i].CAMPO_47_14;
+      this.ARTRITIS.CAMPO_48 = this.artritis[i].CAMPO_48;
+      this.ARTRITIS.CAMPO_49 = this.artritis[i].CAMPO_49;
+      this.ARTRITIS.CAMPO_50 = this.artritis[i].CAMPO_50;
+      this.ARTRITIS.CAMPO_51 = this.artritis[i].CAMPO_51;
+      this.ARTRITIS.CAMPO_52 = this.artritis[i].CAMPO_52;
+      this.ARTRITIS.CAMPO_53 = this.artritis[i].CAMPO_53;
+      this.ARTRITIS.CAMPO_54 = this.artritis[i].CAMPO_54;
+      this.ARTRITIS.CAMPO_55 = this.artritis[i].CAMPO_55;
+      this.ARTRITIS.CAMPO_56 = this.artritis[i].CAMPO_56;
+      this.ARTRITIS.CAMPO_57 = this.artritis[i].CAMPO_57;
+      this.ARTRITIS.CAMPO_58 = this.artritis[i].CAMPO_58;
+      this.ARTRITIS.CAMPO_59 = this.artritis[i].CAMPO_59;
+      this.ARTRITIS.CAMPO_60 = this.artritis[i].CAMPO_60;
+      this.ARTRITIS.CAMPO_61 = this.artritis[i].CAMPO_61;
+      this.ARTRITIS.CAMPO_62 = this.artritis[i].CAMPO_62;
+      this.ARTRITIS.CAMPO_63 = this.artritis[i].CAMPO_63;
+      this.ARTRITIS.CAMPO_64 = this.artritis[i].CAMPO_64;
+      this.ARTRITIS.CAMPO_65 = this.artritis[i].CAMPO_65;
+      this.ARTRITIS.CAMPO_66 = this.artritis[i].CCAMPO_66;
+      this.ARTRITIS.CAMPO_67 = this.artritis[i].CAMPO_67;
+      this.ARTRITIS.CAMPO_68 = this.artritis[i].CAMPO_68;
+      this.ARTRITIS.CAMPO_69 = this.artritis[i].CAMPO_69;
+      this.ARTRITIS.CAMPO_70 = this.artritis[i].CAMPO_70;
+      this.ARTRITIS.CAMPO_71_1 = this.artritis[i].CAMPO_71_1;
+      this.ARTRITIS.CAMPO_71_2 = this.artritis[i].CAMPO_71_2;
+      this.ARTRITIS.CAMPO_71_3 = this.artritis[i].CAMPO_71_3;
+      this.ARTRITIS.CAMPO_71_4 = this.artritis[i].CAMPO_71_4;
+      this.ARTRITIS.CAMPO_71_5 = this.artritis[i].CAMPO_71_5;
+      this.ARTRITIS.CAMPO_71_6 = this.artritis[i].CAMPO_71_6;
+      this.ARTRITIS.CAMPO_71_7 = this.artritis[i].CAMPO_71_7;
+      this.ARTRITIS.CAMPO_72 = this.artritis[i].CAMPO_72;
+      this.ARTRITIS.CAMPO_73_1 = this.artritis[i].CAMPO_73_1;
+      this.ARTRITIS.CAMPO_73_2 = this.artritis[i].CAMPO_73_2;
+      this.ARTRITIS.CAMPO_73_3 = this.artritis[i].CAMPO_73_3;
+      this.ARTRITIS.CAMPO_73_4 = this.artritis[i].CAMPO_73_4;
+      this.ARTRITIS.CAMPO_73_5 = this.artritis[i].CAMPO_73_5;
+      this.ARTRITIS.CAMPO_73_6 = this.artritis[i].CAMPO_73_6;
+      this.ARTRITIS.CAMPO_73_7 = this.artritis[i].CAMPO_73_7;
+      this.ARTRITIS.CAMPO_73_8 = this.artritis[i].CAMPO_73_8;
+      this.ARTRITIS.CAMPO_73_9 = this.artritis[i].CAMPO_73_9;
+      this.ARTRITIS.CAMPO_73_10 = this.artritis[i].CAMPO_73_10;
+      this.ARTRITIS.CAMPO_74_1 = this.artritis[i].CAMPO_74_1;
+      this.ARTRITIS.CAMPO_74_2 = this.artritis[i].CAMPO_74_2;
+      this.ARTRITIS.CAMPO_74_3 = this.artritis[i].CAMPO_74_3;
+      this.ARTRITIS.CAMPO_74_4 = this.artritis[i].CAMPO_74_4;
+      this.ARTRITIS.CAMPO_74_5 = this.artritis[i].CAMPO_74_5;
+      this.ARTRITIS.CAMPO_74_6 = this.artritis[i].CAMPO_74_6;
+      this.ARTRITIS.CAMPO_74_7 = this.artritis[i].CAMPO_74_7;
+      this.ARTRITIS.CAMPO_74_8 = this.artritis[i].CAMPO_74_8;
+      this.ARTRITIS.CAMPO_74_9 = this.artritis[i].CAMPO_74_9;
+      this.ARTRITIS.CAMPO_74_10 = this.artritis[i].CAMPO_74_10;
+      this.ARTRITIS.CAMPO_74_11 = this.artritis[i].CAMPO_74_11;
+      this.ARTRITIS.CAMPO_74_12 = this.artritis[i].CAMPO_74_12;
+      this.ARTRITIS.CAMPO_74_13 = this.artritis[i].CAMPO_74_13;
+      this.ARTRITIS.CAMPO_74_14 = this.artritis[i].CAMPO_74_14;
+      this.ARTRITIS.CAMPO_75_1 = this.artritis[i].CAMPO_75_1;
+      this.ARTRITIS.CAMPO_75_2 = this.artritis[i].CAMPO_75_2;
+      this.ARTRITIS.CAMPO_75_3 = this.artritis[i].CAMPO_75_3;
+      this.ARTRITIS.CAMPO_75_4 = this.artritis[i].CAMPO_75_4;
+      this.ARTRITIS.CAMPO_75_5 = this.artritis[i].CAMPO_75_5;
+      this.ARTRITIS.CAMPO_75_6 = this.artritis[i].CAMPO_75_6;
+      this.ARTRITIS.CAMPO_75_7 = this.artritis[i].CAMPO_75_7;
+      this.ARTRITIS.CAMPO_76 = this.artritis[i].CAMPO_76;
+      this.ARTRITIS.CAMPO_77 = this.artritis[i].CAMPO_77;
+      this.ARTRITIS.CAMPO_78 = this.artritis[i].CAMPO_78;
+      this.ARTRITIS.CAMPO_79 = this.artritis[i].CAMPO_79;
+      this.ARTRITIS.CAMPO_80 = this.artritis[i].CAMPO_80;
+      this.ARTRITIS.CAMPO_81 = this.artritis[i].CAMPO_81;
+      this.ARTRITIS.CAMPO_82 = this.artritis[i].CAMPO_82;
+      this.ARTRITIS.CAMPO_83 = this.artritis[i].CAMPO_83;
+      this.ARTRITIS.CAMPO_84 = this.artritis[i].CAMPO_84;
+      this.ARTRITIS.CAMPO_85 = this.artritis[i].CAMPO_85;
+      this.ARTRITIS.CAMPO_86 = this.artritis[i].CAMPO_86;
+      this.ARTRITIS.CAMPO_87 = this.artritis[i].CAMPO_87;
+      this.ARTRITIS.CAMPO_88 = this.artritis[i].CAMPO_88;
+      this.ARTRITIS.CAMPO_89 = this.artritis[i].CAMPO_89;
+      this.ARTRITIS.CAMPO_90 = this.artritis[i].CAMPO_90;
+      this.ARTRITIS.CAMPO_91 = this.artritis[i].CAMPO_91;
+    }
+    console.log(this.ARTRITIS)
+
+    this.Artritisservice.validarRegistrosEdit(this.CC, this.ARTRITIS).subscribe(res => {
+      console.log(res)
+      Swal.fire({
+        title: 'Almacenado!',
+        text: 'Datos almacenados con exito.',
+        icon: 'success',
+        allowOutsideClick: false
+      }
+
+      ).then((result) => {
+        if (result.value) {
+
+        }
+      })
+    })
+  }
+
+  GuardarRegistros(){
+    if(this.validacionRegistro == true){
+     this.guardarCamposValidacion()
+    }else{
+      this.GuargarDatos();
+    }
+  }
+
+  cargarErrores() {
+    this.LogsErroresArtritisService.cargarErroresFrm(this.CC).subscribe(res => {
+      this.Artritislist = res;
+      console.log(this.Artritislist)
+    })
+  }
+  openLg(content) {
+    this. cargarErrores();
+    this.modalService.open(content, { size: 'lg', scrollable: true });
+  }
+
 
 }

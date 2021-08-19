@@ -31,7 +31,7 @@ class LogicaCACArtritisUpdate {
             var campos = _this.Campos;
             const oArtritis = new CAC_Artritis_1.default();
             const hemofilia = yield oArtritis.actualizarDatos(arrayCampos, CAMPO_9);
-            const idCuentaArtritis = yield oArtritis.getOne(CAMPO_9);
+            const idCuentaArtritis = yield oArtritis.getOne2(CAMPO_9);
             const oArtritisError = new ProcesoArtritisError_1.default();
             var errorVigente = yield oArtritisError.getVigente('', idCuentaArtritis);
             for (var index = 0; index < Object.keys(errorVigente).length; index++) {
@@ -57,7 +57,7 @@ class LogicaCACArtritisUpdate {
             var arrayFilasMalas = oFilas[key];
             for (let index = 0; index < arrayFilasMalas.length; index++) {
                 const campoMalo = arrayFilasMalas[index];
-                campoMalo.ID_CUENTA_CANCER = idCabeza;
+                campoMalo.ID_CUENTA_ARTRITIS = idCabeza;
                 campoMalo.NUMERO_CAMPO = campoMalo.NUMERO_CAMPO;
                 campoMalo.TIPO_ERROR = campoMalo.TIPO_ERROR;
                 campoMalo.DESCRIPCION_ERROR = campoMalo.DESCRIPCION_ERROR;

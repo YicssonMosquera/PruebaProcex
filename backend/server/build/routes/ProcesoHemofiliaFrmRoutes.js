@@ -13,6 +13,8 @@ class ProcesoHemofiliaFrmRoutes {
         this.router.put('/update/:Campo_6', CAC_HemofiliaControllers_1.cac_HemofiliaControllers.Actualizarhemofilia);
         this.router.post('/guardar', CAC_HemofiliaControllers_1.cac_HemofiliaControllers.Guardarhemofilia);
         this.router.put('/validar/:Campo_6', ProcesoHemofiliaFrmControllers_1.procesoHemofiliaFrmControllers.guardarHemofiliaUpdate);
+        this.router.post('/afiliado_Hemofilia', CAC_HemofiliaControllers_1.cac_HemofiliaControllers.buscarAfiliado);
+        this.router.post('/CAC_Hemofilia', CAC_HemofiliaControllers_1.cac_HemofiliaControllers.buscarCAC);
     }
 }
 const procesoHemofiliaFrmRoutes = new ProcesoHemofiliaFrmRoutes();

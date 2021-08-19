@@ -2,7 +2,7 @@
     <div class="y-card-header">
         <div class="row">
             <div class="col-md-12" id="">
-                <button type="button" (click)="formularioNuevo()" id="button" class="btn btn-secondary"><i
+                <button type="button" (click)="formulario(frm_nuevo)" id="button" class="btn btn-secondary"><i
                         class="fas fa-file-alt"></i> Nuevo</button>
             </div>
         </div>
@@ -14,17 +14,17 @@
             <ng-template pTemplate="header">
                 <tr tableStyleClass="header">
                     <th style="width:80px;background-color: #02adb5e0; color: white;">Tipo identificacion<i
-                        class="fas fa-filter" style="cursor: pointer;" (click)="nombrearchiv(content2)"></i></th>
+                            class="fas fa-filter" style="cursor: pointer;" (click)="nombrearchiv(content2)"></i></th>
                     <th style="width:90px;background-color: #02adb5e0; color: white;">No. identificacion<i
-                        class="fas fa-filter" style="cursor: pointer;" (click)="vigent(content3)"></i></th>
+                            class="fas fa-filter" style="cursor: pointer;" (click)="vigent(content3)"></i></th>
                     <th style="width:150px;background-color: #02adb5e0; color: white;">Primer nombre<i
-                        class="fas fa-filter" style="cursor: pointer;" (click)="open(content)"></i> </th>
+                            class="fas fa-filter" style="cursor: pointer;" (click)="open(content)"></i> </th>
                     <th style="width:110px;background-color: #02adb5e0; color: white;">Segundo nombre</th>
                     <th style="width:100px;background-color: #02adb5e0; color: white;">Primer apellido</th>
                     <th style="width:80px;background-color: #02adb5e0; color: white;">Segundo apellido</th>
                     <th style="width:80px;background-color: #02adb5e0; color: white;">Fecha nacimiento</th>
-                    <th style="width:80px;background-color: #02adb5e0; color: white;">Sexo <i
-                        class="fas fa-filter" style="cursor: pointer;" (click)="sexo1(content4)"></i></th>
+                    <th style="width:80px;background-color: #02adb5e0; color: white;">Sexo <i class="fas fa-filter"
+                            style="cursor: pointer;" (click)="sexo1(content4)"></i></th>
                 </tr>
             </ng-template>
             <ng-template pTemplate="body" let-data>
@@ -60,8 +60,8 @@
         </form>
     </div>
     <div class="modal-footer">
-        <button pButton pRipple type="button" icon="pi pi-check" class="p-button-rounded"
-            (click)="consultarDatos()" (click)="d('Cross click')" style="margin-right: 4px;"></button>
+        <button pButton pRipple type="button" icon="pi pi-check" class="p-button-rounded" (click)="consultarDatos()"
+            (click)="d('Cross click')" style="margin-right: 4px;"></button>
         <button pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded p-button-danger"
             (click)="limpiarFiltros()" (click)="d('Cross click')"></button>
     </div>
@@ -73,23 +73,21 @@
             <div class="row">
                 <div class="col-md-12">
 
-                    <select name="" class="form-control" id="tipo"
-                    name="tipoDocumento" [(ngModel)]="tipoDocumento">
-                    <option value=""></option>
-                    <option *ngFor='let C4_CAMPO_5 of C4_CAMPO_5'
-                        [ngValue]="C4_CAMPO_5.NOMBRE_OPCION"
-                        [ngValue]="C4_CAMPO_5.CODIGO_OPCION">
-                        {{C4_CAMPO_5.CODIGO_OPCION}}.{{C4_CAMPO_5.NOMBRE_OPCION}}
-                    </option>
-                </select>
-                   
+                    <select name="" class="form-control" id="tipo" name="tipoDocumento" [(ngModel)]="tipoDocumento">
+                        <option value=""></option>
+                        <option *ngFor='let C4_CAMPO_5 of C4_CAMPO_5' [ngValue]="C4_CAMPO_5.NOMBRE_OPCION"
+                            [ngValue]="C4_CAMPO_5.CODIGO_OPCION">
+                            {{C4_CAMPO_5.CODIGO_OPCION}}.{{C4_CAMPO_5.NOMBRE_OPCION}}
+                        </option>
+                    </select>
+
                 </div>
             </div>
         </form>
     </div>
     <div class="modal-footer">
-        <button pButton pRipple type="button" icon="pi pi-check" class="p-button-rounded"
-            (click)="consultarDatos()" (click)="d('Cross click')" style="margin-right: 4px;"></button>
+        <button pButton pRipple type="button" icon="pi pi-check" class="p-button-rounded" (click)="consultarDatos()"
+            (click)="d('Cross click')" style="margin-right: 4px;"></button>
         <button pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded p-button-danger"
             (click)="limpiarFiltros()" (click)="d('Cross click')"></button>
     </div>
@@ -101,16 +99,16 @@
         <form>
             <div class="row">
                 <div class="col-md-12">
-                     <input type="number" name="NoDocumento" [(ngModel)]="NoDocumento" id="tipo"
-                        onkeypress='return event.charCode >= 48 && event.charCode <= 57'
-                        class="form-control" placeholder="Numero de documento">
+                    <input type="number" name="NoDocumento" [(ngModel)]="NoDocumento" id="tipo"
+                        onkeypress='return event.charCode >= 48 && event.charCode <= 57' class="form-control"
+                        placeholder="Numero de documento">
                 </div>
             </div>
         </form>
     </div>
     <div class="modal-footer">
-        <button pButton pRipple type="button" icon="pi pi-check" class="p-button-rounded"
-            (click)="consultarDatos()" (click)="d('Cross click')" style="margin-right: 4px;"></button>
+        <button pButton pRipple type="button" icon="pi pi-check" class="p-button-rounded" (click)="consultarDatos()"
+            (click)="d('Cross click')" style="margin-right: 4px;"></button>
         <button pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded p-button-danger"
             (click)="limpiarFiltros()" (click)="d('Cross click')"></button>
     </div>
@@ -121,22 +119,215 @@
         <form>
             <div class="row">
                 <div class="col-md-12">
-                    <select name="" id="" class="form-control" name="sexo"
-                        [(ngModel)]="sexo">
-                        <option *ngFor='let C7_CAMPO_8 of C7_CAMPO_8'
-                        [ngValue]="C7_CAMPO_8.NOMBRE_OPCION"
-                        [ngValue]="C7_CAMPO_8.CODIGO_OPCION">
-                        {{C7_CAMPO_8.CODIGO_OPCION}}.{{C7_CAMPO_8.NOMBRE_OPCION}}
-                    </option>
+                    <select name="" id="" class="form-control" name="sexo" [(ngModel)]="sexo">
+                        <option *ngFor='let C7_CAMPO_8 of C7_CAMPO_8' [ngValue]="C7_CAMPO_8.NOMBRE_OPCION"
+                            [ngValue]="C7_CAMPO_8.CODIGO_OPCION">
+                            {{C7_CAMPO_8.CODIGO_OPCION}}.{{C7_CAMPO_8.NOMBRE_OPCION}}
+                        </option>
                     </select>
                 </div>
             </div>
         </form>
     </div>
     <div class="modal-footer">
-        <button pButton pRipple type="button" icon="pi pi-check" class="p-button-rounded"
-            (click)="consultarDatos()" (click)="d('Cross click')" style="margin-right: 4px;"></button>
+        <button pButton pRipple type="button" icon="pi pi-check" class="p-button-rounded" (click)="consultarDatos()"
+            (click)="d('Cross click')" style="margin-right: 4px;"></button>
         <button pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded p-button-danger"
             (click)="limpiarFiltros()" (click)="d('Cross click')"></button>
+    </div>
+</ng-template>
+
+<ng-template #frm_nuevo let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Formulario nuevo – CAC Enfermedad Renal Crónica</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')" (click)="limpiarFormulario()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="input-group mb-3">
+                <div class="col-md-6">
+                    <label id="documento">5.Tipo de Identificación del usuario:</label>
+                    <select name="" class="form-control" id="documento" name="erc.CAMPO_5" [(ngModel)]="erc.CAMPO_5"
+                        (change)="validacionNuevo()" (change)="aprobar_5(erc.CAMPO_5)" [disabled]="existeAfliado">
+                        <option *ngFor='let C4_CAMPO_5 of C4_CAMPO_5' [ngValue]="C4_CAMPO_5.NOMBRE_OPCION"
+                            [ngValue]="C4_CAMPO_5.CODIGO_OPCION">
+                            {{C4_CAMPO_5.CODIGO_OPCION}}.{{C4_CAMPO_5.NOMBRE_OPCION}}
+                        </option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label id="documento">6.Número de Identificación del usuario:</label>
+                    <input maxlength="20" type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57'
+                        class="form-control " id="documento" name="erc.CAMPO_6" [(ngModel)]="erc.CAMPO_6" 
+                        [disabled]="NumIdentificacion" (change)="validacionNuevo()" (change)="aprobar_6(erc.CAMPO_6)">
+                </div>
+            </div>
+        </div>
+        <div class="row" #collapse="ngbCollapse" [(ngbCollapse)]="desplegar">
+            <div class="card" style="width: 100% ;border: 0px solid rgba(0,0,0,.125);">
+                <div class="card-body">
+                    <div class="input-group mb-3">
+                        <div class="col-md-4">
+                            <label id="documento">1.Primer nombre del usuario:</label>
+                            <input maxlength="20" type="text" class="form-control" id="documento" name="erc.CAMPO_1"
+                                [ngClass]="{'is-invalid': _erc_1 == false }" [(ngModel)]="erc.CAMPO_1"
+                                [disabled]="existeAfliado" (change)="aprobar_1(erc.CAMPO_1)">
+                        </div>
+                        <div class="col-md-4">
+                            <label id="documento">2.Segundo nombre del usuario:</label>
+                            <input maxlength="30" type="text" class="form-control" id="documento" name="erc.CAMPO_2"
+                                [(ngModel)]="erc.CAMPO_2">
+                        </div>
+
+                        <div class="col-md-4">
+                            <label id="documento">3.Primer apellido del usuario:</label>
+                            <input maxlength="20" type="text" class="form-control" id="documento" name="erc.CAMPO_3"
+                                [ngClass]="{'is-invalid': _erc_3 == false }" [(ngModel)]="erc.CAMPO_3"
+                                [disabled]="existeAfliado" (change)="aprobar_3(erc.CAMPO_3)">
+                        </div>
+
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="col-md-4">
+                            <label id="documento">4.Segundo apellido del usuario: </label>
+                            <input maxlength="30" type="text" class="form-control" id="documento" name="erc.CAMPO_4"
+                                [(ngModel)]="erc.CAMPO_4">
+                        </div>
+                        <div class="col-md-4">
+                            <label id="documento">7.Fecha de nacimiento:</label>
+                            <div class="input-group" id="documento">
+                                <div class="input-group-prepend">
+                                    <span id="documento" class="input-group-text"
+                                        [ngClass]="{'spanError': _erc_7 == false }"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-calendar2-date" viewBox="0 0 16 16">
+                                            <path
+                                                d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
+                                            <path
+                                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
+                                            <path
+                                                d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
+                                        </svg></span>
+                                </div>
+                                <input type="date" class="form-control" name="erc.CAMPO_7" [(ngModel)]="erc.CAMPO_7"
+                                    [ngClass]="{'is-invalid': _erc_7 == false }" (change)="CAMPO_7(erc.CAMPO_7)"
+                                    (change)="aprobar_7(erc.CAMPO_7)" (change)="cargarNacimiento(erc.CAMPO_7)"
+                                    id="documento" style="width: 93px !important;" [disabled]="existeAfliado">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label id="documento">8.Sexo:</label>
+                            <select name="" class="form-control" id="documento" name="erc.CAMPO_8"
+                                [ngClass]="{'is-invalid': _erc_8 == false }"
+                                style="background-position: right calc(1.5em + 0.1875rem) center;"
+                                [(ngModel)]="erc.CAMPO_8" [disabled]="existeAfliado" (change)="aprobar_8(erc.CAMPO_8)">
+                                <option *ngFor='let C7_CAMPO_8 of C7_CAMPO_8' [ngValue]="C7_CAMPO_8.NOMBRE_OPCION"
+                                    [ngValue]="C7_CAMPO_8.CODIGO_OPCION">
+                                    {{C7_CAMPO_8.CODIGO_OPCION}}.{{C7_CAMPO_8.NOMBRE_OPCION}}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="col-md-4">
+                            <label id="documento">9.Régimen de afiliación:</label>
+                            <select name="" class="form-control" id="documento" name="erc.CAMPO_9" [(ngModel)]="erc.CAMPO_9">
+                                <option *ngFor='let C8_CAMPO_9 of C8_CAMPO_9' [ngValue]="C8_CAMPO_9.NOMBRE_OPCION"
+                                    [ngValue]="C8_CAMPO_9.CODIGO_OPCION">
+                                    {{C8_CAMPO_9.CODIGO_OPCION}}.{{C8_CAMPO_9.NOMBRE_OPCION}}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label id="documento">10.Código de la EPS o de la entidad territorial :</label>
+                            <input type="text" maxlength="6" id="documento" class="form-control" name="erc.CAMPO_10"
+                                [(ngModel)]="erc.CAMPO_10">
+                        </div>
+                        <div class="col-md-4">
+                            <label id="documento">11.Código pertenencia étnica:</label>
+                            <select name="" class="form-control" id="documento" name="erc.CAMPO_11"
+                                [(ngModel)]="erc.CAMPO_11">
+                                <option *ngFor='let C10_CAMPO_11 of C10_CAMPO_11' [ngValue]="C10_CAMPO_11.NOMBRE_OPCION"
+                                    [ngValue]="C10_CAMPO_11.CODIGO_OPCION">
+                                    {{C10_CAMPO_11.CODIGO_OPCION}}.{{C10_CAMPO_11.NOMBRE_OPCION}}
+                                </option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="col-md-4">
+                            <label id="documento">12.Grupo poblacional:</label>
+                            <select name="" class="form-control" id="documento" name="erc.CAMPO_12"
+                                [(ngModel)]="erc.CAMPO_12">
+                                <option *ngFor='let C11_CAMPO_12 of C11_CAMPO_12' [ngValue]="C11_CAMPO_12.NOMBRE_OPCION"
+                                    [ngValue]="C11_CAMPO_12.CODIGO_OPCION">
+                                    {{C11_CAMPO_12.CODIGO_OPCION}}.{{C11_CAMPO_12.NOMBRE_OPCION}}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label id="documento">13.Municipio de residencia:</label>
+                            <input type="text" list="municipio" id="documento" class="form-control"
+                                name="cancer.CAMPO_13" [(ngModel)]="erc.CAMPO_13">
+                            <datalist id="municipio">
+                                <option *ngFor='let municipioresidencia of municipioresidencia'
+                                    [ngValue]="municipioresidencia.NOMBRE_CIUDAD"
+                                    [ngValue]="municipioresidencia.CODIGO_CIUDAD">
+                                    {{municipioresidencia.CODIGO_CIUDAD}}.{{municipioresidencia.NOMBRE_CIUDAD}}
+                                </option>
+                            </datalist>
+                        </div>
+                        <div class="col-md-4">
+                            <label id="documento">14.Número telefónico:</label>
+                            <input type="text" maxlength="30" class="form-control" id="documento" name="erc.CAMPO_14"
+                                [(ngModel)]="erc.CAMPO_14">
+                        </div>
+
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="col-md-4">
+                            <label id="documento">15.Fecha de afiliación a la EPS que registra:</label>
+
+                            <div class="input-group" id="">
+                                <div class="input-group-prepend">
+                                    <span id="documento" class="input-group-text"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-calendar2-date" viewBox="0 0 16 16">
+                                            <path
+                                                d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
+                                            <path
+                                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
+                                            <path
+                                                d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
+                                        </svg></span>
+                                </div>
+                                <input type="date" class="form-control" id="documento" (change)="CAMPO_15(erc.CAMPO_15)"
+                                    [disabled]="erc_15" name="erc.CAMPO_15" [(ngModel)]="erc.CAMPO_15"
+                                    style="width: 93px !important;" [disabled]="erc_15">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label id="documento">16.Código de la IPS donde se hace seguimiento al
+                                usuario:</label>
+                            <input type="text" maxlength="12" id="documento" class="form-control" name="erc.CAMPO_16"
+                                [(ngModel)]="erc.CAMPO_16">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" id="button" class="btn btn-secondary" type="submit" (click)="editar()"
+            [disabled]="yaGuardo"><i class="fas fa-save"></i>
+            Continuar con el diligenciamiento</button>
+        <button type="button" id="button" class="btn btn-primary" type="submit" (click)="guardarDatos()"
+            [disabled]="Guardo"><i class="fas fa-save"></i>
+            Guardar</button>
+        <!-- <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button> -->
     </div>
 </ng-template>

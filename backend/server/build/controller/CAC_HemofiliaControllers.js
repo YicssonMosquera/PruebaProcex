@@ -31,5 +31,20 @@ class CAC_HemofiliaControllers {
             res.json(hemofilia);
         });
     }
+    buscarAfiliado(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { Campo_6, Campo_5 } = req.body;
+            var datos = yield CAC_Hemofilia_1.default.consultaAfiliado(Campo_6, Campo_5);
+            res.json(datos);
+        });
+    }
+    buscarCAC(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { Campo_6, Campo_5 } = req.body;
+            const oCACErc = new CAC_Hemofilia_1.default();
+            var datos = yield oCACErc.consultarCAC(Campo_6, Campo_5);
+            res.json(datos);
+        });
+    }
 }
 exports.cac_HemofiliaControllers = new CAC_HemofiliaControllers();

@@ -32,5 +32,19 @@ class CAC_ERCControllers {
     const erc = await oCACErc.actualizarDatos(req.body, CAMPO_6);
     res.json(erc)
   }
+
+  public async buscarAfiliado(req: Request, res: Response) {
+    const { Campo_6, Campo_5 } = req.body
+    const oCACErc = new CAC_ERC();
+    var datos = await oCACErc.consultaAfiliado(Campo_6, Campo_5)
+    res.json(datos);
+  }
+
+  public async buscarCAC(req: Request, res: Response) {
+    const { Campo_6, Campo_5 } = req.body
+    const oCACErc = new CAC_ERC();
+    var datos = await oCACErc.consultarCAC(Campo_6, Campo_5)
+    res.json(datos);
+  }
 }
 export const cac_ERCControllers = new CAC_ERCControllers();

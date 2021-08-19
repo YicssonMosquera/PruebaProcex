@@ -2,7 +2,7 @@
     <div class="y-card-header">
         <div class="row">
             <div class="col-md-12" id="">
-                <button type="button" (click)="formularioNuevo()" id="button" class="btn btn-secondary"><i
+                <button type="button" (click)="formulario(frm_nuevo)" id="button" class="btn btn-secondary"><i
                         class="fas fa-file-alt"></i> Nuevo</button>
             </div>
         </div>
@@ -23,7 +23,7 @@
                             class="fas fa-filter" style="cursor: pointer;" (click)="nombrearchiv(content2)"></i></th>
                     <th style="width:80px;background-color: #02adb5e0; color: white;">Fecha de nacimiento</th>
                     <th style="width:80px;background-color: #02adb5e0; color: white;">Sexo</th>
-                   
+
                 </tr>
             </ng-template>
             <ng-template pTemplate="body" let-data>
@@ -71,7 +71,7 @@
         <form>
             <div class="row">
                 <div class="col-md-12">
-                    <input type="number" name="numerodocumeto" [(ngModel)]="numerodocumeto" id="tipo"
+                    <input type="number" name="numerodocumeto" [(ngModel)]="numerodocumeto" id="documento"
                         onkeypress='return event.charCode >= 48 && event.charCode <= 57' name="Tipodocumento"
                         class="form-control" placeholder="Numero de documento">
                 </div>
@@ -131,3 +131,218 @@
             (click)="limpiarFiltros()" (click)="d('Cross click')"></button>
     </div>
 </ng-template>
+
+<ng-template #frm_nuevo let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Formulario nuevo – CAC Cancer</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')" (click)="limpiarFormulario()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="input-group mb-3">
+                <div class="col-md-6">
+                    <label id="documento">5.Tipo de Identificación del usuario:</label>
+                    <select name="" class="form-control" id="documento" name="cancer.CAMPO_5"
+                        [(ngModel)]="cancer.CAMPO_5" (change)="validacionNuevo()" (change)="aprobar_5(cancer.CAMPO_5)"
+                        [disabled]="existeAfliado">
+                        <option *ngFor='let cancer5 of cancer5' [ngValue]="cancer5.NOMBRE_OPCION"
+                            [ngValue]="cancer5.CODIGO_OPCION">
+                            {{cancer5.CODIGO_OPCION}}.{{cancer5.NOMBRE_OPCION}}
+                        </option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label id="documento">6.Número de Identificación del usuario:</label>
+                    <input maxlength="20" type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57'
+                        class="form-control " id="documento" name="cancer.CAMPO_6" [(ngModel)]="cancer.CAMPO_6"
+                        [disabled]="NumIdentificacion" (change)="validacionNuevo()"
+                        (change)="aprobar_6(cancer.CAMPO_6)">
+                </div>
+            </div>
+        </div>
+        <div class="row" #collapse="ngbCollapse" [(ngbCollapse)]="desplegar">
+            <div class="card" style="width: 100% ;border: 0px solid rgba(0,0,0,.125);">
+                <div class="card-body">
+                    <div class="input-group mb-3">
+                        <div class="col-md-4">
+                            <label id="documento">1.Primer nombre del usuario:</label>
+                            <input maxlength="20" type="text" class="form-control" id="documento" name="cancer.CAMPO_1"
+                                [ngClass]="{'is-invalid': _cancer_1 == false }" [(ngModel)]="cancer.CAMPO_1"
+                                [disabled]="existeAfliado" (change)="aprobar_1(cancer.CAMPO_1)">
+                        </div>
+                        <div class="col-md-4">
+                            <label id="documento">2.Segundo nombre del usuario:</label>
+                            <input maxlength="30" type="text" class="form-control" id="documento" name="cancer.CAMPO_2"
+                                [(ngModel)]="cancer.CAMPO_2">
+                        </div>
+
+                        <div class="col-md-4">
+                            <label id="documento">3.Primer apellido del usuario:</label>
+                            <input maxlength="20" type="text" class="form-control" id="documento" name="cancer.CAMPO_3"
+                                [ngClass]="{'is-invalid': _cancer_3 == false }" [(ngModel)]="cancer.CAMPO_3"
+                                [disabled]="existeAfliado" (change)="aprobar_3(cancer.CAMPO_3)">
+                        </div>
+
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="col-md-4">
+                            <label id="documento">4.Segundo apellido del usuario: </label>
+                            <input maxlength="30" type="text" class="form-control" id="documento" name="cancer.CAMPO_4"
+                                [(ngModel)]="cancer.CAMPO_4">
+                        </div>
+                        <div class="col-md-4">
+                            <label id="documento">7.Fecha de nacimiento:</label>
+                            <div class="input-group" id="documento">
+                                <div class="input-group-prepend">
+                                    <span id="documento" class="input-group-text"
+                                        [ngClass]="{'spanError': _cancer_7 == false }"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-calendar2-date" viewBox="0 0 16 16">
+                                            <path
+                                                d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
+                                            <path
+                                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
+                                            <path
+                                                d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
+                                        </svg></span>
+                                </div>
+                                <input type="date" class="form-control" name="cancer.CAMPO_7"
+                                    [(ngModel)]="cancer.CAMPO_7" [ngClass]="{'is-invalid': _cancer_7 == false }"
+                                    (change)="CAMPO_7(cancer.CAMPO_7)" (change)="aprobar_7(cancer.CAMPO_7)" (change)="cargarNacimiento(cancer.CAMPO_7)"
+                                    id="documento" style="width: 93px !important;" [disabled]="existeAfliado">
+
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label id="documento">8.Sexo:</label>
+                            <select name="" class="form-control" id="documento" name="cancer.CAMPO_8"
+                                [ngClass]="{'is-invalid': _cancer_8 == false }"
+                                style="background-position: right calc(1.5em + 0.1875rem) center;"
+                                [(ngModel)]="cancer.CAMPO_8" [disabled]="existeAfliado"
+                                (change)="aprobar_8(cancer.CAMPO_8)">
+                                <option *ngFor='let cancer8 of cancer8' [ngValue]="cancer8.NOMBRE_OPCION"
+                                    [ngValue]="cancer8.CODIGO_OPCION">
+                                    {{cancer8.CODIGO_OPCION}}.{{cancer8.NOMBRE_OPCION}}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="col-md-4">
+                            <label id="documento">9.Ocupación:</label>
+
+                            <input type="text" list="ocupacion" value="5" id="documento" class="form-control"
+                                name="cancer.CAMPO_9" [(ngModel)]="cancer.CAMPO_9">
+                            <datalist id="ocupacion">
+                                <option *ngFor='let Ocupacion of Ocupacion' [ngValue]="Ocupacion.DESCRIPCION"
+                                    [ngValue]="Ocupacion.CODIGO_Ocupacion">
+                                    {{Ocupacion.CODIGO_Ocupacion}}.{{Ocupacion.DESCRIPCION}}
+                                </option>
+                            </datalist>
+                        </div>
+                        <div class="col-md-4">
+                            <label id="documento">10.Régimen de afiliación al SGSSS:</label>
+                            <select name="" class="form-control" id="documento" name="cancer.CAMPO_10"
+                                [(ngModel)]="cancer.CAMPO_10">
+                                <option value=""></option>
+                                <option *ngFor='let cancer10 of cancer10' [ngValue]="cancer10.NOMBRE_OPCION"
+                                    [ngValue]="cancer10.CODIGO_OPCION">
+                                    {{cancer10.CODIGO_OPCION}}.{{cancer10.NOMBRE_OPCION}}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label id="documento">11.Código de la EPS o de la entidad territorial:</label>
+                            <input maxlength="6" type="text" class="form-control" id="documento" name="cancer.CAMPO_11"
+                                [(ngModel)]="cancer.CAMPO_11">
+                        </div>
+
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="col-md-4">
+                            <label id="documento">12.Código pertenencia étnica:</label>
+                            <select name="" class="form-control" id="documento" name="cancer.CAMPO_12"
+                                [(ngModel)]="cancer.CAMPO_12">
+                                <option value=""></option>
+                                <option *ngFor='let cancer12 of cancer12' [ngValue]="cancer12.NOMBRE_OPCION"
+                                    [ngValue]="cancer12.CODIGO_OPCION">
+                                    {{cancer12.CODIGO_OPCION}}.{{cancer12.NOMBRE_OPCION}}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label id="documento">13.Grupo poblacional:</label>
+                            <select name="" class="form-control" id="documento" name="cancer.CAMPO_13"
+                                [(ngModel)]="cancer.CAMPO_13">
+                                <option value=""></option>
+                                <option *ngFor='let cancer13 of cancer13' [ngValue]="cancer13.NOMBRE_OPCION"
+                                    [ngValue]="cancer13.CODIGO_OPCION">
+                                    {{cancer13.CODIGO_OPCION}}.{{cancer13.NOMBRE_OPCION}}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label id="documento">14.Municipio de residencia:</label>
+                            <input type="text" list="municipio" id="documento" class="form-control"
+                                name="cancer.CAMPO_14" [(ngModel)]="cancer.CAMPO_14">
+                            <datalist id="municipio">
+                                <option *ngFor='let municipioresidencia of municipioresidencia'
+                                    [ngValue]="municipioresidencia.NOMBRE_CIUDAD"
+                                    [ngValue]="municipioresidencia.CODIGO_CIUDAD">
+                                    {{municipioresidencia.CODIGO_CIUDAD}}.{{municipioresidencia.NOMBRE_CIUDAD}}
+                                </option>
+                            </datalist>
+                        </div>
+
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="col-md-4">
+                            <label id="documento">15.Número telefónico del paciente:</label>
+                            <input maxlength="21" type="text"
+                                onkeypress='return event.charCode >= 48 && event.charCode <= 57' class="form-control"
+                                id="documento" name="cancer.CAMPO_15" [(ngModel)]="cancer.CAMPO_15">
+                        </div>
+                        <div class="col-md-4">
+                            <label id="documento">16.Fecha de afiliación a la EAPB que reporta:</label>
+                            <div class="input-group" id="documento">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="documento"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-calendar2-date" viewBox="0 0 16 16">
+                                            <path
+                                                d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
+                                            <path
+                                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
+                                            <path
+                                                d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
+                                        </svg></span>
+                                </div>
+                                <input type="date" class="form-control" name="cancer.CAMPO_16" [disabled]="cancer_16"
+                                    [(ngModel)]="cancer.CAMPO_16" (change)="CAMPO_16(cancer.CAMPO_16)" id="documento">
+
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label id="documento">133.Código único de identificación BDUA: </label>
+                            <input type="text" maxlength="4" class="form-control" id="documento" name="cancer.CAMPO_133"
+                                [(ngModel)]="cancer.CAMPO_133">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" id="button" class="btn btn-secondary" type="submit" (click)="editar()"
+            [disabled]="yaGuardo"><i class="fas fa-save"></i>
+            Continuar con el diligenciamiento</button>
+        <button type="button" id="button" class="btn btn-primary" type="submit" (click)="guardarDatos()"  [disabled]="Guardo"><i
+                class="fas fa-save"></i>
+            Guardar</button>
+        <!-- <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button> -->
+    </div>
+</ng-template>
+

@@ -50,5 +50,21 @@ class CAC_ERCControllers {
             res.json(erc);
         });
     }
+    buscarAfiliado(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { Campo_6, Campo_5 } = req.body;
+            const oCACErc = new CAC_ERC_1.default();
+            var datos = yield oCACErc.consultaAfiliado(Campo_6, Campo_5);
+            res.json(datos);
+        });
+    }
+    buscarCAC(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { Campo_6, Campo_5 } = req.body;
+            const oCACErc = new CAC_ERC_1.default();
+            var datos = yield oCACErc.consultarCAC(Campo_6, Campo_5);
+            res.json(datos);
+        });
+    }
 }
 exports.cac_ERCControllers = new CAC_ERCControllers();

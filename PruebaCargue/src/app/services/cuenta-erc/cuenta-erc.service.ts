@@ -8,6 +8,7 @@ import keys from '../../../keys'
 })
 export class CuentaErcService {
   API_URI = keys.api.API_URI + '/erc';
+  API_URI2 = keys.api.API_URI + '/ercvalidar';
  
   constructor(private http: HttpClient) { }
 
@@ -26,4 +27,23 @@ export class CuentaErcService {
   ActualizarDatos(CAMPO_6, ERC: ERC) {
     return this.http.put(`${this.API_URI}/${CAMPO_6}`, ERC)
   }
+
+  GuardarErcValidacion(ERC: ERC) {
+    return this.http.post(`${this.API_URI2}/validar`, ERC)
+  }
+
+  validarRegistrosEdit(CAMPO_6: ERC, ERC: ERC){
+    return this.http.put(`${this.API_URI2}/validar/${CAMPO_6}`, ERC)
+  }
+
+  CargarAfiliado(Campo_6,Campo_5) {
+    const guardar = { Campo_6, Campo_5 } 
+    return this.http.post(`${this.API_URI}/afiliado_ERC`, guardar)
+  }
+  CargarCAC(Campo_6,Campo_5) {
+    const guardar = { Campo_6, Campo_5 } 
+    return this.http.post(`${this.API_URI}/CAC_Erc`, guardar)
+  }
+
+
 }

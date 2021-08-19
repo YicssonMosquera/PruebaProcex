@@ -1,23 +1,26 @@
-import {Router} from 'express'
-import {procesoHemofiliaFrmControllers} from '../controller/ProcesoHemofiliaFrmControllers'
-import {cac_HemofiliaControllers} from '../controller/CAC_HemofiliaControllers'
+import { Router } from 'express'
+import { procesoHemofiliaFrmControllers } from '../controller/ProcesoHemofiliaFrmControllers'
+import { cac_HemofiliaControllers } from '../controller/CAC_HemofiliaControllers'
 
 
 
-class ProcesoHemofiliaFrmRoutes{
-    public   router:Router = Router()
+class ProcesoHemofiliaFrmRoutes {
+  public router: Router = Router()
 
-    constructor(){
-      this.config();
-    }
+  constructor() {
+    this.config();
+  }
 
-    config():void{
-        this.router.post('/',procesoHemofiliaFrmControllers.guardarHemofiliaFrm)
-        this.router.put('/update/:Campo_6',cac_HemofiliaControllers.Actualizarhemofilia)
-        this.router.post('/guardar',cac_HemofiliaControllers.Guardarhemofilia)
-        this.router.put('/validar/:Campo_6',procesoHemofiliaFrmControllers.guardarHemofiliaUpdate)
-    }
-}    
+  config(): void {
+    this.router.post('/', procesoHemofiliaFrmControllers.guardarHemofiliaFrm)
+    this.router.put('/update/:Campo_6', cac_HemofiliaControllers.Actualizarhemofilia)
+    this.router.post('/guardar', cac_HemofiliaControllers.Guardarhemofilia)
+    this.router.put('/validar/:Campo_6', procesoHemofiliaFrmControllers.guardarHemofiliaUpdate)
+    this.router.post('/afiliado_Hemofilia', cac_HemofiliaControllers.buscarAfiliado);
+    this.router.post('/CAC_Hemofilia', cac_HemofiliaControllers.buscarCAC);
 
-const procesoHemofiliaFrmRoutes =  new ProcesoHemofiliaFrmRoutes()
+  }
+}
+
+const procesoHemofiliaFrmRoutes = new ProcesoHemofiliaFrmRoutes()
 export default procesoHemofiliaFrmRoutes.router

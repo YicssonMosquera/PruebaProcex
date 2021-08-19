@@ -4,6 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const database_1 = __importDefault(require("../database"));
+var moment = require('moment');
 class CAC_Artritis {
     static guardarDatos(newDatos) {
         return new Promise(function (resolev, reject) {
@@ -69,6 +70,21 @@ class CAC_Artritis {
             ;
         });
     }
+    getOne2(CAMPO_9) {
+        return new Promise(function (resolev, reject) {
+            try {
+                database_1.default.query("select ID_CUENTA_ARTRITIS from cuenta_artritis where cuenta_artritis.CAMPO_9  = ? ", [CAMPO_9], function (err, result, fields) {
+                    if (err)
+                        throw err;
+                    resolev(result[0].ID_CUENTA_ARTRITIS);
+                });
+            }
+            catch (error) {
+                // res.status(404).json({ error: 'No se puedieron Datos' });
+            }
+            ;
+        });
+    }
     actualizarDatos(newDatos, CAMPO_9) {
         return new Promise(function (resolev, reject) {
             try {
@@ -80,6 +96,46 @@ class CAC_Artritis {
             }
             catch (error) {
                 // res.status(404).json({ error: 'No se pudieron almacenar datos' });
+            }
+            ;
+        });
+    }
+    consultaAfiliado(Campo_9, Campo_8) {
+        return new Promise(function (resolev, reject) {
+            try {
+                database_1.default.query('select * from afiliado where afiliado.NUMERO_IDENTIFICACION = ? and TIPO_DOCUMENTO = ?  ', [Campo_9, Campo_8], function (err, result, fields) {
+                    if (err)
+                        throw err;
+                    for (let index = 0; index < result.length; index++) {
+                        const element = result[index];
+                        element.FECHA_NACIMIENTO = moment(new Date(element.FECHA_NACIMIENTO)).format('YYYY-MM-DD');
+                        element.FECHA_AFILIACION = moment(new Date(element.FECHA_AFILIACION)).format('YYYY-MM-DD');
+                        resolev(element);
+                    }
+                });
+            }
+            catch (error) {
+                //res.status(404).json({ error: 'No se pudieron almacenar datos' });
+            }
+            ;
+        });
+    }
+    consultarCAC(Campo_9, Campo_8) {
+        return new Promise(function (resolev, reject) {
+            try {
+                database_1.default.query('select * from cuenta_artritis where cuenta_artritis.C8_CAMPO_9 = ? and cuenta_artritis.C7_CAMPO_8 = ? ', [Campo_9, Campo_8], function (err, result, fields) {
+                    if (err)
+                        throw err;
+                    for (let index = 0; index < result.length; index++) {
+                        const element = result[index];
+                        element.CAMPO_7 = moment(new Date(element.CAMPO_7)).format('YYYY-MM-DD');
+                        element.CAMPO_16 = moment(new Date(element.CAMPO_16)).format('YYYY-MM-DD');
+                        resolev(element);
+                    }
+                });
+            }
+            catch (error) {
+                //res.status(404).json({ error: 'No se pudieron almacenar datos' });
             }
             ;
         });

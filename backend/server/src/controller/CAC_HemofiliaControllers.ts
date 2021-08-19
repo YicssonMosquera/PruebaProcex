@@ -15,6 +15,21 @@ class CAC_HemofiliaControllers {
         const hemofilia = await oHemofilia.Actualizarhemofilia(req.body, Campo_6);
         res.json(hemofilia)
     }
+    
+    public async buscarAfiliado(req: Request, res: Response) {
+        const { Campo_6, Campo_5 } = req.body
+        var datos = await CAC_Hemofilia.consultaAfiliado(Campo_6, Campo_5)
+        res.json(datos);
+    }
+
+    public async buscarCAC(req: Request, res: Response) {
+        const { Campo_6, Campo_5 } = req.body
+        const oCACErc = new CAC_Hemofilia();
+        var datos = await oCACErc.consultarCAC(Campo_6, Campo_5)
+        res.json(datos);
+      }
+
+
 }
 
 

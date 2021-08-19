@@ -1,5 +1,6 @@
 import { Request, Response, json, request } from 'express'
 var AdmZip = require('adm-zip');
+
 class FileZipUtil {
 
     public static getFileTxt(fileZip,body,cb) {

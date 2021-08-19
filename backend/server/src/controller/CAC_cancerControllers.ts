@@ -45,6 +45,13 @@ class CAC_cancerControllers {
         var datos = await CAC_cancer.consultaAfiliado(Campo_6, Campo_5)
         res.json(datos);
     }
+
+    public async buscarCAC(req: Request, res: Response) {
+        const { Campo_6, Campo_5 } = req.body
+        var datos = await CAC_cancer.consultarCAC(Campo_6, Campo_5)
+        res.json(datos);
+    }
+
 }
 
 export const cac_cancerControllers = new CAC_cancerControllers();

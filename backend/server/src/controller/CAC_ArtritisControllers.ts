@@ -19,7 +19,7 @@ class CAC_ArtritisControllers {
   }
 
   public async cargarPaciente(req: Request, res: Response) {
-    const {CAMPO_9 } = req.params;
+    const { CAMPO_9 } = req.params;
     const oCACArtritis = new CAC_Artritis();
     const artritis = await oCACArtritis.getOne(CAMPO_9);
     res.json(artritis)
@@ -28,8 +28,22 @@ class CAC_ArtritisControllers {
   public async actualizarDatos(req: Request, res: Response) {
     const { CAMPO_9 } = req.params;
     const oCACArtritis = new CAC_Artritis();
-    const artritis = await oCACArtritis.actualizarDatos(req.body,CAMPO_9);
+    const artritis = await oCACArtritis.actualizarDatos(req.body, CAMPO_9);
     res.json(artritis)
   }
+  public async buscarAfiliado(req: Request, res: Response) {
+    const { Campo_9, Campo_8 } = req.body
+    const oCACArtritis = new CAC_Artritis();
+    var datos = await oCACArtritis.consultaAfiliado(Campo_9, Campo_8)
+    res.json(datos);
+  }
+
+  public async buscarCAC(req: Request, res: Response) {
+    const { Campo_9, Campo_8 } = req.body
+    const oCACErc = new CAC_Artritis();
+    var datos = await oCACErc.consultarCAC(Campo_9, Campo_8)
+    res.json(datos);
+  }
+
 }
 export const cac_ArtritisControllers = new CAC_ArtritisControllers();
