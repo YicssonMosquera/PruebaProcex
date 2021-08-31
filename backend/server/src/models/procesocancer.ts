@@ -1,0 +1,21 @@
+export interface ProcesoCancer{
+    REGISTROS_PROCESADOS?:number;
+    ESTADO_PROCESO?:string;
+    USUARIO_CREACION?:string; 
+    USUARIO_MODIFICACION?:string;
+    NOMBRE_ARCHIVO?:string;
+    LONGITUD_ARCHIVO?:number;
+    NUMERO_ERRORES?:number;
+    NUMERO_CORRECCIONES?:number;
+    NUMERO_RADICACION?:number;
+    ERRORES_CA?:number;
+    ERRORES_CE?:number;
+    ERRORES_CD?:number;
+    REGISTROS_VALIDOS?:number 
+    REGISTROS_NO_VALIDOS?:number
+    VIGENTE?:string; 
+    TIPO_USUARIO?:string;
+    TIPO_PROCESO?:string;
+    PROCESADO?:string;
+    RUTA_ARCHIVO?:string;
+}

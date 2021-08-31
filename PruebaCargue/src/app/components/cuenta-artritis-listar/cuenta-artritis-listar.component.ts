@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { Router } from '@angular/router'
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import {NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from 'src/app/app.component';
 import { CACArtritisService } from '../../services/CAC-Artritis/cac-artritis.service'
 import { HemofiliaService } from 'src/app/services/hemofilia/hemofilia.service';
@@ -64,6 +64,7 @@ export class CuentaArtritisListarComponent implements OnInit {
   ARTRITIS10: any;
   ARTRITIS12: any;
   ARTRITIS13: any;
+  ARTRITIS11: any;
   municipioresidencia: any;
   yaGuardo = true;
   Guardo = true;
@@ -231,7 +232,8 @@ export class CuentaArtritisListarComponent implements OnInit {
 
 
 
-  constructor(private artritisservice: CACArtritisService, private Router: Router, private ngxSpinnerService: NgxUiLoaderService, private modalService: NgbModal, public tabs: AppComponent, private hemofiliaservice: HemofiliaService,private opcionesListaService: OpcionesListaService,) { }
+  constructor(private artritisservice: CACArtritisService, private Router: Router, private ngxSpinnerService: NgxUiLoaderService, private modalService: NgbModal, public tabs: AppComponent, private hemofiliaservice: HemofiliaService,private opcionesListaService: OpcionesListaService,config: NgbModalConfig,) {config.backdrop = 'static';
+  config.keyboard = false; }
 
   ngOnInit(): void {
     this.consultarDatos();

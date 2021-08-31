@@ -1,9 +1,9 @@
 import pool from '../database'
 
-class DBProcesohemofiliaerror{ 
-    public static  guardar(hemofiliaerror) {
+class BdProcesoCancerError{ 
+    public static  guardar(cancerError) {
         try {
-             pool.query('insert into bd_proceso_hemofilia_error set ?', hemofiliaerror, function(err, result, fields) {
+             pool.query('insert into bd_proceso_cancer_error set ?', cancerError, function(err, result, fields) {
                 if (err) throw err;             
             });
         }
@@ -15,4 +15,4 @@ class DBProcesohemofiliaerror{
 }
 
 
-export default DBProcesohemofiliaerror;
+export default BdProcesoCancerError;

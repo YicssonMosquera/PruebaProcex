@@ -14,16 +14,16 @@
             <ng-template pTemplate="header">
                 <tr tableStyleClass="header">
                     <th style="width:80px;background-color: #02adb5e0; color: white;">Tipo identificacion<i
-                        class="fas fa-filter" style="cursor: pointer;" (click)="nombrearchiv(content2)"></i></th>
+                            class="fas fa-filter" style="cursor: pointer;" (click)="nombrearchiv(content2)"></i></th>
                     <th style="width:90px;background-color: #02adb5e0; color: white;">No identificacion<i
-                        class="fas fa-filter" style="cursor: pointer;" (click)="vigent(content3)"></i></th>
+                            class="fas fa-filter" style="cursor: pointer;" (click)="vigent(content3)"></i></th>
                     <th style="width:150px;background-color: #02adb5e0; color: white;">Primer nombre<i
-                        class="fas fa-filter" style="cursor: pointer;" (click)="open(content)"></i> </th>
+                            class="fas fa-filter" style="cursor: pointer;" (click)="open(content)"></i> </th>
                     <th style="width:110px;background-color: #02adb5e0; color: white;">Segundo nombre</th>
                     <th style="width:100px;background-color: #02adb5e0; color: white;">Primer apellido</th>
                     <th style="width:80px;background-color: #02adb5e0; color: white;">Segundo apellido</th>
                     <th style="width:80px;background-color: #02adb5e0; color: white;">Fecha nacimiento</th>
-                    <th style="width:80px;background-color: #02adb5e0; color: white;">Sexo</th>
+                    <th style="width:80px;background-color: #02adb5e0; color: white;">documento</th>
                 </tr>
             </ng-template>
             <ng-template pTemplate="body" let-data>
@@ -59,8 +59,8 @@
         </form>
     </div>
     <div class="modal-footer">
-        <button pButton pRipple type="button" icon="pi pi-check" class="p-button-rounded"
-            (click)="consultarDatos()" (click)="d('Cross click')" style="margin-right: 4px;"></button>
+        <button pButton pRipple type="button" icon="pi pi-check" class="p-button-rounded" (click)="consultarDatos()"
+            (click)="d('Cross click')" style="margin-right: 4px;"></button>
         <button pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded p-button-danger"
             (click)="limpiarFiltros()" (click)="d('Cross click')"></button>
     </div>
@@ -72,23 +72,22 @@
             <div class="row">
                 <div class="col-md-12">
 
-                    <select name="" class="form-control" id="tipo"
-                    name="TipoIdentificaion" [(ngModel)]="TipoIdentificaion">
-                    <option value=""></option>
-                    <option *ngFor='let identificacion of identificacion'
-                        [ngValue]="identificacion.NOMBRE_OPCION"
-                        [ngValue]="identificacion.CODIGO_OPCION">
-                        {{identificacion.CODIGO_OPCION}}.{{identificacion.NOMBRE_OPCION}}
-                    </option>
-                </select>
-                   
+                    <select name="" class="form-control" id="tipo" name="TipoIdentificaion"
+                        [(ngModel)]="TipoIdentificaion">
+                        <option value=""></option>
+                        <option *ngFor='let identificacion of identificacion' [ngValue]="identificacion.NOMBRE_OPCION"
+                            [ngValue]="identificacion.CODIGO_OPCION">
+                            {{identificacion.CODIGO_OPCION}}.{{identificacion.NOMBRE_OPCION}}
+                        </option>
+                    </select>
+
                 </div>
             </div>
         </form>
     </div>
     <div class="modal-footer">
-        <button pButton pRipple type="button" icon="pi pi-check" class="p-button-rounded"
-            (click)="consultarDatos()" (click)="d('Cross click')" style="margin-right: 4px;"></button>
+        <button pButton pRipple type="button" icon="pi pi-check" class="p-button-rounded" (click)="consultarDatos()"
+            (click)="d('Cross click')" style="margin-right: 4px;"></button>
         <button pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded p-button-danger"
             (click)="limpiarFiltros()" (click)="d('Cross click')"></button>
     </div>
@@ -100,16 +99,16 @@
         <form>
             <div class="row">
                 <div class="col-md-12">
-                     <input type="number" name="NoIdentificacion" [(ngModel)]="NoIdentificacion" id="tipo"
-                        onkeypress='return event.charCode >= 48 && event.charCode <= 57'
-                        class="form-control" placeholder="Numero de documento">
+                    <input type="number" name="NoIdentificacion" [(ngModel)]="NoIdentificacion" id="tipo"
+                        onkeypress='return event.charCode >= 48 && event.charCode <= 57' class="form-control"
+                        placeholder="Numero de documento">
                 </div>
             </div>
         </form>
     </div>
     <div class="modal-footer">
-        <button pButton pRipple type="button" icon="pi pi-check" class="p-button-rounded"
-            (click)="consultarDatos()" (click)="d('Cross click')" style="margin-right: 4px;"></button>
+        <button pButton pRipple type="button" icon="pi pi-check" class="p-button-rounded" (click)="consultarDatos()"
+            (click)="d('Cross click')" style="margin-right: 4px;"></button>
         <button pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded p-button-danger"
             (click)="limpiarFiltros()" (click)="d('Cross click')"></button>
     </div>
@@ -120,8 +119,7 @@
         <form>
             <div class="row">
                 <div class="col-md-12">
-                    <select name="" id="" class="form-control" name="primerNombre"
-                        [(ngModel)]="primerNombre">
+                    <select name="" id="" class="form-control" name="primerNombre" [(ngModel)]="primerNombre">
                         <option value="1">Sin soportes</option>
                         <option value="2">Soportes incompletos</option>
                         <option value="3">Soportes completos</option>
@@ -131,8 +129,8 @@
         </form>
     </div>
     <div class="modal-footer">
-        <button pButton pRipple type="button" icon="pi pi-check" class="p-button-rounded"
-            (click)="consultarDatos()" (click)="d('Cross click')" style="margin-right: 4px;"></button>
+        <button pButton pRipple type="button" icon="pi pi-check" class="p-button-rounded" (click)="consultarDatos()"
+            (click)="d('Cross click')" style="margin-right: 4px;"></button>
         <button pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded p-button-danger"
             (click)="limpiarFiltros()" (click)="d('Cross click')"></button>
     </div>
@@ -150,8 +148,8 @@
         <div class="row">
             <div class="input-group mb-3">
                 <div class="col-md-6">
-                    <label id="tipo">8.Tipo de identificacion del paciente:</label>
-                    <select name="" class="form-control" id="tipo" name="ARTRITIS.CAMPO_8"
+                    <label id="documento">8.Tipo de identificacion del paciente:</label>
+                    <select name="" class="form-control" id="documento" name="ARTRITIS.CAMPO_8"
                         [ngClass]="{'is-invalid': _ARTRITIS_8 == false }" (change)="buscarAfiliado()"
                         (change)="aprobar_8(ARTRITIS.CAMPO_8)"
                         style="background-position: right calc(1.5em + 0.1875rem) center;"
@@ -169,7 +167,7 @@
                         (change)="aprobar_9(ARTRITIS.CAMPO_9)"
                         onkeypress='return event.charCode >= 48 && event.charCode <= 57'
                         [ngClass]="{'is-invalid': _ARTRITIS_9 == false }" class="form-control" id="documento"
-                        name="ARTRITIS.C8_CAMPO_9" [(ngModel)]="ARTRITIS.CAMPO_9">
+                        name="ARTRITIS.CAMPO_9" [(ngModel)]="ARTRITIS.CAMPO_9">
                 </div>
             </div>
         </div>
@@ -178,40 +176,37 @@
                 <div class="card-body">
                     <div class="input-group mb-3">
                         <div class="col-md-4">
-                            <label id="pnombre">4.Primer nombre:</label>
-                            <input type="text" maxlength="30" class="form-control" id="pnombre"
+                            <label id="documento">4.Primer nombre:</label>
+                            <input type="text" maxlength="30" class="form-control" id="documento"
                                 [ngClass]="{'is-invalid': _ARTRITIS_4 == false }" (change)="aprobar_4(ARTRITIS.CAMPO_4)"
-                                [disabled]="existeAfliado" name="ARTRITIS.CAMPO_4"
-                                [(ngModel)]="ARTRITIS.CAMPO_4">
+                                [disabled]="existeAfliado" name="ARTRITIS.CAMPO_4" [(ngModel)]="ARTRITIS.CAMPO_4">
                         </div>
                         <div class="col-md-4">
-                            <label id="snombre">5.Segundo nombre:</label>
-                            <input type="text" maxlength="30" class="form-control" id="snombre"
-                                [disabled]="ARTRITIS_5" name="ARTRITIS.CAMPO_5"
+                            <label id="documento">5.Segundo nombre:</label>
+                            <input type="text" maxlength="30" class="form-control" id="documento" name="ARTRITIS.CAMPO_5"
                                 [(ngModel)]="ARTRITIS.CAMPO_5">
                         </div>
 
                         <div class="col-md-4">
-                            <label id="tipo">6.Primer apellido:</label>
+                            <label id="documento">6.Primer apellido:</label>
                             <input type="text" maxlength="30" class="form-control" id="papellido"
                                 [ngClass]="{'is-invalid': _ARTRITIS_6 == false }" (change)="aprobar_6(ARTRITIS.CAMPO_6)"
-                                [disabled]="existeAfliado" name="ARTRITIS.CAMPO_6"
-                                [(ngModel)]="ARTRITIS.CAMPO_6">
+                                [disabled]="existeAfliado" name="ARTRITIS.CAMPO_6" [(ngModel)]="ARTRITIS.CAMPO_6">
                         </div>
 
                     </div>
                     <div class="input-group mb-3">
                         <div class="col-md-4">
-                            <label id="documento">4.Segundo apellido del usuario: </label>
+                            <label id="documento">7.Segundo apellido del usuario: </label>
                             <input maxlength="30" type="text" class="form-control" id="documento"
-                                name="ARTRITIS.CAMPO_4" [(ngModel)]="ARTRITIS.CAMPO_4">
+                                name="ARTRITIS.CAMPO_7" [(ngModel)]="ARTRITIS.CAMPO_7">
                         </div>
                         <div class="col-md-4">
-                            <label id="documento">7.Fecha de nacimiento:</label>
+                            <label id="documento">10.Fecha de nacimiento:</label>
                             <div class="input-group" id="documento">
                                 <div class="input-group-prepend">
                                     <span id="documento" class="input-group-text"
-                                        [ngClass]="{'spanError': _ARTRITIS_7 == false }"><svg
+                                        [ngClass]="{'spanError': _ARTRITIS_10 == false }"><svg
                                             xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor" class="bi bi-calendar2-date" viewBox="0 0 16 16">
                                             <path
@@ -222,93 +217,75 @@
                                                 d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
                                         </svg></span>
                                 </div>
-                                <input type="date" class="form-control" name="ARTRITIS.CAMPO_7"
-                                    [(ngModel)]="ARTRITIS.CAMPO_7" [ngClass]="{'is-invalid': _ARTRITIS_7 == false }"
-                                    (change)="CAMPO_7(ARTRITIS.CAMPO_7)" (change)="aprobar_7(ARTRITIS.CAMPO_7)"
-                                    (change)="cargarNacimiento(ARTRITIS.CAMPO_7)" id="documento"
+                                <input type="date" class="form-control" name="ARTRITIS.CAMPO_10"
+                                    [(ngModel)]="ARTRITIS.CAMPO_10" [ngClass]="{'is-invalid': _ARTRITIS_10 == false }"
+                                    (change)="CAMPO_10(ARTRITIS.CAMPO_10)" (change)="aprobar_10(ARTRITIS.CAMPO_10)"
+                                    (change)="cargarNacimiento(ARTRITIS.CAMPO_10)" id="documento"
                                     style="width: 93px !important;" [disabled]="existeAfliado">
 
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <label id="documento">8.Sexo:</label>
-                            <select name="" class="form-control" id="documento" name="ARTRITIS.CAMPO_8"
-                                [ngClass]="{'is-invalid': _ARTRITIS_8 == false }"
+                            <label id="documento">11.documento:</label>
+                            <select name="" class="form-control" id="documento" name="ARTRITIS.CAMPO_11"
+                                [ngClass]="{'is-invalid': _ARTRITIS_11 == false }"
                                 style="background-position: right calc(1.5em + 0.1875rem) center;"
-                                [(ngModel)]="ARTRITIS.CAMPO_8" [disabled]="existeAfliado"
-                                (change)="aprobar_8(ARTRITIS.CAMPO_8)">
-                                <option *ngFor='let ARTRITIS8 of ARTRITIS8' [ngValue]="ARTRITIS8.NOMBRE_OPCION"
-                                    [ngValue]="ARTRITIS8.CODIGO_OPCION">
-                                    {{ARTRITIS8.CODIGO_OPCION}}.{{ARTRITIS8.NOMBRE_OPCION}}
+                                [(ngModel)]="ARTRITIS.CAMPO_11" [disabled]="existeAfliado"
+                                (change)="aprobar_11(ARTRITIS.CAMPO_11)">
+                                <option *ngFor='let ARTRITIS11 of ARTRITIS11' [ngValue]="ARTRITIS11.NOMBRE_OPCION"
+                                    [ngValue]="ARTRITIS11.CODIGO_OPCION">
+                                    {{ARTRITIS11.CODIGO_OPCION}}.{{ARTRITIS11.NOMBRE_OPCION}}
                                 </option>
                             </select>
                         </div>
-                    </div>
-                    <div class="input-group mb-3">
-                        <div class="col-md-4">
-                            <label id="documento">9.Ocupación:</label>
-
-                            <input type="text" list="ocupacion" value="5" id="documento" class="form-control"
-                                name="ARTRITIS.CAMPO_9" [(ngModel)]="ARTRITIS.CAMPO_9">
-                            <datalist id="ocupacion">
-                                <option *ngFor='let Ocupacion of Ocupacion' [ngValue]="Ocupacion.DESCRIPCION"
-                                    [ngValue]="Ocupacion.CODIGO_Ocupacion">
-                                    {{Ocupacion.CODIGO_Ocupacion}}.{{Ocupacion.DESCRIPCION}}
-                                </option>
-                            </datalist>
-                        </div>
-                        <div class="col-md-4">
-                            <label id="documento">10.Régimen de afiliación al SGSSS:</label>
-                            <select name="" class="form-control" id="documento" name="ARTRITIS.CAMPO_10"
-                                [(ngModel)]="ARTRITIS.CAMPO_10">
-                                <option value=""></option>
-                                <option *ngFor='let ARTRITIS10 of ARTRITIS10' [ngValue]="ARTRITIS10.NOMBRE_OPCION"
-                                    [ngValue]="ARTRITIS10.CODIGO_OPCION">
-                                    {{ARTRITIS10.CODIGO_OPCION}}.{{ARTRITIS10.NOMBRE_OPCION}}
-                                </option>
-                            </select>
-                        </div>
-                        <div class="col-md-4">
-                            <label id="documento">11.Código de la EPS o de la entidad territorial:</label>
-                            <input maxlength="6" type="text" class="form-control" id="documento"
-                                name="ARTRITIS.CAMPO_11" [(ngModel)]="ARTRITIS.CAMPO_11">
-                        </div>
-
                     </div>
                     <div class="input-group mb-3">
                         <div class="col-md-4">
                             <label id="documento">12.Código pertenencia étnica:</label>
-                            <select name="" class="form-control" id="documento" name="ARTRITIS.CAMPO_12"
+                            <select class="form-control" id="documento" name="ARTRITIS.CAMPO_12"
                                 [(ngModel)]="ARTRITIS.CAMPO_12">
-                                <option value=""></option>
-                                <option *ngFor='let ARTRITIS12 of ARTRITIS12' [ngValue]="ARTRITIS12.NOMBRE_OPCION"
-                                    [ngValue]="ARTRITIS12.CODIGO_OPCION">
-                                    {{ARTRITIS12.CODIGO_OPCION}}.{{ARTRITIS12.NOMBRE_OPCION}}
+                                <option *ngFor='let CEtnica of CEtnica' [ngValue]="CEtnica.NOMBRE_OPCION"
+                                    [ngValue]="CEtnica.CODIGO_OPCION">
+                                    {{CEtnica.CODIGO_OPCION}}.{{CEtnica.NOMBRE_OPCION}}
                                 </option>
                             </select>
                         </div>
                         <div class="col-md-4">
-                            <label id="documento">13.Grupo poblacional:</label>
-                            <select name="" class="form-control" id="documento" name="ARTRITIS.CAMPO_13"
+                            <label id="documento">13.Direccion:</label>
+                            <input type="text" id="documento" class="form-control" name="ARTRITIS.CAMPO_13"
                                 [(ngModel)]="ARTRITIS.CAMPO_13">
-                                <option value=""></option>
-                                <option *ngFor='let ARTRITIS13 of ARTRITIS13' [ngValue]="ARTRITIS13.NOMBRE_OPCION"
-                                    [ngValue]="ARTRITIS13.CODIGO_OPCION">
-                                    {{ARTRITIS13.CODIGO_OPCION}}.{{ARTRITIS13.NOMBRE_OPCION}}
-                                </option>
-                            </select>
                         </div>
                         <div class="col-md-4">
-                            <label id="documento">14.Municipio de residencia:</label>
-                            <input type="text" list="municipio" id="documento" class="form-control"
-                                name="ARTRITIS.CAMPO_14" [(ngModel)]="ARTRITIS.CAMPO_14">
-                            <datalist id="municipio">
-                                <option *ngFor='let municipioresidencia of municipioresidencia'
-                                    [ngValue]="municipioresidencia.NOMBRE_CIUDAD"
-                                    [ngValue]="municipioresidencia.CODIGO_CIUDAD">
-                                    {{municipioresidencia.CODIGO_CIUDAD}}.{{municipioresidencia.NOMBRE_CIUDAD}}
-                                </option>
-                            </datalist>
+                            <label id="documento1">14.Número telefónico:</label>
+                            <input type="number" class="form-control" id="documento" name="ARTRITIS.CAMPO_14"
+                                [(ngModel)]="ARTRITIS.CAMPO_14">
+                        </div>
+
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="col-md-4">
+                            <label id="documento">15.Codigo de municipio de residencia:</label>
+                            <input type="text" id="documento" class="form-control" name="ARTRITIS.CAMPO_15"
+                                [(ngModel)]="ARTRITIS.CAMPO_15">
+                        </div>
+                        <div class="col-md-4">
+                            <label id="documento">16.Fecha de afiliación a la EAPB:</label>
+                            <div class="input-group" id="documento">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                            height="16" fill="currentColor" class="bi bi-calendar2-date"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M6.445 12.688V7.354h-.633A12.6 12.6 0 0 0 4.5 8.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
+                                            <path
+                                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z" />
+                                            <path
+                                                d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z" />
+                                        </svg></span>
+                                </div>
+                                <input type="date" class="form-control" id="documento" name="ARTRITIS.CAMPO_16"
+                                    [(ngModel)]="ARTRITIS.CAMPO_16">
+                            </div>
                         </div>
 
                     </div>
@@ -337,13 +314,12 @@
                                 <input type="date" class="form-control" name="ARTRITIS.CAMPO_16"
                                     [disabled]="ARTRITIS_16" [(ngModel)]="ARTRITIS.CAMPO_16"
                                     (change)="CAMPO_16(ARTRITIS.CAMPO_16)" id="documento">
-
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <label id="documento">133.Código único de identificación BDUA: </label>
-                            <input type="text" maxlength="4" class="form-control" id="documento"
-                                name="ARTRITIS.CAMPO_90" [(ngModel)]="ARTRITIS.CAMPO_90">
+                        <div class="col-md-2">
+                            <label id="documento">90.Serial BDUA:</label>
+                            <input type="number" class="form-control" id="documento" name="ARTRITIS.CAMPO_90"
+                                [(ngModel)]="ARTRITIS.CAMPO_90">
                         </div>
                     </div>
                 </div>

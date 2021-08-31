@@ -12,6 +12,25 @@ class ValidacionCamposCancer {
         this.totalCamposMalos = 0;
         this.archivoFilas = 0;
     }
+    getFilasMalas() {
+        var size = Object.keys(this.filas_malas).length;
+        return size;
+    }
+    getArchivoBueno() {
+        var isBueno = false;
+        if (this.getFilasBuenas() == this.archivoFilas) {
+            isBueno = true;
+        }
+        return isBueno;
+    }
+    getTotalCamposMalos() {
+        return this.totalCamposMalos;
+    }
+    getFilasBuenas() {
+        var size = Object.keys(this.filas_buenas).length;
+        console.log(size);
+        return size;
+    }
     validar(arrayCampos, resultEstructuraCampo) {
         var _this = this;
         this.archivoFilas = arrayCampos.length;
