@@ -287,7 +287,6 @@ export class HemofiliaListarComponent implements OnInit, OnDestroy {
 
       }
     }
-
   }
 
   paginador(event){

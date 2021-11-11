@@ -160,7 +160,7 @@
                 <div class="col-md-6">
                     <label id="documento">6.Número de Identificación del usuario:</label>
                     <input maxlength="20" type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57'
-                        class="form-control " id="documento" name="erc.CAMPO_6" [(ngModel)]="erc.CAMPO_6" 
+                        class="form-control " id="documento" name="erc.CAMPO_6" [(ngModel)]="erc.CAMPO_6"
                         [disabled]="NumIdentificacion" (change)="validacionNuevo()" (change)="aprobar_6(erc.CAMPO_6)">
                 </div>
             </div>
@@ -233,7 +233,8 @@
                     <div class="input-group mb-3">
                         <div class="col-md-4">
                             <label id="documento">9.Régimen de afiliación:</label>
-                            <select name="" class="form-control" id="documento" name="erc.CAMPO_9" [(ngModel)]="erc.CAMPO_9">
+                            <select name="" class="form-control" id="documento" name="erc.CAMPO_9"
+                                [(ngModel)]="erc.CAMPO_9">
                                 <option *ngFor='let C8_CAMPO_9 of C8_CAMPO_9' [ngValue]="C8_CAMPO_9.NOMBRE_OPCION"
                                     [ngValue]="C8_CAMPO_9.CODIGO_OPCION">
                                     {{C8_CAMPO_9.CODIGO_OPCION}}.{{C8_CAMPO_9.NOMBRE_OPCION}}

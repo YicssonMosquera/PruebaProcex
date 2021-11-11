@@ -43,6 +43,7 @@ export class LoginComponent implements OnInit {
         text: "Usuario y/o Contraseña incorrecto",
         showConfirmButton: true,
         allowOutsideClick: false, // NO PERMITE QUE SE CIERRE AL DAR CLIC POR FUERA
+        
       })
       this.ngxSpinnerService.stop();
     })

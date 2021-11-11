@@ -18,7 +18,6 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatTabsModule} from '@angular/material/tabs';
 
 
-
 //PRIMENG
 import {TableModule} from 'primeng/table';
 import {ToastModule} from 'primeng/toast';
